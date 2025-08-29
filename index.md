@@ -15,9 +15,6 @@ Highlights:
     - Sensor data collection & synchronization
     - Enterprise-level semiconductor equipment project
 - Leadership & Collaboration: SSAFY (Samsung SW Academy for Youth) class leader, (Exicon) new-hire leader, technical mentor & instructor experience.
-- Global Mindset: Exchange student in China (HSK 4), English TOEIC 870 multicultural collaboration and strong communication skills.
+- Global Mindset: Exchange student in China, English multicultural collaboration and strong communication skills.
 
 I thrive in environments where system reliability, structural problem-solving, and cross-functional collaboration are essential, and I aim to grow into a Platform Architect building resilient and scalable developer ecosystems.
-{% for project in site.data.projects %}
-  {% include project-card.html project=project %}
-{% endfor %}
