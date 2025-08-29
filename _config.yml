@@ -1,0 +1,11 @@
+title: "Chaejin Lim Portfolio"
+description: "NVMe Host Driver / Embedded Linux / Automation Tools"
+baseurl: ""
+url: "https://cherrydev.github.io"
+
+markdown: kramdown
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
