@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Im Chaejin"
+title: "This is title!!"
 ---
 
-# Who is she?
+# Head 1, Should be changed!
 I am a Systems & Platform Engineer with expertise in Linux kernel, storage systems (NVMe), and DevOps-oriented platform design.
 
 My career journey combines deep technical roots (Linux kernel development, NVMe driver feature expansion, system debugging) with cross-disciplinary projects in sensor data collection, AI, and large-scale software engineering.
