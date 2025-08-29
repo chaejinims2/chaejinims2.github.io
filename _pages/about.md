@@ -1,3 +1,9 @@
+---
+layout: page
+title: "About"
+permalink: /about/
+---
+
 # About Me
 
 I’m Chaejin Im, a system software engineer from South Korea.  

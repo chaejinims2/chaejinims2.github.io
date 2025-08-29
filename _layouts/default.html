@@ -12,11 +12,16 @@
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
     {% include skip-links.html %}
     {% include masthead.html %}
+    <nav style="background:#f5f5f5; padding: 1rem; text-align:center; font-family: sans-serif;">
+      <a href="/" style="margin: 0 15px; font-weight:bold;">Home</a>
+      <a href="/projects/" style="margin: 0 15px; font-weight:bold;">Projects</a>
+      <a href="/about/" style="margin: 0 15px; font-weight:bold;">About</a>
+    </nav>
 
-    <div class="initial-content">
+    <main class="initial-content" style="max-width: 1080px; margin: 0 auto; padding: 2rem;">
       {{ content }}
       {% include after-content.html %}
-    </div>
+    </main>
 
     {% if site.search == true %}
       <div class="search-content">
