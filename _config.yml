@@ -1,7 +1,7 @@
-title: "Chaejin Lim Portfolio"
+title: "Chaejin Im Portfolio"
 description: "NVMe Host Driver / Embedded Linux / Automation Tools"
 baseurl: ""
-url: "https://cherrydev.github.io"
+url: "https://chaejinims2.github.io"
 
 markdown: kramdown
 theme: minima
