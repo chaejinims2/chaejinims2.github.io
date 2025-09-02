@@ -1,0 +1,17 @@
+- title: Cherry 01
+  description: A personal CLI toolkit for task automation, backup scripts, and development workflows.
+  tech: ["C++11", "Bash", "CLI", "Linux"]
+  image: /assets/images/cherry_utility.png
+  url: https://github.com/chaejinims2/cherry-utility
+
+- title: Cherry 02
+  description: An image-processing pipeline for OLED inkjet printing quality prediction with multithreaded simulation.
+  tech: ["C++", "OpenCV", "Threading"]
+  image: /assets/images/ssink.png
+  url: https://github.com/chaejinims2/ssink
+
+- title: Cherry 03
+  description: Out-of-tree Linux NVMe driver extension with multi-PF/NS architecture redesign and scalable debug interface.
+  tech: ["Linux Kernel", "PCIe", "NVMe", "Debug"]
+  image: /assets/images/xnvme.png
+  url: https://github.com/chaejinims2/xnvme

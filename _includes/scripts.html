@@ -21,6 +21,41 @@
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
 
+<!-- Dark mode toggle script -->
+<script>
+// Dark mode functionality
+(function() {
+  const themeToggle = document.createElement('button');
+  themeToggle.className = 'theme-toggle';
+  themeToggle.innerHTML = '🌙';
+  themeToggle.title = 'Toggle dark mode';
+  
+  // Check for saved theme preference or default to 'light'
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  // Update button icon based on current theme
+  if (currentTheme === 'dark') {
+    themeToggle.innerHTML = '☀️';
+  }
+  
+  // Theme toggle click handler
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update button icon
+    themeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+  });
+  
+  // Add button to page
+  document.body.appendChild(themeToggle);
+})();
+</script>
+
 {% if site.after_footer_scripts %}
   {% for script in site.after_footer_scripts %}
     <script src="{{ script | relative_url }}"></script>
