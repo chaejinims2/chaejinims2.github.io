@@ -4,7 +4,7 @@ title: "Projects"
 permalink: /projects/
 ---
 
-# 🛠 Projects
+# Projects
 
 Here is a curated list of my personal and professional projects.  
 Each project reflects my hands-on experience in system software, storage drivers, and automation tools.
@@ -12,5 +12,5 @@ Each project reflects my hands-on experience in system software, storage drivers
 ---
 
 {% for project in site.data.projects %}
-  {% include project-card.html project=project %}
+{% include project-card.html project=project %}
 {% endfor %}

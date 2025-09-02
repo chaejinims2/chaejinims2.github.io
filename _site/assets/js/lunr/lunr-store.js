@@ -5,8 +5,20 @@ var store = [{
         "url": "/about/",
         "teaser": null
       },{
+        "title": "Experise",
+        "excerpt":"Experise   Here is a blanlanlanaln                        Tech Stack:                                  Tech Stack:                                  Tech Stack:               ","categories": [],
+        "tags": [],
+        "url": "/expertise/",
+        "teaser": null
+      },{
+        "title": "Leadership",
+        "excerpt":"Leadership   Here is a blanlanlanaln                        Tech Stack:                                  Tech Stack:                                  Tech Stack:               ","categories": [],
+        "tags": [],
+        "url": "/leadership/",
+        "teaser": null
+      },{
         "title": "Projects",
-        "excerpt":"🛠 Projects Here is a curated list of my personal and professional projects. Each project reflects my hands-on experience in system software, storage drivers, and automation tools. Cherry Utility A personal CLI toolkit for task automation, backup scripts, and development workflows. Tech Stack: C++11, Bash, CLI, Linux SSINK An image-processing...","categories": [],
+        "excerpt":"Projects Here is a curated list of my personal and professional projects. Each project reflects my hands-on experience in system software, storage drivers, and automation tools. Cherry Utility A personal CLI toolkit for task automation, backup scripts, and development workflows. Tech Stack: C++11, Bash, CLI, Linux SSINK An image-processing pipeline...","categories": [],
         "tags": [],
         "url": "/projects/",
         "teaser": null

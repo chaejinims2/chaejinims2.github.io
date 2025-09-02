@@ -9,23 +9,22 @@
     {% include head/custom.html %}
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}" style="background-color: #1a1a1a;">
     {% include skip-links.html %}
-    {% include masthead.html %}
-    <nav style="background:#f5f5f5; padding: 1rem; text-align:center; font-family: sans-serif;">
-      <a href="/" style="margin: 0 15px; font-weight:bold;">Home</a>
-      <a href="/projects/" style="margin: 0 15px; font-weight:bold;">Projects</a>
-      <a href="/about/" style="margin: 0 15px; font-weight:bold;">About</a>
-    </nav>
+    <!-- {% include masthead.html %} -->
 
-    <main class="initial-content" style="max-width: 1080px; margin: 0 auto; padding: 2rem;">
-      {{ content }}
-      {% include after-content.html %}
+
+    <!-- <main class="initial-content" style="max-width: 1080px; margin: 0 auto; padding: 2rem;"> -->
+    <main class="content" style="padding: 20px; background-color: #1a1a1a;">
+      <div id="cgit">
+        {{ content }}
+        {% include after-content.html %}
+      </div>
     </main>
 
 
 
-    <div id="footer" class="page__footer">
+    <div id="footer" class="page__footer" style="background-color: #1a1a1a;">
       <footer>
         {% include footer/custom.html %}
         {% include footer.html %}
