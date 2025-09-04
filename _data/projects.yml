@@ -1,17 +1,69 @@
 - title: Cherry Utility
   description: A personal CLI toolkit for task automation, backup scripts, and development workflows.
+  highlights: Bash-based log tracker, auto-backup, Git CLI enhancer
   tech: ["C++11", "Bash", "CLI", "Linux"]
-  image: /assets/images/cherry_utility.png
+  image: https://picsum.photos/seed/picsum/200?grayscale
   url: https://github.com/chaejinims2/cherry-utility
 
-- title: SSINK
+- title: SSINK 잉크젯 프린트 설비 품질 예측 방법 개발
   description: An image-processing pipeline for OLED inkjet printing quality prediction with multithreaded simulation.
-  tech: ["C++", "OpenCV", "Threading"]
-  image: /assets/images/ssink.png
+  highlights: DLL integration, WPF interface, precision evaluation
+  tech: ["WPF", "C++", "OpenCV", "Threading"]
+  image: /assets/images/SSINK01.png
   url: https://github.com/chaejinims2/ssink
 
-- title: NVMe Driver
-  description: Out-of-tree Linux NVMe driver extension with multi-PF/NS architecture redesign and scalable debug interface.
+- title: NVMe Driver (Multi-PF + Debug Architecture)
+  description: A scalable out-of-tree Linux NVMe host driver with multi-PF and multi-namespace architecture, custom debug interface, and PCIe-aware design.
+  highlights: Kernel 5.9.16, namespace/thread management, queue depth tuning
   tech: ["Linux Kernel", "PCIe", "NVMe", "Debug"]
-  image: /assets/images/xnvme.png
+  image: https://picsum.photos/seed/helloworld/200?grayscale
   url: https://github.com/chaejinims2/xnvme
+
+- title: 노인 낙상 감지 알고리즘 및 시스템 개발
+  description: Depth camera and motion sensor-based fall detection system for elderly care environments.
+  highlights: 실시간 낙상 탐지 알고리즘, 시제품 테스트 완료
+  tech: ["AI", "Sensor Fusion", "Fall Detection"]
+  image: /assets/images/IYA01.png
+  url: 
+  
+- title: AI 기반 낙상 전 사고 감지 알고리즘 개발
+  description: 기존 사고 감지 알고리즘 성능 고도화 및 최적화를 통해 센서 데이터 감지 성능 고도화
+  highlights: 실시간 판단 알고리즘, ultra-low power MCU 사용
+  tech: ["Firmware", "STM32L431CB", "Sensor Data"]
+  image: 
+  url: https://youtu.be/X0Q_QtDOAzY
+
+- title: 스마트 추락보호 에어백 안전 로직 고도화 및 최적화
+  description: Custom safety logic for fall-protection airbag systems using threshold-based and AI-enhanced decision-making.
+  highlights: 
+  tech: ["Embedded", "Motion Sensor", "Safety Logic"]
+  image: /assets/images/SFW02.png
+  url: 
+  
+- title: 실내외 전동킥보드 데이터 수집 및 기존 제품 성능 검증 시험 
+  description: Real-world data collection and product validation test for electric scooters in mixed environments.
+  highlights: 
+  tech: ["Sensor Logging", "GPS", "Firmware"]
+  image: 
+  url: 
+  
+- title: 딥러닝기반 노인 낙상 사고감지 모델 자사 보드 포팅
+  description: Ported AI-based fall detection model onto in-house hardware with real-time inference optimization.
+  highlights: 
+  tech: ["CNN", "Edge Inference", "ARM Cortex-M"]
+  image: /assets/images/SFW01.png
+  url: 
+  
+- title: 스마트 AI 요리 서포터 Cookip
+  description: AI-powered kitchen assistant for guided recipe execution and cooking pattern tracking.
+  highlights: 
+  tech: ["IoT", "Voice Recognition", "Smart Timer"]
+  image: 
+  url: 
+  
+- title: 영유아 수면 패턴 분석과 사고감지 IoT 시스템 forMyBaby
+  description: An IoT system using video-based sleep pattern analysis for infants, integrated with accident detection.
+  highlights: 영상 인식 + 센서 기반 하이브리드 구조
+  tech: ["Computer Vision", "IoT", "Sleep Analysis"]
+  image: /assets/images/FMB01.png
+  url: 

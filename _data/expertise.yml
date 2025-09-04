@@ -1,17 +1,56 @@
-- title: Expertise 01
-  description: A personal CLI toolkit for task automation, backup scripts, and development workflows.
+- title: Low-level System Programming & Linux Kernel
+  description: [
+    "Extensive experience with Linux kernel (5.9.16) and out-of-tree NVMe host driver developmen", 
+    "Deep understanding of PCIe, NVMe, DMA, IRQ, and MMIO", 
+    "Custom multi-PF (Physical Function) and multi-namespace architecture design", 
+    "Debugging and profiling with ftrace, crash, kgdb, kdump, dmesg",
+    "Skilled in maintaining hybrid build systems using GNU Make, qmake, and CMake"
+  ]
   tech: ["C++11", "Bash", "CLI", "Linux"]
-  image: /assets/images/cherry_utility.png
-  url: https://github.com/chaejinims2/cherry-utility
 
-- title: Expertise 02
-  description: An image-processing pipeline for OLED inkjet printing quality prediction with multithreaded simulation.
-  tech: ["C++", "OpenCV", "Threading"]
-  image: /assets/images/ssink.png
-  url: https://github.com/chaejinims2/ssink
+- title: System Architecture & Tooling
+  description: [
+    "Designed scalable control structures: PF-slot-thread hierarchy, namespace mapping, and debug interfaces", 
+    "Developed queueing systems and structured data pipelines (x_cirq_buff, x_hist_q, x_cmd_param)", 
+    "Built Cherry Utility: a personal CLI toolchain for task automation, log tracking, and scripting", 
+    "Special focus on rebuilding packages or mocking environments in offline development settings"
+  ]
+  tech: ["C++11", "Bash", "CLI", "Linux"]
 
-- title: Expertise 03
-  description: Out-of-tree Linux NVMe driver extension with multi-PF/NS architecture redesign and scalable debug interface.
-  tech: ["Linux Kernel", "PCIe", "NVMe", "Debug"]
-  image: /assets/images/xnvme.png
-  url: https://github.com/chaejinims2/xnvme
+- title: Embedded Systems & Cross-platform Integration
+  description: [
+    "Experience with STM32 (e.g., STM32L431CB) microcontrollers and sensor integration", 
+    "Firmware-level debugging and safety logic optimization (e.g., pre-fall detection, airbag deployment)", 
+    "Built a WPF + OpenCV simulation tool (SSINK) for OLED inkjet print quality prediction", 
+    "Conducted system testing and data collection for electric scooter platforms"
+  ]
+  tech: ["C++11", "Bash", "CLI", "Linux"]
+
+
+- title: Information Structuring & Expressive Thinking
+  description: [
+    "Created internal debugging SOPs, onboarding manuals, and TDD-based test frameworks", 
+    "Developed a personal logic model using meta > main > sub layered thinking", 
+    "Structured daily workflows and development logic using Notion and custom Bash scripts", 
+    "Skilled at turning abstract emotional/intuitive insights into executable tools or documents"
+  ]
+  tech: ["C++11", "Bash", "CLI", "Linux"]
+
+
+- title: Design Thinking & Emotional-Technical Fusion
+  description: [
+    "Developed Cherry-plat, a visual art + tech design language rooted in pixel geometry and space design", 
+    "Introduced the Palazzo model: a modular approach to organizing physical space, thought, and emotional flow", 
+    "Capable of designing CLI/GUI tools that are both technically efficient and emotionally intuitive"
+  ]
+  tech: ["C++11", "Bash", "CLI", "Linux"]
+
+
+- title: Philosophy of Systems & Open Source Life Approach
+  description: [
+    "Applies open-source principles to life: versioning, modular design, changelogs, and documentation", 
+    "Treats relationships and projects like pull requests, merge conflicts, and forks", 
+    "Believes in systems as a way of living, not just coding"
+  ]
+  tech: ["C++11", "Bash", "CLI", "Linux"]
+

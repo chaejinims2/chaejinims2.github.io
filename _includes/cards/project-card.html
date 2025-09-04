@@ -1,0 +1,14 @@
+<div class="project-card">
+  <h2><a href="{{ project.url }}" target="_blank" style="color: white;">{{ project.title }}</a></h2>
+  {% if project.image %}
+    <img src="{{ project.image }}" alt="{{ project.title }}" style="width:100%; max-width:200px;">
+  {% endif %}
+  <p>{{ project.description }}</p>
+  <p>
+    <strong>Tech Stack:</strong>
+    {% for t in project.tech %}
+      <code>{{ t }}</code>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </p>
+  <hr>
+</div>
