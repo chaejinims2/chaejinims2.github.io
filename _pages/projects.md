@@ -12,5 +12,5 @@ Each project reflects my hands-on experience in system software, storage drivers
 ---
 
 {% for project in site.data.projects %}
-{% include project-card.html project=project %}
+{% include cards/project-card.html project=project %}
 {% endfor %}
