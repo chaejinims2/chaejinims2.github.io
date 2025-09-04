@@ -1,17 +1,51 @@
-- title: Cherry 01
-  description: A personal CLI toolkit for task automation, backup scripts, and development workflows.
-  tech: ["C++11", "Bash", "CLI", "Linux"]
-  image: /assets/images/cherry_utility.png
-  url: https://github.com/chaejinims2/cherry-utility
+- title: Structural Leadership
+  description: I lead by clarifying complexity. I break down systems into understandable modules, enabling smoother onboarding and communication within teams.
+  example: [
+    "Redesigned the PF-Slot-Thread architecture in a visual and modular form, allowing new team members to quickly grasp and contribute to our NVMe driver stack.", 
+    "", 
+    ""
+  ]
+  key: ["System Thinking", "Modular Design", "Process Clarity"]
 
-- title: Cherry 02
-  description: An image-processing pipeline for OLED inkjet printing quality prediction with multithreaded simulation.
-  tech: ["C++", "OpenCV", "Threading"]
-  image: /assets/images/ssink.png
-  url: https://github.com/chaejinims2/ssink
+- title: Supportive Leadership
+  description: 
+  example: [
+    "Developed Cherry Utility — a personal CLI toolkit to automate repetitive tasks and simplify debugging routines, shared with teammates to increase productivity.", 
+    "Authored an OJT manual and SOP documentation to accelerate onboarding of junior engineers."
+  ]
+  key: ["Enablement", "Knowledge Sharing", "Mentorship by Infrastructure"]
 
-- title: Cherry 03
-  description: Out-of-tree Linux NVMe driver extension with multi-PF/NS architecture redesign and scalable debug interface.
-  tech: ["Linux Kernel", "PCIe", "NVMe", "Debug"]
-  image: /assets/images/xnvme.png
-  url: https://github.com/chaejinims2/xnvme
+- title: Empathetic Technical Decision-Making
+  description: I balance technical logic with emotional intelligence. I approach code reviews and architectural decisions with empathy, especially when dealing with legacy systems.
+  example: [
+    "Proposed an incremental refactoring plan rather than a total overhaul, respecting existing workflows and reducing friction for collaborators.", 
+    "In reviews, I prioritize understanding over fault-finding, asking “Did I interpret your intent correctly?”"
+  ]
+  key: ["Legacy-Aware Design", "Collaborative Reviews", "Empathetic Judgment"]
+
+- title: Documentation-Driven Culture Builder
+  description: I believe what’s not documented doesn’t scale. I design workflows, logs, and debug systems that are traceable, reusable, and self-explanatory.
+  example: [
+    "Created custom debug log formats and issue-tracking templates for the team, ensuring consistent knowledge sharing and future-proof traceability.", 
+    "", 
+    ""
+  ]
+  key: ["Self-Documenting Systems", "Repeatable Processes", "Traceability"]
+
+- title: Bridge Between Domains
+  description: I act as a translator between domains—engineering and design, logic and emotion. I value clarity of expression as much as correctness of implementation.
+  example: [
+    "While developing an image-processing simulation for OLED printing (SSINK), I created a GUI overlay that translated algorithmic thresholds into intuitive visual indicators for non-engineering stakeholders.", 
+    "", 
+    ""
+  ]
+  key: ["Cross-functional Communication", "Technical Translation", "Human-System Interface"]
+
+- title: Meta-Level Thinking & Vision Design
+  description: I don’t just build systems—I design frameworks for thinking. I’m driven by questions like “Why does this structure exist?” and “What future does it lead to?”
+  example: [
+    "", 
+    "", 
+    ""
+  ]
+  key: ["Meta Thinking", "Structural Intent", "Long-Term Planning"]

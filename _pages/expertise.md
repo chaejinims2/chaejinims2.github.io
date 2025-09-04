@@ -1,15 +1,15 @@
 ---
 layout: page
-title: "Experise"
+title: "Expertise"
 permalink: /expertise/
 ---
 
-# Experise
+# Expertise
 
 Here is a blanlanlanaln
 
 ---
 
 {% for expertise in site.data.expertise %}
-{% include project-card.html project=expertise %}
+{% include cards/expertise-card.html expertise=expertise %}
 {% endfor %}
