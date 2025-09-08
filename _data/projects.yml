@@ -5,14 +5,14 @@
   image: https://picsum.photos/seed/helloworld/200?grayscale
   url: 
 
-- title: Inkjet Printing Equipment Quality Prediction Method: SSINK
+- title: Inkjet Printing Equipment Quality Prediction Method- SSINK
   description: Developed 'SSINK', a system that predicts and analyzes the quality of inkjet printing equipment in real-time, aiming to maximize production efficiency by preemptively detecting errors that may occur during the manufacturing process. Focused on improving large-capacity image processing speed and analysis accuracy.
   highlights: Drop Simulation and Data Analysis, Feature Integration and Distribution (Executable File), Support for Large-Capacity Image Loading and Cell Segmentation
   tech: ["C++", "C#", "Pyhton3.9", "GDAL", "OpenCV", "Visual Studio 2022"]
   image: /assets/images/SSINK01.png
   url: https://github.com/chaejinims2/2024-ssink-proj
 
-- title: Infant Sleep Pattern Analysis and Accident Detection IoT System: for My Baby
+- title: Infant Sleep Pattern Analysis and Accident Detection IoT System- for My Baby
   description: Pomabe is an AI-powered app service that monitors a child's safety and environment in real-time, and records their growth process. It provides features such as video recognition-based risk behavior detection, sleep pattern analysis, growth stamps, and stop motion growth video creation, making childcare more convenient and special.
   highlights: Video Recognition-Based Risk Behavior Detection, Child Sleep Pattern Analysis and Visualization, Growth Stamps, Stop Motion Growth Video Creation
   tech: ["Computer Vision", "Video Recognition", "Sleep Analysis"]
@@ -33,7 +33,7 @@
   image: /assets/images/IYA01.png
   url: 
   
-- title: AI 기반 낙상 전 사고 감지 알고리즘 개발: IYA
+- title: AI 기반 낙상 전 사고 감지 알고리즘 개발- IYA
   description: 기존 사고 감지 알고리즘 성능 고도화 및 최적화를 통해 센서 데이터 감지 성능 고도화
   highlights: 실시간 판단 알고리즘, ultra-low power MCU 사용
   tech: ["Firmware", "STM32L431CB", "Sensor Data"]
@@ -61,7 +61,7 @@
   image: /assets/images/SFW01.png
   url: 
   
-- title: Smart AI Cooking Supportor: Cookip
+- title: Smart AI Cooking Supportor- Cookip
   description: AI-powered kitchen assistant for guided recipe execution and cooking pattern tracking.
   highlights: 
   tech: ["IoT", "Voice Recognition", "Smart Timer"]

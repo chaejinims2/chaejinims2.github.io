@@ -18,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Projects",
-        "excerpt":"Projects Here is a curated list of my personal and professional projects. Each project reflects my hands-on experience in system software, storage drivers, and automation tools. Cherry Utility A personal CLI toolkit for task automation, backup scripts, and development workflows. Tech Stack: C++11, Bash, CLI, Linux SSINK 잉크젯 프린트 설비...","categories": [],
+        "excerpt":"Projects Here is a curated list of my personal and professional projects. Each project reflects my hands-on experience in system software, storage drivers, and automation tools. Extending NVMe Host Driver from SPF to MPF Extended an existing NVMe host driver to support Multi Physical Functions (MPF) as well as Single...","categories": [],
         "tags": [],
         "url": "/projects/",
         "teaser": null
