@@ -1,33 +1,70 @@
 ---
 ---
 
+
 <!doctype html>
-{% include copyright.html %}
-<html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
+<html lang="{{ site.locale | replace: "_", "-" | default: "ko" }}">
   <head>
     {% include head.html %}
-    {% include head/custom.html %}
+
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}" style="background-color: #1a1a1a;">
-    {% include skip-links.html %}
-    <!-- {% include masthead.html %} -->
+  <body data-nav-group="{{ page.nav_group | default: '' }}">
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/">{{ site.title | default: 'WebCJIM' }}</a>
+        <nav class="topnav">
+          <a href="/docs/">Docs</a>
+          <a href="/snippets/">Snippets</a>
+          <a href="/pages/about/">About</a>
+        </nav>
+      </header>
 
+      <div class="main">
+        <aside class="sidebar">
+          {% assign current = page.url %}
+          {% if site.data.nav and site.data.nav.groups %}
+            {% for g in site.data.nav.groups %}
+              <section class="nav-group">
+                <div class="nav-title">{{ g.title }}</div>
+                <ul class="nav-list">
+                  {% for it in g.items %}
+                    {% assign active = false %}
+                    {% if current == it.url %}
+                      {% assign active = true %}
+                    {% elsif it.url != '/' and current contains it.url %}
+                      {% assign active = true %}
+                    {% endif %}
+                    <li>
+                      <a class="nav-item {% if active %}active{% endif %}" href="{{ it.url }}">{{ it.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </section>
+            {% endfor %}
+          {% else %}
+            <div class="muted" style="padding: 8px 0;">
+              nav.yml not found. Create <code>_data/nav.yml</code> to enable sidebar.
+            </div>
+          {% endif %}
+        </aside>
 
-    <!-- <main class="initial-content" style="max-width: 1080px; margin: 0 auto; padding: 2rem;"> -->
-    <main class="content" style="padding: 20px; background-color: #1a1a1a;">
-      <div id="cgit">
-        {{ content }}
-        {% include after-content.html %}
+        <main class="content">
+          {% if page.title %}
+            <header class="page-header">
+              <h1>{{ page.title }}</h1>
+              {% if page.description %}<p class="muted">{{ page.description }}</p>{% endif %}
+            </header>
+          {% endif %}
+
+          {{ content }}
+        </main>
       </div>
-    </main>
 
-
-
-    <div id="footer" class="page__footer" style="background-color: #1a1a1a;">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
+      <footer class="footer">
+        <span class="muted">© {{ site.time | date: "%Y" }} {{ site.title | default: 'WebCJIM' }}</span>
       </footer>
     </div>
 
