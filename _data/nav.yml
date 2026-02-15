@@ -1,0 +1,26 @@
+groups:
+  - key: docs
+    title: Docs
+    items:
+      - key: docs_home
+        title: Overview
+        url: /docs/
+      - key: docs_nvme
+        title: NVMe
+        url: /docs/nvme/
+      - key: docs_linux
+        title: Linux
+        url: /docs/linux/
+
+  - key: snippets
+    title: Snippets
+    items:
+      - key: snippets_home
+        title: Index
+        url: /snippets/
+      - key: snippets_bash
+        title: Bash
+        url: /snippets/bash/
+      - key: snippets_csharp
+        title: C#
+        url: /snippets/csharp/

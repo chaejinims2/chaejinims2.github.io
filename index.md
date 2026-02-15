@@ -1,7 +1,16 @@
 ---
 layout: default
-title: "This is title!!"
+title: WebCJIM
 ---
+
+# WebCJIM
+
+- [Docs](/docs/)
+- [Snippets](/snippets/)
+
+## Focus
+- NVMe / Linux Kernel / System Software
+- Automation tools and reproducible workflows
 
 # Head 1, Should be changed!
 I am a Systems & Platform Engineer with expertise in Linux kernel, storage systems (NVMe), and DevOps-oriented platform design.
