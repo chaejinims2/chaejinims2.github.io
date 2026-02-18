@@ -3,6 +3,7 @@ layout: page
 title: Extending NVMe Host Driver from SPF to MPF
 permalink: /projects/nvme-spf-mpf/
 nav_group: projects
+hide: false
 ---
 
 # Extending NVMe Host Driver from SPF to MPF

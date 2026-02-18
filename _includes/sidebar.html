@@ -1,27 +1,36 @@
 <aside class="sidebar">
   {% assign current = page.url %}
-  {% if site.data.nav and site.data.nav.groups %}
-    {% for g in site.data.nav.groups %}
+  {% assign group_order = "documents,leadership,expertise,projects,workspaces" | split: "," %}
+
+  {% for group_key in group_order %}
+    {% assign group_pages = site.pages | where: "nav_group", group_key | sort: "url" %}
+    {% if group_pages.size > 0 %}
+      {% assign group_base = "/" | append: group_key | append: "/" %}
+      {% assign group_title = group_key | capitalize %}
+      {% for p in group_pages %}
+        {% if p.url == group_base %}
+          {% assign group_title = p.title %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
       <section class="nav-group">
-        <div class="nav-title">{{ g.title }}</div>
-        <ul class="nav-list">
-          {% for it in g.items %}
-            {% assign active = false %}
-            {% if current == it.url %}
-              {% assign active = true %}
-            {% elsif it.url != '/' and current contains it.url %}
-              {% assign active = true %}
-            {% endif %}
-            <li>
-              <a class="nav-item {% if active %}active{% endif %}" href="{{ it.url }}">{{ it.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <details class="nav-details" {% if page.nav_group == group_key %}open{% endif %}>
+          <summary class="nav-title nav-group-summary">{{ group_title }}</summary>
+          <ul class="nav-list">
+            {% for p in group_pages %}
+              {% if p.hide != true %}
+                {% assign active = false %}
+                {% if current == p.url %}
+                  {% assign active = true %}
+                {% endif %}
+                <li>
+                  <a class="nav-item {% if active %}active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </details>
       </section>
-    {% endfor %}
-  {% else %}
-    <div class="muted" style="padding: 8px 0;">
-      nav.yml not found. Create <code>_data/nav.yml</code> to enable sidebar.
-    </div>
-  {% endif %}
+    {% endif %}
+  {% endfor %}
 </aside>

@@ -1,0 +1,13 @@
+---
+layout: page
+---
+{{ content }}
+
+{% assign group_pages = site.pages | where: "nav_group", page.nav_group | sort: "url" %}
+<ul class="section-index-list">
+  {% for p in group_pages %}
+    {% if p.hide != true and p.url != page.url %}
+      <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

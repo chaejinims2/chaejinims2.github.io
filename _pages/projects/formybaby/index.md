@@ -3,6 +3,7 @@ layout: page
 title: For My Baby - Infant Sleep Pattern Analysis and Accident Detection
 permalink: /projects/formybaby/
 nav_group: projects
+hide: false
 ---
 
 # Infant Sleep Pattern Analysis and Accident Detection IoT System - For My Baby

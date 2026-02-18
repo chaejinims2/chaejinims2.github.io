@@ -3,6 +3,7 @@ layout: page
 title: Cookip - Smart AI Cooking Supportor
 permalink: /projects/cookip/
 nav_group: projects
+hide: false
 ---
 
 # Smart AI Cooking Supportor - Cookip

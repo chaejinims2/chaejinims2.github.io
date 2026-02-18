@@ -3,6 +3,7 @@ layout: page
 title: Philosophy of Systems & Open Source Life Approach
 permalink: /expertise/philosophy-systems/
 nav_group: expertise
+hide: false
 ---
 
 # Philosophy of Systems & Open Source Life Approach

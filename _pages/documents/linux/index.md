@@ -3,6 +3,7 @@ layout: page
 title: Linux
 permalink: /documents/linux/
 nav_group: documents
+hide: false
 ---
 
 # Linux

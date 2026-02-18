@@ -3,6 +3,7 @@ layout: page
 title: Empathetic Technical Decision-Making
 permalink: /leadership/empathetic-technical/
 nav_group: leadership
+hide: false
 ---
 
 # Empathetic Technical Decision-Making

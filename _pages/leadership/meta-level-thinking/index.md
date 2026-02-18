@@ -3,6 +3,7 @@ layout: page
 title: Meta-Level Thinking & Vision Design
 permalink: /leadership/meta-level-thinking/
 nav_group: leadership
+hide: false
 ---
 
 # Meta-Level Thinking & Vision Design

@@ -3,6 +3,7 @@ layout: page
 title: System Architecture & Tooling
 permalink: /expertise/system-architecture/
 nav_group: expertise
+hide: false
 ---
 
 # System Architecture & Tooling

@@ -3,6 +3,7 @@ layout: page
 title: Embedded Systems & Cross-platform Integration
 permalink: /expertise/embedded-systems/
 nav_group: expertise
+hide: false
 ---
 
 # Embedded Systems & Cross-platform Integration

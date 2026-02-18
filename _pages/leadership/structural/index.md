@@ -3,6 +3,7 @@ layout: page
 title: Structural Leadership
 permalink: /leadership/structural/
 nav_group: leadership
+hide: false
 ---
 
 # Structural Leadership

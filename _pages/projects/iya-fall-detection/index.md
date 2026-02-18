@@ -3,6 +3,7 @@ layout: page
 title: IYA - AI 기반 낙상 전 사고 감지 알고리즘 개발
 permalink: /projects/iya-fall-detection/
 nav_group: projects
+hide: false
 ---
 
 # AI 기반 낙상 전 사고 감지 알고리즘 개발 - IYA
