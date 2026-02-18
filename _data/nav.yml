@@ -1,26 +1,113 @@
 groups:
-  - key: docs
-    title: Docs
+  - key: documents
+    title: Documentation
     items:
-      - key: docs_home
+      - key: documents_default
         title: Overview
-        url: /docs/
-      - key: docs_nvme
+        url: /documents/
+      - key: documents_nvme
         title: NVMe
-        url: /docs/nvme/
-      - key: docs_linux
+        url: /documents/nvme/
+      - key: documents_linux
         title: Linux
-        url: /docs/linux/
+        url: /documents/linux/
 
-  - key: snippets
-    title: Snippets
+  - key: leadership
+    title: Leadership
     items:
-      - key: snippets_home
-        title: Index
-        url: /snippets/
-      - key: snippets_bash
-        title: Bash
-        url: /snippets/bash/
-      - key: snippets_csharp
-        title: C#
-        url: /snippets/csharp/
+      - key: leadership_default
+        title: Overview
+        url: /leadership/
+      - key: leadership_structural
+        title: Structural
+        url: /leadership/structural/
+      - key: leadership_supportive
+        title: Supportive
+        url: /leadership/supportive/
+      - key: leadership_empathetic
+        title: Empathetic Technical
+        url: /leadership/empathetic-technical/
+      - key: leadership_docs
+        title: Documentation-Driven
+        url: /leadership/documentation-driven/
+      - key: leadership_bridge
+        title: Bridge Between Domains
+        url: /leadership/bridge-domains/
+      - key: leadership_meta
+        title: Meta-Level Thinking
+        url: /leadership/meta-level-thinking/
+
+  - key: expertise
+    title: Expertise
+    items:
+      - key: expertise_default
+        title: Overview
+        url: /expertise/
+      - key: expertise_lowlevel
+        title: Low-level System
+        url: /expertise/low-level-system/
+      - key: expertise_architecture
+        title: System Architecture
+        url: /expertise/system-architecture/
+      - key: expertise_embedded
+        title: Embedded Systems
+        url: /expertise/embedded-systems/
+      - key: expertise_structuring
+        title: Information Structuring
+        url: /expertise/information-structuring/
+      - key: expertise_design
+        title: Design Thinking
+        url: /expertise/design-thinking/
+      - key: expertise_philosophy
+        title: Philosophy of Systems
+        url: /expertise/philosophy-systems/
+
+  - key: projects
+    title: Projects
+    items:
+      - key: projects_default
+        title: Overview
+        url: /projects/
+      - key: projects_nvme
+        title: NVMe SPF→MPF
+        url: /projects/nvme-spf-mpf/
+      - key: projects_ssink
+        title: SSINK
+        url: /projects/ssink/
+      - key: projects_formybaby
+        title: For My Baby
+        url: /projects/formybaby/
+      - key: projects_cherry
+        title: Cherry Utility
+        url: /projects/cherry-utility/
+      - key: projects_fall_elderly
+        title: Fall Detection (Elderly)
+        url: /projects/fall-detection-elderly/
+      - key: projects_iya
+        title: IYA Fall Detection
+        url: /projects/iya-fall-detection/
+      - key: projects_airbag
+        title: Airbag Safety
+        url: /projects/airbag-safety/
+      - key: projects_scooter
+        title: Scooter Validation
+        url: /projects/scooter-validation/
+      - key: projects_porting
+        title: Fall Detection Porting
+        url: /projects/fall-detection-porting/
+      - key: projects_cookip
+        title: Cookip
+        url: /projects/cookip/
+
+  - key: workspaces
+    title: Workspaces
+    items:
+      - key: workspaces_default
+        title: Overview
+        url: /workspaces/
+      - key: workspaces_scripts
+        title: Scripts
+        url: /workspaces/scripts/
+      - key: workspaces_codes
+        title: Codes
+        url: /workspaces/codes/

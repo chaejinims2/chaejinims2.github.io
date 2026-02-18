@@ -1,4 +1,4 @@
-title: "Chaejinims2@github.io"
+title: "chaejinims2@github.io"
 description: "NVMe Host Driver / Embedded Linux / Automation Tools"
 baseurl: ""
 url: "https://chaejinims2.github.io"
@@ -17,34 +17,15 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Collections: keep 'pages' if you want pretty URLs under /pages/..., and add docs/snippets
+# Collections: pages only (documents/workspaces moved under _pages)
 collections:
   pages:
     output: true
     permalink: /:path/
-  docs:
-    output: true
-    permalink: /docs/:path/
-  snippets:
-    output: true
-    permalink: /snippets/:path/
 
-# Defaults = Razor Pages 감성의 "layout default"를 메타데이터로 강제
 defaults:
   - scope:
       path: ""
-      type: "docs"
-    values:
-      layout: "docs"
-      nav_group: "docs"
-  - scope:
-      path: ""
-      type: "snippets"
-    values:
-      layout: "snippets"
-      nav_group: "snippets"
-  - scope:
-      path: "pages"
       type: "pages"
     values:
       layout: "page"
