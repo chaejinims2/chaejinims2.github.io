@@ -1,8 +1,4 @@
 ---
-layout: section_index
-title: Documents
+layout: section
 permalink: /documents/
-nav_group: documents
 ---
-
-# Documents

@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Embedded Systems & Cross-platform Integration
-permalink: /expertise/embedded-systems/
-nav_group: expertise
-hide: false
 ---
-
-# Embedded Systems & Cross-platform Integration
 
 - Experience with STM32 (e.g., STM32L431CB) microcontrollers and sensor integration
 - Firmware-level debugging and safety logic optimization (e.g., pre-fall detection, airbag deployment)

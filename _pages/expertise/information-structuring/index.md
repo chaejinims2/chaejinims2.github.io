@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Information Structuring & Expressive Thinking
-permalink: /expertise/information-structuring/
-nav_group: expertise
-hide: false
 ---
-
-# Information Structuring & Expressive Thinking
 
 - Created internal debugging SOPs, onboarding manuals, and TDD-based test frameworks
 - Developed a personal logic model using meta > main > sub layered thinking

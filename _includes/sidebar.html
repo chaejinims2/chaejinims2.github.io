@@ -1,36 +1,37 @@
-<aside class="sidebar">
-  {% assign current = page.url %}
-  {% assign group_order = "documents,leadership,expertise,projects,workspaces" | split: "," %}
+<aside class="app-sidebar">
+  <nav class="app-nav">
+    {% assign current = page.url %}
+    {% assign url_parts = page.url | split: "/" %}
+    {% assign page_group = url_parts[1] %}
+    {% assign group_order = "documents,leadership,expertise,projects,workspaces" | split: "," %}
 
-  {% for group_key in group_order %}
-    {% assign group_pages = site.pages | where: "nav_group", group_key | sort: "url" %}
-    {% if group_pages.size > 0 %}
+    {% for group_key in group_order %}
       {% assign group_base = "/" | append: group_key | append: "/" %}
-      {% assign group_title = group_key | capitalize %}
-      {% for p in group_pages %}
-        {% if p.url == group_base %}
-          {% assign group_title = p.title %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      <section class="nav-group">
-        <details class="nav-details" {% if page.nav_group == group_key %}open{% endif %}>
-          <summary class="nav-title nav-group-summary">{{ group_title }}</summary>
-          <ul class="nav-list">
+      {% assign group_pages = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
+      {% if group_pages.size > 0 %}
+        {% assign section_data = site.data.sections[group_key] %}
+        {% assign group_title = section_data.title | default: group_key | capitalize %}
+        {% assign group_index_hidden = section_data.hide %}
+        {% unless group_index_hidden %}
+        <div class="app-nav-group {% if page_group == group_key %}active{% endif %}">
+          <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}">
+            <span class="app-nav-ico" aria-hidden="true">{{ section_data.title_icon | default: '▸' }}</span>
+            <span class="app-nav-label">{{ group_title }}</span>
+          </a>
+          <div class="app-nav-sub">
             {% for p in group_pages %}
-              {% if p.hide != true %}
-                {% assign active = false %}
-                {% if current == p.url %}
-                  {% assign active = true %}
-                {% endif %}
-                <li>
-                  <a class="nav-item {% if active %}active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
-                </li>
+              {% assign p_path_key = p.url | replace: '/', ' ' | strip | split: ' ' | join: '/' | remove: '/index' %}
+              {% assign p_data = site.data.pages[p_path_key] %}
+              {% assign p_hide = p_data.hide | default: p.hide %}
+              {% assign p_title = p_data.title | default: p.title %}
+              {% if p_hide != true and p.url != group_base %}
+                <a class="app-nav-sub-item {% if current == p.url %}active{% endif %}" href="{{ p.url }}">{{ p_title }}</a>
               {% endif %}
             {% endfor %}
-          </ul>
-        </details>
-      </section>
-    {% endif %}
-  {% endfor %}
+          </div>
+        </div>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </nav>
 </aside>

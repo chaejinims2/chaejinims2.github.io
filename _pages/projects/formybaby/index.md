@@ -1,12 +1,6 @@
 ---
 layout: page
-title: For My Baby - Infant Sleep Pattern Analysis and Accident Detection
-permalink: /projects/formybaby/
-nav_group: projects
-hide: false
 ---
-
-# Infant Sleep Pattern Analysis and Accident Detection IoT System - For My Baby
 
 Pomabe is an AI-powered app service that monitors a child's safety and environment in real-time, and records their growth process. It provides features such as video recognition-based risk behavior detection, sleep pattern analysis, growth stamps, and stop motion growth video creation, making childcare more convenient and special.
 

@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Low-level System Programming & Linux Kernel
-permalink: /expertise/low-level-system/
-nav_group: expertise
-hide: false
 ---
-
-# Low-level System Programming & Linux Kernel
 
 - Extensive experience with Linux kernel (5.9.16) and out-of-tree NVMe host driver development
 - Deep understanding of PCIe, NVMe, DMA, IRQ, and MMIO

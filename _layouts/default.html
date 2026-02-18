@@ -1,25 +1,35 @@
 ---
 ---
-
+{% if page.layout == 'section' %}
+  {% assign url_parts = page.url | split: "/" %}
+  {% assign section_key = url_parts[1] %}
+  {% assign page_title = site.data.sections[section_key].title | default: page.title %}
+{% else %}
+  {% assign path_key = page.url | replace: '/', ' ' | strip | split: ' ' | join: '/' | remove: '/index' %}
+  {% assign page_data = site.data.pages[path_key] %}
+  {% assign page_title = page_data.title | default: page.title %}
+{% endif %}
 
 <!doctype html>
 <html lang="{{ site.locale | replace: "_", "-" | default: "ko" }}">
   <head>
     {% include head.html %}
+    <title>{% if page_title %}{{ page_title }}{% endif %}{% if page_title and site.title %} | {% endif %}{{ site.title }}</title>
 
-    <link rel="stylesheet" href="/assets/css/tokens.css" />
-    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
   </head>
 
-  <body data-nav-group="{{ page.nav_group | default: '' }}">
-    <div class="app">
+  <body data-theme="dark" data-nav-group="{{ page.nav_group | default: '' }}">
+    <div class="app-root">
       {% include topbar.html %}
 
-      <div class="main">
+      <div class="app-shell">
         {% include sidebar.html %}
 
-        <main class="content">
-          <div class="content-inner">
+        <main class="app-content">
+          <div class="app-content-inner">
             {{ content }}
           </div>
         </main>

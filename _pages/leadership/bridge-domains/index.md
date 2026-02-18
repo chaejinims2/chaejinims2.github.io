@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Bridge Between Domains
-permalink: /leadership/bridge-domains/
-nav_group: leadership
-hide: false
 ---
-
-# Bridge Between Domains
 
 I act as a translator between domains—engineering and design, logic and emotion. I value clarity of expression as much as correctness of implementation.
 
