@@ -10,66 +10,66 @@ documents/nvme:
 
 leadership/meta-level-thinking:
   title: Meta-Level Thinking & Vision Design
-  hide: false
+  hide: true
 leadership/bridge-domains:
   title: Bridge Between Domains
-  hide: false
+  hide: true
 leadership/documentation-driven:
   title: Documentation-Driven Culture Builder
-  hide: false
+  hide: true
 leadership/empathetic-technical:
   title: Empathetic Technical Decision-Making
-  hide: false
+  hide: true
 leadership/supportive:
   title: Supportive Leadership
-  hide: false
+  hide: true
 leadership/structural:
   title: Structural Leadership
   hide: false
 
 expertise/philosophy-systems:
   title: Philosophy of Systems & Open Source Life Approach
-  hide: false
+  hide: true
 expertise/design-thinking:
   title: Design Thinking & Emotional-Technical Fusion
-  hide: false
+  hide: true
 expertise/information-structuring:
   title: Information Structuring & Expressive Thinking
-  hide: false
+  hide: true
 expertise/embedded-systems:
   title: Embedded Systems & Cross-platform Integration
-  hide: false
+  hide: true
 expertise/system-architecture:
   title: System Architecture & Tooling
-  hide: false
+  hide: true
 expertise/low-level-system:
   title: Low-level System Programming & Linux Kernel
   hide: false
 
 projects/formybaby:
   title: For My Baby - Infant Sleep Pattern Analysis and Accident Detection
-  hide: false
+  hide: true
 projects/nvme-spf-mpf:
   title: Extending NVMe Host Driver from SPF to MPF
-  hide: false
+  hide: true
 projects/iya-fall-detection:
   title: IYA - AI 기반 낙상 전 사고 감지 알고리즘 개발
-  hide: false
+  hide: true
 projects/fall-detection-porting:
   title: 딥러닝기반 노인 낙상 사고감지 모델 자사 보드 포팅
-  hide: false
+  hide: true
 projects/cookip:
   title: Cookip - Smart AI Cooking Supportor
-  hide: false
+  hide: true
 projects/cherry-utility:
   title: Cherry Utility
-  hide: false
+  hide: true
 projects/airbag-safety:
   title: 스마트 추락보호 에어백 안전 로직 고도화 및 최적화
-  hide: false
+  hide: true
 projects/scooter-validation:
   title: 실내외 전동킥보드 데이터 수집 및 기존 제품 성능 검증 시험
-  hide: false
+  hide: true
 projects/fall-detection-elderly:
   title: 노인 낙상 감지 알고리즘 및 시스템 개발
   hide: false

@@ -15,7 +15,7 @@
         {% unless group_index_hidden %}
         <div class="app-nav-group {% if page_group == group_key %}active{% endif %}">
           <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}">
-            <span class="app-nav-ico" aria-hidden="true">{{ section_data.title_icon | default: '▸' }}</span>
+            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ section_data.title_icon_codepoints | default: '25B6' }}"></span>
             <span class="app-nav-label">{{ group_title }}</span>
           </a>
           <div class="app-nav-sub">

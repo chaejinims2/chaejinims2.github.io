@@ -1,28 +1,28 @@
 # 한 파일에서 섹션 인덱스 공통 설정 관리 (사이드바 제목, 숨김, 아이콘 등)
-# section key = URL 첫 세그먼트. title_icon = 폰트로 그려지는 유니코드 문자(이모지 아님)
-# 텍스트 스타일 강제: 아이콘 뒤에 variation selector (U+FE0E) 붙이거나, base.css .app-nav-ico 의 font-variant-emoji 사용
+# section key = URL 첫 세그먼트.
+# title_icon_codepoints: 유니코드 16진수(쉼표 구분). FE0E=텍스트스타일. GitHub Pages 인코딩 이슈 회피용.
 
 documents:
   title: Documents
   hide: false
-  title_icon: "📜︎"
+  title_icon_codepoints: "1F4DC,FE0E"
 
 leadership:
   title: Leadership
   hide: false
-  title_icon: "💼︎"
+  title_icon_codepoints: "1F4BC,FE0E"
 
 expertise:
   title: Expertise
   hide: false
-  title_icon: "💡︎"
+  title_icon_codepoints: "1F4A1,FE0E"
 
 projects:
   title: Projects
   hide: false
-  title_icon: "💻︎"
+  title_icon_codepoints: "1F4BB,FE0E"
 
 workspaces:
   title: Workspaces
   hide: false
-  title_icon: "📂︎"
+  title_icon_codepoints: "1F4C2,FE0E"
