@@ -1,5 +1,0 @@
----
-title: Bash
----
-
-# Bash Snippets

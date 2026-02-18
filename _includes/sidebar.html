@@ -1,0 +1,27 @@
+<aside class="sidebar">
+  {% assign current = page.url %}
+  {% if site.data.nav and site.data.nav.groups %}
+    {% for g in site.data.nav.groups %}
+      <section class="nav-group">
+        <div class="nav-title">{{ g.title }}</div>
+        <ul class="nav-list">
+          {% for it in g.items %}
+            {% assign active = false %}
+            {% if current == it.url %}
+              {% assign active = true %}
+            {% elsif it.url != '/' and current contains it.url %}
+              {% assign active = true %}
+            {% endif %}
+            <li>
+              <a class="nav-item {% if active %}active{% endif %}" href="{{ it.url }}">{{ it.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  {% else %}
+    <div class="muted" style="padding: 8px 0;">
+      nav.yml not found. Create <code>_data/nav.yml</code> to enable sidebar.
+    </div>
+  {% endif %}
+</aside>
