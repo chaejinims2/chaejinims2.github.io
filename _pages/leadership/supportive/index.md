@@ -3,6 +3,7 @@ layout: page
 title: Supportive Leadership
 permalink: /leadership/supportive/
 nav_group: leadership
+hide: false
 ---
 
 # Supportive Leadership

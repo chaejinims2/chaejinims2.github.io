@@ -3,6 +3,7 @@ layout: page
 title: Bridge Between Domains
 permalink: /leadership/bridge-domains/
 nav_group: leadership
+hide: false
 ---
 
 # Bridge Between Domains

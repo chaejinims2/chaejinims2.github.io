@@ -3,6 +3,7 @@ layout: page
 title: Cherry Utility
 permalink: /projects/cherry-utility/
 nav_group: projects
+hide: false
 ---
 
 # Cherry Utility

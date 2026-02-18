@@ -3,6 +3,7 @@ layout: page
 title: 딥러닝기반 노인 낙상 사고감지 모델 자사 보드 포팅
 permalink: /projects/fall-detection-porting/
 nav_group: projects
+hide: false
 ---
 
 # 딥러닝기반 노인 낙상 사고감지 모델 자사 보드 포팅

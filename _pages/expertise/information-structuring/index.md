@@ -3,6 +3,7 @@ layout: page
 title: Information Structuring & Expressive Thinking
 permalink: /expertise/information-structuring/
 nav_group: expertise
+hide: false
 ---
 
 # Information Structuring & Expressive Thinking

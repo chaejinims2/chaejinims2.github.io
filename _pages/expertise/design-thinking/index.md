@@ -3,6 +3,7 @@ layout: page
 title: Design Thinking & Emotional-Technical Fusion
 permalink: /expertise/design-thinking/
 nav_group: expertise
+hide: false
 ---
 
 # Design Thinking & Emotional-Technical Fusion

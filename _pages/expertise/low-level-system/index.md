@@ -3,6 +3,7 @@ layout: page
 title: Low-level System Programming & Linux Kernel
 permalink: /expertise/low-level-system/
 nav_group: expertise
+hide: false
 ---
 
 # Low-level System Programming & Linux Kernel

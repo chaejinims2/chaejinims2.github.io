@@ -3,6 +3,7 @@ layout: page
 title: Documentation-Driven Culture Builder
 permalink: /leadership/documentation-driven/
 nav_group: leadership
+hide: false
 ---
 
 # Documentation-Driven Culture Builder
