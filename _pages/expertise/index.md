@@ -1,8 +1,4 @@
 ---
-layout: section_index
-title: Expertise
+layout: section
 permalink: /expertise/
-nav_group: expertise
 ---
-
-# Expertise

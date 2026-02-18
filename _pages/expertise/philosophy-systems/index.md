@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Philosophy of Systems & Open Source Life Approach
-permalink: /expertise/philosophy-systems/
-nav_group: expertise
-hide: false
 ---
-
-# Philosophy of Systems & Open Source Life Approach
 
 - Applies open-source principles to life: versioning, modular design, changelogs, and documentation
 - Treats relationships and projects like pull requests, merge conflicts, and forks

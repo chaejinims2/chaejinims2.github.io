@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Structural Leadership
-permalink: /leadership/structural/
-nav_group: leadership
-hide: false
 ---
-
-# Structural Leadership
 
 I lead by clarifying complexity. I break down systems into understandable modules, enabling smoother onboarding and communication within teams.
 

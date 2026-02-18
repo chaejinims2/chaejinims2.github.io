@@ -3,3 +3,22 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+<script>
+(function() {
+  var btn = document.getElementById('sidebar-toggle');
+  var body = document.body;
+  if (!btn || !body) return;
+  var key = 'sidebar-collapsed';
+  if (localStorage.getItem(key) === '1') {
+    body.classList.add('sidebar-collapsed');
+    btn.setAttribute('aria-pressed', 'true');
+  }
+  btn.addEventListener('click', function() {
+    body.classList.toggle('sidebar-collapsed');
+    var pressed = body.classList.contains('sidebar-collapsed');
+    btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    btn.setAttribute('title', pressed ? '사이드바 보기' : '사이드바 숨기기');
+    localStorage.setItem(key, pressed ? '1' : '0');
+  });
+})();
+</script>

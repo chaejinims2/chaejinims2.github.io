@@ -1,12 +1,6 @@
 ---
 layout: page
-title: IYA - AI 기반 낙상 전 사고 감지 알고리즘 개발
-permalink: /projects/iya-fall-detection/
-nav_group: projects
-hide: false
 ---
-
-# AI 기반 낙상 전 사고 감지 알고리즘 개발 - IYA
 
 기존 사고 감지 알고리즘 성능 고도화 및 최적화를 통해 센서 데이터 감지 성능 고도화
 

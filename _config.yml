@@ -24,6 +24,42 @@ collections:
     permalink: /:path/
 
 defaults:
+  # 섹션 인덱스: layout/permalink/title는 여기서 통일. 표시 제목·hide는 _data/sections.yml 에서만 관리.
+  - scope:
+      path: "documents/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /documents/
+      title: Documents
+  - scope:
+      path: "leadership/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /leadership/
+      title: Leadership
+  - scope:
+      path: "expertise/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /expertise/
+      title: Expertise
+  - scope:
+      path: "projects/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /projects/
+      title: Projects
+  - scope:
+      path: "workspaces/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /workspaces/
+      title: Workspaces
   - scope:
       path: ""
       type: "pages"

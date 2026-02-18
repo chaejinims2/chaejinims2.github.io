@@ -1,8 +1,4 @@
 ---
-layout: section_index
-title: Workspaces
+layout: section
 permalink: /workspaces/
-nav_group: workspaces
 ---
-
-# Workspaces

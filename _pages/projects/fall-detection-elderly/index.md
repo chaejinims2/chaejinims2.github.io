@@ -1,12 +1,6 @@
 ---
 layout: page
-title: 노인 낙상 감지 알고리즘 및 시스템 개발
-permalink: /projects/fall-detection-elderly/
-nav_group: projects
-hide: false
 ---
-
-# 노인 낙상 감지 알고리즘 및 시스템 개발
 
 Depth camera and motion sensor-based fall detection system for elderly care environments.
 

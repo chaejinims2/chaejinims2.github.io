@@ -1,4 +1,10 @@
 ---
 layout: default
 ---
+{% if page.layout != 'section' %}
+  {% assign path_key = page.url | replace: '/', ' ' | strip | split: ' ' | join: '/' | remove: '/index' %}
+  {% assign page_data = site.data.pages[path_key] %}
+  {% assign display_title = page_data.title | default: page.title %}
+  {% if display_title %}<h1 class="page-title">{{ display_title }}</h1>{% endif %}
+{% endif %}
 {{ content }}

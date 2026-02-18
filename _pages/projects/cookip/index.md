@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Cookip - Smart AI Cooking Supportor
-permalink: /projects/cookip/
-nav_group: projects
-hide: false
 ---
-
-# Smart AI Cooking Supportor - Cookip
 
 AI-powered kitchen assistant for guided recipe execution and cooking pattern tracking.
 

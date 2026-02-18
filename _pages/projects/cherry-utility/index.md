@@ -1,12 +1,6 @@
 ---
 layout: page
-title: Cherry Utility
-permalink: /projects/cherry-utility/
-nav_group: projects
-hide: false
 ---
-
-# Cherry Utility
 
 A personal CLI toolkit for task automation, backup scripts, and development workflows.
 
