@@ -1,4 +1,4 @@
-# WebCJIM (chaejinims2.github.io)
+# Chaejinims2@gmail.com (chaejinims2.github.io)
 
 NVMe Host Driver / Embedded Linux / Automation Tools — 개인 사이트 및 문서 허브.
 
