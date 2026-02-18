@@ -1,0 +1,46 @@
+/* 색상·길이는 theme.css 변수만 사용 (var(--xxx)) */
+a, a:hover { text-decoration: none; }
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a { color: var(--app-link); }
+
+.btn-primary {
+  color: var(--white);
+  background-color: var(--app-btn-primary-bg);
+  border-color: var(--app-btn-primary-border);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: var(--white);
+  background-color: var(--app-btn-primary-bg);
+  border-color: var(--app-btn-primary-border);
+}
+
+html {
+  font-size: var(--app-html-font-size);
+  position: relative;
+  min-height: 100%;
+}
+@media (min-width: 768px) {
+  html { font-size: var(--app-html-font-size-md); }
+}
+
+.border-top { border-top: 1px solid var(--app-border-1); }
+.border-bottom { border-bottom: 1px solid var(--app-border-1); }
+
+.box-shadow { box-shadow: var(--app-box-shadow); }
+
+button.accept-policy {
+  font-size: var(--app-accept-policy-font-size);
+  line-height: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--app-body-bg);
+}

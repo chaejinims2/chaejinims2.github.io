@@ -1,9 +1,9 @@
 ---
 layout: default
-title: WebCJIM
+title: Chaejinims2@github.io
 ---
 
-# WebCJIM
+# Chaejinims2@github.io
 
 - [Docs](/docs/)
 - [Snippets](/snippets/)
