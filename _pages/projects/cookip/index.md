@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Cookip
 ---
 
 AI-powered kitchen assistant for guided recipe execution and cooking pattern tracking.

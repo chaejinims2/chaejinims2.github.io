@@ -3,8 +3,7 @@ layout: page
 ---
 {% assign url_parts = page.url | split: "/" %}
 {% assign section_key = url_parts[1] %}
-{% assign section_data = site.data.sections[section_key] %}
-<h1 class="section-index-title">{{ section_data.title | default: section_key | capitalize }}</h1>
+<h1 class="section-index-title">{{ page.title | default: section_key | capitalize }}</h1>
 <div class="section-index-lead content-prose">
 {{ content }}
 </div>
@@ -13,12 +12,8 @@ layout: page
 {% assign group_pages = site.pages | where_exp: "item", "item.url contains page_group_base" | sort: "url" %}
 <ul class="section-index-list">
   {% for p in group_pages %}
-    {% assign p_path_key = p.url | replace: '/', ' ' | strip | split: ' ' | join: '/' | remove: '/index' %}
-    {% assign p_data = site.data.pages[p_path_key] %}
-    {% assign p_hide = p_data.hide | default: p.hide %}
-    {% assign p_title = p_data.title | default: p.title %}
-    {% if p_hide != true and p.url != page.url %}
-      <li><a href="{{ p.url }}">{{ p_title }}</a></li>
+    {% if p.hide != true and p.url != page.url %}
+      <li><a href="{{ p.url }}">{{ p.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>

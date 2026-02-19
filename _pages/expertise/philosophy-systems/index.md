@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Philosophy of Systems & Open Source Life Approach
 ---
 
 - Applies open-source principles to life: versioning, modular design, changelogs, and documentation

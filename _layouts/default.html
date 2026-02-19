@@ -1,14 +1,6 @@
 ---
 ---
-{% if page.layout == 'section' %}
-  {% assign url_parts = page.url | split: "/" %}
-  {% assign section_key = url_parts[1] %}
-  {% assign page_title = site.data.sections[section_key].title | default: page.title %}
-{% else %}
-  {% assign path_key = page.url | replace: '/', ' ' | strip | split: ' ' | join: '/' | remove: '/index' %}
-  {% assign page_data = site.data.pages[path_key] %}
-  {% assign page_title = page_data.title | default: page.title %}
-{% endif %}
+{% assign page_title = page.title %}
 
 <!doctype html>
 <html lang="{{ site.locale | replace: "_", "-" | default: "ko" }}">

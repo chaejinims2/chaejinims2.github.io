@@ -1,5 +1,6 @@
 ---
 layout: page
+title: IYA Fall Detection
 ---
 
 기존 사고 감지 알고리즘 성능 고도화 및 최적화를 통해 센서 데이터 감지 성능 고도화

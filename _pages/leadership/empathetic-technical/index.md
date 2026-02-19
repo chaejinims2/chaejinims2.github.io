@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Empathetic Technical Decision-Making
 ---
 
 I balance technical logic with emotional intelligence. I approach code reviews and architectural decisions with empathy, especially when dealing with legacy systems.
