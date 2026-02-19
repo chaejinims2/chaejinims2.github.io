@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Embedded Systems & Cross-platform Integration
 ---
 
 - Experience with STM32 (e.g., STM32L431CB) microcontrollers and sensor integration

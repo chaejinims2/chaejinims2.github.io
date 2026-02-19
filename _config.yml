@@ -24,7 +24,7 @@ collections:
     permalink: /:path/
 
 defaults:
-  # 섹션 인덱스: layout/permalink/title는 여기서 통일. 표시 제목·hide는 _data/sections.yml 에서만 관리.
+  # 섹션 인덱스: layout/permalink/title 등은 각 index.md front matter에서 관리.
   - scope:
       path: "documents/index.md"
       type: "pages"

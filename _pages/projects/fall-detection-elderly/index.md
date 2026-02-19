@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Fall Detection (Elderly)
 ---
 
 Depth camera and motion sensor-based fall detection system for elderly care environments.

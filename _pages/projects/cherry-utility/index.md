@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Cherry Utility
 ---
 
 A personal CLI toolkit for task automation, backup scripts, and development workflows.

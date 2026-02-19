@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Documentation-Driven Culture Builder
 ---
 
 I believe what's not documented doesn't scale. I design workflows, logs, and debug systems that are traceable, reusable, and self-explanatory.

@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Design Thinking & Emotional-Technical Fusion
 ---
 
 - Developed Cherry-plat, a visual art + tech design language rooted in pixel geometry and space design

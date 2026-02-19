@@ -1,5 +1,6 @@
 ---
 layout: page
+title: System Architecture
 ---
 
 - Designed scalable control structures: PF-slot-thread hierarchy, namespace mapping, and debug interfaces
