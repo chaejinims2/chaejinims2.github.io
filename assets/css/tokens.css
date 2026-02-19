@@ -7,6 +7,7 @@
   --app-status-h: 2.125rem;
   --app-top-h: 4rem; /*2.875rem;*/
   --app-content-padding: clamp(0.75rem, 1.5vw, 1rem);
+  --content-max-w: 80rem;
   --app-content-available-h: calc(100vh - var(--app-top-h) - var(--app-status-h) - (2 * var(--app-content-padding)));
 
   /* ---- 1.2 Density / Spacing Scale (중복 제거의 핵심) ---- */
@@ -35,13 +36,8 @@
   --fw-800: 800;
   --fw-900: 900;
 
-  /* ---- 1.5 Constants ---- */
-  --white: #fff;
-
   /* transparent 래핑 (사용처별) */
-  --panel-block-bg: transparent;
   --app-topmenu-item-border: transparent;
-  --app-topmenu-sub-item-border: transparent;
   --app-nav-item-bg: transparent;
   --app-nav-item-border: transparent;
   --app-nav-sub-item-border: transparent;
@@ -49,8 +45,6 @@
   /* ---- 1.6 Site ---- */
   --app-html-font-size: 14px;
   --app-html-font-size-md: 16px;
-  --app-html-breakpoint-md: 768px;
-  --app-accept-policy-font-size: 1rem;
 
   /* =========================================================
    * 2) Semantic (base → 의미/역할) — 테마 무관
@@ -72,23 +66,7 @@
   /* accent */
   --tone-accent: var(--accent);
   --tone-accent-bg: var(--accent-bg);
-  --tone-accent-border: var(--accent-border);
 
-  /* status */
-  --tone-ready: var(--st-ready);
-  --tone-running: var(--st-running);
-  --tone-idle: var(--st-idle);
-  --tone-disc: var(--st-disc);
-  --tone-empty: var(--st-empty);
-  --tone-stale: var(--st-stale);
-  --tone-manual: var(--st-manual);
-
-  /* borders & shadows */
-  --border-weak: var(--overlay-w-0f);
-  --border-mid: var(--overlay-w-0d);
-  --border-strong: var(--border);
-
-  --shadow-strong: var(--shadow);
   --shadow-subtle: var(--shadow-subtle);
 
   /* app semantic aliases (기존 이름 호환 유지) */
@@ -99,23 +77,10 @@
   --app-text: var(--tone-text-75);
   --app-muted: var(--tone-muted);
   --app-accent: var(--tone-accent);
-  --app-accent-2: var(--tone-running);
-  --app-danger: var(--tone-disc);
-  --app-warn: var(--tone-idle);
-
-  --bg-chamber: var(--body-bg);
-  --app-body-bg: var(--body-bg);
 
   /* nav active */
   --app-nav-item-active-bg: var(--accent-bg-12);
   --app-nav-item-active-text: var(--tone-text-inverse);
-
-  /* “테마가 필요 시 바꿀 수 있는” semantic override 지점 */
-  --tone-panel-title: var(--tone-text);
-  --tone_panel_block_title: var(--tone-text); /* (기존 panel-block-title-color에서 참조) */
-
-  /* box-shadow */
-  --app-box-shadow: 0 0.25rem 0.75rem var(--shadow-subtle);
 
   /* =========================================================
    * 3) Components (길이 + 컴포넌트 매핑) — 테마 무관
@@ -123,47 +88,7 @@
    *  - 색은 Semantic을 참조
    * ========================================================= */
 
-  /* ---------- 3.1 Panel ---------- */
-  --panel-border-radius: var(--radius-1);
-  --panel-padding: clamp(0.5rem, 1vw, 0.625rem);
-  --panel-title-font-weight: var(--fw-700);
-  --panel-title-margin-bottom: var(--space-3);
-  --panel-header-gap: var(--space-5);
-  --panel-header-right-gap: var(--space-3);
-
-  --panel-title-color: var(--tone-panel-title);
-  --panel-block-title-color: var(--tone_panel_block_title);
-
-  --log-box-font-size: var(--fs-2);
-  --log-box-border-radius: var(--radius-1);
-  --log-box-padding: var(--space-3);
-  --log-box-height: clamp(12rem, 25vh, 24rem);
-
-  --sel-table-height: clamp(12rem, 25vh, 24rem);
-  --sel-table-cell-padding: 0.35rem var(--space-3);
-  --sel-table-th-font-weight: var(--fw-600);
-
-  --panel-btn-border-radius: var(--radius-1);
-  --panel-btn-padding: var(--space-1) var(--space-3);
-  --panel-btn-font-weight: var(--fw-500);
-  --panel-btn-font-size: 0.8rem;
-  --panel-btn-min-width: 6.25rem;
-  --panel-btn-margin-right: var(--space-3);
-
-  --panel-input-padding: 0.4rem var(--space-3);
-  --panel-input-min-width: 12rem;
-  --panel-input-border-radius: var(--radius-1);
-
-  --panel-block-gap: var(--space-2);
-  --panel-block-padding: var(--space-3);
-
-  --panel-block-title-font-size: var(--fs-3);
-  --panel-block-title-font-weight: var(--fw-600);
-  --panel-block-title-margin-bottom: var(--space-0);
-  --panel-block-title-mb1-margin-bottom: 0.35rem;
-  --panel-block-title-margin-top: var(--space-2);
-
-  /* ---------- 3.2 Topbar ---------- */
+  /* ---------- 3.1 Topbar ---------- */
   --app-topbar-padding: 0 clamp(0.5rem, 1vw, 0.75rem);
   --app-top-left-gap: 0.625rem;
 
@@ -178,14 +103,10 @@
   --app-title-text-font-weight: var(--fw-900);
   --app-title-text-letter-spacing: 0.4px;
 
-  --app-title-page-font-weight: var(--fw-600);
-  --app-title-page-max-width: 42vw;
-
   --app-topmenu-gap: 0.625rem;
   --app-topmenu-item-padding: var(--space-2) var(--space-4);
   --app-topmenu-item-border-radius: var(--radius-3);
 
-  --app-topmenu-group-gap: var(--space-3);
   --app-topmenu-sub-gap: var(--space-1);
   --app-topmenu-sub-padding-left: var(--space-2);
   --app-topmenu-sub-item-padding: var(--space-1) var(--space-3);
@@ -216,94 +137,9 @@
   --app-nav-sub-item-border-radius: var(--radius-2);
   --app-nav-sub-item-active-font-weight: var(--fw-600);
 
-  --app-sidebar-footer-padding-top: 10px;
-  --app-sidebar-footer-ico-width: 1.25rem;
-
   --app-statusbar-gap: clamp(0.75rem, 1.5vw, 1.125rem);
   --app-statusbar-padding: 0 clamp(0.5rem, 1vw, 0.875rem);
   --app-statusbar-font-size: var(--fs-1);
-  --app-status-item-gap: var(--space-3);
-  --app-status-value-font-weight: var(--fw-700);
-
-  /* ---------- 3.4 Board (east) : 길이 스케일 참조로 치환 ---------- */
-  --east-gap-xs: var(--space-1);
-  --east-gap-sm: var(--space-3);
-  --east-gap-md: var(--space-2);
-  --east-radius-sm: var(--radius-1);
-
-  --chamber-tabs-gap: var(--space-1);
-  --chamber-tabs-btn-padding: 0.4rem 0.8rem;
-  --chamber-tabs-btn-min-width: 5.5rem;
-  --chamber-tabs-btn-radius: var(--radius-1) var(--radius-1) 0 0;
-  --chamber-tabs-btn-font-weight: var(--fw-700);
-
-  --board-grid-wrap-padding: var(--space-3);
-  --board-grid-wrap-radius: var(--radius-1) 0 var(--radius-1) var(--radius-1);
-  --board-grid-gap: var(--space-1);
-
-  --east-board-no-min-width: clamp(2rem, 2.5rem, 2.625rem);
-  --east-board-no-font-size: clamp(0.9rem, 1.1vw, 1.125rem);
-  --east-board-no-padding: var(--space-1) var(--space-2);
-  --east-board-no-font-weight: var(--fw-700);
-
-  --east-ports-gap: var(--space-1);
-  --east-port-line-gap: var(--space-3);
-  --east-port-line-font-size: var(--fs-1);
-  --east-port-line-padding: var(--space-1) var(--space-2);
-
-  --east-port-line-single-font-size: var(--fs-3);
-  --east-port-line-single-padding: 0.625rem var(--space-3);
-
-  --east-left-gap: var(--space-2);
-  --east-dot-size: 0.5rem;
-  --east-dot-status-size: 14px;
-
-  --east-drag-selection-border-w: 2px;
-  --east-drag-selection-z: 9999;
-
-  --pc-row-gap: 10px;
-  --pc-row-padding: 6px 0;
-  --pc-no-width: 40px;
-  --pc-no-font-weight: var(--fw-600);
-
-  --meta-font-size: 0.9rem;
-  --meta-width: 200px;
-  --msg-font-size: var(--fs-4);
-
-  /* ---------- 3.5 Board 색상 래핑 (semantic만 참조) ---------- */
-  --east-port-line-bg: var(--overlay-b-2e);
-  --east-port-line-border: var(--border-mid);
-  --east-port-line-color: var(--tone-muted);
-  --east-port-line-sel-border: var(--tone-accent);
-
-  --chamber-tabs-text: var(--tone-text);
-  --chamber-tabs-border: var(--surface-2);
-  --chamber-tabs-bg: var(--surface-2);
-  --chamber-tabs-bg-hover: var(--border-mid);
-  --chamber-tabs-bg-active-hover: var(--tone-accent-bg);
-  --chamber-tabs-container-bg: transparent;
-  --chamber-tabs-btn-bg: transparent;
-
-  --board-grid-wrap-bg: var(--surface-2);
-
-  --east-tile-bg: transparent;
-  --east-tile-border: var(--border-weak);
-  --east-tile-selected-border: var(--tone-accent-border);
-
-  --east-dot-default-bg: var(--tone-muted);
-  --east-hash-color: var(--tone-dim);
-  --east-board-no-empty-color: var(--tone-dim);
-
-  --east-drag-selection-border: var(--tone-accent);
-  --east-drag-selection-bg: var(--accent-bg-12);
-
-  --east-st-ready: var(--tone-ready);
-  --east-st-running: var(--tone-running);
-  --east-st-idle: var(--tone-idle);
-  --east-st-disc: var(--tone-disc);
-  --east-st-empty: var(--tone-empty);
-  --east-st-stale: var(--tone-stale);
-  --east-st-manual: var(--tone-manual);
 }
 
 /* =========================================================
@@ -320,9 +156,6 @@
   --bg-2: #14243A;
   --body-bg: #1f2937;
 
-  --tile: #1B2A41;
-  --tile-2: #162338;
-
   --border: #FFFFFF14;
   --shadow: 0 6px 18px #00000059;
 
@@ -337,45 +170,19 @@
   --accent: #60A5FA;
   --accent-bg: #60A5FA24;
 
-  --st-ready: #9CA3AF;
-  --st-running: #22C55E;
-  --st-idle: #F59E0B;
-  --st-disc: #EF4444;
-  --st-empty: #E5E7EB1F;
-  --st-stale: #fbbf24;
-  --st-manual: #fb923c;
-
   --overlay-w-08: #FFFFFF08;
   --overlay-w-0a: #FFFFFF0A;
   --overlay-w-0d: #FFFFFF0D;
   --overlay-w-0f: #FFFFFF0F;
 
-  --overlay-b-0d: #0000000D;
-  --overlay-b-2e: #0000002E;
-  --overlay-b-47: #00000047;
-  --overlay-b-59: #00000059;
-
-  --accent-border: #60A5FA59;
   --accent-bg-12: #60A5FA1F;
-  --accent-bg-16: #60A5FA29;
-  --accent-glow: #60A5FA2E;
-  --accent-ring: #60A5FA38;
 
   /* Dark 전용 */
   --app-topbar-bg: #111827E6;
   --app-statusbar-bg: #111827CC;
 
-  --app-btn-primary-bg: #1b6ec2;
-  --app-btn-primary-border: #1861ac;
-
   --app-border: #FFFFFF14;
-  --app-border-1: #e5e5e5;
-  --app-border-2: #60A5FA47;
-
   --shadow-subtle: #0000000D;
-  --app-link: #0366d6;
-
-  --tone_panel_block_title: var(--text);
 }
 
 /* ---------- Light ---------- */
@@ -384,9 +191,6 @@
   --bg-1: #BEBEBE;
   --bg-2: #A6A6A6;
   --body-bg: #CFCFCF;
-
-  --tile: #C6C6C6;
-  --tile-2: #B3B3B3;
 
   --border: #6F6F6F;
   --shadow: 0 2px 6px rgba(0,0,0,0.10);
@@ -402,44 +206,18 @@
   --accent: #2563EB;
   --accent-bg: #2563EB1A;
 
-  --st-ready: #6B7280;
-  --st-running: #16A34A;
-  --st-idle: #D97706;
-  --st-disc: #DC2626;
-  --st-empty: #0000001A;
-  --st-stale: #CA8A04;
-  --st-manual: #EA580C;
-
   --overlay-w-08: #00000008;
   --overlay-w-0a: #0000000A;
   --overlay-w-0d: #00000012;
   --overlay-w-0f: #00000018;
 
-  --overlay-b-0d: #0000000D;
-  --overlay-b-2e: #0000002E;
-  --overlay-b-47: #00000047;
-  --overlay-b-59: #00000059;
-
-  --accent-border: #2563EB66;
   --accent-bg-12: #2563EB1F;
-  --accent-bg-16: #2563EB29;
-  --accent-glow: #2563EB26;
-  --accent-ring: #2563EB33;
 
   --app-topbar-bg: #C9C9C9;
   --app-statusbar-bg: #C0C0C0;
 
-  --app-btn-primary-bg: #2563EB;
-  --app-btn-primary-border: #1D4ED8;
-
   --app-border: #7A7A7A;
-  --app-border-1: #8A8A8A;
-  --app-border-2: #1D4ED84D;
-
   --shadow-subtle: rgba(0,0,0,0.08);
-  --app-link: #1D4ED8;
-
-  --tone_panel_block_title: #D97706;
   --app-nav-item-active-text: #000000;
 }
 
@@ -449,8 +227,6 @@
   --bg-1: #f1f5f9;
   --bg-2: #e2e8f0;
   --body-bg: #e2e8f0;
-  --tile: #ffffff;
-  --tile-2: #f8fafc;
   --border: #cbd5e1;
   --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
   --text: #0f172a;
@@ -461,36 +237,15 @@
   --dim: #94a3b8;
   --accent: #6366f1;
   --accent-bg: #6366f118;
-  --st-ready: #64748b;
-  --st-running: #10b981;
-  --st-idle: #f59e0b;
-  --st-disc: #ef4444;
-  --st-empty: #0f172a14;
-  --st-stale: #eab308;
-  --st-manual: #f97316;
   --overlay-w-08: #00000008;
   --overlay-w-0a: #0000000a;
   --overlay-w-0d: #00000012;
   --overlay-w-0f: #00000018;
-  --overlay-b-0d: #0000000d;
-  --overlay-b-2e: #0000002e;
-  --overlay-b-47: #00000047;
-  --overlay-b-59: #00000059;
-  --accent-border: #6366f166;
   --accent-bg-12: #6366f11f;
-  --accent-bg-16: #6366f129;
-  --accent-glow: #6366f126;
-  --accent-ring: #6366f133;
   --app-topbar-bg: #f1f5f9;
   --app-statusbar-bg: #e2e8f0;
-  --app-btn-primary-bg: #6366f1;
-  --app-btn-primary-border: #4f46e5;
   --app-border: #cbd5e1;
-  --app-border-1: #94a3b8;
-  --app-border-2: #6366f147;
   --shadow-subtle: rgba(15, 23, 42, 0.06);
-  --app-link: #4f46e5;
-  --tone_panel_block_title: #4f46e5;
   --app-nav-item-active-text: #0f172a;
 }
 
@@ -500,8 +255,6 @@
   --bg-1: #111d33;
   --bg-2: #162540;
   --body-bg: #0c1426;
-  --tile: #162540;
-  --tile-2: #1a2d4a;
   --border: #ffffff18;
   --shadow: 0 6px 18px #00000050;
   --text: #f0f4f8;
@@ -512,41 +265,14 @@
   --dim: #64748b;
   --accent: #00a1e4;
   --accent-bg: #00a1e428;
-  --st-ready: #94a3b8;
-  --st-running: #22c55e;
-  --st-idle: #f59e0b;
-  --st-disc: #ef4444;
-  --st-empty: #ffffff12;
-  --st-stale: #eab308;
-  --st-manual: #fb923c;
   --overlay-w-08: #ffffff08;
   --overlay-w-0a: #ffffff0a;
   --overlay-w-0d: #ffffff0d;
   --overlay-w-0f: #ffffff12;
-  --overlay-b-0d: #0000000d;
-  --overlay-b-2e: #0000002e;
-  --overlay-b-47: #00000047;
-  --overlay-b-59: #00000059;
-  --accent-border: #00a1e455;
   --accent-bg-12: #00a1e41f;
-  --accent-bg-16: #00a1e429;
-  --accent-glow: #00a1e42a;
-  --accent-ring: #00a1e338;
   --app-topbar-bg: #0c1426e6;
   --app-statusbar-bg: #0c1426cc;
-  --app-btn-primary-bg: #00a1e4;
-  --app-btn-primary-border: #0090ce;
   --app-border: #ffffff18;
-  --app-border-1: #334155;
-  --app-border-2: #00a1e440;
   --shadow-subtle: #00000014;
-  --app-link: #38bdf8;
-  --tone_panel_block_title: var(--text);
   --app-nav-item-active-text: #ffffff;
-  --connect-banner-bg: #0e7490;
-  --connect-banner-text: #ffffff;
-  --connect-card-bg: var(--bg-2);
-  --connect-card-border: var(--border);
-  --connect-badge-bg: #334155;
-  --connect-badge-text: var(--text);
 }
