@@ -2,13 +2,20 @@
 layout: page
 ---
 {% assign url_parts = page.url | split: "/" %}
-{% assign section_key = url_parts[1] %}
+{% if url_parts[1] == "public" %}
+  {% assign section_key = url_parts[2] %}
+  {% assign page_group_base = "/public/" | append: section_key | append: "/" %}
+{% elsif url_parts[1] == "protected" %}
+  {% assign section_key = url_parts[2] %}
+  {% assign page_group_base = "/protected/" | append: section_key | append: "/" %}
+{% else %}
+  {% assign section_key = url_parts[1] %}
+  {% assign page_group_base = "/" | append: section_key | append: "/" %}
+{% endif %}
 <h1 class="section-index-title">{{ page.title | default: section_key | capitalize }}</h1>
 <div class="section-index-lead content-prose">
 {{ content }}
 </div>
-
-{% assign page_group_base = "/" | append: section_key | append: "/" %}
 {% assign group_pages = site.pages | where_exp: "item", "item.url contains page_group_base" | sort: "url" %}
 <ul class="section-index-list">
   {% for p in group_pages %}
