@@ -24,42 +24,40 @@ collections:
     permalink: /:path/
 
 defaults:
-  # 섹션 인덱스: layout/permalink/title 등은 각 index.md front matter에서 관리.
+  # public: 사이드바에 노출. protected: 사이드바 미노출, 원하는 곳에 직접 링크.
   - scope:
-      path: "documents/index.md"
+      path: "public/about/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /documents/
-      title: Documents
+      permalink: /public/about/
+      title: About
   - scope:
-      path: "leadership/index.md"
+      path: "public/cases/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /leadership/
-      title: Leadership
+      permalink: /public/cases/
+      title: Cases
   - scope:
-      path: "expertise/index.md"
+      path: "public/techs/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /expertise/
-      title: Expertise
+      permalink: /public/techs/
+      title: Techs
   - scope:
-      path: "projects/index.md"
+      path: "public/op-soures/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /projects/
-      title: Projects
+      permalink: /public/op-soures/
+      title: Opensource Projects
   - scope:
-      path: "workspaces/index.md"
+      path: "protected"
       type: "pages"
     values:
-      layout: section
-      permalink: /workspaces/
-      title: Workspaces
+      layout: "page"
   - scope:
       path: ""
       type: "pages"

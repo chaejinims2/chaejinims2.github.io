@@ -222,6 +222,11 @@ body.sidebar-collapsed .app-sidebar {
 
 .app-nav-label { font-weight: var(--app-nav-label-font-weight); }
 
+/* 상단바: 아이콘만 표시(라벨 숨김) */
+.app-topmenu .app-topmenu-item .app-topmenu-label { display: none; }
+.app-topmenu .app-topmenu-item { padding: var(--app-topmenu-item-padding); display: inline-flex; align-items: center; justify-content: center; }
+.app-topmenu .app-nav-ico { font-size: 1.1rem; }
+
 .app-nav-sub {
   display: flex;
   flex-direction: column;
@@ -293,3 +298,20 @@ body.sidebar-collapsed .app-sidebar {
 .app-content ul, .app-content ol { margin: 0 0 12px; padding-left: 1.5em; }
 .app-content li { margin-bottom: 4px; }
 .app-content strong { font-weight: 600; color: var(--app-text); }
+
+/* ---- Home page (index.md only) ---- */
+.home-page { max-width: 52rem; }
+.home-page .home-lead {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--app-muted);
+  margin: 0 0 1.5rem;
+}
+.home-page h2 {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--app-border);
+}
+.home-page h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.home-page h1 { margin-bottom: 0.5rem; }
+.home-page h1 + p { margin-top: 0; }

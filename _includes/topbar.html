@@ -13,18 +13,28 @@
     <div class="collapse navbar-collapse" style="flex: 1;">
       <nav class="app-topmenu">
         {% assign url_parts = page.url | split: "/" %}
-        {% assign page_group = url_parts[1] %}
-        {% assign group_order = "documents,leadership,expertise,projects,workspaces" | split: "," %}
-        {% for group_key in group_order %}
-          {% assign group_base = "/" | append: group_key | append: "/" %}
-          {% assign group_pages = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
-          {% if group_pages.size > 0 %}
-            {% assign section_page = site.pages | where_exp: "item", "item.url == group_base" | first %}
-            {% assign group_title = section_page.title | default: group_key | capitalize %}
-            {% unless section_page.hide %}
-            <a class="app-topmenu-item {% if page_group == group_key %}active{% endif %}" href="{{ group_base }}">{{ group_title }}</a>
-            {% endunless %}
-          {% endif %}
+        {% if url_parts[1] == "public" %}
+          {% assign page_group = url_parts[2] %}
+        {% elsif url_parts[1] == "protected" %}
+          {% assign page_group = url_parts[2] %}
+        {% else %}
+          {% assign page_group = url_parts[1] %}
+        {% endif %}
+        {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.url contains '/protected/'" | sort: "url" %}
+        {% for section_page in section_pages %}
+          {% assign group_base = section_page.url %}
+          {% assign segs = section_page.url | split: "/" %}
+          {% assign group_key = segs[2] %}
+          {% comment %} protected URL: /protected/XXX/ → group_key = XXX {% endcomment %}
+          {% assign group_title = section_page.title | default: group_key | capitalize %}
+          {% unless section_page.hide %}
+            {% assign icon_cp = section_page.icon_codepoints | default: '25B6' | strip %}
+            {% unless icon_cp contains ',FE0E' %}{% assign icon_cp = icon_cp | append: ',FE0E' %}{% endunless %}
+          <a class="app-topmenu-item {% if page_group == group_key %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}" aria-label="{{ group_title }}">
+            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ icon_cp }}"></span>
+            <span class="app-topmenu-label">{{ group_title }}</span>
+          </a>
+          {% endunless %}
         {% endfor %}
       </nav>
     </div>
