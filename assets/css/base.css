@@ -1,26 +1,6 @@
-/* 색상·길이는 theme.css 변수만 사용 (var(--xxx)) */
-a, a:hover { text-decoration: none; }
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-a { color: var(--app-link); }
-
-.btn-primary {
-  color: var(--white);
-  background-color: var(--app-btn-primary-bg);
-  border-color: var(--app-btn-primary-border);
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: var(--white);
-  background-color: var(--app-btn-primary-bg);
-  border-color: var(--app-btn-primary-border);
-}
-
+/* 색상·길이는 tokens.css 변수만 사용 (var(--xxx)) */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 html {
   font-size: var(--app-html-font-size);
   position: relative;
@@ -30,23 +10,6 @@ html {
   html { font-size: var(--app-html-font-size-md); }
 }
 
-.border-top { border-top: 1px solid var(--app-border-1); }
-.border-bottom { border-bottom: 1px solid var(--app-border-1); }
-
-.box-shadow { box-shadow: var(--app-box-shadow); }
-
-button.accept-policy {
-  font-size: var(--app-accept-policy-font-size);
-  line-height: inherit;
-}
-
-body {
-  margin: 0;
-  background: var(--app-body-bg);
-}
-
-* { box-sizing: border-box; }
-html, body { height: 100%; }
 body {
   margin: 0;
   background: var(--app-bg);
@@ -68,7 +31,7 @@ a:hover { color: var(--app-accent); text-decoration: underline; }
   overflow: hidden;
 }
 
-.title {
+.app-title {
   display: inline-flex;
   align-items: center;
   gap: var(--app-title-gap);
@@ -76,27 +39,19 @@ a:hover { color: var(--app-accent); text-decoration: underline; }
   overflow: hidden;
   max-width: 100%;
 }
-.logo {
-  height: var(--app-logo-height);
-  max-height: var(--app-logo-height);
+.app-title-logo {
+  height: var(--app-title-logo-height);
+  max-height: var(--app-title-logo-height);
   width: auto;
-  max-width: var(--app-logo-max-width);
+  max-width: var(--app-title-logo-max-width);
   display: inline-block;
   flex: 0 0 auto;
   object-fit: contain;
   vertical-align: middle;
 }
-.title-text {
+.app-title-text {
   font-weight: var(--app-title-text-font-weight);
   letter-spacing: var(--app-title-text-letter-spacing);
-}
-.title-page {
-  color: var(--app-text);
-  font-weight: var(--app-title-page-font-weight);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: var(--app-title-page-max-width);
 }
 
 /* Topbar (app-topbar 스타일) */
@@ -116,12 +71,19 @@ a:hover { color: var(--app-accent); text-decoration: underline; }
   top: 0;
   z-index: 50;
 }
+.app-topmenu {
+  display: flex;
+  align-items: center;
+  gap: var(--app-topmenu-gap);
+  min-width: 0;
+  overflow-x: auto;
+}
 .app-topmenu-item {
   color: var(--text-85);
   padding: var(--app-topmenu-item-padding);
   border-radius: var(--app-topmenu-item-border-radius);
   border: 1px solid var(--app-topmenu-item-border);
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 .app-topmenu-item:hover {
   border-color: var(--app-border);
@@ -130,22 +92,6 @@ a:hover { color: var(--app-accent); text-decoration: underline; }
 }
 .app-topmenu-item.active {
   color: var(--app-text);
-}
-.app-brand {
-  display: flex;
-  align-items: center;
-  gap: var(--app-brand-gap);
-  padding: var(--app-brand-padding);
-  font-weight: var(--app-brand-text-font-weight);
-  letter-spacing: var(--app-brand-text-letter-spacing);
-  color: var(--app-text);
-  text-decoration: none;
-}
-.app-brand:hover { color: var(--app-text); text-decoration: none; }
-.app-topmenu {
-  display: flex;
-  align-items: center;
-  gap: var(--app-topmenu-gap);
 }
 .app-topmenu .app-topmenu-item {
   margin-left: var(--app-top-left-gap);
@@ -310,21 +256,6 @@ body.sidebar-collapsed .app-sidebar {
   font-weight: var(--app-nav-sub-item-active-font-weight);
 }
 
-.app-sidebar-spacer { flex: 1; }
-
-.app-sidebar-footer {
-  border-top: 1px solid var(--app-border);
-  padding-top: var(--app-sidebar-footer-padding-top);
-}
-.app-sidebar-footer .app-nav-label {
-  color: var(--app-border);
-}
-.app-sidebar-footer .app-nav-ico {
-  width: var(--app-sidebar-footer-ico-width);
-  text-align: center;
-  color: var(--app-border);
-}
-
 .app-content {
   padding: var(--app-content-padding);
   overflow: auto;
@@ -333,10 +264,6 @@ body.sidebar-collapsed .app-sidebar {
   --content-available-h: var(--app-content-available-h);
 }
 .app-content-inner { max-width: var(--content-max-w); }
-
-.page-header { margin-bottom: 24px; }
-.page-header h1 { font-size: 1.75rem; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.02em; }
-.page-header .muted { font-size: 0.95rem; margin: 0; }
 
 .muted { color: var(--app-muted); }
 
@@ -366,15 +293,3 @@ body.sidebar-collapsed .app-sidebar {
 .app-content ul, .app-content ol { margin: 0 0 12px; padding-left: 1.5em; }
 .app-content li { margin-bottom: 4px; }
 .app-content strong { font-weight: 600; color: var(--app-text); }
-
-/* ---- Home: focus / intro blocks (app-shell 변수명) ---- */
-.block {
-  background: var(--app-panel);
-  border: 1px solid var(--app-border);
-  border-radius: var(--panel-border-radius);
-  padding: var(--panel-block-padding);
-  margin-bottom: var(--panel-block-gap);
-}
-.block-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--app-muted); margin: 0 0 8px; }
-.intro { font-size: 0.95rem; line-height: 1.7; color: var(--app-muted); margin-bottom: 20px; }
-.intro strong { color: var(--app-text); }

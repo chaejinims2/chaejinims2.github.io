@@ -2,7 +2,7 @@
 
 ## 기존 (Jekyll 사이트용)
 
-- `css/tokens.css`, `css/base.css` — 메인 스타일 (레이아웃에서 로드)
+- `css/tokens.css` — 디자인 토큰 + 테마(dark/light/modern/connect), `css/base.css` — 메인 스타일 (레이아웃에서 로드)
 - `js/` — vendor, plugins, main, lunr 등
 
 ## WebEAST wwwroot 복사분 (구조 개선)
