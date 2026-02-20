@@ -33,5 +33,15 @@
     btn.setAttribute('title', pressed ? '사이드바 보기' : '사이드바 숨기기');
     localStorage.setItem(key, pressed ? '1' : '0');
   });
+
+  document.addEventListener('click', function(e) {
+    if (!window.matchMedia('(max-width: 767px)').matches) return;
+    if (body.classList.contains('sidebar-collapsed')) return;
+    if (e.target.closest('.app-sidebar') || e.target.closest('#sidebar-toggle')) return;
+    body.classList.add('sidebar-collapsed');
+    btn.setAttribute('aria-pressed', 'true');
+    btn.setAttribute('title', '사이드바 보기');
+    localStorage.setItem(key, '1');
+  });
 })();
 </script>
