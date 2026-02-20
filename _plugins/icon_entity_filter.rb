@@ -1,11 +1,17 @@
 # frozen_string_literal: true
-# 빌드 시 hex 코드포인트 → HTML entity 로 변환해 첫 페인트부터 아이콘 표시 (깜빡임 방지)
+# icon_codepoints: hex("1F4BB") 또는 직접 문자("🖳") 둘 다 지원
 module Jekyll
   module IconEntityFilter
-    def icon_entity(hex_str)
-      return "" if hex_str.nil? || hex_str.to_s.strip.empty?
-      parts = hex_str.to_s.split(",").map { |h| "&#x#{h.strip};" }
-      # HTML로 출력되도록 SafeString (이스케이프 방지)
+    HEX_LIKE = /\A[\dA-Fa-f,\s]+\z/.freeze
+
+    def icon_entity(val)
+      return "" if val.nil?
+      s = val.to_s.strip
+      return "" if s.empty?
+      # hex가 아니면 직접 문자: 뒤에 U+FE0E(텍스트 스타일) 붙여 Safari 포함 단색 표시
+      return Jekyll::Utils::SafeString.new(s + "\uFE0E") unless s.match?(HEX_LIKE)
+      parts = s.split(",").map { |h| "&#x#{h.strip};" }
+      parts << "&#xFE0E;" unless s.include?("FE0E")
       Jekyll::Utils::SafeString.new(parts.join(""))
     end
   end

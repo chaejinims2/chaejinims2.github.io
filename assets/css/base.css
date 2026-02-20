@@ -288,11 +288,11 @@ body.sidebar-collapsed .app-sidebar {
   text-align: center;
   color: currentColor;
   opacity: 0.85;
-  /* 텍스트(단색) 스타일: U+FE0E in YAML + 아래 속성. Safari는 아직 font-variant-emoji 미지원 */
+  /* OS 컬러 이모지 대신 단색(텍스트) 스타일 사용 */
   font-variant-emoji: text;
   -webkit-font-variant-emoji: text;
-  /* 기호 폰트 우선 시 일부 환경에서 단색으로 표시 */
-  font-family: "Segoe UI Symbol", "Apple Symbols", "Symbola", var(--app-font-sans, sans-serif);
+  /* 고딕 우선, 이모지/기호는 단색 폰트로 폴백 */
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI Symbol", "Apple Symbols", var(--app-font-sans, sans-serif);
 }
 
 .app-nav-label { font-weight: var(--app-nav-label-font-weight); }
