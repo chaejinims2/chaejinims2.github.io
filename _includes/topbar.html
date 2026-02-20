@@ -2,7 +2,7 @@
   <div class="app-top-left">
 
     <button type="button" class="app-sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
-      <span class="app-nav-ico" aria-hidden="true">{% include icon/bars-3.html style="solid" %}</span>
+      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/bars-3-solid.svg');" aria-hidden="true"></span>
     </button>
     <a class="app-title" href="/">
       <!-- <img class="app-title-logo" src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }}" /> -->
@@ -29,9 +29,8 @@
           {% assign group_title = section_page.title | default: group_key | capitalize %}
           {% unless section_page.hide %}
           {% assign nav_icon_name = section_page.icon | default: "book" %}
-          {% assign nav_icon_path = "icon/" | append: nav_icon_name | append: ".html" %}
           <a class="app-topmenu-item {% if page_group == group_key %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}" aria-label="{{ group_title }}">
-            <span class="app-nav-ico" aria-hidden="true">{% include {{ nav_icon_path }} style="solid" %}</span>
+            <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/{{ nav_icon_name }}-solid.svg');" aria-hidden="true"></span>
             <span class="app-topmenu-label">{{ group_title }}</span>
           </a>
           {% endunless %}

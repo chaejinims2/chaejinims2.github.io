@@ -3,6 +3,9 @@ description: "NVMe Host Driver / Embedded Linux / Automation Tools"
 baseurl: ""
 url: "https://chaejinims2.github.io"
 
+# favicon 색상 (head에서 data URI로 사용)
+favicon_color: "#6366f1"
+
 # No theme: app-shell only (tokens.css + base.css)
 theme: null
 
