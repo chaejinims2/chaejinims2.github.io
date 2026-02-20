@@ -1,12 +1,13 @@
 ---
 layout: page
 ---
-{% assign url_parts = page.url | split: "/" %}
-{% assign section_key = url_parts[2] %}
-{% assign page_group_base = "/" | append: section_key | append: "/" %}
-<h1 class="section-index-title">{{ page.title | default: section_key | capitalize }}</h1>
+{% include nav_path_utils.html %}
+{% assign section_base_alt = "/" | append: section_key | append: "/" %}
+{% assign group_pages_a = site.pages | where_exp: "item", "item.url contains page_group_base" | sort: "url" %}
+{% assign group_pages_b = site.pages | where_exp: "item", "item.url contains section_base_alt" | sort: "url" %}
+{% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
 
-{% assign group_pages = site.pages | where_exp: "item", "item.url contains page_group_base" | sort: "url" %}
+<h1 class="section-index-title">{{ page.title | default: section_key | capitalize }}</h1>
 <ul class="section-index-list">
   {% for p in group_pages %}
     {% if p.hide != true and p.url != page.url %}

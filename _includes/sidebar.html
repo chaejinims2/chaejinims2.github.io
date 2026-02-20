@@ -1,14 +1,11 @@
 <aside class="app-sidebar">
   <nav class="app-nav">
     {% assign current = page.url %}
-    {% assign url_parts = page.url | split: "/" %}
-    {% comment %} Liquid 배열: 0-based면 [2]가 빈문자여서 전부 active 되는 버그 방지. [2] 없으면 [1] 사용. {% endcomment %}
-    {% assign page_group = url_parts[2] | default: url_parts[1] %}
+    {% include nav_path_utils.html %}
     {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'sidebar'" | sort: "url" %}
     {% for section_page in section_pages %}
       {% assign group_base = section_page.url %}
-      {% assign segs = section_page.url | split: "/" %}
-      {% assign group_key = segs[2] | default: segs[1] %}
+      {% include nav_path_utils.html url=section_page.url %}
       {% assign group_base_alt = "/" | append: group_key | append: "/" %}
       {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
       {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" | sort: "url" %}
@@ -32,4 +29,18 @@
       {% endunless %}
     {% endfor %}
   </nav>
+  {% assign footer_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'sidebar_footer'" | sort: "url" %}
+  {% if footer_pages.size > 0 %}
+  <footer class="app-sidebar-footer">
+    {% for fp in footer_pages %}
+      {% unless fp.hide %}
+      <a class="app-nav-item {% if page.url == fp.url %}active{% endif %}" href="{{ fp.url }}" title="{{ fp.title }}">
+        {% assign footer_icon = fp.icon | default: "wrench" %}
+        <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/{{ footer_icon }}.svg');" aria-hidden="true"></span>
+        <span class="app-nav-label">{{ fp.title }}</span>
+      </a>
+      {% endunless %}
+    {% endfor %}
+  </footer>
+  {% endif %}
 </aside>

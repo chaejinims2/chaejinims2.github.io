@@ -4,6 +4,7 @@
  :root {
   /* ---- 1.1 Layout ---- */
   --app-sidebar-w: 13.75rem;
+  --app-sidebar-w-compact: 3.5rem;
   --app-status-h: 2.125rem;
   --app-top-h: 4rem; /*2.875rem;*/
   --app-content-padding: clamp(0.75rem, 1.5vw, 1rem);
@@ -98,7 +99,7 @@
 
   --app-title-logo-height: 1.375rem;
   --app-title-logo-max-width: 3rem;
-
+  --app-title-text-font-size: 1.25rem;
   --app-title-gap: 0.625rem;
   --app-title-text-font-weight: var(--fw-900);
   --app-title-text-letter-spacing: 0.4px;

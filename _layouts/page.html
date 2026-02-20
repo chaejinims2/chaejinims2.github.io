@@ -8,8 +8,7 @@ layout: default
 
 {% comment %} 같은 섹션 내 이전/다음 (하위 페이지만, 대표 페이지 제외). 2개 미만이면 미표시. 첫 페이지 이전=마지막, 마지막 다음=첫 하위. {% endcomment %}
 {% if page.layout != 'section' %}
-{% assign url_parts = page.url | split: "/" %}
-{% assign page_group_base = "/" | append: url_parts[2] | append: "/" %}
+{% include nav_path_utils.html %}
 {% assign group_pages = site.pages | where_exp: "item", "item.url contains page_group_base" | sort: "url" %}
 {% assign group_pages_visible = group_pages | where_exp: "item", "item.hide != true" %}
 {% assign group_pages_sub = group_pages_visible | where_exp: "item", "item.url != page_group_base" %}
