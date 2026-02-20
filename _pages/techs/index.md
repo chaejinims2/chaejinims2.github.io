@@ -1,6 +1,7 @@
 ---
 layout: section
-permalink: /public/techs/
+permalink: /techs/
 title: Technology
 icon: academic-cap
+type: sidebar
 ---

@@ -2,20 +2,20 @@
   <nav class="app-nav">
     {% assign current = page.url %}
     {% assign url_parts = page.url | split: "/" %}
-    {% if url_parts[1] == "public" %}
-      {% assign page_group = url_parts[2] %}
-    {% else %}
-      {% assign page_group = url_parts[1] %}
-    {% endif %}
-    {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.url contains '/public/'" | sort: "url" %}
+    {% comment %} Liquid 배열: 0-based면 [2]가 빈문자여서 전부 active 되는 버그 방지. [2] 없으면 [1] 사용. {% endcomment %}
+    {% assign page_group = url_parts[2] | default: url_parts[1] %}
+    {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'sidebar'" | sort: "url" %}
     {% for section_page in section_pages %}
       {% assign group_base = section_page.url %}
       {% assign segs = section_page.url | split: "/" %}
-      {% assign group_key = segs[2] %}
-      {% assign group_pages = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
+      {% assign group_key = segs[2] | default: segs[1] %}
+      {% assign group_base_alt = "/" | append: group_key | append: "/" %}
+      {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
+      {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" | sort: "url" %}
+      {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
       {% assign group_title = section_page.title | default: group_key | capitalize %}
       {% unless section_page.hide %}
-        <div class="app-nav-group {% if page_group == group_key %}active{% endif %}">
+        <div class="app-nav-group {% if page_group == group_key or current == group_base %}active{% endif %}">
           <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}">
             {% assign nav_icon_name = section_page.icon | default: "book" %}
             <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/{{ nav_icon_name }}.svg');" aria-hidden="true"></span>

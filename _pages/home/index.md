@@ -1,8 +1,9 @@
 ---
 layout: section
-permalink: /protected/home/
+permalink: /home/
 title: Home
 icon: home
+type: topbar
 ---
 
 ## About
