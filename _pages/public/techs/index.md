@@ -1,6 +1,6 @@
 ---
 layout: section
 permalink: /public/techs/
-title: Techs
+title: Technology
 icon_codepoints: "1F4DA" #📚
 ---

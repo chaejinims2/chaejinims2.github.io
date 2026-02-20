@@ -1,6 +1,6 @@
 ---
 layout: section
-permalink: /public/about/
+permalink: /protected/about/
 title: About
 icon_codepoints: "1F4DC" # 📜
 ---

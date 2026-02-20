@@ -26,13 +26,6 @@ collections:
 defaults:
   # public: 사이드바에 노출. protected: 사이드바 미노출, 원하는 곳에 직접 링크.
   - scope:
-      path: "public/about/index.md"
-      type: "pages"
-    values:
-      layout: section
-      permalink: /public/about/
-      title: About
-  - scope:
       path: "public/cases/index.md"
       type: "pages"
     values:
@@ -53,6 +46,13 @@ defaults:
       layout: section
       permalink: /public/op-soures/
       title: Opensource Projects
+  - scope:
+      path: "protected/about/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /protected/about/
+      title: About
   - scope:
       path: "protected"
       type: "pages"
