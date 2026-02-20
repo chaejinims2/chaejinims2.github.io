@@ -1,6 +1,7 @@
 ---
 layout: section
-permalink: /public/labs/
+permalink: /labs/
 title: Laboratory
 icon: beaker
+type: sidebar
 ---

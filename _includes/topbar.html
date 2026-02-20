@@ -13,19 +13,12 @@
     <div class="collapse navbar-collapse" style="flex: 1;">
       <nav class="app-topmenu">
         {% assign url_parts = page.url | split: "/" %}
-        {% if url_parts[1] == "public" %}
-          {% assign page_group = url_parts[2] %}
-        {% elsif url_parts[1] == "protected" %}
-          {% assign page_group = url_parts[2] %}
-        {% else %}
-          {% assign page_group = url_parts[1] %}
-        {% endif %}
-        {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.url contains '/protected/'" | sort: "url" %}
+        {% assign page_group = url_parts[2] | default: url_parts[1] %}
+        {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'topbar'" | sort: "url" %}
         {% for section_page in section_pages %}
           {% assign group_base = section_page.url %}
           {% assign segs = section_page.url | split: "/" %}
-          {% assign group_key = segs[2] %}
-          {% comment %} protected URL: /protected/XXX/ → group_key = XXX {% endcomment %}
+          {% assign group_key = segs[2] | default: segs[1] %}
           {% assign group_title = section_page.title | default: group_key | capitalize %}
           {% unless section_page.hide %}
           {% assign nav_icon_name = section_page.icon | default: "book" %}

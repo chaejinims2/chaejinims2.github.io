@@ -27,40 +27,56 @@ collections:
     permalink: /:path/
 
 defaults:
-  # public: 사이드바에 노출. protected: 사이드바 미노출, 원하는 곳에 직접 링크.
+  # type: sidebar → 사이드바, type: topbar → 상단바 (섹션 front matter에 type 지정). path는 _pages 내 실제 경로.
   - scope:
-      path: "public/cases/index.md"
+      path: "cases/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /public/cases/
+      permalink: /cases/
       title: Cases
   - scope:
-      path: "public/techs/index.md"
+      path: "techs/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /public/techs/
+      permalink: /techs/
       title: Techs
   - scope:
-      path: "public/op-soures/index.md"
+      path: "op-soures/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /public/op-soures/
+      permalink: /op-soures/
       title: Opensource Projects
   - scope:
-      path: "protected/about/index.md"
+      path: "labs/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /protected/about/
-      title: About
+      permalink: /labs/
+      title: Labs
   - scope:
-      path: "protected"
+      path: "home/index.md"
       type: "pages"
     values:
-      layout: "page"
+      layout: section
+      permalink: /home/
+      title: Home
+  - scope:
+      path: "settings/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /settings/
+      title: Settings
+  - scope:
+      path: "sitemap/index.md"
+      type: "pages"
+    values:
+      layout: section
+      permalink: /sitemap/
+      title: Sitemap
   - scope:
       path: ""
       type: "pages"
