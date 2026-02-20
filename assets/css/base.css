@@ -347,6 +347,50 @@ body.sidebar-collapsed .app-sidebar {
 
 .muted { color: var(--app-muted); }
 
+/* 페이지 하단 prev/next 네비게이션 */
+.page-nav {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--app-border);
+}
+.page-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+.page-nav-prev,
+.page-nav-next {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-3, 0.875rem);
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.5rem 0.25rem;
+  display: flex;
+  align-items: center;
+}
+.page-nav-prev {
+  justify-content: flex-start;
+}
+.page-nav-next {
+  justify-content: flex-end;
+  text-align: right;
+}
+.page-nav-prev:hover,
+.page-nav-next:hover {
+  text-decoration: underline;
+  background: var(--overlay-w-08);
+  border-radius: var(--radius-2, 0.375rem);
+}
+.page-nav-empty {
+  flex: 1;
+  min-width: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .app-statusbar {
   box-sizing: border-box;
   height: var(--app-status-h);
