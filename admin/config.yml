@@ -16,6 +16,14 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date",  name: "date",  widget: "datetime" }
+      - label: "Section"
+        name: "section"
+        widget: "select"
+        options:
+          - { label: "Techs", value: "techs" }
+          - { label: "표시 안 함", value: "" }
+        default: ""
+        required: false
       - { label: "Categories", name: "categories", widget: "list", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body",  name: "body", widget: "markdown" }

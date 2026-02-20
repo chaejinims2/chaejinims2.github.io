@@ -315,3 +315,24 @@ body.sidebar-collapsed .app-sidebar {
 .home-page h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
 .home-page h1 { margin-bottom: 0.5rem; }
 .home-page h1 + p { margin-top: 0; }
+
+/* ---- Section: Techs posts list ---- */
+.section-posts { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--app-border); }
+.section-posts-header { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.section-posts .section-index-title { font-size: 1.2rem; margin: 0; }
+.section-post-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--app-bg, #1a1a1a);
+  background: var(--app-text, #e6e6e6);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-3, 6px);
+  text-decoration: none;
+}
+.section-post-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.section-posts .section-index-lead { margin-bottom: 0.75rem; color: var(--app-muted); font-size: 0.95rem; }
+.section-posts .section-index-list { margin-top: 0; }
+.section-posts .section-index-list li { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+.section-post-date { font-size: 0.875rem; color: var(--app-muted); font-weight: 400; }
