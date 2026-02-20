@@ -223,13 +223,15 @@ body.sidebar-collapsed .app-sidebar {
   cursor: pointer;
 }
 .app-sidebar-toggle::before {
-  font-size: 1.1rem;
-  content: "☰";
-  /* content: "✕"; */
-  line-height: 1;
+  display: none; /* 아이콘은 topbar에서 SVG(icon/bars-3)로 출력 */
+}
+.app-sidebar-toggle .app-nav-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .app-sidebar-toggle[aria-pressed="true"]::before {
-  content: "☰";
+  display: none;
 }
 .app-sidebar-toggle:hover {
   background: var(--overlay-w-0a);
@@ -284,16 +286,19 @@ body.sidebar-collapsed .app-sidebar {
 }
 
 .app-nav-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: var(--app-nav-ico-width);
-  text-align: center;
   color: currentColor;
   opacity: 0.85;
-  /* 컬러 이모지 폰트가 나와도 회색으로 강제 (Safari 포함) */
-  filter: grayscale(1);
-  -webkit-filter: grayscale(1);
-  font-variant-emoji: text;
-  -webkit-font-variant-emoji: text;
-  font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI Symbol", "Apple Symbols", var(--app-font-sans, sans-serif);
+}
+.app-nav-ico .app-nav-ico-svg,
+.app-nav-ico svg {
+  width: var(--app-nav-ico-width);
+  height: var(--app-nav-ico-width);
+  display: block;
+  flex-shrink: 0;
 }
 
 .app-nav-label { font-weight: var(--app-nav-label-font-weight); }

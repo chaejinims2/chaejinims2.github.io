@@ -15,10 +15,11 @@
       {% assign group_pages = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
       {% assign group_title = section_page.title | default: group_key | capitalize %}
       {% unless section_page.hide %}
-        {% assign icon_cp = section_page.icon_codepoints | default: '25B6' | strip %}
         <div class="app-nav-group {% if page_group == group_key %}active{% endif %}">
           <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}">
-            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ icon_cp }}">{{ icon_cp | icon_entity }}</span>
+            {% assign nav_icon_name = section_page.icon | default: "book" %}
+            {% assign nav_icon_path = "icon/" | append: nav_icon_name | append: ".html" %}
+            <span class="app-nav-ico" aria-hidden="true">{% include {{ nav_icon_path }} %}</span>
             <span class="app-nav-label">{{ group_title }}</span>
           </a>
           <div class="app-nav-sub">
