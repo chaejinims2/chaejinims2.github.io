@@ -16,7 +16,7 @@
       {% assign group_title = section_page.title | default: group_key | capitalize %}
       {% unless section_page.hide %}
         <div class="app-nav-group {% if page_group == group_key %}active{% endif %}">
-          <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}">
+          <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}">
             {% assign nav_icon_name = section_page.icon | default: "book" %}
             {% assign nav_icon_path = "icon/" | append: nav_icon_name | append: ".html" %}
             <span class="app-nav-ico" aria-hidden="true">{% include {{ nav_icon_path }} %}</span>
@@ -25,7 +25,7 @@
           <div class="app-nav-sub">
             {% for p in group_pages %}
               {% if p.hide != true and p.url != group_base %}
-                <a class="app-nav-sub-item {% if current == p.url %}active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
+                <a class="app-nav-sub-item {% if current == p.url %}active{% endif %}" href="{{ p.url }}" title="{{ p.title }}"><span class="app-nav-sub-item-text">{{ p.title }}</span></a>
               {% endif %}
             {% endfor %}
           </div>
