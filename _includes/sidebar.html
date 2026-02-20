@@ -16,10 +16,9 @@
       {% assign group_title = section_page.title | default: group_key | capitalize %}
       {% unless section_page.hide %}
         {% assign icon_cp = section_page.icon_codepoints | default: '25B6' | strip %}
-        {% unless icon_cp contains ',FE0E' %}{% assign icon_cp = icon_cp | append: ',FE0E' %}{% endunless %}
         <div class="app-nav-group {% if page_group == group_key %}active{% endif %}">
           <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}">
-            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ icon_cp }}"></span>
+            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ icon_cp }}">{{ icon_cp | icon_entity }}</span>
             <span class="app-nav-label">{{ group_title }}</span>
           </a>
           <div class="app-nav-sub">

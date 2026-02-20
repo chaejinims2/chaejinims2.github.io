@@ -29,9 +29,8 @@
           {% assign group_title = section_page.title | default: group_key | capitalize %}
           {% unless section_page.hide %}
             {% assign icon_cp = section_page.icon_codepoints | default: '25B6' | strip %}
-            {% unless icon_cp contains ',FE0E' %}{% assign icon_cp = icon_cp | append: ',FE0E' %}{% endunless %}
           <a class="app-topmenu-item {% if page_group == group_key %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}" aria-label="{{ group_title }}">
-            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ icon_cp }}"></span>
+            <span class="app-nav-ico" aria-hidden="true" data-icon="{{ icon_cp }}">{{ icon_cp | icon_entity }}</span>
             <span class="app-topmenu-label">{{ group_title }}</span>
           </a>
           {% endunless %}
