@@ -5,7 +5,7 @@
 .body-home { margin: 0; background: var(--app-bg); color: var(--app-text); }
 .body-home .app-root { display: none; }
 
-.home-root {
+.startup-root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,12 +15,12 @@
 }
 
 /* ----- Hero: 정체성 한눈에 ----- */
-.home-hero {
+.startup-hero {
   text-align: center;
   margin-bottom: clamp(2.5rem, 8vw, 4rem);
   max-width: 36rem;
 }
-.home-title {
+.startup-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -28,13 +28,13 @@
   color: var(--app-text);
   line-height: 1.2;
 }
-.home-lead {
+.startup-lead {
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.5;
   color: var(--app-muted);
   margin: 0 0 1.5rem;
 }
-.home-enter {
+.startup-enter {
   display: inline-block;
   padding: 0.6rem 1.25rem;
   font-size: 0.9rem;
@@ -46,7 +46,7 @@
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
-.home-enter:hover {
+.startup-enter:hover {
   background: var(--overlay-w-0d);
   border-color: var(--accent);
   color: var(--app-text);
@@ -54,19 +54,19 @@
 }
 
 /* ----- 본문 ----- */
-.home-main { flex: 1; width: 100%; max-width: 52rem; }
-.home-content {
+.startup-main { flex: 1; width: 100%; max-width: 52rem; }
+.startup-content {
   font-size: 1rem;
   line-height: 1.7;
 }
-.home-content h1 {
+.startup-content h1 {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 2rem 0 0.75rem;
   color: var(--app-text);
 }
-.home-content h1:first-child { margin-top: 0; }
-.home-content h2 {
+.startup-content h1:first-child { margin-top: 0; }
+.startup-content h2 {
   font-size: 1.15rem;
   font-weight: 600;
   margin: 1.75rem 0 0.5rem;
@@ -74,16 +74,16 @@
   padding-top: 1rem;
   border-top: 1px solid var(--app-border);
 }
-.home-content h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
-.home-content p { margin: 0 0 0.75rem; color: var(--app-text); }
-.home-content ul, .home-content ol { margin: 0 0 1rem; padding-left: 1.5em; }
-.home-content li { margin-bottom: 0.35rem; }
-.home-content strong { font-weight: 600; color: var(--app-text); }
-.home-content a { color: var(--accent); text-decoration: none; }
-.home-content a:hover { text-decoration: underline; }
+.startup-content h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.startup-content p { margin: 0 0 0.75rem; color: var(--app-text); }
+.startup-content ul, .startup-content ol { margin: 0 0 1rem; padding-left: 1.5em; }
+.startup-content li { margin-bottom: 0.35rem; }
+.startup-content strong { font-weight: 600; color: var(--app-text); }
+.startup-content a { color: var(--accent); text-decoration: none; }
+.startup-content a:hover { text-decoration: underline; }
 
 /* ----- 푸터: 미니 네비 + 저작 ----- */
-.home-footer {
+.startup-footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--app-border);
@@ -95,9 +95,9 @@
   font-size: 0.875rem;
   color: var(--app-muted);
 }
-.home-footer a {
+.startup-footer a {
   color: var(--app-muted);
   text-decoration: none;
 }
-.home-footer a:hover { color: var(--app-text); text-decoration: underline; }
-.home-footer-copy { margin-left: 0.25rem; }
+.startup-footer a:hover { color: var(--app-text); text-decoration: underline; }
+.startup-footer-copy { margin-left: 0.25rem; }

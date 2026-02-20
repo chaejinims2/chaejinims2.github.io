@@ -31,19 +31,172 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - { file: "_pages/public/home/index.md", name: "home", label: "Home", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section", "home"], default: "home" }, { label: "Title", name: "title", widget: "string" }, { label: "Permalink", name: "permalink", widget: "string", required: false }, { label: "Lead", name: "lead", widget: "string", required: false }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/protected/about/index.md", name: "about", label: "About", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }, { label: "Title", name: "title", widget: "string" }, { label: "Permalink", name: "permalink", widget: "string", required: false }, { label: "Icon (codepoints)", name: "icon_codepoints", widget: "string", required: false }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/about/welcome/index.md", name: "about-welcome", label: "About › Welcome", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/about/history/index.md", name: "about-history", label: "About › History", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/about/objective/index.md", name: "about-objective", label: "About › Objective", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/cases/index.md", name: "cases", label: "Cases", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }, { label: "Title", name: "title", widget: "string" }, { label: "Permalink", name: "permalink", widget: "string", required: false }, { label: "Icon (codepoints)", name: "icon_codepoints", widget: "string", required: false }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/cases/nvme-mi-basic/index.md", name: "cases-nvme-mi-basic", label: "Cases › NVMe-MI Basic", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/cases/nvme-spf-mpf/index.md", name: "cases-nvme-spf-mpf", label: "Cases › NVMe SPF/MPF", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/cases/wpf-img-3d-simulator/index.md", name: "cases-wpf-img-3d", label: "Cases › WPF Img 3D Simulator", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/cases/wpf-to-webapp/index.md", name: "cases-wpf-to-webapp", label: "Cases › WPF to WebApp", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/techs/index.md", name: "techs", label: "Techs", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }, { label: "Title", name: "title", widget: "string" }, { label: "Permalink", name: "permalink", widget: "string", required: false }, { label: "Icon (codepoints)", name: "icon_codepoints", widget: "string", required: false }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/techs/nvme-physical-function/index.md", name: "techs-nvme-pf", label: "Techs › NVMe Physical Function", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/op-soures/index.md", name: "op-soures", label: "Op-soures", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }, { label: "Title", name: "title", widget: "string" }, { label: "Permalink", name: "permalink", widget: "string", required: false }, { label: "Icon (codepoints)", name: "icon_codepoints", widget: "string", required: false }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/public/op-soures/yocto/index.md", name: "op-soures-yocto", label: "Op-soures › Yocto", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/protected/settings/index.md", name: "protected-settings", label: "Protected › Settings", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }, { label: "Title", name: "title", widget: "string" }, { label: "Permalink", name: "permalink", widget: "string", required: false }, { label: "Icon (codepoints)", name: "icon_codepoints", widget: "string", required: false }, { label: "Hide", name: "hide", widget: "boolean", default: false, required: false }, { label: "Body", name: "body", widget: "markdown" }] }
-      - { file: "_pages/protected/sitemap/index.md", name: "protected-sitemap", label: "Protected › Sitemap", fields: [{ label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }, { label: "Title", name: "title", widget: "string" }, { label: "Body", name: "body", widget: "markdown" }] }
+      - file: "_pages/startup/index.md"
+        name: "startup"
+        label: "Startup (랜딩)"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section", "startup"], default: "startup" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Lead", name: "lead", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/home/index.md"
+        name: "home"
+        label: "Home"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "topbar" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/home/welcome/index.md"
+        name: "home-welcome"
+        label: "Home › Welcome"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/home/history/index.md"
+        name: "home-history"
+        label: "Home › History"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/home/objective/index.md"
+        name: "home-objective"
+        label: "Home › Objective"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/cases/index.md"
+        name: "cases"
+        label: "Cases"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "sidebar" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/cases/nvme-mi-basic/index.md"
+        name: "cases-nvme-mi-basic"
+        label: "Cases › NVMe-MI Basic"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/cases/nvme-spf-mpf/index.md"
+        name: "cases-nvme-spf-mpf"
+        label: "Cases › NVMe SPF/MPF"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/cases/wpf-img-3d-simulator/index.md"
+        name: "cases-wpf-img-3d"
+        label: "Cases › WPF Img 3D Simulator"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/cases/wpf-to-webapp/index.md"
+        name: "cases-wpf-to-webapp"
+        label: "Cases › WPF to WebApp"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/techs/index.md"
+        name: "techs"
+        label: "Techs"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "sidebar" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/techs/nvme-physical-function/index.md"
+        name: "techs-nvme-pf"
+        label: "Techs › NVMe Physical Function"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/op-soures/index.md"
+        name: "op-soures"
+        label: "Opensource Projects"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "sidebar" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/op-soures/yocto/index.md"
+        name: "op-soures-yocto"
+        label: "Opensource › Yocto"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/labs/index.md"
+        name: "labs"
+        label: "Labs"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "sidebar" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/labs/sample/index.md"
+        name: "labs-sample"
+        label: "Labs › Sample"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/settings/index.md"
+        name: "settings"
+        label: "Settings"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "topbar" }
+          - { label: "Hide", name: "hide", widget: "boolean", default: true, required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "_pages/sitemap/index.md"
+        name: "sitemap"
+        label: "Sitemap"
+        fields:
+          - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "section" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string", required: false }
+          - { label: "Icon", name: "icon", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }], default: "topbar" }
+          - { label: "Body", name: "body", widget: "markdown" }

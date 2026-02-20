@@ -1,9 +1,5 @@
 <header class="app-topbar navbar navbar-expand-lg" aria-label="Top">
   <div class="app-top-left">
-
-    <button type="button" class="app-sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
-      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/bars-3-solid.svg');" aria-hidden="true"></span>
-    </button>
     <a class="app-title" href="/">
       <!-- <img class="app-title-logo" src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }}" /> -->
       <span class="app-title-text">{{ site.title }}</span>
@@ -12,13 +8,11 @@
   <div class="d-flex align-items-center gap-2 app-top-right" id="topbarNav">
     <div class="collapse navbar-collapse" style="flex: 1;">
       <nav class="app-topmenu">
-        {% assign url_parts = page.url | split: "/" %}
-        {% assign page_group = url_parts[2] | default: url_parts[1] %}
+        {% include nav_path_utils.html %}
         {% assign section_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'topbar'" | sort: "url" %}
         {% for section_page in section_pages %}
           {% assign group_base = section_page.url %}
-          {% assign segs = section_page.url | split: "/" %}
-          {% assign group_key = segs[2] | default: segs[1] %}
+          {% include nav_path_utils.html url=section_page.url %}
           {% assign group_title = section_page.title | default: group_key | capitalize %}
           {% unless section_page.hide %}
           {% assign nav_icon_name = section_page.icon | default: "book" %}
@@ -30,5 +24,8 @@
         {% endfor %}
       </nav>
     </div>
+    <button type="button" class="app-sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/bars-3-solid.svg');" aria-hidden="true"></span>
+    </button>
   </div>
 </header>

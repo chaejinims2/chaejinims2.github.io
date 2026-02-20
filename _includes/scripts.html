@@ -22,11 +22,59 @@
   var body = document.body;
   if (!btn || !body) return;
   var key = 'sidebar-collapsed';
+  var posKey = 'sidebar-position';
   if (localStorage.getItem(key) === '1') {
     body.classList.add('sidebar-collapsed');
-    btn.setAttribute('aria-pressed', 'true');
+    if (btn) btn.setAttribute('aria-pressed', 'true');
   }
-  btn.addEventListener('click', function() {
+  var posVal = localStorage.getItem(posKey) || 'left';
+  if (posVal === 'right') body.classList.add('sidebar-right');
+  else if (posVal === 'bottom') body.classList.add('sidebar-bottom');
+  else if (posVal === 'top') body.classList.add('sidebar-top');
+  var compactKey = 'sidebar-compact';
+  if (localStorage.getItem(compactKey) === '1') body.classList.add('sidebar-compact');
+  function reorderShell(contentFirst) {
+    var shell = document.querySelector('.app-shell');
+    var content = document.querySelector('.app-content');
+    var sidebar = document.querySelector('.app-sidebar');
+    if (!shell || !content || !sidebar) return;
+    if (contentFirst) shell.insertBefore(content, sidebar);
+    else shell.insertBefore(sidebar, content);
+  }
+  function initSidebarPositionSelect() {
+    var sel = document.getElementById('sidebar-position-select');
+    if (!sel) return;
+    sel.value = posVal;
+    if (!sel.dataset.sidebarPositionInited) {
+      sel.dataset.sidebarPositionInited = '1';
+      sel.addEventListener('change', function() {
+        var v = this.value;
+        try { localStorage.setItem(posKey, v); } catch (e) {}
+        document.body.classList.toggle('sidebar-right', v === 'right');
+        document.body.classList.toggle('sidebar-top', v === 'top');
+        document.body.classList.toggle('sidebar-bottom', v === 'bottom');
+        reorderShell(v === 'right' || v === 'bottom'); /* true: 콘텐츠 먼저, false: 사이드바 먼저 */
+      });
+    }
+  }
+  initSidebarPositionSelect();
+  window.initSidebarPositionSelect = initSidebarPositionSelect;
+  function initSidebarCompactCheckbox() {
+    var cb = document.getElementById('sidebar-compact-checkbox');
+    if (!cb) return;
+    cb.checked = body.classList.contains('sidebar-compact');
+    if (!cb.dataset.sidebarCompactInited) {
+      cb.dataset.sidebarCompactInited = '1';
+      cb.addEventListener('change', function() {
+        var on = this.checked;
+        try { localStorage.setItem(compactKey, on ? '1' : '0'); } catch (e) {}
+        body.classList.toggle('sidebar-compact', on);
+      });
+    }
+  }
+  initSidebarCompactCheckbox();
+  window.initSidebarCompactCheckbox = initSidebarCompactCheckbox;
+  btn && btn.addEventListener('click', function() {
     body.classList.toggle('sidebar-collapsed');
     var pressed = body.classList.contains('sidebar-collapsed');
     btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
