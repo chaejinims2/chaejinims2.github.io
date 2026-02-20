@@ -81,3 +81,4 @@ exclude:
 # If you place static files under these, Jekyll will include them
 include:
   - _pages
+  - admin
