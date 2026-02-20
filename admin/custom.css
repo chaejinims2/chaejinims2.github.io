@@ -1,0 +1,165 @@
+/**
+ * Decap CMS 다크 테마
+ * 작성/수정 페이지 전체에 적용됩니다.
+ * 색상·간격 등을 바꾸려면 아래 변수만 수정하면 됩니다.
+ */
+
+:root {
+  --cms-dark-bg: #1a1a1a;
+  --cms-dark-panel: #252525;
+  --cms-dark-border: #3a3a3a;
+  --cms-dark-text: #e6e6e6;
+  --cms-dark-muted: #9ca3af;
+  --cms-dark-accent: #3b82f6;
+  --cms-dark-input-bg: #2d2d2d;
+}
+
+/* 전체 배경 */
+body,
+[class*="App"],
+[class*="app"],
+[data-reactroot] {
+  background-color: var(--cms-dark-bg) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+/* 사이드바(컬렉션 목록) */
+[class*="Sidebar"],
+[class*="sidebar"],
+aside {
+  background-color: var(--cms-dark-panel) !important;
+  border-color: var(--cms-dark-border) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+[class*="Sidebar"] a,
+[class*="sidebar"] a {
+  color: var(--cms-dark-text) !important;
+}
+
+[class*="Sidebar"] a:hover,
+[class*="sidebar"] a:hover {
+  background-color: var(--cms-dark-border) !important;
+  color: #fff !important;
+}
+
+/* 패널·카드·에디터 영역 */
+[class*="Pane"],
+[class*="pane"],
+[class*="Card"],
+[class*="card"],
+[class*="MainView"],
+[class*="Editor"],
+main {
+  background-color: var(--cms-dark-panel) !important;
+  border-color: var(--cms-dark-border) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+/* 입력 필드 */
+input,
+textarea,
+select,
+[contenteditable="true"],
+[class*="input"],
+[class*="Input"] {
+  background-color: var(--cms-dark-input-bg) !important;
+  border-color: var(--cms-dark-border) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--cms-dark-muted) !important;
+}
+
+/* 버튼 */
+button,
+[class*="Button"],
+[role="button"] {
+  background-color: var(--cms-dark-border) !important;
+  border-color: var(--cms-dark-border) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+button:hover,
+[class*="Button"]:hover:not([class*="primary"]) {
+  background-color: var(--cms-dark-accent) !important;
+  border-color: var(--cms-dark-accent) !important;
+  color: #fff !important;
+}
+
+/* 강조 버튼(저장, 게시 등) */
+[class*="primary"],
+button[class*="primary"] {
+  background-color: var(--cms-dark-accent) !important;
+  border-color: var(--cms-dark-accent) !important;
+  color: #fff !important;
+}
+
+/* 헤더·탭 */
+header,
+[class*="Header"],
+[class*="Nav"],
+[class*="Tab"] {
+  background-color: var(--cms-dark-panel) !important;
+  border-color: var(--cms-dark-border) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+/* 목록·테이블 행 */
+[class*="List"] [class*="item"],
+[class*="list"] [class*="item"],
+tr {
+  border-color: var(--cms-dark-border) !important;
+}
+
+[class*="List"] [class*="item"]:hover,
+tr:hover {
+  background-color: var(--cms-dark-input-bg) !important;
+}
+
+/* 마크다운 에디터 내부 */
+.CodeMirror,
+[class*="CodeMirror"],
+[class*="markdown"] {
+  background-color: var(--cms-dark-input-bg) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+.CodeMirror-gutters {
+  background-color: var(--cms-dark-panel) !important;
+  border-color: var(--cms-dark-border) !important;
+}
+
+/* 드롭다운·메뉴 */
+[class*="Dropdown"],
+[class*="Menu"],
+[class*="menu"] {
+  background-color: var(--cms-dark-panel) !important;
+  border-color: var(--cms-dark-border) !important;
+  color: var(--cms-dark-text) !important;
+}
+
+/* 보조 텍스트 */
+[class*="hint"],
+[class*="description"],
+small {
+  color: var(--cms-dark-muted) !important;
+}
+
+/* 스크롤바 (선택) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cms-dark-panel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cms-dark-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cms-dark-muted);
+}
