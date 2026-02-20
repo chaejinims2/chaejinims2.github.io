@@ -27,3 +27,18 @@ collections:
       - { label: "Categories", name: "categories", widget: "list", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body",  name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: false
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{path}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "select", options: ["page", "section"], default: "page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string", required: false }
+      - { label: "Icon (codepoints)", name: "icon_codepoints", widget: "string", required: false }
+      - { label: "Hide", name: "hide", widget: "boolean", default: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
