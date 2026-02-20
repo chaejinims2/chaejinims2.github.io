@@ -1,7 +1,7 @@
 ---
 layout: section
 permalink: /public/cases/
-title: Cases
+title: Case Study
 icon_codepoints: "1F4BB" #💻
 ---
 

@@ -7,8 +7,9 @@
 {% endif %}
 <script>
 (function() {
-  // data-icon="1F4DC,FE0E" → 해당 유니코드 문자로 렌더 (GitHub Pages 인코딩 이슈 회피)
+  // 플러그인 미사용(예: GitHub Pages) 시 data-icon으로 아이콘 채움
   document.querySelectorAll('.app-nav-ico[data-icon]').forEach(function(span) {
+    if (span.textContent) return;
     var hex = (span.getAttribute('data-icon') || '25B6').trim();
     var chars = hex.split(',').map(function(h) {
       var code = parseInt(h.trim(), 16);
