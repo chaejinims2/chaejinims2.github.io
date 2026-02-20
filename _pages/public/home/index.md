@@ -2,18 +2,20 @@
 layout: home
 permalink: /
 title: chaejinims2@github.io
-lead: Systems & Platform Engineer — NVMe, Linux Kernel, DevOps.
+lead: System & Platform Engineer
 ---
-## Focus
 
-- NVMe / Linux Kernel / System Software
+- NVMe / Linux Kernel / Equipment Software
 - Automation tools and reproducible workflows
 
 ## About
 
 I am a **Systems & Platform Engineer** with expertise in Linux kernel, storage systems (NVMe), and DevOps-oriented platform design.
 
-My career journey combines deep technical roots (Linux kernel development, NVMe driver feature expansion, system debugging) with cross-disciplinary projects in sensor data collection, AI, and large-scale software engineering.
+I am interested in structuring complex systems for clarity, changeability, and scale.
+
+I am designing system software that remains adaptable under constraints,
+with explicit boundaries between interface and implementation.
 
 Highlights:
 
@@ -26,15 +28,14 @@ Highlights:
 
 I thrive in environments where system reliability, structural problem-solving, and cross-functional collaboration are essential, and I aim to grow into a Platform Architect building resilient and scalable developer ecosystems.
 
-# About Me
+# Contact me
 
-I'm Chaejin Im, a system software engineer from South Korea.  
-Currently working at Exicon, I design scalable NVMe drivers and tools for memory testers.
+I'm Chaejin Im, a system software engineer from South Korea.
+Currently working at Storage Test Equipment Company, I design scalable NVMe drivers and tools for memory testers.
 
 I'm also passionate about building personal tooling, learning systems programming, and exploring creative automation.
 
 - 💻 Current Stack: C/C++, Linux Kernel, Bash, Makefile, QMake
 - 🌐 Interests: PCIe, Storage, Debug Tooling, Embedded Systems
-- 🌍 Goal: Relocate to Europe and work in cutting-edge storage or embedded teams
 
-[Contact me](mailto:chaejinims2@email.com)
+[Send email](mailto:chaejinims2@gmail.com)
