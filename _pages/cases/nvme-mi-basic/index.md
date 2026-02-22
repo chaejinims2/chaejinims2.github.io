@@ -4,8 +4,8 @@ title: NVMe-MI Basic Command on sBLT
 ---
 ### NVMe-MI Basic Command Set implementation on sBLT
 
-Device로의 SMBus 통신 구현
-sBLT 내 SMBus 통신 구현 (SmbSend, SmbRecv)
-sBLT 내 NVMe-MI Basic Management Command I/O 구현 (SMBus)
+SMBus communication implementation to the device
+SMBus communication implementation in sBLT (SmbSend, SmbRecv)
+NVMe-MI Basic Management Command I/O implementation in sBLT (SMBus)
 
 **Tech:** Linux Kernel, PCIe, NVMe, Debug, SMBus
