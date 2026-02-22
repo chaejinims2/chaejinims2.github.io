@@ -22,9 +22,28 @@
         </article>
       </main>
       <footer class="startup-footer">
+        <div class="startup-counter" aria-live="polite">
+          <span class="startup-counter-item"><span class="startup-counter-label">Today</span> <span id="startup-count-today">-</span></span>
+          <span class="startup-counter-item"><span class="startup-counter-label">Total</span> <span id="startup-count-total">-</span></span>
+        </div>
         <span class="startup-footer-copy">© {{ site.time | date: '%Y' }} {{ site.title }}</span>
       </footer>
     </div>
     {% include scripts.html %}
+    <script>
+    (function() {
+      var namespace = 'chaejinims2.github.io';
+      var today = new Date();
+      var dateKey = 'daily-' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+      var elToday = document.getElementById('startup-count-today');
+      var elTotal = document.getElementById('startup-count-total');
+      function setToday(n) { if (elToday) elToday.textContent = typeof n === 'number' ? n : '-'; }
+      function setTotal(n) { if (elTotal) elTotal.textContent = typeof n === 'number' ? n : '-'; }
+      Promise.all([
+        fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(dateKey)).then(function(r) { return r.json(); }).then(function(d) { return d.value; }).catch(function() { return null; }),
+        fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/total').then(function(r) { return r.json(); }).then(function(d) { return d.value; }).catch(function() { return null; })
+      ]).then(function(results) { setToday(results[0]); setTotal(results[1]); });
+    })();
+    </script>
   </body>
 </html>
