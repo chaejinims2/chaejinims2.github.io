@@ -1,8 +1,15 @@
 # 사이트 메타 (title/description/url → 레이아웃·jekyll-seo-tag 사용. favicon은 _includes/head.html에서 고정)
-title: "chaejinims2@github.io"
+title: "Chaejin Im"
+logo: "assets/images/cherry-logo-red-light.png"
 description: "NVMe Host Driver / Embedded Linux / Automation Tools"
 baseurl: ""
 url: "https://chaejinims2.github.io"
+
+# 사이드바 섹션 표시 순서 (URL 첫 세그먼트). 없으면 url 기준 정렬.
+sidebar_order:
+  - home
+  - cases
+  - techs
 
 # No theme: app-shell only (tokens.css + base.css)
 theme: null
