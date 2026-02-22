@@ -268,9 +268,9 @@ body.sidebar-compact .app-sidebar-title {
   padding-right: 0;
 }
 body.sidebar-compact .app-sidebar-title-logo-wrap {
-  width: var(--app-sidebar-w-compact);
-  height: var(--app-sidebar-w-compact);
-  min-width: var(--app-sidebar-w-compact);
+  width: var(--app-sidebar-title-ico-width);
+  height: var(--app-sidebar-title-ico-width);
+  min-width: var(--app-sidebar-title-ico-width);
 }
 body.sidebar-compact .app-sidebar .app-nav-sub {
   display: none !important;
@@ -505,7 +505,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   border-top-width: 0;
 }
 
-/* 좁은 화면: 사이드바를 탑바 하단 가로 메뉴로 */
+/* 좁은 화면: 사이드바를 상단 가로 메뉴로, 아이콘만 표시 */
 @media (max-width: 767px) {
   .app-shell {
     grid-template-columns: 1fr;
@@ -528,11 +528,54 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
     border-bottom: 1px solid var(--app-border);
     padding: var(--space-2) var(--app-content-padding);
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: flex-start;
     gap: var(--space-2);
     overflow-x: auto;
     overflow-y: hidden;
+  }
+  .app-sidebar-title {
+    flex-shrink: 0;
+    justify-content: center;
+    padding-right: var(--space-2);
+    margin-right: var(--space-2);
+    border-right: 1px solid var(--app-border);
+  }
+  .app-sidebar-title .app-title-text {
+    display: none;
+  }
+  .app-sidebar .app-nav-label {
+    display: none;
+  }
+  .app-sidebar .app-nav-item {
+    justify-content: center;
+    padding: var(--space-2);
+    flex-shrink: 0;
+  }
+  .app-sidebar .app-nav-sub {
+    display: none !important;
+  }
+  .app-sidebar-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid var(--app-border);
+    padding-left: var(--space-2);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .app-sidebar-footer .app-nav-label {
+    display: none;
+  }
+  .app-sidebar-footer .app-nav-item {
+    justify-content: center;
+    padding: var(--space-2);
+    flex-shrink: 0;
   }
   body.sidebar-collapsed .app-shell {
     grid-template-columns: 1fr;
@@ -546,43 +589,32 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
     overflow: hidden;
   }
   .app-nav {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    width: 100%;
-  }
-  .app-nav-group {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: var(--space-2);
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
   }
-  .app-nav-group:not(.active) .app-nav-sub {
-    display: none !important;
-  }
-  .app-nav-group.active .app-nav-sub {
-    flex-basis: 100%;
+  .app-nav-group {
+    display: inline-flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-top: var(--space-2);
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px solid var(--app-border);
-    padding-top: var(--space-2);
-    gap: var(--space-2);
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
   }
   .app-nav-item {
     border-right: none;
+    border-bottom: 2px solid transparent;
     border-radius: var(--radius-2);
     white-space: nowrap;
   }
   .app-nav-item.active {
     border-right: none;
-    border-bottom: 2px solid var(--accent);
-  }
-  .app-nav-sub-item {
-    white-space: nowrap;
+    border-bottom-color: var(--accent);
   }
   .app-main {
     order: 1;
@@ -619,25 +651,24 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   background: var(--overlay-w-0a);
 }
 
-/* ---- Nav (app-nav 스타일) ---- */
-.app-nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--app-nav-gap);
-  min-width: 0;
-  width: 100%;
-}
-
-.app-nav-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--app-nav-group-gap);
-  min-width: 0;
-}
-
-/* Only the active group shows sub-items */
-.app-nav-group:not(.active) .app-nav-sub {
-  display: none !important;
+/* ---- Nav (app-nav 스타일). 넓은 화면에서만 세로 배치 ---- */
+@media (min-width: 768px) {
+  .app-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--app-nav-gap);
+    min-width: 0;
+    width: 100%;
+  }
+  .app-nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--app-nav-group-gap);
+    min-width: 0;
+  }
+  .app-nav-group:not(.active) .app-nav-sub {
+    display: none !important;
+  }
 }
 
 .app-nav-item {
@@ -832,6 +863,9 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   flex-shrink: 0;
 }
 
+.app-page-container {
+  margin: 1rem 1rem;
+}
 /* ---- Content typography ---- */
 .app-content h1 { font-size: 1.5rem; margin: 24px 0 12px; font-weight: 700; }
 .app-content h1:first-child { margin-top: 0; }
@@ -864,6 +898,13 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .home-page h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
 .home-page h1 { margin-bottom: 0.5rem; }
 .home-page h1 + p { margin-top: 0; }
+
+/* ---- Section index list (하위 항목 / Latest 리스트) ---- */
+.section-index-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+}
 
 /* ---- Section: Techs posts list ---- */
 .section-posts { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--app-border); }

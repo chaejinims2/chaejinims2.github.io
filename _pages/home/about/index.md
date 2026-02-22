@@ -2,8 +2,6 @@
 layout: page
 title: About
 ---
-
-## About
 - NVMe / Linux Kernel / Equipment Software
 - Automation tools and reproducible workflows
 
