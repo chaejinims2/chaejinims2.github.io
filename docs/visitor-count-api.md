@@ -1,6 +1,19 @@
 # Visitor count API
 
-Startup 페이지 푸터의 **Today / Total** 방문자 수를 위한 API가 이 레포에 포함되어 있습니다.
+Startup 페이지(첫 화면) 푸터의 **Today / Total** 방문자 수를 위한 API가 이 레포에 포함되어 있습니다.
+
+## 방문자 수가 - 로만 나올 때
+
+1. **Netlify에 이 레포를 배포했는지**
+  GitHub Pages만 쓰면 Netlify 함수는 배포되지 않습니다. [Netlify](https://app.netlify.com)에서 이 레포를 연결해 한 번 배포해야 `/.netlify/functions/count`가 생깁니다.
+2. **_config.yml에 URL 넣기**
+  Netlify 배포 후 주소가 `https://어쩌고.netlify.app` 이라면:
+   위 한 줄을 _config.yml에 추가(또는 기존 주석 해제 후 수정)한 뒤 다시 빌드/배포합니다.
+3. **함수 동작 확인**
+  브라우저에서 `https://YOUR_SITE.netlify.app/.netlify/functions/count` 를 직접 열어보세요.  
+   `{"today":1,"total":1}` 같은 JSON이 보이면 API는 정상입니다.
+4. **CountAPI만 쓸 때**
+  `visitor_count_api`를 비워 두면 CountAPI를 씁니다. 광고 차단 확장 프로그램이 있으면 요청이 막혀 - 로 남을 수 있습니다. 시크릿 창이거나 차단 해제 후 새로고침해 보세요.
 
 ## Netlify 배포 시 (권장)
 
@@ -10,13 +23,11 @@ Startup 페이지 푸터의 **Today / Total** 방문자 수를 위한 API가 이
 1. 이 레포를 Netlify에 연결하고 배포한다.
 2. 배포 후 함수 URL: `https://YOUR_SITE.netlify.app/.netlify/functions/count`
 3. `_config.yml`에 다음을 추가한다 (YOUR_SITE를 실제 Netlify 사이트 이름으로 변경):
-
-   ```yaml
-   visitor_count_api: "https://YOUR_SITE.netlify.app/.netlify/functions/count"
-   ```
-
-4. 사이트를 **Netlify에서 서빙**하면 같은 도메인에서 API를 쓰므로 CORS 이슈가 없다.  
-   **GitHub Pages**에서만 서빙하고 Netlify는 함수용으로만 쓰는 경우, 위 URL을 넣으면 다른 도메인이지만 CORS 헤더가 있어 동작한다.
+  ```yaml
+   visitor_count_api: "https://https://fanciful-seahorse-b12a97.netlify.app//.netlify/functions/count"
+  ```
+4. 사이트를 **Netlify에서 서빙**하면 같은 도메인에서 API를 쓰므로 CORS 이슈가 없다.
+  **GitHub Pages**에서만 서빙하고 Netlify는 함수용으로만 쓰는 경우, 위 URL을 넣으면 다른 도메인이지만 CORS 헤더가 있어 동작한다.
 
 ### 동작 방식
 
@@ -41,3 +52,4 @@ Netlify에 배포하지 않으면 이 함수는 사용할 수 없다. 그 경우
 
 - `visitor_count_api`를 비워 두면 레이아웃에서 **CountAPI**를 fallback으로 호출한다 (광고 차단기 등에서 막힐 수 있음).
 - 또는 [docs/visitor-count-api.md](visitor-count-api.md)에 있던 **Cloudflare Worker** 예시처럼 다른 서비스에 API를 만들어 두고, 그 URL을 `visitor_count_api`에 넣어 사용하면 된다.
+
