@@ -5,6 +5,11 @@ description: "NVMe Host Driver / Embedded Linux / Automation Tools"
 baseurl: ""
 url: "https://chaejinims2.github.io"
 
+# 방문자 수 (startup 페이지 푸터). 직접 구현한 API URL을 넣으면 Today/Total 표시.
+# API는 GET 요청에 대해 { "today": number, "total": number } JSON 응답을 반환하면 됨.
+# 비우면 카운터는 요청하지 않음 (숫자 자리에 - 표시).
+# visitor_count_api: "https://your-api.example.com/count"
+
 # 사이드바 섹션 표시 순서 (URL 첫 세그먼트). 없으면 url 기준 정렬.
 sidebar_order:
   - home
