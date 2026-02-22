@@ -11,7 +11,12 @@ _site/
 .bundle/
 vendor/bundle/
 
+# Node (Netlify functions)
+node_modules/
+
 # OS/editor
 .DS_Store
 .vscode/
 .idea/
+# Local Netlify folder
+.netlify

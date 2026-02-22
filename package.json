@@ -1,0 +1,9 @@
+{
+  "name": "chaejinims2.github.io",
+  "private": true,
+  "description": "Visitor count API for Netlify Function",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^5.0.0"
+  }
+}
