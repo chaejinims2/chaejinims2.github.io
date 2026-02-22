@@ -5,6 +5,13 @@ layout: default
 <div class="app-page-container">
 {% if page.layout != 'section' %}
   {% if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif %}
+  {% if page.tech and page.tech.size > 0 %}
+  <div class="page-tags" aria-label="Tech tags">
+    {% for t in page.tech %}
+    <span class="page-tag"># {{ t }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
 {% endif %}
 {{ content }}
 

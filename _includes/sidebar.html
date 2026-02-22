@@ -20,9 +20,9 @@
             {% assign group_base = section_page.url %}
             {% include nav_path_utils.html url=section_page.url %}
             {% assign group_base_alt = "/" | append: group_key | append: "/" %}
-            {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
-            {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" | sort: "url" %}
-            {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
+            {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" %}
+            {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" %}
+            {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "date" | reverse %}
             {% assign group_title = section_page.title | default: group_key | capitalize %}
             {% unless section_page.hide %}
             <div class="app-nav-group {% if page_group == group_key or current == group_base %}active{% endif %}">
@@ -49,9 +49,9 @@
       {% assign group_base = section_page.url %}
       {% include nav_path_utils.html url=section_page.url %}
       {% assign group_base_alt = "/" | append: group_key | append: "/" %}
-      {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" | sort: "url" %}
-      {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" | sort: "url" %}
-      {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
+      {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" %}
+      {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" %}
+      {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "date" | reverse %}
       {% assign group_title = section_page.title | default: group_key | capitalize %}
       {% unless section_page.hide %}
         <div class="app-nav-group {% if page_group == group_key or current == group_base %}active{% endif %}">
@@ -74,8 +74,31 @@
   </nav>
   {% assign footer_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'sidebar_footer'" | sort: "url" %}
   {% assign topbar_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'topbar'" | sort: "url" %}
-  {% if footer_pages.size > 0 or topbar_pages.size > 0 %}
+  {% assign all_footer_pages = footer_pages | concat: topbar_pages %}
+  {% if all_footer_pages.size > 0 %}
   <footer class="app-sidebar-footer">
+    {% if site.sidebar_footer_order and site.sidebar_footer_order.size > 0 %}
+      {% for order_key in site.sidebar_footer_order %}
+        {% for fp in all_footer_pages %}
+          {% assign furl = fp.url | remove_first: "/" | split: "/" %}
+          {% assign fkey = furl[0] %}
+          {% if fkey == order_key and fp.hide != true %}
+            {% include nav_path_utils.html url=fp.url %}
+            <a class="app-nav-item {% if page_group == group_key %}active{% endif %}" href="{{ fp.url }}" title="{{ fp.title }}">
+              {% if fp.type == 'topbar' %}
+                {% assign ficon = fp.icon | default: "book" %}
+                <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/{{ ficon }}-solid.svg');" aria-hidden="true"></span>
+              {% else %}
+                {% assign ficon = fp.icon | default: "wrench" %}
+                <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/{{ ficon }}.svg');" aria-hidden="true"></span>
+              {% endif %}
+              <span class="app-nav-label">{{ fp.title }}</span>
+            </a>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% else %}
     {% for fp in footer_pages %}
       {% unless fp.hide %}
       <a class="app-nav-item {% if page.url == fp.url %}active{% endif %}" href="{{ fp.url }}" title="{{ fp.title }}">
@@ -97,6 +120,7 @@
       </a>
       {% endunless %}
     {% endfor %}
+    {% endif %}
   </footer>
   {% endif %}
 </aside>

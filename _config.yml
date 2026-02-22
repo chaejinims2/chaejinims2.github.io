@@ -14,7 +14,12 @@ sidebar_order:
   - home
   - cases
   - techs
+  - labs
+# 사이드바 푸터(하단) 표시 순서. URL 첫 세그먼트로 지정. 없으면 footer → topbar 순.
+sidebar_footer_order:
   - language
+  - sitemap
+  - settings
 
 # No theme: app-shell only (tokens.css + base.css)
 theme: null

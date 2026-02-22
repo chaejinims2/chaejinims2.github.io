@@ -196,6 +196,30 @@ a:hover { color: var(--app-accent); text-decoration: underline; }
   flex-direction: column;
   gap: var(--app-nav-group-gap, 4px);
 }
+.app-sidebar-footer .app-nav-item,
+.app-sidebar-footer .app-nav-item .app-nav-ico,
+.app-sidebar-footer .app-nav-item .app-nav-label {
+  color: var(--app-muted);
+  opacity: 0.55;
+}
+.app-sidebar-footer .app-nav-item:hover,
+.app-sidebar-footer .app-nav-item:hover .app-nav-ico,
+.app-sidebar-footer .app-nav-item:hover .app-nav-label {
+  color: var(--app-text);
+  opacity: 1;
+}
+.app-sidebar-footer .app-nav-item.active,
+.app-sidebar-footer .app-nav-item.active .app-nav-ico,
+.app-sidebar-footer .app-nav-item.active .app-nav-label {
+  color: var(--app-muted);
+  opacity: 0.55;
+}
+.app-sidebar-footer .app-nav-item.active:hover,
+.app-sidebar-footer .app-nav-item.active:hover .app-nav-ico,
+.app-sidebar-footer .app-nav-item.active:hover .app-nav-label {
+  color: var(--app-text);
+  opacity: 1;
+}
 
 /* 사이드바 숨김 (body.sidebar-collapsed) */
 body.sidebar-collapsed .app-shell {
@@ -864,7 +888,27 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 }
 
 .app-page-container {
-  margin: 1rem 1rem;
+  margin: 2rem 1rem;
+}
+.page-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+  margin: 0.5rem 0 1rem;
+}
+.page-tag {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--app-muted);
+  background: var(--overlay-w-0a);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2, 4px);
+}
+.page-tag:hover {
+  color: var(--app-text);
+  border-color: var(--app-muted);
 }
 /* ---- Content typography ---- */
 .app-content h1 { font-size: 1.5rem; margin: 24px 0 12px; font-weight: 700; }
