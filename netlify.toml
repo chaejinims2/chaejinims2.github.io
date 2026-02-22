@@ -1,3 +1,7 @@
 [build]
-  command = "bundle install && bundle exec jekyll build"
+  command = "npm install && bundle install && bundle exec jekyll build"
   publish = "_site"
+
+# 방문자 수 API: /.netlify/functions/count
+[functions]
+  node_bundler = "esbuild"
