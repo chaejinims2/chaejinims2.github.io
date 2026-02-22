@@ -1,7 +1,7 @@
 ---
 layout: section
 permalink: /techs/
-title: Technology
+title: Tech notes
 icon: academic-cap
 type: sidebar
 ---
