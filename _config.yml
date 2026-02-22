@@ -8,7 +8,7 @@ url: "https://chaejinims2.github.io"
 # 방문자 수 (첫 페이지 / 푸터). Netlify 배포 후 아래 주석 해제하고 YOUR_SITE를 실제 주소로 변경.
 # 비우면 CountAPI 사용(광고 차단 시 - 로 남을 수 있음).
 # visitor_count_api: "https://YOUR_SITE.netlify.app/.netlify/functions/count"
-visitor_count_api: "https://https://fanciful-seahorse-b12a97.netlify.app//.netlify/functions/count"
+visitor_count_api: "https://fanciful-seahorse-b12a97.netlify.app/.netlify/functions/count"
 # 사이드바 섹션 표시 순서 (URL 첫 세그먼트). 없으면 url 기준 정렬.
 sidebar_order:
   - home
