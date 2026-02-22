@@ -101,3 +101,8 @@
 }
 .startup-footer a:hover { color: var(--app-text); text-decoration: underline; }
 .startup-footer-copy { margin-left: 0.25rem; }
+
+.startup-counter { display: flex; gap: 1.25rem; }
+.startup-counter-item { font-variant-numeric: tabular-nums; }
+.startup-counter-label { margin-right: 0.35rem; color: var(--app-muted); }
+.startup-counter-item span:last-child { color: var(--app-text); font-weight: 500; }
