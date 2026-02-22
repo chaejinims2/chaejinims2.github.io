@@ -24,7 +24,7 @@ Startup 페이지(첫 화면) 푸터의 **Today / Total** 방문자 수를 위�
 2. 배포 후 함수 URL: `https://YOUR_SITE.netlify.app/.netlify/functions/count`
 3. `_config.yml`에 다음을 추가한다 (YOUR_SITE를 실제 Netlify 사이트 이름으로 변경):
   ```yaml
-   visitor_count_api: "https://https://fanciful-seahorse-b12a97.netlify.app//.netlify/functions/count"
+   visitor_count_api: "https://YOUR_SITE.netlify.app/.netlify/functions/count"
   ```
 4. 사이트를 **Netlify에서 서빙**하면 같은 도메인에서 API를 쓰므로 CORS 이슈가 없다.
   **GitHub Pages**에서만 서빙하고 Netlify는 함수용으로만 쓰는 경우, 위 URL을 넣으면 다른 도메인이지만 CORS 헤더가 있어 동작한다.
@@ -34,6 +34,18 @@ Startup 페이지(첫 화면) 푸터의 **Today / Total** 방문자 수를 위�
 - **Netlify Blobs**에 `total`(전체)과 `daily:YYYY-MM-DD`(당일) 값을 저장한다.
 - GET 요청 시 두 값 모두 1 증가시킨 뒤 `{ "today": number, "total": number }` JSON을 반환한다.
 - `package.json`에 `@netlify/blobs`가 있으므로 빌드 시 `npm ci`로 설치된다.
+
+### 특정 IP 제외 (본인 IP 카운트 안 하기)
+
+자기 IP로 들어올 때는 숫자를 올리지 않으려면 Netlify **환경 변수**를 설정하면 된다.
+
+1. Netlify 대시보드 → 해당 사이트 → **Site configuration** → **Environment variables**
+2. **Add a variable** → **Add a single variable**
+3. **Key**: `VISITOR_COUNT_EXCLUDE_IPS`  
+   **Value**: 제외할 IP 주소. 여러 개면 쉼표로 구분 (예: `1.2.3.4, 5.6.7.8`)
+4. 저장 후 **Trigger deploy**로 다시 배포 (함수에 반영됨).
+
+제외된 IP에서 접속하면 **증가 없이** 현재 Today/Total만 그대로 반환한다.
 
 ### 로컬에서 함수 테스트
 

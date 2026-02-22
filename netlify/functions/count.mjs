@@ -11,6 +11,19 @@ function todayKey() {
     String(d.getUTCDate()).padStart(2, "0");
 }
 
+function getClientIp(req) {
+  const nf = req.headers.get("x-nf-client-connection-ip");
+  if (nf) return nf.trim();
+  const forwarded = req.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0].trim();
+  return "";
+}
+
+function getExcludedIps() {
+  const raw = process.env.VISITOR_COUNT_EXCLUDE_IPS || "";
+  return raw.split(",").map((s) => s.trim()).filter(Boolean);
+}
+
 function corsHeaders() {
   return {
     "Access-Control-Allow-Origin": "*",
@@ -40,13 +53,22 @@ export default async (req, context) => {
       store.get(keyDaily),
     ]);
 
-    const total = Math.max(0, parseInt(totalStr || "0", 10)) + 1;
-    const today = Math.max(0, parseInt(dailyStr || "0", 10)) + 1;
+    const excludedIps = getExcludedIps();
+    const clientIp = getClientIp(req);
+    const isExcluded = clientIp && excludedIps.length > 0 && excludedIps.includes(clientIp);
 
-    await Promise.all([
-      store.set(KEY_TOTAL, String(total)),
-      store.set(keyDaily, String(today)),
-    ]);
+    let today, total;
+    if (isExcluded) {
+      total = Math.max(0, parseInt(totalStr || "0", 10));
+      today = Math.max(0, parseInt(dailyStr || "0", 10));
+    } else {
+      total = Math.max(0, parseInt(totalStr || "0", 10)) + 1;
+      today = Math.max(0, parseInt(dailyStr || "0", 10)) + 1;
+      await Promise.all([
+        store.set(KEY_TOTAL, String(total)),
+        store.set(keyDaily, String(today)),
+      ]);
+    }
 
     return new Response(JSON.stringify({ today, total }), {
       status: 200,
