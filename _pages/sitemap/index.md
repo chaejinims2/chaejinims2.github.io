@@ -7,4 +7,4 @@ icon: map
 type: topbar
 ---
 
-여기는 사이트맵 페이지입니다.
+This is the sitemap page.

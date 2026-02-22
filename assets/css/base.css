@@ -874,6 +874,10 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .app-content p { margin: 0 0 12px; }
 .app-content ul, .app-content ol { margin: 0 0 12px; padding-left: 1.5em; }
 .settings-block { margin-bottom: 1rem; }
+.settings-block--row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.settings-block--row .settings-label { display: inline; margin: 0; }
+.settings-block--row .settings-select,
+.settings-block--row .settings-check-label { margin-left: auto; }
 .settings-label { font-weight: 600; color: var(--app-text); margin: 0 0 0.25rem; display: block; }
 .settings-select { padding: 0.35em 0.6em; border-radius: var(--radius-2, 4px); border: 1px solid var(--app-border); background: var(--app-panel); color: var(--app-text); font-size: 1rem; }
 .settings-check-label { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
