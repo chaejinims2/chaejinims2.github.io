@@ -15,8 +15,6 @@
   <body data-theme="dark" data-nav-group="{{ page.nav_group | default: '' }}">
     <script>
     (function(){
-      var m=location.search.match(/[?&]sidebar=collapsed(?=&|$)/);
-      if(m){ document.body.classList.add('sidebar-collapsed'); try{ localStorage.setItem('sidebar-collapsed','1'); }catch(e){} if(history.replaceState) history.replaceState(null,'',location.pathname+location.hash); }
       var pos=localStorage.getItem('sidebar-position');
       if(localStorage.getItem('sidebar-compact')==='1') document.body.classList.add('sidebar-compact');
       if(pos==='top') document.body.classList.add('sidebar-top');
@@ -24,9 +22,9 @@
         document.body.classList.add(pos==='right'?'sidebar-right':'sidebar-bottom');
         function reorderShell(){
           var shell=document.querySelector('.app-shell');
-          var content=document.querySelector('.app-content');
+          var main=document.querySelector('.app-main');
           var sidebar=document.querySelector('.app-sidebar');
-          if(shell&&content&&sidebar){ shell.insertBefore(content,sidebar); }
+          if(shell&&main&&sidebar){ shell.insertBefore(main,sidebar); }
         }
         if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',reorderShell);
         else reorderShell();
@@ -34,19 +32,17 @@
     })();
     </script>
     <div class="app-root">
-      {% include topbar.html %}
-
       <div class="app-shell">
         {% include sidebar.html %}
-
-        <main class="app-content">
-          <div class="app-content-inner">
-            {{ content }}
-          </div>
-        </main>
+        <div class="app-main">
+          <main class="app-content">
+            <div class="app-content-inner">
+              {{ content }}
+            </div>
+          </main>
+          {% include footer.html %}
+        </div>
       </div>
-
-      {% include footer.html %}
     </div>
 
     {% include scripts.html %}

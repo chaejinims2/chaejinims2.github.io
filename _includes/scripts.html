@@ -18,15 +18,9 @@
     span.textContent = chars.join('');
   });
 
-  var btn = document.getElementById('sidebar-toggle');
   var body = document.body;
-  if (!btn || !body) return;
-  var key = 'sidebar-collapsed';
+  if (!body) return;
   var posKey = 'sidebar-position';
-  if (localStorage.getItem(key) === '1') {
-    body.classList.add('sidebar-collapsed');
-    if (btn) btn.setAttribute('aria-pressed', 'true');
-  }
   var posVal = localStorage.getItem(posKey) || 'left';
   if (posVal === 'right') body.classList.add('sidebar-right');
   else if (posVal === 'bottom') body.classList.add('sidebar-bottom');
@@ -74,22 +68,5 @@
   }
   initSidebarCompactCheckbox();
   window.initSidebarCompactCheckbox = initSidebarCompactCheckbox;
-  btn && btn.addEventListener('click', function() {
-    body.classList.toggle('sidebar-collapsed');
-    var pressed = body.classList.contains('sidebar-collapsed');
-    btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-    btn.setAttribute('title', pressed ? '사이드바 보기' : '사이드바 숨기기');
-    localStorage.setItem(key, pressed ? '1' : '0');
-  });
-
-  document.addEventListener('click', function(e) {
-    if (!window.matchMedia('(max-width: 767px)').matches) return;
-    if (body.classList.contains('sidebar-collapsed')) return;
-    if (e.target.closest('.app-sidebar') || e.target.closest('#sidebar-toggle')) return;
-    body.classList.add('sidebar-collapsed');
-    btn.setAttribute('aria-pressed', 'true');
-    btn.setAttribute('title', '사이드바 보기');
-    localStorage.setItem(key, '1');
-  });
 })();
 </script>
