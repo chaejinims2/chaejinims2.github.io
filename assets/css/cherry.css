@@ -1,8 +1,12 @@
 /**
  * Cherry layout — startup 기반, Explore 없음, 아이콘 버튼 중심.
  */
+.cherry-root .startup-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .cherry-hero-actions {
-  height: 10rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -30,4 +34,8 @@
 }
 .cherry-hero-actions .startup-enter:hover img {
   transform: scale(1.1);
+}
+.cherry-hero-actions .cherry-action-margin {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
