@@ -1,0 +1,33 @@
+/**
+ * Cherry layout — startup 기반, Explore 없음, 아이콘 버튼 중심.
+ */
+.cherry-hero-actions {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+.cherry-hero-actions .startup-enter {
+  border: none;
+  background: transparent;
+}
+.cherry-hero-actions .startup-enter:hover {
+  border: none;
+  background: transparent;
+}
+.cherry-hero-actions .startup-enter-icon {
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.cherry-hero-actions .startup-enter img {
+  width: 12rem;
+  display: block;
+  transition: transform 0.2s ease;
+}
+.cherry-hero-actions .startup-enter:hover img {
+  transform: scale(1.1);
+}
