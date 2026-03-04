@@ -1,65 +1,89 @@
 <!doctype html>
 <html lang="{{ site.locale | replace: '_', '-' | default: 'ko' }}">
-  <head>
-    {% include head.html %}
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/startup.css" />
-  </head>
-  <body data-theme="dark" class="body-home">
-    <div class="startup-root">
-      <header class="startup-hero">
-        <h1 class="startup-title">{{ page.title | default: site.title }}</h1>
-        {% if page.lead %}
+
+<head>
+  {% include head.html %}
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/startup.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/cherry.css" />
+</head>
+
+<body data-theme="dark" class="body-home">
+  <div class="startup-root">
+    <header class="startup-hero">
+      <h1 class="startup-title">{{ page.title | default: site.title }}</h1>
+      <!-- {% if page.lead %}
         <p class="startup-lead">{{ page.lead }}</p>
         {% endif %}
         {% unless page.hide_explore %}
         <a href="{{ site.baseurl }}/home/about/index" class="startup-enter">Explore</a>
+        {% endunless %} -->
+    </header>
+    <main class="startup-main">
+      <article class="startup-content">
+        {{ content }}
+      </article>
+      <div class="cherry-hero-actions">
+        {% if page.lead %}
+        <p class="startup-lead">{{ page.lead }}</p>
+        {% endif %}
+        {% unless page.hide_explore %}
+        <a href="{{ site.baseurl }}/home/about/index" class="startup-enter startup-enter-icon">
+          <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/home.svg');"
+            aria-hidden="true"></span>
+
+        </a>
         {% endunless %}
-      </header>
-      <main class="startup-main">
-        <article class="startup-content">
-          {{ content }}
-        </article>
-      </main>
-      <footer class="startup-footer">
-        <div class="startup-counter" aria-live="polite">
-          <span class="startup-counter-item"><span class="startup-counter-label">Today</span> <span id="startup-count-today">-</span></span>
-          <span class="startup-counter-item"><span class="startup-counter-label">Total</span> <span id="startup-count-total">-</span></span>
-        </div>
-        <span class="startup-footer-copy">© {{ site.time | date: '%Y' }} {{ site.title }}</span>
-      </footer>
-    </div>
-    {% include scripts.html %}
-    <script>
-    (function() {
-      var apiUrl = {{ site.visitor_count_api | default: "" | jsonify }};
-      var elToday = document.getElementById('startup-count-today');
-      var elTotal = document.getElementById('startup-count-total');
-      function setToday(n) { if (elToday) elToday.textContent = typeof n === 'number' ? n : '-'; }
-      function setTotal(n) { if (elTotal) elTotal.textContent = typeof n === 'number' ? n : '-'; }
-      function tryCountApi() {
-        var ns = 'chaejinims2.github.io';
-        var today = new Date();
-        var dateKey = 'daily-' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
-        Promise.all([
-          fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/' + encodeURIComponent(dateKey)).then(function(r) { return r.json(); }).then(function(d) { return d && d.value != null ? d.value : null; }).catch(function() { return null; }),
-          fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/total').then(function(r) { return r.json(); }).then(function(d) { return d && d.value != null ? d.value : null; }).catch(function() { return null; })
-        ]).then(function(r) { setToday(r[0]); setTotal(r[1]); });
-      }
-      if (apiUrl) {
-        fetch(apiUrl, { method: 'GET', credentials: 'omit' })
-          .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-          .then(function(d) {
-            var t = d && (d.today != null || d.total != null) ? { today: d.today, total: d.total } : null;
-            if (t) { setToday(t.today); setTotal(t.total); } else tryCountApi();
-          })
-          .catch(function() { tryCountApi(); });
-      } else {
-        tryCountApi();
-      }
-    })();
-    </script>
-  </body>
+        <a href="https://github.com/chaejinims2?tab=repositories" class="startup-enter startup-enter-icon"
+          target="_blank" rel="noopener noreferrer" title="github">
+          <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/git.svg');"
+            aria-hidden="true"></span>
+        </a>
+      </div>
+    </main>
+    <footer class="startup-footer">
+      <div class="startup-counter" aria-live="polite">
+        <span class="startup-counter-item"><span class="startup-counter-label">Today</span> <span
+            id="startup-count-today">-</span></span>
+        <span class="startup-counter-item"><span class="startup-counter-label">Total</span> <span
+            id="startup-count-total">-</span></span>
+      </div>
+      <span class="startup-footer-copy">© {{ site.time | date: '%Y' }} {{ site.title }}</span>
+    </footer>
+  </div>
+  {% include scripts.html %}
+  <script>
+    (function () {
+      var apiUrl = {{ site.visitor_count_api | default: "" | jsonify
+    }};
+    var elToday = document.getElementById('startup-count-today');
+    var elTotal = document.getElementById('startup-count-total');
+    function setToday(n) { if (elToday) elToday.textContent = typeof n === 'number' ? n : '-'; }
+    function setTotal(n) { if (elTotal) elTotal.textContent = typeof n === 'number' ? n : '-'; }
+    function tryCountApi() {
+      var ns = 'chaejinims2.github.io';
+      var today = new Date();
+      var dateKey = 'daily-' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+      Promise.all([
+        fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/' + encodeURIComponent(dateKey)).then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; }),
+        fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/total').then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; })
+      ]).then(function (r) { setToday(r[0]); setTotal(r[1]); });
+    }
+    if (apiUrl) {
+      fetch(apiUrl, { method: 'GET', credentials: 'omit' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) {
+          var t = d && (d.today != null || d.total != null) ? { today: d.today, total: d.total } : null;
+          if (t) { setToday(t.today); setTotal(t.total); } else tryCountApi();
+        })
+        .catch(function () { tryCountApi(); });
+    } else {
+      tryCountApi();
+    }
+    }) ();
+  </script>
+</body>
+
 </html>
