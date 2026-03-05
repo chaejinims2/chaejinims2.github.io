@@ -1,0 +1,30 @@
+{% assign questions = include.quiz.questions %}
+{% if include.title %}
+<header class="quiz-header">
+  <h2 class="quiz-title">{{ include.title }}</h2>
+  {% if include.subtitle %}<p class="quiz-subtitle">{{ include.subtitle }}</p>{% endif %}
+</header>
+{% endif %}
+<div class="quiz-grid" role="list">
+  {% for q in questions %}
+  <article class="quiz-card" data-id="{{ q.id }}" role="listitem">
+    {% if q.id <= 20 %}{% assign num_range = 'range1' %}{% elsif q.id <= 60 %}{% assign num_range = 'range2' %}{% else %}{% assign num_range = 'range3' %}{% endif %}
+    <div class="quiz-card__num quiz-card__num--{{ num_range }}" aria-label="문제 {{ q.id }}">문제 {{ q.id }}</div>
+    <div class="quiz-card__body">{{ q.body }}</div>
+    {% if q.code %}
+    <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
+' }}</code></pre>
+    {% endif %}
+    <ol class="quiz-card__options" start="1">
+      {% for opt in q.options %}
+      <li class="quiz-card__option">{{ opt }}</li>
+      {% endfor %}
+    </ol>
+    <details class="quiz-card__answer-wrap">
+      <summary class="quiz-card__toggle">정답 보기</summary>
+      {% if q.id <= 20 %}{% assign num_range = 'range1' %}{% elsif q.id <= 60 %}{% assign num_range = 'range2' %}{% else %}{% assign num_range = 'range3' %}{% endif %}
+      <p class="quiz-card__answer quiz-card__num--{{ num_range }}"><strong>{{ q.answer }}번</strong> {% for opt in q.options %}{% if forloop.index == q.answer %}{{ opt }}{% endif %}{% endfor %}</p>
+    </details>
+  </article>
+  {% endfor %}
+</div>

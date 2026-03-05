@@ -982,3 +982,140 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .section-posts .section-index-list { margin-top: 0; }
 .section-posts .section-index-list li { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
 .section-post-date { font-size: 0.875rem; color: var(--app-muted); font-weight: 400; }
+
+/* ---- Quiz cards (lm11 등 기출 카드 시각화) ---- */
+.quiz-header { margin-bottom: var(--space-6, 1rem); }
+.quiz-title { font-size: 1.25rem; margin: 0 0 0.25rem; font-weight: 700; }
+.quiz-subtitle { font-size: 0.95rem; color: var(--app-muted); margin: 0; }
+
+/* 시험 선택 (데이터 파일 선택) */
+.quiz-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--app-border);
+}
+.quiz-select-label {
+  font-weight: var(--fw-600);
+  color: var(--app-text);
+}
+.quiz-select {
+  padding: var(--space-2) var(--space-4);
+  font-size: 1rem;
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  background: var(--app-panel);
+  color: var(--app-text);
+  min-width: 10rem;
+}
+.quiz-select:hover, .quiz-select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.quiz-select-hint {
+  font-size: var(--fs-2);
+  color: var(--app-muted);
+}
+.quiz-exam-section {
+  margin-top: 0;
+}
+.quiz-exam-section[hidden] {
+  display: none;
+}
+.quiz-exam-title {
+  font-size: 1.15rem;
+  margin: 0 0 var(--space-4);
+  font-weight: 600;
+  color: var(--app-muted);
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: var(--space-5, 0.75rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.quiz-card {
+  background: var(--surface-1, var(--app-panel));
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-3, 0.5rem);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  break-inside: avoid;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.quiz-card:hover {
+  border-color: var(--app-muted);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.quiz-card__num {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+  letter-spacing: 0.02em;
+}
+.quiz-card__num--range1
+{ color: var(--quiz-num-1, var(--accent)); }
+
+.quiz-card__num--range2
+{ color: var(--quiz-num-2, #34d399); }
+
+.quiz-card__num--range3
+{ color: var(--quiz-num-3, #f59e0b); }
+
+.quiz-card__body {
+  font-size: var(--fs-4);
+  line-height: 1.5;
+  color: var(--app-text);
+  font-weight: 500;
+}
+.quiz-card__code {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--fs-2);
+  line-height: 1.45;
+  background: var(--surface-0);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--app-muted);
+}
+.quiz-card__code code { font-family: ui-monospace, monospace; }
+.quiz-card__options {
+  margin: 0;
+  padding-left: 1.25em;
+  font-size: var(--fs-3);
+  color: var(--app-text);
+  line-height: 1.5;
+}
+.quiz-card__option { margin-bottom: 0.25rem; }
+.quiz-card__option--answer { color: var(--accent); font-weight: 600; }
+.quiz-card__answer-wrap {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--app-border);
+  font-size: var(--fs-2);
+}
+.quiz-card__toggle {
+  cursor: pointer;
+  color: var(--app-muted);
+  user-select: none;
+}
+.quiz-card__toggle:hover { color: var(--accent); }
+.quiz-card__answer { margin: 0.35em 0 0; color: var(--app-muted); }
+.quiz-card__answer strong { color: var(--accent); }
+/* 정답 문단에 구간 색 적용 시 전체(strong 포함) 같은 색 */
+.quiz-card__answer.quiz-card__num--range1 { color: var(--quiz-num-1, var(--accent)); }
+.quiz-card__answer.quiz-card__num--range2 { color: var(--quiz-num-2, #34d399); }
+.quiz-card__answer.quiz-card__num--range3 { color: var(--quiz-num-3, #f59e0b); }
+.quiz-card__answer.quiz-card__num--range1 strong,
+.quiz-card__answer.quiz-card__num--range2 strong,
+.quiz-card__answer.quiz-card__num--range3 strong { color: inherit; }

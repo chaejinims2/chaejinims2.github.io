@@ -1,0 +1,1104 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "body": "다음 설명에 해당하는 라이선스로 알맞은 것은?",
+      "options": [
+        "GPL",
+        "MPL",
+        "BSD",
+        "LGPL"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 2,
+      "body": "다음 중 나머지 셋과 다른 종류에 속하는 리눅스 배포판으로 알맞은 것은?",
+      "options": [
+        "Ubuntu",
+        "Linux Mint",
+        "Elementary OS",
+        "Vector Linux"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 3,
+      "body": "다음 중 리눅스 기반 운영체제로 틀린 것은?",
+      "options": [
+        "Tizen",
+        "webOS",
+        "QNX",
+        "GENIVI"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 4,
+      "body": "다음그림에 해당하는클러스터링기법으로 알맞은것은?",
+      "options": [
+        "고계산용 클러스터",
+        "부하분산 클러스터",
+        "고가용성 클러스터",
+        "베어울프 클러스터"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 5,
+      "body": "다음 중 유닉스(UNIX)를 개발한 인물로 알맞은 것은?",
+      "options": [
+        "리누스 토발즈",
+        "켄 톰슨",
+        "빌 조이",
+        "리처드 스톨먼"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 6,
+      "body": "다음은 grub.conf 파일의 일부이다. 관련 설정에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "10초 동안 대기한 후에 메뉴 선택이 없으면 첫 번째 항목의 운영체제로 부팅한다.",
+        "100초 동안 대기한 후에 메뉴 선택이 없으면 첫 번째 항목의 운영체제로 부팅한다.",
+        "10초 동안 대기한 후에 메뉴 선택이 없으면 두 번째 항목의 운영체제로 부팅한다.",
+        "100초 동안 대기한 후에 메뉴 선택이 없으면 두 번째 항목의 운영체제로 부팅한다."
+      ],
+      "answer": 3
+    },
+    {
+      "id": 7,
+      "body": "다음 그림의 명령 결과에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "mv 명령의 사용법 오류로 인해 오류 메시지가 나타난다.",
+        "mv 명령의 사용법 오류로 인해 오류 메시지 및 OK가 화면에 출력된다.",
+        "joon.txt는 lin.txt로 이름이 변경되고 화면에 아무것도 출력되지 않는다.",
+        "joon.txt는 lin.txt로 이름이 변경되고 화면에 OK라고 출력된다."
+      ],
+      "answer": 1
+    },
+    {
+      "id": 8,
+      "body": "다음 중 X 클라이언트 프로그램을 X 서버로 전송하기 변경해야할 환경 변수로 알맞은 것은?",
+      "options": [
+        "TERM",
+        "XTERM",
+        "DISPLAY",
+        "TERMINAL"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 9,
+      "body": "6개의 하드디스크로 RAID를 구성하려고 한다. 1개는 여분(spare) 디스크로 구성하고, 나머지 디스크로 RAID-5을 구성했을 경우에 실제 사용 가능한 디스크의 비율로 가장 알맞은 것은?",
+      "options": [
+        "33.3%",
+        "50%",
+        "66.7%",
+        "83.3%"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 10,
+      "body": "다음 중 번호값이 가장 큰 시그널(signal)로 알맞은 것은?",
+      "options": [
+        "SIGTERM",
+        "SIGINT",
+        "SIGTSTP",
+        "SIGQUIT"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 11,
+      "body": "다음 설명에 해당하는 용어로 알맞은 것은?",
+      "options": [
+        "exec",
+        "inetd",
+        "xinetd",
+        "standalone"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 12,
+      "body": "다음 중 포어그라운드 프로세스를 백그라운드프로세스로 전환할 때 사용하는 키 조합으로 알맞은 것은?",
+      "options": [
+        "[Ctrl]+[c]",
+        "[Ctrl]+[d]",
+        "[Ctrl]+[z]",
+        "[Ctrl]+[\\\\]"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 13,
+      "body": "다음 중 장치 파일명의 종류가 나머지 셋과 다른 것은?",
+      "options": [
+        "IDE 디스크",
+        "SCSI 디스크",
+        "S-ATA 디스크",
+        "SSD(Solid State Drive)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 14,
+      "body": "다음 설명에 해당하는 용어로 알맞은 것은?",
+      "options": [
+        "데스크톱 환경",
+        "윈도 매니저",
+        "디스플레이 매니저",
+        "X 프로토콜"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 15,
+      "body": "다음 바로 직전에 수행한 명령을 재실행할 때 사용할 때 명령으로 알맞은 것은?",
+      "options": [
+        "!0",
+        "!1",
+        "!!",
+        "history -1"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 16,
+      "body": "다음 설명에 해당하는 서브넷마스크값의 네트워크 접두어로 알맞은 것은?",
+      "options": [
+        "/24",
+        "/25",
+        "/26",
+        "/27"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 17,
+      "body": "다음 중 netstat 의 State 결과값이 ESTABLISHED 일 때 내용으로 알맞은 것은?",
+      "options": [
+        "3 Way-Handshaking이 완료된 후 서버와 클라이언트가 서로 연결된 상태",
+        "서버에서 클라이언트로 들어오는 패킷을 위해 소켓을 열고 기다리는 상태",
+        "로컬 시스템의 클라이언트 애플리케이션이 원격 호스트에 연결을 요청한 상태",
+        "원격 호스트가 종료되고 소켓도 닫힌 상태에서 마지막 ACK패킷을 기다리는 상태"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 18,
+      "body": "다음 중 리눅스에서 지원하는 네트워크 하드웨어 장치명과 설명으로 알맞은 것은?",
+      "options": [
+        "lo : 로컬 루프백(Local Loopback)을 나타내는 장치로 물리적으로 존재하는 인터페이스",
+        "enpx : CentOS 6 이전 버전에서 사용되었던 이더넷 카드 인터페이스 장치",
+        "pppx : 패러럴 케이블을 사용하는 패러럴 라인 인터페이스 장치",
+        "docker0 : 경량화된 서버 가상화 기술인 Docker를 사용할 경우 설정되는 네트워크 장치"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 19,
+      "body": "다음설명에해당하는OSI 7 계층으로가장알맞은것은?",
+      "options": [
+        "데이터링크 계층",
+        "네트워크 계층",
+        "전송 계층",
+        "세션 계층"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 20,
+      "body": "다음에서 설명하는 장치의 이름으로 가장 알맞은 것은?",
+      "options": [
+        "Router",
+        "Bridge",
+        "Gateway",
+        "Repeater"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 21,
+      "body": "다음 중 1시간 주기로 실행되는 crontab 설정으로 알맞은 것은?(오류 신고가 접수된 문제입니다. 반드시 정답과 해설을 확인하시기 바랍니다.)",
+      "options": [
+        "1 * * * * /etc/joon.sh",
+        "* 1 * * * /etc/joon.sh",
+        "* * 1 * * /etc/joon.sh",
+        "* * * 1 * /etc/joon.sh"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 22,
+      "body": "다음 그림의 결과에서 lin 사용자가 /project 디렉터리에 파일을 생성했을 경우에 해당 파일의 그룹 소유권과 관련된 설명으로 알맞은 것은?",
+      "options": [
+        "파일의 그룹 소유권은 아이디와 동일한 lin이 된다.",
+        "파일의 그룹 소유권은 주 그룹인 kait가 된다.",
+        "파일의 그룹 소유권은 2차 그룹인 project가 된다.",
+        "lin 사용자는 주 그룹을 project로 전환해야만 접근이 가능하므로 파일을 생성할 수 없다."
+      ],
+      "answer": 3
+    },
+    {
+      "id": 23,
+      "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+      "options": [
+        "ldd",
+        "blkid",
+        "ldconfig",
+        "ld.so.conf"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 24,
+      "body": "다음 중 다수의 텍스트 파일이 10MB 정도로 묶여있는 tar 파일을 압축하려고 할 때 가장 압축률이 좋은 명령으로 알맞은 것은?",
+      "options": [
+        "xz",
+        "gzip",
+        "bzip2",
+        "compress"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 25,
+      "body": "rpm 파일을 설치하기 전에 어떠한 파일들이 설치 되는지 미리 확인해보려고 한다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "-qlf",
+        "-qlr",
+        "-qlc",
+        "-qlp"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 26,
+      "body": "다음에 제시된 프로세스의 우선순위를 높이려고 한다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "㉠ nice, ㉡ -10",
+        "㉠ nice, ㉡ --10",
+        "㉠ renice, ㉡ -10",
+        "㉠ renice, ㉡ --10"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 27,
+      "body": "다음 중 root 사용자가 lin 사용자의 예약된 cron 작업을 제거하는 명령으로 가장 알맞은 것은?",
+      "options": [
+        "crontab -d -u lin",
+        "crontab -e -u lin",
+        "crontab -r -u lin",
+        "crontab -x –u lin"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 28,
+      "body": "사용자 디스크 용량을 제한하기 위해 쿼터를 설정하려고 한다. 다음 중 /etc/fstab에 설정해야하는 내용으로 알맞은 것은?",
+      "options": [
+        "4번째 필드에 usrquota라는 옵션을 추가한다.",
+        "4번째 필드에 userquota라는 옵션을 추가한다.",
+        "5번째 필드에 usrquota라는 옵션을 추가한다.",
+        "5번째 필드에 userquota라는 옵션을 추가한다."
+      ],
+      "answer": 4
+    },
+    {
+      "id": 29,
+      "body": "다음 그림과 같이 파일 및 디렉터리가 생성된다. umask 명령을 실행했을 경우에 출력되는 값으로 알맞은 것은?",
+      "options": [
+        "7000",
+        "0700",
+        "0007",
+        "0077"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 30,
+      "body": "다음 중 특정 사용자가 자신이 속한 주(Primary) 그룹을 다른 그룹으로 변경할 때 사용하는 명령으로 알맞은 것은?",
+      "options": [
+        "groupmod",
+        "gpasswd",
+        "newgrp",
+        "groups"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 31,
+      "body": "다음 명령의 결과에 대한 설명으로 가장 알맞은 것은?",
+      "options": [
+        "lin 사용자는 패스워드 입력 없이 로그인이 가능하다.",
+        "lin 사용자는 다음 로그인 시에 반드시 패스워드를 변경해야 한다.",
+        "lin 사용자는 패스워드에 잠금이 설정되어서 일시적으로 로그인이 불가하다.",
+        "lin 사용자는 패스워드가 삭제되어서 관리자가 패스워드를 설정할 때까지 로그인이 불가하다."
+      ],
+      "answer": 1
+    },
+    {
+      "id": 32,
+      "body": "다음 설명과 관련 있는 파일명으로 알맞은 것은?",
+      "options": [
+        "/etc/skel",
+        "/etc/passwd",
+        "/etc/login.defs",
+        "/etc/default/useradd"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 33,
+      "body": "다음 중 yum을 이용해서 telnet이라는 문자열이 들어있는 패키지를 검색하는 명령으로 알맞은 것은?",
+      "options": [
+        "yum -f telnet",
+        "yum search telnet",
+        "yum -search telnet",
+        "yum --search telnet"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 34,
+      "body": "다음 중 시그널이름과 번호를 확인할 수 명령으로 알맞은 것은?",
+      "options": [
+        "kill -l",
+        "killall -l",
+        "pkill -l",
+        "pgrep -l"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 35,
+      "body": "다음 중 백그라운드로 수행 중인 작업번호가 2인 프로세스를 포어그라운드로 전환하는 명령으로 알맞은 것은?",
+      "options": [
+        "fg -2",
+        "fg &2",
+        "fg %2",
+        "fg -n 2"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 36,
+      "body": "다음 중 ihd라는 그룹명을 kait로 변경하는 명령으로 알맞은 것은?",
+      "options": [
+        "groupmod -n ihd kait",
+        "groupmod -n kait ihd",
+        "groupmod -N ihd kait",
+        "groupmod -N kait ihd"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 37,
+      "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+      "options": [
+        "w",
+        "who",
+        "users",
+        "whoami"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 38,
+      "body": "다음 그림에 해당하는 명령어로 알맞은 것은?",
+      "options": [
+        "du",
+        "df",
+        "quota",
+        "repquota"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 39,
+      "body": "다음 중 10줄이 기록된 텍스트 파일인 lin.txt 파일에서 4번째부터 7번째 줄까지 출력하는 명령으로 알맞은 것은?",
+      "options": [
+        "head -7 lin.txt | tail -3",
+        "head -7 lin.txt | tail -4",
+        "tail -10 lin.txt | head -3",
+        "tail -10 lin.txt | head –4"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 40,
+      "body": "다음 명령의 실행 결과에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "lin.o라는 오브젝트 파일이 생성된다.",
+        "lin이라는 오브젝트 파일이 생성된다.",
+        "lin이라는 실행 파일이 생성된다.",
+        "a.out라는 실행 파일이 생성된다."
+      ],
+      "answer": 4
+    },
+    {
+      "id": 41,
+      "body": "다음 중 커널 컴파일의 작업 내용과 명령어로 알맞은 것은?",
+      "options": [
+        "커널 컴파일 옵션 설정 작업 : make mrproper",
+        "커널 소스의 설정 값 초기화 : make menuconfig",
+        "커널 모듈생성을위한 컴파일작업: make modules",
+        "커널 모듈 파일 복사 및 grub.conf 파일 수정 작업 : make modules_install"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 42,
+      "body": "특정 모듈을 제거하면서 의존성있는 모듈을 같이 제거하려고 할 때 ( 괄호 ) 안에 들어갈 옵션으로 알맞은 것은?",
+      "options": [
+        "-a",
+        "-d",
+        "-e",
+        "-r"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 43,
+      "body": "새로운 디스크를 인식하려고 한다. 다음 중 디스크 인식 여부를 확인하는 명령으로 가장 알맞은 것은?",
+      "options": [
+        "mount",
+        "fdisk -l",
+        "cat /etc/fstab",
+        "cat /etc/mtab"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 44,
+      "body": "다음 중 모듈에 대한 설명으로 틀린 것은?",
+      "options": [
+        "모듈 관련 명령어로는 lsmod, insmod, rmmod가 있다.",
+        "모듈이 커널에 내장되는 방식을 모놀리식 방식이라고 한다.",
+        "리눅스 모듈의 경우 C컴파일러로 만들어진 '*.ko' 파일 형태이다.",
+        "사용 가능한 모듈은 /lib/modules/커널버전 /kernel 디렉터리 안에서 확인 할 수 있다."
+      ],
+      "answer": 2
+    },
+    {
+      "id": 45,
+      "body": "다음 중 커널 컴파일을 하기 위한 과정으로 틀린 것은?",
+      "options": [
+        "커널 컴파일 전, 후 총 2번의 리부팅이 필요하다.",
+        "리눅스 커널 버전의 소스를 /usr/src/kernels에 다운로드 하여야 한다.",
+        "어셈블러, GCC, make 유틸리티 등 개발 도구가 사전에 설치되어 있어야 한다.",
+        "커널 초기화 시 'make clean' 명령을 이용하면 .config파일을 삭제 하지 않고 초기화 할 수 있다."
+      ],
+      "answer": 1
+    },
+    {
+      "id": 46,
+      "body": "새로운 디스크 추가 할당하고 리부팅을 하였으나 해당 디스크가 mount 되어 있지 않았다. 다음 중 리부팅 후에도 자동으로 mount되도록 설정하는 파일로 알맞은 것은?",
+      "options": [
+        "/etc/fstab",
+        "/etc/groups",
+        "/etc/exports",
+        "/proc/partitions"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 47,
+      "body": "다음 중 프린트 작업의 'Request-ID'를 확인 하는 명령어로 알맞은 것은?",
+      "options": [
+        "lp",
+        "lpc",
+        "lpstat",
+        "cancel"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 48,
+      "body": "다음 중 자동 문서 공급 장치가 장착된 스캐너에서 스캔할 때 사용 하는 명령으로 알맞은 것은?",
+      "options": [
+        "xcam",
+        "scanadf",
+        "scanimage",
+        "sane-find-scanner"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 49,
+      "body": "다음 중 CUPS 프린팅 시스템의 특징으로 알맞은 것은?",
+      "options": [
+        "설정 정보는 /etc/printcap파일에 저장된다.",
+        "BSD계열 유닉스에서 사용하기 위해 개발되었다.",
+        "로컬에 직접 연결한 프린터를 네트워크 프린터처럼 설정이 가능하다.",
+        "초기에는 printconf, printtool과 같은 도구를 사용하여 설정을 하였다."
+      ],
+      "answer": 1
+    },
+    {
+      "id": 50,
+      "body": "다음 중 uname 명령을 이용하여 커널 버전을 확인하는 옵션으로 알맞은 것은?",
+      "options": [
+        "-n",
+        "-o",
+        "-r",
+        "-s"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 51,
+      "body": "다음 설명에 해당하는 백업 도구의 옵션과 의미로 틀린 것은?",
+      "options": [
+        "-t : 내용만 확인할 때 사용한다.(--list)",
+        "-b : 증분 백업으로 백업할 때 사용한다. (--incremental)",
+        "-d : 필요한 경우 디렉터리를 생성한다. (--make-directories)",
+        "-i : 표준입력으로 백업한 자료를 불러올 때 사용한다.(--extract)"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 52,
+      "body": "다음 설명과 관련된 파일시스템 보안에 관한 내용으로 알맞은 것은?",
+      "options": [
+        "ext2부터 지원하는 시스템으로 파일권한 외 13가지 속성을 제어한다.",
+        "파일이나 디렉터리에 접근 권한을 제어할 수 있도록 만든 시스템이다.",
+        "설명은 docker 디렉터리에 대한 접근 권한 리스트를 확인하는 명령이다.",
+        "사용자를 인증하고 그 사용자의 서비스에 대한 접근을 제어하는 모듈화된 방법이다."
+      ],
+      "answer": 2
+    },
+    {
+      "id": 53,
+      "body": "다음 중 리눅스 주요 보안 도구와 기능 설명에 대해 알맞은 것은?",
+      "options": [
+        "nmap : 모든 파일들에 대한 데이터베이스를 만들어 파일의 변조 여부를 검사한다.",
+        "nessus : 운영 중인 서버에 불필요하게 작동하고 있는 서비스 포트를 확인할 수 있다.",
+        "tripwire : 서버의 보안 취약점을 검사해주는 도구로 문제가 되는 서비스에 대한 정보를 알려준다.",
+        "tcpdump : 조건식을설정하여네트워크인터페이스를 거치는 패킷 헤더 정보를 출력할 수 있다."
+      ],
+      "answer": 2
+    },
+    {
+      "id": 54,
+      "body": "다음 중 SSH(Secure Shell)의 설명으로 틀린 것은?",
+      "options": [
+        "패킷을 암호화하여 telnet이나 rlogin에 비해 안전하다.",
+        "ssh-keygen을 이용하면 인증키를 이용한 접속이 가능하다.",
+        "기본 설정 포트는 22번이며 원격 셸, scp, sftp기능을 지원한다.",
+        "ssh2는 ssh1을 개선한 것으로 하위호환성을 완벽하게 지원한다."
+      ],
+      "answer": 4
+    },
+    {
+      "id": 55,
+      "body": "다음은 /var/log/xferlog 파일의 구성에 관한 설명이다.( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "㉠ direction, ㉡ access-mode, ㉢ _",
+        "㉠ direction, ㉡ completion-status, ㉢ !",
+        "㉠ transfer-type, ㉡ access-mode, ㉢ !",
+        "㉠ transfer-type, ㉡ completion-status, ㉢ _"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 56,
+      "body": "다음 설명에 해당하는 로그 관련 주요 파일로 알맞은 것은?",
+      "options": [
+        "/var/log/btmp",
+        "/var/log/wtmp",
+        "/var/log/lastlog",
+        "/var/log/messages"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 57,
+      "body": "다음 중 sudo에 관련된 설명으로 틀린 것은?",
+      "options": [
+        "특정 사용자 또는 특정 그룹에 root 사용자 권한을 가질 수 있게 하는 도구이다.",
+        "visudo는 환경설정파일을 편집할 때 사용하는 명령이다.",
+        "적용된 사용자는 'sudo 명령어' 형태로 실행하며 root 권한을 대행한다.",
+        "환경설정파일은 /etc/sudo 이다."
+      ],
+      "answer": 4
+    },
+    {
+      "id": 58,
+      "body": "다음 중 dmesg 명령에 관한 설명으로 알맞은 것은?",
+      "options": [
+        "커널 변수의 값을 제어하여 시스템을 최적화 할 수 있는 명령이다.",
+        "커널링버퍼(kernel ring buffer)의 내용을 출력하고 제어하는 명령이다.",
+        "/var/log/dmesg 파일에 기록된 환경 변수 설정 값을 출력하는 명령이다.",
+        "커널 부트 메시지 로그를 보여주는 명령으로 실행 시 /var/log/dmesg 에 기록된다."
+      ],
+      "answer": 2
+    },
+    {
+      "id": 59,
+      "body": "다음 설명에 해당하는 명령으로 가장 알맞은 것은?",
+      "options": [
+        "dd",
+        "cpio",
+        "dump",
+        "rsync"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 60,
+      "body": "다음 중 rsync 명령에 관한 설명으로 틀린 것은?",
+      "options": [
+        "rcp(remote copy)에 비해 처리속도가 빠르다.",
+        "내부 파이프라인을 통하여 전송기간을 줄인다.",
+        "ssh을 이용하여 전송 가능하나 root 권한이 필요하다.",
+        "링크된 파일도 복사 가능하고 소유권도 유지하여 복사할 수 있다."
+      ],
+      "answer": 3
+    },
+    {
+      "id": 61,
+      "body": "다음은 MySQL 5.7.28 버전을 설치한 후에 mysql에서 사용하는 기본 데이터베이스를 생성하는 과정이다. ( 괄호 ) 안에 들어갈 내용을 알맞은 것은?",
+      "options": [
+        "./mysql",
+        "./mysqld",
+        "./mysqld_safe",
+        "./safe_mysqld"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 62,
+      "body": "다음 설명과 같을 때 메인보드의 BIOS에서 활성화 여부를 확인해야 하는 항목으로 알맞은 것은?",
+      "options": [
+        "VT-x",
+        "SVM",
+        "VDI",
+        "VMX"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 63,
+      "body": "다음 ( 괄호 ) 안에 들어갈 수 있는 설정 내용으로 틀린 것은?",
+      "options": [
+        "*.ihd.or.kr",
+        "192.168.12.",
+        "192.168.12.0/255.255.255.0",
+        "192.168.5.0/24"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 64,
+      "body": "다음은 /etc/named.conf 파일 설정의 일부이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "㉠ forwarders, ㉡ allow-query",
+        "㉠ forwarders, ㉡ forward",
+        "㉠ forward, ㉡ forwarders",
+        "㉠ allow-query, ㉡ forward"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 65,
+      "body": "다음 설명에 웹 서버 프로그램으로 알맞은 것은?",
+      "options": [
+        "Nginx",
+        "Apache HTTP Server",
+        "GWS(Google Web Server)",
+        "IIS(Internet Information Server)"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 66,
+      "body": "다음은 httpd.conf 파일의 문법적 오류를 명령어를 사용해서 점검하는 과정이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "-t",
+        "-f",
+        "-S",
+        "-l"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 67,
+      "body": "다음 중 LDAP에 대한 설명으로 틀린 것은?",
+      "options": [
+        "X.500 Directory Access Protocol 기반으로 만들어진 통신 규약이다.",
+        "RDBMS에 비교해서 검색 속도가 빠르다.",
+        "자주 변경되는 정보인 경우에 RDBMS보다 더욱 뛰어난 성능을 발휘한다.",
+        "읽기 위주의 검색 서비스에서 상당히 좋은 성능을 발휘한다."
+      ],
+      "answer": 3
+    },
+    {
+      "id": 68,
+      "body": "다음 설명과 같은 경우에 구성해야할 서버로 가장 알맞은 것은?",
+      "options": [
+        "SSH",
+        "NFS",
+        "NIS",
+        "II"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 69,
+      "body": "다음은 NIS 서버에서 사용자관련 정보가 저장 되는 파일명으로 알맞은 것은?",
+      "options": [
+        "uid.byname",
+        "user.byname",
+        "hosts.byname",
+        "passwd.byname"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 70,
+      "body": "NFS 서버의 IP 주소가 192.168.5.13이고 공유된 디렉터리가 /data일 때 NFS 클라이언트에서 마운트하는 과정이다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "/192.168.5.13/data",
+        "//192.168.5.13/data",
+        "192.168.5.13:/data",
+        "\\\\192.168.5.13:/data"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 71,
+      "body": "다음 중 메일 관련 프로그램의 종류가 다른 것은?",
+      "options": [
+        "qmail",
+        "postfix",
+        "dovecot",
+        "sendmail"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 72,
+      "body": "다음 설명과 관련 있는 설정 파일명으로 알맞은 것은?",
+      "options": [
+        "/etc/aliases",
+        "/etc/mail/local-host-names",
+        "/etc/mail/virtusertable",
+        "/etc/mail/sendmail.cf"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 73,
+      "body": "다음 설명과 관련 있는 설정 파일명으로 알맞은 것은?",
+      "options": [
+        "/etc/aliases",
+        "/etc/mail/local-host-names",
+        "/etc/mail/virtusertable",
+        "/etc/mail/sendmail.cf"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 74,
+      "body": "다음은 zone 파일에서 메일 서버를 설정하는 과정이다. 도메인이 ihd.or.kr이고, 관리자 계정이 kaituser일 때 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "kaituser@ihd.or.kr",
+        "kaituser@ihd.or.kr.",
+        "kaituser.ihd.or.kr",
+        "kaituser.ihd.or.kr."
+      ],
+      "answer": 4
+    },
+    {
+      "id": 75,
+      "body": "다음 설명에 해당하는 가상화의 기능으로 알맞은 것은?",
+      "options": [
+        "단일화(Aggregation)",
+        "에뮬레이션(Emulation)",
+        "절연(Insulation)",
+        "프로비저닝(Provisioning)"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 76,
+      "body": "다음 그림과 같은 방식의 가상화 기술로 알맞은 것은?",
+      "options": [
+        "VMware ESXi Server",
+        "XenServer",
+        "Docker",
+        "VirtualBox"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 77,
+      "body": "다음 설명과 같은 경우에 도입해야할 가상화 기술로 알맞은 것은?",
+      "options": [
+        "VirtualBox",
+        "RHEV",
+        "Docker",
+        "Openstack"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 78,
+      "body": "다음 중 xinetd 기반으로 동작하는 텔넷 서버를 활성화하기 위한 설정으로 알맞은 것은?",
+      "options": [
+        "disable = no",
+        "disable = yes",
+        "enable = no",
+        "enable = yes"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 79,
+      "body": "다음 중 TCP wrapper를 이용한 접근 제어가 가능한 서비스로 틀린 것은?",
+      "options": [
+        "sshd",
+        "vsftpd",
+        "in.telnetd",
+        "squid"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 80,
+      "body": "다음설명과같은경우에구성해야할서버로알맞은것은?",
+      "options": [
+        "VNC 서버",
+        "NTP 서버",
+        "Proxy 서버",
+        "DHCP 서버"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 81,
+      "body": "다음 NTP 서버에서 계층을 나타내는 용어로 알맞은 것은?",
+      "options": [
+        "Layer",
+        "Frame",
+        "Class",
+        "Stratum"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 82,
+      "body": "아파치 웹 서버 2.4 버전에서 서버의 포트 번호를 8080으로 운영하려고 한다. 다음 중 관련 설정으로 알맞은 것은?",
+      "options": [
+        "Port 8080",
+        "Listen 8080",
+        "http_port 8080",
+        "http_listen 8080"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 83,
+      "body": "다음 중 이름과 성의 조합을 나타내는 LDAP의 속성 키워드로 알맞은 것은?",
+      "options": [
+        "ou",
+        "cn",
+        "sn",
+        "dc"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 84,
+      "body": "다음은 NIS 클라이언트에서 NIS 서버 및 도메인명을 지정하는 과정이다. ( 괄호 ) 안에 들어갈 파일명으로 알맞은 것은?",
+      "options": [
+        "/etc/hosts",
+        "/etc/yp.conf",
+        "/etc/ypbind.conf",
+        "/etc/sysconfig/network"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 85,
+      "body": "다음 중 삼바 서버와 관련 있는 프로토콜의 조합으로 가장 알맞은 것은?",
+      "options": [
+        "SMB, CIFS",
+        "RPC, SMB",
+        "RPC, CIFS",
+        "SMB, IPC"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 86,
+      "body": "다음은 중 삼바 서버의 환경 설정의 일부이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "directory",
+        "public",
+        "path",
+        "root"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 87,
+      "body": "다음 중 vsftpd 설치 시에 제공되는 /etc/vsftpd/ftpusers 파일의 기능에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "vsftpd 서버에 접근이 가능한 사용자 목록 파일이다.",
+        "vsftpd 서버에 접근이 불가능한 사용자 목록 파일이다.",
+        "vsftpd 서버에 접근이 가능한 호스트의 IP 주소 목록 파일이다.",
+        "vsftpd 서버에 접근이 불가능한 호스트의 IP 주소 목록 파일이다."
+      ],
+      "answer": 2
+    },
+    {
+      "id": 88,
+      "body": "다음 중 메일 클라이언트가 메일 서버에 도착한 E-mail을 가져올 때 사용되는 프로토콜의 조합으로 알맞은 것은?",
+      "options": [
+        "SNMP, SMTP",
+        "IMAP, SMTP",
+        "SMTP, POP3",
+        "IMAP, POP3"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 89,
+      "body": "다음 중 메일을 보낸 후에 외부로 메일이 전송되었는지 여부를 확인하는 명령으로 알맞은 것은?",
+      "options": [
+        "m4",
+        "mailq",
+        "mail -v",
+        "sendmail -bi"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 90,
+      "body": "다음 중 DNS 서버가 등장하는데 계기가 된 파일로 알맞은 것은?",
+      "options": [
+        "/etc/hosts",
+        "/etc/host.conf",
+        "/etc/networks",
+        "/etc/sysconfig/network"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 91,
+      "body": "다음은 /etc/named.conf 파일 설정의 일부로 Zone 파일이 위치하는 디렉터리를 지정하는 내용이다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "zone",
+        "path",
+        "include",
+        "directory"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 92,
+      "body": "다음 중 리버스 존(Reverse Zone) 파일에만 사용하는 레코드 타입으로 알맞은 것은?",
+      "options": [
+        "RX",
+        "MX",
+        "PTR",
+        "CNAME"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 93,
+      "body": "다음 그림에 해당하는 프로그램을 실행하는 명령으로 알맞은 것은?",
+      "options": [
+        "virsh",
+        "libvirtd",
+        "virt-top",
+        "virt-manager"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 94,
+      "body": "다음설명과같은경우에구성해야할서버로알맞은것은?",
+      "options": [
+        "VNC 서버",
+        "NTP 서버",
+        "Proxy 서버",
+        "DHCP 서버"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 95,
+      "body": "다음은 httpd.conf 파일에서 웹 문서가 위치하는 디렉터리를 변경하는 과정이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+      "options": [
+        "ServerRoot",
+        "ServerAdmin",
+        "ServerName",
+        "DocumentRoot"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 96,
+      "body": "다음과 같은 설정을 통해 ssh 침입을 시도하는 특정 호스트를 차단하려고 할 때 적용할 수 있는 파일로 알맞은 것은?",
+      "options": [
+        "/etc/hosts.deny",
+        "/etc/ssh/sshd_config",
+        "/etc/syscofing/iptlables",
+        "/etc/syscofing/selinux"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 97,
+      "body": "다음 중 iptables에 구성되어 있는 각 테이블의 설명으로 알맞은 것은?",
+      "options": [
+        "filter : IP의 주소를 변환시키는 역할을 수행하는 테이블",
+        "mangle : 패킷 필터링을 담당하는 iptables의 기본 테이블",
+        "nat : 패킷 데이터를 변경하는 특수 규칙을 적용하는 테이블",
+        "raw : 넷필터의 연결추적 하위 시스템과 독립적으로 동작해야 하는 규칙을 설정하는 테이블"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 98,
+      "body": "다음에서설명하는네트워크침해유형으로알맞은것은?",
+      "options": [
+        "Land Attack",
+        "Smurf Attack",
+        "Teardrop Attack",
+        "TCP SYN Flooding"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 99,
+      "body": "다음 중 DDoS 공격 도구의 종류가 다른 것은?",
+      "options": [
+        "Boink",
+        "Trinoo",
+        "TFN 2K",
+        "Stacheldraht"
+      ],
+      "answer": 4
+    },
+    {
+      "id": 100,
+      "body": "다음 중 iptables 관련 로그가 기록되는 로그파일로 알맞은 것은?",
+      "options": [
+        "/var/dmesg",
+        "/var/log/secure",
+        "/cat/log/xferlog",
+        "/var/log/messages"
+      ],
+      "answer": 4
+    }
+  ]
+}
