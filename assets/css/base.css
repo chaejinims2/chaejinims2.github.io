@@ -1206,6 +1206,52 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   gap: var(--space-2) var(--space-4);
   font-size: var(--fs-2);
 }
+
+.quiz-memo-wrap {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--surface-1, var(--app-panel));
+  border-radius: var(--radius-3);
+}
+.quiz-memo-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+}
+.quiz-memo-hint {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-2);
+  color: var(--app-muted);
+}
+.quiz-memo-current {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-2);
+  color: var(--app-text);
+}
+.quiz-memo-textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 8em;
+  padding: var(--space-3);
+  font-size: var(--fs-3);
+  font-family: inherit;
+  line-height: 1.5;
+  color: var(--app-text);
+  background: var(--app-bg);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  resize: vertical;
+  box-sizing: border-box;
+}
+.quiz-memo-textarea::placeholder {
+  color: var(--app-muted);
+}
+.quiz-memo-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
 .answer-sheet__cell {
   padding: 0.2em 0;
   white-space: nowrap;
@@ -1256,6 +1302,29 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .quiz-card__answer.quiz-card__num--range2 strong,
 .quiz-card__answer.quiz-card__num--range3 strong { color: inherit; }
 
+.quiz-card__note-btn {
+  margin-top: var(--space-2);
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--app-muted);
+  font-size: var(--fs-2);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: block;
+}
+.quiz-card__note-btn:hover {
+  color: var(--accent);
+}
+
+.quiz-card__description {
+  margin: 0.35em 0 0;
+  white-space: pre-wrap; /* JSON의 \\n, \\t 등을 줄바꿈/들여쓰기로 표시 */
+  tab-size: 4;
+}
+
 /* 문제 은행: 필터 영역 */
 /* 한 문제씩 보기 */
 .quiz-single-toggle-wrap {
@@ -1269,6 +1338,21 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   cursor: pointer;
   font-weight: var(--fw-500);
   user-select: none;
+}
+.quiz-shuffle-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  color: var(--app-muted);
+  background: transparent;
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.quiz-shuffle-btn:hover {
+  color: var(--app-text);
+  border-color: var(--app-muted);
 }
 .quiz-one-nav {
   display: flex;
@@ -1344,6 +1428,21 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   font-size: var(--fs-1);
   color: var(--app-muted);
   font-weight: var(--fw-500);
+}
+.quiz-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.quiz-card__tag {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--surface-2, #f3f4f6);
+  color: var(--app-muted);
+  font-size: var(--fs-1);
 }
 .quiz-card[hidden] { display: none; }
 

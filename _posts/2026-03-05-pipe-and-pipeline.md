@@ -1,0 +1,23 @@
+---
+title: Pipe와 Pipeline
+date: 2026-03-05 00:00:00 +0900
+section: techs
+categories:
+  - linux
+tags:
+  - pipe
+  - pipeline
+  - linux-master-1
+---
+
+# Pipe
+
+한 프로세스의 출력(Output)이 다른 프로세스의 입력(Input)으로 바로 이어지도록 연결하는 데이터 통로를 말합니다. 데이터가 물 흐르듯 한 방향으로만 흐르기 때문에 파이프라는 이름이 붙었습니다.
+
+- 파이프라인(Pipeline)은 이러한 파이프 구조를 여러 개 연결하여 복잡한 작업을 단계별로 처리하는 전체 시스템을 의미
+- Pipe (`|`): **프로그램 → 프로그램** (A의 출력을 B의 입력으로)
+
+예시:
+bash
+ps aux | grep nginx
+- `ps aux`의 출력이 파이프로 `grep nginx`의 입력으로 바로 전달된다.

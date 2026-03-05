@@ -10,11 +10,18 @@
     {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
     {% assign subject = site.data.lm11.subjects | where: "key", q.subjectKey | first %}
     {% assign display_num = q.localId %}
-  <article class="quiz-card quiz-card--bank" data-exam-key="{{ q.examKey }}" data-subject-key="{{ q.subjectKey }}" data-local-id="{{ q.localId }}" role="listitem">
+  <article class="quiz-card quiz-card--bank" data-exam-key="{{ q.examKey }}" data-subject-key="{{ q.subjectKey }}" data-local-id="{{ q.localId }}"{% if q.notes %} data-notes="{{ q.notes | jsonify | escape }}"{% endif %} role="listitem">
     <div class="quiz-card__meta">
       <span class="quiz-card__num quiz-card__num--range{{ q.subjectKey }}" aria-label="출처">{{ exam.date }}</span>
       {% if subject %}<span class="quiz-card__subject" aria-label="과목">{{ subject.name }}</span>{% endif %}
     </div>
+    {% if q.tags and q.tags.size > 0 %}
+    <ul class="quiz-card__tags" aria-label="태그">
+      {% for tag in q.tags %}
+      <li class="quiz-card__tag">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     <div class="quiz-card__body">{{ q.localId }}. {{ q.body }}</div>
     {% if q.code and q.code != '' %}
     <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
@@ -25,12 +32,13 @@
       <li class="quiz-card__option" role="button" tabindex="0" aria-pressed="false" {% if forloop.first %}data-correct="true"{% endif %}>{{ opt }}</li>
       {% endfor %}
     </ol>
-    <details class="quiz-card__answer-wrap">
+    <details class="quiz-card__answer-wrap" open>
       <summary class="quiz-card__toggle">
         <span class="quiz-card__toggle-label">해설 보기</span>
       </summary>
       <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{{ q.options | first }}</p>
       <p class="quiz-card__description">{{ q.description }}</p>
+      <button type="button" class="quiz-card__note-btn">이 문제 노트</button>
     </details>
   </article>
   {% endfor %}
@@ -133,6 +141,19 @@
           li.click();
         }
       });
+    });
+  });
+
+  document.querySelectorAll('.quiz-card__note-btn').forEach(function(btn) {
+    var card = btn.closest('.quiz-card--bank');
+    if (!card) return;
+    btn.addEventListener('click', function() {
+      var key = getQuestionKey(card);
+      if (!key) return;
+      var notes = card.getAttribute('data-notes') || '';
+      document.dispatchEvent(new CustomEvent('quiz-memo-select', {
+        detail: { key: key, notes: notes }
+      }));
     });
   });
 
