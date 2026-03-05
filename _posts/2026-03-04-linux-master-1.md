@@ -13,8 +13,6 @@ tags:
 
 ## 2022년 03월 12일 필기
 
-### 1과목 : 리눅스 실무의 이해
-
 1. 다음 설명에 해당하는 파일로 알맞은 것은?
 ```
 네트워크 관리자로부터 운영 중인 DNS 서버의 IP 주소가 변경되었다는 연락을 받아서 관련 설정을 진행해야 한다.
@@ -37,6 +35,15 @@ tags:
 - 173.16.0.0 ~ 173.31.0.0
 
 4. 다음 그림에 해당하는 명령으로 알맞은 것은?
+```
+[root@wwww ~]# ip addr show
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:a1:b0:cb brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
+       valid_lft 76673sec preferred_lft 76673sec
+    inet6 fe80::5138:1898:628f:e139/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+```
 - ip
 - ifconfig
 - route
@@ -52,6 +59,11 @@ IP 주소: 192.168.5.130, 서브넷마스크: 255.255.255.128
 - 192.168.5.129
 
 6. 다음 그림에 해당하는 명령으로 알맞은 것은?
+```
+[root@www ~]
+access control enabled, only authorized clients can connect
+SI: localuser:root
+```
 - xhost
 - xauth
 - xrandr
@@ -65,7 +77,11 @@ IP 주소: 192.168.5.130, 서브넷마스크: 255.255.255.128
 
 8. 다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
 ```
-for flower in Rose Tulip Lily / do / echo $flower / (괄호)
+$ cat lin.sh
+for flower in Rose Tulip Lily
+do
+    echo $flower
+(괄호)
 ```
 - od
 - rof
@@ -83,10 +99,6 @@ for flower in Rose Tulip Lily / do / echo $flower / (괄호)
 - [Ctrl]+[c]를 눌러 작업을 일시 정지시킨 후에 bg 명령을 실행한다.
 - [Ctrl]+[z]를 눌러 작업을 일시 정지시킨 후에 fg 명령을 실행한다.
 - [Ctrl]+[z]를 눌러 작업을 일시 정지시킨 후에 bg 명령을 실행한다.
-
----
-
-### 2과목 : 리눅스 시스템 관리
 
 11. 다음 설명에 해당하는 프로세스 간 통신 방법으로 알맞은 것은?
 ```
@@ -243,7 +255,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 32. 다음 설명에 해당하는 용어로 알맞은 것은?
 ```
-(시스템/사운드 관련 설명)
+리눅스에 사용되는 사운드 카드 드라이버를 위한 API이면서 소프트웨어 프레임워크이다.
 ```
 - IPP
 - ALSA
@@ -252,7 +264,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 33. 다음 설명에 해당하는 명령으로 알맞은 것은?
 ```
-(커널 모듈 관련)
+커널 모듈간의 의존성을 관리하는 명령어로 모듈 관련 파일의 정보를 갱신하거나 맵 파일들을 새롭게 생성한다.
 ```
 - depmod
 - insmod
@@ -272,6 +284,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - 물리적 볼륨을 생성한 후에 볼륨 그룹을 구성하고 논리적 볼륨을 생성한다.
 
 36. 다음은 RAID 장치를 테스트하기 위해 일부 장치를 강제적으로 오류를 발생시키는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# mdadm /dev/md1 (괄호) /dev/sdb1
+```
 - -d
 - -D
 - -f
@@ -344,6 +359,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - atc
 
 46. 다음은 httpd 프로세스를 모두 종료시키는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?
+```
+# (괄호) httpd
+```
 - kill
 - pgrep
 - pkill
@@ -351,7 +369,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 47. 다음 명령의 결과에 대한 설명으로 알맞은 것은?
 ```
-(컴파일/링크 결과 설명)
+gcc sum.c
 ```
 - 'a.out'이라는 실행 파일이 생성된다.
 - 'sum'이라는 실행 파일이 생성된다.
@@ -359,6 +377,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - 'sum.o'이라는 오브젝트 파일이 생성된다.
 
 48. 다음은 현재 디렉토리 안에 있는 backup 디렉토리를 bzip2 압축 명령을 이용해서 tar로 묶는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# tar (괄호) backup.tar.bz2 backup/
+```
 - jxvf
 - Jxvf
 - jcvf
@@ -372,7 +393,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 50. 다음 설명에 해당하는 파일명으로 알맞은 것은?
 ```
-(사용자 기본 설정 파일 관련)
+일반 사용자들이 설정하는 패스워드의 최소 길이를 변경하려고 한다.
 ```
 - /etc/skel
 - /etc/passwd
@@ -381,7 +402,11 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 51. 명령의 결과가 다음과 같은 경우 관련 설명으로 틀린 것은?
 ```
-(권한/디렉토리 관련 결과)
+[kait@www ~]$ ls -ld /tmp
+drwxrwxrwx 24 root root 4096 Jan 12 20:59 /tmp
+[kait@www ~]$ ls -l /tmp
+-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 lin.txt
+-rw-r--r-- 1 kait kait 513 Jan 11 21:05 joon.txt
 ```
 - kait 사용자는 /tmp 디렉토리 안으로 들어갈 수 있다.
 - kait 사용자는 /tmp 디렉토리 안에 파일을 생성할 수 있다.
@@ -390,7 +415,10 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 52. 명령의 결과가 다음과 같은 경우에 실행되지 않는 명령으로 알맞은 것은?
 ```
-(심볼릭 링크 등 관련)
+[ihd@wwww]$ ls -l
+total 4
+-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 joon.txt
+drwxrwxr-x 1 ihd ihd 6 Jan 11 21:05 lin
 ```
 - ln joon.txt j
 - ln -s joon.txt j.txt
@@ -399,7 +427,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 53. 다음 설명에 해당하는 명령어로 알맞은 것은?
 ```
-(파일 정보/속성 확인)
+특정 파일에 설정된 i-node 번호를 비롯하여
+Access Time, Modify Time, Change Time과 같은
+타임스탬프를 확인하려고 한다.
 ```
 - ls
 - touch
@@ -413,6 +443,10 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - 프로세스 우선순위를 변경하는 명령어에는 nice, renice, top이 있다.
 
 55. 월, 수, 금요일 오후 4시 30분에 백업 스크립트가 동작하도록 cron을 설정하는 과정이다. 다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# vi /etc/crontab
+(괄호) /etc/backup.sh
+```
 - 4 30 * * 1,3,5
 - 30 4 * * 1,3,5
 - 16 30 * * 1,3,5
@@ -431,12 +465,18 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - yum seek bind
 
 58. 다음은 ls 명령어가 의존하고 있는 공유 라이브러리 정보를 확인하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?
+```
+# (괄호) /usr/bin/ls
+```
 - rpm
 - ldd
 - ldconfig
 - yum
 
 59. 다음은 /etc/passwd 파일 내용에서 필드 구분을 ':'으로 지정하고, 첫 번째 필드값과 세 번째 필드값을 추출해서 출력하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?
+```
+# (괄호) -f 1,3 -d: /etc/passwd
+```
 - tr
 - cut
 - awk
@@ -448,9 +488,6 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - SHA-256
 - SHA-512
 
----
-
-### 3과목 : 네트워크 및 서비스의 활용
 
 61. iptables 명령을 이용해서 직접 방화벽 규칙(rule)을 설정하려고 한다. 다음 중 동적 방화벽인 firewalld의 동작을 중지시키는 명령으로 알맞은 것은?
 - systemctl firewall-cmd stop
@@ -460,7 +497,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 62. 다음 설명에 해당하는 DoS 공격으로 가장 알맞은 것은?
 ```
-(DoS 유형 설명)
+웹 서버 프로세스가 중단되어서 서버를 점검하던 중 /tmp 디렉토리에 파일의 크기가 0인 빈 파일들이 매우 많이 생성된 것을 발견하였다. 추가호 해커가 만든 것으로 보이는 스크립트 안에는 touch 명령어를 이용해서 무수히 많은 빈 파일을 생성하도록 소스코드가 작성되어 있었다.
 ```
 - Teardrop Attack
 - Land Attack
@@ -469,7 +506,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 63. 다음 설명에 해당하는 iptables 관련 명령으로 알맞은 것은?
 ```
-(규칙 삭제 등)
+기본 테이블인 filter 테이블의 INPUT 사슬에서 2번째 규칙을 삭제하려고 한다.
 ```
 - iptables -F INPUT 2
 - iptables -F INPUT --line-number 2
@@ -477,6 +514,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - iptables -D INPUT --line-number 2
 
 64. 다음 설명에 해당하는 DoS(Denial of Service) 공격으로 알맞은 것은?
+```
+데이터를 전송하기 위해서는 패킷을 분할하고 시퀀스 넘버를 생성하는데, 이러한 시퀀스 넘버를 조작하거나 중첩시켜서 패킷화된 데이터를 재조합할 때 혼란을 일으켜 내부에 과부하를 발생시키는 공격 방법이다.
+```
 - Teardrop Attack
 - Land Attack
 - Smurf Attack
@@ -502,7 +542,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 68. 다음 (괄호) 안에 들어갈 명령어로 알맞은 것은?
 ```
-(NIS 관련)
+# (괄호) hosts.byname
 ```
 - ypbind
 - ypwhich
@@ -517,7 +557,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 70. 다음 설명에 해당하는 프로그램으로 알맞은 것은?
 ```
-(리소스 고갈 유형: 가용 디스크/I-node/메모리/프로세스)
+RFB(Remote Frame Buffer) 프로토콜을 이용하여 원격의 다른 컴퓨터에서 그래픽 환경 기반으로 데스크톱을 공유할 수 있는 시스템이다.
 ```
 - 가용 디스크 고갈
 - 가용 I-node 고갈
@@ -562,7 +602,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 77. 다음 설명에 해당하는 메일 관련 프로그램으로 알맞은 것은?
 ```
-(메일 필터/배달 등)
+일종의 대리인 역할을 수행하는 프로그램으로 메일 박스에 도착한 메일을 대행해서 가져오거나 전달한다. 특히 스팸 메일을 필터링하거나 메일 정렬 등의 역할을 수행한다.
 ```
 - postfix
 - qmail
@@ -571,7 +611,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 78. 다음 설명에 해당하는 설정값으로 알맞은 것은?
 ```
-(FTP anonymous 등)
+vsftpd 서버에 접속하는 익명 계정의 사용을 허가하려고 한다.
 ```
 - local_enable=NO
 - local_enable=YES
@@ -580,7 +620,23 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 79. 다음 그림에 해당하는 명령어로 알맞은 것은?
 ```
-(RPC/원격 프로시저 호출 관련)
+[root@www ~]# rpcinfo -p
+   program     vers proto   port  service
+ 100000    4   tcp    111  portmapper
+ 100000    3   tcp    111  portmapper
+ 100000    2   tcp    111  portmapper
+ 100000    4   udp    111  portmapper
+ 100000    3   udp    111  portmapper
+ 100000    2   udp    111  portmapper
+ 100024    1   udp  44921  status
+ 100024    1   tcp  36930  status
+ 100005    1   udp  20048  mountd
+ 100005    1   tcp  20048  mountd
+ 100005    2   udp  20048  mountd
+ 100005    2   tcp  20048  mountd
+ 100005    3   udp  20048  mountd
+ 100005    3   tcp  20048  mountd
+ 100003    3   tcp   2049  nfs
 ```
 - rpcbind
 - rpcinfo
@@ -588,6 +644,10 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - exportfs
 
 80. 다음은 NTP 서버의 환경 설정 파일에서 기준이 되는 NTP 서버를 지정하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# vi /etc/ntp.conf
+(괄호) 0.asia.pool.ntp.org
+```
 - date
 - rdate
 - server
@@ -595,12 +655,12 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 81. 다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
 ```
-(NTP 설정 등)
+네트워크 속도가 느린 환경에서 좀 더 빠른 인터넷 사용이나 접근 제어가 필요한 경우에 (괄호1)서버를 구축하면 된다. 리눅스에서는 보통 (괄호2) 프로그램을 설치해서 구성한다.
 ```
-- ①
-- ②
-- ③
-- ④
+- SQUID, PROXY
+- PROXY, SQUID
+- DHCP, SQUID
+- DHCP, PROXY
 
 82. 다음 중 CentOS 7에서 TCP Wrapper를 이용해서 접근 제어가 가능한 서비스로 알맞은 것은?
 - ssh
@@ -610,7 +670,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 83. 다음 설명의 경우에 선택해야 하는 가상화 기술로 알맞은 것은?
 ```
-(컨테이너/가상화 유형)
+ CPU 반가상화 기술을 통해 가상 머신의 성능을 기존의 물리적 시스템에 회대한 가까운 성능을 발휘하게 구축하려고 한다.
 ```
 - KVM
 - Xen
@@ -619,7 +679,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 84. 다음 설명에 해당하는 용어로 알맞은 것은?
 ```
-(가상화/프로비저닝 등)
+사용자의 요구사항에 맞게 할당, 배치, 배포할 수 있도록 만들어 높은 것을 의미한다. 가상화 기반의 자원 할당을 개별 물리적 단위보다도 더 세밀한 조각 단위로 가능하게 해둔다.
 ```
 - Insulation
 - Provisioning
@@ -628,7 +688,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 85. 다음은 Zone 파일의 설정 내용 중 일부이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
 ```
-(DNS 레코드 타입)
+www A 10.0.2.15
+www1 (괄호) www
+www2 (괄호) www
 ```
 - MX
 - NS
@@ -636,6 +698,12 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - PTR
 
 86. 다음은 DNS 서버의 환경 설정 파일 중에 일부로, IP 주소가 10.0.2.15이고 도메인이 ihd.or.kr인 시스템에 역(Reverse) 존 파일을 설정하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+zone "(괄호)" IN {
+  type master;
+  file "ihd.or.kr";
+};
+```
 - 10.0.2.15
 - 15.2.0.10
 - 10.0.2.in-addr.arpa
@@ -643,7 +711,9 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 87. 다음 (괄호) 안에 들어갈 메일 관련 파일로 알맞은 것은?
 ```
-(가상 사용자/도메인 매핑)
+# vi (괄호)
+ceo@linux.com lhd
+ceo@www.linux.com kait
 ```
 - /etc/mail/access
 - /etc/mail/local-host-names
@@ -652,7 +722,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 88. 다음 설명에 해당하는 메일 관련 파일로 알맞은 것은?
 ```
-(로컬 호스트명 등)
+메일 서버에 사용하는 도메인을 설정하는 파일로 한 줄에 도메인 하나씩 기입한다.
 ```
 - /etc/mail/access
 - /etc/mail/local-host-names
@@ -661,14 +731,16 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 89. 다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
 ```
-(가상화/컨테이너)
+서버에 도착한 메일을 클라이언트에서 확인할 때 사용하는 (괄호1) 프로토콜의 포트 번호는 (괄호2)이다.
 ```
-- KVM
-- Xen
-- Ansible
-- Docker
+- (괄호1) SMTP, (괄호2) 25
+- (괄호1) POP3, (괄호2) 110
+- (괄호1) IMAP, (괄호2) 143
+- (괄호1) SMTP, (괄호2) 587
 
 90. 다음은 삼바 서버에 접근할 수 있는 특정 호스트를 지정하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+(괄호) = 127.192.168.5 192.168.12
 - path
 - workgroup
 - security
@@ -676,7 +748,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 91. 다음 설명에 해당하는 NFS 서버 설정 옵션으로 알맞은 것은?
 ```
-(root_squash 등)
+root를 포함해서 모든 사용자의 권한을 nfsnobody (또는 nobody) 권한으로 매핑시킨다.
 ```
 - all_squash
 - no_all_squash
@@ -697,20 +769,30 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 94. 다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
 ```
-(LDAP/메일 등)
+LDAP는 이름,주소와 같이 하나 이상의 속성을 가진 객체로 구성되고 그 객체를 (괄호1) 이라고 부른다. (괄호1)은 DIT(Directory Information Tree)라고 부르는 트리 구조에 의해 조직화 되고, 이 조직 내에서 고유한 식별자인 (괄호2)를 가진다.
 ```
-- /etc/mail/access
-- /etc/mail/local-host-names
-- /etc/aliases
-- /etc/mail/virtusertable
+- 레코드, CN
+- 레코드, DN
+- 엔트리, CN
+- 엔트리, DN
 
 95. 다음은 PHP 소스 설치 후에 관련 함수로 테스트하는 프로그램을 작성하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# vi test.php
+<?php
+(괄호)
+?>
+```
 - test();
 - testinfo();
 - testphp();
 - phpinfo();
 
 96. 다음은 아파치 웹 서버를 소스 설치하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# ./configure (괄호)=/usr/local/apache --enable-so --enable-mods-shared=all
+```
+
 - --ServerDirectory
 - --prefix
 - --Directory
@@ -718,7 +800,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 97. 다음 설명에 해당하는 용어로 알맞은 것은?
 ```
-(컨테이너 리소스 제한 등)
+프로세스들이 CPU, 메모리, 디스크 입출력, 네트워크 등과 같은 자원을 사용할 때 제한하고 격리하는 리눅스 커널 기능이다. 2006년 구글의 엔지니어들이 관련 연구를 시장했고, 2008년 1월에 출시된 커널 버전 2.6.24의 메인 라인에 병합되었다.
 ```
 - IPC
 - D-bus
@@ -727,7 +809,7 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 
 98. 다음은 DNS 서버의 환경 설정 파일 중에 일부이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
 ```
-(ACL, zone, allow-transfer, forwarders 등)
+(괄호) "member" {210.96.52.100; 192.168.5/24;};
 ```
 - acl
 - zone
@@ -735,12 +817,19 @@ weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, mi
 - forwarders
 
 99. 다음은 리눅스 시스템에서 IP 주소가 192.168.5.13인 윈도우 시스템에 공유된 디렉터리를 마운트하는 과정이다. (괄호) 안에 들어갈 삼바 관련 명령으로 알맞은 것은?
+```
+# (괄호) //192.168.5.13/photo /mnt
+```
 - smbmount
 - mount.cifs
 - smbstatus
 - smbclient
 
 100. 다음은 소스 파일을 이용해서 설치한 MySQL 5.7 버전을 설치한 이후에 기본 관리 데이터베이스인 mysql 등을 생성하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+# cd /usr/local/mysql/bin
+# (괄호) --initialize --user=root
+```
 - ./mysql
 - ./mysqld
 - ./mysqladmin
