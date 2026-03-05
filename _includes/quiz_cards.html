@@ -9,8 +9,7 @@
   {% for q in questions %}
   <article class="quiz-card" data-id="{{ include.exam_key }}-{{ q.localId }}" role="listitem">
     {% assign display_num = q.localId %}
-    {% if display_num <= 20 %}{% assign num_range = 'range1' %}{% elsif display_num <= 60 %}{% assign num_range = 'range2' %}{% else %}{% assign num_range = 'range3' %}{% endif %}
-    <div class="quiz-card__num quiz-card__num--{{ num_range }}" aria-label="문제 {{ display_num }}">문제 {{ display_num }}</div>
+    <div class="quiz-card__num quiz-card__num--range{{ q.subjectKey }}" aria-label="문제 {{ display_num }}">문제 {{ display_num }}</div>
     <div class="quiz-card__body">{{ q.body }}</div>
     {% if q.code %}
     <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
@@ -22,10 +21,10 @@
       {% endfor %}
     </ol>
     <details class="quiz-card__answer-wrap">
-      <summary class="quiz-card__toggle">정답 보기</summary>
-      {% if display_num <= 20 %}{% assign num_range = 'range1' %}{% elsif display_num <= 60 %}{% assign num_range = 'range2' %}{% else %}{% assign num_range = 'range3' %}{% endif %}
+      <summary class="quiz-card__toggle"></summary>
       {% if include.exam_key %}{% assign exam = site.data.lm11.exams | where: "key", include.exam_key | first %}{% assign exam_answers = exam.answers %}{% assign original_num = exam_answers[q.localId | minus: 1] %}{% else %}{% assign original_num = 1 %}{% endif %}
-      <p class="quiz-card__answer quiz-card__num--{{ num_range }}"><strong>{{ original_num }}번</strong> {{ q.options | first }}</p>
+      <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}"><strong>{{ original_num }}번</strong> {{ q.options | first }}</p>
+      <p class="quiz-card__description">{{ q.description }}</p>
     </details>
   </article>
   {% endfor %}

@@ -10,25 +10,26 @@
     {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
     {% assign subject = site.data.lm11.subjects | where: "key", q.subjectKey | first %}
     {% assign display_num = q.localId %}
-    {% if display_num <= 20 %}{% assign num_range = 'range1' %}{% elsif display_num <= 60 %}{% assign num_range = 'range2' %}{% else %}{% assign num_range = 'range3' %}{% endif %}
   <article class="quiz-card quiz-card--bank" data-exam-key="{{ q.examKey }}" data-subject-key="{{ q.subjectKey }}" data-local-id="{{ q.localId }}" role="listitem">
     <div class="quiz-card__meta">
-      <span class="quiz-card__num quiz-card__num--{{ num_range }}" aria-label="출처">{{ exam.date }} - {{ q.localId }}번</span>
+      <span class="quiz-card__num quiz-card__num--range{{ q.subjectKey }}" aria-label="출처">{{ exam.date }}</span>
       {% if subject %}<span class="quiz-card__subject" aria-label="과목">{{ subject.name }}</span>{% endif %}
     </div>
-    <div class="quiz-card__body">{{ q.body }}</div>
+    <div class="quiz-card__body">{{ q.localId }}. {{ q.body }}</div>
     {% if q.code and q.code != '' %}
     <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
 ' }}</code></pre>
     {% endif %}
-    <ol class="quiz-card__options" start="1" data-shuffle>
+    <ol class="quiz-card__options quiz-card__options--selectable" start="1" data-shuffle role="list">
       {% for opt in q.options %}
-      <li class="quiz-card__option">{{ opt }}</li>
+      <li class="quiz-card__option" role="button" tabindex="0" aria-pressed="false" {% if forloop.first %}data-correct="true"{% endif %}>{{ opt }}</li>
       {% endfor %}
     </ol>
     <details class="quiz-card__answer-wrap">
-      <summary class="quiz-card__toggle">정답 보기</summary>
-      <p class="quiz-card__answer quiz-card__num--{{ num_range }}">{{ q.options | first }}</p>
+      <summary class="quiz-card__toggle">
+        <span class="quiz-card__toggle-label">해설 보기</span>
+      </summary>
+      <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{{ q.options | first }}</p>
       <p class="quiz-card__description">{{ q.description }}</p>
     </details>
   </article>
@@ -36,6 +37,8 @@
 </div>
 <script>
 (function() {
+  var STORAGE_KEY = 'lm11-answer-sheet';
+
   function shuffleList(list) {
     var items = [].slice.call(list.children);
     for (var i = items.length - 1; i > 0; i--) {
@@ -46,6 +49,99 @@
     }
     items.forEach(function(el) { list.appendChild(el); });
   }
-  document.querySelectorAll('.quiz-grid--bank .quiz-card__options[data-shuffle]').forEach(shuffleList);
+
+  function setChoiceNumbers(ol) {
+    var items = ol.querySelectorAll('.quiz-card__option');
+    items.forEach(function(li, i) {
+      li.setAttribute('data-choice', String(i + 1));
+    });
+  }
+
+  function loadAnswers() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
+  function saveAnswers(obj) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+    } catch (e) {}
+  }
+
+  function getQuestionKey(card) {
+    var ek = card.getAttribute('data-exam-key');
+    var lid = card.getAttribute('data-local-id');
+    return ek && lid ? ek + '-' + lid : null;
+  }
+
+  function applySelectionToCard(card, answers) {
+    var key = getQuestionKey(card);
+    if (!key) return;
+    var choice = answers[key];
+    var opts = card.querySelectorAll('.quiz-card__option');
+    opts.forEach(function(li) {
+      var c = li.getAttribute('data-choice');
+      if (c && String(choice) === c) {
+        li.classList.add('is-selected');
+        li.setAttribute('aria-pressed', 'true');
+      } else {
+        li.classList.remove('is-selected');
+        li.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  function notifyAnswerSheet() {
+    document.dispatchEvent(new CustomEvent('quiz-answer-changed'));
+  }
+
+  document.querySelectorAll('.quiz-grid--bank .quiz-card__options[data-shuffle]').forEach(function(ol) {
+    shuffleList(ol);
+    setChoiceNumbers(ol);
+  });
+
+  var answers = loadAnswers();
+  document.querySelectorAll('.quiz-card--bank').forEach(function(card) {
+    applySelectionToCard(card, answers);
+  });
+
+  document.querySelectorAll('.quiz-grid--bank .quiz-card__options--selectable').forEach(function(ol) {
+    var card = ol.closest('.quiz-card--bank');
+    if (!card) return;
+    ol.querySelectorAll('.quiz-card__option').forEach(function(li) {
+      li.addEventListener('click', function() {
+        var key = getQuestionKey(card);
+        if (!key) return;
+        var choice = li.getAttribute('data-choice');
+        if (!choice) return;
+        var num = parseInt(choice, 10);
+        if (num < 1 || num > 4) return;
+        if (answers[key] === num) {
+          delete answers[key];
+        } else {
+          answers[key] = num;
+        }
+        saveAnswers(answers);
+        applySelectionToCard(card, answers);
+        notifyAnswerSheet();
+      });
+      li.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          li.click();
+        }
+      });
+    });
+  });
+
+  document.addEventListener('quiz-answer-reset', function() {
+    answers = {};
+    saveAnswers(answers);
+    cards.forEach(function(card) { applySelectionToCard(card, answers); });
+    notifyAnswerSheet();
+  });
+
 })();
 </script>
