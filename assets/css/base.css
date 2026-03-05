@@ -1119,3 +1119,136 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .quiz-card__answer.quiz-card__num--range1 strong,
 .quiz-card__answer.quiz-card__num--range2 strong,
 .quiz-card__answer.quiz-card__num--range3 strong { color: inherit; }
+
+/* 문제 은행: 필터 영역 */
+/* 한 문제씩 보기 */
+.quiz-single-toggle-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.quiz-single-toggle-label {
+  cursor: pointer;
+  font-weight: var(--fw-500);
+  user-select: none;
+}
+.quiz-one-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding: var(--space-3) 0;
+}
+.quiz-one-nav__btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.quiz-one-nav__btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(0,0,0,0.03);
+}
+.quiz-one-nav__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.quiz-one-nav__count {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  min-width: 5em;
+  text-align: center;
+}
+
+.quiz-filter-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-5, 1rem);
+}
+.quiz-filter-wrap .quiz-select-wrap { margin-bottom: 0; }
+.quiz-filter-count {
+  margin: 0;
+  font-size: var(--fs-2);
+  color: var(--app-muted);
+}
+.page-desc {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-3);
+  color: var(--app-muted);
+}
+
+/* 문제 은행: 카드 메타(출처·과목) */
+.quiz-card--bank .quiz-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+.quiz-card--bank .quiz-card__num { flex: 0 0 auto; }
+.quiz-card__subject {
+  font-size: var(--fs-1);
+  color: var(--app-muted);
+  font-weight: var(--fw-500);
+}
+.quiz-card[hidden] { display: none; }
+
+/* 한 문제씩 보기 시 카드 전용 스타일 */
+.quiz-bank-section.is-single-mode .quiz-grid--bank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-4) var(--space-3);
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--space-6, 1.5rem) var(--space-6, 1.5rem);
+  font-size: 1.0625rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--app-muted);
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) .quiz-card__meta {
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--app-border);
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) .quiz-card__body {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  margin-bottom: var(--space-2);
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) .quiz-card__code {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--fs-3);
+  margin-bottom: var(--space-3);
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) .quiz-card__options {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-left: 1.5em;
+  margin-bottom: var(--space-3);
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) .quiz-card__option {
+  margin-bottom: 0.5rem;
+}
+.quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) .quiz-card__answer-wrap {
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--app-border);
+  font-size: 1rem;
+}
