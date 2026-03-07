@@ -11,7 +11,7 @@
           {% unless section_page.hide %}
           {% assign nav_icon_name = section_page.icon | default: "book" %}
           <a class="app-topmenu-item {% if page_group == group_key %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}" aria-label="{{ group_title }}">
-            <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/{{ nav_icon_name }}-solid.svg');" aria-hidden="true"></span>
+            <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ nav_icon_name }}.svg');" aria-hidden="true"></span>
             <span class="app-topmenu-label">{{ group_title }}</span>
           </a>
           {% endunless %}

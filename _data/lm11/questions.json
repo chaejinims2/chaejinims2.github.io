@@ -11,8 +11,16 @@
       "클라우드 컴퓨팅이 발전하면서 하드웨어 자원을 제외한 나머지 IT자원은 서비스 형태로 제공할 수 있게 되었다.",
       "사용자가 필요한 작업을 제시하면, 필요한 자원이 할당되어 작업하고 결과를 얻도록 해주는 'as a Service'로 제공되는 컴퓨팅 환경을 의미한다."
     ],
-    "notes": ["IaaS/PaaS/SaaS/FaaS 개념 정리"],
-    "tags": ["Cloud computing", "IaaS", "PaaS", "SaaS", "FaaS"]
+    "notes": [
+      "IaaS/PaaS/SaaS/FaaS 개념 정리"
+    ],
+    "tags": [
+      "Cloud computing",
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "FaaS"
+    ]
   },
   {
     "examKey": "lm11-20200613",
@@ -78,6 +86,7 @@
     "localId": 6,
     "subjectKey": 1,
     "body": "다음 명령의 실행 결과로 ( 괄호 )안에 알맞은 것은?",
+    "code": "cat test.sh\n#!/bin/bash\necho \"#$0 $1 #\"\n./test.sh /the 2 (괄호)",
     "description": "-",
     "options": [
       "./test.sh /the #",
@@ -104,6 +113,7 @@
     "localId": 8,
     "subjectKey": 1,
     "body": "다음에서 설명하는 데몬 관련 유틸리티로 알맞은 것은?",
+    "code": "텍스트 기반의 명령형 프로그램으로 실행 레벨에 따른 서비스의 on/off 설정 리스트를 출력하거나 설정한다.",
     "description": "-",
     "options": [
       "chkconfig",
@@ -143,6 +153,7 @@
     "localId": 11,
     "subjectKey": 1,
     "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "( ㉠ )은(는) 전통적인 유닉스 계열 파일 시스템에서 사용하는 일종의 자료 구조로 각각의 파일은 하나의 ( ㉠ )을(를) 할당받아 관리된다.\n저널링 기술은 기존의 ( ㉡ )에 걸리는 시간을 단축하기 위해 데이터를 디스크에 쓰기 전에 로그에 데이터를 남겨 시스템의 비정상적인 종료에도 로그를 사용해 ( ㉡ )보다 빠르고 안정적인 복구기능을 제공하는 기술이다.",
     "description": "-",
     "options": [
       "㉠ i-node, ㉡ fsck",
@@ -154,6 +165,7 @@
   {
     "examKey": "lm11-20200613",
     "localId": 12,
+    "code": "하드디스크 4개를 이용해서 디스크 2개를 먼저 미러링으로 구성하고 다시 스트라이핑하는 방식으로 구성하는 형태",
     "subjectKey": 1,
     "body": "다음 설명으로 알맞은 것은?",
     "description": "-",
@@ -182,6 +194,7 @@
     "localId": 14,
     "subjectKey": 1,
     "body": "다음에서 설명하는 내용으로 알맞은 것은?",
+    "code": "이것은 X윈도를 실행시키는 스크립트로 시스템 환경을 초기화시키고 시작하는데 필요한 여러 프로그램을 호출하고 최종적으로 xlint를 호출하는 명령이다.",
     "description": "-",
     "options": [
       "startx",
@@ -273,6 +286,7 @@
     "localId": 21,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 명령으로 알맞은 것은?",
+    "code": "/data 디렉터리를 여러 사용자가 자유롭게 파일 생성이 가능하나 삭제는 본인 소유의 파일만 가능한 공유디렉터리로 만들려고 한다.",
     "description": "-",
     "options": [
       "chmod o+t /data",
@@ -325,6 +339,7 @@
     "localId": 25,
     "subjectKey": 2,
     "body": "다음 빈 칸에 들어갈 수 있는 명령으로 틀린 것은?",
+    "code": "# ( 괄호 ) httpd",
     "description": "-",
     "options": [
       "kill",
@@ -338,6 +353,7 @@
     "localId": 26,
     "subjectKey": 2,
     "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# rpm ( 괄호 ) /bin/ls \n coreutils-8.4-47.el6.i686",
     "description": "-",
     "options": [
       "-qf",
@@ -364,6 +380,7 @@
     "localId": 28,
     "subjectKey": 2,
     "body": "묶여있는 소스 파일을 현재 디렉터리에 풀지 않고 내용만 확인하려고 한다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# tar ( 괄호 ) php-7.4.2.tar.bz2",
     "description": "-",
     "options": [
       "Jxvf",
@@ -377,6 +394,7 @@
     "localId": 29,
     "subjectKey": 2,
     "body": "다음 설명과 관련 있는 파일명으로 알맞은 것은?",
+    "code": "MySQL을 소스로 설치하여 생성된 /usr/local/muysql/lib를 공유 라이브러리 디렉터리로 추가 등록하려고 한다.",
     "description": "-",
     "options": [
       "/etc/ldconfig",
@@ -455,6 +473,7 @@
     "localId": 35,
     "subjectKey": 2,
     "body": "백업 작업이 수행 중인 터미널이 닫혀도 계속적으로 작업이 가능하도록 실행하려고 한다. ( 괄호 )안에 들어갈 수 있는 명령으로 알맞은 것은?",
+    "code": "# ( 괄호 ) tar cf lin.tar /data/lin &",
     "description": "-",
     "options": [
       "nohup",
@@ -468,6 +487,7 @@
     "localId": 36,
     "subjectKey": 2,
     "body": "다음은 ihduser 사용자의 디스크 쿼터를 설정하는 과정이다. 빈 칸에 들어갈 명령어로 알맞은 것은?",
+    "code": "# ( 괄호 ) ihduser",
     "description": "-",
     "options": [
       "edquota",
@@ -494,6 +514,7 @@
     "localId": 38,
     "subjectKey": 2,
     "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+    "code": "[kaituser@www ~]$ \nuid=502(kaituser)\ngid=502(kaituser)\ngroups=502(kaituser)\ncontext=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0,c1023\n[kaituser@www ~]$",
     "description": "-",
     "options": [
       "id",
@@ -546,6 +567,7 @@
     "localId": 42,
     "subjectKey": 2,
     "body": "다음 그림에 해당하는모듈관련 명령어로알맞은것은?",
+    "code": "[root@www net]#\nfilename: 8139cp.ko\nlicense: GPL\nversion: 1.3\ndescription: RealTek RTL-8139C+ series 10/100 PCI Ethernet driver\nauthor: Jeff Garzik <jgarzik@pobox.com>\nretpoline: Y\nsrcversion: 4320C112E7DC175E908BB02\nalias: pci:v00000357d0000000Asv*sd*bc*sc*i*",
     "description": "-",
     "options": [
       "modinfo",
@@ -559,6 +581,7 @@
     "localId": 43,
     "subjectKey": 2,
     "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "모듈 간 의존성 정보가 modprobe.conf, modules.dep 등에 있으며 depmod 명령으로 갱신한다. (괄호)에 들어갈 내용으로 알맞은 것은?",
     "description": "-",
     "options": [
       "㉠ modules.dep ㉡ depmod",
@@ -585,6 +608,7 @@
     "localId": 45,
     "subjectKey": 2,
     "body": "다음 설명으로 알맞은 것은?",
+    "code": "플랫베드 스캐너, 핸드 스캐너, 비디오 카메라 등 하드웨어에 대한 표준화된 접근 API를 제공한다.",
     "description": "-",
     "options": [
       "SANE",
@@ -598,6 +622,7 @@
     "localId": 46,
     "subjectKey": 2,
     "body": "다음 설명으로 알맞은 것은?",
+    "code": "리눅스/유닉스 운영체제에서 사운드를 생성하고 캡처하기 위한 인터페이스로, 표준 유닉스 디바이스 시스템 콜 기반으로 동작한다.",
     "description": "-",
     "options": [
       "OSS",
@@ -624,6 +649,7 @@
     "localId": 48,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 커널 컴파일 과정으로 알맞은 것은?",
+    "code": "configure 작업을 통해 생성된 오브젝트 파일, 설정 파일, 각종 백업 파일 등을 제거하여 커널 소스 트리를 정리하는 과정이다.",
     "description": "-",
     "options": [
       "make mrproper",
@@ -637,6 +663,7 @@
     "localId": 49,
     "subjectKey": 2,
     "body": "다음 설명으로 알맞은 것은?",
+    "code": "유닉스/리눅스에서 프린팅을 위한 표준 시스템으로, IPP(Internet Printing Protocol)를 지원하며 네트워크 프린팅과 공유를 제공한다.",
     "description": "-",
     "options": [
       "CUPS",
@@ -650,6 +677,7 @@
     "localId": 50,
     "subjectKey": 2,
     "body": "다음 빈 칸에 들어갈 모듈 관련 명령어로 알맞은 것은?",
+    "code": "커널에 모듈을 적재할 때 의존성을 자동으로 해결하며 로드하는 명령어는?",
     "description": "-",
     "options": [
       "insmod",
@@ -663,6 +691,7 @@
     "localId": 51,
     "subjectKey": 2,
     "body": "다음은 GRUB 패스워드를 설정하는 과정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# vi /boot/grub/grub.conf\npassword --md5 $1$... (괄호) 명령으로 생성한 해시 값을 위와 같이 설정한다.",
     "description": "-",
     "options": [
       "password --md5",
@@ -728,6 +757,7 @@
     "localId": 56,
     "subjectKey": 2,
     "body": "다음 중 ( 괄호 )안에 들어갈 내용으로 알맞은 것은?",
+    "code": "logrotate는 시스템 로그를 주기적으로 관리한다. ㉠ 설정 파일, ㉡ 설정 디렉터리, ㉢ 실행 스크립트가 위치하는 경로로 알맞은 것은?",
     "description": "-",
     "options": [
       "㉠ : /etc/logrotate.conf㉡ : /etc/logrotate.d㉢ : /etc/cron.daily",
@@ -754,6 +784,7 @@
     "localId": 58,
     "subjectKey": 2,
     "body": "다음에서 설명하는 보안 도구로 알맞은 것은?",
+    "code": "시스템의 서비스 포트를 스캔하여 관련 정보를 출력하는 네트워크 탐지 및 보안 스캐너로, 불필요한 서비스 확인에 활용된다.",
     "description": "-",
     "options": [
       "tcpdump",
@@ -793,6 +824,7 @@
     "localId": 61,
     "subjectKey": 3,
     "body": "개인 홈페이지 사용자를 위해 httpd.conf 파일에서 관련 모듈을 활성화하려고 한다. 다음 빈 칸에 들어갈 항목명으로 알맞은 것은?",
+    "code": "(괄호) userdir_module modules/mod_userdir.so",
     "description": "-",
     "options": [
       "LoadModule",
@@ -806,6 +838,7 @@
     "localId": 62,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 명령으로 알맞은 것은?",
+    "code": "# (괄호) passwd.byname",
     "description": "-",
     "options": [
       "virsh",
@@ -819,6 +852,7 @@
     "localId": 63,
     "subjectKey": 3,
     "body": "다음은 /etc/named.conf 파일 설정의 일부이다. 여러 호스트를 하나의 명칭으로 지정할 때 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) \"ihd\" { 192.168.12/24; 192.168.5.13; };",
     "description": "-",
     "options": [
       "acl",
@@ -845,6 +879,7 @@
     "localId": 65,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 HTTP 요청 메소드 (Method)로 알맞은 것은?",
+    "code": "웹 페이지에서 사용자가 제출한 폼 데이터를 insert.php로 저장할 때 사용하는 HTTP 요청 메소드는?",
     "description": "-",
     "options": [
       "POST",
@@ -858,6 +893,7 @@
     "localId": 66,
     "subjectKey": 3,
     "body": "다음은 웹 페이지 인증을 위해 아파치 사용자를 만드는 과정이다. 빈 칸에 들어갈 명령으로 알맞은 것은?",
+    "code": "# (괄호) -c /usr/local/httpd/conf/password ihduser",
     "description": "-",
     "options": [
       "htpasswd",
@@ -910,6 +946,7 @@
     "localId": 70,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 명령어로 알맞은 것은?",
+    "code": "# (괄호) passwd.byname",
     "description": "-",
     "options": [
       "ypcat",
@@ -923,6 +960,7 @@
     "localId": 71,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 /etc/exports의 옵션으로 알맞은 것은?",
+    "code": "NFS 클라이언트의 root 사용자를 서버에서는 nfsnobody로 매핑하여 권한을 제한하는 옵션은?",
     "description": "-",
     "options": [
       "no_root_squash",
@@ -936,6 +974,7 @@
     "localId": 72,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 명령으로 알맞은 것은?",
+    "code": "# (괄호) //192.168.12.22/src",
     "description": "-",
     "options": [
       "smbstatus",
@@ -975,6 +1014,7 @@
     "localId": 75,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 수 있는 명령으로 알맞은 것은?",
+    "code": "# cd /etc/mail\n# (괄호) sendmail.mc > sendmail.cf",
     "description": "-",
     "options": [
       "newaliases",
@@ -988,6 +1028,7 @@
     "localId": 76,
     "subjectKey": 3,
     "body": "다음은 /etc/named.conf 파일 설정의 일부이다. 도메인 설정에 필요한 zone 파일을 별도의 파일로 지정하려고 할 때 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) \"/etc/named.rfc1912.zones\";",
     "description": "-",
     "options": [
       "include",
@@ -1001,6 +1042,7 @@
     "localId": 77,
     "subjectKey": 3,
     "body": "다음은 /etc/named.conf 파일 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "zone \"...\" { type (괄호); ... };",
     "description": "-",
     "options": [
       "hint",
@@ -1014,6 +1056,7 @@
     "localId": 78,
     "subjectKey": 3,
     "body": "다음은 zone 파일에서 메일 서버를 설정하는 과정이다. 도메인이 ihd.or.kr일 때 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "zone 파일에서 메일 서버 레코드: ㉠ (괄호) ㉡ 메일서버 FQDN",
     "description": "-",
     "options": [
       "㉠ MX 0 ㉡ ihd.or.kr.",
@@ -1027,6 +1070,7 @@
     "localId": 79,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 가상화 기술로 알맞은 것은?",
+    "code": "2005년 Qumranet에서 개발한 x86 기반 하이퍼바이저이며, 상용 제품으로 RHEV가 있다.",
     "description": "-",
     "options": [
       "Xen",
@@ -1040,6 +1084,7 @@
     "localId": 80,
     "subjectKey": 3,
     "body": "운영 중인 텔넷 서버로 IP 주소가 192.168.5.13인 호스트의 접근을 Tcp Wrapper를 이용해서 접근을 차단하려고 한다. 다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# vi /etc/hosts.deny\n(괄호): 192.168.5.13",
     "description": "-",
     "options": [
       "in.telnetd",
@@ -1053,6 +1098,7 @@
     "localId": 81,
     "subjectKey": 3,
     "body": "다음 ( 괄호 )안에 들어갈 내용을 알맞은 것은?",
+    "code": "[root@www htdocs]# cat test.php\n(괄호)\nphpinfo();\n(괄호)",
     "description": "-",
     "options": [
       "㉠ <?php ㉡ ?>",
@@ -1079,6 +1125,7 @@
     "localId": 83,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 파일명으로 알맞은 것은?",
+    "code": "NISDOMAIN=ihd.or.kr\n# vi (괄호)",
     "description": "-",
     "options": [
       "/etc/yp.conf",
@@ -1092,6 +1139,7 @@
     "localId": 84,
     "subjectKey": 3,
     "body": "다음은 NFS 클라이언트에서 NFS 서버(192.168.5.13)에 익스포트된 정보를 확인하는 과정이다. 빈 칸에 들어갈 명령으로 알맞은 것은?",
+    "code": "# (괄호) -e 192.168.5.13",
     "description": "-",
     "options": [
       "showmount",
@@ -1131,6 +1179,7 @@
     "localId": 87,
     "subjectKey": 3,
     "body": "다음 설명과 같은 경우 ihduser가 본인의 홈 디렉터리에 생성해야할 파일명으로 알맞은 것은?",
+    "code": "특정 도메인에서 발송된 메일을 ihduser가 수신하도록 메일 서버에서 virtusertable 등으로 설정한 경우, ihduser가 메일 수신을 위해 홈 디렉터리에 생성하는 파일은?",
     "description": "-",
     "options": [
       ".forward",
@@ -1157,6 +1206,7 @@
     "localId": 89,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 가상화의 기능으로 알맞은 것은?",
+    "code": "가상화 기능 중 물리 자원을 논리적 단위로 묶어 하나의 풀처럼 제공하는 기능은?",
     "description": "-",
     "options": [
       "절연(Insulation)",
@@ -1196,6 +1246,7 @@
     "localId": 92,
     "subjectKey": 3,
     "body": "프록시 서버의 설정 파일인 squid.conf에서 포트번호를 8080으로 변경하려고 한다. 다음 ( 괄호 )안에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) 8080",
     "description": "-",
     "options": [
       "http_port",
@@ -1209,6 +1260,7 @@
     "localId": 93,
     "subjectKey": 3,
     "body": "DHCP 서버의 환경 설정 파일인 dhcpd.conf에서 할당되는 게이트웨이 주소를 192.168.5.1로 변경하려고 한다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "option (괄호) 192.168.5.1;",
     "description": "-",
     "options": [
       "routers",
@@ -1235,6 +1287,7 @@
     "localId": 95,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 httpd.conf 파일의 항목명으로 알맞은 것은?",
+    "code": "(괄호) \"/usr/local/httpd/htdocs\"",
     "description": "-",
     "options": [
       "DocumentRoot",
@@ -1248,6 +1301,7 @@
     "localId": 96,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 iptables의 테이블로 알맞은 것은?",
+    "code": "패킷 필터링(허용/차단)에 사용되는 iptables의 기본 테이블은?",
     "description": "-",
     "options": [
       "raw",
@@ -1261,6 +1315,7 @@
     "localId": 97,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 공격 유형으로 알맞은 것은?",
+    "code": "대량의 UDP 패킷을 목표에 보내 가용 대역폭을 고갈시키는 DoS 공격 유형은?",
     "description": "-",
     "options": [
       "Teardrop Attack",
@@ -1274,6 +1329,7 @@
     "localId": 98,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 iptables의 타겟(target) 값으로 알맞은 것은?",
+    "code": "패킷을 차단할 때 상대에게 알림 없이 버리는 iptables 타겟은?",
     "description": "-",
     "options": [
       "DROP",
@@ -1294,7 +1350,11 @@
       "가용 메모리 자원 고갈",
       "가용 디스크 자원 고갈"
     ],
-    "tags": ["Memory allocation", "C", "malloc()"]
+    "tags": [
+      "Memory allocation",
+      "C",
+      "malloc()"
+    ]
   },
   {
     "examKey": "lm11-20200613",
@@ -1314,6 +1374,7 @@
     "localId": 1,
     "subjectKey": 1,
     "body": "다음 설명에 해당하는 라이선스로 알맞은 것은?",
+    "code": "공개 소프트웨어 중의 하나를 선택해서 상업용 제품을 만들려고 한다. 수정된 소스 코드에 대한 공개나 어떠한 표시도 하지 않으려고 한다.",
     "description": "-",
     "options": [
       "BSD",
@@ -1353,6 +1414,7 @@
     "localId": 4,
     "subjectKey": 1,
     "body": "다음그림에 해당하는클러스터링기법으로 알맞은것은?",
+    "code": "User → Primary Node(이상 유무 체크) ↔ Backup Node(Primary Node 이상 시 서비스를 이어받음)",
     "description": "-",
     "options": [
       "고계산용 클러스터",
@@ -1379,6 +1441,7 @@
     "localId": 6,
     "subjectKey": 1,
     "body": "다음은 grub.conf 파일의 일부이다. 관련 설정에 대한 설명으로 알맞은 것은?",
+    "code": "default=1\ntimeout=100",
     "description": "-",
     "options": [
       "10초 동안 대기한 후에 메뉴 선택이 없으면 두 번째 항목의 운영체제로 부팅한다.",
@@ -1392,6 +1455,7 @@
     "localId": 7,
     "subjectKey": 1,
     "body": "다음 그림의 명령 결과에 대한 설명으로 알맞은 것은?",
+    "code": "[lin@www ~]$ ls\njoon.txt\n[lin@www ~]$ mv joon.txt lin.txt || echo \"OK\"",
     "description": "-",
     "options": [
       "mv 명령의 사용법 오류로 인해 오류 메시지가 나타난다.",
@@ -1444,6 +1508,7 @@
     "localId": 11,
     "subjectKey": 1,
     "body": "다음 설명에 해당하는 용어로 알맞은 것은?",
+    "code": "보통 부팅 시에 실행되어 해당 프로세스가 메모리에 계속 상주하면서 클라이언트의 요청을 처리하는 방식이다. 웹, 메일 등과 같이 빈번한 요청이 들어오는 서비스인 경우에 이 방식으로 동작한다.",
     "description": "-",
     "options": [
       "inetd",
@@ -1587,6 +1652,7 @@
     "localId": 22,
     "subjectKey": 2,
     "body": "다음 그림의 결과에서 lin 사용자가 /project 디렉터리에 파일을 생성했을 경우에 해당 파일의 그룹 소유권과 관련된 설명으로 알맞은 것은?",
+    "code": "[root@www ~]# id lin\nuid=505(lin) gid=508(kait) groups=508(kait),504(project)\n[root@www ~]# ls -ld /project\ndrwxrws--T. 2 root project 4096 Nov 17 08:08 project",
     "description": "-",
     "options": [
       "파일의 그룹 소유권은 2차 그룹인 project가 된다.",
@@ -1600,6 +1666,7 @@
     "localId": 23,
     "subjectKey": 2,
     "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+    "code": "[root@www ~]#\n/bin/ls\nlinux-gate.so.1 => (0x00554000)\nlibselinux.so.1 => /lib/libselinux.so.1 (0x004a5000)\nlibrt.so.1 => /lib/librt.so.1 (0x00365000)\n...",
     "description": "-",
     "options": [
       "ldd",
@@ -1626,6 +1693,7 @@
     "localId": 25,
     "subjectKey": 2,
     "body": "rpm 파일을 설치하기 전에 어떠한 파일들이 설치 되는지 미리 확인해보려고 한다. 다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# rpm (괄호) totem-2.28.6-2.el6.i686.rpm",
     "description": "-",
     "options": [
       "-qlr",
@@ -1639,6 +1707,7 @@
     "localId": 26,
     "subjectKey": 2,
     "body": "다음에 제시된 프로세스의 우선순위를 높이려고 한다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# (괄호) (괄호) bash",
     "description": "-",
     "options": [
       "㉠ nice, ㉡ --10",
@@ -1678,6 +1747,7 @@
     "localId": 29,
     "subjectKey": 2,
     "body": "다음 그림과 같이 파일 및 디렉터리가 생성된다. umask 명령을 실행했을 경우에 출력되는 값으로 알맞은 것은?",
+    "code": "[lin@www ~]$ touch a.txt\n[lin@www ~]$ mkdir aaa\n[lin@www ~]$ ls -l\n-rw------- 1 lin lin 0 Apr 15 18:07 a.txt\ndrwx------ 2 lin lin 4096 Apr 15 18:07 aaa",
     "description": "-",
     "options": [
       "7000",
@@ -1704,6 +1774,7 @@
     "localId": 31,
     "subjectKey": 2,
     "body": "다음 명령의 결과에 대한 설명으로 가장 알맞은 것은?",
+    "code": "# passwd -d lin",
     "description": "-",
     "options": [
       "lin 사용자는 패스워드 입력 없이 로그인이 가능하다.",
@@ -1717,6 +1788,7 @@
     "localId": 32,
     "subjectKey": 2,
     "body": "다음 설명과 관련 있는 파일명으로 알맞은 것은?",
+    "code": "사용자를 추가할 때에 2020년 12월 31일까지만 로그인이 가능하도록 지정하려고 한다.",
     "description": "-",
     "options": [
       "/etc/default/useradd",
@@ -1782,6 +1854,7 @@
     "localId": 37,
     "subjectKey": 2,
     "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+    "code": "17:58:10 up 6:31, 2 users, load average: 0.00, 0.00, 0.00\nUSER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT\nroot tty1 :0 02:27 15:31m 34.99s 34.99s /usr/bin/Xorg :0\nroot pts/0 :0.0 02:27 8.00s 0.21s 0.15s w",
     "description": "-",
     "options": [
       "w",
@@ -1795,6 +1868,7 @@
     "localId": 38,
     "subjectKey": 2,
     "body": "다음 그림에 해당하는 명령어로 알맞은 것은?",
+    "code": "[root@www ~]#\nFilesystem       Size Used Avail Use% Mounted on\n/dev/sda1         15G 6.3G 7.4G  46% /\ntmpfs            2.0G 304K 2.0G   1% /dev/shm\n/dev/sda3        2.0G 3.2M 1.9G   1% /data",
     "description": "-",
     "options": [
       "quota",
@@ -1821,6 +1895,7 @@
     "localId": 40,
     "subjectKey": 2,
     "body": "다음 명령의 실행 결과에 대한 설명으로 알맞은 것은?",
+    "code": "# gcc lin.c",
     "description": "-",
     "options": [
       "a.out라는 실행 파일이 생성된다.",
@@ -1847,6 +1922,7 @@
     "localId": 42,
     "subjectKey": 2,
     "body": "특정 모듈을 제거하면서 의존성있는 모듈을 같이 제거하려고 할 때 빈 칸에 들어갈 옵션으로 알맞은 것은?",
+    "code": "# modprobe (괄호) ip6table_filter",
     "description": "-",
     "options": [
       "-e",
@@ -1964,6 +2040,7 @@
     "localId": 51,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 백업 도구의 옵션과 의미로 틀린 것은?",
+    "code": "장치 파일이나 네트워크 파일 등의 특수 파일도 백업이 가능하고 백업본의 크기도 작고, 백업본에 손상된 부분이 있더라도 손상된 부분을 제외하고 나머지 부분을 복구한다. 또한 기존의 명령어를 사용하여 백업을 진행하므로 다양한 조건을 활용하여 백업이 가능하다.",
     "description": "-",
     "options": [
       "-b : 증분 백업으로 백업할 때 사용한다. (--incremental)",
@@ -1977,6 +2054,7 @@
     "localId": 52,
     "subjectKey": 2,
     "body": "다음 설명과 관련된 파일시스템 보안에 관한 내용으로 알맞은 것은?",
+    "code": "# setfacl -R -m g:docker:rwx docker/",
     "description": "-",
     "options": [
       "파일이나 디렉터리에 접근 권한을 제어할 수 있도록 만든 시스템이다.",
@@ -2016,6 +2094,7 @@
     "localId": 55,
     "subjectKey": 2,
     "body": "다음은 /var/log/xferlog 파일의 구성에 관한 설명이다.빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "전송된 지시를 나타내는 영역은 (괄호)이다. 사용자가 어떤 형태로 login 했는지를 나타내는 영역은 (괄호)이다. special-action-flag 영역에서 _은 어떠한 action도 발생하지 않은 경우를 뜻한다.",
     "description": "-",
     "options": [
       "㉠ direction, ㉡ access-mode, ㉢ _",
@@ -2029,6 +2108,7 @@
     "localId": 56,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 로그 관련 주요 파일로 알맞은 것은?",
+    "code": "콘솔, telnet, ftp 등 이용하며 접속한 사용자 기록, 시스템을 재부팅한 기록 등의 로그가 쌓이는 파일이다. 바이너리 파일로 last라는 명령으로 확인할 수 있다.",
     "description": "-",
     "options": [
       "/var/log/wtmp",
@@ -2068,6 +2148,7 @@
     "localId": 59,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 명령으로 가장 알맞은 것은?",
+    "code": "파일 시스템 전체를 백업할 때 사용하는 유틸리티로 보통 파티션 단위로 백업할 때 사용한다. 전체 백업과 증분 백업을 지원하고, 0~9 단계의 레벨을 가지고 증분 백업을 지원한다.",
     "description": "-",
     "options": [
       "rsync",
@@ -2094,6 +2175,7 @@
     "localId": 61,
     "subjectKey": 3,
     "body": "다음은 MySQL 5.7.28 버전을 설치한 후에 mysql에서 사용하는 기본 데이터베이스를 생성하는 과정이다. 빈 칸에 들어갈 내용을 알맞은 것은?",
+    "code": "# cd /usr/local/mysql/bin\n(괄호) --initialize --user=root",
     "description": "-",
     "options": [
       "./mysqld",
@@ -2107,6 +2189,7 @@
     "localId": 62,
     "subjectKey": 3,
     "body": "다음 설명과 같을 때 메인보드의 BIOS에서 활성화 여부를 확인해야 하는 항목으로 알맞은 것은?",
+    "code": "가상화가 지원되는 최신의 AMD CPU를 구입하여 사용 중이다. 서버 가상화 프로그램을 실행하였더니 가상화 지원 여부가 비활성화 상태라는 오류 메시지를 접하게 되었다.",
     "description": "-",
     "options": [
       "SVM",
@@ -2120,6 +2203,7 @@
     "localId": 63,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 수 있는 설정 내용으로 틀린 것은?",
+    "code": "# vi /etc/exports\n/nfsdata (괄호)",
     "description": "-",
     "options": [
       "*.ihd.or.kr",
@@ -2133,6 +2217,7 @@
     "localId": 64,
     "subjectKey": 3,
     "body": "다음은 /etc/named.conf 파일 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) only;\n(괄호) { 168.126.63.1; };",
     "description": "-",
     "options": [
       "㉠ forward, ㉡ forwarders",
@@ -2146,6 +2231,7 @@
     "localId": 65,
     "subjectKey": 3,
     "body": "다음 설명에 웹 서버 프로그램으로 알맞은 것은?",
+    "code": "2004년에 등장한 웹 서버 프로그램으로 가벼움과 높은 성능을 목표로 한다. 제공되는 기능으로는 리버스프록시, 로드 밸런서, HTTP cache 기능 등이 있다.",
     "description": "-",
     "options": [
       "Apache HTTP Server",
@@ -2159,6 +2245,7 @@
     "localId": 66,
     "subjectKey": 3,
     "body": "다음은 httpd.conf 파일의 문법적 오류를 명령어를 사용해서 점검하는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# httpd (괄호)",
     "description": "-",
     "options": [
       "-t",
@@ -2211,6 +2298,7 @@
     "localId": 70,
     "subjectKey": 3,
     "body": "NFS 서버의 IP 주소가 192.168.5.13이고 공유된 디렉터리가 /data일 때 NFS 클라이언트에서 마운트하는 과정이다. 다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# mount -t nfs (괄호) /mnt",
     "description": "-",
     "options": [
       "/192.168.5.13/data",
@@ -2237,6 +2325,7 @@
     "localId": 72,
     "subjectKey": 3,
     "body": "다음 설명과 관련 있는 설정 파일명으로 알맞은 것은?",
+    "code": "하나의 메일 서버에 각각 ihd.co.kr이라는 도메인을 갖는 회사와 kait.co.kr이라는 도메인을 갖는 회사의 호스팅 서비스를 운영 중이다. 이 두 개 회사에서 ceo라는 E-mail 계정을 요구하였다.",
     "description": "-",
     "options": [
       "/etc/mail/local-host-names",
@@ -2250,6 +2339,7 @@
     "localId": 73,
     "subjectKey": 3,
     "body": "다음 설명과 관련 있는 설정 파일명으로 알맞은 것은?",
+    "code": "webmaster라는 계정으로 들어오는 메일을 회사의 고객지원실에 근무하는 다수의 사용자에게 메일을 전달하려고 한다.",
     "description": "-",
     "options": [
       "/etc/aliases",
@@ -2263,6 +2353,7 @@
     "localId": 74,
     "subjectKey": 3,
     "body": "다음은 zone 파일에서 메일 서버를 설정하는 과정이다. 도메인이 ihd.or.kr이고, 관리자 계정이 kaituser일 때 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "@ IN SOA ns.ihd.or.kr. (괄호) (\n202004011200 ; serial\n-- 이하 생략 --",
     "description": "-",
     "options": [
       "kaituser.ihd.or.kr.",
@@ -2276,6 +2367,7 @@
     "localId": 75,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 가상화의 기능으로 알맞은 것은?",
+    "code": "IP 네트워크상에서 가상 SCSI 버스를 구현하는 iSCSI나 물리적 디스크 스토리지 상에서 가상 테이프 스토리지 등이 이에 해당한다.",
     "description": "-",
     "options": [
       "에뮬레이션(Emulation)",
@@ -2289,6 +2381,7 @@
     "localId": 76,
     "subjectKey": 3,
     "body": "다음 그림과 같은 방식의 가상화 기술로 알맞은 것은?",
+    "code": "Hosted 가상화 제품 아키텍처: 애플리케이션 → 게스트 OS → VMM → 호스트 OS → X86 하드웨어",
     "description": "-",
     "options": [
       "XenServer",
@@ -2302,6 +2395,7 @@
     "localId": 77,
     "subjectKey": 3,
     "body": "다음 설명과 같은 경우에 도입해야할 가상화 기술로 알맞은 것은?",
+    "code": "VMware 기반의 가상 머신과 XenServer 기반의 가상 머신을 통합 관리하고자 한다.",
     "description": "-",
     "options": [
       "VirtualBox",
@@ -2341,6 +2435,7 @@
     "localId": 80,
     "subjectKey": 3,
     "body": "다음설명과같은경우에구성해야할서버로알맞은것은?",
+    "code": "회사 내부에서 100여 대의 서버들을 운영 중이다. 이 서버들의 시간이 일정하지 않아서 동기화시켜주는 서버를 구축하려고 한다.",
     "description": "-",
     "options": [
       "NTP 서버",
@@ -2393,6 +2488,7 @@
     "localId": 84,
     "subjectKey": 3,
     "body": "다음은 NIS 클라이언트에서 NIS 서버 및 도메인명을 지정하는 과정이다. 빈 칸에 들어갈 파일명으로 알맞은 것은?",
+    "code": "# vi (괄호)\nserver nis.ihd.or.kr\nypserver nis.ihd.or.kr\ndomain ihd.or.kr",
     "description": "-",
     "options": [
       "/etc/sysconfig/network",
@@ -2419,6 +2515,7 @@
     "localId": 86,
     "subjectKey": 3,
     "body": "다음은 중 삼바 서버의 환경 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "[www]\ncomment = Web Directory\n(괄호) = /usr/local/apache/htdocs",
     "description": "-",
     "options": [
       "public",
@@ -2484,6 +2581,7 @@
     "localId": 91,
     "subjectKey": 3,
     "body": "다음은 /etc/named.conf 파일 설정의 일부로 Zone 파일이 위치하는 디렉터리를 지정하는 내용이다. 다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) \"/var/named\";",
     "description": "-",
     "options": [
       "directory",
@@ -2510,6 +2608,7 @@
     "localId": 93,
     "subjectKey": 3,
     "body": "다음 그림에 해당하는 프로그램을 실행하는 명령으로 알맞은 것은?",
+    "code": "가상 머신 관리자 (GUI: 파일, 편집, 보기, 도움말 메뉴, localhost (QEMU), CPU 사용량 표시)",
     "description": "-",
     "options": [
       "virt-manager",
@@ -2523,6 +2622,7 @@
     "localId": 94,
     "subjectKey": 3,
     "body": "다음설명과같은경우에구성해야할서버로알맞은것은?",
+    "code": "리눅스 서버와 윈도우 클라이언트 간의 데스크톱 공유를 하려고 한다.",
     "description": "-",
     "options": [
       "VNC 서버",
@@ -2536,6 +2636,7 @@
     "localId": 95,
     "subjectKey": 3,
     "body": "다음은 httpd.conf 파일에서 웹 문서가 위치하는 디렉터리를 변경하는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) \"/usr/local/apache/html\"",
     "description": "-",
     "options": [
       "DocumentRoot",
@@ -2549,6 +2650,7 @@
     "localId": 96,
     "subjectKey": 3,
     "body": "다음과 같은 설정을 통해 ssh 침입을 시도하는 특정 호스트를 차단하려고 할 때 적용할 수 있는 파일로 알맞은 것은?",
+    "code": "sshd: 192.168.7.4",
     "description": "-",
     "options": [
       "/etc/hosts.deny",
@@ -2575,6 +2677,7 @@
     "localId": 98,
     "subjectKey": 3,
     "body": "다음에서설명하는네트워크침해유형으로알맞은것은?",
+    "code": "데이터를 전송하기 위해서는 패킷을 분할하고 시퀀스 넘버를 생성하는데, 이러한 시퀀스 넘버를 조작하거나 중첩시켜 내부에 과부하를 발생시키는 공격 방법",
     "description": "-",
     "options": [
       "Smurf Attack",
@@ -3873,7 +3976,7 @@
     "localId": 94,
     "subjectKey": 3,
     "body": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?",
-    "code": "LDAP는 이름,주소와 같이 하나 이상의 속성을 가진 객체로 구성되고 그 객체를 (괄호1) 이라고 부른다. (괄호1)은 DIT(Directory Information Tree)라고 부르는 트리 구조에 의해 조직화 되고, 이 조직 내에서 고유한 식별자인 (괄호2)를 가진다.",
+    "code": "LDAP는 이름,주소와 같이 하나 이상의 속성을 가진 객체로 구성되고 그 객체를 (괄호1) 이라고 부른다.\n(괄호1)은 DIT(Directory Information Tree)라고 부르는 트리 구조에 의해 조직화 되고, 이 조직 내에서 고유한 식별자인 (괄호2)를 가진다.",
     "description": "-",
     "options": [
       "엔트리, DN",
@@ -3971,6 +4074,7 @@
     "localId": 1,
     "subjectKey": 1,
     "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "리눅스 커널은 ( ) (이)가 만들었는데, 이것은 ( ) (이)가 개발한 교육용 유닉스인 미닉스를 참고해서 만들었다.",
     "description": "-",
     "options": [
       "㉠ 리누스 토발즈, ㉡ 앤드루 S. 타넨바움",
@@ -3984,6 +4088,7 @@
     "localId": 2,
     "subjectKey": 1,
     "body": "다음 설명에 해당하는 리눅스의 기술적인 특징으로 알맞은 것은?",
+    "code": "특정 프로세스의 표준 출력을 다른 프로세스의 표준 입력으로 쓰이게 하는 것으로 대표적인 프로세스간 통신 기술이다.",
     "description": "-",
     "options": [
       "파이프",
@@ -3997,6 +4102,7 @@
     "localId": 3,
     "subjectKey": 1,
     "body": "다음 설명에 해당하는 라이선스로 알맞은 것은?",
+    "code": "이 라이선스가 부여된 소프트웨어는 누구든 자유롭게 부분 혹은 전체를 개인적 또는 상업적 목적으로 이용할 수 있다. 또한 재배포 시에도 소스 코드 또는 수정한 소스 코드를 포함하여 반드시 공개할 필요가 없다. 대표적인 프로그램에는 Hadoop, Tomcat 등이 있다.",
     "description": "-",
     "options": [
       "Apache License",
@@ -4010,6 +4116,7 @@
     "localId": 4,
     "subjectKey": 1,
     "body": "다음 설명에 해당하는 리눅스 배포판으로 가장 알맞은 것은?",
+    "code": "패키지 설치 및 업데이트할 때 dpkg 또는 apt-get 명령을 사용하고, 칼리 리눅스도 이 리눅스 배포판을 기반으로 만들었다.",
     "description": "-",
     "options": [
       "Debian",
@@ -4023,6 +4130,7 @@
     "localId": 5,
     "subjectKey": 1,
     "body": "다음 설명의 경우에 구성해야 할 인프라 기술로 알맞은 것은?",
+    "code": "다수의 웹 서버를 운영중으로 웹 서버 앞단에 로드 밸런서를 이용하여 부하분산 역할을 수행하도록 구성하였다. 로드 밸런서 역할을 수행하는 시스템의 오류에 대비하려고 한다.",
     "description": "-",
     "options": [
       "고가용성 클러스터",
@@ -4036,6 +4144,7 @@
     "localId": 6,
     "subjectKey": 1,
     "body": "다음 설명의 경우에 사용 가능한 실제 디스크 용량으로 알맞은 것은?",
+    "code": "10GB 용량의 하드디스크 6개가 장착된 시스템이다. 스페어(Spare) 디스크로 하나 사용하고, RAID-5로 구성하려고 한다.",
     "description": "-",
     "options": [
       "40GB",
@@ -4049,6 +4158,7 @@
     "localId": 7,
     "subjectKey": 1,
     "body": "리눅스 시스템의 root 패스워드를 잊어버린 상태로 GRUB 환경 설정 파일에서 커널 인자값을 변경하려고 한다. 다음 중 밑줄 친 부분을 대체해야 할 커널 인자값으로 알맞은 것은?",
+    "code": "linux16\n/boot/vmlinux-3.10.0-862-el7.x86_64\nroot=UUID=800f7aa2-83b0-4b18-a4ce-7de8ede7c0 14 ro rhgb quiet LANG=ko_KR.UTF-8",
     "description": "-",
     "options": [
       "rw init-/bin/sh",
@@ -4088,6 +4198,7 @@
     "localId": 10,
     "subjectKey": 1,
     "body": "다음 그림에 해당하는 프로그램명으로 가장 알맞은 것은?",
+    "code": "세 명의 사용자 프로필(joon, lin, posein)이 세로로 나열되어 있고, 하단에 '목록에 없습니까?'가 표시된 로그인 화면. 그래픽 사용자 인터페이스(GUI) 환경의 로그인 관리자.",
     "description": "-",
     "options": [
       "KDE",
@@ -4101,6 +4212,7 @@
     "localId": 11,
     "subjectKey": 1,
     "body": "다음 명령의 결과에 대한 설명으로 알맞은 것은?",
+    "code": "[ihd@www ~]# echo \"My Home is 'pwd'\"\n* Back quotes 사용한 예제임",
     "description": "-",
     "options": [
       "My Home is '/home/ihd'",
@@ -4114,6 +4226,7 @@
     "localId": 12,
     "subjectKey": 1,
     "body": "다음 빈 칸에 들어갈 내용으로 가장 알맞은 것은?",
+    "code": "# test 20 -gt 30\n# echo $?\n(괄호)",
     "description": "-",
     "options": [
       "10",
@@ -4192,6 +4305,7 @@
     "localId": 18,
     "subjectKey": 1,
     "body": "다음과 같은 조건일 때 할당되는 게이트웨이 주소값으로 가장 알맞은 것은?",
+    "code": "IP 주소 및 서브넷마스크: 192.168.3.150/26",
     "description": "-",
     "options": [
       "192.168.3.129",
@@ -4244,6 +4358,7 @@
     "localId": 22,
     "subjectKey": 2,
     "body": "다음은 ihduser 사용자가 휴직인 상태여서 계정사용을 일시 정지시키는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# (괄호) ihduser",
     "description": "-",
     "options": [
       "usermod -L",
@@ -4257,6 +4372,7 @@
     "localId": 23,
     "subjectKey": 2,
     "body": "다음 결과에 해당하는 명령어로 알맞은 것은?",
+    "code": "[root@www ~]#\nLast password change : never\nPassword expires : never\nPassword inactive : never\nAccount expires : never\nMinimum number of days between password change : 0\nMaximum number of days between password change : 99999\nNumber of days of warning before password expires : 7\n[root@www ~]#",
     "description": "-",
     "options": [
       "chage –l 사용자명",
@@ -4296,6 +4412,7 @@
     "localId": 26,
     "subjectKey": 2,
     "body": "다음과 같이 허가권이 설정된 경우에 관련 설명으로 알맞은 것은?",
+    "code": "[root@www-1]# ls -l /usr/bin/passwd\n-rwsr-xr-x. 1 root root 27856 Apr 1 2020 /usr/bin/passwd",
     "description": "-",
     "options": [
       "ihsuser 사용자가 실행하면 실행하는 동안 root 사용자 권한으로 인정된다.",
@@ -4309,6 +4426,7 @@
     "localId": 27,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 명령으로 알맞은 것은?",
+    "code": "아파치 웹 문서가 위치한 디렉터리가 /usr/local/apache/htdocs인데, /var/www/html이라는 디렉터리명으로 접근할 수 있도록 설정하려고 한다.",
     "description": "-",
     "options": [
       "ln –s /usr/local/apache/htdocs /var/www/html",
@@ -4387,6 +4505,7 @@
     "localId": 33,
     "subjectKey": 2,
     "body": "다음 빈 칸에 들어갈 수 있는 명령어로 틀린 것은?",
+    "code": "# (괄호) httpd",
     "description": "-",
     "options": [
       "pgrep",
@@ -4400,6 +4519,7 @@
     "localId": 34,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 명령으로 알맞은 것은?",
+    "code": "프로세스 아이디가 513번이고 작업번호는 3인 백그라운드 프로세스를 포어그라운드 프로세스로 전환하려고 한다.",
     "description": "-",
     "options": [
       "bg 3",
@@ -4413,6 +4533,7 @@
     "localId": 35,
     "subjectKey": 2,
     "body": "프로세스 아이디(PID)가 513인 bash 프로세스의 우선순위(NI)값이 0이다. 다음 중 NI 값을 변경하여 우선순위를 낮추는 명령으로 알맞은 것은?",
+    "code": "프로세스 아이디(PID)가 513인 bash 프로세스의 우선순위(NI)값이 0이다. NI 값을 변경하여 우선순위를 낮추는 명령을 고르시오.",
     "description": "-",
     "options": [
       "renice –5 bash",
@@ -4439,6 +4560,7 @@
     "localId": 37,
     "subjectKey": 2,
     "body": "httpd 패키지의 환경 설정 파일을 빠르고 간편하게 찾으려고 한다. 다음 빈 칸에 들어갈 내용으로 가장 알맞은 것은?",
+    "code": "# rpm (괄호) httpd",
     "description": "-",
     "options": [
       "-qa",
@@ -4452,6 +4574,7 @@
     "localId": 38,
     "subjectKey": 2,
     "body": "다음 그림의 결과에 해당하는 명령으로 알맞은 것은?",
+    "code": "Loaded plugins: fastestmirror, langpacks\nLoading mirror speed from cached hostfile\nAvailable Packages\nName : telnet-server\nArch : x86_64\nVersion : 0.17\nRelease : 86.el7\nSize : 2.0 M\nRepo : updates/7/x86_64\nSummary : The server program for the Telnet remote login protocol\nDescription : Telnet is a popular protocol for logging into remote systems...",
     "description": "-",
     "options": [
       "yum check telnet-server",
@@ -4465,6 +4588,7 @@
     "localId": 39,
     "subjectKey": 2,
     "body": "다음은 현재 디렉터리 안에 존재하는 C 언어 파일을 기존에 생성되어 있던 text.tar 파일에 묶는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# tar (괄호) text.tar *.c",
     "description": "-",
     "options": [
       "rvf",
@@ -4478,6 +4602,7 @@
     "localId": 40,
     "subjectKey": 2,
     "body": "다음 그림의 결과에 해당하는 명령어로 알맞은 것은?",
+    "code": "/lib64/libselinux.so.1 (0x00007f0b420bf600)\n/lib64/libcap.so.2 (0x00007f0b41eba000)\n/lib64/libc.so.6 => /lib64/libc.so.6 (0x00007f0b418e3000)\n/lib64/libpcre.so.1 => /lib64/libpcre.so.1 (0x00007f0b41581000)\n/lib64/ld-linux-x86-64.so.2 (0x00007f0b42266000)\n/lib64/libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f0b4105c900)",
     "description": "-",
     "options": [
       "rpm",
@@ -4491,6 +4616,7 @@
     "localId": 41,
     "subjectKey": 2,
     "body": "다음은 커널에 적재된 모듈을 제거하는 과정이다. 빈 칸에 들어갈 명령어로 알맞은 것은?",
+    "code": "# (괄호) -r iptable_filter",
     "description": "-",
     "options": [
       "modprobe",
@@ -4504,6 +4630,7 @@
     "localId": 42,
     "subjectKey": 2,
     "body": "다음은 커널에 모듈을 적재하는 과정이다. 빈 칸에 들어갈 명령어로 알맞은 것은?",
+    "code": "# (괄호) iptable_filter",
     "description": "-",
     "options": [
       "modprobe",
@@ -4530,6 +4657,7 @@
     "localId": 44,
     "subjectKey": 2,
     "body": "다음은 커널 컴파일 과정의 일부이다. 커널 컴파일 과정 순서로 알맞은 것은?",
+    "code": "가. make menuconfig\n나. make bzImage\n다. make mrproper",
     "description": "-",
     "options": [
       "가 → 다 → 나",
@@ -4569,6 +4697,7 @@
     "localId": 47,
     "subjectKey": 2,
     "body": "다음 결과에 해당하는 명령어로 알맞은 것은?",
+    "code": "[root@www ~]#\nReading all physical volumes. This may take a while...\nFound volume group \"lvme\" using metadata type lvm2",
     "description": "-",
     "options": [
       "vgscan",
@@ -4582,6 +4711,7 @@
     "localId": 48,
     "subjectKey": 2,
     "body": "다음은 RAID-1을 구성하는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# mdadm -C /dev/md2 (㉠) (㉡) /dev/sdb1 /dev/sdc1",
     "description": "-",
     "options": [
       "㉠ -l 2, ㉡ -n 1",
@@ -4634,6 +4764,7 @@
     "localId": 52,
     "subjectKey": 2,
     "body": "다음 조건에 해당하는 로그 파일 설정으로 알맞은 것은?",
+    "code": "가. 모든 facility에서 경고(warning) 수준 이상의 로그를 기록한다.\n나. 커널 관련 로그는 제외한다.\n① *.-warn;kern.none  ② *.-warn;kern.!-none  ③ *.warn;kern.none  ④ *.warn;kern.!=none",
     "description": "-",
     "options": [
       "*.=warn;kern.none",
@@ -4673,6 +4804,7 @@
     "localId": 55,
     "subjectKey": 2,
     "body": "다음 설명에 해당하는 커널 매개변수 설정으로 알맞은 것은?",
+    "code": "iptables를 이용해서 인터넷 공유나 IP 매스커레이드 정책을 사용하려고 한다.\n① sysctl -n net.ipv4.ip_forward=0  ② sysctl -n net.ipv4.ip_forward=1  ③ sysctl -w net.ipv4.ip_forward=0  ④ sysctl -w net.ipv4.ip_forward=1",
     "description": "-",
     "options": [
       "sysctl –n net.ipv4.ip_forward=1",
@@ -4686,6 +4818,7 @@
     "localId": 56,
     "subjectKey": 2,
     "body": "다음 중 /etc/services 파일의 수정은 불가하고 내용 추가만 가능하도록 설정하는 명령으로 알맞은 것은?",
+    "code": "① setfacl -m +a /etc/services  ② setfacl -m +i /etc/services  ③ chattr +a /etc/services  ④ chattr +i /etc/services",
     "description": "-",
     "options": [
       "chattr +i /etc/services",
@@ -4712,6 +4845,7 @@
     "localId": 58,
     "subjectKey": 2,
     "body": "다음은 tar 명령을 이용해서 증분 백업하는 과정이다. 빈 칸에 들어갈 옵션으로 알맞은 것은?",
+    "code": "# tar (괄호) list -cvfp home1.tar /home",
     "description": "-",
     "options": [
       "-g",
@@ -4725,6 +4859,7 @@
     "localId": 59,
     "subjectKey": 2,
     "body": "다음은 백업된 데이터를 이용해서 복원하는 과정이다. 빈 칸에 들어갈 명령어로 알맞은 것은?",
+    "code": "# (괄호) -iF backup.data",
     "description": "-",
     "options": [
       "cpio",
@@ -4764,6 +4899,7 @@
     "localId": 62,
     "subjectKey": 3,
     "body": "다음은 아파치 웹 서버 환경 설정 파일에서 웹 문서가 저장되는 위치를 확인하는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) \"/usr/local/apache/htdocs\"",
     "description": "-",
     "options": [
       "DocumentRoot",
@@ -4777,6 +4913,7 @@
     "localId": 63,
     "subjectKey": 3,
     "body": "다음 중 아파치 웹 서버 환경 설정 파일의 문법적인 오류를 점검하는 명령으로 알맞은 것은?",
+    "code": "① httpd -f  ② httpd -t  ③ httpd -l  ④ httpd -S",
     "description": "-",
     "options": [
       "httpd -t",
@@ -4790,6 +4927,7 @@
     "localId": 64,
     "subjectKey": 3,
     "body": "다음은 개인 사용자의 홈페이지 사용을 허가하기 위해 관련 설정 파일을 확인하는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "LoadModule userdir_module modules/(괄호)",
     "description": "-",
     "options": [
       "mod_userdir.so",
@@ -4803,6 +4941,7 @@
     "localId": 65,
     "subjectKey": 3,
     "body": "다음은 PHP 7 버전 파일에서 MySQL 5.7 버전의 데이터베이스 접속하기 위한 설정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "<?php\n$db=(괄호)(\"localhost\",\"root\",\"1234\",\"ihd\");\n생략..\n?>",
     "description": "-",
     "options": [
       "mysqli_connect",
@@ -4829,6 +4968,7 @@
     "localId": 67,
     "subjectKey": 3,
     "body": "다음은 LDAP의 속성 관련 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(㉠): (㉡)=John Doe, dc=ihd, dc=com",
     "description": "-",
     "options": [
       "㉠ dn, ㉡ cn",
@@ -4881,6 +5021,7 @@
     "localId": 71,
     "subjectKey": 3,
     "body": "다음은 리눅스 시스템에서 IP 주소가 192.168.5.13인 윈도우 시스템에 공유된 디렉터리를 마운트하는 과정이다. 공유 디렉터리명이 data일 때 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# smbclient (괄호)",
     "description": "-",
     "options": [
       "\\\\\\\\192.168.5.13\\\\data",
@@ -4894,6 +5035,7 @@
     "localId": 72,
     "subjectKey": 3,
     "body": "다음은 삼바 설정 파일에서 공유 디렉터리의 경로를 설정하는 과정이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "(괄호) = /usr/local/apache/htdocs",
     "description": "-",
     "options": [
       "data",
@@ -4907,6 +5049,7 @@
     "localId": 73,
     "subjectKey": 3,
     "body": "다음은 NFS 서버에서 공유된 내용을 확인할 결과이다. 관련 명령어로 알맞은 것은?",
+    "code": "[root@www ~]#\n/data  192.168.56.0/24(sync,wdelay,hide,no_subtree_check,root_squash,no_all_squash)\n/data  192.168.13.8/24(sync,wdelay,hide,no_subtree_check,root_squash,all_squash)\n[root@www ~]#",
     "description": "-",
     "options": [
       "nfsstauts",
@@ -4920,6 +5063,7 @@
     "localId": 74,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 NFS 서버 설정 옵션으로 알맞은 것은?",
+    "code": "root 사용자와 일반 사용자의 권한을 nobody 또는 nfsnobody 계정으로 매핑시킨다.",
     "description": "-",
     "options": [
       "no_root_squash",
@@ -4933,6 +5077,7 @@
     "localId": 75,
     "subjectKey": 3,
     "body": "다음은 vsftpd 서버의 환경 설정 파일 내용 중 일부이다. 해당 설정에 대한 설명으로 가장 알맞은 것은?",
+    "code": "local_enable=YES",
     "description": "-",
     "options": [
       "익명 사용자의 접근을 허가한다.",
@@ -4946,6 +5091,7 @@
     "localId": 76,
     "subjectKey": 3,
     "body": "다음 설명에 가장 적합한 메일 관련 프로그램으로 알맞은 것은?",
+    "code": "사용자들에게 안전한 IMAP 및 POP3 서버를 제공하고 손쉽게 관리하려고 한다.",
     "description": "-",
     "options": [
       "qmail",
@@ -4959,6 +5105,7 @@
     "localId": 77,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 메일 과련 프로그램으로 거리가 먼 것은?",
+    "code": "사용자들이 메일을 읽고 보낼 때 사용하는 프로그램으로 MUA(Mail User Agent)라고 부른다.",
     "description": "-",
     "options": [
       "evolution",
@@ -4972,6 +5119,7 @@
     "localId": 78,
     "subjectKey": 3,
     "body": "다음 형식의 설정을 확인할 수 있는 파일로 알맞은 것은?",
+    "code": "Connect: 192.168.5.13  RELAY",
     "description": "-",
     "options": [
       "/etc/mail/local-host-names",
@@ -4985,6 +5133,7 @@
     "localId": 79,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "# cd /etc/mail\n# (㉠) sendmail.mc (㉡) sendmail.cf",
     "description": "-",
     "options": [
       "㉠ m4, ㉡ ＞",
@@ -5037,6 +5186,7 @@
     "localId": 83,
     "subjectKey": 3,
     "body": "다음은 DNS 관련 질의를 다른 서버로 넘기는 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "forward only;\n(괄호) { 168.126.63.1; };",
     "description": "-",
     "options": [
       "allow-query",
@@ -5141,6 +5291,7 @@
     "localId": 91,
     "subjectKey": 3,
     "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "TCP wrapper는 호스트 기반의 접근 제어를 담당하는데, 초기에는 inetd와 같은 슈퍼 서버에 의해 관리되는 서비스들만 이용할 수 있다. 그러나 최근에는 standalone 데몬도 사용 가능한데, ldd 명령으로 실행 데몬의 라이브러리를 확인해서 (괄호) 파일을 참조한다면 이용할 수 있다.",
     "description": "-",
     "options": [
       "libwrap.so",
@@ -5167,6 +5318,7 @@
     "localId": 93,
     "subjectKey": 3,
     "body": "특정 MAC 주소를 갖는 네트워크 어댑터에 고정적으로 IP 주소를 할당하기 위해 관련 설정을 진행하는 과정의 일부이다. 다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "host ihd_pc {\n    (괄호) 08:00:07:26:c0:a5;\n    fixed-address 192.168.12.22;\n}",
     "description": "-",
     "options": [
       "hardware ethernet",
@@ -5180,6 +5332,7 @@
     "localId": 94,
     "subjectKey": 3,
     "body": "다음 설명의 경우에 구축해야 하는 서버로 알맞은 것은?",
+    "code": "원격지의 다른 컴퓨터에서 가상 머신으로 동작하는 시스템에 접속해서 데스크톱처럼 사용하려고 한다.",
     "description": "-",
     "options": [
       "VNC 서버",
@@ -5193,6 +5346,7 @@
     "localId": 95,
     "subjectKey": 3,
     "body": "다음은 원격지의 NTP 서버를 이용해서 시간을 동기화하는 과정이다. 빈 칸에 들어갈 명령어로 알맞은 것은?",
+    "code": "# (괄호) 203.248.240.140",
     "description": "-",
     "options": [
       "ntptime",
@@ -5219,6 +5373,7 @@
     "localId": 97,
     "subjectKey": 3,
     "body": "다음과 같은 소스 코드가 시스템에서 발견된 경우에 발생할 수 있는 공격으로 가장 알맞은 것은?",
+    "code": "#include <stdio.h>\nmain()\n{\n    char *m;\n    while(1)\n        m=malloc(1000);\n}",
     "description": "-",
     "options": [
       "가용 네트워크 대역폭 고갈",
@@ -5232,6 +5387,7 @@
     "localId": 98,
     "subjectKey": 3,
     "body": "다음 설명에 보안 프로그램으로 알맞은 것은?",
+    "code": "2009년 미국 국토안보부가 자금을 제공하며 설립한 OISF가 2010년에 개발한 공개형 IDS 및 IPS이다. 멀티코어 및 멀티스레딩 지원, GPU 하드웨어 가속 지원, LUA 언어를 사용한 시그니처 작성이 가능하다.",
     "description": "-",
     "options": [
       "SELinux",
@@ -5245,6 +5401,7 @@
     "localId": 99,
     "subjectKey": 3,
     "body": "다음 중 iptables의 사용법으로 틀린 것은?",
+    "code": "① iptables -nL INPUT  ② iptables -A INPUT -s 192.168.5.4 -j DROP  ③ iptables -P INPUT -j DROP  ④ iptables -t nat -L PREROUTING",
     "description": "-",
     "options": [
       "iptables –P INPUT –j DROP",
@@ -5258,6 +5415,7 @@
     "localId": 100,
     "subjectKey": 3,
     "body": "다음 설명에 해당하는 프로그램으로 알맞은 것은?",
+    "code": "iptables를 만든 넷필터(netfilter) 프로젝트에서 iptables, ip6tables, arptables, ebtables를 대체하기 위해 새롭게 만든 방화벽 소프트웨어이다.",
     "description": "-",
     "options": [
       "nftables",

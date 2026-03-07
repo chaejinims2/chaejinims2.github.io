@@ -1,51 +1,76 @@
 {% assign questions = include.questions | default: site.data.lm11.questions %}
+
 {% if include.title %}
 <header class="quiz-header">
   <h2 class="quiz-title">{{ include.title }}</h2>
   {% if include.subtitle %}<p class="quiz-subtitle">{{ include.subtitle }}</p>{% endif %}
 </header>
 {% endif %}
+
 <div class="quiz-grid quiz-grid--bank" role="list">
   {% for q in questions %}
     {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
     {% assign subject = site.data.lm11.subjects | where: "key", q.subjectKey | first %}
-    {% assign display_num = q.localId %}
-  <article class="quiz-card quiz-card--bank" data-exam-key="{{ q.examKey }}" data-subject-key="{{ q.subjectKey }}" data-local-id="{{ q.localId }}"{% if q.notes %} data-notes="{{ q.notes | jsonify | escape }}"{% endif %} role="listitem">
-    <div class="quiz-card__meta">
-      <span class="quiz-card__num quiz-card__num--range{{ q.subjectKey }}" aria-label="출처">{{ exam.date }}</span>
-      {% if subject %}<span class="quiz-card__subject" aria-label="과목">{{ subject.name }}</span>{% endif %}
-    </div>
-    {% if q.tags and q.tags.size > 0 %}
-    <ul class="quiz-card__tags" aria-label="태그">
-      {% for tag in q.tags %}
-      <li class="quiz-card__tag">{{ tag }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-    <div class="quiz-card__body">{{ q.localId }}. {{ q.body }}</div>
-    {% if q.code and q.code != '' %}
-    <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
+
+    <article
+      class="quiz-card quiz-card--bank"
+      data-exam-key="{{ q.examKey }}"
+      data-subject-key="{{ q.subjectKey }}"
+      data-local-id="{{ q.localId }}"
+      {% if q.notes %}data-notes="{{ q.notes | jsonify | escape }}"{% endif %}
+      role="listitem">
+      <div class="quiz-card__meta">
+        {% if subject %}
+          <span class="quiz-card__num quiz-card__num--range{{ q.subjectKey }}" aria-label="과목">{{ subject.name }}</span>
+        {% endif %}
+        <span class="quiz-card__subject" aria-label="출처">{{ exam.date }}</span>
+      </div>
+
+      <div class="quiz-card__body">{{ q.localId }}. {{ q.body }}</div>
+
+      {% if q.code and q.code != '' %}
+        <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
 ' }}</code></pre>
-    {% endif %}
-    <ol class="quiz-card__options quiz-card__options--selectable" start="1" data-shuffle role="list">
-      {% for opt in q.options %}
-      <li class="quiz-card__option" role="button" tabindex="0" aria-pressed="false" {% if forloop.first %}data-correct="true"{% endif %}>{{ opt }}</li>
-      {% endfor %}
-    </ol>
-    <details class="quiz-card__answer-wrap" open>
-      <summary class="quiz-card__toggle">
-        <span class="quiz-card__toggle-label">해설 보기</span>
-      </summary>
-      <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{{ q.options | first }}</p>
-      <p class="quiz-card__description">{{ q.description }}</p>
-      <button type="button" class="quiz-card__note-btn">이 문제 노트</button>
-    </details>
-  </article>
+      {% endif %}
+
+      <ol class="quiz-card__options quiz-card__options--selectable" start="1" data-shuffle role="list">
+        {% for opt in q.options %}
+          <li
+            class="quiz-card__option"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            {% if forloop.first %}data-correct="true"{% endif %}>{{ opt }}</li>
+        {% endfor %}
+      </ol>
+
+      <details class="quiz-card__answer-wrap" open>
+        <summary class="quiz-card__toggle">
+          <span class="quiz-card__toggle-label">해설 보기</span>
+        </summary>
+        <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{{ q.options | first }}</p>
+        <p class="quiz-card__description">{{ q.description }}</p>
+        <button type="button" class="quiz-card__note-btn">이 문제 노트</button>
+        <section class="quiz-memo-wrap" id="quiz-memo-wrap" aria-label="메모">
+          <p id="quiz-memo-current" class="quiz-memo-current" aria-live="polite"></p>
+          <textarea id="quiz-memo" class="quiz-memo-textarea" rows="6" placeholder="풀이 메모, 암기할 내용 등을 적어보세요." aria-label="메모 입력"></textarea>
+        </section>
+        {% if q.tags and q.tags.size > 0 %}
+          <ul class="quiz-card__tags" aria-label="태그">
+            {% for tag in q.tags %}
+              <li class="quiz-card__tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </details>
+    </article>
   {% endfor %}
 </div>
+
 <script>
-(function() {
+(function () {
   var STORAGE_KEY = 'lm11-answer-sheet';
+  var cards = document.querySelectorAll('.quiz-card--bank');
 
   function shuffleList(list) {
     var items = [].slice.call(list.children);
@@ -55,12 +80,11 @@
       items[i] = items[j];
       items[j] = t;
     }
-    items.forEach(function(el) { list.appendChild(el); });
+    items.forEach(function (el) { list.appendChild(el); });
   }
 
   function setChoiceNumbers(ol) {
-    var items = ol.querySelectorAll('.quiz-card__option');
-    items.forEach(function(li, i) {
+    [].slice.call(ol.querySelectorAll('.quiz-card__option')).forEach(function (li, i) {
       li.setAttribute('data-choice', String(i + 1));
     });
   }
@@ -69,7 +93,9 @@
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
       return raw ? JSON.parse(raw) : {};
-    } catch (e) { return {}; }
+    } catch (e) {
+      return {};
+    }
   }
 
   function saveAnswers(obj) {
@@ -88,16 +114,11 @@
     var key = getQuestionKey(card);
     if (!key) return;
     var choice = answers[key];
-    var opts = card.querySelectorAll('.quiz-card__option');
-    opts.forEach(function(li) {
+    card.querySelectorAll('.quiz-card__option').forEach(function (li) {
       var c = li.getAttribute('data-choice');
-      if (c && String(choice) === c) {
-        li.classList.add('is-selected');
-        li.setAttribute('aria-pressed', 'true');
-      } else {
-        li.classList.remove('is-selected');
-        li.setAttribute('aria-pressed', 'false');
-      }
+      var selected = c && String(choice) === c;
+      li.classList.toggle('is-selected', selected);
+      li.setAttribute('aria-pressed', selected ? 'true' : 'false');
     });
   }
 
@@ -105,21 +126,23 @@
     document.dispatchEvent(new CustomEvent('quiz-answer-changed'));
   }
 
-  document.querySelectorAll('.quiz-grid--bank .quiz-card__options[data-shuffle]').forEach(function(ol) {
+  // Shuffle options and set choice numbers
+  document.querySelectorAll('.quiz-grid--bank .quiz-card__options[data-shuffle]').forEach(function (ol) {
     shuffleList(ol);
     setChoiceNumbers(ol);
   });
 
   var answers = loadAnswers();
-  document.querySelectorAll('.quiz-card--bank').forEach(function(card) {
+  cards.forEach(function (card) {
     applySelectionToCard(card, answers);
   });
 
-  document.querySelectorAll('.quiz-grid--bank .quiz-card__options--selectable').forEach(function(ol) {
+  // Option click/keyboard
+  document.querySelectorAll('.quiz-grid--bank .quiz-card__options--selectable').forEach(function (ol) {
     var card = ol.closest('.quiz-card--bank');
     if (!card) return;
-    ol.querySelectorAll('.quiz-card__option').forEach(function(li) {
-      li.addEventListener('click', function() {
+    ol.querySelectorAll('.quiz-card__option').forEach(function (li) {
+      li.addEventListener('click', function () {
         var key = getQuestionKey(card);
         if (!key) return;
         var choice = li.getAttribute('data-choice');
@@ -135,7 +158,7 @@
         applySelectionToCard(card, answers);
         notifyAnswerSheet();
       });
-      li.addEventListener('keydown', function(e) {
+      li.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           li.click();
@@ -144,25 +167,31 @@
     });
   });
 
-  document.querySelectorAll('.quiz-card__note-btn').forEach(function(btn) {
+  // Note button
+  document.querySelectorAll('.quiz-card__note-btn').forEach(function (btn) {
     var card = btn.closest('.quiz-card--bank');
     if (!card) return;
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       var key = getQuestionKey(card);
       if (!key) return;
       var notes = card.getAttribute('data-notes') || '';
-      document.dispatchEvent(new CustomEvent('quiz-memo-select', {
-        detail: { key: key, notes: notes }
-      }));
+      document.dispatchEvent(new CustomEvent('quiz-memo-select', { detail: { key: key, notes: notes } }));
     });
   });
 
-  document.addEventListener('quiz-answer-reset', function() {
+  // Reset answers
+  document.addEventListener('quiz-answer-reset', function () {
     answers = {};
     saveAnswers(answers);
-    cards.forEach(function(card) { applySelectionToCard(card, answers); });
+    cards.forEach(function (card) { applySelectionToCard(card, answers); });
     notifyAnswerSheet();
   });
 
+  // Highlight "틀린 것" in question body
+  document.querySelectorAll('.quiz-card--bank .quiz-card__body').forEach(function (el) {
+    if (el.textContent.indexOf('틀린 것') !== -1) {
+      el.innerHTML = el.innerHTML.replace(/틀린 것/g, '<span class="quiz-body-wrong">틀린 것</span>');
+    }
+  });
 })();
 </script>

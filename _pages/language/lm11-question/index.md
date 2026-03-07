@@ -1,58 +1,46 @@
 ---
 layout: default
 permalink: /language/lm11-question/
-title: Linux Master 1급 문제 은행
-# 문제 목록은 _data/lm11/questions.json, 시험/과목은 exams.json·subjects.json에서 가져옵니다.
+title: Linux Master 1급 1차
+# 데이터: _data/lm11/questions.json, exams.json, subjects.json
 ---
 
 <div class="app-page-container">
-  <!-- <h1 class="page-title">{{ page.title }}</h1> -->
-  <!-- <p class="page-desc">시험·과목을 선택하면 해당 문제만 모아서 볼 수 있습니다. 선지는 매번 랜덤 순서로 표시됩니다.</p> -->
-
+  <header class="quiz-filter-wrap" role="region" aria-label="문제 필터">
+    <h2 class="page-title">{{ page.title }}</h2>
+    <div class="quiz-select-wrap">
+      <select id="bank-exam-select" class="quiz-select">
+        {% for exam in site.data.lm11.exams %}
+          <option value="{{ exam.key }}" {% if forloop.first %}selected{% endif %}>{{ exam.date }}</option>
+        {% endfor %}
+      </select>
+      <label for="bank-exam-select" class="quiz-select-label">시험</label>
+    </div>
+    <div class="quiz-select-wrap">
+      <select id="bank-subject-select" class="quiz-select">
+        <option value="">전체</option>
+        {% for subj in site.data.lm11.subjects %}
+          <option value="{{ subj.key }}">{{ subj.name }}</option>
+        {% endfor %}
+      </select>
+      <label for="bank-subject-select" class="quiz-select-label">과목</label>
+    </div>
+    <button type="button" id="bank-shuffle-order" class="quiz-shuffle-btn">문제 순서 섞기</button>
+  </header>
 
   <section class="quiz-bank-section" id="bank-section" aria-label="문제 목록">
     {% include quiz_cards_bank.html questions=site.data.lm11.questions %}
   </section>
 
-  <div class="quiz-filter-wrap" role="region" aria-label="문제 필터">
-    <div class="quiz-select-wrap">
-      <label for="bank-exam-select" class="quiz-select-label">시험</label>
-      <select id="bank-exam-select" class="quiz-select" aria-describedby="bank-exam-hint">
-        <option value="">전체</option>
-        {% for exam in site.data.lm11.exams %}
-        <option value="{{ exam.key }}">{{ exam.date }}</option>
-        {% endfor %}
-      </select>
-      <span id="bank-exam-hint" class="quiz-select-hint" aria-live="polite"></span>
-    </div>
-    <div class="quiz-select-wrap">
-      <label for="bank-subject-select" class="quiz-select-label">과목</label>
-      <select id="bank-subject-select" class="quiz-select" aria-describedby="bank-subject-hint">
-        <option value="">전체</option>
-        {% for subj in site.data.lm11.subjects %}
-        <option value="{{ subj.key }}">{{ subj.name }}</option>
-        {% endfor %}
-      </select>
-      <span id="bank-subject-hint" class="quiz-select-hint" aria-live="polite"></span>
-    </div>
-    <p class="quiz-filter-count" id="bank-count" aria-live="polite"></p>
-  </div>
-
-  <div class="quiz-single-toggle-wrap" role="group" aria-label="보기 방식">
-    <input type="checkbox" id="bank-single-mode" class="quiz-single-toggle" aria-describedby="bank-single-hint" checked>
-    <label for="bank-single-mode" class="quiz-single-toggle-label">한 문제씩 보기</label>
-    <button type="button" id="bank-shuffle-order" class="quiz-shuffle-btn">문제 순서 섞기</button>
-  </div>
-
-  <div class="quiz-one-nav" id="bank-one-nav" hidden aria-label="한 문제씩 이동" style="margin-bottom: 1.5rem;">
+  <nav class="quiz-one-nav" id="bank-one-nav" aria-label="한 문제씩 이동" style="margin-bottom: 1.5rem;">
     <a href="#" id="bank-prev" class="quiz-one-nav__btn" aria-label="이전 문제">
-      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/chevron-left.svg');" aria-hidden="true"></span>
+      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/default/chevron-left.svg');" aria-hidden="true"></span>
     </a>
     <span class="quiz-one-nav__count" id="bank-one-count" aria-live="polite">1 / 100</span>
     <a href="#" id="bank-next" class="quiz-one-nav__btn" aria-label="다음 문제">
-      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/chevron-right.svg');" aria-hidden="true"></span>
+      <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/default/chevron-right.svg');" aria-hidden="true"></span>
     </a>
-  </div>
+  </nav>
 
   <section class="quiz-answer-sheet-wrap" id="quiz-answer-sheet" hidden aria-label="답안지">
     <h2 class="quiz-answer-sheet-title">답안지</h2>
@@ -64,37 +52,34 @@ title: Linux Master 1급 문제 은행
     </div>
     <div class="quiz-answer-sheet-grid" id="quiz-answer-sheet-list"></div>
   </section>
-
-  <section class="quiz-memo-wrap" id="quiz-memo-wrap" aria-label="메모">
-    <!-- <h2 class="quiz-memo-title">메모</h2> -->
-    <!-- <p class="quiz-memo-hint">각 문제의 노트 버튼을 누르면 해당 문제에 대한 메모를 작성할 수 있습니다. 메모는 브라우저에 저장되며, 새로고침 후에도 유지됩니다.</p> -->
-    <p id="quiz-memo-current" class="quiz-memo-current" aria-live="polite"></p>
-    <textarea id="quiz-memo" class="quiz-memo-textarea" rows="6" placeholder="풀이 메모, 암기할 내용 등을 적어보세요." aria-label="메모 입력"></textarea>
-  </section>
-
 </div>
 
 <script>
-(function() {
+(function () {
   var examSelect = document.getElementById('bank-exam-select');
   var subjectSelect = document.getElementById('bank-subject-select');
-  var countEl = document.getElementById('bank-count');
-  var singleCheck = document.getElementById('bank-single-mode');
   var oneNav = document.getElementById('bank-one-nav');
   var prevBtn = document.getElementById('bank-prev');
   var nextBtn = document.getElementById('bank-next');
   var oneCountEl = document.getElementById('bank-one-count');
   var bankSection = document.getElementById('bank-section');
+  var gradeBtn = document.getElementById('quiz-grade-btn');
+  var resultEl = document.getElementById('quiz-grade-result');
+  var listEl = document.getElementById('quiz-answer-sheet-list');
+  var memoEl = document.getElementById('quiz-memo');
+  var memoCurrentEl = document.getElementById('quiz-memo-current');
+
   var cards = document.querySelectorAll('.quiz-card--bank');
   if (!cards.length) return;
 
   var currentIndex = 0;
 
+  // ---- 필터 / 한 문제씩 보기 ----
   function getVisibleCards() {
     var examKey = (examSelect && examSelect.value) || '';
     var subjectKey = (subjectSelect && subjectSelect.value) || '';
     var list = [];
-    cards.forEach(function(card) {
+    cards.forEach(function (card) {
       var matchExam = !examKey || card.getAttribute('data-exam-key') === examKey;
       var matchSubject = !subjectKey || card.getAttribute('data-subject-key') === String(subjectKey);
       if (matchExam && matchSubject) list.push(card);
@@ -104,37 +89,21 @@ title: Linux Master 1급 문제 은행
 
   function updateFilter() {
     var visible = getVisibleCards();
-    var singleMode = singleCheck && singleCheck.checked;
-
-    if (singleMode) {
-      if (currentIndex >= visible.length) currentIndex = Math.max(0, visible.length - 1);
-      cards.forEach(function(card) { card.hidden = true; });
-      visible.forEach(function(card, i) { card.hidden = (i !== currentIndex); });
-      if (oneNav) oneNav.hidden = visible.length === 0;
-      if (bankSection) bankSection.classList.add('is-single-mode');
-      updateOneNav(visible.length);
-    } else {
-      visible.forEach(function(card) { card.hidden = false; });
-      cards.forEach(function(card) {
-        var inVisible = visible.indexOf(card) !== -1;
-        if (!inVisible) card.hidden = true;
-      });
-      if (oneNav) oneNav.hidden = true;
-      if (bankSection) bankSection.classList.remove('is-single-mode');
-    }
-    if (countEl) countEl.textContent = visible.length + '문항';
-  }
-
-  function updateOneNav(total) {
-    if (!oneCountEl || total === 0) return;
-    oneCountEl.textContent = (currentIndex + 1) + ' / ' + total;
-    if (prevBtn) {
-      prevBtn.setAttribute('aria-disabled', currentIndex <= 0 ? 'true' : 'false');
-      prevBtn.classList.toggle('is-disabled', currentIndex <= 0);
-    }
-    if (nextBtn) {
-      nextBtn.setAttribute('aria-disabled', currentIndex >= total - 1 ? 'true' : 'false');
-      nextBtn.classList.toggle('is-disabled', currentIndex >= total - 1);
+    currentIndex = Math.max(0, Math.min(currentIndex, visible.length - 1));
+    cards.forEach(function (card) { card.hidden = true; });
+    visible.forEach(function (card, i) { card.hidden = (i !== currentIndex); });
+    if (oneNav) oneNav.hidden = visible.length === 0;
+    if (bankSection) bankSection.classList.add('is-single-mode');
+    if (oneCountEl && visible.length) {
+      oneCountEl.textContent = (currentIndex + 1) + ' / ' + visible.length;
+      if (prevBtn) {
+        prevBtn.setAttribute('aria-disabled', currentIndex <= 0 ? 'true' : 'false');
+        prevBtn.classList.toggle('is-disabled', currentIndex <= 0);
+      }
+      if (nextBtn) {
+        nextBtn.setAttribute('aria-disabled', currentIndex >= visible.length - 1 ? 'true' : 'false');
+        nextBtn.classList.toggle('is-disabled', currentIndex >= visible.length - 1);
+      }
     }
   }
 
@@ -156,13 +125,6 @@ title: Linux Master 1급 문제 은행
     }
   }
 
-  if (singleCheck) {
-    singleCheck.addEventListener('change', function() {
-      currentIndex = 0;
-      updateFilter();
-    });
-  }
-
   function shuffleOrder() {
     var container = bankSection && bankSection.querySelector('.quiz-grid--bank');
     if (!container) return;
@@ -173,36 +135,55 @@ title: Linux Master 1급 문제 은행
       cardArr[i] = cardArr[j];
       cardArr[j] = t;
     }
-    cardArr.forEach(function(c) { container.appendChild(c); });
+    cardArr.forEach(function (c) { container.appendChild(c); });
     cards = document.querySelectorAll('.quiz-card--bank');
     currentIndex = 0;
     updateFilter();
   }
 
-  var shuffleBtn = document.getElementById('bank-shuffle-order');
-  if (shuffleBtn) shuffleBtn.addEventListener('click', shuffleOrder);
+  if (document.getElementById('bank-shuffle-order')) {
+    document.getElementById('bank-shuffle-order').addEventListener('click', shuffleOrder);
+  }
+  if (prevBtn) prevBtn.addEventListener('click', function (e) { e.preventDefault(); goPrev(e); });
+  if (nextBtn) nextBtn.addEventListener('click', function (e) { e.preventDefault(); goNext(e); });
 
-  if (prevBtn) prevBtn.addEventListener('click', function(e) { e.preventDefault(); goPrev(e); });
-  if (nextBtn) nextBtn.addEventListener('click', function(e) { e.preventDefault(); goNext(e); });
+  if (examSelect) {
+    examSelect.addEventListener('change', function () {
+      currentIndex = 0;
+      updateFilter();
+      clearGrade();
+      buildAnswerSheet();
+    });
+  }
+  if (subjectSelect) {
+    subjectSelect.addEventListener('change', function () {
+      currentIndex = 0;
+      updateFilter();
+    });
+  }
 
-  if (examSelect) examSelect.addEventListener('change', function() { currentIndex = 0; updateFilter(); clearGrade(); buildAnswerSheet(); });
-  if (subjectSelect) subjectSelect.addEventListener('change', function() { currentIndex = 0; updateFilter(); });
+  // ---- 답안지 ----
+  function getStoredAnswers() {
+    try {
+      var raw = localStorage.getItem('lm11-answer-sheet');
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
 
   function buildAnswerSheet() {
     var wrap = document.getElementById('quiz-answer-sheet');
     var list = document.getElementById('quiz-answer-sheet-list');
-    var examSel = document.getElementById('bank-exam-select');
-    if (!wrap || !list || !examSel) return;
-    var examKey = examSel.value || '';
+    if (!wrap || !list || !examSelect) return;
+    var examKey = examSelect.value || '';
     if (!examKey) {
       wrap.hidden = true;
       return;
     }
     wrap.hidden = false;
-    var raw = '';
-    try { raw = localStorage.getItem('lm11-answer-sheet'); } catch (e) {}
-    var answers = raw ? JSON.parse(raw) : {};
-    var circle = ['①','②','③','④'];
+    var answers = getStoredAnswers();
+    var circle = ['①', '②', '③', '④'];
     list.innerHTML = '';
     for (var n = 1; n <= 100; n++) {
       var key = examKey + '-' + n;
@@ -214,17 +195,16 @@ title: Linux Master 1급 문제 은행
       list.appendChild(cell);
     }
   }
+
   document.addEventListener('quiz-answer-changed', buildAnswerSheet);
   buildAnswerSheet();
 
+  // ---- 채점 ----
   var isGraded = false;
-  var gradeBtn = document.getElementById('quiz-grade-btn');
-  var resultEl = document.getElementById('quiz-grade-result');
-  var listEl = document.getElementById('quiz-answer-sheet-list');
 
   function clearGrade() {
     if (!listEl) return;
-    listEl.querySelectorAll('.answer-sheet__cell').forEach(function(cell) {
+    listEl.querySelectorAll('.answer-sheet__cell').forEach(function (cell) {
       cell.classList.remove('is-correct', 'is-wrong');
     });
     if (resultEl) {
@@ -237,18 +217,16 @@ title: Linux Master 1급 문제 은행
   }
 
   function runGrade() {
-    var examKey = document.getElementById('bank-exam-select') && document.getElementById('bank-exam-select').value;
+    var examKey = examSelect && examSelect.value;
     if (!examKey || !resultEl || !listEl) return;
     if (isGraded) {
       clearGrade();
       return;
     }
-    var raw = '';
-    try { raw = localStorage.getItem('lm11-answer-sheet'); } catch (e) {}
-    var answers = raw ? JSON.parse(raw) : {};
+    var answers = getStoredAnswers();
     var correct = 0;
     var answered = 0;
-    listEl.querySelectorAll('.answer-sheet__cell').forEach(function(cell) {
+    listEl.querySelectorAll('.answer-sheet__cell').forEach(function (cell) {
       cell.classList.remove('is-correct', 'is-wrong');
     });
     for (var n = 1; n <= 100; n++) {
@@ -266,13 +244,13 @@ title: Linux Master 1급 문제 은행
           break;
         }
       }
+      var cellEl = listEl.querySelector('.answer-sheet__cell[data-question-key="' + key + '"]');
+      if (!cellEl) continue;
       if (chosenLi && chosenLi.getAttribute('data-correct') === 'true') {
         correct++;
-        var c = listEl.querySelector('.answer-sheet__cell[data-question-key="' + key + '"]');
-        if (c) c.classList.add('is-correct');
+        cellEl.classList.add('is-correct');
       } else {
-        var c = listEl.querySelector('.answer-sheet__cell[data-question-key="' + key + '"]');
-        if (c) c.classList.add('is-wrong');
+        cellEl.classList.add('is-wrong');
       }
     }
     resultEl.hidden = false;
@@ -286,49 +264,47 @@ title: Linux Master 1급 문제 은행
     if (gradeBtn) gradeBtn.textContent = '채점 전으로';
     isGraded = true;
   }
+
   if (gradeBtn) gradeBtn.addEventListener('click', runGrade);
 
   var resetBtn = document.getElementById('quiz-reset-btn');
   if (resetBtn) {
-    resetBtn.addEventListener('click', function() {
+    resetBtn.addEventListener('click', function () {
       document.dispatchEvent(new CustomEvent('quiz-answer-reset'));
       clearGrade();
+      buildAnswerSheet();
     });
   }
 
+  // ---- 메모 (카드 키 ↔ 라벨/노트) ----
   function getQuestionKeyFromCard(card) {
     var ek = card.getAttribute('data-exam-key');
     var lid = card.getAttribute('data-local-id');
     return ek && lid ? ek + '-' + lid : null;
   }
 
-  function getMemoLabelFromKey(key) {
-    if (!key || !cards || !cards.length) return key;
+  function getCardByKey(key) {
+    if (!key || !cards.length) return null;
     for (var i = 0; i < cards.length; i++) {
-      var card = cards[i];
-      var k = getQuestionKeyFromCard(card);
-      if (k === key) {
-        var numEl = card.querySelector('.quiz-card__num');
-        var bodyEl = card.querySelector('.quiz-card__body');
-        var label = '';
-        if (numEl) label += numEl.textContent.trim() + ' ';
-        if (bodyEl) label += bodyEl.textContent.trim();
-        return label || key;
-      }
+      if (getQuestionKeyFromCard(cards[i]) === key) return cards[i];
     }
-    return key;
+    return null;
+  }
+
+  function getMemoLabelFromKey(key) {
+    var card = getCardByKey(key);
+    if (!card) return key;
+    var numEl = card.querySelector('.quiz-card__num');
+    var bodyEl = card.querySelector('.quiz-card__body');
+    var label = '';
+    if (numEl) label += numEl.textContent.trim() + ' ';
+    if (bodyEl) label += bodyEl.textContent.trim();
+    return label || key;
   }
 
   function getMemoNotesFromKey(key) {
-    if (!key || !cards || !cards.length) return '';
-    for (var i = 0; i < cards.length; i++) {
-      var card = cards[i];
-      var k = getQuestionKeyFromCard(card);
-      if (k === key) {
-        return card.getAttribute('data-notes') || '';
-      }
-    }
-    return '';
+    var card = getCardByKey(key);
+    return card ? (card.getAttribute('data-notes') || '') : '';
   }
 
   function parseNotesFromAttr(attr) {
@@ -343,8 +319,6 @@ title: Linux Master 1급 문제 은행
 
   var MEMO_MAP_KEY = 'lm11-memo-map';
   var MEMO_CURRENT_KEY = 'lm11-memo-current';
-  var memoEl = document.getElementById('quiz-memo');
-  var memoCurrentEl = document.getElementById('quiz-memo-current');
   var memoMap = {};
   var currentMemoKey = null;
   var memoTimeout = null;
@@ -353,7 +327,9 @@ title: Linux Master 1급 문제 은행
     try {
       var raw = localStorage.getItem(MEMO_MAP_KEY);
       return raw ? JSON.parse(raw) : {};
-    } catch (e) { return {}; }
+    } catch (e) {
+      return {};
+    }
   }
 
   function saveMemoMap() {
@@ -366,48 +342,35 @@ title: Linux Master 1급 문제 은행
     if (!memoEl) return;
     currentMemoKey = key;
     if (!memoMap) memoMap = {};
-    var text;
-    if (Object.prototype.hasOwnProperty.call(memoMap, key)) {
-      text = memoMap[key];
-    } else {
-      text = parseNotesFromAttr(initialNotes) || parseNotesFromAttr(getMemoNotesFromKey(key)) || '';
-    }
+    var text = Object.prototype.hasOwnProperty.call(memoMap, key)
+      ? memoMap[key]
+      : (parseNotesFromAttr(initialNotes) || parseNotesFromAttr(getMemoNotesFromKey(key)) || '');
     memoEl.disabled = false;
     memoEl.value = text;
-    if (memoCurrentEl) {
-      var label = getMemoLabelFromKey(key);
-      // memoCurrentEl.textContent = label ? '현재 메모 대상: ' + label : '';
-      memoCurrentEl.textContent = label;
-    }
+    if (memoCurrentEl) memoCurrentEl.textContent = getMemoLabelFromKey(key);
     try { localStorage.setItem(MEMO_CURRENT_KEY, key); } catch (e) {}
   }
 
   if (memoEl) {
     memoMap = loadMemoMap();
     memoEl.disabled = true;
-    if (memoCurrentEl) {
-      // memoCurrentEl.textContent = '문제의 노트 버튼을 눌러 메모 대상을 선택해 주세요.';
-      memoCurrentEl.textContent = '';
-    }
+    if (memoCurrentEl) memoCurrentEl.textContent = '';
     try {
       var lastKey = localStorage.getItem(MEMO_CURRENT_KEY);
-      if (lastKey) {
-        if (!memoMap) memoMap = {};
-        setCurrentMemoTarget(lastKey);
-      }
+      if (lastKey) setCurrentMemoTarget(lastKey);
     } catch (e) {}
 
-    memoEl.addEventListener('input', function() {
+    memoEl.addEventListener('input', function () {
       if (!currentMemoKey) return;
       if (memoTimeout) clearTimeout(memoTimeout);
-      memoTimeout = setTimeout(function() {
+      memoTimeout = setTimeout(function () {
         memoTimeout = null;
         memoMap[currentMemoKey] = memoEl.value;
         saveMemoMap();
       }, 300);
     });
 
-    document.addEventListener('quiz-memo-select', function(e) {
+    document.addEventListener('quiz-memo-select', function (e) {
       var key = e && e.detail && e.detail.key;
       var notes = e && e.detail && e.detail.notes;
       if (!key) return;

@@ -9,7 +9,7 @@
 | 영역 | 변경 전 | 변경 후 |
 |------|---------|---------|
 | 아이콘 | `_includes/icon/*.html` (include) | `assets/svg/*.svg` + CSS mask (`--ico`) |
-| Favicon | data URI 인라인 SVG | `assets/svg/sparkles-solid.svg` 링크 |
+| Favicon | data URI 인라인 SVG | `assets/svg/sparkles.svg` 링크 |
 | 네비 분기 | URL 경로 (`/public/`, `/protected/`) | front matter `type: sidebar` / `type: topbar` |
 | 섹션 URL | `/public/cases/`, `/protected/home/` 등 | `/cases/`, `/home/`, `/settings/` 등 |
 | 사이드바 active | 현재 섹션만 펼침 (Liquid + pjax setActive) | 동일 유지, 인덱스·pjax 보정 |
@@ -74,7 +74,7 @@
 
 **장점**
 - URL을 `/cases/`, `/home/` 등으로 통일해, 링크·라우팅 규칙이 단순해짐.
-- outline/solid 아이콘 네이밍(`*.svg`, `*-solid.svg`)이 일관됨.
+- outline/solid 아이콘 네이밍(`*.svg`, `*.svg`)이 일관됨.
 
 **약점**
 - **Liquid 인덱스**: sidebar/topbar는 `url_parts[2] | default: url_parts[1]`, section/page 레이아웃은 `url_parts[2]`만 사용. 한쪽이 0-based 환경이면 불일치 가능.
