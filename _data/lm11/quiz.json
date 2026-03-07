@@ -1,0 +1,2594 @@
+[
+    {
+        "examKey": "lm11-practice",
+        "localId": 1,
+        "subjectKey": 1,
+        "body": "다음 중 최근 운영체제 동향에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "개방형 운영체제에서 폐쇄형 운영체제로 변화하고 있다.",
+                "description": ""
+            },
+            {
+                "option": "유무선 네트워크 지원이 강화되고 있다.",
+                "description": ""
+            },
+            {
+                "option": "GUI 기반의 사용자 인터페이스를 강화하고 있다.",
+                "description": ""
+            },
+            {
+                "option": "고성능 프로세서 지원을 위해 최적화되고 있다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 2,
+        "subjectKey": 1,
+        "body": "다음 중 나머지 셋과 다른 종류에 속하는 운영체제로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Chrome OS",
+                "description": ""
+            },
+            {
+                "option": "Android",
+                "description": ""
+            },
+            {
+                "option": "Tizen",
+                "description": ""
+            },
+            {
+                "option": "MeeGo",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 3,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스 커널로 만든 운영체제로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Minix",
+                "description": ""
+            },
+            {
+                "option": "안드로이드",
+                "description": ""
+            },
+            {
+                "option": "Bada OS",
+                "description": ""
+            },
+            {
+                "option": "Debian",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 4,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스 커널로 만든 운영체제로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "QNX",
+                "description": ""
+            },
+            {
+                "option": "GENIVI",
+                "description": ""
+            },
+            {
+                "option": "Tizen",
+                "description": ""
+            },
+            {
+                "option": "Moblin",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 5,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "리눅스는 대부분이 어셈블리와 약간의 C언어로 작성되어있다.",
+                "description": ""
+            },
+            {
+                "option": "다중 사용자 및 다중 처리 시스템이다.",
+                "description": ""
+            },
+            {
+                "option": "커널뿐만 아니라 대부분의 응용프로그램의 소스도 공개되어 있다.",
+                "description": ""
+            },
+            {
+                "option": "다양한 파일 시스템을 지원한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 6,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스의 특징에 대한 설명으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "유닉스 표준인 POSIX를 준수한다.",
+                "description": ""
+            },
+            {
+                "option": "리눅스의 파일시스템은 초기에는 xfs를 사용하였고, 그 이후에 ext2, ext3, ext4 순으로 발전하였다.",
+                "description": ""
+            },
+            {
+                "option": "리눅스는 대부분 C언어로 되어 있어서 이식하기 어렵다.",
+                "description": ""
+            },
+            {
+                "option": "리눅스는 이더넷을 통한 네트워크 접속만 지원한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 7,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스 운영체제에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "윈도우에 비해 사용하기가 쉬워서 사용자의 숙련된 기술이 요구되지 않는다.",
+                "description": ""
+            },
+            {
+                "option": "다른 운영체제에 비해 이식성과 확장성이 뛰어나다.",
+                "description": ""
+            },
+            {
+                "option": "다양한 파일시스템을 지원한다.",
+                "description": ""
+            },
+            {
+                "option": "다양한 네트워크 프로토콜을 지원한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 8,
+        "subjectKey": 1,
+        "body": "다음 중 하드 디스크 일부를 메모리처럼 사용하는 기술로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "스왑(Swap)",
+                "description": ""
+            },
+            {
+                "option": "라이브러리(Library)",
+                "description": ""
+            },
+            {
+                "option": "파이프(Pipe)",
+                "description": ""
+            },
+            {
+                "option": "리다이렉션(Redirection)",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 9,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스 커널 기반의 스마트 TV 운영체제로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "iOS 기반의 애플TV",
+                "description": ""
+            },
+            {
+                "option": "안드로이드 기반의 구글TV",
+                "description": ""
+            },
+            {
+                "option": "webOS 기반의 LG TV",
+                "description": ""
+            },
+            {
+                "option": "Tizen 기반의 삼성 TV",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 10,
+        "subjectKey": 1,
+        "body": "텍스트 모드 가상 콘솔에서 이전 작업 내용을 볼 때 사용하는 키 조합으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Ctrl+PageUp",
+                "description": ""
+            },
+            {
+                "option": "Ctrl+PageDown",
+                "description": ""
+            },
+            {
+                "option": "Shift+PageUp",
+                "description": ""
+            },
+            {
+                "option": "Shift+PageDown",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 11,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스의 기술적인 특징에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "입출력 리다이렉션을 지원한다.",
+                "description": ""
+            },
+            {
+                "option": "계층적 파일 구조를 가진다.",
+                "description": ""
+            },
+            {
+                "option": "장치를 파일로 관리한다.",
+                "description": ""
+            },
+            {
+                "option": "공유 라이브러리를 통해 메모리를 효율적으로 사용한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 12,
+        "subjectKey": 1,
+        "body": "단일 모니터 시스템에서 여러 개의 가상 화면을 제공하는 기술로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "가상 콘솔(Virtual Console)",
+                "description": ""
+            },
+            {
+                "option": "라이브러리(Library)",
+                "description": ""
+            },
+            {
+                "option": "스왑(Swap)",
+                "description": ""
+            },
+            {
+                "option": "파이프(Pipe)",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 13,
+        "subjectKey": 1,
+        "body": "자유롭게 사용할 수 있는 운영체제 개발과 관련된 프로젝트로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "GNU",
+                "description": ""
+            },
+            {
+                "option": "Mozilla",
+                "description": ""
+            },
+            {
+                "option": "KDE",
+                "description": ""
+            },
+            {
+                "option": "Apache",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 14,
+        "subjectKey": 1,
+        "body": "자유 소프트웨어 재단(FSF)을 설립한 인물로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "리처드 스톨먼(Richard Stallman)",
+                "description": ""
+            },
+            {
+                "option": "리누스 토발즈(Linus Torvalds)",
+                "description": ""
+            },
+            {
+                "option": "앤드루 S. 타넨바움(Andrew S. Tanenbaum)",
+                "description": ""
+            },
+            {
+                "option": "존 폰 노이만(John von Neumann)",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 15,
+        "subjectKey": 1,
+        "body": "영국 캐노니컬 사에서 데비안 리눅스를 기반으로 자체 Unity 데스크톱 환경을 사용해 만든 배포판으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Ubuntu",
+                "description": ""
+            },
+            {
+                "option": "SUSE Linux",
+                "description": ""
+            },
+            {
+                "option": "Slackware",
+                "description": ""
+            },
+            {
+                "option": "CentOS",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 16,
+        "subjectKey": 1,
+        "body": "다음 중 자유 소프트웨어에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "수정 시 소스 코드 공개가 의무이다.",
+                "description": ""
+            },
+            {
+                "option": "상업적 이용이 가능하다.",
+                "description": ""
+            },
+            {
+                "option": "소스 코드를 임의로 수정할 수 있다.",
+                "description": ""
+            },
+            {
+                "option": "자유 소스로 만든 프로그램을 무료로 배포할 수 있다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 17,
+        "subjectKey": 1,
+        "body": "다음 중 GNU 프로젝트에서 개발한 프로그램이 아닌 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "KDE",
+                "description": ""
+            },
+            {
+                "option": "GCC",
+                "description": ""
+            },
+            {
+                "option": "BASH",
+                "description": ""
+            },
+            {
+                "option": "EMACS",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 18,
+        "subjectKey": 1,
+        "body": "다음 중 레드햇 계열 배포판에 속하지 않는 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "SUSE",
+                "description": ""
+            },
+            {
+                "option": "RHEL",
+                "description": ""
+            },
+            {
+                "option": "CentOS",
+                "description": ""
+            },
+            {
+                "option": "Fedora",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 19,
+        "subjectKey": 1,
+        "body": "다음 중 LGPL(Lesser General Public License)에 대한 설명으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "LGPL 라이선스가 적용된 라이브러리를 수정한 경우 해당 소스 코드를 공개해야 한다.",
+                "description": ""
+            },
+            {
+                "option": "LGPL 라이선스가 적용된 라이브러리를 프로그램에서 사용할 때 해당 프로그램의 소스는 공개하지 않아도 된다.",
+                "description": ""
+            },
+            {
+                "option": "GPL과 LGPL 라이선스는 프로그램에 함께 적용할 수 없다.",
+                "description": ""
+            },
+            {
+                "option": "LGPL 라이선스가 적용된 라이브러리를 사용한 프로그램은 반드시 LGPL로 배포해야 한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 20,
+        "subjectKey": 1,
+        "body": "다음 중 해당 라이선스가 적용된 프로그램의 소스를 수정해서 사용할 경우에도 반드시 공개할 필요가 없는 라이선스 조합으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "BSD, Apache",
+                "description": ""
+            },
+            {
+                "option": "GPL, LGPL",
+                "description": ""
+            },
+            {
+                "option": "BSD, LGPL",
+                "description": ""
+            },
+            {
+                "option": "Apache, LGPL",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 21,
+        "subjectKey": 1,
+        "body": "다음에서 설명하는 라이선스로 알맞은 것은? 수정 시 반드시 소스 코드를 공개해야 하지만, 다른 코드와 결합한 프로그램인 경우 이 소스 코드를 제외한 다른 소스는 공개하지 않아도 된다.",
+        "code": "",
+        "options": [
+            {
+                "option": "MPL",
+                "description": ""
+            },
+            {
+                "option": "BSD",
+                "description": ""
+            },
+            {
+                "option": "Apache",
+                "description": ""
+            },
+            {
+                "option": "GPL",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 22,
+        "subjectKey": 1,
+        "body": "다음 중 BSD 라이선스에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "수정본의 재배포는 의무사항이다.",
+                "description": ""
+            },
+            {
+                "option": "상용 프로그램에 사용할 수 있다.",
+                "description": ""
+            },
+            {
+                "option": "수정 후에 소스 코드를 공개하지 않아도 된다.",
+                "description": ""
+            },
+            {
+                "option": "수정 후에 소스 코드를 공개해도 된다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 23,
+        "subjectKey": 1,
+        "body": "다음 설명으로 알맞은 것은? 고성능의 계산 능력을 제공하기 위한 목적으로 제작된다. 여러 컴퓨터를 병렬로 묶어서 구성하는데, 보통 슈퍼컴퓨터를 제작할 때 사용한다.",
+        "code": "",
+        "options": [
+            {
+                "option": "HPC(고성능 컴퓨팅)",
+                "description": ""
+            },
+            {
+                "option": "임베디드시스템",
+                "description": ""
+            },
+            {
+                "option": "HA Cluster",
+                "description": ""
+            },
+            {
+                "option": "부하분산 클러스터",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 24,
+        "subjectKey": 1,
+        "body": "다음 설명으로 알맞은 것은? 기존 데이터베이스 관리 도구의 데이터 수집·저장·관리·분석 역량을 넘어서, 대량의 정형·비정형 데이터 집합으로부터 가치를 추출하고 결과를 분석하는 기술을 말한다.",
+        "code": "",
+        "options": [
+            {
+                "option": "빅데이터",
+                "description": ""
+            },
+            {
+                "option": "임베디드시스템",
+                "description": ""
+            },
+            {
+                "option": "클러스터링",
+                "description": ""
+            },
+            {
+                "option": "클라우드컴퓨팅",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 25,
+        "subjectKey": 1,
+        "body": "다음 설명으로 알맞은 것은? 마이크로컨트롤러, 마이크로프로세서, DSP 등을 내장하여 특정 기능을 반복 수행하기 위해 하드웨어와 소프트웨어를 결합해 만든 전자 제어 시스템을 말한다.",
+        "code": "",
+        "options": [
+            {
+                "option": "임베디드시스템",
+                "description": ""
+            },
+            {
+                "option": "고계산용 클러스터",
+                "description": ""
+            },
+            {
+                "option": "고가용성 클러스터",
+                "description": ""
+            },
+            {
+                "option": "부하분산 클러스터",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 26,
+        "subjectKey": 1,
+        "body": "다음 중 임베디드 리눅스에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "사용자모드와 커널모드 메모리 접근이 간단하다.",
+                "description": ""
+            },
+            {
+                "option": "별도의 로열티나 라이선스 비용이 없다.",
+                "description": ""
+            },
+            {
+                "option": "소스가 공개되어 있어 변경 및 재배포가 용이하다.",
+                "description": ""
+            },
+            {
+                "option": "리눅스 사용 이력이 길어 커널이 안정적이다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 27,
+        "subjectKey": 1,
+        "body": "다음 중 업무처리에 필요한 서버·스토리지 등 IT 하드웨어 자원을 빌려 쓰는 클라우드 서비스로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "IaaS",
+                "description": ""
+            },
+            {
+                "option": "PaaS",
+                "description": ""
+            },
+            {
+                "option": "SaaS",
+                "description": ""
+            },
+            {
+                "option": "DaaS",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 28,
+        "subjectKey": 1,
+        "body": "다음 설명으로 알맞은 것은? 특정 역할을 수행하는 노드에 오류가 발생했을 때 백업 노드가 해당 역할을 이어받아 서비스 제공의 지속성을 목표로 하는 시스템.",
+        "code": "",
+        "options": [
+            {
+                "option": "고가용성 클러스터",
+                "description": ""
+            },
+            {
+                "option": "임베디드시스템",
+                "description": ""
+            },
+            {
+                "option": "고계산용 클러스터",
+                "description": ""
+            },
+            {
+                "option": "부하분산 클러스터",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 29,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스에서 인식되는 장치 파일명의 종류가 나머지 셋과 다른 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "IDE 디스크",
+                "description": ""
+            },
+            {
+                "option": "S-ATA 디스크",
+                "description": ""
+            },
+            {
+                "option": "USB 메모리",
+                "description": ""
+            },
+            {
+                "option": "SCSI 디스크",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 30,
+        "subjectKey": 1,
+        "body": "다음 중 RAID에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "사용 중에 디스크를 추가하여 용량을 확장할 수 있다.",
+                "description": ""
+            },
+            {
+                "option": "대표적인 기술로 스트라이핑과 미러링을 사용한다.",
+                "description": ""
+            },
+            {
+                "option": "오류 검사를 위해 패리티나 ECC를 사용한다.",
+                "description": ""
+            },
+            {
+                "option": "소프트웨어 방식과 하드웨어 방식으로 나눌 수 있다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 31,
+        "subjectKey": 1,
+        "body": "다음 중 RAID-5에 대한 설명으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "1GB 하드 디스크 4개로 구성했을 때 실제 사용 가능 용량은 3GB이다.",
+                "description": ""
+            },
+            {
+                "option": "최소 디스크 4개 이상으로 구성해야 한다.",
+                "description": ""
+            },
+            {
+                "option": "디스크 오류 2개까지 허용한다.",
+                "description": ""
+            },
+            {
+                "option": "2차 패리티 구성을 통해 디스크 오류에 대처한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 32,
+        "subjectKey": 1,
+        "body": "2GB 하드 디스크 6개를 이용해 RAID-6로 구성했을 때 가용 공간으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "8GB",
+                "description": ""
+            },
+            {
+                "option": "6GB",
+                "description": ""
+            },
+            {
+                "option": "10GB",
+                "description": ""
+            },
+            {
+                "option": "12GB",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 33,
+        "subjectKey": 1,
+        "body": "다음 설명으로 알맞은 것은? 여러 디스크를 하나로 묶고, 사용 중에 파티션 크기를 축소하거나 확장할 수 있는 기술.",
+        "code": "",
+        "options": [
+            {
+                "option": "LVM",
+                "description": ""
+            },
+            {
+                "option": "RAID",
+                "description": ""
+            },
+            {
+                "option": "ext4",
+                "description": ""
+            },
+            {
+                "option": "vfat",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 34,
+        "subjectKey": 1,
+        "body": "다음 중 LVM에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "파티션 확장할 때 데이터 이전 작업이 필요하다.",
+                "description": ""
+            },
+            {
+                "option": "크기가 다른 하드 디스크로 구성할 수 있다.",
+                "description": ""
+            },
+            {
+                "option": "사용 중인 파티션의 크기를 확장할 수 있다.",
+                "description": ""
+            },
+            {
+                "option": "사용 중인 파티션의 크기를 축소할 수 있다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 35,
+        "subjectKey": 1,
+        "body": "다음 설명에 해당하는 LVM 관련 용어로 알맞은 것은? LVM에서 구성하는 블록 단위 영역의 한 종류로, 보통 4MB 단위로 할당된다.",
+        "code": "",
+        "options": [
+            {
+                "option": "PE(Physical Extent)",
+                "description": ""
+            },
+            {
+                "option": "PV(Physical Volume)",
+                "description": ""
+            },
+            {
+                "option": "VG(Volume Group)",
+                "description": ""
+            },
+            {
+                "option": "LV(Logical Volume)",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 36,
+        "subjectKey": 1,
+        "body": "다음 중 CentOS 7에서 사용되는 GRUB의 주요 환경 설정 파일 경로로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/boot/grub2/grub.cfg",
+                "description": ""
+            },
+            {
+                "option": "/boot/grub/grub.conf",
+                "description": ""
+            },
+            {
+                "option": "/boot/grub2/grub.conf",
+                "description": ""
+            },
+            {
+                "option": "/boot/grub/grub.cfg",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 37,
+        "subjectKey": 1,
+        "body": "다음 중 GRUB 환경 설정을 변경한 후에 사용하는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "grub2-mkconfig",
+                "description": ""
+            },
+            {
+                "option": "grub",
+                "description": ""
+            },
+            {
+                "option": "grub2",
+                "description": ""
+            },
+            {
+                "option": "grub2-install",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 38,
+        "subjectKey": 1,
+        "body": "다음 설정 내용이 포함된 파일명으로 알맞은 것은? GRUB_TIMEOUT, GRUB_DISTRIBUTOR, GRUB_TERMINAL_OUTPUT, GRUB_CMDLINE_LINUX_DEFAULT, GRUB_DISABLE_RECOVERY",
+        "code": "",
+        "options": [
+            {
+                "option": "/etc/default/grub",
+                "description": ""
+            },
+            {
+                "option": "/boot/grub2/grub.conf",
+                "description": ""
+            },
+            {
+                "option": "/boot/grub2/grub.cfg",
+                "description": ""
+            },
+            {
+                "option": "/etc/default/grub.cfg",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 39,
+        "subjectKey": 1,
+        "body": "실행 중인 프로세스, 하드웨어, 시스템 상태 정보를 제공하는 가상 파일시스템 디렉터리로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/proc",
+                "description": ""
+            },
+            {
+                "option": "/tmp",
+                "description": ""
+            },
+            {
+                "option": "/etc",
+                "description": ""
+            },
+            {
+                "option": "/boot",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 40,
+        "subjectKey": 1,
+        "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은? # grub2-mkconfig ( ) grub.cfg",
+        "code": "",
+        "options": [
+            {
+                "option": "-o",
+                "description": ""
+            },
+            {
+                "option": "-i",
+                "description": ""
+            },
+            {
+                "option": "-f",
+                "description": ""
+            },
+            {
+                "option": "-c",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 41,
+        "subjectKey": 1,
+        "body": "소스에서 설치한 MariaDB 데몬이 부팅 시 자동 실행되도록 설정할 때 관련되는 파일로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/etc/rc.d/rc.local",
+                "description": ""
+            },
+            {
+                "option": "/etc/inittab",
+                "description": ""
+            },
+            {
+                "option": "/etc/init/rcS.conf",
+                "description": ""
+            },
+            {
+                "option": "/etc/init/rc.conf",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 42,
+        "subjectKey": 1,
+        "body": "콘솔 모드(텍스트 모드)에 해당하는 런레벨로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "3",
+                "description": ""
+            },
+            {
+                "option": "1",
+                "description": ""
+            },
+            {
+                "option": "5",
+                "description": ""
+            },
+            {
+                "option": "6",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 43,
+        "subjectKey": 1,
+        "body": "로그인 성공 시 사용자에게 메시지를 보내는 데 사용하는 파일로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/etc/motd",
+                "description": ""
+            },
+            {
+                "option": "/etc/issue",
+                "description": ""
+            },
+            {
+                "option": "/etc/issue.net",
+                "description": ""
+            },
+            {
+                "option": "/etc/messages",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 44,
+        "subjectKey": 1,
+        "body": "다음 중 나머지 셋과 결과가 다른 명령은?",
+        "code": "",
+        "options": [
+            {
+                "option": "init 6",
+                "description": ""
+            },
+            {
+                "option": "shutdown -h now",
+                "description": ""
+            },
+            {
+                "option": "poweroff",
+                "description": ""
+            },
+            {
+                "option": "halt",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 45,
+        "subjectKey": 1,
+        "body": "다음 설명에 해당하는 파일시스템으로 알맞은 것은? SGI가 1993년 개발했으며, 디스크 볼륨 16EB·파일 8EB까지 지원하며, RHEL 7부터 기본 파일시스템으로 채택되었다.",
+        "code": "",
+        "options": [
+            {
+                "option": "XFS",
+                "description": ""
+            },
+            {
+                "option": "JFS",
+                "description": ""
+            },
+            {
+                "option": "ext4",
+                "description": ""
+            },
+            {
+                "option": "ReiserFS",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 46,
+        "subjectKey": 1,
+        "body": "X 윈도 구조에서 ① 그래픽으로 보여주는 하나의 시스템, ② 그 위에서 동작하는 응용 프로그램, ③ 둘 간 통신에 사용하는 것을 순서대로 나열한 것으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "① X서버 ② X클라이언트 ③ X 프로토콜",
+                "description": ""
+            },
+            {
+                "option": "① X클라이언트 ② X서버 ③ X 프로토콜",
+                "description": ""
+            },
+            {
+                "option": "① X 프로토콜 ② X클라이언트 ③ X서버",
+                "description": ""
+            },
+            {
+                "option": "① X 프로토콜 ② X서버 ③ X클라이언트",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 47,
+        "subjectKey": 1,
+        "body": "다음 중 Xlib와 가장 거리가 먼 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "oss",
+                "description": ""
+            },
+            {
+                "option": "Xt",
+                "description": ""
+            },
+            {
+                "option": "Motif",
+                "description": ""
+            },
+            {
+                "option": "GTK+",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 48,
+        "subjectKey": 1,
+        "body": "다음 중 Xlib를 대체하기 위해 등장했으며, 향상된 스레드 기능과 확장성을 갖춘 라이브러리로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "XCB",
+                "description": ""
+            },
+            {
+                "option": "Xt",
+                "description": ""
+            },
+            {
+                "option": "Xm",
+                "description": ""
+            },
+            {
+                "option": "Xaw",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 49,
+        "subjectKey": 1,
+        "body": "현재 시스템에 설정된 런레벨 정보를 확인할 때 빈 칸에 들어갈 내용으로 알맞은 것은? # systemctl (괄호)",
+        "code": "",
+        "options": [
+            {
+                "option": "get-default",
+                "description": ""
+            },
+            {
+                "option": "level",
+                "description": ""
+            },
+            {
+                "option": "runlevel",
+                "description": ""
+            },
+            {
+                "option": "get-runlevel",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 50,
+        "subjectKey": 1,
+        "body": "현재 시스템의 런레벨을 X 윈도로 부팅하는 환경으로 설정할 때 빈 칸에 들어갈 내용으로 알맞은 것은? # systemctl set-default (괄호)",
+        "code": "",
+        "options": [
+            {
+                "option": "graphical.target",
+                "description": ""
+            },
+            {
+                "option": "5.target",
+                "description": ""
+            },
+            {
+                "option": "multi-user.target",
+                "description": ""
+            },
+            {
+                "option": "window.target",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 51,
+        "subjectKey": 1,
+        "body": "다음 중 X 윈도 구성요소 중 사용자 로그인 및 세션 관리 역할을 수행하는 것으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "디스플레이 매니저",
+                "description": ""
+            },
+            {
+                "option": "데스크톱 환경",
+                "description": ""
+            },
+            {
+                "option": "윈도 매니저",
+                "description": ""
+            },
+            {
+                "option": "유저 인터페이스",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 52,
+        "subjectKey": 1,
+        "body": "다음 중 콘솔 모드에서 X 윈도를 실행하기 위한 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "startx",
+                "description": ""
+            },
+            {
+                "option": "xstart",
+                "description": ""
+            },
+            {
+                "option": "runx",
+                "description": ""
+            },
+            {
+                "option": "xrun",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 53,
+        "subjectKey": 1,
+        "body": "다음 설명으로 알맞은 것은? GUI 환경을 이용하기 위해 사용자에게 제공되는 인터페이스로, 파일관리자, 아이콘, 창, 도구 모음, 배경 화면 등이 포함된다.",
+        "code": "",
+        "options": [
+            {
+                "option": "데스크톱 환경",
+                "description": ""
+            },
+            {
+                "option": "디스플레이 매니저",
+                "description": ""
+            },
+            {
+                "option": "윈도 매니저",
+                "description": ""
+            },
+            {
+                "option": "유저 인터페이스",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 54,
+        "subjectKey": 1,
+        "body": "다음 중 KDE에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Metacity라는 윈도 매니저를 사용한다.",
+                "description": ""
+            },
+            {
+                "option": "데스크톱 환경의 일종이다.",
+                "description": ""
+            },
+            {
+                "option": "Qt 라이브러리를 기반으로 만들어졌다.",
+                "description": ""
+            },
+            {
+                "option": "리눅스 외 FreeBSD, Solaris, OS X 등도 지원한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 55,
+        "subjectKey": 1,
+        "body": "다음 중 GNOME에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "대표적인 윈도 매니저이다.",
+                "description": ""
+            },
+            {
+                "option": "GPL 및 LGPL 라이선스를 따른다.",
+                "description": ""
+            },
+            {
+                "option": "GNU 프로젝트를 통해 만들어졌다.",
+                "description": ""
+            },
+            {
+                "option": "GTK+ 라이브러리를 기반으로 만들어졌다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 56,
+        "subjectKey": 1,
+        "body": "다음 중 GNOME과 가장 관련이 먼 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "XFce",
+                "description": ""
+            },
+            {
+                "option": "nautilus",
+                "description": ""
+            },
+            {
+                "option": "metacity",
+                "description": ""
+            },
+            {
+                "option": "Mutter",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 57,
+        "subjectKey": 1,
+        "body": "다음 중 나머지 셋과 종류가 다른 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "KWin",
+                "description": ""
+            },
+            {
+                "option": "GNOME",
+                "description": ""
+            },
+            {
+                "option": "KDE",
+                "description": ""
+            },
+            {
+                "option": "XFce",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 58,
+        "subjectKey": 1,
+        "body": "GNOME 2까지는 ( )를, GNOME 3부터는 ( )를 윈도 매니저로 사용한다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "metacity, Mutter",
+                "description": ""
+            },
+            {
+                "option": "nautilus, metacity",
+                "description": ""
+            },
+            {
+                "option": "nautilus, Mutter",
+                "description": ""
+            },
+            {
+                "option": "metacity, nautilus",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 59,
+        "subjectKey": 1,
+        "body": "X 윈도 환경에서 창의 배치·표시를 담당하고, 닫기·최소화·최대화·작업표시줄 등의 유틸을 제공하는 시스템 소프트웨어로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "윈도 매니저(Window Manager)",
+                "description": ""
+            },
+            {
+                "option": "디스플레이 매니저",
+                "description": ""
+            },
+            {
+                "option": "데스크톱 환경",
+                "description": ""
+            },
+            {
+                "option": "유저 인터페이스",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 60,
+        "subjectKey": 1,
+        "body": "다음 중 윈도 매니저의 종류가 아닌 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "XFce",
+                "description": ""
+            },
+            {
+                "option": "Metacity",
+                "description": ""
+            },
+            {
+                "option": "Window Maker",
+                "description": ""
+            },
+            {
+                "option": "Enlightenment",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 61,
+        "subjectKey": 1,
+        "body": "원격지로 X 클라이언트를 전송할 때 변경해야 할 환경 변수로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "DISPLAY",
+                "description": ""
+            },
+            {
+                "option": "VISUAL",
+                "description": ""
+            },
+            {
+                "option": "XTERM",
+                "description": ""
+            },
+            {
+                "option": "TERM",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 62,
+        "subjectKey": 1,
+        "body": "IP 주소 192.168.12.22에서 오는 X 클라이언트가 X 서버에 접근하도록 허용하는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "xhost + 192.168.12.22",
+                "description": ""
+            },
+            {
+                "option": "xhost - 192.168.12.22",
+                "description": ""
+            },
+            {
+                "option": "xhost +a 192.168.12.22",
+                "description": ""
+            },
+            {
+                "option": "xhost add 192.168.12.22",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 63,
+        "subjectKey": 1,
+        "body": "다음 설명에 해당하는 것으로 알맞은 것은? 원격에서 접속하는 X 클라이언트를 IP·호스트명이 아닌, X 윈도 실행 시 생성된 키 값으로 인증해 허용할 때 사용한다.",
+        "code": "",
+        "options": [
+            {
+                "option": "xauth",
+                "description": ""
+            },
+            {
+                "option": "xhost",
+                "description": ""
+            },
+            {
+                "option": "xmodmap",
+                "description": ""
+            },
+            {
+                "option": "xwininfo",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 64,
+        "subjectKey": 1,
+        "body": "사용자가 X 윈도 실행과 관련해 키 정보를 저장하는 파일로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": ".Xauthority",
+                "description": ""
+            },
+            {
+                "option": ".Xsession",
+                "description": ""
+            },
+            {
+                "option": ".xinitrc",
+                "description": ""
+            },
+            {
+                "option": ".Xsetup",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 65,
+        "subjectKey": 1,
+        "body": "다음 중 이미지 뷰어 프로그램과 가장 거리가 먼 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "GIMP",
+                "description": ""
+            },
+            {
+                "option": "Totem",
+                "description": ""
+            },
+            {
+                "option": "ImageMagick",
+                "description": ""
+            },
+            {
+                "option": "eog",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 66,
+        "subjectKey": 1,
+        "body": "다음 중 PDF 문서를 보는 데 사용하는 프로그램으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "evince",
+                "description": ""
+            },
+            {
+                "option": "GIMP",
+                "description": ""
+            },
+            {
+                "option": "eog",
+                "description": ""
+            },
+            {
+                "option": "totem",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 67,
+        "subjectKey": 1,
+        "body": "LibreOffice 패키지에서 프레젠테이션 프로그램으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Impress",
+                "description": ""
+            },
+            {
+                "option": "Writer",
+                "description": ""
+            },
+            {
+                "option": "Calc",
+                "description": ""
+            },
+            {
+                "option": "Draw",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 68,
+        "subjectKey": 1,
+        "body": "커널과 사용자 간의 다리 역할을 하며, 사용자 명령을 받아 해석하고 프로그램을 실행하는 것으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "셀(Shell)",
+                "description": ""
+            },
+            {
+                "option": "환경변수",
+                "description": ""
+            },
+            {
+                "option": "스크립트",
+                "description": ""
+            },
+            {
+                "option": "히스토리",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 69,
+        "subjectKey": 1,
+        "body": "다음 중 리눅스의 표준 셀로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "bash",
+                "description": ""
+            },
+            {
+                "option": "csh",
+                "description": ""
+            },
+            {
+                "option": "tcsh",
+                "description": ""
+            },
+            {
+                "option": "ksh",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 70,
+        "subjectKey": 1,
+        "body": "다음 중 사용 가능한 셀 목록을 확인할 때 사용하는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "chsh",
+                "description": ""
+            },
+            {
+                "option": "usermod",
+                "description": ""
+            },
+            {
+                "option": "alias",
+                "description": ""
+            },
+            {
+                "option": "history",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 71,
+        "subjectKey": 1,
+        "body": "다음 중 사용 가능한 셀 목록을 확인할 수 있는 파일로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/etc/shells",
+                "description": ""
+            },
+            {
+                "option": "/etc/shell",
+                "description": ""
+            },
+            {
+                "option": "/etc/profile",
+                "description": ""
+            },
+            {
+                "option": "/etc/bashrc",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 72,
+        "subjectKey": 1,
+        "body": "다음 중 최근에 실행한 명령 목록을 확인할 수 있는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "history",
+                "description": ""
+            },
+            {
+                "option": "alias",
+                "description": ""
+            },
+            {
+                "option": "chsh",
+                "description": ""
+            },
+            {
+                "option": "set",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 73,
+        "subjectKey": 1,
+        "body": "다음 중 가장 마지막에 실행한 명령을 호출하는 방법으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "!!",
+                "description": ""
+            },
+            {
+                "option": "??",
+                "description": ""
+            },
+            {
+                "option": "!?",
+                "description": ""
+            },
+            {
+                "option": "!l",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 74,
+        "subjectKey": 1,
+        "body": "다음 중 최근 실행한 명령 중 'al'이라는 문자열을 포함하는 명령을 실행하는 방법으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "!al",
+                "description": ""
+            },
+            {
+                "option": "!?al?",
+                "description": ""
+            },
+            {
+                "option": "!!al!",
+                "description": ""
+            },
+            {
+                "option": "!^al^",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 75,
+        "subjectKey": 1,
+        "body": "다음 중 히스토리에 저장되는 명령 개수를 제한할 때 사용하는 환경 변수로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "HISTSIZE",
+                "description": ""
+            },
+            {
+                "option": "HISTFILE",
+                "description": ""
+            },
+            {
+                "option": "HISTFILESIZE",
+                "description": ""
+            },
+            {
+                "option": "HISTORYSIZE",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 76,
+        "subjectKey": 1,
+        "body": "다음 중 bash에서 개인 사용자의 환경 변수와 시작 프로그램 설정 시 사용하는 파일로 가장 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": ".bashrc",
+                "description": ""
+            },
+            {
+                "option": ".profile",
+                "description": ""
+            },
+            {
+                "option": ".bash_profile",
+                "description": ""
+            },
+            {
+                "option": ".bash_logout",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 77,
+        "subjectKey": 1,
+        "body": "다음 중 bash에서 모든 사용자에게 적용되는 alias와 함수를 설정할 때 사용하는 파일로 가장 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/etc/bashrc",
+                "description": ""
+            },
+            {
+                "option": "/etc/profile",
+                "description": ""
+            },
+            {
+                "option": "/etc/bash_profile",
+                "description": ""
+            },
+            {
+                "option": "/etc/shells",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 78,
+        "subjectKey": 1,
+        "body": "다음 중 bash에서 프롬프트 변경 시 사용하는 환경 변수로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "PS1",
+                "description": ""
+            },
+            {
+                "option": "prompt",
+                "description": ""
+            },
+            {
+                "option": "PROMPT",
+                "description": ""
+            },
+            {
+                "option": "PS",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 79,
+        "subjectKey": 1,
+        "body": "다음 중 설정된 환경 변수 값을 확인할 때 사용하는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "env",
+                "description": ""
+            },
+            {
+                "option": "history",
+                "description": ""
+            },
+            {
+                "option": "alias",
+                "description": ""
+            },
+            {
+                "option": "sh",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 80,
+        "subjectKey": 1,
+        "body": "기존 PATH 설정값에 /home/posein 경로를 추가할 때 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "export PATH=$PATH:/home/posein",
+                "description": ""
+            },
+            {
+                "option": "export PATH=PATH:/home/posein",
+                "description": ""
+            },
+            {
+                "option": "export $PATH=$PATH:/home/posein",
+                "description": ""
+            },
+            {
+                "option": "export $PATH=PATH:/home/posein",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 81,
+        "subjectKey": 1,
+        "body": "다음 중 셀에서 백슬래시(\\\\ ) 사용에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "여러 디렉터리를 분리할 때 분리자로 사용한다.",
+                "description": ""
+            },
+            {
+                "option": "alias가 설정된 ls 대신 원래 ls 명령을 호출할 때 사용한다.",
+                "description": ""
+            },
+            {
+                "option": "$PATH라는 문자열을 그대로 출력할 때 사용한다.",
+                "description": ""
+            },
+            {
+                "option": "긴 명령을 다음 줄로 이어갈 때 사용한다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 82,
+        "subjectKey": 1,
+        "body": "다음 실행 시 (괄호) 안에 들어갈 출력으로 알맞은 것은? ./test.sh lin joon  (스크립트: echo \"$0\"; echo \"$1\")",
+        "code": "#!/bin/bash\necho \"$0\"\necho \"$1\"",
+        "options": [
+            {
+                "option": "./test.sh 와 lin",
+                "description": ""
+            },
+            {
+                "option": "lin 와 joon",
+                "description": ""
+            },
+            {
+                "option": "joon 와 lin",
+                "description": ""
+            },
+            {
+                "option": "./test.sh 와 joon",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 83,
+        "subjectKey": 1,
+        "body": "다음 셸 스크립트 일부에서 (괄호) 안에 들어갈 내용으로 알맞은 것은? read number (괄호) $number in 1) date;; 2) who;; *) echo \"Wrong\" (괄호)",
+        "code": "",
+        "options": [
+            {
+                "option": "case, esac",
+                "description": ""
+            },
+            {
+                "option": "case, case",
+                "description": ""
+            },
+            {
+                "option": "case, /case",
+                "description": ""
+            },
+            {
+                "option": "case, /esac",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 84,
+        "subjectKey": 1,
+        "body": "다음 설명에 해당하는 것으로 알맞은 것은? 주기적·지속적인 서비스 요청을 처리하기 위해 계속 실행되는 프로세스로, 일종의 백그라운드 프로세스이며 보통 서버 역할을 하는 프로그램이 여기에 해당한다.",
+        "code": "",
+        "options": [
+            {
+                "option": "daemon",
+                "description": ""
+            },
+            {
+                "option": "signal",
+                "description": ""
+            },
+            {
+                "option": "shell",
+                "description": ""
+            },
+            {
+                "option": "inet",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 85,
+        "subjectKey": 1,
+        "body": "다음 중 프로세스에 대한 설명으로 틀린 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "최초 프로세스인 systemd의 PID는 0이다.",
+                "description": ""
+            },
+            {
+                "option": "한 프로세스가 다른 프로세스를 실행하는 방법에는 fork와 exec가 있다.",
+                "description": ""
+            },
+            {
+                "option": "inet 방식은 프로세스가 항상 메모리에 상주하지 않고, 클라이언트 요청이 있을 때 메모리에 올린다.",
+                "description": ""
+            },
+            {
+                "option": "리눅스 부팅 시 발생하는 프로세스는 fork 방식이다.",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 86,
+        "subjectKey": 1,
+        "body": "한 프로세스가 다른 프로세스를 실행하기 위한 시스템 호출 (ⓐ)는 복사본 형태로 새 프로세스를 실행하고, (ⓑ)는 원래 프로세스를 새 프로세스로 대체한다. (ⓐ)(ⓑ) 순서로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "fork, exec",
+                "description": ""
+            },
+            {
+                "option": "exec, fork",
+                "description": ""
+            },
+            {
+                "option": "background, foreground",
+                "description": ""
+            },
+            {
+                "option": "foreground, background",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 87,
+        "subjectKey": 1,
+        "body": "다음 중 백그라운드 프로세스와 가장 관련 있는 특수 기호로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "&",
+                "description": ""
+            },
+            {
+                "option": "?",
+                "description": ""
+            },
+            {
+                "option": "!",
+                "description": ""
+            },
+            {
+                "option": "/",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 88,
+        "subjectKey": 1,
+        "body": "다음 중 포어그라운드 프로세스를 백그라운드로 전환할 때 사용하는 인터럽트 키 조합으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "Ctrl+Z",
+                "description": ""
+            },
+            {
+                "option": "Ctrl+C",
+                "description": ""
+            },
+            {
+                "option": "Ctrl+D",
+                "description": ""
+            },
+            {
+                "option": "Ctrl+W",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 89,
+        "subjectKey": 1,
+        "body": "백그라운드에서 실행 중인 작업 번호 2인 프로세스를 포어그라운드로 전환할 때 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "fg %2",
+                "description": ""
+            },
+            {
+                "option": "bg 2",
+                "description": ""
+            },
+            {
+                "option": "bg %2",
+                "description": ""
+            },
+            {
+                "option": "fg &2",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 90,
+        "subjectKey": 1,
+        "body": "다음 중 Ctrl+C 입력 시 전송되는 시그널로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "SIGINT",
+                "description": ""
+            },
+            {
+                "option": "SIGHUP",
+                "description": ""
+            },
+            {
+                "option": "SIGTERM",
+                "description": ""
+            },
+            {
+                "option": "SIGQUIT",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 91,
+        "subjectKey": 1,
+        "body": "지속적인 서비스 요청을 처리하는 데몬 실행 방식 (①)은 부팅 시 실행되어 메모리에 상주하며, (②)는 요청이 들어올 때만 프로세스를 실행하고 종료 후 프로세스를 끝낸다. (①)(②) 순서로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "standalone, inet",
+                "description": ""
+            },
+            {
+                "option": "inet, standalone",
+                "description": ""
+            },
+            {
+                "option": "exec, fork",
+                "description": ""
+            },
+            {
+                "option": "fork, exec",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 92,
+        "subjectKey": 1,
+        "body": "로그인 프로세스처럼 쉽게 종료되지 않는 프로세스를 강제 종료할 때 사용하는 시그널 번호로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "9",
+                "description": ""
+            },
+            {
+                "option": "1",
+                "description": ""
+            },
+            {
+                "option": "15",
+                "description": ""
+            },
+            {
+                "option": "19",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 93,
+        "subjectKey": 1,
+        "body": "다음 중 실행 중인 sshd 데몬을 중지시키는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "systemctl stop sshd",
+                "description": ""
+            },
+            {
+                "option": "systemctl sshd stop",
+                "description": ""
+            },
+            {
+                "option": "systemctl disable sshd",
+                "description": ""
+            },
+            {
+                "option": "systemctl sshd disable",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 94,
+        "subjectKey": 1,
+        "body": "다음 중 sshd 데몬의 실행 여부를 확인하는 명령으로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "systemctl status sshd",
+                "description": ""
+            },
+            {
+                "option": "systemctl sshd ps",
+                "description": ""
+            },
+            {
+                "option": "systemctl sshd status",
+                "description": ""
+            },
+            {
+                "option": "systemctl ps sshd",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 95,
+        "subjectKey": 1,
+        "body": "다음 중 시스템에서 사용하는 service 및 target 유닛 파일을 확인할 수 있는 디렉터리로 알맞은 것은?",
+        "code": "",
+        "options": [
+            {
+                "option": "/lib/systemd/system",
+                "description": ""
+            },
+            {
+                "option": "/usr/systemd/system",
+                "description": ""
+            },
+            {
+                "option": "/run/systemd/system",
+                "description": ""
+            },
+            {
+                "option": "/var/systemd/system",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    },
+    {
+        "examKey": "lm11-practice",
+        "localId": 96,
+        "subjectKey": 1,
+        "body": "다음 결과에 해당하는 명령으로 알맞은 것은? (Static hostname, Machine ID, Virtualization: kvm, Operating System: CentOS Linux 7, Kernel, Architecture 등 출력)",
+        "code": "Static hostname: www\nVirtualization: kvm\nOperating System: CentOS Linux 7 (Core)\nKernel: Linux 3.10.0-1127.el7.x86_64",
+        "options": [
+            {
+                "option": "hostnamectl",
+                "description": ""
+            },
+            {
+                "option": "systemctl",
+                "description": ""
+            },
+            {
+                "option": "machinectl",
+                "description": ""
+            },
+            {
+                "option": "journalctl",
+                "description": ""
+            }
+        ],
+        "notes": [],
+        "tags": []
+    }
+]

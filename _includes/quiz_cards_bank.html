@@ -40,7 +40,7 @@
             role="button"
             tabindex="0"
             aria-pressed="false"
-            {% if forloop.first %}data-correct="true"{% endif %}>{{ opt }}</li>
+            {% if forloop.first %}data-correct="true"{% endif %}>{% if opt.option %}{{ opt.option }}{% else %}{{ opt }}{% endif %}</li>
         {% endfor %}
       </ol>
 
@@ -48,7 +48,7 @@
         <summary class="quiz-card__toggle">
           <span class="quiz-card__toggle-label">해설 보기</span>
         </summary>
-        <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{{ q.options | first }}</p>
+        {% assign first_opt = q.options | first %}<p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{% if first_opt.option %}{{ first_opt.description }}{% else %}{{ first_opt }}{% endif %}</p>
         <p class="quiz-card__description">{{ q.description }}</p>
         <button type="button" class="quiz-card__note-btn">이 문제 노트</button>
         <section class="quiz-memo-wrap" id="quiz-memo-wrap" aria-label="메모">
