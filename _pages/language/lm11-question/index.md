@@ -25,6 +25,11 @@ title: Linux Master 1급 1차
       </select>
       <label for="bank-subject-select" class="quiz-select-label">과목</label>
     </div>
+    <div class="quiz-select-wrap">
+      <input type="number" id="bank-go-number" class="quiz-input-number" min="1" max="100" placeholder="번호" aria-label="문제 번호">
+      <button type="button" id="bank-go-btn" class="quiz-go-btn">이동</button>
+      <label for="bank-go-number" class="quiz-select-label">문제 번호</label>
+    </div>
     <button type="button" id="bank-shuffle-order" class="quiz-shuffle-btn">문제 순서 섞기</button>
   </header>
 
@@ -159,6 +164,32 @@ title: Linux Master 1급 1차
     subjectSelect.addEventListener('change', function () {
       currentIndex = 0;
       updateFilter();
+    });
+  }
+
+  var goNumInput = document.getElementById('bank-go-number');
+  var goBtn = document.getElementById('bank-go-btn');
+  function goToProblemNumber() {
+    if (!goNumInput) return;
+    var num = parseInt(goNumInput.value, 10);
+    if (num < 1 || num > 100) return;
+    var visible = getVisibleCards();
+    for (var i = 0; i < visible.length; i++) {
+      if (visible[i].getAttribute('data-local-id') === String(num)) {
+        currentIndex = i;
+        updateFilter();
+        goNumInput.value = '';
+        return;
+      }
+    }
+  }
+  if (goBtn) goBtn.addEventListener('click', goToProblemNumber);
+  if (goNumInput) {
+    goNumInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        goToProblemNumber();
+      }
     });
   }
 
