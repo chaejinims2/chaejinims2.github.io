@@ -98,6 +98,29 @@ bundle exec jekyll build
 
 ---
 
+## Local Development
+
+### 1) panel 실행
+
+```bash
+npm run panel
+```
+
+### 2) 브라우저 접속
+
+- `http://localhost:3000`
+
+### 3) mock 모드로 UI 개발 가능
+
+- 기본값은 `mock` 모드이며, API 없이도 UI를 확인할 수 있습니다.
+
+### 4) 실제 API 연결 (live)
+
+- Mode를 `live`로 바꾸고 API Base를 rhombus Gateway 주소로 설정합니다.
+- 예: `http://100.91.93.1:8080`
+
+---
+
 ## 참고
 
 - **테마:** 사용하지 않음 (`theme: null`). 과거 cgit/테마 잔재 제거 후 app-shell만 유지.
