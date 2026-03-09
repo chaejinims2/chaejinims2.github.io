@@ -872,19 +872,29 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 
 .app-statusbar {
   box-sizing: border-box;
-  height: var(--app-status-h);
   min-height: var(--app-status-h);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: var(--app-statusbar-gap);
   padding: var(--app-statusbar-padding);
   border-top: 1px solid var(--app-border);
   background: var(--app-statusbar-bg);
   color: var(--app-muted);
   font-size: var(--app-statusbar-font-size);
-  text-align: right;
   flex-shrink: 0;
+}
+.app-statusbar .page-nav {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex: 1;
+  min-width: 0;
+  font-size: inherit;
+}
+.app-statusbar .page-nav-prev,
+.app-statusbar .page-nav-next {
+  padding: 0.25rem 0;
 }
 
 .app-page-container {
