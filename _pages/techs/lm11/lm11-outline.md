@@ -2,6 +2,8 @@
 
 lm11/
 ├─ 1. Linux 기본 개념
+
+│  ├─ 라이선스 종류 및 특징 (GPL / LGPL / BSD / MIT / Apache / MPL / EPL / CDDL / CPAL / W3C) → `outline/01-00-license.md`
 │
 │  ├─ 파일 시스템 (inode / journal / ext4) → `outline/01-01-filesystem-inode-journal-ext4.md`
 │  │
