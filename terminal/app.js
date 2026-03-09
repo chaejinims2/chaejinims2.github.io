@@ -1,77 +1,28 @@
-import { Terminal } from 'https://cdn.jsdelivr.net/npm/@xterm/xterm/+esm';
-import { FitAddon } from 'https://cdn.jsdelivr.net/npm/@xterm/addon-fit/+esm';
+import { Terminal } from 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm';
+import { FitAddon } from 'https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/+esm';
 
-const WS_URL = 'ws://100.91.93.1:8080';
+const gatewayUrlEl = document.getElementById('gatewayUrl');
+const connectBtn = document.getElementById('connectBtn');
+const disconnectBtn = document.getElementById('disconnectBtn');
 const terminalEl = document.getElementById('terminal');
-const connectBtn = document.getElementById('connect');
-const disconnectBtn = document.getElementById('disconnect');
-const statusEl = document.getElementById('status');
 
-let term;
-let fitAddon;
-let ws;
+const term = new Terminal({ cursorBlink: true });
+const fitAddon = new FitAddon();
+term.loadAddon(fitAddon);
+term.open(terminalEl);
+fitAddon.fit();
 
-function setStatus(text) {
-  statusEl.textContent = text;
+let ws = null;
+let onDataHandler = null;
+
+function writeStatus(msg) {
+  term.writeln('\r\n\x1b[33m[status] ' + msg + '\x1b[0m\r\n');
 }
 
-function initTerminal() {
-  if (term) return;
-  term = new Terminal({ cursorBlink: true, theme: { background: '#1e1e1e', foreground: '#d4d4d4' } });
-  fitAddon = new FitAddon();
-  term.loadAddon(fitAddon);
-  term.open(terminalEl);
-  fitAddon.fit();
-
-  term.onData((data) => {
-    if (ws && ws.readyState === WebSocket.OPEN) {
-      ws.send(JSON.stringify({ type: 'input', data }));
-    }
-  });
-
-  const sendResize = () => {
-    if (ws && ws.readyState === WebSocket.OPEN && term) {
-      ws.send(JSON.stringify({ type: 'resize', cols: term.cols, rows: term.rows }));
-    }
-  };
-
-  window.addEventListener('resize', () => {
-    fitAddon.fit();
-    sendResize();
-  });
-}
-
-function connect() {
-  if (ws && (ws.readyState === WebSocket.CONNECTING || ws.readyState === WebSocket.OPEN)) return;
-  initTerminal();
-  setStatus('Connecting');
-  connectBtn.disabled = true;
-
-  ws = new WebSocket(WS_URL);
-
-  ws.onopen = () => {
-    setStatus('Connected');
-    connectBtn.disabled = true;
-    disconnectBtn.disabled = false;
-    term.write('[Connected to rhombus]\r\n');
-    ws.send(JSON.stringify({ type: 'resize', cols: term.cols, rows: term.rows }));
-  };
-
-  ws.onmessage = (ev) => {
-    if (typeof ev.data === 'string') term.write(ev.data);
-    else ev.data.text().then((t) => term.write(t));
-  };
-
-  ws.onerror = () => {
-    term.write('[Connection failed]\r\n');
-  };
-
-  ws.onclose = () => {
-    setStatus('Disconnected');
-    connectBtn.disabled = false;
-    disconnectBtn.disabled = true;
-    ws = null;
-  };
+function send(obj) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify(obj));
+  }
 }
 
 function disconnect() {
@@ -79,9 +30,62 @@ function disconnect() {
     ws.close();
     ws = null;
   }
+  if (onDataHandler) {
+    term.off('data', onDataHandler);
+    onDataHandler = null;
+  }
+  connectBtn.disabled = false;
+  disconnectBtn.disabled = true;
+  writeStatus('연결 종료');
+}
+
+function connect() {
+  const url = gatewayUrlEl.value.trim();
+  if (!url) {
+    writeStatus('Gateway URL을 입력하세요.');
+    return;
+  }
+  disconnect();
+  term.clear();
+  writeStatus('연결 중: ' + url);
+
+  ws = new WebSocket(url);
+
+  ws.onopen = () => {
+    writeStatus('연결됨');
+    connectBtn.disabled = true;
+    disconnectBtn.disabled = false;
+    const { cols, rows } = term;
+    send({ type: 'resize', cols, rows });
+    onDataHandler = (data) => send({ type: 'input', data });
+    term.on('data', onDataHandler);
+  };
+
+  ws.onmessage = (ev) => {
+    term.write(ev.data);
+  };
+
+  ws.onclose = () => {
+    disconnect();
+  };
+
+  ws.onerror = () => {
+    writeStatus('WebSocket 오류');
+  };
 }
 
 connectBtn.addEventListener('click', connect);
 disconnectBtn.addEventListener('click', disconnect);
 
-initTerminal();
+let resizeTimeout = null;
+window.addEventListener('resize', () => {
+  fitAddon.fit();
+  if (resizeTimeout) clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      const { cols, rows } = term;
+      send({ type: 'resize', cols, rows });
+    }
+    resizeTimeout = null;
+  }, 100);
+});

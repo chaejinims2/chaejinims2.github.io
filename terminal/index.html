@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web SSH Terminal</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm/css/xterm.css">
+  <title>Web Terminal MVP</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="toolbar">
-    <button id="connect" type="button">Connect</button>
-    <button id="disconnect" type="button" disabled>Disconnect</button>
-    <span id="status">Disconnected</span>
+  <div class="toolbar">
+    <input type="text" id="gatewayUrl" placeholder="ws://rhombus:8080" value="ws://localhost:8080">
+    <button type="button" id="connectBtn">Connect</button>
+    <button type="button" id="disconnectBtn" disabled>Disconnect</button>
   </div>
   <div id="terminal"></div>
   <script type="module" src="app.js"></script>
