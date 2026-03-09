@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 네트워크 명령어 (netstat / ss / ping)
+title: 06-01 네트워크 명령어 (netstat / ss / ping)
 ---
 
 리눅스마스터 1급에서 네트워크 명령어는 다음 세 가지가 핵심입니다.

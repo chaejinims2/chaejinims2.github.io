@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 프로세스 관리 (ps / kill / top)
+title: 05-01 프로세스 관리 (ps / kill / top)
 ---
 
 리눅스마스터 1급에서 **프로세스 관리 명령어**는 매우 중요한 출제 영역입니다.

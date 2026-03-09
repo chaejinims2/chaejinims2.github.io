@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 파일 위치 검색 (which / whereis / locate)
+title: 03-02 파일 위치 검색 (which / whereis / locate)
 ---
 
 리눅스마스터 1급 시험에서 **파일 위치 검색 명령어**는 다음 세 가지가 비교 문제로 자주 출제됩니다.

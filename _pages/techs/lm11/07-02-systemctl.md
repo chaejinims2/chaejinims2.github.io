@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 서비스 관리 (systemctl)
+title: 07-02 서비스 관리 (systemctl)
 ---
 
 리눅스마스터 1급에서 **서비스 관리(Service Management)** 문제는 대부분 **`systemctl` 명령어** 중심으로 출제됩니다.

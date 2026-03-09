@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 파일 검색 (grep / find)
+title: 03-01 파일 검색 (grep / find)
 ---
 
 리눅스마스터 1급에서 **`grep` / `find`** 문제는 매우 자주 출제됩니다.

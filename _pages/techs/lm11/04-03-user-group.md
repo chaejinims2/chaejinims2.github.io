@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 사용자 / 그룹 관리 (useradd / passwd / group)
+title: 04-03 사용자 / 그룹 관리 (useradd / passwd / group)
 ---
 
 리눅스마스터 1급 시험에서 **사용자 관리(User Management)** 영역은 거의 매 시험마다 출제됩니다.

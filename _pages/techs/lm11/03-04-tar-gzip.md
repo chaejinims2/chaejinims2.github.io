@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 압축 (tar / gzip)
+title: 03-04 압축 (tar / gzip)
 ---
 
 리눅스마스터 1급에서 압축 관련 문제는 거의 항상 등장하며, 핵심은 두 가지입니다.

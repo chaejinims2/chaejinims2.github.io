@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 파일 시스템 (inode / journal / ext4)
+title: 01-01 파일 시스템 (inode / journal / ext4)
 ---
 
 리눅스마스터 1급에서 **파일 시스템(inode / journaling / ext4)** 문제는

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 프로세스 우선순위 (nice / renice)
+title: 05-02 프로세스 우선순위 (nice / renice)
 ---
 
 리눅스마스터 1급 시험에서 **프로세스 우선순위 관리**는 주로 두 명령어를 묻습니다.

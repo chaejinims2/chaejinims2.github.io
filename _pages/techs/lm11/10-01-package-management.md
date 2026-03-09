@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 패키지 관리 (rpm / yum / apt)
+title: 10-01 패키지 관리 (rpm / yum / apt)
 ---
 
 리눅스마스터 1급에서 **패키지 관리(package management)** 문제는 보통 다음을 묻습니다.

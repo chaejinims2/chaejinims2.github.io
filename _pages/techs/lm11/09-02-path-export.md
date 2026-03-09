@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 환경 변수 (PATH / export)
+title: 09-02 환경 변수 (PATH / export)
 ---
 
 리눅스마스터 1급에서 **환경 변수(Environment Variable)** 문제는 비교적 단순하지만 **자주 출제되는 영역**입니다.

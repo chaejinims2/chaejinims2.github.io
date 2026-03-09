@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 파일 출력 (cat / head / tail)
+title: 03-03 파일 출력 (cat / head / tail)
 ---
 
 리눅스마스터 1급 시험에서 **파일 내용 확인 명령어**는 다음 세 가지가 핵심입니다.

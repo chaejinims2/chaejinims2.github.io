@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 링크 (Hard / Symbolic Link)
+title: 01-03 링크 (Hard / Symbolic Link)
 ---
 
 리눅스마스터 1급 시험에서 **링크(Link)** 문제는 매우 자주 출제됩니다.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 특수 권한 (SUID / SGID)
+title: 04-02 특수 권한 (SUID / SGID)
 ---
 
 리눅스마스터 1급에서 **SUID / SGID / Sticky bit** 문제는 대부분

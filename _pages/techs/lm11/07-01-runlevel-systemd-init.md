@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 부팅 관리 (runlevel / systemd target / init)
+title: 07-01 부팅 관리 (runlevel / systemd target / init)
 ---
 
 리눅스마스터 1급에서 **부팅 과정 + runlevel + init/systemd** 문제는 매우 자주 출제됩니다.
