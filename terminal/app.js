@@ -1,22 +1,22 @@
-import { Terminal } from 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm';
-import { FitAddon } from 'https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/+esm';
+import { Terminal } from 'https://cdn.jsdelivr.net/npm/@xterm/xterm/+esm';
+import { FitAddon } from 'https://cdn.jsdelivr.net/npm/@xterm/addon-fit/+esm';
 
 const gatewayUrlEl = document.getElementById('gatewayUrl');
 const connectBtn = document.getElementById('connectBtn');
 const disconnectBtn = document.getElementById('disconnectBtn');
 const terminalEl = document.getElementById('terminal');
 
-const term = new Terminal({ cursorBlink: true });
+const term = new Terminal({ cursorBlink: true, theme: { background: '#1e1e1e', foreground: '#d4d4d4' } });
 const fitAddon = new FitAddon();
 term.loadAddon(fitAddon);
 term.open(terminalEl);
 fitAddon.fit();
 
 let ws = null;
-let onDataHandler = null;
+let dataDisposable = null;
 
 function writeStatus(msg) {
-  term.writeln('\r\n\x1b[33m[status] ' + msg + '\x1b[0m\r\n');
+  term.write('\r\n\x1b[33m[status] ' + msg + '\x1b[0m\r\n');
 }
 
 function send(obj) {
@@ -26,17 +26,18 @@ function send(obj) {
 }
 
 function disconnect() {
+  const wasConnected = !!ws;
   if (ws) {
     ws.close();
     ws = null;
   }
-  if (onDataHandler) {
-    term.off('data', onDataHandler);
-    onDataHandler = null;
+  if (dataDisposable) {
+    dataDisposable.dispose();
+    dataDisposable = null;
   }
   connectBtn.disabled = false;
   disconnectBtn.disabled = true;
-  writeStatus('연결 종료');
+  if (wasConnected) writeStatus('연결 종료');
 }
 
 function connect() {
@@ -57,12 +58,12 @@ function connect() {
     disconnectBtn.disabled = false;
     const { cols, rows } = term;
     send({ type: 'resize', cols, rows });
-    onDataHandler = (data) => send({ type: 'input', data });
-    term.on('data', onDataHandler);
+    dataDisposable = term.onData((data) => send({ type: 'input', data }));
   };
 
   ws.onmessage = (ev) => {
-    term.write(ev.data);
+    if (typeof ev.data === 'string') term.write(ev.data);
+    else ev.data.text().then((t) => term.write(t));
   };
 
   ws.onclose = () => {
