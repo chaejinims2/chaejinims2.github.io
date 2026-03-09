@@ -1,0 +1,58 @@
+{% comment %}
+  techs 전용: 하위 모든 md 파일 링크를 한 눈에.
+  - /techs/: 폴더별로 묶어서, 각 폴더 안의 모든 페이지 링크 표시
+  - /techs/lm11/ 등: 해당 폴더 내 모든 페이지 링크 한 목록
+{% endcomment %}
+{% assign url_segs = page.url | split: "/" %}
+{% assign depth = 0 %}
+{% for s in url_segs %}
+  {% if s != "" %}{% assign depth = depth | plus: 1 %}{% endif %}
+{% endfor %}
+
+{% if depth == 1 %}
+  {% comment %} /techs/ : 하위 폴더별로 모든 페이지 링크 {% endcomment %}
+  {% assign prev_folder = "" %}
+  {% for p in group_pages %}
+    {% if p.hide != true and p.url != page.url and p.url contains section_base_alt %}
+      {% assign after_techs = p.url | remove: section_base_alt %}
+      {% assign parts = after_techs | split: "/" %}
+      {% assign folder = parts[0] %}
+      {% if folder != "" %}
+        {% if folder != prev_folder %}
+          {% if prev_folder != "" %}
+            </ul>
+            </div>
+          {% endif %}
+          {% assign folder_url = section_base_alt | append: folder | append: "/" %}
+          {% assign folder_page = group_pages | where: "url", folder_url | first %}
+          <div class="section-index-folder">
+            <h2 class="section-index-folder-title"><a href="{{ folder_url }}">{{ folder_page.title | default: folder }}</a></h2>
+            <ul class="section-index-list section-index-list--all">
+          {% assign prev_folder = folder %}
+        {% endif %}
+        <li><a href="{{ p.url }}">{{ p.title | default: p.url }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% if prev_folder != "" %}
+    </ul>
+    </div>
+  {% endif %}
+{% else %}
+  {% comment %} /techs/lm11/ 등 : 이 경로 아래 모든 페이지 링크 한 목록 {% endcomment %}
+  {% assign current_base = page.url %}
+  {% assign current_base_slash = current_base | append: "/" %}
+  <ul class="section-index-list section-index-list--all">
+    {% for p in group_pages %}
+      {% if p.hide != true and p.url != page.url and p.url contains current_base %}
+        {% assign after_base = p.url | remove: current_base | remove: current_base_slash %}
+        {% assign segs = after_base | split: "/" %}
+        {% assign slug = segs[0] %}
+        {% if slug == "" and segs[1] %}{% assign slug = segs[1] %}{% endif %}
+        {% if slug != "" %}
+          <li><a href="{{ p.url }}">{{ p.title | default: slug }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
