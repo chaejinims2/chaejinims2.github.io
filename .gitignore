@@ -1,22 +1,20 @@
-_site/
-.DS_Store
-
-# Jekyll build outputs
+# Jekyll
 _site/
 .jekyll-cache/
 .sass-cache/
 .cache/
 
-# Bundler
+# Bundler (vendor 전체 제외 — _config exclude와 동일)
 .bundle/
-vendor/bundle/
+vendor/
 
-# Node (Netlify functions)
+# Node (Netlify functions 등)
 node_modules/
 
-# OS/editor
+# Netlify
+.netlify
+
+# OS / editor
 .DS_Store
 .vscode/
 .idea/
-# Local Netlify folder
-.netlify

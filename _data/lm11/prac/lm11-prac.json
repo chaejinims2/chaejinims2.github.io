@@ -1,0 +1,127 @@
+[
+    {
+        "cmd": "lsblk -f",
+        "title": "블록 장치 정보 확인",
+        "description": "블록 장치 정보 확인"
+    },
+    {
+        "cmd": "cat /etc/fstab",
+        "title": "fstab에서 사용 UUID 확인",
+        "description": "fstab에서 사용 UUID 확인"
+    },
+    {
+        "cmd": "ls -li",
+        "title": "inode 확인",
+        "description": "inode 확인"
+    },
+    {
+        "cmd": "cat /proc/mdstat",
+        "title": "소프트웨어 RAID 상태 확인",
+        "description": "MD(소프트웨어 RAID) 장치 상태 및 미사용 장치 확인"
+    },
+    {
+        "cmd": "sudo fdisk -l /dev/mmcblk1p5",
+        "title": "특정 파티션 정보 확인",
+        "description": "지정한 블록 장치(파티션)의 섹터·크기 등 상세 정보 출력"
+    },
+    {
+        "cmd": "df -h",
+        "title": "파일 시스템 디스크 사용량 확인",
+        "description": "디스크가 가득 찼다."
+    },
+    {
+        "cmd": "du -sh *",
+        "title": "디렉터리 총 사용량",
+        "description": "어느 디렉터리가 많이 쓰는지 확인"
+    },
+    {
+        "cmd": "lsblk",
+        "title": "블록 장치 트리 목록",
+        "description": "블록 장치·파티션을 트리 형태로 목록 출력 (파일시스템·UUID 미포함)"
+    },
+    {
+        "cmd": "sudo fdisk -l",
+        "title": "전체 디스크·파티션 목록",
+        "description": "모든 디스크와 파티션의 크기·타입 등 정보 출력"
+    },
+    {
+        "cmd": "df",
+        "title": "disk free",
+        "description": "마운트된 파일시스템의 디스크 사용량·여유 공간(기본 단위)"
+    },
+    {
+        "cmd": "df -T",
+        "title": "파일 시스템 타입 확인",
+        "description": "파일 시스템 타입 확인"
+    },
+    {
+        "cmd": "whereis df",
+        "title": "df 바이너리·매뉴얼 위치",
+        "description": "df 실행 파일, 소스, 매뉴얼 페이지 경로 검색"
+    },
+    {
+        "cmd": "which df",
+        "title": "df 실행 파일 경로",
+        "description": "PATH에서 df 명령이 실제로 실행되는 경로 출력"
+    },
+    {
+        "cmd": "tar -cvf backup.tar tmp",
+        "title": "디렉터리 아카이브 생성",
+        "description": "tmp 디렉터리를 backup.tar 하나의 아카이브 파일로 묶기 (verbose)"
+    },
+    {
+        "cmd": "chmod g+s tmp",
+        "title": "디렉터리 setgid 설정",
+        "description": "tmp에 setgid 비트 설정 — 새로 생성된 파일이 부모 디렉터리 그룹 상속"
+    },
+    {
+        "cmd": "ps -ef",
+        "title": "전체 프로세스 목록",
+        "description": "모든 사용자 프로세스를 풀 포맷(UID, PID, PPID 등)으로 출력"
+    },
+    {
+        "cmd": "kill -l",
+        "title": "시그널 목록 출력",
+        "description": "프로세스에 보낼 수 있는 시그널 번호·이름 목록 확인"
+    },
+    {
+        "cmd": "ss -t",
+        "title": "TCP 소켓 상태",
+        "description": "현재 TCP 연결·리스닝 소켓 목록 출력"
+    },
+    {
+        "cmd": "ss -u",
+        "title": "UDP 소켓 상태",
+        "description": "현재 UDP 소켓 목록 출력"
+    },
+    {
+        "cmd": "systemctl status sshd",
+        "title": "sshd 서비스 상태",
+        "description": "SSH 데몬(sshd) 유닛의 실행 상태·로그 일부 확인"
+    },
+    {
+        "cmd": "systemctl status",
+        "title": "시스템 유닛 전체 상태",
+        "description": "로드된 모든 systemd 유닛의 상태 요약 출력"
+    },
+    {
+        "cmd": "env",
+        "title": "환경 변수 목록",
+        "description": "현재 셸에서 사용 중인 모든 환경 변수 출력"
+    },
+    {
+        "cmd": "echo $PATH",
+        "title": "PATH 환경 변수 출력",
+        "description": "실행 파일을 찾는 검색 경로(PATH) 확인"
+    },
+    {
+        "cmd": "export VAR=test",
+        "title": "환경 변수 설정",
+        "description": "VAR 변수를 test로 설정하고 자식 프로세스에 전달(export)"
+    },
+    {
+        "cmd": "history",
+        "title": "명령 이력 목록",
+        "description": "현재 셸에서 입력한 명령 이력 출력"
+    }
+]

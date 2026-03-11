@@ -142,6 +142,8 @@
   --app-statusbar-gap: clamp(0.75rem, 1.5vw, 1.125rem);
   --app-statusbar-padding: 0 clamp(0.5rem, 1vw, 0.875rem);
   --app-statusbar-font-size: var(--fs-1);
+
+  --lm11-card-fixed-height: 40rem;
 }
 
 /* =========================================================
