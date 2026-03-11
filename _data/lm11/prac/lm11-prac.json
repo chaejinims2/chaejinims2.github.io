@@ -105,7 +105,7 @@
         "description": "로드된 모든 systemd 유닛의 상태 요약 출력"
     },
     {
-        "cmd": "env",
+        "cmd": "env head",
         "title": "환경 변수 목록",
         "description": "현재 셸에서 사용 중인 모든 환경 변수 출력"
     },
@@ -123,5 +123,10 @@
         "cmd": "history",
         "title": "명령 이력 목록",
         "description": "현재 셸에서 입력한 명령 이력 출력"
+    },
+    {
+        "cmd": "sudo ifconfig",
+        "title": "",
+        "description": ""
     }
 ]

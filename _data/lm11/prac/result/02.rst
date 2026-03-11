@@ -1,0 +1,35 @@
+cat /etc/fstab 에서 알 수 있는 정보
+===========================
+
+요약
+--
+- 제목: **fstab에서 사용 UUID 확인**
+
+로그에서 바로 읽히는 포인트
+---------------
+- 루트(/) 마운트 항목: ``UUID=af35d9c9-6e3f-404d-bccb-c581f35c6488 /               ext4    errors=remount-ro 0       1``
+
+로그 주요 출력(일부)
+------------
+
+.. code-block:: text
+
+  cherry@rhombus:~$ cat /etc/fstab
+  # /etc/fstab: static file system information.
+  #
+  # Use 'blkid' to print the universally unique identifier for a
+  # device; this may be used with UUID= as a more robust way to name devices
+  # that works even if disks are added and removed. See fstab(5).
+  #
+  # <file system> <mount point>   <type>  <options>       <dump>  <pass>
+  # / was on /dev/mmcblk1p5 during installation
+  UUID=af35d9c9-6e3f-404d-bccb-c581f35c6488 /               ext4    errors=remount-ro 0       1
+  # /boot/efi was on /dev/mmcblk1p1 during installation
+  UUID=0AA1-8D41  /boot/efi       vfat    umask=0077      0       1
+  /swapfile                                 none            swap    sw              0       0
+
+확인 포인트(체크리스트)
+-------------
+- 출력에서 **핵심 컬럼 이름**(헤더)을 먼저 읽는다.
+- 숫자/단위(%, bytes, blocks, port 등)를 보고 **무엇을 의미하는지** 말로 설명한다.
+- 설정 파일이라면(예: fstab) “무엇을 어디에 어떻게 마운트하는지”를 한 문장으로 요약한다.

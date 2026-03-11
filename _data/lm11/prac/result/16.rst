@@ -1,0 +1,38 @@
+ps -ef 에서 알 수 있는 정보
+===================
+
+요약
+--
+- 제목: **전체 프로세스 목록**
+- 설명: 모든 사용자 프로세스를 풀 포맷(UID, PID, PPID 등)으로 출력
+
+로그 주요 출력(일부)
+------------
+
+.. code-block:: text
+
+  cherry@rhombus:~$ ps -ef
+  UID          PID    PPID  C STIME TTY          TIME CMD
+  nobody         1       0  0 Mar02 ?        ***REDACTED_IP*** /sbin/init splash
+  nobody         2       0  0 Mar02 ?        ***REDACTED_IP*** [kthreadd]
+  nobody         3       2  0 Mar02 ?        ***REDACTED_IP*** [pool_workqueue_release]
+  nobody         4       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-rcu_g]
+  nobody         5       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-rcu_p]
+  nobody         6       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-slub_]
+  nobody         7       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-netns]
+  nobody        12       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-mm_pe]
+  nobody        13       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_tasks_kthread]
+  nobody        14       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_tasks_rude_kthread]
+  nobody        15       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_tasks_trace_kthread]
+  nobody        16       2  0 Mar02 ?        ***REDACTED_IP*** [ksoftirqd/0]
+  nobody        17       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_preempt]
+  nobody        18       2  0 Mar02 ?        ***REDACTED_IP*** [migration/0]
+  nobody        19       2  0 Mar02 ?        ***REDACTED_IP*** [idle_inject/0]
+  nobody        20       2  0 Mar02 ?        ***REDACTED_IP*** [cpuhp/0]
+  nobody        21       2  0 Mar02 ?        ***REDACTED_IP*** [cpuhp/1]
+
+확인 포인트(체크리스트)
+-------------
+- 출력에서 **핵심 컬럼 이름**(헤더)을 먼저 읽는다.
+- 숫자/단위(%, bytes, blocks, port 등)를 보고 **무엇을 의미하는지** 말로 설명한다.
+- 설정 파일이라면(예: fstab) “무엇을 어디에 어떻게 마운트하는지”를 한 문장으로 요약한다.

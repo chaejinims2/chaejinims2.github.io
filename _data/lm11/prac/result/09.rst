@@ -1,0 +1,25 @@
+sudo fdisk -l 에서 알 수 있는 정보
+==========================
+
+요약
+--
+- 제목: **전체 디스크·파티션 목록**
+- 설명: 모든 디스크와 파티션의 크기·타입 등 정보 출력
+
+로그 주요 출력(일부)
+------------
+
+.. code-block:: text
+
+  cherry@rhombus:~$ sudo fdisk -l
+  sudo: /etc/sudo.conf is owned by uid 65534, should be 0
+  sudo: /etc/sudo.conf is owned by uid 65534, should be 0
+  sudo: error in /etc/sudo.conf, line 0 while loading plugin "sudoers_policy"
+  sudo: /usr/libexec/sudo/sudoers.so must be owned by uid 0
+  sudo: fatal error, unable to load plugins
+
+확인 포인트(체크리스트)
+-------------
+- 출력에서 **핵심 컬럼 이름**(헤더)을 먼저 읽는다.
+- 숫자/단위(%, bytes, blocks, port 등)를 보고 **무엇을 의미하는지** 말로 설명한다.
+- 설정 파일이라면(예: fstab) “무엇을 어디에 어떻게 마운트하는지”를 한 문장으로 요약한다.

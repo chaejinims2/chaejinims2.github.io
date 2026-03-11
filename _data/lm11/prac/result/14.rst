@@ -1,0 +1,24 @@
+tar -cvf backup.tar tmp 에서 알 수 있는 정보
+====================================
+
+요약
+--
+- 제목: **디렉터리 아카이브 생성**
+- 설명: tmp 디렉터리를 backup.tar 하나의 아카이브 파일로 묶기 (verbose)
+
+로그 주요 출력(일부)
+------------
+
+.. code-block:: text
+
+  cherry@rhombus:~$ tar -cvf backup.tar tmp
+  tmp/
+  tmp/file2.txt
+  tmp/file.txt
+  tmp/file1.txt
+
+확인 포인트(체크리스트)
+-------------
+- 출력에서 **핵심 컬럼 이름**(헤더)을 먼저 읽는다.
+- 숫자/단위(%, bytes, blocks, port 등)를 보고 **무엇을 의미하는지** 말로 설명한다.
+- 설정 파일이라면(예: fstab) “무엇을 어디에 어떻게 마운트하는지”를 한 문장으로 요약한다.

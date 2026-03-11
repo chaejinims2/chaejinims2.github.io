@@ -14,7 +14,12 @@ node_modules/
 # Netlify
 .netlify
 
+# LM11 logs (keep local only)
+_data/lm11/prac/log/
+_pages/labs/lm11/prac/log/
+
 # OS / editor
 .DS_Store
 .vscode/
 .idea/
+cherry@rhombus:~$ 

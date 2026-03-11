@@ -1,0 +1,28 @@
+ls -li 에서 알 수 있는 정보
+===================
+
+요약
+--
+- 제목: **inode 확인**
+
+로그 주요 출력(일부)
+------------
+
+.. code-block:: text
+
+  cherry@rhombus:~$ ls -li
+  total 48
+   979355 -rw-r--r-- 1 root root 10240 Mar 11 15:31 backup.tar
+   979362 -rwxr-xr-x 1 root root  2239 Mar 11 16:22 lm11-prac-add.sh
+   980746 -rw-r--r-- 1 root root  5385 Mar 11 16:26 lm11-prac-result.sh
+   979369 -rw-r--r-- 1 root root  4385 Mar 11 16:22 lm11-prac.json
+   979341 -rwxr-xr-x 1 root root  3067 Mar 11 16:22 lm11-prac.sh
+  1080238 drwxr-xr-x 2 root root  4096 Mar 11 16:26 log
+   979368 drwxr-xr-x 2 root root  4096 Mar 11 16:25 result
+   979354 drwxr-sr-x 2 root root  4096 Mar 11 16:22 tmp
+
+확인 포인트(체크리스트)
+-------------
+- 출력에서 **핵심 컬럼 이름**(헤더)을 먼저 읽는다.
+- 숫자/단위(%, bytes, blocks, port 등)를 보고 **무엇을 의미하는지** 말로 설명한다.
+- 설정 파일이라면(예: fstab) “무엇을 어디에 어떻게 마운트하는지”를 한 문장으로 요약한다.

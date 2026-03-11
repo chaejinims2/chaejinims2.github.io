@@ -1,0 +1,42 @@
+lsblk 에서 알 수 있는 정보
+==================
+
+요약
+--
+- 제목: **블록 장치 트리 목록**
+- 설명: 블록 장치·파티션을 트리 형태로 목록 출력 (파일시스템·UUID 미포함)
+
+로그에서 바로 읽히는 포인트
+---------------
+- mmcblk 관련 행 예시: ```-mmcblk1p5  179:5    0    40G  0 part /home/***REDACTED_USER***/workspace/chaejinims2.github.io/.git/hooks``
+
+로그 주요 출력(일부)
+------------
+
+.. code-block:: text
+
+  cherry@rhombus:~$ lsblk
+  NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+  loop0          7:0    0  14.4M  1 loop /snap/arduino-cli/62
+  loop1          7:1    0     4K  1 loop /snap/bare/5
+  loop2          7:2    0  55.5M  1 loop /snap/core18/2979
+  loop3          7:3    0    74M  1 loop /snap/core22/2292
+  loop4          7:4    0    74M  1 loop /snap/core22/2339
+  loop5          7:5    0 251.6M  1 loop /snap/firefox/7836
+  loop6          7:6    0 254.6M  1 loop /snap/firefox/7901
+  loop7          7:7    0   516M  1 loop /snap/gnome-42-2204/202
+  loop8          7:8    0 531.4M  1 loop /snap/gnome-42-2204/247
+  loop9          7:9    0  91.7M  1 loop /snap/gtk-common-themes/1535
+  loop10         7:10   0  12.2M  1 loop /snap/snap-store/1216
+  loop11         7:11   0  48.1M  1 loop /snap/snapd/25935
+  loop12         7:12   0   576K  1 loop /snap/snapd-desktop-integration/343
+  loop13         7:13   0  55.5M  1 loop /snap/core18/2999
+  mmcblk1      179:0    0  58.2G  0 disk 
+  |-mmcblk1p1  179:1    0   100M  0 part /boot/efi
+  |-mmcblk1p2  179:2    0    16M  0 part 
+
+확인 포인트(체크리스트)
+-------------
+- 출력에서 **핵심 컬럼 이름**(헤더)을 먼저 읽는다.
+- 숫자/단위(%, bytes, blocks, port 등)를 보고 **무엇을 의미하는지** 말로 설명한다.
+- 설정 파일이라면(예: fstab) “무엇을 어디에 어떻게 마운트하는지”를 한 문장으로 요약한다.
