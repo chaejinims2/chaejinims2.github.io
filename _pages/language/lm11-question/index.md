@@ -12,29 +12,32 @@ title: Linux Master 1급 1차
 .quiz-filters-wrap {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-6);
+  gap: var(--space-4);
   align-items: center;
+  justify-content: flex-end; /* 전체를 오른쪽 정렬 */
 }
 .quiz-select-wrap {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-2);
   flex-wrap: wrap;
   margin-bottom: var(--space-6);
-  padding: var(--space-4) 0;
+  padding: 0;
 }
 .quiz-select-label {
+  font-size: var(--fs-2);
   font-weight: var(--fw-600);
   color: var(--app-text);
 }
 .quiz-select {
   padding: var(--space-2) var(--space-4);
-  font-size: 1rem;
+  font-size: var(--fs-2);
   border: 1px solid var(--app-border);
   border-radius: var(--radius-2);
   background: var(--app-panel);
   color: var(--app-text);
-  min-width: 10rem;
+  min-width: 6rem;
+  max-width: 10rem;
 }
 .quiz-select:hover,
 .quiz-select:focus {
