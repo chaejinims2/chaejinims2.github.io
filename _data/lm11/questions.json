@@ -1524,19 +1524,19 @@
     "options": [
       {
         "option": "tar",
-        "description": "기본 tar는 증분 백업 직접 지원 안함."
+        "description": "tar는 아카이브/압축 도구로 기본적으로 증분 백업 직접 지원 안함. 하지만 --listed-incremental 옵션으로 기술적으로 지원은 함"
       },
       {
         "option": "cpio",
-        "description": "백업 가능."
+        "description": "find 기반 증분 백업 가능"
       },
       {
         "option": "rsync",
-        "description": "증분 전송 가능."
+        "description": "증분 전송 가능. delta transfer"
       },
       {
         "option": "dump",
-        "description": "증분 백업 지원."
+        "description": "파일 시스템 레벨 증분 백업"
       }
     ]
   },
