@@ -152,21 +152,23 @@
     "options": [
       {
         "option": "$0 /sharp #",
-        "description": "오답. $0은 스크립트 이름으로 치환되므로 'sharp'라는 글자는 나오지 않는다."
+        "description": "오답. $1은 첫 번째 인자(/the)이므로 '/sharp'는 출력되지 않는다."
       },
       {
         "option": "$0 /the 2",
-        "description": "정답. echo \"#$0 $1 #\"에서 $0은 실행된 스크립트 경로(./test.sh), $1은 첫 인자(/the)이다. 인자 2는 $2이므로 출력에 없고, 결과는 './test.sh /the ' 뒤에 '#'가 온다. 괄호 자리에는 $0 /the 2가 들어가면 전체 출력이 '#./test.sh /the #' 형태가 되므로, (괄호)에 해당하는 부분은 '$0 /the 2'이다."
+        "description": "오답. 두 번째 인자는 $2이며, echo 명령에서 $2는 출력하지 않는다. 숫자 2는 출력 결과와 관련이 없다."
       },
       {
         "option": "./test.sh /the #",
-        "description": "오답. $0이 치환된 후 나머지가 그대로 출력되므로 '#' 이후는 주석으로 처리되지 않고 그대로 나온다."
+        "description": "정답. $0은 실행된 스크립트 이름(./test.sh), $1은 첫 번째 인자(/the)이므로 전체 출력은 '#./test.sh /the #'가 된다."
       },
       {
         "option": "./test.sh /the 2",
-        "description": "오답. $0이 ./test.sh로 치환되므로 숫자 2가 그대로 붙은 형태는 echo 출력과 일치하지 않는다."
+        "description": "오답. echo 문에서 숫자 2는 출력되지 않으며 두 번째 인자(/sharp)는 사용되지 않는다."
       }
-    ]
+    ],
+    "answer": 3,
+    "explanation": "쉘 스크립트에서 $0은 실행된 스크립트 이름, $1은 첫 번째 인자를 의미한다. 명령 './test.sh /the /sharp' 실행 시 $0=./test.sh, $1=/the 이므로 echo \"#$0 $1 #\"의 출력 결과는 '#./test.sh /the #'가 된다."
   },
   {
     "examKey": "lm11-20200613",
