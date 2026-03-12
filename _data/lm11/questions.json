@@ -360,10 +360,6 @@
     "code": "이것은 X윈도를 실행시키는 스크립트로 시스템 환경을 초기화시키고 시작하는데 필요한 여러 프로그램을 호출하고 최종적으로 xinit를 호출하는 명령이다.",
     "options": [
       {
-        "option": "startx",
-        "description": "리눅스 터미널(콘솔) 환경에서 X윈도 시스템을 시작하기 위해 사용하는 쉘 스크립트입니다. 사용자 환경 설정을 초기화하고 필요한 클라이언트 프로그램들을 호출하며, 최종적으로 xinit를 실행하여 X 서버를 구동합니다."
-      },
-      {
         "option": "initw",
         "description": "존재 X"
       },
@@ -374,6 +370,10 @@
       {
         "option": "startw",
         "description": "존재 X"
+      },
+      {
+        "option": "startx",
+        "description": "리눅스 터미널(콘솔) 환경에서 X윈도 시스템을 시작하기 위해 사용하는 쉘 스크립트입니다. 사용자 환경 설정을 초기화하고 필요한 클라이언트 프로그램들을 호출하며, 최종적으로 xinit를 실행하여 X 서버를 구동합니다."
       }
     ],
     "notes": [
@@ -440,12 +440,12 @@
     "body": "다음 중 TCP 와 UDP의 설명으로 틀린 것은?",
     "options": [
       {
-        "option": "UDP는 3-way handshaking이라는 방식으로 세션을 연결한다.",
-        "description": "3-way handshaking은 Transmission Control Protocol (TCP)이 데이터를 전송하기 전 송신측과 수신측 사이에 신뢰성 있는 연결을 설정하기 위해 사용하는 방식입니다. 반면, UDP(User Datagram Protocol)는 연결 설정 과정이 없는 비연결형(Connectionless) 프로토콜로, 별도의 핸드쉐이킹 없이 데이터를 즉시 전송합니다."
-      },
-      {
         "option": "TCP 와 UDP는 둘 다 전송계층에서 사용되는 프로토콜이다.",
         "description": "TCP와 UDP는 모두 OSI 7계층 모델 중 전송 계층(Transport Layer)에서 동작하는 핵심 프로토콜입니다."
+      },
+      {
+        "option": "UDP는 3-way handshaking이라는 방식으로 세션을 연결한다.",
+        "description": "3-way handshaking은 Transmission Control Protocol (TCP)이 데이터를 전송하기 전 송신측과 수신측 사이에 신뢰성 있는 연결을 설정하기 위해 사용하는 방식입니다. 반면, UDP(User Datagram Protocol)는 연결 설정 과정이 없는 비연결형(Connectionless) 프로토콜로, 별도의 핸드쉐이킹 없이 데이터를 즉시 전송합니다."
       },
       {
         "option": "TCP는 IP에 의해 전달되는 패킷의 오류를 검사하고 재전송을 요구하는 역할을 한다.",
@@ -468,12 +468,12 @@
     "body": "다음 중 프로토콜에 대한 설명으로 틀린 것은?",
     "options": [
       {
-        "option": "OSI 7계층 중 인터넷 계층에 사용되는 프로토콜은 ICMP, ARP, IMAP 등이 있다.",
-        "description": "틀린 설명입니다. IMAP은 인터넷 계층(네트워크 계층)이 아닌 응용 계층(Application Layer)에서 사용하는 전자우편 수신 프로토콜입니다. 인터넷 계층의 대표적인 프로토콜로는 IP, ICMP, ARP, RARP 등이 있습니다."
-      },
-      {
         "option": "프로토콜의 주요 제정기관으로는 ISO, IEEE, EIA, ITU-T 등이 있다.",
         "description": "옳은 설명입니다. 국제표준화기구(ISO), 전기전자공학자협회(IEEE) 등 다양한 기구에서 통신 규약을 정의합니다."
+      },
+      {
+        "option": "OSI 7계층 중 인터넷 계층에 사용되는 프로토콜은 ICMP, ARP, IMAP 등이 있다.",
+        "description": "틀린 설명입니다. IMAP은 인터넷 계층(네트워크 계층)이 아닌 응용 계층(Application Layer)에서 사용하는 전자우편 수신 프로토콜입니다. 인터넷 계층의 대표적인 프로토콜로는 IP, ICMP, ARP, RARP 등이 있습니다."
       },
       {
         "option": "프로토콜의 3가지 구성요소는 순서(Timing), 구문(Syntax), 의미(Semantics) 이다.",
@@ -492,12 +492,12 @@
     "body": "다음 중 IPv6를 구분하는 구분자로 알맞은 것은?",
     "options": [
       {
-        "option": "콜론(:)",
-        "description": "O: IPv6 주소는 128비트 길이를 16비트씩 8부분으로 나누며, 각 부분을 구분할 때 콜론(:)을 사용합니다."
-      },
-      {
         "option": "콤마(,)",
         "description": "X: 프로그래밍이나 데이터 구분 시에는 쓰이지만, IP 주소 체계의 구분자로는 사용되지 않습니다."
+      },
+      {
+        "option": "콜론(:)",
+        "description": "O: IPv6 주소는 128비트 길이를 16비트씩 8부분으로 나누며, 각 부분을 구분할 때 콜론(:)을 사용합니다."
       },
       {
         "option": "세미콜론(;)",
@@ -516,10 +516,6 @@
     "body": "네트워크 부하를 줄이기 위해 방화벽에서 ping과 traceroute관련 프로토콜을 차단하려고 한다. 다음 중 차단해야 하는 프로토콜로 가장 알맞은 것은?",
     "options": [
       {
-        "option": "ICMP",
-        "description": "O: ping과 traceroute는 네트워크 진단 및 오류 보고를 위해 설계된 ICMP(Internet Control Message Protocol)를 사용합니다."
-      },
-      {
         "option": "IP",
         "description": "X: 네트워크 계층의 기본 프로토콜로, 이를 차단하면 모든 통신이 불가능해집니다."
       },
@@ -530,6 +526,10 @@
       {
         "option": "UDP",
         "description": "X: 일부 운영체제의 traceroute가 UDP를 사용하기도 하지만, 문제의 의도인 ping과 공통된 핵심 프로토콜은 ICMP입니다."
+      },
+      {
+        "option": "ICMP",
+        "description": "O: ping과 traceroute는 네트워크 진단 및 오류 보고를 위해 설계된 ICMP(Internet Control Message Protocol)를 사용합니다."
       }
     ]
   },
@@ -541,10 +541,6 @@
     "code": "/data 디렉터리를 여러 사용자가 자유롭게 파일 생성이 가능하나 삭제는 본인 소유의 파일만 가능한 공유디렉터리로 만들려고 한다.",
     "options": [
       {
-        "option": "chmod o+t /data",
-        "description": "O: 스티키 비트(Sticky Bit)를 설정하는 명령입니다. 공유 디렉터리에서 파일 생성은 누구나 가능하지만, 삭제는 파일 소유자나 관리자만 가능하도록 제한합니다."
-      },
-      {
         "option": "chmod u+s /data",
         "description": "X: SetUID를 설정하는 명령입니다. 파일 실행 시 소유자 권한으로 실행되게 하며, 디렉터리 권한 제한과는 거리가 멉니다."
       },
@@ -555,6 +551,10 @@
       {
         "option": "chmod o+s /data",
         "description": "X: Other 사용자에게 SetUID/SetGID와 같은 특수 권한을 부여하는 설정은 일반적인 리눅스 보안 체계에서 사용되지 않는 잘못된 형식입니다."
+      },
+      {
+        "option": "chmod o+t /data",
+        "description": "O: 스티키 비트(Sticky Bit)를 설정하는 명령입니다. 공유 디렉터리에서 파일 생성은 누구나 가능하지만, 삭제는 파일 소유자나 관리자만 가능하도록 제한합니다."
       }
     ]
   },
@@ -565,12 +565,12 @@
     "body": "다음 중 PID가 1222번인 프로세스를 실행한 파일명을 확인할 때 사용하는 파일로 알맞은 것은?",
     "options": [
       {
-        "option": "/proc/1222/exe",
-        "description": "O: /proc/[PID]/exe는 해당 프로세스를 실행한 실제 바이너리 실행 파일의 경로를 가리키는 심볼릭 링크입니다."
-      },
-      {
         "option": "/proc/1222/fd",
         "description": "X: 해당 프로세스가 열고 있는 파일 디스크립터(File Descriptor) 정보들이 담긴 디렉터리입니다."
+      },
+      {
+        "option": "/proc/1222/exe",
+        "description": "O: /proc/[PID]/exe는 해당 프로세스를 실행한 실제 바이너리 실행 파일의 경로를 가리키는 심볼릭 링크입니다."
       },
       {
         "option": "/proc/PID/1222/fd",
@@ -613,12 +613,12 @@
     "body": "다음 중 lin.txt 파일에서 a로 시작되는 줄만 검색하려고 할 때의 명령으로 알맞은 것은?",
     "options": [
       {
-        "option": "grep ^a lin.txt",
-        "description": "O: 정규표현식에서 삿갓 기호(^)는 줄의 시작을 의미합니다. 따라서 ^a는 'a로 시작하는 줄'을 검색합니다."
-      },
-      {
         "option": "grep a lin.txt",
         "description": "X: 줄의 시작과 관계없이 'a'라는 문자가 포함된 모든 줄을 검색합니다."
+      },
+      {
+        "option": "grep ^a lin.txt",
+        "description": "O: 정규표현식에서 삿갓 기호(^)는 줄의 시작을 의미합니다. 따라서 ^a는 'a로 시작하는 줄'을 검색합니다."
       },
       {
         "option": "grep [a] lin.txt",
@@ -663,16 +663,16 @@
     "code": "# rpm ( 괄호 ) /bin/ls \n coreutils-8.4-47.el6.i686",
     "options": [
       {
-        "option": "-qf",
-        "description": "O: -q(query)와 -f(file) 옵션의 조합으로, 특정 파일이 어느 패키지에 포함되어 있는지 확인할 때 사용합니다."
-      },
-      {
         "option": "-q",
         "description": "X: 패키지가 설치되어 있는지 확인할 때 사용하며, 인자로 패키지명을 주어야 합니다."
       },
       {
         "option": "-qc",
         "description": "X: 설정 파일(configuration) 목록만 확인하는 옵션입니다."
+      },
+      {
+        "option": "-qf",
+        "description": "O: -q(query)와 -f(file) 옵션의 조합으로, 특정 파일이 어느 패키지에 포함되어 있는지 확인할 때 사용합니다."
       },
       {
         "option": "-qp",
@@ -687,16 +687,16 @@
     "body": "다음 중 fdisk 명령을 이용해서 파티션 속성을 Linux LVM으로 변경할 때 지정하는 코드값으로 알맞은 것은?",
     "options": [
       {
-        "option": "8e",
-        "description": "O: Linux LVM(Logical Volume Manager)을 지정하는 파티션 타입 코드값입니다."
-      },
-      {
         "option": "82",
         "description": "X: Linux Swap 영역을 지정할 때 사용하는 코드값입니다."
       },
       {
         "option": "83",
         "description": "X: 일반적인 Linux 기본 파티션을 지정할 때 사용하는 코드값입니다."
+      },
+      {
+        "option": "8e",
+        "description": "O: Linux LVM(Logical Volume Manager)을 지정하는 파티션 타입 코드값입니다."
       },
       {
         "option": "fd",
@@ -712,12 +712,12 @@
     "code": "# tar ( 괄호 ) php-7.4.2.tar.bz2",
     "options": [
       {
-        "option": "jtvf",
-        "description": "O: .tar.bz2 압축 해제 시 사용하는 'j'와 목록을 확인하는 't' 옵션을 조합하여 내용만 확인할 수 있습니다."
-      },
-      {
         "option": "Jxvf",
         "description": "X: .tar.xz 압축을 푸는(x) 옵션입니다."
+      },
+      {
+        "option": "jtvf",
+        "description": "O: .tar.bz2 압축 해제 시 사용하는 'j'와 목록을 확인하는 't' 옵션을 조합하여 내용만 확인할 수 있습니다."
       },
       {
         "option": "jxvf",
@@ -737,10 +737,6 @@
     "code": "MySQL을 소스로 설치하여 생성된 /usr/local/muysql/lib를 공유 라이브러리 디렉터리로 추가 등록하려고 한다.",
     "options": [
       {
-        "option": "/etc/ld.so.conf",
-        "description": "O: 시스템 전체의 공유 라이브러리 경로를 관리하는 설정 파일입니다. 여기에 디렉터리를 추가한 후 ldconfig를 실행해야 합니다."
-      },
-      {
         "option": "/etc/ldconfig",
         "description": "X: ldconfig는 파일이 아닌 실행 명령어(바이너리)이며 보통 /sbin/ldconfig에 위치합니다."
       },
@@ -751,6 +747,10 @@
       {
         "option": "/etc/ld.config",
         "description": "X: 리눅스 표준 라이브러리 설정 파일 이름이 아닙니다."
+      },
+      {
+        "option": "/etc/ld.so.conf",
+        "description": "O: 시스템 전체의 공유 라이브러리 경로를 관리하는 설정 파일입니다. 여기에 디렉터리를 추가한 후 ldconfig를 실행해야 합니다."
       }
     ]
   },
@@ -760,10 +760,6 @@
     "subjectKey": 2,
     "body": "다음 중 /etc/xinetd.d 디렉터리를 현재 디렉터리에 x로 연결하여 손쉽게 디렉터리를 이동하려고 할 때 설정하는 명령으로 알맞은 것은?",
     "options": [
-      {
-        "option": "ln -s /etc/xinetd.d x",
-        "description": "O: 심볼릭 링크(-s)를 생성하는 올바른 형식입니다. 'ln -s [대상경로] [링크이름]' 순서로 사용합니다."
-      },
       {
         "option": "ln x /etc/xinetd.d",
         "description": "X: 인자의 순서가 바뀌었으며, 디렉터리는 하드 링크를 생성할 수 없습니다."
@@ -775,6 +771,10 @@
       {
         "option": "ln -s x /etc/xinetd.d",
         "description": "X: 인자의 순서가 반대로 되어 'x'를 가리키는 링크를 xinetd.d 안에 만들려고 시도하게 됩니다."
+      },
+      {
+        "option": "ln -s /etc/xinetd.d x",
+        "description": "O: 심볼릭 링크(-s)를 생성하는 올바른 형식입니다. 'ln -s [대상경로] [링크이름]' 순서로 사용합니다."
       }
     ]
   },
@@ -786,16 +786,16 @@
     "description": "usermod 명령의 -e 옵션은 계정의 만료일(expire date)을 설정할 때 사용한다. 날짜 형식은 YYYY-MM-DD 형식을 사용한다.",
     "options": [
       {
-        "option": "usermod -e 2020-12-31 ihduser",
-        "description": "정답. -e 옵션은 계정 만료일을 설정한다."
-      },
-      {
         "option": "usermod -i 2020-12-31 ihduser",
         "description": "usermod에 -i 옵션은 존재하지 않는다."
       },
       {
         "option": "usermod -I 2020-12-31 ihduser",
         "description": "대문자 I 옵션은 usermod에서 사용되지 않는다."
+      },
+      {
+        "option": "usermod -e 2020-12-31 ihduser",
+        "description": "정답. -e 옵션은 계정 만료일을 설정한다."
       },
       {
         "option": "usermod -f 2020-12-31 ihduser",
@@ -811,12 +811,12 @@
     "description": "리눅스에서 root 권한은 UID 0을 의미한다. /etc/passwd 파일의 세 번째 필드는 UID이므로 값이 0인 계정을 찾으면 root 권한 계정을 찾을 수 있다.",
     "options": [
       {
-        "option": "/etc/passwd의 세 번째 필드 값이 0인 사용자를 찾는다.",
-        "description": "정답. 세 번째 필드는 UID이며 UID가 0이면 root 권한이다."
-      },
-      {
         "option": "/etc/passwd의 두 번째 필드 값이 0인 사용자를 찾는다.",
         "description": "두 번째 필드는 패스워드 필드이다."
+      },
+      {
+        "option": "/etc/passwd의 세 번째 필드 값이 0인 사용자를 찾는다.",
+        "description": "정답. 세 번째 필드는 UID이며 UID가 0이면 root 권한이다."
       },
       {
         "option": "/etc/passwd의 두 번째 필드 값이 1인 사용자를 찾는다.",
@@ -836,10 +836,6 @@
     "description": "소스 컴파일 과정에서 ./configure 명령을 실행하면 시스템 환경에 맞는 Makefile이 생성된다. 이후 make 명령을 통해 컴파일을 진행한다.",
     "options": [
       {
-        "option": "Makefile",
-        "description": "정답. configure 실행 후 생성되는 파일이다."
-      },
-      {
         "option": "config.make",
         "description": "일반적으로 생성되는 표준 파일명이 아니다."
       },
@@ -850,6 +846,10 @@
       {
         "option": "make.config",
         "description": "표준 configure 결과 파일이 아니다."
+      },
+      {
+        "option": "Makefile",
+        "description": "정답. configure 실행 후 생성되는 파일이다."
       }
     ]
   },
@@ -887,10 +887,6 @@
     "description": "nohup 명령은 터미널 세션이 종료되어도 프로세스가 계속 실행되도록 한다.",
     "options": [
       {
-        "option": "nohup",
-        "description": "정답. 터미널 종료 후에도 프로그램을 계속 실행한다."
-      },
-      {
         "option": "bg",
         "description": "중지된 작업을 백그라운드로 실행한다."
       },
@@ -901,6 +897,10 @@
       {
         "option": "jobs",
         "description": "현재 쉘의 작업 목록을 보여준다."
+      },
+      {
+        "option": "nohup",
+        "description": "정답. 터미널 종료 후에도 프로그램을 계속 실행한다."
       }
     ]
   },
@@ -913,12 +913,12 @@
     "description": "edquota 명령은 특정 사용자의 디스크 쿼터 설정을 편집할 때 사용한다.",
     "options": [
       {
-        "option": "edquota",
-        "description": "정답. 사용자 쿼터를 편집하는 명령이다."
-      },
-      {
         "option": "quotacheck",
         "description": "쿼터 데이터베이스를 검사하는 명령이다."
+      },
+      {
+        "option": "edquota",
+        "description": "정답. 사용자 쿼터를 편집하는 명령이다."
       },
       {
         "option": "quotaon",
@@ -964,12 +964,12 @@
     "description": "id 명령은 현재 사용자 또는 지정한 사용자의 UID, GID, 그룹 정보를 출력한다.",
     "options": [
       {
-        "option": "id",
-        "description": "정답. UID, GID, 그룹 정보를 출력한다."
-      },
-      {
         "option": "w",
         "description": "현재 로그인 사용자 정보를 보여준다."
+      },
+      {
+        "option": "id",
+        "description": "정답. UID, GID, 그룹 정보를 출력한다."
       },
       {
         "option": "who",
@@ -1014,12 +1014,12 @@
     "description": "/etc/skel 디렉터리는 사용자 계정 생성 시 기본으로 복사되는 초기 파일을 저장하는 디렉터리이다.",
     "options": [
       {
-        "option": "/etc/skel",
-        "description": "정답. 사용자 기본 환경 파일이 저장된다."
-      },
-      {
         "option": "/home",
         "description": "사용자 홈 디렉터리가 생성되는 위치이다."
+      },
+      {
+        "option": "/etc/skel",
+        "description": "정답. 사용자 기본 환경 파일이 저장된다."
       },
       {
         "option": "/etc/login.defs",
@@ -1039,16 +1039,16 @@
     "description": "리눅스 커널 모듈은 일반적으로 /lib/modules/커널버전/ 디렉터리에 저장된다. 실제 커널 모듈(.ko 파일)은 그 하위의 kernel 디렉터리 아래에 위치한다.",
     "options": [
       {
-        "option": "/lib/modules/커널버전/kernel",
-        "description": "정답. 커널 모듈이 저장되는 표준 경로이다."
-      },
-      {
         "option": "/lib/커널버전/modules/kernel",
         "description": "리눅스 표준 모듈 디렉터리 구조가 아니다."
       },
       {
         "option": "/lib/커널버전/kernel/modules",
         "description": "디렉터리 구조가 올바르지 않다."
+      },
+      {
+        "option": "/lib/modules/커널버전/kernel",
+        "description": "정답. 커널 모듈이 저장되는 표준 경로이다."
       },
       {
         "option": "/lib/modules/kernel/커널버전",
@@ -1065,16 +1065,16 @@
     "description": "modinfo 명령은 특정 커널 모듈의 파일명, 라이선스, 버전, 설명, 작성자 등 다양한 메타 정보를 출력한다.",
     "options": [
       {
-        "option": "modinfo",
-        "description": "정답. 커널 모듈의 상세 정보를 확인하는 명령이다."
-      },
-      {
         "option": "lsmod",
         "description": "현재 로드된 커널 모듈 목록을 출력한다."
       },
       {
         "option": "depmod",
         "description": "모듈 의존성 정보를 생성한다."
+      },
+      {
+        "option": "modinfo",
+        "description": "정답. 커널 모듈의 상세 정보를 확인하는 명령이다."
       },
       {
         "option": "modprobe",
@@ -1091,10 +1091,6 @@
     "description": "modules.dep 파일은 커널 모듈 간의 의존성 정보를 저장하는 파일이며 depmod 명령을 통해 갱신된다.",
     "options": [
       {
-        "option": "㉠ modules.dep ㉡ depmod",
-        "description": "정답. modules.dep는 의존성 파일이며 depmod 명령으로 생성/갱신된다."
-      },
-      {
         "option": "㉠ modprobe.conf ㉡ modprobe",
         "description": "modprobe.conf는 설정 파일이며 의존성 파일이 아니다."
       },
@@ -1105,6 +1101,10 @@
       {
         "option": "㉠ modules.dep ㉡ modprobe",
         "description": "modules.dep 갱신 명령은 depmod이다."
+      },
+      {
+        "option": "㉠ modules.dep ㉡ depmod",
+        "description": "정답. modules.dep는 의존성 파일이며 depmod 명령으로 생성/갱신된다."
       }
     ]
   },
@@ -1116,12 +1116,12 @@
     "description": "lp, lpstat, cancel은 System V 계열 프린터 명령어이며 lpr은 BSD 계열 프린터 명령어이다.",
     "options": [
       {
-        "option": "lpr",
-        "description": "정답. BSD 계열 프린터 명령어이다."
-      },
-      {
         "option": "lp",
         "description": "System V 계열 프린터 출력 명령이다."
+      },
+      {
+        "option": "lpr",
+        "description": "정답. BSD 계열 프린터 명령어이다."
       },
       {
         "option": "lpstat",
@@ -1193,12 +1193,12 @@
     "description": "lpr 명령은 파일을 프린터 출력 대기열에 등록하여 인쇄 작업을 요청하는 BSD 계열 프린터 명령이다.",
     "options": [
       {
-        "option": "lpr",
-        "description": "정답. 프린터 출력 요청 명령이다."
-      },
-      {
         "option": "pr",
         "description": "파일을 인쇄 형식으로 정렬하는 명령이다."
+      },
+      {
+        "option": "lpr",
+        "description": "정답. 프린터 출력 요청 명령이다."
       },
       {
         "option": "lpq",
@@ -1219,16 +1219,16 @@
     "description": "make mrproper는 커널 소스 디렉터리를 완전히 초기화하여 설정 파일과 컴파일 결과물을 모두 제거한다.",
     "options": [
       {
-        "option": "make mrproper",
-        "description": "정답. 커널 소스 트리를 완전히 초기화한다."
-      },
-      {
         "option": "make config",
         "description": "커널 설정을 텍스트 기반으로 수행한다."
       },
       {
         "option": "make clean",
         "description": "컴파일된 오브젝트 파일만 제거한다."
+      },
+      {
+        "option": "make mrproper",
+        "description": "정답. 커널 소스 트리를 완전히 초기화한다."
       },
       {
         "option": "make xconfig",
@@ -1271,12 +1271,12 @@
     "description": "modprobe는 커널 모듈을 로드할 때 modules.dep 파일을 참고하여 필요한 의존 모듈을 함께 로드한다.",
     "options": [
       {
-        "option": "insmod",
-        "description": "모듈을 직접 로드하지만 의존성을 자동 해결하지 않는다."
-      },
-      {
         "option": "lsmod",
         "description": "현재 로드된 모듈 목록을 확인한다."
+      },
+      {
+        "option": "insmod",
+        "description": "모듈을 직접 로드하지만 의존성을 자동 해결하지 않는다."
       },
       {
         "option": "rmmod",
@@ -1296,12 +1296,12 @@
     "description": "GRUB 패스워드 설정 시 MD5 해시를 생성하기 위해 grub-md5-crypt 명령을 사용한다.",
     "options": [
       {
-        "option": "password --md5",
-        "description": "설정 구문일 뿐 해시 생성 명령이 아니다."
-      },
-      {
         "option": "passwd --md5",
         "description": "리눅스 표준 passwd 명령에는 해당 옵션이 없다."
+      },
+      {
+        "option": "password --md5",
+        "description": "설정 구문일 뿐 해시 생성 명령이 아니다."
       },
       {
         "option": "md5crypt",
@@ -1322,12 +1322,12 @@
     "description": "SSH는 로그인 전 배너 메시지를 설정할 수 있으며 보안 접속을 제공한다.",
     "options": [
       {
-        "option": "ssh는 로그인 전에 보여주는 메시지를 별도의 파일로 지정 할 수 있다.",
-        "description": "정답. /etc/motd 또는 Banner 설정 사용."
-      },
-      {
         "option": "ssh는 IPv6 주소체계에서는 접속이 불가능하다.",
         "description": "SSH는 IPv6 지원."
+      },
+      {
+        "option": "ssh는 로그인 전에 보여주는 메시지를 별도의 파일로 지정 할 수 있다.",
+        "description": "정답. /etc/motd 또는 Banner 설정 사용."
       },
       {
         "option": "ssh서버의 환경 설정 파일은 /etc/sshd_config이고 실행 데몬 스크립트는 /etc/rc.d/init.d/sshd이다.",
@@ -1347,12 +1347,12 @@
     "description": "cpio에서 -t 옵션은 아카이브 목록만 출력한다.",
     "options": [
       {
-        "option": "-icvt",
-        "description": "정답. cpio 아카이브 내용 확인 옵션."
-      },
-      {
         "option": "-ic",
         "description": "단순 복구 모드."
+      },
+      {
+        "option": "-icvt",
+        "description": "정답. cpio 아카이브 내용 확인 옵션."
       },
       {
         "option": "-icdv",
@@ -1372,10 +1372,6 @@
     "description": "텍스트 로그와 바이너리 로그 구분 문제.",
     "options": [
       {
-        "option": "/var/log/xferlog",
-        "description": "정답. FTP 전송 로그이며 텍스트 형식."
-      },
-      {
         "option": "/var/log/btmp",
         "description": "바이너리 로그인 실패 기록."
       },
@@ -1386,6 +1382,10 @@
       {
         "option": "/var/log/lastlog",
         "description": "사용자 마지막 로그인 바이너리 기록."
+      },
+      {
+        "option": "/var/log/xferlog",
+        "description": "정답. FTP 전송 로그이며 텍스트 형식."
       }
     ]
   },
@@ -1397,16 +1397,16 @@
     "description": "대표 로그 파일의 용도 구분.",
     "options": [
       {
-        "option": "/var/log/dmesg : 시스템이 부팅할 때 출력되었던 로그 기록",
-        "description": "정답. 커널 부팅 메시지."
-      },
-      {
         "option": "/var/log/wtmp : 콘솔, ftp 등 접속이 실패한 경우 기록",
         "description": "실패 로그는 btmp."
       },
       {
         "option": "/var/log/lastlog : 부팅 시 동작하는 데몬 관련 정보 기록",
         "description": "사용자 마지막 로그인."
+      },
+      {
+        "option": "/var/log/dmesg : 시스템이 부팅할 때 출력되었던 로그 기록",
+        "description": "정답. 커널 부팅 메시지."
       },
       {
         "option": "/var/log/boot.log : telnet이나 ssh 마지막 접속 정보",
@@ -1418,11 +1418,12 @@
     "examKey": "lm11-20200613",
     "localId": 56,
     "subjectKey": 2,
-    "body": "다음 중 logrotate 설정 위치로 알맞은 것은?",
+    "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "logtate는 시스템과 관련된 로그 설정을 ( ㉠ )에서 제어하고, 응용 프로그램은 ( ㉡ )디렉터리 내에 위치하여 로그 파일을 관리하고 있다. 또한 ( ㉢ ) 디렉터리에 등록되어서 cron에 의해 스케줄링되어 실행되고 있다.",
     "description": "logrotate 기본 설정 파일과 스케줄 위치.",
     "options": [
       {
-        "option": "㉠ : /etc/logrotate.conf㉡ : /etc/logrotate.d㉢ : /etc/cron.daily",
+        "option": "㉠ : /etc/logrotate.conf\n㉡ : /etc/logrotate.d\n㉢ : /etc/cron.daily",
         "description": "정답. 기본 logrotate 구조."
       },
       {
@@ -1522,12 +1523,8 @@
     "description": "tar는 기본적으로 증분 백업 기능이 없다.",
     "options": [
       {
-        "option": "dump",
-        "description": "증분 백업 지원."
-      },
-      {
         "option": "tar",
-        "description": "정답. 기본 tar는 증분 백업 직접 지원 안함."
+        "description": "기본 tar는 증분 백업 직접 지원 안함."
       },
       {
         "option": "cpio",
@@ -1536,6 +1533,10 @@
       {
         "option": "rsync",
         "description": "증분 전송 가능."
+      },
+      {
+        "option": "dump",
+        "description": "증분 백업 지원."
       }
     ]
   },
