@@ -23,7 +23,6 @@
       data-exam-key="{{ q.examKey }}"
       data-subject-key="{{ q.subjectKey }}"
       data-local-id="{{ q.localId }}"
-      {% if q.notes %}data-notes="{{ q.notes | jsonify | escape }}"{% endif %}
       role="listitem">
       <div class="quiz-card__meta">
         {% if subject %}
@@ -35,8 +34,15 @@
       <div class="quiz-card__body">{{ q.localId }}. {{ q.body }}</div>
 
       {% if q.code and q.code != '' %}
-        <pre class="quiz-card__code" aria-label="설명/코드"><code>{{ q.code | replace: '\n', '
-' }}</code></pre>
+        <div class="terminal-box" aria-label="설명/코드">
+          <div class="terminal-pre-wrap">
+            {% assign prompt = 'cherry@rhombus:~$' %}
+            {% assign prompt_esc = prompt | escape %}
+            {% assign code_esc = q.code | escape %}
+            {% capture prompt_span %}<span class="term-prompt">{{ prompt_esc }}</span>{% endcapture %}
+            <pre class="terminal-content">{{ code_esc | replace: prompt_esc, prompt_span }}</pre>
+          </div>
+        </div>
       {% endif %}
 
       <ol class="quiz-card__options quiz-card__options--selectable" start="1" data-shuffle role="list">
@@ -58,11 +64,6 @@
         {% assign correct_opt = q.options[opt_index] | default: q.options[0] %}
         <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{% if correct_opt.option %}{{ correct_opt.description }}{% else %}{{ correct_opt }}{% endif %}</p>
         <p class="quiz-card__description">{{ q.description }}</p>
-        <button type="button" class="quiz-card__note-btn">이 문제 노트</button>
-        <section class="quiz-memo-wrap" id="quiz-memo-wrap" aria-label="메모">
-          <p id="quiz-memo-current" class="quiz-memo-current" aria-live="polite"></p>
-          <textarea id="quiz-memo" class="quiz-memo-textarea" rows="6" placeholder="풀이 메모, 암기할 내용 등을 적어보세요." aria-label="메모 입력"></textarea>
-        </section>
         {% if q.tags and q.tags.size > 0 %}
           <ul class="quiz-card__tags" aria-label="태그">
             {% for tag in q.tags %}
@@ -131,7 +132,7 @@
   }
 
   function notifyAnswerSheet() {
-    document.dispatchEvent(new CustomEvent('quiz-answer-changed'));
+    // answer sheet feature removed
   }
 
   // Shuffle options and set choice numbers
@@ -176,24 +177,7 @@
   });
 
   // Note button
-  document.querySelectorAll('.quiz-card__note-btn').forEach(function (btn) {
-    var card = btn.closest('.quiz-card--bank');
-    if (!card) return;
-    btn.addEventListener('click', function () {
-      var key = getQuestionKey(card);
-      if (!key) return;
-      var notes = card.getAttribute('data-notes') || '';
-      document.dispatchEvent(new CustomEvent('quiz-memo-select', { detail: { key: key, notes: notes } }));
-    });
-  });
-
-  // Reset answers
-  document.addEventListener('quiz-answer-reset', function () {
-    answers = {};
-    saveAnswers(answers);
-    cards.forEach(function (card) { applySelectionToCard(card, answers); });
-    notifyAnswerSheet();
-  });
+  // (memo/note feature removed)
 
   // Highlight "틀린 것" in question body
   document.querySelectorAll('.quiz-card--bank .quiz-card__body').forEach(function (el) {

@@ -207,7 +207,6 @@
     document.addEventListener("DOMContentLoaded", function () {
         // layout init always
         initLayoutShell();
-
         if (!$("wsText") || !$("wsSend") || !$("wsMessages")) {
             return;
         }

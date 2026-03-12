@@ -1024,6 +1024,58 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+/* Terminal-like viewer (shared) */
+.terminal-box { display: block; }
+.terminal-pre-wrap {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  background: #0d1117;
+}
+.terminal-pre-wrap::before {
+  content: "● ● ●";
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 12px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #484f58;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+.terminal-pre-wrap {
+  height: var(--terminal-height, auto);
+  min-height: var(--terminal-height, auto);
+  display: flex;
+  flex-direction: column;
+}
+.app-content pre.terminal-content {
+  margin: 0;
+  padding: var(--space-4);
+  font-size: 13px;
+  line-height: 1.45;
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", ui-monospace, monospace;
+  background: #0d1117;
+  color: #d4d4d4;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+  height: 100%;
+  min-height: 0;
+  flex: 1;
+}
+.terminal-content .term-prompt { color: #4ec9b0; font-weight: 600; }
+.terminal-content.log-loading { color: #858585; }
+.terminal-content.log-error { color: #f87171; }
 .app-content pre code,
 .app-content .highlight code,
 .app-content code {
@@ -1220,7 +1272,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 
 .quiz-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  grid-template-columns: 1fr; /* repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); */
   gap: var(--space-5, 0.75rem);
   list-style: none;
   padding: 0;
@@ -1672,6 +1724,17 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   margin-left: auto;
   margin-right: auto;
   padding: var(--space-4) var(--space-3);
+}
+.quiz-grid--bank.is-one-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.quiz-grid--bank.is-one-column .quiz-card--bank:not([hidden]) {
+  width: 100%;
+  max-width: 100%;
 }
 .quiz-bank-section.is-single-mode .quiz-card--bank:not([hidden]) {
   width: 100%;

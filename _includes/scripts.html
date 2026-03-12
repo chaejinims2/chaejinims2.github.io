@@ -127,5 +127,56 @@
   window.initCodeCopyButtons = initCodeCopyButtons;
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCodeCopyButtons);
   else initCodeCopyButtons();
+
+  /* Labs: LM11 log viewer (PJAX-safe) */
+  function initLm11LogPage() {
+    var base = document.querySelector('base');
+    var baseUrl = base ? base.getAttribute('href') : '';
+    var fixedPre = document.querySelector('.log-content');
+    var selectEl = document.getElementById('lm11-log-select');
+    if (!fixedPre || !selectEl) return;
+
+    if (selectEl.dataset.lm11Init === '1') return;
+    selectEl.dataset.lm11Init = '1';
+
+    function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
+    function resolveUrl(url) {
+      var u = String(url || '');
+      if (baseUrl && u.indexOf('/') === 0) return baseUrl.replace(/\/$/, '') + u;
+      return u;
+    }
+    function setFixedLog(text) {
+      var t = String(text == null ? '' : text);
+      var prompt = 'cherry@rhombus:~$';
+      var promptEsc = esc(prompt);
+      var html = esc(t);
+      /* 특정 프롬프트 키워드만 강조 */
+      if (promptEsc) {
+        html = html.split(promptEsc).join('<span class="term-prompt">' + promptEsc + '</span>');
+      }
+      fixedPre.innerHTML = html;
+      fixedPre.classList.remove('log-loading', 'log-error');
+      fixedPre.dataset.loaded = '1';
+    }
+    function loadSelectedLog() {
+      var url = resolveUrl(selectEl.value || '');
+      if (!url) return;
+      fixedPre.textContent = '불러오는 중…';
+      fixedPre.classList.add('log-loading');
+      fetch(url).then(function(r) { return r.ok ? r.text() : Promise.reject(new Error(r.status)); })
+        .then(function(text) { setFixedLog(text); })
+        .catch(function() {
+          fixedPre.textContent = '로그를 불러올 수 없습니다. (파일 경로를 확인하세요)';
+          fixedPre.classList.remove('log-loading');
+          fixedPre.classList.add('log-error');
+          fixedPre.dataset.loaded = '1';
+        });
+    }
+
+    selectEl.addEventListener('change', loadSelectedLog);
+    if (!fixedPre.dataset.loaded) loadSelectedLog();
+  }
+  window.initLm11LogPage = initLm11LogPage;
+  try { initLm11LogPage(); } catch (e) {}
 })();
 </script>

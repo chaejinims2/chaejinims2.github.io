@@ -9,4 +9,7 @@ cd "$SCRIPT_DIR"
 export BUNDLE_USER_HOME="$PWD/.bundle"
 export BUNDLE_APP_CONFIG="$PWD/.bundle"
 
-bundle exec jekyll serve --port 4001
+# bundle exec jekyll serve --port 4001
+mkdir -p "_pages/labs/lm11/prac/log/"
+rsync -av --delete "_data/lm11/prac/log/" "_pages/labs/lm11/prac/log/"
+bundle exec jekyll serve --host 0.0.0.0 --port 4001
