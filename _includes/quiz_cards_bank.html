@@ -2,11 +2,8 @@
 
 <style>
 /* 퀴즈 뱅크 카드 전용 스타일(이 include에서만 사용) */
-.quiz-header { margin-bottom: var(--space-6, 1rem); }
-.quiz-title { font-size: 1.25rem; margin: 0 0 0.25rem; font-weight: 700; }
-.quiz-subtitle { font-size: 0.95rem; color: var(--app-muted); margin: 0; }
 
-.quiz-grid {
+.quiz-cards-set {
   display: grid;
   grid-template-columns: 1fr; /* repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); */
   gap: var(--space-5, 0.75rem);
@@ -16,7 +13,8 @@
 }
 .quiz-card {
   width: 100%;
-  max-width: 100%;
+  max-width: 100%;      /* 또는 40rem 정도 */
+  margin: 0 auto;        /* 그리드 셀 안에서 가운데 정렬 */
   background: var(--surface-1, var(--app-panel));
   border: 1px solid var(--app-border);
   border-radius: var(--radius-3, 0.5rem);
@@ -24,8 +22,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  break-inside: avoid;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .quiz-card:hover {
   border-color: var(--app-muted);
@@ -45,13 +41,13 @@
   color: var(--app-text);
 }
 .quiz-body-wrong { text-decoration: underline; }
-.quiz-card--bank .quiz-card__meta {
+.quiz-card .quiz-card__meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2) var(--space-4);
 }
-.quiz-card--bank .quiz-card__num { flex: 0 0 auto; }
+.quiz-card .quiz-card__num { flex: 0 0 auto; }
 .quiz-card__subject {
   margin-left: auto;
   font-size: var(--fs-1);
@@ -80,18 +76,18 @@
   color: var(--app-muted);
   line-height: 1.5;
 }
-.quiz-card--bank .quiz-card__options {
+.quiz-card .quiz-card__options {
   list-style: none;
   padding-left: 0;
   counter-reset: quizOpt;
 }
 .quiz-card__option { margin-bottom: 0.25rem; }
-.quiz-card--bank .quiz-card__option {
+.quiz-card .quiz-card__option {
   display: flex;
   align-items: baseline;
   gap: 0.5em;
 }
-.quiz-card--bank .quiz-card__option::before {
+.quiz-card .quiz-card__option::before {
   counter-increment: quizOpt;
   content: counter(quizOpt);
   display: inline-flex;
@@ -106,44 +102,29 @@
   font-size: 0.9em;
   line-height: 1;
 }
-.quiz-card--bank .quiz-card__options--selectable .quiz-card__option {
+.quiz-card .quiz-card__options--selectable .quiz-card__option {
   cursor: pointer;
   transition: opacity 0.15s ease;
 }
-.quiz-card--bank .quiz-card__options--selectable .quiz-card__option:hover {
+.quiz-card .quiz-card__options--selectable .quiz-card__option:hover {
   opacity: 0.9;
 }
-.quiz-card--bank .quiz-card__option.is-selected::before {
+.quiz-card .quiz-card__option.is-selected::before {
   background: var(--app-muted);
   color: #fff;
   border-color: #fff;
 }
-.quiz-card--bank[data-subject-key="1"]:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"] {
-  color: var(--quiz-num-1, var(--accent));
+.quiz-card[data-subject-key="1"] { --quiz-accent-current: var(--quiz-num-1, var(--accent)); }
+.quiz-card[data-subject-key="2"] { --quiz-accent-current: var(--quiz-num-2, #34d399); }
+.quiz-card[data-subject-key="3"] { --quiz-accent-current: var(--quiz-num-3, #f59e0b); }
+.quiz-card:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"] {
+  color: var(--quiz-accent-current);
   font-weight: 600;
 }
-.quiz-card--bank[data-subject-key="1"]:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"]::before {
-  background: var(--quiz-num-1, var(--accent));
+.quiz-card:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"]::before {
+  background: var(--quiz-accent-current);
   color: var(--app-bg);
-  border-color: var(--quiz-num-1, var(--accent));
-}
-.quiz-card--bank[data-subject-key="2"]:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"] {
-  color: var(--quiz-num-2, #34d399);
-  font-weight: 600;
-}
-.quiz-card--bank[data-subject-key="2"]:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"]::before {
-  background: var(--quiz-num-2, #34d399);
-  color: var(--app-bg);
-  border-color: var(--quiz-num-2, #34d399);
-}
-.quiz-card--bank[data-subject-key="3"]:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"] {
-  color: var(--quiz-num-3, #f59e0b);
-  font-weight: 600;
-}
-.quiz-card--bank[data-subject-key="3"]:has(details.quiz-card__answer-wrap[open]) .quiz-card__option[data-correct="true"]::before {
-  background: var(--quiz-num-3, #f59e0b);
-  color: var(--app-bg);
-  border-color: var(--quiz-num-3, #f59e0b);
+  border-color: var(--quiz-accent-current);
 }
 .quiz-card__option--answer { color: var(--accent); font-weight: 600; }
 
@@ -190,20 +171,9 @@
 .quiz-card__answer.quiz-card__num--range1 strong,
 .quiz-card__answer.quiz-card__num--range2 strong,
 .quiz-card__answer.quiz-card__num--range3 strong { color: inherit; }
-.quiz-grid--bank.is-one-column {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin-left: auto;
-  margin-right: auto;
-}
-.quiz-grid--bank.is-one-column .quiz-card--bank:not([hidden]) {
-  width: 100%;
-  max-width: 100%;
-}
 </style>
 
-<div class="quiz-grid quiz-grid--bank" role="list">
+<div class="quiz-cards-set" role="list">
   {% for q in questions %}
     {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
     {% assign subject = site.data.lm11.subjects | where: "key", q.subjectKey | first %}
@@ -214,8 +184,8 @@
       {% assign correct_answer_num = 1 %}
     {% endif %}
 
-    <article
-      class="quiz-card quiz-card--bank"
+    <div
+      class="quiz-card"
       data-exam-key="{{ q.examKey }}"
       data-subject-key="{{ q.subjectKey }}"
       data-local-id="{{ q.localId }}"
@@ -268,14 +238,14 @@
           </ul>
         {% endif %}
       </details>
-    </article>
+    </div>
   {% endfor %}
 </div>
 
 <script>
 (function () {
   var STORAGE_KEY = 'lm11-answer-sheet';
-  var cards = document.querySelectorAll('.quiz-card--bank');
+  var cards = document.querySelectorAll('.quiz-card');
 
   function shuffleList(list) {
     var items = [].slice.call(list.children);
@@ -332,7 +302,7 @@
   }
 
   // Shuffle options and set choice numbers
-  document.querySelectorAll('.quiz-grid--bank .quiz-card__options[data-shuffle]').forEach(function (ol) {
+  document.querySelectorAll('.quiz-cards-set .quiz-card__options[data-shuffle]').forEach(function (ol) {
     shuffleList(ol);
     setChoiceNumbers(ol);
   });
@@ -343,8 +313,8 @@
   });
 
   // Option click/keyboard
-  document.querySelectorAll('.quiz-grid--bank .quiz-card__options--selectable').forEach(function (ol) {
-    var card = ol.closest('.quiz-card--bank');
+  document.querySelectorAll('.quiz-cards-set .quiz-card__options--selectable').forEach(function (ol) {
+    var card = ol.closest('.quiz-card');
     if (!card) return;
     ol.querySelectorAll('.quiz-card__option').forEach(function (li) {
       li.addEventListener('click', function () {
@@ -376,7 +346,7 @@
   // (memo/note feature removed)
 
   // Highlight "틀린 것" in question body
-  document.querySelectorAll('.quiz-card--bank .quiz-card__body').forEach(function (el) {
+  document.querySelectorAll('.quiz-card .quiz-card__body').forEach(function (el) {
     if (el.textContent.indexOf('틀린 것') !== -1) {
       el.innerHTML = el.innerHTML.replace(/틀린 것/g, '<span class="quiz-body-wrong">틀린 것</span>');
     }

@@ -965,11 +965,14 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   font-size: var(--fs-2, 0.85rem);
   line-height: 1.5;
 }
-/* 코드 블록 복사 버튼 (오른쪽 상단) */
-.app-content .code-block-copy-btn {
+/* 코드 블록 복사 버튼 (터미널 상단바 전용) */
+.terminal-pre-wrap {
+  position: relative;
+}
+.terminal-pre-wrap .code-block-copy-btn {
   position: absolute;
-  top: 0rem;
-  right: 0.5rem;
+  top: 0.35rem;
+  right: 0.75rem;
   width: 1rem;
   height: 1rem;
   /* padding: 0.25rem; */
@@ -1062,8 +1065,8 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   box-shadow: none;
   overflow-x: auto;
   overflow-y: auto;
-  white-space: pre;
-  word-break: normal;
+  white-space: pre-wrap;   /* 줄바꿈(\n)은 살리면서 자동 줄바꿈 허용 */
+  word-break: break-word;  /* 너무 긴 단어/경로는 적당히 잘라서 줄바꿈 */
   overflow-wrap: normal;
   height: 100%;
   min-height: 0;

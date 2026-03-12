@@ -78,13 +78,16 @@
   function initCodeCopyButtons() {
     var content = document.querySelector('.app-content');
     if (!content) return;
-    /* pre만 대상으로 함 → 블록당 pre 하나라 버튼도 하나만 붙음 (.highlight 미사용) */
-    content.querySelectorAll('pre').forEach(function(block) {
-      if (block.querySelector('.code-block-copy-btn')) return;
-      addCopyButton(block);
+    /* 터미널 박스에만 복사 버튼 부착 */
+    content.querySelectorAll('.terminal-pre-wrap').forEach(function(wrap) {
+      if (wrap.querySelector('.code-block-copy-btn')) return;
+      addCopyButtonForTerminal(wrap);
     });
   }
-  function addCopyButton(block) {
+
+  function addCopyButtonForTerminal(wrap) {
+      var pre = wrap.querySelector('.terminal-content');
+      if (!pre) return;
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'code-block-copy-btn';
@@ -92,7 +95,7 @@
       btn.setAttribute('aria-label', '코드 복사');
       btn.innerHTML = copyIconSvg;
       btn.addEventListener('click', function() {
-        var text = getCodeText(block);
+        var text = getCodeText(pre);
         if (!text) return;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(function() { showCopied(btn); }).catch(function() { fallbackCopy(text, btn); });
@@ -100,7 +103,7 @@
           fallbackCopy(text, btn);
         }
       });
-    block.insertBefore(btn, block.firstChild);
+    wrap.appendChild(btn);
   }
   function showCopied(btn) {
     btn.classList.add('copied');
