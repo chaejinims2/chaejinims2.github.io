@@ -11,6 +11,12 @@
   {% for q in questions %}
     {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
     {% assign subject = site.data.lm11.subjects | where: "key", q.subjectKey | first %}
+    {% if exam and exam.answers %}
+      {% assign answer_index = q.localId | minus: 1 %}
+      {% assign correct_answer_num = exam.answers[answer_index] %}
+    {% else %}
+      {% assign correct_answer_num = 1 %}
+    {% endif %}
 
     <article
       class="quiz-card quiz-card--bank"
@@ -40,7 +46,7 @@
             role="button"
             tabindex="0"
             aria-pressed="false"
-            {% if forloop.first %}data-correct="true"{% endif %}>{% if opt.option %}{{ opt.option }}{% else %}{{ opt }}{% endif %}</li>
+            {% if forloop.index == correct_answer_num %}data-correct="true"{% endif %}>{% if opt.option %}{{ opt.option }}{% else %}{{ opt }}{% endif %}</li>
         {% endfor %}
       </ol>
 
@@ -48,7 +54,9 @@
         <summary class="quiz-card__toggle">
           <span class="quiz-card__toggle-label">해설 보기</span>
         </summary>
-        {% assign first_opt = q.options | first %}<p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{% if first_opt.option %}{{ first_opt.description }}{% else %}{{ first_opt }}{% endif %}</p>
+        {% assign opt_index = correct_answer_num | minus: 1 %}
+        {% assign correct_opt = q.options[opt_index] | default: q.options[0] %}
+        <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{% if correct_opt.option %}{{ correct_opt.description }}{% else %}{{ correct_opt }}{% endif %}</p>
         <p class="quiz-card__description">{{ q.description }}</p>
         <button type="button" class="quiz-card__note-btn">이 문제 노트</button>
         <section class="quiz-memo-wrap" id="quiz-memo-wrap" aria-label="메모">
