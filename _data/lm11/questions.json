@@ -1891,7 +1891,7 @@
       "localId": 75,
       "subjectKey": 3,
       "body": "다음 빈 칸에 들어갈 수 있는 명령으로 알맞은 것은?",
-      "code": "cherry@rhombus:~$ cd /etc/mail\n# (괄호) sendmail.mc > sendmail.cf",
+      "code": "cherry@rhombus:~$ cd /etc/mail\n cherry@rhombus:~$ (괄호) sendmail.mc > sendmail.cf",
       "options": [
           {
               "option": "newaliases",
@@ -1916,7 +1916,7 @@
       "localId": 76,
       "subjectKey": 3,
       "body": "다음은 /etc/named.conf 파일 설정의 일부이다. 도메인 설정에 필요한 zone 파일을 별도의 파일로 지정하려고 할 때 빈 칸에 들어갈 내용으로 알맞은 것은?",
-      "code": "(괄호) \"/etc/named.rfc1912.zones\";",
+      "code": "cherry@rhombus:~$ (괄호) \"/etc/named.rfc1912.zones\";",
       "options": [
           {
               "option": "include",
@@ -9354,7 +9354,7 @@
       "localId": 79,
       "subjectKey": 3,
       "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
-      "code": "cherry@rhombus:~$ cd /etc/mail\n# (㉠) sendmail.mc (㉡) sendmail.cf",
+      "code": "cherry@rhombus:~$ cd /etc/mail\n cherry@rhombus:~$ (㉠) sendmail.mc (㉡) sendmail.cf",
       "options": [
           {
               "option": "㉠ m4, ㉡ ＞",
