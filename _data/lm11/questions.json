@@ -148,7 +148,7 @@
     "localId": 6,
     "subjectKey": 1,
     "body": "다음 명령의 실행 결과로 ( 괄호 )안에 알맞은 것은?",
-    "code": "cat test.sh\n#!/bin/bash\necho \"#$0 $1 #\"\n./test.sh /the 2 (괄호)",
+    "code": "cherry@rhombus:$ cat test.sh\n#!/bin/bash\necho \"#$0 $1 #\"\ncherry@rhombus:$ ./test.sh /the /sharp\n (괄호)",
     "options": [
       {
         "option": "./test.sh /the #",
