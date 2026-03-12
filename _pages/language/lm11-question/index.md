@@ -48,6 +48,23 @@ title: Linux Master 1급 1차
   font-size: var(--fs-2);
   color: var(--app-muted);
 }
+
+.quiz-apply-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-500);
+  color: var(--app-muted);
+  background: transparent;
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: var(--space-6);
+}
+.quiz-apply-btn:hover {
+  color: var(--app-text);
+  border-color: var(--app-muted);
+}
 .quiz-set-wrap {
   /* width: 50rem; */
   margin: 0;
@@ -72,6 +89,7 @@ title: Linux Master 1급 1차
       {% endfor %}
     </select>
   </div>
+  <button type="button" id="bank-filter-apply" class="quiz-apply-btn">Apply</button>
 </header>
 
 <div id="bank-section" aria-label="문제 목록">
@@ -85,6 +103,7 @@ title: Linux Master 1급 1차
   var examSelect = document.getElementById('bank-exam-select');
   var subjectSelect = document.getElementById('bank-subject-select');
   var bankSection = document.getElementById('bank-section');
+  var applyBtn = document.getElementById('bank-filter-apply');
 
   var cards = document.querySelectorAll('.quiz-card');
   if (!cards.length) return;
@@ -131,13 +150,8 @@ title: Linux Master 1급 1차
     document.getElementById('bank-shuffle-order').addEventListener('click', shuffleOrder);
   }
 
-  if (examSelect) {
-    examSelect.addEventListener('change', function () {
-      applyFilter();
-    });
-  }
-  if (subjectSelect) {
-    subjectSelect.addEventListener('change', function () {
+  if (applyBtn) {
+    applyBtn.addEventListener('click', function () {
       applyFilter();
     });
   }
