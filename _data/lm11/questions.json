@@ -2041,7 +2041,7 @@
       "localId": 81,
       "subjectKey": 3,
       "body": "다음 ( 괄호 )안에 들어갈 내용을 알맞은 것은?",
-      "code": "[root@www htdocs]# cat test.php\n(괄호)\nphpinfo();\n(괄호)",
+      "code": "cherry@rhombus:~$ cat test.php\n(괄호)\nphpinfo();\n(괄호)",
       "options": [
           {
               "option": "㉠ <?php ㉡ ?>",
@@ -2684,7 +2684,7 @@
       "localId": 7,
       "subjectKey": 1,
       "body": "다음 그림의 명령 결과에 대한 설명으로 알맞은 것은?",
-      "code": "[lin@www ~]$ ls\njoon.txt\n[lin@www ~]$ mv joon.txt lin.txt || echo \"OK\"",
+      "code": "cherry@rhombus:~$ ls\njoon.txt\n[lin@www ~]$ mv joon.txt lin.txt || echo \"OK\"",
       "options": [
           {
               "option": "mv 명령의 사용법 오류로 인해 오류 메시지가 나타난다.",
@@ -3046,7 +3046,7 @@
       "localId": 22,
       "subjectKey": 2,
       "body": "다음 그림의 결과에서 lin 사용자가 /project 디렉터리에 파일을 생성했을 경우에 해당 파일의 그룹 소유권과 관련된 설명으로 알맞은 것은?",
-      "code": "[root@www ~]# id lin\nuid=505(lin) gid=508(kait) groups=508(kait),504(project)\n[root@www ~]# ls -ld /project\ndrwxrws--T. 2 root project 4096 Nov 17 08:08 project",
+      "code": "cherry@rhombus:~$ id lin\nuid=505(lin) gid=508(kait) groups=508(kait),504(project)\n[root@www ~]# ls -ld /project\ndrwxrws--T. 2 root project 4096 Nov 17 08:08 project",
       "options": [
           {
               "option": "파일의 그룹 소유권은 2차 그룹인 project가 된다.",
@@ -3071,7 +3071,7 @@
       "localId": 23,
       "subjectKey": 2,
       "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
-      "code": "[root@www ~]#\n/bin/ls\nlinux-gate.so.1 => (0x00554000)\nlibselinux.so.1 => /lib/libselinux.so.1 (0x004a5000)\nlibrt.so.1 => /lib/librt.so.1 (0x00365000)\n...",
+      "code": "cherry@rhombus:~$ \n/bin/ls\nlinux-gate.so.1 => (0x00554000)\nlibselinux.so.1 => /lib/libselinux.so.1 (0x004a5000)\nlibrt.so.1 => /lib/librt.so.1 (0x00365000)\n...",
       "options": [
           {
               "option": "ldd",
@@ -3218,7 +3218,7 @@
       "localId": 29,
       "subjectKey": 2,
       "body": "다음 그림과 같이 파일 및 디렉터리가 생성된다. umask 명령을 실행했을 경우에 출력되는 값으로 알맞은 것은?",
-      "code": "[lin@www ~]$ touch a.txt\n[lin@www ~]$ mkdir aaa\n[lin@www ~]$ ls -l\n-rw------- 1 lin lin 0 Apr 15 18:07 a.txt\ndrwx------ 2 lin lin 4096 Apr 15 18:07 aaa",
+      "code": "cherry@rhombus:~$ touch a.txt\n[lin@www ~]$ mkdir aaa\n[lin@www ~]$ ls -l\n-rw------- 1 lin lin 0 Apr 15 18:07 a.txt\ndrwx------ 2 lin lin 4096 Apr 15 18:07 aaa",
       "options": [
           {
               "option": "7000",
@@ -3438,7 +3438,7 @@
       "localId": 38,
       "subjectKey": 2,
       "body": "다음 그림에 해당하는 명령어로 알맞은 것은?",
-      "code": "[root@www ~]#\nFilesystem       Size Used Avail Use% Mounted on\n/dev/sda1         15G 6.3G 7.4G  46% /\ntmpfs            2.0G 304K 2.0G   1% /dev/shm\n/dev/sda3        2.0G 3.2M 1.9G   1% /data",
+      "code": "cherry@rhombus:~$ \nFilesystem       Size Used Avail Use% Mounted on\n/dev/sda1         15G 6.3G 7.4G  46% /\ntmpfs            2.0G 304K 2.0G   1% /dev/shm\n/dev/sda3        2.0G 3.2M 1.9G   1% /data",
       "options": [
           {
               "option": "quota",
@@ -4613,7 +4613,7 @@
       "localId": 86,
       "subjectKey": 3,
       "body": "다음은 중 삼바 서버의 환경 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
-      "code": "[www]\ncomment = Web Directory\n(괄호) = /usr/local/apache/htdocs",
+      "code": "cherry@rhombus:~$ [www]\ncomment = Web Directory\n(괄호) = /usr/local/apache/htdocs",
       "options": [
           {
               "option": "public",
@@ -5053,7 +5053,7 @@
       "localId": 4,
       "subjectKey": 1,
       "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
-      "code": "[root@wwww ~]# ip addr show\n2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000\n    link/ether 08:00:27:a1:b0:cb brd ff:ff:ff:ff:ff:ff\n    inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3\n       valid_lft 76673sec preferred_lft 76673sec\n    inet6 fe80::5138:1898:628f:e139/64 scope link noprefixroute\n       valid_lft forever preferred_lft forever",
+      "code": "cherry@rhombus:~$ ip addr show\n2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000\n    link/ether 08:00:27:a1:b0:cb brd ff:ff:ff:ff:ff:ff\n    inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3\n       valid_lft 76673sec preferred_lft 76673sec\n    inet6 fe80::5138:1898:628f:e139/64 scope link noprefixroute\n       valid_lft forever preferred_lft forever",
       "options": [
           {
               "option": "ip",
@@ -5103,7 +5103,7 @@
       "localId": 6,
       "subjectKey": 1,
       "body": "다음 그림에 해당하는 명령으로 알맞은 것은?",
-      "code": "[root@www ~]\naccess control enabled, only authorized clients can connect\nSI: localuser:root",
+      "code": "cherry@rhombus:~$ \naccess control enabled, only authorized clients can connect\nSI: localuser:root",
       "options": [
           {
               "option": "xhost",
@@ -6205,7 +6205,7 @@
       "localId": 51,
       "subjectKey": 2,
       "body": "명령의 결과가 다음과 같은 경우 관련 설명으로 틀린 것은?",
-      "code": "[kait@www ~]$ ls -ld /tmp\ndrwxrwxrwx 24 root root 4096 Jan 12 20:59 /tmp\n[kait@www ~]$ ls -l /tmp\n-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 lin.txt\n-rw-r--r-- 1 kait kait 513 Jan 11 21:05 joon.txt",
+      "code": "cherry@rhombus:~$ ls -ld /tmp\ndrwxrwxrwx 24 root root 4096 Jan 12 20:59 /tmp\n[kait@www ~]$ ls -l /tmp\n-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 lin.txt\n-rw-r--r-- 1 kait kait 513 Jan 11 21:05 joon.txt",
       "options": [
           {
               "option": "kait 사용자는 joon.txt 파일을 수정할 수 없다.",
@@ -6230,7 +6230,7 @@
       "localId": 52,
       "subjectKey": 2,
       "body": "명령의 결과가 다음과 같은 경우에 실행되지 않는 명령으로 알맞은 것은?",
-      "code": "[ihd@wwww]$ ls -l\ntotal 4\n-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 joon.txt\ndrwxrwxr-x 1 ihd ihd 6 Jan 11 21:05 lin",
+      "code": "cherry@rhombus:~$ ls -l\ntotal 4\n-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 joon.txt\ndrwxrwxr-x 1 ihd ihd 6 Jan 11 21:05 lin",
       "options": [
           {
               "option": "ln joon.txt j",
@@ -6890,7 +6890,7 @@
       "localId": 79,
       "subjectKey": 3,
       "body": "다음 그림에 해당하는 명령어로 알맞은 것은?",
-      "code": "[root@www ~]# rpcinfo -p\n   program     vers proto   port  service\n 100000    4   tcp    111  portmapper\n 100000    3   tcp    111  portmapper\n 100000    2   tcp    111  portmapper\n 100000    4   udp    111  portmapper\n 100000    3   udp    111  portmapper\n 100000    2   udp    111  portmapper\n 100024    1   udp  44921  status\n 100024    1   tcp  36930  status\n 100005    1   udp  20048  mountd\n 100005    1   tcp  20048  mountd\n 100005    2   udp  20048  mountd\n 100005    2   tcp  20048  mountd\n 100005    3   udp  20048  mountd\n 100005    3   tcp  20048  mountd\n 100003    3   tcp   2049  nfs",
+      "code": "cherry@rhombus:~$ rpcinfo -p\n   program     vers proto   port  service\n 100000    4   tcp    111  portmapper\n 100000    3   tcp    111  portmapper\n 100000    2   tcp    111  portmapper\n 100000    4   udp    111  portmapper\n 100000    3   udp    111  portmapper\n 100000    2   udp    111  portmapper\n 100024    1   udp  44921  status\n 100024    1   tcp  36930  status\n 100005    1   udp  20048  mountd\n 100005    1   tcp  20048  mountd\n 100005    2   udp  20048  mountd\n 100005    2   tcp  20048  mountd\n 100005    3   udp  20048  mountd\n 100005    3   tcp  20048  mountd\n 100003    3   tcp   2049  nfs",
       "options": [
           {
               "option": "rpcinfo",
@@ -7685,7 +7685,7 @@
       "localId": 11,
       "subjectKey": 1,
       "body": "다음 명령의 결과에 대한 설명으로 알맞은 것은?",
-      "code": "[ihd@www ~]# echo \"My Home is 'pwd'\"\n* Back quotes 사용한 예제임",
+      "code": "cherry@rhombus:~$ echo \"My Home is 'pwd'\"\n* Back quotes 사용한 예제임",
       "options": [
           {
               "option": "My Home is '/home/ihd'",
@@ -7977,7 +7977,7 @@
       "localId": 23,
       "subjectKey": 2,
       "body": "다음 결과에 해당하는 명령어로 알맞은 것은?",
-      "code": "[root@www ~]#\nLast password change : never\nPassword expires : never\nPassword inactive : never\nAccount expires : never\nMinimum number of days between password change : 0\nMaximum number of days between password change : 99999\nNumber of days of warning before password expires : 7\n[root@www ~]#",
+      "code": "cherry@rhombus:~$ \nLast password change : never\nPassword expires : never\nPassword inactive : never\nAccount expires : never\nMinimum number of days between password change : 0\nMaximum number of days between password change : 99999\nNumber of days of warning before password expires : 7\n[root@www ~]#",
       "options": [
           {
               "option": "chage –l 사용자명",
@@ -8050,7 +8050,7 @@
       "localId": 26,
       "subjectKey": 2,
       "body": "다음과 같이 허가권이 설정된 경우에 관련 설명으로 알맞은 것은?",
-      "code": "[root@www-1]# ls -l /usr/bin/passwd\n-rwsr-xr-x. 1 root root 27856 Apr 1 2020 /usr/bin/passwd",
+      "code": "cherry@rhombus:~$ ls -l /usr/bin/passwd\n-rwsr-xr-x. 1 root root 27856 Apr 1 2020 /usr/bin/passwd",
       "options": [
           {
               "option": "ihsuser 사용자가 실행하면 실행하는 동안 root 사용자 권한으로 인정된다.",
@@ -8566,7 +8566,7 @@
       "localId": 47,
       "subjectKey": 2,
       "body": "다음 결과에 해당하는 명령어로 알맞은 것은?",
-      "code": "[root@www ~]#\nReading all physical volumes. This may take a while...\nFound volume group \"lvme\" using metadata type lvm2",
+      "code": "cherry@rhombus:~$ \nReading all physical volumes. This may take a while...\nFound volume group \"lvme\" using metadata type lvm2",
       "options": [
           {
               "option": "vgscan",
@@ -9204,7 +9204,7 @@
       "localId": 73,
       "subjectKey": 3,
       "body": "다음은 NFS 서버에서 공유된 내용을 확인할 결과이다. 관련 명령어로 알맞은 것은?",
-      "code": "[root@www ~]#\n/data  192.168.56.0/24(sync,wdelay,hide,no_subtree_check,root_squash,no_all_squash)\n/data  192.168.13.8/24(sync,wdelay,hide,no_subtree_check,root_squash,all_squash)\n[root@www ~]#",
+      "code": "cherry@rhombus:~$ \n/data  192.168.56.0/24(sync,wdelay,hide,no_subtree_check,root_squash,no_all_squash)\n/data  192.168.13.8/24(sync,wdelay,hide,no_subtree_check,root_squash,all_squash)\n[root@www ~]#",
       "options": [
           {
               "option": "nfsstauts",
