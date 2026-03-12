@@ -7433,302 +7433,302 @@
       ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 1,
-      "subjectKey": 1,
-      "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
-      "code": "리눅스 커널은 ( ) (이)가 만들었는데, 이것은 ( ) (이)가 개발한 교육용 유닉스인 미닉스를 참고해서 만들었다.",
-      "options": [
-          {
-              "option": "㉠ 리누스 토발즈, ㉡ 앤드루 S. 타넨바움",
-              "description": ""
-          },
-          {
-              "option": "㉠ 리처드 스톨먼, ㉡ 리누스 토발즈",
-              "description": ""
-          },
-          {
-              "option": "㉠ 리처드 스톨먼, ㉡ 켄 톰슨",
-              "description": ""
-          },
-          {
-              "option": "㉠ 켄 톰슨, ㉡ 데니스 리치",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 1,
+    "subjectKey": 1,
+    "body": "다음 빈 칸에 들어갈 내용으로 알맞은 것은?",
+    "code": "리눅스 커널은 ( ) (이)가 만들었는데, 이것은 ( ) (이)가 개발한 교육용 유닉스인 미닉스를 참고해서 만들었다.",
+    "options": [
+      {
+        "option": "㉠ 리누스 토발즈, ㉡ 앤드루 S. 타넨바움",
+        "description": "정답. 리눅스 커널은 리누스 토발즈가 만들었고, 초기 개발 과정에서 앤드루 S. 타넨바움이 만든 교육용 운영체제 미닉스를 참고했다."
+      },
+      {
+        "option": "㉠ 리처드 스톨먼, ㉡ 리누스 토발즈",
+        "description": "오답. 리처드 스톨먼은 GNU 프로젝트의 주도자이며 리눅스 커널 개발자는 아니다."
+      },
+      {
+        "option": "㉠ 리처드 스톨먼, ㉡ 켄 톰슨",
+        "description": "오답. 켄 톰슨은 유닉스 공동 개발자이지만 미닉스 개발자는 아니다."
+      },
+      {
+        "option": "㉠ 켄 톰슨, ㉡ 데니스 리치",
+        "description": "오답. 켄 톰슨과 데니스 리치는 유닉스 개발과 관련이 있으나, 리눅스 커널과 미닉스 개발자 조합은 아니다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 2,
-      "subjectKey": 1,
-      "body": "다음 설명에 해당하는 리눅스의 기술적인 특징으로 알맞은 것은?",
-      "code": "특정 프로세스의 표준 출력을 다른 프로세스의 표준 입력으로 쓰이게 하는 것으로 대표적인 프로세스간 통신 기술이다.",
-      "options": [
-          {
-              "option": "파이프",
-              "description": ""
-          },
-          {
-              "option": "리다이렉션",
-              "description": ""
-          },
-          {
-              "option": "라이브러리",
-              "description": ""
-          },
-          {
-              "option": "가상 콘솔",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 2,
+    "subjectKey": 1,
+    "body": "다음 설명에 해당하는 리눅스의 기술적인 특징으로 알맞은 것은?",
+    "code": "특정 프로세스의 표준 출력을 다른 프로세스의 표준 입력으로 쓰이게 하는 것으로 대표적인 프로세스간 통신 기술이다.",
+    "options": [
+      {
+        "option": "파이프",
+        "description": "정답. 파이프(pipe)는 한 프로세스의 표준 출력을 다른 프로세스의 표준 입력으로 연결하는 대표적인 IPC 방식이다."
+      },
+      {
+        "option": "리다이렉션",
+        "description": "오답. 리다이렉션은 입출력 방향을 파일이나 장치로 바꾸는 기능이며, 프로세스 간 연결 자체를 의미하지는 않는다."
+      },
+      {
+        "option": "라이브러리",
+        "description": "오답. 라이브러리는 프로그램에서 공통 기능을 재사용하기 위한 코드 모음이다."
+      },
+      {
+        "option": "가상 콘솔",
+        "description": "오답. 가상 콘솔은 하나의 시스템에서 여러 콘솔 세션을 사용하는 기능이다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 3,
-      "subjectKey": 1,
-      "body": "다음 설명에 해당하는 라이선스로 알맞은 것은?",
-      "code": "이 라이선스가 부여된 소프트웨어는 누구든 자유롭게 부분 혹은 전체를 개인적 또는 상업적 목적으로 이용할 수 있다. 또한 재배포 시에도 소스 코드 또는 수정한 소스 코드를 포함하여 반드시 공개할 필요가 없다. 대표적인 프로그램에는 Hadoop, Tomcat 등이 있다.",
-      "options": [
-          {
-              "option": "Apache License",
-              "description": ""
-          },
-          {
-              "option": "LGPL",
-              "description": ""
-          },
-          {
-              "option": "BSD",
-              "description": ""
-          },
-          {
-              "option": "MPL",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 3,
+    "subjectKey": 1,
+    "body": "다음 설명에 해당하는 라이선스로 알맞은 것은?",
+    "code": "이 라이선스가 부여된 소프트웨어는 누구든 자유롭게 부분 혹은 전체를 개인적 또는 상업적 목적으로 이용할 수 있다. 또한 재배포 시에도 소스 코드 또는 수정한 소스 코드를 포함하여 반드시 공개할 필요가 없다. 대표적인 프로그램에는 Hadoop, Tomcat 등이 있다.",
+    "options": [
+      {
+        "option": "Apache License",
+        "description": "정답. Apache License는 상업적 이용과 수정, 재배포를 허용하며 수정 소스 공개 의무가 없고, Hadoop과 Tomcat이 대표 사례이다."
+      },
+      {
+        "option": "LGPL",
+        "description": "오답. LGPL은 라이브러리 중심의 약한 카피레프트 라이선스이다."
+      },
+      {
+        "option": "BSD",
+        "description": "오답. BSD도 허용적 라이선스이지만 Hadoop, Tomcat의 대표 라이선스로는 Apache License가 맞다."
+      },
+      {
+        "option": "MPL",
+        "description": "오답. MPL은 파일 단위 약한 카피레프트 성격의 라이선스이다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 4,
-      "subjectKey": 1,
-      "body": "다음 설명에 해당하는 리눅스 배포판으로 가장 알맞은 것은?",
-      "code": "패키지 설치 및 업데이트할 때 dpkg 또는 apt-get 명령을 사용하고, 칼리 리눅스도 이 리눅스 배포판을 기반으로 만들었다.",
-      "options": [
-          {
-              "option": "Debian",
-              "description": ""
-          },
-          {
-              "option": "Rocky Linux",
-              "description": ""
-          },
-          {
-              "option": "CentOS",
-              "description": ""
-          },
-          {
-              "option": "Ubuntu",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 4,
+    "subjectKey": 1,
+    "body": "다음 설명에 해당하는 리눅스 배포판으로 가장 알맞은 것은?",
+    "code": "패키지 설치 및 업데이트할 때 dpkg 또는 apt-get 명령을 사용하고, 칼리 리눅스도 이 리눅스 배포판을 기반으로 만들었다.",
+    "options": [
+      {
+        "option": "Debian",
+        "description": "정답. Debian 계열은 dpkg와 apt-get을 사용하며, Kali Linux도 Debian을 기반으로 개발되었다."
+      },
+      {
+        "option": "Rocky Linux",
+        "description": "오답. Rocky Linux는 RHEL 계열로 rpm/dnf 계열을 사용한다."
+      },
+      {
+        "option": "CentOS",
+        "description": "오답. CentOS는 RHEL 계열 배포판이다."
+      },
+      {
+        "option": "Ubuntu",
+        "description": "오답. Ubuntu도 dpkg/apt를 사용하지만 Kali의 직접 기반은 Debian이다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 5,
-      "subjectKey": 1,
-      "body": "다음 설명의 경우에 구성해야 할 인프라 기술로 알맞은 것은?",
-      "code": "다수의 웹 서버를 운영중으로 웹 서버 앞단에 로드 밸런서를 이용하여 부하분산 역할을 수행하도록 구성하였다. 로드 밸런서 역할을 수행하는 시스템의 오류에 대비하려고 한다.",
-      "options": [
-          {
-              "option": "고가용성 클러스터",
-              "description": ""
-          },
-          {
-              "option": "고계산용 클러스터",
-              "description": ""
-          },
-          {
-              "option": "베어울프 클러스터",
-              "description": ""
-          },
-          {
-              "option": "HPC 클러스터",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 5,
+    "subjectKey": 1,
+    "body": "다음 설명의 경우에 구성해야 할 인프라 기술로 알맞은 것은?",
+    "code": "다수의 웹 서버를 운영중으로 웹 서버 앞단에 로드 밸런서를 이용하여 부하분산 역할을 수행하도록 구성하였다. 로드 밸런서 역할을 수행하는 시스템의 오류에 대비하려고 한다.",
+    "options": [
+      {
+        "option": "고가용성 클러스터",
+        "description": "정답. 로드 밸런서 장애에 대비해 서비스 연속성을 확보하려면 이중화 기반의 고가용성(HA) 클러스터를 구성해야 한다."
+      },
+      {
+        "option": "고계산용 클러스터",
+        "description": "오답. 계산 성능 향상을 목표로 하는 구조로, 서비스 이중화와는 목적이 다르다."
+      },
+      {
+        "option": "베어울프 클러스터",
+        "description": "오답. 베어울프 클러스터는 주로 병렬 계산 목적의 클러스터를 의미한다."
+      },
+      {
+        "option": "HPC 클러스터",
+        "description": "오답. HPC는 고성능 연산을 위한 구조이지, 로드 밸런서 장애 대비용 고가용성과는 다르다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 6,
-      "subjectKey": 1,
-      "body": "다음 설명의 경우에 사용 가능한 실제 디스크 용량으로 알맞은 것은?",
-      "code": "10GB 용량의 하드디스크 6개가 장착된 시스템이다. 스페어(Spare) 디스크로 하나 사용하고, RAID-5로 구성하려고 한다.",
-      "options": [
-          {
-              "option": "40GB",
-              "description": ""
-          },
-          {
-              "option": "30GB",
-              "description": ""
-          },
-          {
-              "option": "50GB",
-              "description": ""
-          },
-          {
-              "option": "60GB",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 6,
+    "subjectKey": 1,
+    "body": "다음 설명의 경우에 사용 가능한 실제 디스크 용량으로 알맞은 것은?",
+    "code": "10GB 용량의 하드디스크 6개가 장착된 시스템이다. 스페어(Spare) 디스크로 하나 사용하고, RAID-5로 구성하려고 한다.",
+    "options": [
+      {
+        "option": "40GB",
+        "description": "정답. 총 6개 중 1개는 스페어로 제외하므로 5개로 RAID-5를 구성한다. RAID-5의 사용 가능 용량은 (디스크 수 - 1) × 용량이므로 (5 - 1) × 10GB = 40GB이다."
+      },
+      {
+        "option": "30GB",
+        "description": "오답. RAID-5와 스페어 조건을 반영하면 30GB가 아니다."
+      },
+      {
+        "option": "50GB",
+        "description": "오답. 스페어 1개와 RAID-5 패리티 1개를 고려해야 하므로 50GB를 모두 사용할 수 없다."
+      },
+      {
+        "option": "60GB",
+        "description": "오답. 전체 물리 용량일 뿐이며 RAID-5 패리티와 스페어를 고려하지 않은 값이다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 7,
-      "subjectKey": 1,
-      "body": "리눅스 시스템의 root 패스워드를 잊어버린 상태로 GRUB 환경 설정 파일에서 커널 인자값을 변경하려고 한다. 다음 중 밑줄 친 부분을 대체해야 할 커널 인자값으로 알맞은 것은?",
-      "code": "linux16\n/boot/vmlinux-3.10.0-862-el7.x86_64\nroot=UUID=800f7aa2-83b0-4b18-a4ce-7de8ede7c0 14 ro rhgb quiet LANG=ko_KR.UTF-8",
-      "options": [
-          {
-              "option": "rw init-/bin/sh",
-              "description": ""
-          },
-          {
-              "option": "rw single",
-              "description": ""
-          },
-          {
-              "option": "rw rescue",
-              "description": ""
-          },
-          {
-              "option": "rw systemd=/bin/sh",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 7,
+    "subjectKey": 1,
+    "body": "리눅스 시스템의 root 패스워드를 잊어버린 상태로 GRUB 환경 설정 파일에서 커널 인자값을 변경하려고 한다. 다음 중 밑줄 친 부분을 대체해야 할 커널 인자값으로 알맞은 것은?",
+    "code": "linux16\n/boot/vmlinux-3.10.0-862-el7.x86_64\nroot=UUID=800f7aa2-83b0-4b18-a4ce-7de8ede7c0 14 ro rhgb quiet LANG=ko_KR.UTF-8",
+    "options": [
+      {
+        "option": "rw init-/bin/sh",
+        "description": "오답. 구문도 잘못되었고 일반적으로 사용하는 커널 인자 형태가 아니다."
+      },
+      {
+        "option": "rw single",
+        "description": "정답. 패스워드 복구 시 GRUB에서 커널 인자에 single을 추가해 단일 사용자 모드로 부팅하는 방식이 시험에서 정답으로 취급된다."
+      },
+      {
+        "option": "rw rescue",
+        "description": "오답. rescue는 일반적인 단일 사용자 패스워드 복구 인자와 다르다."
+      },
+      {
+        "option": "rw systemd=/bin/sh",
+        "description": "오답. systemd.unit나 init=/bin/sh 계열과 혼동한 보기로, 제시 형태는 부정확하다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 8,
-      "subjectKey": 1,
-      "body": "다음 중 ssh 데몬이 리눅스 부팅 시에 실행되도록 설정하는 명령으로 알맞은 것은?",
-      "options": [
-          {
-              "option": "systemctl enable sshd",
-              "description": ""
-          },
-          {
-              "option": "systemctl status sshd",
-              "description": ""
-          },
-          {
-              "option": "systemctl active sshd",
-              "description": ""
-          },
-          {
-              "option": "systemctl start sshd",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 8,
+    "subjectKey": 1,
+    "body": "다음 중 ssh 데몬이 리눅스 부팅 시에 실행되도록 설정하는 명령으로 알맞은 것은?",
+    "options": [
+      {
+        "option": "systemctl enable sshd",
+        "description": "정답. systemctl enable은 부팅 시 해당 서비스를 자동 실행하도록 설정한다."
+      },
+      {
+        "option": "systemctl status sshd",
+        "description": "오답. status는 현재 상태를 확인하는 명령이다."
+      },
+      {
+        "option": "systemctl active sshd",
+        "description": "오답. active는 올바른 systemctl 하위 명령 형식이 아니다."
+      },
+      {
+        "option": "systemctl start sshd",
+        "description": "오답. start는 현재 즉시 서비스를 시작할 뿐, 부팅 시 자동 실행 설정은 아니다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 9,
-      "subjectKey": 1,
-      "body": "다음 중 원격지 X 서버에 응용 프로그램을 전송하기 위해 X 클라이언트에서 진행해야 하는 과정으로 알맞은 것은?",
-      "options": [
-          {
-              "option": "환경변수인 DISPLAY의 값을 서버 주소로 변경한다.",
-              "description": ""
-          },
-          {
-              "option": "xauth 명령으로 서버 주소를 등록한다.",
-              "description": ""
-          },
-          {
-              "option": "xhpst 명령으로 서버 주소를 등록한다.",
-              "description": ""
-          },
-          {
-              "option": "환경변수인 TERM의 값을 서버 주소로 변경한다.",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 9,
+    "subjectKey": 1,
+    "body": "다음 중 원격지 X 서버에 응용 프로그램을 전송하기 위해 X 클라이언트에서 진행해야 하는 과정으로 알맞은 것은?",
+    "options": [
+      {
+        "option": "환경변수인 DISPLAY의 값을 서버 주소로 변경한다.",
+        "description": "정답. 원격 X 서버에 화면을 출력하려면 DISPLAY 환경변수를 해당 X 서버 주소로 설정해야 한다."
+      },
+      {
+        "option": "xauth 명령으로 서버 주소를 등록한다.",
+        "description": "오답. xauth는 인증 쿠키 관리에 사용되며 DISPLAY 설정 자체를 대신하지 않는다."
+      },
+      {
+        "option": "xhpst 명령으로 서버 주소를 등록한다.",
+        "description": "오답. xhpst는 존재하지 않는 명령어이다."
+      },
+      {
+        "option": "환경변수인 TERM의 값을 서버 주소로 변경한다.",
+        "description": "오답. TERM은 터미널 종류를 나타내는 변수이며 X 서버 주소와 무관하다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 10,
-      "subjectKey": 1,
-      "body": "다음 그림에 해당하는 프로그램명으로 가장 알맞은 것은?",
-      "code": "세 명의 사용자 프로필(joon, lin, posein)이 세로로 나열되어 있고, 하단에 '목록에 없습니까?'가 표시된 로그인 화면. 그래픽 사용자 인터페이스(GUI) 환경의 로그인 관리자.",
-      "options": [
-          {
-              "option": "KDE",
-              "description": ""
-          },
-          {
-              "option": "GDM",
-              "description": ""
-          },
-          {
-              "option": "GNOME",
-              "description": ""
-          },
-          {
-              "option": "Mutter",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 10,
+    "subjectKey": 1,
+    "body": "다음 그림에 해당하는 프로그램명으로 가장 알맞은 것은?",
+    "code": "세 명의 사용자 프로필(joon, lin, posein)이 세로로 나열되어 있고, 하단에 '목록에 없습니까?'가 표시된 로그인 화면. 그래픽 사용자 인터페이스(GUI) 환경의 로그인 관리자.",
+    "options": [
+      {
+        "option": "KDE",
+        "description": "오답. KDE는 데스크톱 환경이지 로그인 관리자 자체가 아니다."
+      },
+      {
+        "option": "GDM",
+        "description": "정답. GDM(GNOME Display Manager)은 GNOME 계열 GUI 로그인 관리자이다."
+      },
+      {
+        "option": "GNOME",
+        "description": "오답. GNOME은 데스크톱 환경이다."
+      },
+      {
+        "option": "Mutter",
+        "description": "오답. Mutter는 GNOME의 윈도 매니저/컴포지터이다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 11,
-      "subjectKey": 1,
-      "body": "다음 명령의 결과에 대한 설명으로 알맞은 것은?",
-      "code": "cherry@rhombus:~$ echo \"My Home is 'pwd'\"\n* Back quotes 사용한 예제임",
-      "options": [
-          {
-              "option": "My Home is '/home/ihd'",
-              "description": ""
-          },
-          {
-              "option": "My Home is 'pwd'",
-              "description": ""
-          },
-          {
-              "option": "My Home is /home/ihd",
-              "description": ""
-          },
-          {
-              "option": "My Home is pwd",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 11,
+    "subjectKey": 1,
+    "body": "다음 명령의 결과에 대한 설명으로 알맞은 것은?",
+    "code": "cherry@rhombus:~$ echo \"My Home is 'pwd'\"\n* Back quotes 사용한 예제임",
+    "options": [
+      {
+        "option": "My Home is '/home/ihd'",
+        "description": "오답. 제시된 명령은 back quotes가 아니라 작은따옴표를 문자열 안에 포함한 형태이므로 pwd가 실행되지 않는다."
+      },
+      {
+        "option": "My Home is 'pwd'",
+        "description": "정답. 작은따옴표 안의 pwd는 명령 치환되지 않고 그대로 문자열로 출력된다."
+      },
+      {
+        "option": "My Home is /home/ihd",
+        "description": "오답. pwd가 실행되지 않으므로 현재 디렉터리 경로는 출력되지 않는다."
+      },
+      {
+        "option": "My Home is pwd",
+        "description": "오답. 작은따옴표 문자도 함께 출력된다."
+      }
+    ]
   },
   {
-      "examKey": "lm11-20230311",
-      "localId": 12,
-      "subjectKey": 1,
-      "body": "다음 빈 칸에 들어갈 내용으로 가장 알맞은 것은?",
-      "code": "cherry@rhombus:~$ test 20 -gt 30\n# echo $?\n(괄호)",
-      "options": [
-          {
-              "option": "10",
-              "description": ""
-          },
-          {
-              "option": "0",
-              "description": ""
-          },
-          {
-              "option": "1",
-              "description": ""
-          },
-          {
-              "option": "-10",
-              "description": ""
-          }
-      ]
+    "examKey": "lm11-20230311",
+    "localId": 12,
+    "subjectKey": 1,
+    "body": "다음 빈 칸에 들어갈 내용으로 가장 알맞은 것은?",
+    "code": "cherry@rhombus:~$ test 20 -gt 30\n# echo $?\n(괄호)",
+    "options": [
+      {
+        "option": "10",
+        "description": "오답. test 명령의 종료 상태는 0 또는 1 등의 값으로 반환된다."
+      },
+      {
+        "option": "0",
+        "description": "오답. 20은 30보다 크지 않으므로 참이 아니다."
+      },
+      {
+        "option": "1",
+        "description": "정답. test 20 -gt 30 은 거짓이므로 종료 상태 값 $? 는 1이다."
+      },
+      {
+        "option": "-10",
+        "description": "오답. 종료 상태 값으로 적절하지 않다."
+      }
+    ]
   },
   {
       "examKey": "lm11-20230311",
