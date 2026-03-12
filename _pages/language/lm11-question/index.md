@@ -1,36 +1,66 @@
 ---
-layout: default
+layout: page
 permalink: /language/lm11-question/
 title: Linux Master 1급 1차
 # 데이터: _data/lm11/questions.json, exams.json, subjects.json
 ---
 
-<div class="app-page-container">
-  <header class="quiz-filter-wrap" role="region" aria-label="문제 필터">
-    <h2 class="page-title">{{ page.title }}</h2>
-    <div class="quiz-select-wrap">
-      <select id="bank-exam-select" class="quiz-select">
-        {% for exam in site.data.lm11.exams %}
-          <option value="{{ exam.key }}" {% if forloop.first %}selected{% endif %}>{{ exam.date }}</option>
-        {% endfor %}
-      </select>
-      <label for="bank-exam-select" class="quiz-select-label">시험</label>
-    </div>
-    <div class="quiz-select-wrap">
-      <select id="bank-subject-select" class="quiz-select">
-        <option value="">전체</option>
-        {% for subj in site.data.lm11.subjects %}
-          <option value="{{ subj.key }}">{{ subj.name }}</option>
-        {% endfor %}
-      </select>
-      <label for="bank-subject-select" class="quiz-select-label">과목</label>
-    </div>
-  </header>
+<style>
+/* LM11 문제은행 페이지 전용 필터 영역 스타일 */
+.quiz-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+  padding: var(--space-4) 0;
+}
+.quiz-select-label {
+  font-weight: var(--fw-600);
+  color: var(--app-text);
+}
+.quiz-select {
+  padding: var(--space-2) var(--space-4);
+  font-size: 1rem;
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+  background: var(--app-panel);
+  color: var(--app-text);
+  min-width: 10rem;
+}
+.quiz-select:hover,
+.quiz-select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.quiz-select-hint {
+  font-size: var(--fs-2);
+  color: var(--app-muted);
+}
+</style>
 
-  <section class="quiz-bank-section" id="bank-section" aria-label="문제 목록">
-    {% include quiz_cards_bank.html questions=site.data.lm11.questions %}
-  </section>
+<header class="quiz-filter-wrap" role="region" aria-label="문제 필터">
+  <div class="quiz-select-wrap">
+    <select id="bank-exam-select" class="quiz-select">
+      {% for exam in site.data.lm11.exams %}
+        <option value="{{ exam.key }}" {% if forloop.first %}selected{% endif %}>{{ exam.date }}</option>
+      {% endfor %}
+    </select>
+    <label for="bank-exam-select" class="quiz-select-label">시험</label>
+  </div>
+  <div class="quiz-select-wrap">
+    <select id="bank-subject-select" class="quiz-select">
+      <option value="">전체</option>
+      {% for subj in site.data.lm11.subjects %}
+        <option value="{{ subj.key }}">{{ subj.name }}</option>
+      {% endfor %}
+    </select>
+    <label for="bank-subject-select" class="quiz-select-label">과목</label>
+  </div>
+</header>
 
+<div id="bank-section" aria-label="문제 목록">
+  {% include quiz_cards_bank.html questions=site.data.lm11.questions %}
 </div>
 
 <script>
