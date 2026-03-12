@@ -131,6 +131,24 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCodeCopyButtons);
   else initCodeCopyButtons();
 
+  /* Quiz bank: answer show/hide toggles (PJAX-safe) */
+  function initQuizAnswerToggles() {
+    var content = document.querySelector('.app-content');
+    if (!content) return;
+    content.querySelectorAll('.quiz-card__answer-wrap').forEach(function (wrap) {
+      var btn = wrap.querySelector('.quiz-card__answer-toggle');
+      if (!btn || btn.dataset.quizInit === '1') return;
+      btn.dataset.quizInit = '1';
+      btn.addEventListener('click', function () {
+        var hidden = wrap.classList.toggle('is-hidden');
+        btn.setAttribute('aria-label', hidden ? '정답 보기' : '정답 가리기');
+      });
+    });
+  }
+  window.initQuizAnswerToggles = initQuizAnswerToggles;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initQuizAnswerToggles);
+  else initQuizAnswerToggles();
+
   /* Labs: LM11 log viewer (PJAX-safe) */
   function initLm11LogPage() {
     var base = document.querySelector('base');

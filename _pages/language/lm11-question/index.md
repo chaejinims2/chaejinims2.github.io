@@ -46,7 +46,7 @@ title: Linux Master 1급 1차
   color: var(--app-muted);
 }
 .quiz-set-wrap {
-  width: 40rem;
+  /* width: 50rem; */
   margin: 0;
 }
 </style>
@@ -61,7 +61,7 @@ title: Linux Master 1급 1차
     </select>
   </div>
   <div class="quiz-select-wrap">
-    <label for="bank-subject-select" class="quiz-select-label">Subject</label>8
+    <label for="bank-subject-select" class="quiz-select-label">Subject</label>
     <select id="bank-subject-select" class="quiz-select">
       <option value="">All</option>
       {% for subj in site.data.lm11.subjects %}

@@ -1039,7 +1039,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   height: 28px;
   line-height: 28px;
   padding-left: 12px;
-  font-size: 10px;
+  font-size: var(--fs-1);
   letter-spacing: 3px;
   color: #484f58;
   background: #161b22;
@@ -1055,7 +1055,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .app-content pre.terminal-content {
   margin: 0;
   padding: var(--space-4);
-  font-size: 13px;
+  font-size: var(--fs-2);
   line-height: 1.45;
   font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", ui-monospace, monospace;
   background: #0d1117;
@@ -1149,7 +1149,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   background: var(--app-panel, var(--surface-1));
   border: 1px solid var(--app-border);
   border-radius: var(--radius-1, 0.25rem);
-  font-size: 0.9em;
+  font-size: var(--fs-2);
 }
 
 /* ---- Content: 표 (table) ---- */
