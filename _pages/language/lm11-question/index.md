@@ -92,7 +92,24 @@ title: Linux Master 1급 1차
 
 <div id="bank-section" aria-label="문제 목록">
   <div class="quiz-set-wrap">
-    {% include quiz_cards_bank.html questions=site.data.lm11.questions %}
+    {% include quiz_cards_bank_style.html %}
+
+    <div class="quiz-cards-set" role="list">
+      {% for q in site.data.lm11.questions %}
+        {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
+        {% assign subject = site.data.lm11.subjects | where: "key", q.subjectKey | first %}
+        {% if exam and exam.answers %}
+          {% assign answer_index = q.localId | minus: 1 %}
+          {% assign correct_answer_num = exam.answers[answer_index] %}
+        {% else %}
+          {% assign correct_answer_num = 1 %}
+        {% endif %}
+
+        {% include quiz_cards_bank_item.html q=q exam=exam subject=subject correct_answer_num=correct_answer_num %}
+      {% endfor %}
+    </div>
+
+    {% include quiz_cards_bank_script.html %}
   </div>
 </div>
 

@@ -149,6 +149,104 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initQuizAnswerToggles);
   else initQuizAnswerToggles();
 
+  /* LM11 Quiz pager (single card per page, PJAX-safe) */
+  function initLm11QuizPage() {
+    var root = document.getElementById('quiz-section');
+    if (!root) return;
+    if (root.dataset.lm11QuizInit === '1') return;
+    root.dataset.lm11QuizInit = '1';
+
+    var STORAGE_KEY = 'lm11-quiz-pager';
+    var examSelect = document.getElementById('quiz-exam-select');
+    var subjectSelect = document.getElementById('quiz-subject-select');
+    var applyBtn = document.getElementById('quiz-filter-apply');
+    var prevBtn = document.getElementById('quiz-prev');
+    var nextBtn = document.getElementById('quiz-next');
+    var statusEl = document.getElementById('quiz-status');
+
+    var cards = [].slice.call(root.querySelectorAll('.quiz-card'));
+    var matched = [];
+    var current = 0;
+
+    function loadState() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          examKey: (examSelect && examSelect.value) || '',
+          subjectKey: (subjectSelect && subjectSelect.value) || '',
+          current: current
+        }));
+      } catch (e) {}
+    }
+
+    function getMatchedCards() {
+      var examKey = (examSelect && examSelect.value) || '';
+      var subjectKey = (subjectSelect && subjectSelect.value) || '';
+      return cards.filter(function (card) {
+        var matchExam = !examKey || card.getAttribute('data-exam-key') === examKey;
+        var matchSubject = !subjectKey || card.getAttribute('data-subject-key') === String(subjectKey);
+        return matchExam && matchSubject;
+      });
+    }
+
+    function render() {
+      matched = getMatchedCards();
+      if (current < 0) current = 0;
+      if (current >= matched.length) current = Math.max(0, matched.length - 1);
+
+      cards.forEach(function (c) { c.hidden = true; });
+      if (matched[current]) matched[current].hidden = false;
+
+      if (statusEl) statusEl.textContent = (matched.length ? (current + 1) : 0) + ' / ' + matched.length;
+      if (prevBtn) prevBtn.disabled = matched.length === 0 || current === 0;
+      if (nextBtn) nextBtn.disabled = matched.length === 0 || current === matched.length - 1;
+
+      saveState();
+      if (matched[current]) matched[current].scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
+
+    function applyFilter(resetToFirst) {
+      if (resetToFirst) current = 0;
+      render();
+    }
+
+    function go(delta) {
+      if (!matched.length) return;
+      current += delta;
+      render();
+    }
+
+    // 초기 상태 복원
+    var st = loadState();
+    if (st) {
+      if (examSelect) examSelect.value = st.examKey || '';
+      if (subjectSelect) subjectSelect.value = st.subjectKey || '';
+      current = typeof st.current === 'number' ? st.current : 0;
+    }
+
+    if (applyBtn) applyBtn.addEventListener('click', function () { applyFilter(true); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { go(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { go(1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') go(-1);
+      if (e.key === 'ArrowRight') go(1);
+    });
+
+    render();
+  }
+  window.initLm11QuizPage = initLm11QuizPage;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initLm11QuizPage);
+  else initLm11QuizPage();
+
   /* Labs: LM11 log viewer (PJAX-safe) */
   function initLm11LogPage() {
     var base = document.querySelector('base');
