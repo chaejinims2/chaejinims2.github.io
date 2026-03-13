@@ -79,6 +79,24 @@ title: Linux Master 1급 1차 (퀴즈)
 }
 .quiz-pager__btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .quiz-pager__status { color: var(--app-muted); font-size: var(--quiz-card-fs-default); }
+
+#quiz-section {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior-x: contain;
+}
+
+.quiz-cards-set {
+  touch-action: pan-y;
+}
+
+/* 스와이프 중일 때 드래그 선택 방지 */
+.quiz-card,
+.quiz-card * {
+  -webkit-user-select: none;
+  user-select: none;
+}
 </style>
 
 <header class="quiz-filters-wrap" role="region" aria-label="퀴즈 필터">
@@ -133,5 +151,74 @@ title: Linux Master 1급 1차 (퀴즈)
 </div>
 
 <script>
-try { if (window.initLm11QuizPage) window.initLm11QuizPage(); } catch (e) {}
+try { 
+  if (window.initLm11QuizPage) window.initLm11QuizPage(); 
+} catch (e) {}
+
+(function () {
+  const quizSection = document.getElementById('quiz-section');
+  const prevBtn = document.getElementById('quiz-prev');
+  const nextBtn = document.getElementById('quiz-next');
+
+  if (!quizSection || !prevBtn || !nextBtn) return;
+
+  let startX = 0;
+  let startY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let isTracking = false;
+
+  const SWIPE_THRESHOLD = 60;   // 최소 가로 이동 거리
+  const VERTICAL_LIMIT = 40;    // 세로 흔들림 허용치
+
+  function onTouchStart(e) {
+    if (!e.touches || e.touches.length !== 1) return;
+
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    currentX = startX;
+    currentY = startY;
+    isTracking = true;
+  }
+
+  function onTouchMove(e) {
+    if (!isTracking || !e.touches || e.touches.length !== 1) return;
+
+    const touch = e.touches[0];
+    currentX = touch.clientX;
+    currentY = touch.clientY;
+  }
+
+  function onTouchEnd() {
+    if (!isTracking) return;
+    isTracking = false;
+
+    const deltaX = currentX - startX;
+    const deltaY = currentY - startY;
+
+    // 세로 스크롤이 더 큰 동작이면 무시
+    if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+
+    // 세로 흔들림이 크면 무시
+    if (Math.abs(deltaY) > VERTICAL_LIMIT) return;
+
+    // 우로 스와이프 → 이전 카드
+    if (deltaX > SWIPE_THRESHOLD) {
+      if (!prevBtn.disabled) prevBtn.click();
+      return;
+    }
+
+    // 좌로 스와이프 → 다음 카드
+    if (deltaX < -SWIPE_THRESHOLD) {
+      if (!nextBtn.disabled) nextBtn.click();
+      return;
+    }
+  }
+
+  quizSection.addEventListener('touchstart', onTouchStart, { passive: true });
+  quizSection.addEventListener('touchmove', onTouchMove, { passive: true });
+  quizSection.addEventListener('touchend', onTouchEnd, { passive: true });
+  quizSection.addEventListener('touchcancel', onTouchEnd, { passive: true });
+})();
 </script>
