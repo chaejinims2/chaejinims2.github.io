@@ -64,7 +64,7 @@ title: Linux Master 1급 1차 (퀴즈)
 .quiz-pager {
   position: sticky;
   bottom: 0;
-  z-index: 30;
+  z-index: 0;
 
   display: flex;
   gap: var(--space-3);
@@ -97,7 +97,7 @@ title: Linux Master 1급 1차 (퀴즈)
   -webkit-user-select: none;
   user-select: none;
   overscroll-behavior-x: contain;
-  padding-bottom: 5rem;
+  padding-bottom: 0rem;
 }
 
 .quiz-cards-set {
