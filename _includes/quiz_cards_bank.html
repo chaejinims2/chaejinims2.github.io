@@ -28,7 +28,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .quiz-card__num {
-  font-size: var(--fs-2);
+  font-size: var(--quiz-card-num-fs);
   font-weight: var(--fw-600);
   letter-spacing: 0.02em;
 }
@@ -36,7 +36,7 @@
 .quiz-card__num--range2 { color: var(--quiz-num-2, #34d399); }
 .quiz-card__num--range3 { color: var(--quiz-num-3, #f59e0b); }
 .quiz-card__body {
-  font-size: var(--fs-4);
+  font-size: var(--quiz-card-body-fs);
   line-height: 1.5;
   color: var(--app-text);
 }
@@ -50,13 +50,13 @@
 .quiz-card .quiz-card__num { flex: 0 0 auto; }
 .quiz-card__subject {
   margin-left: auto;
-  font-size: var(--fs-1);
+  font-size: var(--quiz-card-subject-fs);
   color: var(--app-muted);
   font-weight: var(--fw-500);
 }
 .quiz-card[hidden] { display: none; }
 .quiz-card__options {
-  font-size: var(--fs-3);
+  font-size: var(--quiz-card-options-fs);
   color: var(--app-muted);
   line-height: 1.5;
 }
@@ -88,7 +88,7 @@
   border-radius: 50%;
   border: 1px solid var(--app-muted);
   background: transparent;
-  font-size: 0.9em;
+  font-size: var(--quiz-card-option-fs);
   line-height: 1;
 }
 .quiz-card .quiz-card__options--selectable .quiz-card__option {
@@ -124,7 +124,7 @@
 .quiz-card__answer-wrap {
   margin: 0.5rem 0;
   /* border-top: 1px dashed var(--app-border); */
-  font-size: var(--fs-2);
+  font-size: var(--quiz-card-answer-fs);
   display: flex;
   flex-direction: column;
 }
@@ -219,7 +219,7 @@
         </div>
       {% endif %}
 
-      <ol class="quiz-card__options quiz-card__options--selectable" start="1" data-shuffle role="list">
+      <ol class="quiz-card__options quiz-card__options--selectable" start="1" role="list">
         {% for opt in q.options %}
           <li
             class="quiz-card__option"
@@ -234,13 +234,16 @@
         <button type="button" class="quiz-card__answer-toggle"></button>
         {% assign opt_index = correct_answer_num | minus: 1 %}
         {% assign correct_opt = q.options[opt_index] | default: q.options[0] %}
-        <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{% if correct_opt.option %}{{ correct_opt.description }}{% else %}{{ correct_opt }}{% endif %}</p>
+        <!-- <p class="quiz-card__answer quiz-card__num--range{{ q.subjectKey }}">{% if correct_opt.option %}{{ correct_opt.description }}{% else %}{{ correct_opt }}{% endif %}</p> -->
         {% if q.options and q.options.size > 0 %}
           <p class="quiz-card__description">
             {% for opt in q.options %}
-              {% if opt.option and opt.description and forloop.index != correct_answer_num %}
-                ({{ forloop.index }}) {{ opt.description }}{% unless forloop.last %}<br>{% endunless %}
+              {% if correct_answer_num == forloop.index %}
+                <span class="quiz-card__num--range{{ q.subjectKey }}">({{ forloop.index }}) {{ opt.description }}</span>
+              {% else %}
+                <span>({{ forloop.index }}) {{ opt.description }}</span>
               {% endif %}
+              {% unless forloop.last %}<br>{% endunless %}
             {% endfor %}
           </p>
         {% endif %}
@@ -304,6 +307,23 @@
     });
   }
 
+  function handleOptionToggle(card, li) {
+    var key = getQuestionKey(card);
+    if (!key) return;
+    var choice = li.getAttribute('data-choice');
+    if (!choice) return;
+    var num = parseInt(choice, 10);
+    if (num < 1 || num > 4) return;
+    if (answers[key] === num) {
+      delete answers[key];
+    } else {
+      answers[key] = num;
+    }
+    saveAnswers(answers);
+    applySelectionToCard(card, answers);
+    notifyAnswerSheet();
+  }
+
   function notifyAnswerSheet() {
     // answer sheet feature removed
   }
@@ -319,35 +339,27 @@
     applySelectionToCard(card, answers);
   });
 
-  // Option click/keyboard
-  document.querySelectorAll('.quiz-cards-set .quiz-card__options--selectable').forEach(function (ol) {
-    var card = ol.closest('.quiz-card');
-    if (!card) return;
-    ol.querySelectorAll('.quiz-card__option').forEach(function (li) {
-      li.addEventListener('click', function () {
-        var key = getQuestionKey(card);
-        if (!key) return;
-        var choice = li.getAttribute('data-choice');
-        if (!choice) return;
-        var num = parseInt(choice, 10);
-        if (num < 1 || num > 4) return;
-        if (answers[key] === num) {
-          delete answers[key];
-        } else {
-          answers[key] = num;
-        }
-        saveAnswers(answers);
-        applySelectionToCard(card, answers);
-        notifyAnswerSheet();
-      });
-      li.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          li.click();
-        }
-      });
+  // Option click/keyboard (event delegation)
+  var quizRoot = document.querySelector('.quiz-cards-set');
+  if (quizRoot) {
+    quizRoot.addEventListener('click', function (e) {
+      var li = e.target.closest('.quiz-card__option');
+      if (!li || !quizRoot.contains(li)) return;
+      var card = li.closest('.quiz-card');
+      if (!card) return;
+      handleOptionToggle(card, li);
     });
-  });
+
+    quizRoot.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var li = e.target.closest('.quiz-card__option');
+      if (!li || !quizRoot.contains(li)) return;
+      var card = li.closest('.quiz-card');
+      if (!card) return;
+      e.preventDefault();
+      handleOptionToggle(card, li);
+    });
+  }
 
   // Note button
   // (memo/note feature removed)

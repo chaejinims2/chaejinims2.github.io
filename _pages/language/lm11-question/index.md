@@ -25,13 +25,13 @@ title: Linux Master 1급 1차
   padding: 0;
 }
 .quiz-select-label {
-  font-size: var(--fs-2);
+  font-size: var(--quiz-select-label-fs);
   font-weight: var(--fw-600);
   color: var(--app-text);
 }
 .quiz-select {
   padding: var(--space-2) var(--space-4);
-  font-size: var(--fs-2);
+  font-size: var(--quiz-select-fs);
   border: 1px solid var(--app-border);
   border-radius: var(--radius-2);
   background: var(--app-panel);
@@ -45,13 +45,13 @@ title: Linux Master 1급 1차
   outline: none;
 }
 .quiz-select-hint {
-  font-size: var(--fs-2);
+  font-size: var(--quiz-select-hint-fs);
   color: var(--app-muted);
 }
 
 .quiz-apply-btn {
   padding: var(--space-2) var(--space-4);
-  font-size: var(--fs-2);
+  font-size: var(--quiz-apply-btn-fs);
   font-weight: var(--fw-500);
   color: var(--app-muted);
   background: transparent;
@@ -73,15 +73,13 @@ title: Linux Master 1급 1차
 
 <header class="quiz-filters-wrap" role="region" aria-label="문제 필터">
   <div class="quiz-select-wrap">
-    <label for="bank-exam-select" class="quiz-select-label">Exam</label>
     <select id="bank-exam-select" class="quiz-select">
       {% for exam in site.data.lm11.exams %}
-        <option value="{{ exam.key }}" {% if forloop.first %}selected{% endif %}>{{ exam.date }}</option>
+        <option value="{{ exam.key }}">{{ exam.date }}</option>
       {% endfor %}
     </select>
   </div>
   <div class="quiz-select-wrap">
-    <label for="bank-subject-select" class="quiz-select-label">Subject</label>
     <select id="bank-subject-select" class="quiz-select">
       <option value="">All</option>
       {% for subj in site.data.lm11.subjects %}
@@ -104,9 +102,7 @@ title: Linux Master 1급 1차
   var subjectSelect = document.getElementById('bank-subject-select');
   var bankSection = document.getElementById('bank-section');
   var applyBtn = document.getElementById('bank-filter-apply');
-
   var cards = document.querySelectorAll('.quiz-card');
-  if (!cards.length) return;
 
   // ---- 필터 (매칭되는 문제 모두 표시) ----
   function getMatchedCards() {

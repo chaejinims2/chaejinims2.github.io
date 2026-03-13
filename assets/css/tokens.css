@@ -31,6 +31,16 @@
   --fs-3: 0.875rem;
   --fs-4: 0.95rem;
   --fs-5: 1rem;
+  --fs-6: 1.125rem;
+  --fs-7: 1.25rem;
+  --fs-8: 1.5rem;
+  --fs-9: 1.75rem;
+  --fs-10: 2rem;
+  --fs-11: 2.25rem;
+  --fs-12: 2.5rem;
+  --fs-13: 2.75rem;
+  --fs-14: 3rem;
+  --fs-15: 3.25rem;
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
@@ -144,6 +154,19 @@
   --app-statusbar-font-size: var(--fs-1);
 
   --lm11-card-fixed-height: 30rem;
+
+  --quiz-select-label-fs: var(--fs-5);
+  --quiz-select-fs: var(--fs-5);
+  --quiz-select-hint-fs: var(--fs-5);
+  --quiz-apply-btn-fs: var(--fs-5);
+
+  --quiz-card-num-fs: var(--fs-5);
+  --quiz-card-body-fs: var(--fs-5);
+  --quiz-card-subject-fs: var(--fs-5);
+  --quiz-card-options-fs: var(--fs-5);
+  --quiz-card-option-fs: var(--fs-5);
+  --quiz-card-answer-fs: var(--fs-5);
+
 }
 
 /* =========================================================
