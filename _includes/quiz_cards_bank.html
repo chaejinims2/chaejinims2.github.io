@@ -28,7 +28,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .quiz-card__num {
-  font-size: var(--quiz-card-num-fs);
+  font-size: var(--quiz-card-fs-default);
   font-weight: var(--fw-600);
   letter-spacing: 0.02em;
 }
@@ -36,7 +36,7 @@
 .quiz-card__num--range2 { color: var(--quiz-num-2, #34d399); }
 .quiz-card__num--range3 { color: var(--quiz-num-3, #f59e0b); }
 .quiz-card__body {
-  font-size: var(--quiz-card-body-fs);
+  font-size: var(--quiz-card-fs-strong);
   line-height: 1.5;
   color: var(--app-text);
 }
@@ -50,13 +50,13 @@
 .quiz-card .quiz-card__num { flex: 0 0 auto; }
 .quiz-card__subject {
   margin-left: auto;
-  font-size: var(--quiz-card-subject-fs);
+  font-size: var(--quiz-card-fs-weak);
   color: var(--app-muted);
   font-weight: var(--fw-500);
 }
 .quiz-card[hidden] { display: none; }
 .quiz-card__options {
-  font-size: var(--quiz-card-options-fs);
+  font-size: var(--quiz-card-fs-default);
   color: var(--app-muted);
   line-height: 1.5;
 }
@@ -83,12 +83,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 1.3em;
-  height: 1.3em;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
   border: 1px solid var(--app-muted);
   background: transparent;
-  font-size: var(--quiz-card-option-fs);
+  font-size: var(--quiz-card-fs-default);
   line-height: 1;
 }
 .quiz-card .quiz-card__options--selectable .quiz-card__option {
@@ -124,7 +124,7 @@
 .quiz-card__answer-wrap {
   margin: 0.5rem 0;
   /* border-top: 1px dashed var(--app-border); */
-  font-size: var(--quiz-card-answer-fs);
+  font-size: var(--quiz-card-fs-default);
   display: flex;
   flex-direction: column;
 }
@@ -142,9 +142,6 @@
   color: var(--app-muted); /* 기본은 해설 텍스트와 동일한 회색 */
   font: inherit;
   cursor: pointer;
-}
-.quiz-card__answer-wrap:not(.is-hidden) .quiz-card__answer-toggle {
-  /* color: var(--accent); */ /* 정답이 보일 때는 정답 강조색과 동일 */
 }
 .quiz-card__answer-toggle::before {
   content: "";
@@ -210,7 +207,7 @@
       {% if q.code and q.code != '' %}
         <div class="terminal-box" aria-label="설명/코드">
           <div class="terminal-pre-wrap">
-            {% assign prompt = 'cherry@rhombus:~$' %}
+            {% assign prompt = site.data.lm11.config.prompts[0] | default: 'cherry@rhombus:~$' %}
             {% assign prompt_esc = prompt | escape %}
             {% assign code_esc = q.code | escape %}
             {% capture prompt_span %}<span class="term-prompt">{{ prompt_esc }}</span>{% endcapture %}
@@ -238,10 +235,12 @@
         {% if q.options and q.options.size > 0 %}
           <p class="quiz-card__description">
             {% for opt in q.options %}
+              {% assign circled_nums = "①,②,③,④" | split: "," %}
+              {% assign opt_num = circled_nums[forloop.index0] %}
               {% if correct_answer_num == forloop.index %}
-                <span class="quiz-card__num--range{{ q.subjectKey }}">({{ forloop.index }}) {{ opt.description }}</span>
+                <span class="quiz-card__num--range{{ q.subjectKey }}">{{ opt_num }} {{ opt.description }}</span>
               {% else %}
-                <span>({{ forloop.index }}) {{ opt.description }}</span>
+                <span>{{ opt_num }} {{ opt.description }}</span>
               {% endif %}
               {% unless forloop.last %}<br>{% endunless %}
             {% endfor %}

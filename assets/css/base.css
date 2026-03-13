@@ -989,16 +989,16 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 }
 .app-content .code-block-copy-btn:hover {
   opacity: 1;
-  color: var(--accent, var(--app-accent));
+  color: var(--tone-text-inverse);
   /* border-color: var(--accent, var(--app-accent)); */
 }
 .app-content .code-block-copy-btn svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   flex-shrink: 0;
 }
 .app-content .code-block-copy-btn.copied {
-  color: var(--accent, var(--app-accent));
+  color: var(--app-muted);
 }
 .app-content .highlight pre {
   position: relative;
@@ -1036,10 +1036,10 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .terminal-pre-wrap::before {
   content: "● ● ●";
   display: block;
-  height: 28px;
+  height: var(--fs-10);
   line-height: 28px;
   padding-left: 12px;
-  font-size: var(--fs-1);
+  font-size: var(--space-5);
   letter-spacing: 3px;
   color: #484f58;
   background: #161b22;
@@ -1055,7 +1055,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .app-content pre.terminal-content {
   margin: 0;
   padding: var(--space-4);
-  font-size: var(--fs-2);
+  font-size: var(--terminal-fs);
   line-height: 1.45;
   font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", ui-monospace, monospace;
   background: #0d1117;

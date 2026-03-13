@@ -25,13 +25,13 @@ title: Linux Master 1급 1차
   padding: 0;
 }
 .quiz-select-label {
-  font-size: var(--quiz-select-label-fs);
+  font-size: var(--quiz-card-fs-default);
   font-weight: var(--fw-600);
   color: var(--app-text);
 }
 .quiz-select {
   padding: var(--space-2) var(--space-4);
-  font-size: var(--quiz-select-fs);
+  font-size: var(--);
   border: 1px solid var(--app-border);
   border-radius: var(--radius-2);
   background: var(--app-panel);
@@ -45,13 +45,13 @@ title: Linux Master 1급 1차
   outline: none;
 }
 .quiz-select-hint {
-  font-size: var(--quiz-select-hint-fs);
+  font-size: var(--quiz-card-fs-default);
   color: var(--app-muted);
 }
 
 .quiz-apply-btn {
   padding: var(--space-2) var(--space-4);
-  font-size: var(--quiz-apply-btn-fs);
+  font-size: var(--quiz-card-fs-default);
   font-weight: var(--fw-500);
   color: var(--app-muted);
   background: transparent;

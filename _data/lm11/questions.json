@@ -42,19 +42,19 @@
       "options": [
         {
           "option": "파이프(Pipe)",
-          "description": "오답. 파이프는 프로세스 간 표준 출력을 표준 입력으로 연결하는 통신 방식으로, 메모리·디스크 간 데이터 교환과는 무관하다."
+          "description": "X, 파이프는 프로세스 간 표준 출력을 표준 입력으로 연결하는 통신 방식으로, 메모리·디스크 간 데이터 교환과는 무관하다."
         },
         {
           "option": "스와핑(Swapping)",
-          "description": "정답. 리눅스는 물리적 메모리(RAM)가 부족할 경우, 하드디스크의 일부 공간을 메모리처럼 사용하는 스왑 영역(Swap Space)을 활용하여 시스템의 중단 없이 프로그램을 계속 실행할 수 있게 합니다."
+          "description": "O, 리눅스는 물리적 메모리(RAM)가 부족할 경우, 하드디스크의 일부 공간을 메모리처럼 사용하는 스왑 영역(Swap Space)을 활용하여 시스템의 중단 없이 프로그램을 계속 실행할 수 있게 합니다."
         },
         {
           "option": "리다이렉션(Redirection)",
-          "description": "오답. 리다이렉션은 입출력 방향을 파일 등으로 바꾸는 기능으로, 가상 메모리·스왑과는 다르다."
+          "description": "X, 리다이렉션은 입출력 방향을 파일 등으로 바꾸는 기능으로, 가상 메모리·스왑과는 다르다."
         },
         {
           "option": "가상콘솔(Virtual Console)",
-          "description": "오답. 가상콘솔은 터미널 화면을 여러 개 두는 기능으로, 메모리와 디스크 간 스왑과는 관련이 없다."
+          "description": "X, 가상콘솔은 터미널 화면을 여러 개 두는 기능으로, 메모리와 디스크 간 스왑과는 관련이 없다."
         }
       ],
       "notes": [
@@ -152,19 +152,19 @@
       "options": [
         {
           "option": "$0 /sharp #",
-          "description": "오답. $1은 첫 번째 인자(/the)이므로 '/sharp'는 출력되지 않는다."
+          "description": "X, $1은 첫 번째 인자(/the)이므로 '/sharp'는 출력되지 않는다."
         },
         {
           "option": "$0 /the 2",
-          "description": "오답. 두 번째 인자는 $2이며, echo 명령에서 $2는 출력하지 않는다. 숫자 2는 출력 결과와 관련이 없다."
+          "description": "X, 두 번째 인자는 $2이며, echo 명령에서 $2는 출력하지 않는다. 숫자 2는 출력 결과와 관련이 없다."
         },
         {
           "option": "./test.sh /the #",
-          "description": "정답. $0은 실행된 스크립트 이름(./test.sh), $1은 첫 번째 인자(/the)이므로 전체 출력은 '#./test.sh /the #'가 된다."
+          "description": "O, $0은 실행된 스크립트 이름(./test.sh), $1은 첫 번째 인자(/the)이므로 전체 출력은 '#./test.sh /the #'가 된다."
         },
         {
           "option": "./test.sh /the 2",
-          "description": "오답. echo 문에서 숫자 2는 출력되지 않으며 두 번째 인자(/sharp)는 사용되지 않는다."
+          "description": "X, echo 문에서 숫자 2는 출력되지 않으며 두 번째 인자(/sharp)는 사용되지 않는다."
         }
       ],
       "answer": 3,
@@ -285,15 +285,15 @@
         },
         {
           "option": "㉠ journaling, ㉡ fsck",
-          "description": "오답. ㉠ 저널링(journaling)은 파일 시스템 복구를 위한 로그 기술이지, 파일마다 할당받는 자료 구조가 아니다. 지문의 '각각의 파일이 하나의 (㉠)을 할당받는다'는 i-node를 가리킨다."
+          "description": "X, ㉠ 저널링(journaling)은 파일 시스템 복구를 위한 로그 기술이지, 파일마다 할당받는 자료 구조가 아니다. 지문의 '각각의 파일이 하나의 (㉠)을 할당받는다'는 i-node를 가리킨다."
         },
         {
           "option": "㉠ i-node, ㉡ chkdsk",
-          "description": "오답. ㉡ chkdsk는 Windows의 디스크 검사 도구이며, 유닉스/리눅스의 파일 시스템 복구·점검은 fsck이다."
+          "description": "X, ㉡ chkdsk는 Windows의 디스크 검사 도구이며, 유닉스/리눅스의 파일 시스템 복구·점검은 fsck이다."
         },
         {
           "option": "㉠ journaling, ㉡ chkdsk",
-          "description": "오답. ㉠ 저널링은 파일 시스템의 메타데이터를 로그에 남기는 기술이지, 파일마다 할당되는 자료 구조가 아니다. ㉡ chkdsk는 Windows용이다."
+          "description": "X, ㉠ 저널링은 파일 시스템의 메타데이터를 로그에 남기는 기술이지, 파일마다 할당되는 자료 구조가 아니다. ㉡ chkdsk는 Windows용이다."
         }
       ]
     },
@@ -797,7 +797,7 @@
         },
         {
           "option": "usermod -e 2020-12-31 ihduser",
-          "description": "정답. -e 옵션은 계정 만료일을 설정한다."
+          "description": "O, -e 옵션은 계정 만료일을 설정한다."
         },
         {
           "option": "usermod -f 2020-12-31 ihduser",
@@ -818,7 +818,7 @@
         },
         {
           "option": "/etc/passwd의 세 번째 필드 값이 0인 사용자를 찾는다.",
-          "description": "정답. 세 번째 필드는 UID이며 UID가 0이면 root 권한이다."
+          "description": "O, 세 번째 필드는 UID이며 UID가 0이면 root 권한이다."
         },
         {
           "option": "/etc/passwd의 두 번째 필드 값이 1인 사용자를 찾는다.",
@@ -851,7 +851,7 @@
         },
         {
           "option": "Makefile",
-          "description": "정답. configure 실행 후 생성되는 파일이다."
+          "description": "O, configure 실행 후 생성되는 파일이다."
         }
       ]
     },
@@ -864,7 +864,7 @@
       "options": [
         {
           "option": "yum erase telnet-server",
-          "description": "정답. yum 패키지 삭제 명령이다."
+          "description": "O, yum 패키지 삭제 명령이다."
         },
         {
           "option": "yum delete telnet-server",
@@ -902,7 +902,7 @@
         },
         {
           "option": "nohup",
-          "description": "정답. 터미널 종료 후에도 프로그램을 계속 실행한다."
+          "description": "O, 터미널 종료 후에도 프로그램을 계속 실행한다."
         }
       ]
     },
@@ -920,7 +920,7 @@
         },
         {
           "option": "edquota",
-          "description": "정답. 사용자 쿼터를 편집하는 명령이다."
+          "description": "O, 사용자 쿼터를 편집하는 명령이다."
         },
         {
           "option": "quotaon",
@@ -941,7 +941,7 @@
       "options": [
         {
           "option": "jobs",
-          "description": "정답. 작업 목록을 보여주는 명령이다."
+          "description": "O, 작업 목록을 보여주는 명령이다."
         },
         {
           "option": "top",
@@ -971,7 +971,7 @@
         },
         {
           "option": "id",
-          "description": "정답. UID, GID, 그룹 정보를 출력한다."
+          "description": "O, UID, GID, 그룹 정보를 출력한다."
         },
         {
           "option": "who",
@@ -992,7 +992,7 @@
       "options": [
         {
           "option": "ihd:x:500:",
-          "description": "정답. 그룹명:패스워드:GID:사용자목록 형식이다."
+          "description": "O, 그룹명:패스워드:GID:사용자목록 형식이다."
         },
         {
           "option": "ihd:500:x:",
@@ -1021,7 +1021,7 @@
         },
         {
           "option": "/etc/skel",
-          "description": "정답. 사용자 기본 환경 파일이 저장된다."
+          "description": "O, 사용자 기본 환경 파일이 저장된다."
         },
         {
           "option": "/etc/login.defs",
@@ -1050,7 +1050,7 @@
         },
         {
           "option": "/lib/modules/커널버전/kernel",
-          "description": "정답. 커널 모듈이 저장되는 표준 경로이다."
+          "description": "O, 커널 모듈이 저장되는 표준 경로이다."
         },
         {
           "option": "/lib/modules/kernel/커널버전",
@@ -1076,7 +1076,7 @@
         },
         {
           "option": "modinfo",
-          "description": "정답. 커널 모듈의 상세 정보를 확인하는 명령이다."
+          "description": "O, 커널 모듈의 상세 정보를 확인하는 명령이다."
         },
         {
           "option": "modprobe",
@@ -1106,7 +1106,7 @@
         },
         {
           "option": "㉠ modules.dep ㉡ depmod",
-          "description": "정답. modules.dep는 의존성 파일이며 depmod 명령으로 생성/갱신된다."
+          "description": "O, modules.dep는 의존성 파일이며 depmod 명령으로 생성/갱신된다."
         }
       ]
     },
@@ -1123,7 +1123,7 @@
         },
         {
           "option": "lpr",
-          "description": "정답. BSD 계열 프린터 명령어이다."
+          "description": "O, BSD 계열 프린터 명령어이다."
         },
         {
           "option": "lpstat",
@@ -1145,7 +1145,7 @@
       "options": [
         {
           "option": "SANE",
-          "description": "정답. 스캐너 장치 접근을 위한 API이다."
+          "description": "O, 스캐너 장치 접근을 위한 API이다."
         },
         {
           "option": "ALSA",
@@ -1171,7 +1171,7 @@
       "options": [
         {
           "option": "OSS",
-          "description": "정답. 초기 리눅스 사운드 시스템 인터페이스이다."
+          "description": "O, 초기 리눅스 사운드 시스템 인터페이스이다."
         },
         {
           "option": "ALSA",
@@ -1200,7 +1200,7 @@
         },
         {
           "option": "lpr",
-          "description": "정답. 프린터 출력 요청 명령이다."
+          "description": "O, 프린터 출력 요청 명령이다."
         },
         {
           "option": "lpq",
@@ -1230,7 +1230,7 @@
         },
         {
           "option": "make mrproper",
-          "description": "정답. 커널 소스 트리를 완전히 초기화한다."
+          "description": "O, 커널 소스 트리를 완전히 초기화한다."
         },
         {
           "option": "make xconfig",
@@ -1248,7 +1248,7 @@
       "options": [
         {
           "option": "CUPS",
-          "description": "정답. 리눅스 표준 프린팅 시스템이다."
+          "description": "O, 리눅스 표준 프린팅 시스템이다."
         },
         {
           "option": "LPD",
@@ -1286,7 +1286,7 @@
         },
         {
           "option": "modprobe",
-          "description": "정답. 의존성을 자동으로 해결하며 모듈을 로드한다."
+          "description": "O, 의존성을 자동으로 해결하며 모듈을 로드한다."
         }
       ]
     },
@@ -1311,7 +1311,7 @@
         },
         {
           "option": "grub-md5-crypt",
-          "description": "정답. GRUB에서 MD5 해시 생성 시 사용."
+          "description": "O, GRUB에서 MD5 해시 생성 시 사용."
         }
       ],
       "code": "cherry@rhombus:~$ vi /boot/grub/grub.conf\npassword --md5 $1$..."
@@ -1329,7 +1329,7 @@
         },
         {
           "option": "ssh는 로그인 전에 보여주는 메시지를 별도의 파일로 지정 할 수 있다.",
-          "description": "정답. /etc/motd 또는 Banner 설정 사용."
+          "description": "O, /etc/motd 또는 Banner 설정 사용."
         },
         {
           "option": "ssh서버의 환경 설정 파일은 /etc/sshd_config이고 실행 데몬 스크립트는 /etc/rc.d/init.d/sshd이다.",
@@ -1354,7 +1354,7 @@
         },
         {
           "option": "-icvt",
-          "description": "정답. cpio 아카이브 내용 확인 옵션."
+          "description": "O, cpio 아카이브 내용 확인 옵션."
         },
         {
           "option": "-icdv",
@@ -1387,7 +1387,7 @@
         },
         {
           "option": "/var/log/xferlog",
-          "description": "정답. FTP 전송 로그이며 텍스트 형식."
+          "description": "O, FTP 전송 로그이며 텍스트 형식."
         }
       ]
     },
@@ -1408,7 +1408,7 @@
         },
         {
           "option": "/var/log/dmesg : 시스템이 부팅할 때 출력되었던 로그 기록",
-          "description": "정답. 커널 부팅 메시지."
+          "description": "O, 커널 부팅 메시지."
         },
         {
           "option": "/var/log/boot.log : telnet이나 ssh 마지막 접속 정보",
@@ -1426,7 +1426,7 @@
       "options": [
         {
           "option": "㉠ : /etc/logrotate.conf\n㉡ : /etc/logrotate.d\n㉢ : /etc/cron.daily",
-          "description": "정답. 기본 logrotate 구조."
+          "description": "O, 기본 logrotate 구조."
         },
         {
           "option": "㉠ : /etc/logrotate.conf㉡ : /etc/logrotate㉢ : /etc/crontab",
@@ -1451,7 +1451,7 @@
       "options": [
         {
           "option": "MD5",
-          "description": "정답. GRUB 패스워드 기본 해시."
+          "description": "O, GRUB 패스워드 기본 해시."
         },
         {
           "option": "SHA-1",
@@ -1480,7 +1480,7 @@
         },
         {
           "option": "nmap",
-          "description": "정답. 포트 스캐너."
+          "description": "O, 포트 스캐너."
         },
         {
           "option": "nessus",
@@ -1513,7 +1513,7 @@
         },
         {
           "option": "restore",
-          "description": "정답. dump 백업 복구 프로그램."
+          "description": "O, dump 백업 복구 프로그램."
         }
       ]
     },
@@ -1551,19 +1551,19 @@
         "options": [
             {
                 "option": "LoadModule",
-                "description": "정답. Apache httpd.conf에서 모듈을 로드할 때 사용하는 지시자는 LoadModule이다. 형식은 LoadModule 모듈명 모듈경로 이다."
+                "description": "O, Apache httpd.conf에서 모듈을 로드할 때 사용하는 지시자는 LoadModule이다. 형식은 LoadModule 모듈명 모듈경로 이다."
             },
             {
                 "option": "Include",
-                "description": "오답. Include는 설정 파일을 외부에서 불러올 때 쓰는 지시자로, 모듈 로드와는 다르다."
+                "description": "X, Include는 설정 파일을 외부에서 불러올 때 쓰는 지시자로, 모듈 로드와는 다르다."
             },
             {
                 "option": "AddType",
-                "description": "오답. AddType은 MIME 타입을 지정할 때 사용하는 지시자이다."
+                "description": "X, AddType은 MIME 타입을 지정할 때 사용하는 지시자이다."
             },
             {
                 "option": "AddModule",
-                "description": "오답. Apache 2.x에서는 AddModule이 아니라 LoadModule을 사용한다. AddModule은 구 버전에서 사용되었다."
+                "description": "X, Apache 2.x에서는 AddModule이 아니라 LoadModule을 사용한다. AddModule은 구 버전에서 사용되었다."
             }
         ]
     },
@@ -1576,19 +1576,19 @@
         "options": [
             {
                 "option": "virsh",
-                "description": "정답. virsh는 KVM 등 가상화 관리를 위한 CLI 도구이다. (※ 문항 지문의 passwd.byname은 NIS 맵 이름으로, 실제 NIS 맥락에서는 makedbm 등이 쓰이지만 선지가 가상화 도구로만 구성된 경우 정답은 virsh로 표기된 경우가 있음.)"
+                "description": "O, virsh는 KVM 등 가상화 관리를 위한 CLI 도구이다. (※ 문항 지문의 passwd.byname은 NIS 맵 이름으로, 실제 NIS 맥락에서는 makedbm 등이 쓰이지만 선지가 가상화 도구로만 구성된 경우 정답은 virsh로 표기된 경우가 있음.)"
             },
             {
                 "option": "libvirtd",
-                "description": "오답. libvirtd는 가상화 관리를 위한 백엔드 데몬으로, 명령어가 아니다."
+                "description": "X, libvirtd는 가상화 관리를 위한 백엔드 데몬으로, 명령어가 아니다."
             },
             {
                 "option": "virt-top",
-                "description": "오답. virt-top은 가상 머신 자원 사용량을 보여 주는 모니터링 도구이다."
+                "description": "X, virt-top은 가상 머신 자원 사용량을 보여 주는 모니터링 도구이다."
             },
             {
                 "option": "virt-manager",
-                "description": "오답. virt-manager는 가상화 관리용 GUI 프로그램이다."
+                "description": "X, virt-manager는 가상화 관리용 GUI 프로그램이다."
             }
         ]
     },
@@ -1601,19 +1601,19 @@
         "options": [
             {
                 "option": "acl",
-                "description": "정답. BIND named.conf에서 ACL(Access Control List)은 여러 주소나 네트워크를 하나의 이름으로 묶어서 재사용할 때 사용한다. acl \"이름\" { 주소; }; 형식이다."
+                "description": "O, BIND named.conf에서 ACL(Access Control List)은 여러 주소나 네트워크를 하나의 이름으로 묶어서 재사용할 때 사용한다. acl \"이름\" { 주소; }; 형식이다."
             },
             {
                 "option": "list",
-                "description": "오답. BIND 설정에서 여러 호스트를 하나의 명칭으로 지정하는 구문은 acl이다. list는 이 용도가 아니다."
+                "description": "X, BIND 설정에서 여러 호스트를 하나의 명칭으로 지정하는 구문은 acl이다. list는 이 용도가 아니다."
             },
             {
                 "option": "group",
-                "description": "오답. group은 named.conf의 이 문맥에서 사용하는 키워드가 아니다."
+                "description": "X, group은 named.conf의 이 문맥에서 사용하는 키워드가 아니다."
             },
             {
                 "option": "member",
-                "description": "오답. member는 LDAP 등에서 쓰이는 용어로, BIND ACL 문법이 아니다."
+                "description": "X, member는 LDAP 등에서 쓰이는 용어로, BIND ACL 문법이 아니다."
             }
         ]
     },
@@ -1625,19 +1625,19 @@
         "options": [
             {
                 "option": "hosts allow = 192.168.5.",
-                "description": "오답. 끝의 점만으로는 서브넷 마스크가 없어 대역 지정이 모호하다."
+                "description": "X, 끝의 점만으로는 서브넷 마스크가 없어 대역 지정이 모호하다."
             },
             {
                 "option": "hosts allow = 192.168.5",
-                "description": "오답. IP만 있고 서브넷 표기가 없어 특정 대역 허용 형식이 아니다."
+                "description": "X, IP만 있고 서브넷 표기가 없어 특정 대역 허용 형식이 아니다."
             },
             {
                 "option": "hosts allow = 192.168.5.0",
-                "description": "오답. 192.168.5.0 하나의 호스트만 허용하는 형식이다. /24 대역 전체가 아니다."
+                "description": "X, 192.168.5.0 하나의 호스트만 허용하는 형식이다. /24 대역 전체가 아니다."
             },
             {
                 "option": "hosts allow = 192.168.5.0/24",
-                "description": "정답. CIDR 표기(192.168.5.0/24)로 192.168.5.0~255 대역 전체의 접근을 허가하는 올바른 설정이다."
+                "description": "O, CIDR 표기(192.168.5.0/24)로 192.168.5.0~255 대역 전체의 접근을 허가하는 올바른 설정이다."
             }
         ]
     },
@@ -1650,19 +1650,19 @@
         "options": [
             {
                 "option": "POST",
-                "description": "정답. 폼 데이터를 서버로 보내 저장할 때는 POST 메소드를 사용한다. GET은 조회용이며 URL에 노출되므로 비밀 데이터에는 부적합하다."
+                "description": "O, 폼 데이터를 서버로 보내 저장할 때는 POST 메소드를 사용한다. GET은 조회용이며 URL에 노출되므로 비밀 데이터에는 부적합하다."
             },
             {
                 "option": "GET",
-                "description": "오답. GET은 주로 조회에 쓰이며, 폼 데이터가 URL에 붙어 전송된다. 저장·제출 목적에는 POST가 적합하다."
+                "description": "X, GET은 주로 조회에 쓰이며, 폼 데이터가 URL에 붙어 전송된다. 저장·제출 목적에는 POST가 적합하다."
             },
             {
                 "option": "PUT",
-                "description": "오답. PUT은 리소스 전체 갱신에 쓰이며, HTML 폼 제출에서 일반적으로 쓰는 메소드는 POST이다."
+                "description": "X, PUT은 리소스 전체 갱신에 쓰이며, HTML 폼 제출에서 일반적으로 쓰는 메소드는 POST이다."
             },
             {
                 "option": "HEAD",
-                "description": "오답. HEAD는 응답 본문 없이 헤더만 요청할 때 쓰며, 폼 전송과 무관하다."
+                "description": "X, HEAD는 응답 본문 없이 헤더만 요청할 때 쓰며, 폼 전송과 무관하다."
             }
         ]
     },
@@ -1675,19 +1675,19 @@
         "options": [
             {
                 "option": "htpasswd",
-                "description": "정답. htpasswd는 Apache 기본 인증용 비밀번호 파일을 만들고 사용자를 추가하는 명령이다. -c는 새 파일 생성 시 사용한다."
+                "description": "O, htpasswd는 Apache 기본 인증용 비밀번호 파일을 만들고 사용자를 추가하는 명령이다. -c는 새 파일 생성 시 사용한다."
             },
             {
                 "option": "htuseradd",
-                "description": "오답. Apache 표준 도구에는 htuseradd가 없다. 사용자 추가는 htpasswd로 한다."
+                "description": "X, Apache 표준 도구에는 htuseradd가 없다. 사용자 추가는 htpasswd로 한다."
             },
             {
                 "option": "apachectl",
-                "description": "오답. apachectl은 Apache 서버 기동·정지 등 제어용 도구로, 인증 파일 생성과는 다르다."
+                "description": "X, apachectl은 Apache 서버 기동·정지 등 제어용 도구로, 인증 파일 생성과는 다르다."
             },
             {
                 "option": "httpd",
-                "description": "오답. httpd는 Apache 데몬(서버 프로세스) 이름으로, 비밀번호 파일을 만드는 명령이 아니다."
+                "description": "X, httpd는 Apache 데몬(서버 프로세스) 이름으로, 비밀번호 파일을 만드는 명령이 아니다."
             }
         ]
     },
@@ -1699,19 +1699,19 @@
         "options": [
             {
                 "option": "NFS",
-                "description": "정답. NFS는 네트워크 파일 공유 서비스로, 사용자 인증·계정 통합이 주 목적이 아니다. NIS, LDAP, Active Directory는 인증·디렉터리 서비스이다."
+                "description": "O, NFS는 네트워크 파일 공유 서비스로, 사용자 인증·계정 통합이 주 목적이 아니다. NIS, LDAP, Active Directory는 인증·디렉터리 서비스이다."
             },
             {
                 "option": "NIS",
-                "description": "오답. NIS(Network Information Service)는 사용자·호스트 정보 등 통합 인증/계정 서비스이다."
+                "description": "X, NIS(Network Information Service)는 사용자·호스트 정보 등 통합 인증/계정 서비스이다."
             },
             {
                 "option": "LDAP",
-                "description": "오답. LDAP은 디렉터리·인증에 널리 쓰이는 프로토콜이다."
+                "description": "X, LDAP은 디렉터리·인증에 널리 쓰이는 프로토콜이다."
             },
             {
                 "option": "Active Directory",
-                "description": "오답. Active Directory는 Windows 기반 통합 인증·디렉터리 서비스이다."
+                "description": "X, Active Directory는 Windows 기반 통합 인증·디렉터리 서비스이다."
             }
         ]
     },
@@ -1723,19 +1723,19 @@
         "options": [
             {
                 "option": "givenName",
-                "description": "오답. givenName은 이름(First name)을 나타내는 속성이지만, LDAP에서 '이름'을 대표하는 표준 속성은 cn(Common Name)이다."
+                "description": "X, givenName은 이름(First name)을 나타내는 속성이지만, LDAP에서 '이름'을 대표하는 표준 속성은 cn(Common Name)이다."
             },
             {
                 "option": "c",
-                "description": "오답. c는 국가(Country) 코드용 속성이다."
+                "description": "X, c는 국가(Country) 코드용 속성이다."
             },
             {
                 "option": "cn",
-                "description": "정답. cn(Common Name)은 LDAP에서 객체의 이름을 나타내는 대표 속성이다."
+                "description": "O, cn(Common Name)은 LDAP에서 객체의 이름을 나타내는 대표 속성이다."
             },
             {
                 "option": "sn",
-                "description": "오답. sn(Surname)은 성(Family name)을 나타내는 속성이다."
+                "description": "X, sn(Surname)은 성(Family name)을 나타내는 속성이다."
             }
         ]
     },
@@ -1747,19 +1747,19 @@
         "options": [
             {
                 "option": "ypbind",
-                "description": "정답. ypbind는 NIS 클라이언트에서 NIS 서버를 찾아 바인딩할 때 쓰는 데몬이다. 서버 측에서 동작시켜야 할 데몬은 ypserv, ypxfrd, rpcbind 등이다."
+                "description": "O, ypbind는 NIS 클라이언트에서 NIS 서버를 찾아 바인딩할 때 쓰는 데몬이다. 서버 측에서 동작시켜야 할 데몬은 ypserv, ypxfrd, rpcbind 등이다."
             },
             {
                 "option": "ypxfrd",
-                "description": "오답. ypxfrd는 NIS 서버 간 맵 전송에 쓰는 데몬으로, NIS 서버에서 동작한다."
+                "description": "X, ypxfrd는 NIS 서버 간 맵 전송에 쓰는 데몬으로, NIS 서버에서 동작한다."
             },
             {
                 "option": "rpcbind",
-                "description": "오답. rpcbind는 RPC 서비스 등록·조회용으로, NIS 서버가 RPC를 쓰므로 서버에서 필요하다."
+                "description": "X, rpcbind는 RPC 서비스 등록·조회용으로, NIS 서버가 RPC를 쓰므로 서버에서 필요하다."
             },
             {
                 "option": "ypserv",
-                "description": "오답. ypserv는 NIS 서버의 핵심 데몬으로, 서버에서 반드시 동작시켜야 한다."
+                "description": "X, ypserv는 NIS 서버의 핵심 데몬으로, 서버에서 반드시 동작시켜야 한다."
             }
         ]
     },
@@ -1772,19 +1772,19 @@
         "options": [
             {
                 "option": "ypcat",
-                "description": "정답. ypcat은 NIS 맵 내용을 조회하는 명령이다. ypcat passwd.byname으로 passwd 맵을 볼 수 있다."
+                "description": "O, ypcat은 NIS 맵 내용을 조회하는 명령이다. ypcat passwd.byname으로 passwd 맵을 볼 수 있다."
             },
             {
                 "option": "yppasswd",
-                "description": "오답. yppasswd는 NIS 환경에서 사용자 비밀번호를 변경할 때 쓰는 명령이다."
+                "description": "X, yppasswd는 NIS 환경에서 사용자 비밀번호를 변경할 때 쓰는 명령이다."
             },
             {
                 "option": "ypwhich",
-                "description": "오답. ypwhich는 현재 바인딩된 NIS 서버를 보여 주는 명령이다."
+                "description": "X, ypwhich는 현재 바인딩된 NIS 서버를 보여 주는 명령이다."
             },
             {
                 "option": "ypwhich -m",
-                "description": "오답. ypwhich -m은 특정 맵을 제공하는 서버를 조회할 때 사용한다. 맵 내용 출력이 아니다."
+                "description": "X, ypwhich -m은 특정 맵을 제공하는 서버를 조회할 때 사용한다. 맵 내용 출력이 아니다."
             }
         ]
     },
@@ -1797,19 +1797,19 @@
         "options": [
             {
                 "option": "no_root_squash",
-                "description": "오답. no_root_squash는 클라이언트 root를 서버 root로 그대로 매핑해 권한을 제한하지 않는다."
+                "description": "X, no_root_squash는 클라이언트 root를 서버 root로 그대로 매핑해 권한을 제한하지 않는다."
             },
             {
                 "option": "root_squash",
-                "description": "정답. root_squash는 클라이언트의 root를 서버 쪽 nfsnobody(또는 nobody)로 매핑해 권한을 낮춘다."
+                "description": "O, root_squash는 클라이언트의 root를 서버 쪽 nfsnobody(또는 nobody)로 매핑해 권한을 낮춘다."
             },
             {
                 "option": "all_squash",
-                "description": "오답. all_squash는 모든 사용자를 익명 사용자로 매핑하는 옵션으로, root만 nfsnobody로 매핑하는 root_squash와 다르다."
+                "description": "X, all_squash는 모든 사용자를 익명 사용자로 매핑하는 옵션으로, root만 nfsnobody로 매핑하는 root_squash와 다르다."
             },
             {
                 "option": "no_all_squash",
-                "description": "오답. no_all_squash는 all_squash를 쓰지 않을 때의 기본 동작이다. root 매핑만 설명하는 것은 root_squash이다."
+                "description": "X, no_all_squash는 all_squash를 쓰지 않을 때의 기본 동작이다. root 매핑만 설명하는 것은 root_squash이다."
             }
         ]
     },
@@ -1822,19 +1822,19 @@
         "options": [
             {
                 "option": "smbstatus",
-                "description": "오답. smbstatus는 Samba 접속·파일 잠금 상태를 보여 주는 명령으로, 공유 접속용이 아니다."
+                "description": "X, smbstatus는 Samba 접속·파일 잠금 상태를 보여 주는 명령으로, 공유 접속용이 아니다."
             },
             {
                 "option": "smbmount",
-                "description": "오답. smbmount는 Samba 공유를 마운트할 때 쓰지만, 현재는 mount -t cifs를 많이 쓴다. 빈 칸 문맥(공유 접속)에는 smbclient가 적합하다."
+                "description": "X, smbmount는 Samba 공유를 마운트할 때 쓰지만, 현재는 mount -t cifs를 많이 쓴다. 빈 칸 문맥(공유 접속)에는 smbclient가 적합하다."
             },
             {
                 "option": "smbclient",
-                "description": "정답. smbclient는 Samba/CIFS 공유에 접속해 파일 전송·조회를 하는 클라이언트 명령이다. smbclient //192.168.12.22/src 형식으로 사용한다."
+                "description": "O, smbclient는 Samba/CIFS 공유에 접속해 파일 전송·조회를 하는 클라이언트 명령이다. smbclient //192.168.12.22/src 형식으로 사용한다."
             },
             {
                 "option": "testparm",
-                "description": "오답. testparm은 smb.conf 설정 문법을 검사하는 명령으로, 공유 접속과 무관하다."
+                "description": "X, testparm은 smb.conf 설정 문법을 검사하는 명령으로, 공유 접속과 무관하다."
             }
         ]
     },
@@ -1846,19 +1846,19 @@
         "options": [
             {
                 "option": "evolution",
-                "description": "정답. evolution은 메일·일정 등을 쓰는 클라이언트(MUA) 프로그램이다. 나머지 postfix, qmail, sendmail은 메일 전송 에이전트(MTA)이다."
+                "description": "O, evolution은 메일·일정 등을 쓰는 클라이언트(MUA) 프로그램이다. 나머지 postfix, qmail, sendmail은 메일 전송 에이전트(MTA)이다."
             },
             {
                 "option": "postfix",
-                "description": "오답. postfix는 MTA(메일 전송 에이전트)로, 같은 종류에 해당한다."
+                "description": "X, postfix는 MTA(메일 전송 에이전트)로, 같은 종류에 해당한다."
             },
             {
                 "option": "qmail",
-                "description": "오답. qmail은 MTA이다."
+                "description": "X, qmail은 MTA이다."
             },
             {
                 "option": "sendmail",
-                "description": "오답. sendmail은 대표적인 MTA이다."
+                "description": "X, sendmail은 대표적인 MTA이다."
             }
         ]
     },
@@ -1870,19 +1870,19 @@
         "options": [
             {
                 "option": "Cw",
-                "description": "정답. Cw(Class w)는 이 메일 서버가 수신·발신으로 인정할 호스트명·도메인 목록을 지정한다. 발신지 도메인을 특정할 때 사용한다."
+                "description": "O, Cw(Class w)는 이 메일 서버가 수신·발신으로 인정할 호스트명·도메인 목록을 지정한다. 발신지 도메인을 특정할 때 사용한다."
             },
             {
                 "option": "Fw",
-                "description": "오답. Fw는 파일에서 호스트명 목록을 읽어 오는 클래스로, Cw와 유사하지만 파일 기반이다. 발신지 강제 지정의 대표 항목은 Cw이다."
+                "description": "X, Fw는 파일에서 호스트명 목록을 읽어 오는 클래스로, Cw와 유사하지만 파일 기반이다. 발신지 강제 지정의 대표 항목은 Cw이다."
             },
             {
                 "option": "Dj",
-                "description": "오답. Dj는 기본 도메인(Default domain) 매크로로, 정규화 등에 쓰이지만 발신지 도메인 강제 지정의 대표 항목은 Cw이다."
+                "description": "X, Dj는 기본 도메인(Default domain) 매크로로, 정규화 등에 쓰이지만 발신지 도메인 강제 지정의 대표 항목은 Cw이다."
             },
             {
                 "option": "O",
-                "description": "오답. O는 sendmail.cf의 옵션 설정 라인으로, 도메인명 지정 항목이 아니다."
+                "description": "X, O는 sendmail.cf의 옵션 설정 라인으로, 도메인명 지정 항목이 아니다."
             }
         ]
     },
@@ -1895,19 +1895,19 @@
         "options": [
             {
                 "option": "newaliases",
-                "description": "오답. newaliases는 alias DB를 재생성하는 명령으로, sendmail.mc를 sendmail.cf로 변환하는 명령이 아니다."
+                "description": "X, newaliases는 alias DB를 재생성하는 명령으로, sendmail.mc를 sendmail.cf로 변환하는 명령이 아니다."
             },
             {
                 "option": "m4",
-                "description": "정답. sendmail.mc는 m4 매크로로 작성되므로, m4로 전처리하면 sendmail.cf가 생성된다. m4 sendmail.mc > sendmail.cf 형식으로 사용한다."
+                "description": "O, sendmail.mc는 m4 매크로로 작성되므로, m4로 전처리하면 sendmail.cf가 생성된다. m4 sendmail.mc > sendmail.cf 형식으로 사용한다."
             },
             {
                 "option": "sendmail",
-                "description": "오답. sendmail은 메일 전송 에이전트(데몬)로, 설정 파일 변환 도구가 아니다."
+                "description": "X, sendmail은 메일 전송 에이전트(데몬)로, 설정 파일 변환 도구가 아니다."
             },
             {
                 "option": "makemap hash",
-                "description": "오답. makemap은 access·virtusertable 등 DB 맵 파일을 만들 때 쓰며, .mc를 .cf로 바꾸는 명령이 아니다."
+                "description": "X, makemap은 access·virtusertable 등 DB 맵 파일을 만들 때 쓰며, .mc를 .cf로 바꾸는 명령이 아니다."
             }
         ]
     },
@@ -1920,19 +1920,19 @@
         "options": [
             {
                 "option": "include",
-                "description": "정답. BIND named.conf에서 다른 설정 파일을 불러올 때 include \"경로\"; 를 사용한다."
+                "description": "O, BIND named.conf에서 다른 설정 파일을 불러올 때 include \"경로\"; 를 사용한다."
             },
             {
                 "option": "zone",
-                "description": "오답. zone은 zone 블록을 정의할 때 쓰는 키워드로, 파일을 포함하는 지시자가 아니다."
+                "description": "X, zone은 zone 블록을 정의할 때 쓰는 키워드로, 파일을 포함하는 지시자가 아니다."
             },
             {
                 "option": "directory",
-                "description": "오답. directory는 zone 파일 등이 위치한 기본 디렉터리를 지정할 때 쓰며, 파일 하나를 포함하는 문법이 아니다."
+                "description": "X, directory는 zone 파일 등이 위치한 기본 디렉터리를 지정할 때 쓰며, 파일 하나를 포함하는 문법이 아니다."
             },
             {
                 "option": "allow-zones",
-                "description": "오답. allow-zones는 BIND 설정의 표준 키워드가 아니며, 외부 파일 포함은 include이다."
+                "description": "X, allow-zones는 BIND 설정의 표준 키워드가 아니며, 외부 파일 포함은 include이다."
             }
         ]
     },
@@ -1945,19 +1945,19 @@
         "options": [
             {
                 "option": "hint",
-                "description": "오답. hint는 루트 힌트 등 캐시용 zone type이다. \"...\" 자리에는 보통 루트(.)가 온다."
+                "description": "X, hint는 루트 힌트 등 캐시용 zone type이다. \"...\" 자리에는 보통 루트(.)가 온다."
             },
             {
                 "option": "master",
-                "description": "오답. master는 1차 네임서버(primary)용 zone type이다."
+                "description": "X, master는 1차 네임서버(primary)용 zone type이다."
             },
             {
                 "option": "slave",
-                "description": "오답. slave는 2차 네임서버(secondary)용 zone type이다."
+                "description": "X, slave는 2차 네임서버(secondary)용 zone type이다."
             },
             {
                 "option": "local",
-                "description": "정답. type local은 localhost 역방향 등 로컬 zone을 정의할 때 사용한다. zone \".\" 등과 함께 쓰인다."
+                "description": "O, type local은 localhost 역방향 등 로컬 zone을 정의할 때 사용한다. zone \".\" 등과 함께 쓰인다."
             }
         ]
     },
@@ -1970,19 +1970,19 @@
         "options": [
             {
                 "option": "㉠ MX 0 ㉡ ihd.or.kr.",
-                "description": "오답. MX 레코드 형식은 '도메인 MX 우선순위 메일서버'이다. ㉠에 도메인, 괄호에 MX, ㉡에 우선순위(숫자), 끝에 FQDN(끝에 점)이 와야 한다. 0과 FQDN 위치가 맞지 않는다."
+                "description": "X, MX 레코드 형식은 '도메인 MX 우선순위 메일서버'이다. ㉠에 도메인, 괄호에 MX, ㉡에 우선순위(숫자), 끝에 FQDN(끝에 점)이 와야 한다. 0과 FQDN 위치가 맞지 않는다."
             },
             {
                 "option": "㉠ MX ㉡ ihd.or.kr",
-                "description": "정답. ㉠=도메인(예: @ 또는 ihd.or.kr.), (괄호)=MX, ㉡=우선순위(예: 0), 메일서버 FQDN=ihd.or.kr. 형식이다. FQDN 끝 점은 zone 파일에서 생략 가능한 경우가 있다."
+                "description": "O, ㉠=도메인(예: @ 또는 ihd.or.kr.), (괄호)=MX, ㉡=우선순위(예: 0), 메일서버 FQDN=ihd.or.kr. 형식이다. FQDN 끝 점은 zone 파일에서 생략 가능한 경우가 있다."
             },
             {
                 "option": "㉠ MX ㉡ ihd.or.kr.",
-                "description": "오답. FQDN 끝에 점(.)이 있으면 정규 형식이지만, 지문의 ㉠·㉡ 배치와 맞는 정답은 ②번이다."
+                "description": "X, FQDN 끝에 점(.)이 있으면 정규 형식이지만, 지문의 ㉠·㉡ 배치와 맞는 정답은 ②번이다."
             },
             {
                 "option": "㉠ MX 0 ㉡ ihd.or.kr",
-                "description": "오답. 0이 ㉡ 자리(우선순위)에 오면 되지만, ㉠과 ㉡이 모두 채워진 표준 표기는 ②번과 같다."
+                "description": "X, 0이 ㉡ 자리(우선순위)에 오면 되지만, ㉠과 ㉡이 모두 채워진 표준 표기는 ②번과 같다."
             }
         ]
     },
@@ -1995,19 +1995,19 @@
         "options": [
             {
                 "option": "Xen",
-                "description": "오답. Xen은 Cambridge 대학에서 시작한 하이퍼바이저로, Qumranet이 개발한 것이 아니다."
+                "description": "X, Xen은 Cambridge 대학에서 시작한 하이퍼바이저로, Qumranet이 개발한 것이 아니다."
             },
             {
                 "option": "KVM",
-                "description": "정답. KVM(Kernel-based Virtual Machine)은 2005년 Qumranet이 개발한 리눅스 커널 기반 하이퍼바이저이다. Red Hat이 Qumranet을 인수한 뒤 RHEV(Red Hat Enterprise Virtualization) 등 상용 제품에 사용한다."
+                "description": "O, KVM(Kernel-based Virtual Machine)은 2005년 Qumranet이 개발한 리눅스 커널 기반 하이퍼바이저이다. Red Hat이 Qumranet을 인수한 뒤 RHEV(Red Hat Enterprise Virtualization) 등 상용 제품에 사용한다."
             },
             {
                 "option": "Docker",
-                "description": "오답. Docker는 컨테이너 런타임/플랫폼으로, 하이퍼바이저가 아니다."
+                "description": "X, Docker는 컨테이너 런타임/플랫폼으로, 하이퍼바이저가 아니다."
             },
             {
                 "option": "Ansible",
-                "description": "오답. Ansible은 설정 관리·자동화 도구로, 가상화 기술이 아니다."
+                "description": "X, Ansible은 설정 관리·자동화 도구로, 가상화 기술이 아니다."
             }
         ]
     },
@@ -2020,19 +2020,19 @@
         "options": [
             {
                 "option": "in.telnetd",
-                "description": "정답. TCP Wrapper에서 서비스는 데몬 실행 파일 이름으로 지정한다. 텔넷 서버 데몬은 in.telnetd이므로, in.telnetd: 192.168.5.13 으로 차단한다."
+                "description": "O, TCP Wrapper에서 서비스는 데몬 실행 파일 이름으로 지정한다. 텔넷 서버 데몬은 in.telnetd이므로, in.telnetd: 192.168.5.13 으로 차단한다."
             },
             {
                 "option": "telnet",
-                "description": "오답. telnet은 클라이언트 명령 이름이다. hosts.deny에는 서버 데몬 이름 in.telnetd를 쓴다."
+                "description": "X, telnet은 클라이언트 명령 이름이다. hosts.deny에는 서버 데몬 이름 in.telnetd를 쓴다."
             },
             {
                 "option": "telnetd",
-                "description": "오답. 실제 데몬 바이너리 이름은 in.telnetd이다. telnetd만 쓰면 매칭이 안 될 수 있다."
+                "description": "X, 실제 데몬 바이너리 이름은 in.telnetd이다. telnetd만 쓰면 매칭이 안 될 수 있다."
             },
             {
                 "option": "telnet.service",
-                "description": "오답. telnet.service는 systemd 유닛 이름으로, TCP Wrapper의 데몬 이름이 아니다."
+                "description": "X, telnet.service는 systemd 유닛 이름으로, TCP Wrapper의 데몬 이름이 아니다."
             }
         ]
     },
@@ -2045,19 +2045,19 @@
         "options": [
             {
                 "option": "㉠ <?php ㉡ ?>",
-                "description": "정답. PHP 코드는 <?php 로 시작하고 ?> 로 끝난다. ㉠=<?php, ㉡=?> 이다."
+                "description": "O, PHP 코드는 <?php 로 시작하고 ?> 로 끝난다. ㉠=<?php, ㉡=?> 이다."
             },
             {
                 "option": "㉠ <%php ㉡ %>",
-                "description": "오답. ASP 스타일 태그(<% %>)이며, PHP 표준 구분자는 <?php 와 ?> 이다."
+                "description": "X, ASP 스타일 태그(<% %>)이며, PHP 표준 구분자는 <?php 와 ?> 이다."
             },
             {
                 "option": "㉠ <!php ㉡ !>",
-                "description": "오답. PHP 실행 구분자가 아니며, HTML 주석처럼 보인다."
+                "description": "X, PHP 실행 구분자가 아니며, HTML 주석처럼 보인다."
             },
             {
                 "option": "㉠ <&php ㉡ &>",
-                "description": "오답. PHP 문법이 아니며, 표준 PHP 태그는 <?php ?> 이다."
+                "description": "X, PHP 문법이 아니며, 표준 PHP 태그는 <?php ?> 이다."
             }
         ]
     },
@@ -7441,19 +7441,19 @@
       "options": [
         {
           "option": "㉠ 리처드 스톨먼, ㉡ 리누스 토발즈",
-          "description": "오답. 리처드 스톨먼은 GNU 프로젝트의 주도자이며 리눅스 커널 개발자는 아니다."
+          "description": "X, 리처드 스톨먼은 GNU 프로젝트의 주도자이며 리눅스 커널 개발자는 아니다."
         },
         {
           "option": "㉠ 리처드 스톨먼, ㉡ 켄 톰슨",
-          "description": "오답. 켄 톰슨은 유닉스 공동 개발자이지만 미닉스 개발자는 아니다."
+          "description": "X, 켄 톰슨은 유닉스 공동 개발자이지만 미닉스 개발자는 아니다."
         },
         {
           "option": "㉠ 리누스 토발즈, ㉡ 앤드루 S. 타넨바움",
-          "description": "정답. 리눅스 커널은 리누스 토발즈가 만들었고, 초기 개발 과정에서 앤드루 S. 타넨바움이 만든 교육용 운영체제 미닉스를 참고했다."
+          "description": "O, 리눅스 커널은 리누스 토발즈가 만들었고, 초기 개발 과정에서 앤드루 S. 타넨바움이 만든 교육용 운영체제 미닉스를 참고했다."
         },
         {
           "option": "㉠ 켄 톰슨, ㉡ 데니스 리치",
-          "description": "오답. 켄 톰슨과 데니스 리치는 유닉스 개발과 관련이 있으나, 리눅스 커널과 미닉스 개발자 조합은 아니다."
+          "description": "X, 켄 톰슨과 데니스 리치는 유닉스 개발과 관련이 있으나, 리눅스 커널과 미닉스 개발자 조합은 아니다."
         }
       ]
     },
@@ -7466,19 +7466,19 @@
       "options": [
         {
           "option": "리다이렉션",
-          "description": "오답. 리다이렉션은 입출력 방향을 파일이나 장치로 바꾸는 기능이며, 프로세스 간 연결 자체를 의미하지는 않는다."
+          "description": "X, 리다이렉션은 입출력 방향을 파일이나 장치로 바꾸는 기능이며, 프로세스 간 연결 자체를 의미하지는 않는다."
         },
         {
           "option": "파이프",
-          "description": "정답. 파이프(pipe)는 한 프로세스의 표준 출력을 다른 프로세스의 표준 입력으로 연결하는 대표적인 IPC 방식이다."
+          "description": "O, 파이프(pipe)는 한 프로세스의 표준 출력을 다른 프로세스의 표준 입력으로 연결하는 대표적인 IPC 방식이다."
         },
         {
           "option": "라이브러리",
-          "description": "오답. 라이브러리는 프로그램에서 공통 기능을 재사용하기 위한 코드 모음이다."
+          "description": "X, 라이브러리는 프로그램에서 공통 기능을 재사용하기 위한 코드 모음이다."
         },
         {
           "option": "가상 콘솔",
-          "description": "오답. 가상 콘솔은 하나의 시스템에서 여러 콘솔 세션을 사용하는 기능이다."
+          "description": "X, 가상 콘솔은 하나의 시스템에서 여러 콘솔 세션을 사용하는 기능이다."
         }
       ]
     },
@@ -7491,19 +7491,19 @@
       "options": [
         {
           "option": "Apache License",
-          "description": "정답. Apache License는 상업적 이용과 수정, 재배포를 허용하며 수정 소스 공개 의무가 없고, Hadoop과 Tomcat이 대표 사례이다."
+          "description": "O, Apache License는 상업적 이용과 수정, 재배포를 허용하며 수정 소스 공개 의무가 없고, Hadoop과 Tomcat이 대표 사례이다."
         },
         {
           "option": "LGPL",
-          "description": "오답. LGPL은 라이브러리 중심의 약한 카피레프트 라이선스이다."
+          "description": "X, LGPL은 라이브러리 중심의 약한 카피레프트 라이선스이다."
         },
         {
           "option": "BSD",
-          "description": "오답. BSD도 허용적 라이선스이지만 Hadoop, Tomcat의 대표 라이선스로는 Apache License가 맞다."
+          "description": "X, BSD도 허용적 라이선스이지만 Hadoop, Tomcat의 대표 라이선스로는 Apache License가 맞다."
         },
         {
           "option": "MPL",
-          "description": "오답. MPL은 파일 단위 약한 카피레프트 성격의 라이선스이다."
+          "description": "X, MPL은 파일 단위 약한 카피레프트 성격의 라이선스이다."
         }
       ]
     },
@@ -7516,19 +7516,19 @@
       "options": [
         {
           "option": "Rocky Linux",
-          "description": "오답. Rocky Linux는 RHEL 계열로 rpm/dnf 계열을 사용한다."
+          "description": "X, Rocky Linux는 RHEL 계열로 rpm/dnf 계열을 사용한다."
         },
         {
           "option": "CentOS",
-          "description": "오답. CentOS는 RHEL 계열 배포판이다."
+          "description": "X, CentOS는 RHEL 계열 배포판이다."
         },
         {
           "option": "Debian",
-          "description": "정답. Debian 계열은 dpkg와 apt-get을 사용하며, Kali Linux도 Debian을 기반으로 개발되었다."
+          "description": "O, Debian 계열은 dpkg와 apt-get을 사용하며, Kali Linux도 Debian을 기반으로 개발되었다."
         },
         {
           "option": "Ubuntu",
-          "description": "오답. Ubuntu도 dpkg/apt를 사용하지만 Kali의 직접 기반은 Debian이다."
+          "description": "X, Ubuntu도 dpkg/apt를 사용하지만 Kali의 직접 기반은 Debian이다."
         }
       ]
     },
@@ -7541,19 +7541,19 @@
       "options": [
         {
           "option": "고가용성 클러스터",
-          "description": "정답. 로드 밸런서 장애에 대비해 서비스 연속성을 확보하려면 이중화 기반의 고가용성(HA) 클러스터를 구성해야 한다."
+          "description": "O, 로드 밸런서 장애에 대비해 서비스 연속성을 확보하려면 이중화 기반의 고가용성(HA) 클러스터를 구성해야 한다."
         },
         {
           "option": "고계산용 클러스터",
-          "description": "오답. 계산 성능 향상을 목표로 하는 구조로, 서비스 이중화와는 목적이 다르다."
+          "description": "X, 계산 성능 향상을 목표로 하는 구조로, 서비스 이중화와는 목적이 다르다."
         },
         {
           "option": "베어울프 클러스터",
-          "description": "오답. 베어울프 클러스터는 주로 병렬 계산 목적의 클러스터를 의미한다."
+          "description": "X, 베어울프 클러스터는 주로 병렬 계산 목적의 클러스터를 의미한다."
         },
         {
           "option": "HPC 클러스터",
-          "description": "오답. HPC는 고성능 연산을 위한 구조이지, 로드 밸런서 장애 대비용 고가용성과는 다르다."
+          "description": "X, HPC는 고성능 연산을 위한 구조이지, 로드 밸런서 장애 대비용 고가용성과는 다르다."
         }
       ]
     },
@@ -7566,19 +7566,19 @@
       "options": [
         {
           "option": "30GB",
-          "description": "오답. RAID-5와 스페어 조건을 반영하면 30GB가 아니다."
+          "description": "X, RAID-5와 스페어 조건을 반영하면 30GB가 아니다."
         },
         {
           "option": "40GB",
-          "description": "정답. 총 6개 중 1개는 스페어로 제외하므로 5개로 RAID-5를 구성한다. RAID-5의 사용 가능 용량은 (디스크 수 - 1) × 용량이므로 (5 - 1) × 10GB = 40GB이다."
+          "description": "O, 총 6개 중 1개는 스페어로 제외하므로 5개로 RAID-5를 구성한다. RAID-5의 사용 가능 용량은 (디스크 수 - 1) × 용량이므로 (5 - 1) × 10GB = 40GB이다."
         },
         {
           "option": "50GB",
-          "description": "오답. 스페어 1개와 RAID-5 패리티 1개를 고려해야 하므로 50GB를 모두 사용할 수 없다."
+          "description": "X, 스페어 1개와 RAID-5 패리티 1개를 고려해야 하므로 50GB를 모두 사용할 수 없다."
         },
         {
           "option": "60GB",
-          "description": "오답. 전체 물리 용량일 뿐이며 RAID-5 패리티와 스페어를 고려하지 않은 값이다."
+          "description": "X, 전체 물리 용량일 뿐이며 RAID-5 패리티와 스페어를 고려하지 않은 값이다."
         }
       ]
     },
@@ -7591,19 +7591,19 @@
         "options": [
             {
             "option": "rw single",
-            "description": "오답. 단일 사용자 모드 진입 방식으로 사용되기도 하지만, 이 문제는 커널 인자에서 init 프로세스를 직접 변경하여 쉘로 진입하는 방식을 묻고 있다."
+            "description": "X, 단일 사용자 모드 진입 방식으로 사용되기도 하지만, 이 문제는 커널 인자에서 init 프로세스를 직접 변경하여 쉘로 진입하는 방식을 묻고 있다."
             },
             {
             "option": "rw rescue",
-            "description": "오답. rescue 모드와 관련된 표현으로 커널 인자 override 방식의 root 패스워드 복구 방법과는 거리가 있다."
+            "description": "X, rescue 모드와 관련된 표현으로 커널 인자 override 방식의 root 패스워드 복구 방법과는 거리가 있다."
             },
             {
             "option": "rw systemd=/bin/sh",
-            "description": "오답. systemd 대신 쉘을 실행하는 개념과 유사하지만, 시험에서는 init 프로세스를 직접 지정하는 방식이 정답으로 의도되었다."
+            "description": "X, systemd 대신 쉘을 실행하는 개념과 유사하지만, 시험에서는 init 프로세스를 직접 지정하는 방식이 정답으로 의도되었다."
             },
             {
             "option": "rw init=/bin/sh",
-            "description": "정답. 보기에는 문법 오타(init-/bin/sh)가 있으나 출제 의도는 'init=/bin/sh' 형태로 init 프로세스를 /bin/sh로 변경하여 root 쉘로 직접 진입하는 방식이다."
+            "description": "O, 보기에는 문법 오타(init-/bin/sh)가 있으나 출제 의도는 'init=/bin/sh' 형태로 init 프로세스를 /bin/sh로 변경하여 root 쉘로 직접 진입하는 방식이다."
             }
         ],
         "answer": 4,
@@ -7617,19 +7617,19 @@
       "options": [
         {
           "option": "systemctl enable sshd",
-          "description": "정답. systemctl enable은 부팅 시 해당 서비스를 자동 실행하도록 설정한다."
+          "description": "O, systemctl enable은 부팅 시 해당 서비스를 자동 실행하도록 설정한다."
         },
         {
           "option": "systemctl status sshd",
-          "description": "오답. status는 현재 상태를 확인하는 명령이다."
+          "description": "X, status는 현재 상태를 확인하는 명령이다."
         },
         {
           "option": "systemctl active sshd",
-          "description": "오답. active는 올바른 systemctl 하위 명령 형식이 아니다."
+          "description": "X, active는 올바른 systemctl 하위 명령 형식이 아니다."
         },
         {
           "option": "systemctl start sshd",
-          "description": "오답. start는 현재 즉시 서비스를 시작할 뿐, 부팅 시 자동 실행 설정은 아니다."
+          "description": "X, start는 현재 즉시 서비스를 시작할 뿐, 부팅 시 자동 실행 설정은 아니다."
         }
       ]
     },
@@ -7641,19 +7641,19 @@
       "options": [
         {
           "option": "xauth 명령으로 서버 주소를 등록한다.",
-          "description": "오답. xauth는 인증 쿠키 관리에 사용되며 DISPLAY 설정 자체를 대신하지 않는다."
+          "description": "X, xauth는 인증 쿠키 관리에 사용되며 DISPLAY 설정 자체를 대신하지 않는다."
         },
         {
           "option": "xhpst 명령으로 서버 주소를 등록한다.",
-          "description": "오답. xhpst는 존재하지 않는 명령어이다."
+          "description": "X, xhpst는 존재하지 않는 명령어이다."
         },
         {
           "option": "환경변수인 DISPLAY의 값을 서버 주소로 변경한다.",
-          "description": "정답. 원격 X 서버에 화면을 출력하려면 DISPLAY 환경변수를 해당 X 서버 주소로 설정해야 한다."
+          "description": "O, 원격 X 서버에 화면을 출력하려면 DISPLAY 환경변수를 해당 X 서버 주소로 설정해야 한다."
         },
         {
           "option": "환경변수인 TERM의 값을 서버 주소로 변경한다.",
-          "description": "오답. TERM은 터미널 종류를 나타내는 변수이며 X 서버 주소와 무관하다."
+          "description": "X, TERM은 터미널 종류를 나타내는 변수이며 X 서버 주소와 무관하다."
         }
       ]
     },
@@ -7666,19 +7666,19 @@
       "options": [
         {
           "option": "GDM",
-          "description": "정답. GDM(GNOME Display Manager)은 GNOME 계열 GUI 로그인 관리자이다."
+          "description": "O, GDM(GNOME Display Manager)은 GNOME 계열 GUI 로그인 관리자이다."
         },
         {
           "option": "KDE",
-          "description": "오답. KDE는 데스크톱 환경이지 로그인 관리자 자체가 아니다."
+          "description": "X, KDE는 데스크톱 환경이지 로그인 관리자 자체가 아니다."
         },
         {
           "option": "GNOME",
-          "description": "오답. GNOME은 데스크톱 환경이다."
+          "description": "X, GNOME은 데스크톱 환경이다."
         },
         {
           "option": "Mutter",
-          "description": "오답. Mutter는 GNOME의 윈도 매니저/컴포지터이다."
+          "description": "X, Mutter는 GNOME의 윈도 매니저/컴포지터이다."
         }
       ]
     },
@@ -7691,19 +7691,19 @@
         "options": [
           {
             "option": "My Home is `pwd`",
-            "description": "오답. 백쿼트는 명령 치환을 수행하므로 문자열 그대로 출력되지 않는다."
+            "description": "X, 백쿼트는 명령 치환을 수행하므로 문자열 그대로 출력되지 않는다."
           },
           {
             "option": "My Home is `/home/cherry`",
-            "description": "오답. 명령 치환 결과에는 백쿼트 문자가 포함되지 않는다."
+            "description": "X, 명령 치환 결과에는 백쿼트 문자가 포함되지 않는다."
           },
           {
             "option": "My Home is /home/cherry",
-            "description": "정답. 백쿼트(`pwd`)는 현재 작업 디렉터리 경로로 치환되어 출력된다."
+            "description": "O, 백쿼트(`pwd`)는 현재 작업 디렉터리 경로로 치환되어 출력된다."
           },
           {
             "option": "My Home is pwd",
-            "description": "오답. pwd 문자열이 그대로 출력되는 것이 아니라 명령이 실행된다."
+            "description": "X, pwd 문자열이 그대로 출력되는 것이 아니라 명령이 실행된다."
           }
         ],
         "answer": 3,
@@ -7718,19 +7718,19 @@
       "options": [
         {
           "option": "0",
-          "description": "오답. 20은 30보다 크지 않으므로 참이 아니다."
+          "description": "X, 20은 30보다 크지 않으므로 참이 아니다."
         },
         {
           "option": "1",
-          "description": "정답. test 20 -gt 30 은 거짓이므로 종료 상태 값 $? 는 1이다."
+          "description": "O, test 20 -gt 30 은 거짓이므로 종료 상태 값 $? 는 1이다."
         },
         {
           "option": "10",
-          "description": "오답. test 명령의 종료 상태는 0 또는 1 등의 값으로 반환된다."
+          "description": "X, test 명령의 종료 상태는 0 또는 1 등의 값으로 반환된다."
         },
         {
           "option": "-10",
-          "description": "오답. 종료 상태 값으로 적절하지 않다."
+          "description": "X, 종료 상태 값으로 적절하지 않다."
         }
       ]
     },
@@ -7743,7 +7743,7 @@
         "options": [
             {
                 "option": "fork",
-                "description": "정답. fork는 현재 프로세스를 복제해 자식 프로세스를 생성하는 시스템 호출이다."
+                "description": "O, fork는 현재 프로세스를 복제해 자식 프로세스를 생성하는 시스템 호출이다."
             },
             {
                 "option": "exec",
@@ -7767,19 +7767,19 @@
         "options": [
             {
                 "option": "SIGINT",
-                "description": "오답. SIGINT(2)는 인터럽트 시그널로, 프로세스를 중단시키는 시그널이다."
+                "description": "X, SIGINT(2)는 인터럽트 시그널로, 프로세스를 중단시키는 시그널이다."
             },
             {
                 "option": "SIGKILL",
-                "description": "오답. SIGKILL(9)는 프로세스를 강제로 즉시 종료시키는 시그널이다."
+                "description": "X, SIGKILL(9)는 프로세스를 강제로 즉시 종료시키는 시그널이다."
             },
             {
                 "option": "SIGSTOP",
-                "description": "정답. SIGSTOP(19)는 프로세스를 일시 정지시키는 시그널이다."
+                "description": "O, SIGSTOP(19)는 프로세스를 일시 정지시키는 시그널이다."
             },
             {
                 "option": "SIGQUIT",
-                "description": "오답. SIGQUIT(3)는 프로세스를 종료하고 코어 덤프를 생성하는 시그널이다."
+                "description": "X, SIGQUIT(3)는 프로세스를 종료하고 코어 덤프를 생성하는 시그널이다."
             }
         ]
     },

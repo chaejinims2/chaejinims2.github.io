@@ -155,18 +155,13 @@
 
   --lm11-card-fixed-height: 30rem;
 
-  --quiz-select-label-fs: var(--fs-5);
-  --quiz-select-fs: var(--fs-5);
-  --quiz-select-hint-fs: var(--fs-5);
-  --quiz-apply-btn-fs: var(--fs-5);
-
-  --quiz-card-num-fs: var(--fs-5);
-  --quiz-card-body-fs: var(--fs-5);
-  --quiz-card-subject-fs: var(--fs-5);
-  --quiz-card-options-fs: var(--fs-5);
-  --quiz-card-option-fs: var(--fs-5);
-  --quiz-card-answer-fs: var(--fs-5);
-
+  --terminal-fs: var(--fs-4);
+  --terminal-pre-wrap-fs: var(var(--fs-1));
+  
+  
+  --quiz-card-fs-strong: var(--fs-6);
+  --quiz-card-fs-default: var(--fs-5);
+  --quiz-card-fs-weak: var(--fs-4);
 }
 
 /* =========================================================

@@ -1,0 +1,6 @@
+{
+    "prompts": ["cherry@rhombus:~$", "root@rhombus:~$"],
+    "options": [
+        "①","②","③","④"
+    ]
+}
