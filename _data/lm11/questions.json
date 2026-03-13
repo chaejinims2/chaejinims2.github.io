@@ -2069,19 +2069,19 @@
         "options": [
             {
                 "option": "Xen",
-                "description": ""
+                "description": "정답. 도메인 0와 게스트 OS 커널 수정을 통해 성능을 높이는 대표적인 반가상화 하이퍼바이저입니다."
             },
             {
                 "option": "KVM",
-                "description": ""
+                "description": "리눅스 커널에 포함된 전가상화 기술로 하드웨어 가속(VT)을 이용합니다."
             },
             {
                 "option": "VirtualBox",
-                "description": ""
+                "description": "호스트형 가상화 도구로 주로 전가상화를 지원합니다."
             },
             {
                 "option": "Docker",
-                "description": ""
+                "description": "하이퍼바이저가 아닌 프로세스 격리 기반의 컨테이너 기술입니다."
             }
         ]
     },
@@ -2094,19 +2094,19 @@
         "options": [
             {
                 "option": "/etc/yp.conf",
-                "description": ""
+                "description": "NIS 클라이언트가 서버를 찾기 위한 정보를 담은 설정 파일입니다."
             },
             {
                 "option": "/etc/hosts",
-                "description": ""
+                "description": "IP 주소와 호스트명을 매핑하는 기본 파일입니다."
             },
             {
                 "option": "/etc/ypbind.conf",
-                "description": ""
+                "description": "ypbind 데몬의 동작 방식을 설정하는 파일입니다."
             },
             {
                 "option": "/etc/sysconfig/network",
-                "description": ""
+                "description": "정답. 시스템의 네트워크 설정과 함께 NIS 도메인 네임을 영구적으로 지정하는 파일입니다."
             }
         ]
     },
@@ -2119,19 +2119,19 @@
         "options": [
             {
                 "option": "showmount",
-                "description": ""
+                "description": "정답. -e 옵션과 함께 사용하여 원격 서버에서 공유 중인 디렉터리(export list)를 확인합니다."
             },
             {
                 "option": "exportfs",
-                "description": ""
+                "description": "NFS 서버 사이드에서 공유 목록을 관리하거나 갱신할 때 사용합니다."
             },
             {
                 "option": "nfsstat",
-                "description": ""
+                "description": "NFS 프로토콜의 통계 정보를 확인하는 도구입니다."
             },
             {
                 "option": "rpcinfo",
-                "description": ""
+                "description": "RPC 관련 서비스의 등록 상태를 확인하는 도구입니다."
             }
         ]
     },
@@ -2143,19 +2143,19 @@
         "options": [
             {
                 "option": "anonymous_disable=YES",
-                "description": ""
+                "description": "존재하지 않거나 의미가 반대인 설정입니다."
             },
             {
                 "option": "anonymous_disable=NO",
-                "description": ""
+                "description": "vsftpd의 표준 설정 지시어가 아닙니다."
             },
             {
                 "option": "anonymous_enable=YES",
-                "description": ""
+                "description": "정답. 익명 사용자의 로그인 허용 여부를 결정하는 핵심 지시어입니다."
             },
             {
                 "option": "anonymous_enable=NO",
-                "description": ""
+                "description": "익명 사용자의 접속을 차단하는 설정입니다."
             }
         ]
     },
@@ -2167,19 +2167,19 @@
         "options": [
             {
                 "option": "SMTP",
-                "description": ""
+                "description": "정답. 메일을 서버 간에 전송(Transfer)하거나 클라이언트에서 서버로 보낼 때 사용합니다."
             },
             {
                 "option": "POP3",
-                "description": ""
+                "description": "서버에 도착한 메일을 사용자의 클라이언트로 가져오는 프로토콜입니다."
             },
             {
                 "option": "IMAP",
-                "description": ""
+                "description": "서버 상의 메일을 동기화하여 여러 장치에서 관리하는 프로토콜입니다."
             },
             {
                 "option": "SNMP",
-                "description": ""
+                "description": "네트워크 장비의 모니터링 및 관리를 위한 프로토콜입니다."
             }
         ]
     },
@@ -2192,19 +2192,19 @@
         "options": [
             {
                 "option": ".forward",
-                "description": ""
+                "description": "정답. 수신된 메일을 다른 주소로 전달하거나 처리하기 위해 사용자 홈 디렉터리에 숨김 파일로 작성합니다."
             },
             {
                 "option": "aliases",
-                "description": ""
+                "description": "시스템 전체 레벨(/etc/aliases)에서 적용하는 메일 별칭 설정 파일입니다."
             },
             {
                 "option": "virtusertable",
-                "description": ""
+                "description": "가상 도메인을 실제 계정으로 매핑하는 서버측 설정 파일입니다."
             },
             {
                 "option": "local-host-names",
-                "description": ""
+                "description": "서버가 메일을 수신할 도메인을 정의하는 파일입니다."
             }
         ]
     },
@@ -2216,19 +2216,19 @@
         "options": [
             {
                 "option": "/var/named/zones",
-                "description": ""
+                "description": "일반적으로 사용자가 서브 디렉터리를 만들 때 쓰는 경로입니다."
             },
             {
                 "option": "/etc/named",
-                "description": ""
+                "description": "BIND의 보조 설정 파일들이 위치하는 곳입니다."
             },
             {
                 "option": "/etc/named/zones",
-                "description": ""
+                "description": "데비안 계열 등에서 사용하는 경우가 있으나 표준은 아닙니다."
             },
             {
                 "option": "/var/named",
-                "description": ""
+                "description": "정답. BIND(named)의 실제 Zone 데이터 파일들이 위치하는 기본 디렉터리입니다."
             }
         ]
     },
@@ -2241,19 +2241,19 @@
         "options": [
             {
                 "option": "절연(Insulation)",
-                "description": ""
+                "description": "개별 가상 환경을 독립시켜 장애 전파를 막는 기능입니다."
             },
             {
                 "option": "단일화(Aggregation)",
-                "description": ""
+                "description": "정답. 여러 물리적 자원을 통합하여 거대한 하나의 논리 자원(풀)으로 만드는 기능입니다."
             },
             {
                 "option": "에뮬레이션(Emulation)",
-                "description": ""
+                "description": "하드웨어를 소프트웨어로 모사하는 방식입니다."
             },
             {
                 "option": "프로비저닝(Provisioning)",
-                "description": ""
+                "description": "요청에 따라 자원을 할당하고 배치하는 과정입니다."
             }
         ]
     },
@@ -2265,19 +2265,19 @@
         "options": [
             {
                 "option": "virt-top",
-                "description": ""
+                "description": "정답. 하이퍼바이저 상에서 돌아가는 각 가상 머신(Domain)의 자원 사용량을 보여줍니다."
             },
             {
                 "option": "xm",
-                "description": ""
+                "description": "Xen 하이퍼바이저의 구버전 관리 명령어입니다."
             },
             {
                 "option": "xend",
-                "description": ""
+                "description": "Xen의 관리 데몬 서비스입니다."
             },
             {
                 "option": "virt-manager",
-                "description": ""
+                "description": "GUI 기반의 가상 머신 관리 도구입니다."
             }
         ]
     },
@@ -2289,19 +2289,19 @@
         "options": [
             {
                 "option": "cps = 50 10",
-                "description": ""
+                "description": "정답. cps(connections per second) 설정은 '초당 접속 제한 수'와 '제한 초과 시 대기 시간(초)' 순서로 지정합니다."
             },
             {
                 "option": "cps = 50 100",
-                "description": ""
+                "description": "대기 시간이 100초로 설정된 값입니다."
             },
             {
                 "option": "cps = 10 50",
-                "description": ""
+                "description": "초당 10개 제한, 50초 대기를 의미합니다."
             },
             {
                 "option": "cps = 100 50",
-                "description": ""
+                "description": "항목 순서와 값이 요구사항과 다릅니다."
             }
         ]
     },
@@ -2314,19 +2314,19 @@
         "options": [
             {
                 "option": "http_port",
-                "description": ""
+                "description": "정답. Squid 프록시 서버가 클라이언트의 요청을 대기할 포트를 지정하는 지시어입니다."
             },
             {
                 "option": "Port",
-                "description": ""
+                "description": "Apache 등 다른 서비스에서 사용되기도 하지만 Squid의 표준은 아닙니다."
             },
             {
                 "option": "Listen",
-                "description": ""
+                "description": "주로 Apache 웹 서버에서 사용하는 포트 대기 지시어입니다."
             },
             {
                 "option": "proxy_port",
-                "description": ""
+                "description": "Squid에서 사용하지 않는 지시어입니다."
             }
         ]
     },
@@ -2339,19 +2339,19 @@
         "options": [
             {
                 "option": "routers",
-                "description": ""
+                "description": "정답. dhcpd.conf에서 클라이언트에게 전달할 디폴트 게이트웨이(라우터) 주소를 지정하는 옵션명입니다."
             },
             {
                 "option": "gw",
-                "description": ""
+                "description": "설정 파일의 표준 키워드가 아닙니다."
             },
             {
                 "option": "gateway",
-                "description": ""
+                "description": "의미는 통하지만 dhcpd의 공식 옵션 명칭은 아닙니다."
             },
             {
                 "option": "gw-address",
-                "description": ""
+                "description": "설정 파일의 표준 키워드가 아닙니다."
             }
         ]
     },
@@ -2363,19 +2363,19 @@
         "options": [
             {
                 "option": "RFB(Remote Frame Buffer)",
-                "description": ""
+                "description": "정답. VNC가 원격 화면의 프레임 버퍼 데이터를 전송하기 위해 사용하는 기본 프로토콜입니다."
             },
             {
                 "option": "NTP(Network Time Protocol)",
-                "description": ""
+                "description": "네트워크 시간 동기화 프로토콜입니다."
             },
             {
                 "option": "MQTT(MQ Telemetry Transport)",
-                "description": ""
+                "description": "IoT 기기 간 가벼운 메시지 전송을 위한 프로토콜입니다."
             },
             {
                 "option": "DHCP(Dynamic Host Configuration Protocol)",
-                "description": ""
+                "description": "동적 호스트 설정 프로토콜입니다."
             }
         ]
     },
@@ -2388,19 +2388,19 @@
         "options": [
             {
                 "option": "DocumentRoot",
-                "description": ""
+                "description": "정답. 웹 서버가 서비스할 실제 HTML 문서들이 저장된 최상위 경로를 지정합니다."
             },
             {
                 "option": "ServerRoot",
-                "description": ""
+                "description": "웹 서버의 설정, 로그, 실행 파일 등이 위치한 기본 설치 디렉터리입니다."
             },
             {
                 "option": "ServerAdmin",
-                "description": ""
+                "description": "서버 오류 발생 시 표시될 관리자 이메일 주소입니다."
             },
             {
                 "option": "ServerName",
-                "description": ""
+                "description": "서버의 호스트 이름이나 도메인 이름을 설정합니다."
             }
         ]
     },
@@ -2413,19 +2413,19 @@
         "options": [
             {
                 "option": "raw",
-                "description": ""
+                "description": "패킷 추적(Connection tracking)에서 제외할 패킷을 설정합니다."
             },
             {
                 "option": "nat",
-                "description": ""
+                "description": "네트워크 주소 변환(IP/Port 포워딩 등)을 처리합니다."
             },
             {
                 "option": "filter",
-                "description": ""
+                "description": "정답. 패킷의 수신/송신/전달 여부를 결정하는 가장 기본적이고 핵심적인 테이블입니다."
             },
             {
                 "option": "mangle",
-                "description": ""
+                "description": "패킷의 TOS 필드 수정 등 특수한 패킷 변조를 담당합니다."
             }
         ]
     },
@@ -2438,19 +2438,19 @@
         "options": [
             {
                 "option": "Teardrop Attack",
-                "description": ""
+                "description": "IP 단편화 재조합 과정의 취약점을 이용해 시스템을 장애에 빠뜨리는 공격입니다."
             },
             {
                 "option": "UDP Flooding",
-                "description": ""
+                "description": "정답. 공격 대상의 임의 포트로 대량의 UDP 패킷을 전송해 네트워크 자원을 고갈시킵니다."
             },
             {
                 "option": "Land Attack",
-                "description": ""
+                "description": "송신자 주소를 수신자 주소와 동일하게 조작하여 시스템을 무한 루프에 빠뜨리는 공격입니다."
             },
             {
                 "option": "Smurf Attack",
-                "description": ""
+                "description": "ICMP Echo 요청 시 위조된 IP를 사용해 대량의 응답 패킷(Amplification)을 발생시키는 공격입니다."
             }
         ]
     },
@@ -2463,19 +2463,19 @@
         "options": [
             {
                 "option": "DROP",
-                "description": ""
+                "description": "정답. 패킷을 무시(Discard)하며, 송신 측에는 아무런 응답을 주지 않아 타임아웃을 유발합니다."
             },
             {
                 "option": "DENY",
-                "description": ""
+                "description": "일부 방화벽 도구에서 사용되지만 iptables의 표준 타겟 명칭은 아닙니다."
             },
             {
                 "option": "REJECT",
-                "description": ""
+                "description": "패킷을 차단하면서 송신 측에 거부 메시지(ICMP Unreachable 등)를 보냅니다."
             },
             {
                 "option": "RETURN",
-                "description": ""
+                "description": "현재 체인의 규칙 평가를 중단하고 이전 체인으로 돌아갑니다."
             }
         ]
     },
@@ -2487,25 +2487,20 @@
         "options": [
             {
                 "option": "가용 프로세스 자원 고갈",
-                "description": ""
+                "description": "무한 루프나 fork() 폭탄 등으로 발생합니다."
             },
             {
                 "option": "네트워크 대역폭 고갈",
-                "description": ""
+                "description": "Flooding류 공격으로 발생합니다."
             },
             {
                 "option": "가용 메모리 자원 고갈",
-                "description": ""
+                "description": "정답. 동적 메모리 할당 함수인 malloc()을 반복 호출하여 힙(Heap) 영역을 가득 채우는 공격입니다."
             },
             {
                 "option": "가용 디스크 자원 고갈",
-                "description": ""
+                "description": "대용량 파일을 생성하거나 로그를 무한히 남겨 발생합니다."
             }
-        ],
-        "tags": [
-            "Memory allocation",
-            "C",
-            "malloc()"
         ]
     },
     {
@@ -2516,19 +2511,19 @@
         "options": [
             {
                 "option": "Suricata",
-                "description": ""
+                "description": "정답. 멀티스레드를 지원하는 최신 공개형 네트워크 IDS/IPS 도구입니다."
             },
             {
                 "option": "John the Ripper",
-                "description": ""
+                "description": "패스워드 크래킹(복호화/공격) 도구입니다."
             },
             {
                 "option": "Tripwire",
-                "description": ""
+                "description": "호스트 기반의 파일 무결성 점검 도구입니다."
             },
             {
                 "option": "Stacheldraht",
-                "description": ""
+                "description": "과거 분산 서비스 거부(DDoS) 공격 툴킷입니다."
             }
         ]
     },
@@ -2541,19 +2536,19 @@
         "options": [
             {
                 "option": "BSD",
-                "description": ""
+                "description": "정답. 소스 코드 공개 의무가 없으며, 상용 소프트웨어 개발에 가장 자유로운 라이선스 중 하나입니다."
             },
             {
                 "option": "GPL",
-                "description": ""
+                "description": "수정된 소스 코드를 반드시 공개해야 하는 강력한 전염성을 가진 라이선스입니다."
             },
             {
                 "option": "MPL",
-                "description": ""
+                "description": "모질라 라이선스로, 수정한 파일에 대해서는 소스 공개 의무가 있습니다."
             },
             {
                 "option": "LGPL",
-                "description": ""
+                "description": "GPL보다 완화된 라이선스로, 라이브러리 결합 시에는 소스 공개 의무가 면제되기도 하지만 수정 시에는 공개해야 합니다."
             }
         ]
     },
@@ -2565,19 +2560,19 @@
         "options": [
             {
                 "option": "Linux Mint",
-                "description": ""
+                "description": "데비안/우분투 계열 배포판입니다."
             },
             {
                 "option": "Ubuntu",
-                "description": ""
+                "description": "데비안 계열에서 파생된 가장 대중적인 배포판입니다."
             },
             {
                 "option": "Elementary OS",
-                "description": ""
+                "description": "우분투 기반의 배포판입니다."
             },
             {
                 "option": "Vector Linux",
-                "description": ""
+                "description": "정답. 슬랙웨어(Slackware) 계열을 기반으로 하는 배포판입니다."
             }
         ]
     },
@@ -2589,19 +2584,19 @@
         "options": [
             {
                 "option": "GENIVI",
-                "description": ""
+                "description": "차량용 인포테인먼트(IVI)를 위한 리눅스 기반 플랫폼입니다."
             },
             {
                 "option": "Tizen",
-                "description": ""
+                "description": "삼성전자가 주도하는 리눅스 커널 기반의 오픈소스 OS입니다."
             },
             {
                 "option": "webOS",
-                "description": ""
+                "description": "LG전자의 스마트 TV 등에 사용되는 리눅스 기반 OS입니다."
             },
             {
                 "option": "QNX",
-                "description": ""
+                "description": "정답. 블랙베리 사의 실시간 운영체제(RTOS)로, 리눅스가 아닌 유닉스 스타일(마이크로커널) OS입니다."
             }
         ]
     },
@@ -2609,24 +2604,24 @@
         "examKey": "lm11-20201010",
         "localId": 4,
         "subjectKey": 1,
-        "body": "다음그림에 해당하는클러스터링기법으로 알맞은것은?",
+        "body": "다음 그림에 해당하는 클러스터링 기법으로 알맞은 것은?",
         "code": "User → Primary Node(이상 유무 체크) ↔ Backup Node(Primary Node 이상 시 서비스를 이어받음)",
         "options": [
             {
                 "option": "고계산용 클러스터",
-                "description": ""
+                "description": "병렬 처리를 통해 계산 성능을 극대화하는 클러스터(HPC)입니다."
             },
             {
                 "option": "부하분산 클러스터",
-                "description": ""
+                "description": "여러 노드에 작업을 분산하여 처리 능력을 높이는 클러스터(LVS)입니다."
             },
             {
                 "option": "고가용성 클러스터",
-                "description": ""
+                "description": "정답. 한 노드 장애 시 백업 노드가 즉시 서비스를 대신하여 중단 없는 서비스를 제공하는 기법(HA)입니다."
             },
             {
                 "option": "베어울프 클러스터",
-                "description": ""
+                "description": "고성능 계산을 위해 리눅스로 구축한 저비용 병렬 시스템을 의미합니다."
             }
         ]
     },
@@ -2638,19 +2633,19 @@
         "options": [
             {
                 "option": "리누스 토발즈",
-                "description": ""
+                "description": "리눅스 커널의 창시자입니다."
             },
             {
                 "option": "켄 톰슨",
-                "description": ""
+                "description": "정답. 벨 연구소에서 데니스 리치와 함께 유닉스를 최초로 개발한 인물입니다."
             },
             {
                 "option": "빌 조이",
-                "description": ""
+                "description": "BSD 유닉스와 vi 편집기를 개발한 인물입니다."
             },
             {
                 "option": "리처드 스톨먼",
-                "description": ""
+                "description": "GNU 프로젝트와 자유 소프트웨어 재단(FSF)의 설립자입니다."
             }
         ]
     },
@@ -2663,19 +2658,19 @@
         "options": [
             {
                 "option": "10초 동안 대기한 후에 메뉴 선택이 없으면 두 번째 항목의 운영체제로 부팅한다.",
-                "description": ""
+                "description": "대기 시간이 100초로 설정되어 있습니다."
             },
             {
                 "option": "10초 동안 대기한 후에 메뉴 선택이 없으면 첫 번째 항목의 운영체제로 부팅한다.",
-                "description": ""
+                "description": "대기 시간과 부팅 순서 모두 틀렸습니다."
             },
             {
                 "option": "100초 동안 대기한 후에 메뉴 선택이 없으면 첫 번째 항목의 운영체제로 부팅한다.",
-                "description": ""
+                "description": "default=1은 인덱스 0부터 시작하므로 두 번째 항목입니다."
             },
             {
                 "option": "100초 동안 대기한 후에 메뉴 선택이 없으면 두 번째 항목의 운영체제로 부팅한다.",
-                "description": ""
+                "description": "정답. timeout=100은 100초를 의미하며, default=1은 메뉴 리스트 중 두 번째 항목을 의미합니다."
             }
         ]
     },
@@ -2688,19 +2683,19 @@
         "options": [
             {
                 "option": "mv 명령의 사용법 오류로 인해 오류 메시지가 나타난다.",
-                "description": ""
+                "description": "사용법 자체에는 오류가 없습니다."
             },
             {
                 "option": "mv 명령의 사용법 오류로 인해 오류 메시지 및 OK가 화면에 출력된다.",
-                "description": ""
+                "description": "오류 상황이 아닙니다."
             },
             {
                 "option": "joon.txt는 lin.txt로 이름이 변경되고 화면에 아무것도 출력되지 않는다.",
-                "description": ""
+                "description": "정답. mv 명령이 성공(exit code 0)했으므로, OR(||) 연산자 뒤의 echo 명령은 실행되지 않습니다."
             },
             {
                 "option": "joon.txt는 lin.txt로 이름이 변경되고 화면에 OK라고 출력된다.",
-                "description": ""
+                "description": "|| 연산자는 앞의 명령이 실패했을 때만 뒤의 명령을 수행합니다."
             }
         ]
     },
@@ -2712,19 +2707,19 @@
         "options": [
             {
                 "option": "TERMINAL",
-                "description": ""
+                "description": "사용되지 않는 환경 변수입니다."
             },
             {
                 "option": "TERM",
-                "description": ""
+                "description": "터미널 종류(xterm, vt100 등)를 정의하는 변수입니다."
             },
             {
                 "option": "XTERM",
-                "description": ""
+                "description": "X 윈도 터미널 에뮬레이터 프로그램 이름입니다."
             },
             {
                 "option": "DISPLAY",
-                "description": ""
+                "description": "정답. X 윈도 프로그램이 출력될 화면의 위치를 지정하는 필수 환경 변수입니다."
             }
         ]
     },
@@ -2736,19 +2731,19 @@
         "options": [
             {
                 "option": "50%",
-                "description": ""
+                "description": "너무 낮은 비율입니다."
             },
             {
                 "option": "33.3%",
-                "description": ""
+                "description": "잘못된 계산입니다."
             },
             {
                 "option": "66.7%",
-                "description": ""
+                "description": "정답. 전체 6개 중 1개 스페어 제외 = 5개. RAID-5는 5개 중 1개를 패리티로 쓰므로 실 사용은 4개입니다. (4/6 = 66.66...%)"
             },
             {
                 "option": "83.3%",
-                "description": ""
+                "description": "스페어와 패리티 중 하나만 고려했을 때의 수치입니다."
             }
         ]
     },
@@ -2760,19 +2755,19 @@
         "options": [
             {
                 "option": "SIGTSTP",
-                "description": ""
+                "description": "정답. 번호는 20번입니다. (터미널에서 입력되는 정지 시그널)"
             },
             {
                 "option": "SIGTERM",
-                "description": ""
+                "description": "종료 시그널로 15번입니다."
             },
             {
                 "option": "SIGINT",
-                "description": ""
+                "description": "인터럽트 시그널로 2번입니다."
             },
             {
                 "option": "SIGQUIT",
-                "description": ""
+                "description": "코어 덤프를 생성하는 종료 시그널로 3번입니다."
             }
         ]
     },
@@ -2785,19 +2780,19 @@
         "options": [
             {
                 "option": "inetd",
-                "description": ""
+                "description": "슈퍼 데몬에 의해 요청이 올 때만 서비스가 실행되는 방식입니다."
             },
             {
                 "option": "exec",
-                "description": ""
+                "description": "현재 프로세스를 새로운 프로그램으로 교체하는 시스템 호출입니다."
             },
             {
                 "option": "xinetd",
-                "description": ""
+                "description": "inetd를 개선한 확장형 슈퍼 데몬 방식입니다."
             },
             {
                 "option": "standalone",
-                "description": ""
+                "description": "정답. 백그라운드에서 항상 상주하며 클라이언트의 요청에 즉각 응답하는 독립 실행 방식입니다."
             }
         ]
     },
@@ -2805,23 +2800,23 @@
         "examKey": "lm11-20201010",
         "localId": 12,
         "subjectKey": 1,
-        "body": "다음 중 포어그라운드 프로세스를 백그라운드프로세스로 전환할 때 사용하는 키 조합으로 알맞은 것은?",
+        "body": "다음 중 포어그라운드 프로세스를 백그라운드 프로세스로 전환할 때 사용하는 키 조합으로 알맞은 것은?",
         "options": [
             {
                 "option": "[Ctrl]+[c]",
-                "description": ""
+                "description": "프로세스를 강제로 종료(SIGINT)합니다."
             },
             {
                 "option": "[Ctrl]+[d]",
-                "description": ""
+                "description": "입력의 끝(EOF)을 알리거나 로그아웃할 때 사용합니다."
             },
             {
                 "option": "[Ctrl]+[z]",
-                "description": ""
+                "description": "정답. 현재 실행 중인 작업을 일시 정지(SIGTSTP)시킨 후, bg 명령을 통해 백그라운드로 보낼 수 있습니다."
             },
             {
                 "option": "[Ctrl]+[\\\\]",
-                "description": ""
+                "description": "프로세스를 강제 종료하고 코어 덤프를 생성(SIGQUIT)합니다."
             }
         ]
     },
@@ -2833,19 +2828,19 @@
         "options": [
             {
                 "option": "IDE 디스크",
-                "description": ""
+                "description": "정답. 과거 리눅스에서 /dev/hdX 형식의 장치명을 사용했습니다."
             },
             {
                 "option": "SCSI 디스크",
-                "description": ""
+                "description": "/dev/sdX 형식의 장치명을 사용합니다."
             },
             {
                 "option": "S-ATA 디스크",
-                "description": ""
+                "description": "/dev/sdX 형식의 장치명을 사용합니다."
             },
             {
                 "option": "SSD(Solid State Drive)",
-                "description": ""
+                "description": "/dev/sdX 형식의 장치명을 사용합니다."
             }
         ]
     },
@@ -2854,22 +2849,23 @@
         "localId": 14,
         "subjectKey": 1,
         "body": "다음 설명에 해당하는 용어로 알맞은 것은?",
+        "code": "X 윈도 시스템에서 윈도 매니저의 기능을 포함하여 파일 관리자, 아이콘, 가젯 등을 통합하여 사용자에게 제공하는 환경이다. GNOME, KDE 등이 대표적이다.",
         "options": [
             {
                 "option": "윈도 매니저",
-                "description": ""
+                "description": "창의 배치, 크기 조절 등 외형적인 관리만 담당합니다."
             },
             {
                 "option": "데스크톱 환경",
-                "description": ""
+                "description": "정답. 사용자 인터페이스에 필요한 다양한 도구와 라이브러리를 통합 제공하는 환경(Desktop Environment)입니다."
             },
             {
                 "option": "디스플레이 매니저",
-                "description": ""
+                "description": "사용자 로그인을 관리하고 X 서버를 실행하는 역할을 합니다."
             },
             {
                 "option": "X 프로토콜",
-                "description": ""
+                "description": "X 서버와 X 클라이언트 간 통신 규약입니다."
             }
         ]
     },
@@ -2881,19 +2877,19 @@
         "options": [
             {
                 "option": "!!",
-                "description": ""
+                "description": "정답. 히스토리에서 바로 이전 명령을 실행하는 단축 명령어입니다."
             },
             {
                 "option": "!0",
-                "description": ""
+                "description": "0번 인덱스의 명령을 호출하려 하지만 히스토리는 보통 1번부터 시작합니다."
             },
             {
                 "option": "!1",
-                "description": ""
+                "description": "히스토리 1번에 저장된 명령을 실행합니다."
             },
             {
                 "option": "history -1",
-                "description": ""
+                "description": "단순히 히스토리의 최근 목록을 확인하는 옵션입니다."
             }
         ]
     },
@@ -2902,22 +2898,23 @@
         "localId": 16,
         "subjectKey": 1,
         "body": "다음 설명에 해당하는 서브넷마스크값의 네트워크 접두어로 알맞은 것은?",
+        "code": "C 클래스 주소를 대역별로 32개씩 나누어 사용하려고 한다.",
         "options": [
             {
                 "option": "/25",
-                "description": ""
+                "description": "IP 대역을 128개씩 나눕니다."
             },
             {
                 "option": "/24",
-                "description": ""
+                "description": "C 클래스 기본 마스크로 256개를 하나의 대역으로 씁니다."
             },
             {
                 "option": "/26",
-                "description": ""
+                "description": "IP 대역을 64개씩 나눕니다."
             },
             {
                 "option": "/27",
-                "description": ""
+                "description": "정답. 256 / 32 = 8개 대역으로 나누며, 2의 5승이 32이므로 호스트 비트가 5비트인 /27(32-5)이 정답입니다."
             }
         ]
     },
@@ -2929,19 +2926,19 @@
         "options": [
             {
                 "option": "3 Way-Handshaking이 완료된 후 서버와 클라이언트가 서로 연결된 상태",
-                "description": ""
+                "description": "정답. 연결이 확립되어 양방향 데이터 통신이 가능한 상태입니다."
             },
             {
                 "option": "서버에서 클라이언트로 들어오는 패킷을 위해 소켓을 열고 기다리는 상태",
-                "description": ""
+                "description": "LISTEN 상태를 의미합니다."
             },
             {
                 "option": "로컬 시스템의 클라이언트 애플리케이션이 원격 호스트에 연결을 요청한 상태",
-                "description": ""
+                "description": "SYN_SENT 상태를 의미합니다."
             },
             {
                 "option": "원격 호스트가 종료되고 소켓도 닫힌 상태에서 마지막 ACK패킷을 기다리는 상태",
-                "description": ""
+                "description": "LAST_ACK 상태를 의미합니다."
             }
         ]
     },
@@ -2953,19 +2950,19 @@
         "options": [
             {
                 "option": "enpx : CentOS 6 이전 버전에서 사용되었던 이더넷 카드 인터페이스 장치",
-                "description": ""
+                "description": "이전에는 eth0 형식을 사용했습니다."
             },
             {
                 "option": "lo : 로컬 루프백(Local Loopback)을 나타내는 장치로 물리적으로 존재하는 인터페이스",
-                "description": ""
+                "description": "가상의 소프트웨어 인터페이스입니다."
             },
             {
                 "option": "pppx : 패러럴 케이블을 사용하는 패러럴 라인 인터페이스 장치",
-                "description": ""
+                "description": "전화선 등을 통한 점대점 통신 인터페이스(PPP)입니다."
             },
             {
                 "option": "docker0 : 경량화된 서버 가상화 기술인 Docker를 사용할 경우 설정되는 네트워크 장치",
-                "description": ""
+                "description": "정답. 도커 컨테이너 통신을 위한 가상 브리지 네트워크 장치입니다."
             }
         ]
     },
@@ -2974,22 +2971,23 @@
         "localId": 19,
         "subjectKey": 1,
         "body": "다음 설명에 해당하는 OSI 7계층으로 가장 알맞은 것은?",
+        "code": "데이터의 신뢰성 있는 전송을 보장하기 위해 오류 복구 및 흐름 제어를 담당하며, PDU 단위는 세그먼트이다.",
         "options": [
             {
                 "option": "세션 계층",
-                "description": ""
+                "description": "대화 관리 및 동기화를 담당합니다."
             },
             {
                 "option": "데이터링크 계층",
-                "description": ""
+                "description": "물리 계층의 신뢰성을 보장하며 PDU는 프레임입니다."
             },
             {
                 "option": "네트워크 계층",
-                "description": ""
+                "description": "경로 선택(라우팅)을 담당하며 PDU는 패킷입니다."
             },
             {
                 "option": "전송 계층",
-                "description": ""
+                "description": "정답. 종단 간(End-to-End) 오류 제어와 흐름 제어를 담당하는 4계층입니다."
             }
         ]
     },
@@ -2998,22 +2996,23 @@
         "localId": 20,
         "subjectKey": 1,
         "body": "다음에서 설명하는 장치의 이름으로 가장 알맞은 것은?",
+        "code": "서로 다른 네트워크 프로토콜을 사용하는 네트워크 간을 연결하는 장치로, OSI 7계층 중 주로 응용 계층까지 담당한다.",
         "options": [
             {
                 "option": "Router",
-                "description": ""
+                "description": "주로 네트워크 계층에서 서로 다른 경로를 연결합니다."
             },
             {
                 "option": "Bridge",
-                "description": ""
+                "description": "데이터링크 계층에서 두 LAN 구간을 연결합니다."
             },
             {
                 "option": "Gateway",
-                "description": ""
+                "description": "정답. 서로 다른 통신망과 프로토콜을 사용하는 환경 간의 통로 역할을 합니다."
             },
             {
                 "option": "Repeater",
-                "description": ""
+                "description": "물리 계층에서 감쇠된 신호를 증폭하여 전달합니다."
             }
         ]
     },
@@ -3021,23 +3020,23 @@
         "examKey": "lm11-20201010",
         "localId": 21,
         "subjectKey": 2,
-        "body": "다음 중 1시간 주기로 실행되는 crontab 설정으로 알맞은 것은?(오류 신고가 접수된 문제입니다. 반드시 정답과 해설을 확인하시기 바랍니다.)",
+        "body": "다음 중 1시간 주기로 실행되는 crontab 설정으로 알맞은 것은?",
         "options": [
             {
                 "option": "1 * * * * /etc/joon.sh",
-                "description": ""
+                "description": "정답. 매 시 1분에 실행되므로 1시간 주기가 성립합니다. (예: 1:01, 2:01, 3:01...)"
             },
             {
                 "option": "* 1 * * * /etc/joon.sh",
-                "description": ""
+                "description": "매일 새벽 1시부터 1시 59분까지 매 분 실행됩니다."
             },
             {
                 "option": "* * 1 * * /etc/joon.sh",
-                "description": ""
+                "description": "매월 1일에 매 분 실행됩니다."
             },
             {
                 "option": "* * * 1 * /etc/joon.sh",
-                "description": ""
+                "description": "매년 1월에 매 분 실행됩니다."
             }
         ]
     },
@@ -3050,19 +3049,19 @@
         "options": [
             {
                 "option": "파일의 그룹 소유권은 2차 그룹인 project가 된다.",
-                "description": ""
+                "description": "정답. 디렉터리에 SetGID(s)가 설정되어 있으면 해당 디렉터리 내 생성된 파일은 소유자의 주 그룹이 아닌 디렉터리의 그룹 소유권을 상속받습니다."
             },
             {
                 "option": "파일의 그룹 소유권은 아이디와 동일한 lin이 된다.",
-                "description": ""
+                "description": "일반적인 상황에서의 설명이며, SetGID 환경에서는 틀린 설명입니다."
             },
             {
                 "option": "파일의 그룹 소유권은 주 그룹인 kait가 된다.",
-                "description": ""
+                "description": "SetGID가 없을 때의 기본 동작입니다."
             },
             {
                 "option": "lin 사용자는 주 그룹을 project로 전환해야만 접근이 가능하므로 파일을 생성할 수 없다.",
-                "description": ""
+                "description": "lin은 이미 project 그룹의 일원이므로 접근 및 생성이 가능합니다."
             }
         ]
     },
@@ -3075,19 +3074,19 @@
         "options": [
             {
                 "option": "ldd",
-                "description": ""
+                "description": "정답. 특정 실행 파일이 의존하고 있는 공유 라이브러리 목록을 출력하는 명령어입니다."
             },
             {
                 "option": "blkid",
-                "description": ""
+                "description": "블록 장치(파티션 등)의 UUID와 속성을 확인하는 명령어입니다."
             },
             {
                 "option": "ldconfig",
-                "description": ""
+                "description": "공유 라이브러리 캐시를 갱신하는 관리 도구입니다."
             },
             {
                 "option": "ld.so.conf",
-                "description": ""
+                "description": "라이브러리 경로를 설정하는 설정 파일명입니다."
             }
         ]
     },
@@ -3099,19 +3098,19 @@
         "options": [
             {
                 "option": "compress",
-                "description": ""
+                "description": "가장 오래된 방식으로 압축률이 매우 낮습니다."
             },
             {
                 "option": "xz",
-                "description": ""
+                "description": "정답. 제시된 도구 중 가장 최신이며 가장 높은 압축률을 자랑합니다."
             },
             {
                 "option": "gzip",
-                "description": ""
+                "description": "속도는 빠르지만 압축률은 중간 정도입니다."
             },
             {
                 "option": "bzip2",
-                "description": ""
+                "description": "gzip보다 압축률이 좋으나 xz보다는 낮습니다."
             }
         ]
     },
@@ -3124,19 +3123,19 @@
         "options": [
             {
                 "option": "-qlr",
-                "description": ""
+                "description": "잘못된 옵션 조합입니다."
             },
             {
                 "option": "-qlf",
-                "description": ""
+                "description": "특정 파일이 포함된 패키지를 찾을 때 쓰는 -qf와 혼동된 조합입니다."
             },
             {
                 "option": "-qlc",
-                "description": ""
+                "description": "설치된 패키지의 설정 파일만 보여줍니다."
             },
             {
                 "option": "-qlp",
-                "description": ""
+                "description": "정답. -q(질의), -l(목록), -p(패키지 파일 대상) 옵션을 조합하여 아직 설치되지 않은 rpm 파일의 포함 목록을 확인합니다."
             }
         ]
     },
@@ -3149,19 +3148,19 @@
         "options": [
             {
                 "option": "㉠ nice, ㉡ --10",
-                "description": ""
+                "description": "정답. nice 명령어는 값을 음수로 줄 때 우선순위가 높아지며, 표기법상 하이픈을 두 번(--10) 사용합니다."
             },
             {
                 "option": "㉠ nice, ㉡ -10",
-                "description": ""
+                "description": "nice -10은 값을 +10 하는 것으로 우선순위를 낮추는 설정입니다."
             },
             {
                 "option": "㉠ renice, ㉡ -10",
-                "description": ""
+                "description": "renice는 이미 실행 중인 프로세스의 PID를 대상으로 합니다."
             },
             {
                 "option": "㉠ renice, ㉡ --10",
-                "description": ""
+                "description": "renice는 인자로 프로세스명이 아닌 PID를 기본으로 받습니다."
             }
         ]
     },
@@ -3173,19 +3172,19 @@
         "options": [
             {
                 "option": "crontab -r -u lin",
-                "description": ""
+                "description": "정답. -u(user)로 사용자를 지정하고 -r(remove)로 삭제합니다."
             },
             {
                 "option": "crontab -d -u lin",
-                "description": ""
+                "description": "삭제 옵션은 -d가 아닌 -r입니다."
             },
             {
                 "option": "crontab -e -u lin",
-                "description": ""
+                "description": "예약 설정을 수정(edit)하는 명령입니다."
             },
             {
                 "option": "crontab -x –u lin",
-                "description": ""
+                "description": "존재하지 않는 옵션입니다."
             }
         ]
     },
@@ -3197,19 +3196,19 @@
         "options": [
             {
                 "option": "5번째 필드에 userquota라는 옵션을 추가한다.",
-                "description": ""
+                "description": "옵션은 4번째 필드에 위치해야 합니다."
             },
             {
                 "option": "4번째 필드에 usrquota라는 옵션을 추가한다.",
-                "description": ""
+                "description": "정답. 마운트 옵션 필드(4번째)에 usrquota(또는 grpquota)를 추가합니다."
             },
             {
                 "option": "4번째 필드에 userquota라는 옵션을 추가한다.",
-                "description": ""
+                "description": "옵션 명칭이 usrquota가 표준입니다."
             },
             {
                 "option": "5번째 필드에 usrquota라는 옵션을 추가한다.",
-                "description": ""
+                "description": "5번째 필드는 dump 여부를 결정하는 필드입니다."
             }
         ]
     },
@@ -3222,19 +3221,19 @@
         "options": [
             {
                 "option": "7000",
-                "description": ""
+                "description": "특수 권한까지 포함된 비정상적인 값입니다."
             },
             {
                 "option": "0700",
-                "description": ""
+                "description": "사용자 권한만 남기고 그룹/기타 권한을 모두 제거하는 umask 값입니다."
             },
             {
                 "option": "0007",
-                "description": ""
+                "description": "기타 사용자 권한만 제거하는 umask 값입니다."
             },
             {
                 "option": "0077",
-                "description": ""
+                "description": "정답. 결과가 600(파일)과 700(디렉터리)이므로 그룹과 기타 사용자의 모든 권한(77)을 뺀 0077이 정답입니다."
             }
         ]
     },
@@ -3246,19 +3245,19 @@
         "options": [
             {
                 "option": "newgrp",
-                "description": ""
+                "description": "정답. 현재 로그인 세션에서 자신의 주 그룹을 변경하여 파일 생성 시 해당 그룹 소유권을 가지게 합니다."
             },
             {
                 "option": "groupmod",
-                "description": ""
+                "description": "그룹의 이름이나 GID를 관리자가 변경할 때 사용하는 명령입니다."
             },
             {
                 "option": "gpasswd",
-                "description": ""
+                "description": "그룹 관리자가 그룹 패스워드나 멤버를 관리할 때 사용합니다."
             },
             {
                 "option": "groups",
-                "description": ""
+                "description": "현재 사용자가 속한 그룹 목록을 확인하는 명령입니다."
             }
         ]
     },
@@ -3271,19 +3270,19 @@
         "options": [
             {
                 "option": "lin 사용자는 패스워드 입력 없이 로그인이 가능하다.",
-                "description": ""
+                "description": "정답. -d(delete) 옵션은 패스워드를 삭제하여 공백(null)으로 만듭니다. 보안상 위험하지만 설정 시 비번 없이 로그인이 가능해집니다."
             },
             {
                 "option": "lin 사용자는 다음 로그인 시에 반드시 패스워드를 변경해야 한다.",
-                "description": ""
+                "description": "패스워드 강제 변경은 -e(expire) 옵션을 사용해야 합니다."
             },
             {
                 "option": "lin 사용자는 패스워드에 잠금이 설정되어서 일시적으로 로그인이 불가하다.",
-                "description": ""
+                "description": "패스워드 잠금은 -l(lock) 옵션을 사용합니다."
             },
             {
                 "option": "lin 사용자는 패스워드가 삭제되어서 관리자가 패스워드를 설정할 때까지 로그인이 불가하다.",
-                "description": ""
+                "description": "패스워드가 없는 상태로 로그인이 허용되는 설정입니다."
             }
         ]
     },
@@ -3296,19 +3295,19 @@
         "options": [
             {
                 "option": "/etc/default/useradd",
-                "description": ""
+                "description": "정답. useradd 명령 시 기본적으로 적용될 설정(만료일 EXPIRE, 기본 그룹 등)이 저장된 파일입니다."
             },
             {
                 "option": "/etc/skel",
-                "description": ""
+                "description": "사용자 추가 시 홈 디렉터리에 복사될 기본 환경 설정 파일들이 모여 있는 디렉터리입니다."
             },
             {
                 "option": "/etc/passwd",
-                "description": ""
+                "description": "사용자의 기본 계정 정보가 저장되는 파일입니다."
             },
             {
                 "option": "/etc/login.defs",
-                "description": ""
+                "description": "메일박스 위치, 패스워드 최소 길기 등 계정 생성 시 시스템 전반적인 정책을 설정하는 파일입니다."
             }
         ]
     },
@@ -3320,19 +3319,19 @@
         "options": [
             {
                 "option": "yum search telnet",
-                "description": ""
+                "description": "정답. yum은 명령어 뒤에 하이픈 없이 search와 같은 서브 명령어를 바로 사용합니다."
             },
             {
                 "option": "yum -f telnet",
-                "description": ""
+                "description": "yum에서 사용하지 않는 옵션입니다."
             },
             {
                 "option": "yum -search telnet",
-                "description": ""
+                "description": "옵션 형식이 잘못되었습니다."
             },
             {
                 "option": "yum --search telnet",
-                "description": ""
+                "description": "옵션 형식이 잘못되었습니다."
             }
         ]
     },
@@ -3340,23 +3339,23 @@
         "examKey": "lm11-20201010",
         "localId": 34,
         "subjectKey": 2,
-        "body": "다음 중 시그널이름과 번호를 확인할 수 명령으로 알맞은 것은?",
+        "body": "다음 중 시그널 이름과 번호를 확인할 수 명령으로 알맞은 것은?",
         "options": [
             {
                 "option": "kill -l",
-                "description": ""
+                "description": "정답. -l(list) 옵션을 사용하여 시스템에서 지원하는 전체 시그널 목록과 번호를 출력합니다."
             },
             {
                 "option": "killall -l",
-                "description": ""
+                "description": "killall에는 -l 옵션이 존재하지 않습니다."
             },
             {
                 "option": "pkill -l",
-                "description": ""
+                "description": "pkill은 프로세스 이름으로 시그널을 보낼 때 쓰며 -l 옵션은 리스트 출력용이 아닙니다."
             },
             {
                 "option": "pgrep -l",
-                "description": ""
+                "description": "프로세스 번호와 이름을 동시에 보여주는 옵션입니다."
             }
         ]
     },
@@ -3368,19 +3367,19 @@
         "options": [
             {
                 "option": "fg %2",
-                "description": ""
+                "description": "정답. fg(foreground) 명령어 뒤에 %작업번호를 입력하여 호출합니다."
             },
             {
                 "option": "fg -2",
-                "description": ""
+                "description": "잘못된 문법입니다."
             },
             {
                 "option": "fg &2",
-                "description": ""
+                "description": "잘못된 문법입니다."
             },
             {
                 "option": "fg -n 2",
-                "description": ""
+                "description": "잘못된 문법입니다."
             }
         ]
     },
@@ -3392,19 +3391,19 @@
         "options": [
             {
                 "option": "groupmod -n kait ihd",
-                "description": ""
+                "description": "정답. groupmod -n [새이름] [기존이름] 순서로 사용합니다."
             },
             {
                 "option": "groupmod -n ihd kait",
-                "description": ""
+                "description": "이름의 순서가 바뀌었습니다."
             },
             {
                 "option": "groupmod -N ihd kait",
-                "description": ""
+                "description": "대문자 -N 옵션은 존재하지 않습니다."
             },
             {
                 "option": "groupmod -N kait ihd",
-                "description": ""
+                "description": "대문자 -N 옵션은 존재하지 않습니다."
             }
         ]
     },
@@ -3417,19 +3416,19 @@
         "options": [
             {
                 "option": "w",
-                "description": ""
+                "description": "정답. uptime 정보와 함께 현재 접속자 및 그들이 수행 중인 작업(WHAT)을 상세히 보여줍니다."
             },
             {
                 "option": "who",
-                "description": ""
+                "description": "접속자 이름, 터미널, 로그인 시간 정도만 간략히 보여줍니다."
             },
             {
                 "option": "users",
-                "description": ""
+                "description": "현재 접속 중인 사용자 아이디 목록만 출력합니다."
             },
             {
                 "option": "whoami",
-                "description": ""
+                "description": "현재 명령을 수행 중인 자신의 유효 사용자명을 출력합니다."
             }
         ]
     },
@@ -3442,19 +3441,19 @@
         "options": [
             {
                 "option": "quota",
-                "description": ""
+                "description": "개별 사용자의 쿼터 제한량을 확인합니다."
             },
             {
                 "option": "du",
-                "description": ""
+                "description": "디렉터리나 파일별 디스크 사용량을 확인합니다."
             },
             {
                 "option": "df",
-                "description": ""
+                "description": "정답. 시스템에 마운트된 파일 시스템 전체의 용량과 사용 현황을 확인합니다."
             },
             {
                 "option": "repquota",
-                "description": ""
+                "description": "파일 시스템 전반의 쿼터 정보를 요약하여 보고합니다."
             }
         ]
     },
@@ -3466,19 +3465,19 @@
         "options": [
             {
                 "option": "head -7 lin.txt | tail -4",
-                "description": ""
+                "description": "정답. 앞에서부터 7줄을 먼저 뽑고(1~7), 그 중 뒤에서부터 4줄(4,5,6,7)을 가져옵니다."
             },
             {
                 "option": "head -7 lin.txt | tail -3",
-                "description": ""
+                "description": "5, 6, 7줄만 출력됩니다."
             },
             {
                 "option": "tail -10 lin.txt | head -3",
-                "description": ""
+                "description": "1, 2, 3줄만 출력됩니다."
             },
             {
                 "option": "tail -10 lin.txt | head –4",
-                "description": ""
+                "description": "1, 2, 3, 4줄만 출력됩니다."
             }
         ]
     },
@@ -3491,19 +3490,19 @@
         "options": [
             {
                 "option": "a.out라는 실행 파일이 생성된다.",
-                "description": ""
+                "description": "정답. gcc에서 출력 파일명을 -o 옵션으로 지정하지 않으면 기본적으로 a.out 파일이 생성됩니다."
             },
             {
                 "option": "lin.o라는 오브젝트 파일이 생성된다.",
-                "description": ""
+                "description": "-c 옵션을 사용했을 때의 결과입니다."
             },
             {
                 "option": "lin이라는 오브젝트 파일이 생성된다.",
-                "description": ""
+                "description": "잘못된 설명입니다."
             },
             {
                 "option": "lin이라는 실행 파일이 생성된다.",
-                "description": ""
+                "description": "-o lin 옵션을 사용했을 때의 결과입니다."
             }
         ]
     },
@@ -3514,20 +3513,20 @@
         "body": "다음 중 커널 컴파일의 작업 내용과 명령어로 알맞은 것은?",
         "options": [
             {
-                "option": "커널 모듈생성을위한 컴파일작업: make modules",
-                "description": ""
+                "option": "커널 모듈 생성을 위한 컴파일 작업: make modules",
+                "description": "정답. 설정된 옵션에 따라 선택된 기능들을 별도의 모듈(.ko) 파일로 컴파일하는 과정입니다."
             },
             {
                 "option": "커널 컴파일 옵션 설정 작업 : make mrproper",
-                "description": ""
+                "description": "make mrproper는 소스 트리와 기존 설정 파일을 완전히 초기화하는 명령입니다."
             },
             {
                 "option": "커널 소스의 설정 값 초기화 : make menuconfig",
-                "description": ""
+                "description": "make menuconfig는 메뉴 기반의 GUI를 통해 커널 옵션을 설정하는 명령입니다."
             },
             {
                 "option": "커널 모듈 파일 복사 및 grub.conf 파일 수정 작업 : make modules_install",
-                "description": ""
+                "description": "make modules_install은 생성된 모듈들을 /lib/modules 아래로 복사하는 과정이며, grub 수정과는 직접적 관련이 없습니다."
             }
         ]
     },
@@ -3535,24 +3534,24 @@
         "examKey": "lm11-20201010",
         "localId": 42,
         "subjectKey": 2,
-        "body": "특정 모듈을 제거하면서 의존성있는 모듈을 같이 제거하려고 할 때 빈 칸에 들어갈 옵션으로 알맞은 것은?",
+        "body": "특정 모듈을 제거하면서 의존성 있는 모듈을 같이 제거하려고 할 때 빈 칸에 들어갈 옵션으로 알맞은 것은?",
         "code": "cherry@rhombus:~$ modprobe (괄호) ip6table_filter",
         "options": [
             {
                 "option": "-e",
-                "description": ""
+                "description": "사용되지 않는 옵션입니다."
             },
             {
                 "option": "-a",
-                "description": ""
+                "description": "모든 일치하는 모듈을 로드할 때 사용합니다."
             },
             {
                 "option": "-d",
-                "description": ""
+                "description": "디버그 정보를 출력할 때 사용합니다."
             },
             {
                 "option": "-r",
-                "description": ""
+                "description": "정답. remove의 약자로, 해당 모듈과 사용되지 않는 의존성 모듈까지 안전하게 일괄 제거합니다."
             }
         ]
     },
@@ -3564,19 +3563,19 @@
         "options": [
             {
                 "option": "cat /etc/mtab",
-                "description": ""
+                "description": "현재 마운트된 장치 정보를 확인하는 파일입니다."
             },
             {
                 "option": "mount",
-                "description": ""
+                "description": "현재 마운트된 정보를 출력하거나 수동으로 마운트할 때 사용합니다."
             },
             {
                 "option": "fdisk -l",
-                "description": ""
+                "description": "정답. 시스템에 연결된 모든 물리적 디스크와 파티션 테이블 정보를 리스트로 출력하여 인식 여부를 확인합니다."
             },
             {
                 "option": "cat /etc/fstab",
-                "description": ""
+                "description": "부팅 시 자동 마운트될 정보를 설정해둔 파일입니다."
             }
         ]
     },
@@ -3588,19 +3587,19 @@
         "options": [
             {
                 "option": "모듈이 커널에 내장되는 방식을 모놀리식 방식이라고 한다.",
-                "description": ""
+                "description": "정답. 모든 기능을 커널에 포함하는 방식은 모놀리식 커널이며, 필요한 기능만 동적으로 로드하는 것은 마이크로 커널 또는 모듈러 방식입니다."
             },
             {
                 "option": "모듈 관련 명령어로는 lsmod, insmod, rmmod가 있다.",
-                "description": ""
+                "description": "리눅스 모듈을 관리하는 기본 명령어들입니다."
             },
             {
                 "option": "리눅스 모듈의 경우 C컴파일러로 만들어진 '*.ko' 파일 형태이다.",
-                "description": ""
+                "description": "커널 오브젝트(Kernel Object)의 약자로 표준 모듈 파일 형식입니다."
             },
             {
                 "option": "사용 가능한 모듈은 /lib/modules/커널버전 /kernel 디렉터리 안에서 확인 할 수 있다.",
-                "description": ""
+                "description": "커널 버전별 모듈 파일이 저장되는 표준 경로입니다."
             }
         ]
     },
@@ -3612,19 +3611,19 @@
         "options": [
             {
                 "option": "커널 컴파일 전, 후 총 2번의 리부팅이 필요하다.",
-                "description": ""
+                "description": "정답. 컴파일 과정 자체에는 리부팅이 필요 없으며, 완료 후 새 커널로 부팅할 때 1회만 필요합니다."
             },
             {
                 "option": "리눅스 커널 버전의 소스를 /usr/src/kernels에 다운로드 하여야 한다.",
-                "description": ""
+                "description": "전통적으로 소스 파일을 위치시키고 작업하는 경로입니다."
             },
             {
                 "option": "어셈블러, GCC, make 유틸리티 등 개발 도구가 사전에 설치되어 있어야 한다.",
-                "description": ""
+                "description": "소스 코드를 빌드하기 위한 필수 도구들입니다."
             },
             {
                 "option": "커널 초기화 시 'make clean' 명령을 이용하면 .config파일을 삭제 하지 않고 초기화 할 수 있다.",
-                "description": ""
+                "description": "생성된 오브젝트 파일만 지우고 설정(.config)은 유지합니다."
             }
         ]
     },
@@ -3636,19 +3635,19 @@
         "options": [
             {
                 "option": "/etc/fstab",
-                "description": ""
+                "description": "정답. 파일 시스템의 마운트 설정 정보(장치명, 마운트 포인트, 파일 시스템 타입 등)를 관리하는 파일입니다."
             },
             {
                 "option": "/etc/groups",
-                "description": ""
+                "description": "그룹 정보를 담고 있는 파일입니다."
             },
             {
                 "option": "/etc/exports",
-                "description": ""
+                "description": "NFS 서버에서 공유할 디렉터리를 설정하는 파일입니다."
             },
             {
                 "option": "/proc/partitions",
-                "description": ""
+                "description": "커널이 인식하고 있는 파티션 정보를 담고 있는 가상 파일입니다."
             }
         ]
     },
@@ -3660,19 +3659,19 @@
         "options": [
             {
                 "option": "lpc",
-                "description": ""
+                "description": "라인 프린터 컨트롤러로 큐 관리나 제어를 담당합니다."
             },
             {
                 "option": "lp",
-                "description": ""
+                "description": "프린트 작업을 요청할 때 사용합니다."
             },
             {
                 "option": "lpstat",
-                "description": ""
+                "description": "정답. 프린터의 상태와 현재 큐에 대기 중인 작업의 ID(Request-ID) 등을 확인할 수 있습니다."
             },
             {
                 "option": "cancel",
-                "description": ""
+                "description": "특정 작업 ID를 지정하여 인쇄를 취소할 때 사용합니다."
             }
         ]
     },
@@ -3684,19 +3683,19 @@
         "options": [
             {
                 "option": "scanimage",
-                "description": ""
+                "description": "일반적인 이미지를 스캔하는 명령입니다."
             },
             {
                 "option": "xcam",
-                "description": ""
+                "description": "GUI 기반의 스캔 도구입니다."
             },
             {
                 "option": "scanadf",
-                "description": ""
+                "description": "정답. ADF(Automatic Document Feeder) 장치를 지원하는 스캐너 전용 명령입니다."
             },
             {
                 "option": "sane-find-scanner",
-                "description": ""
+                "description": "연결된 스캐너 장치를 찾을 때 사용합니다."
             }
         ]
     },
@@ -3707,20 +3706,20 @@
         "body": "다음 중 CUPS 프린팅 시스템의 특징으로 알맞은 것은?",
         "options": [
             {
-                "option": "설정 정보는 /etc/printcap파일에 저장된다.",
-                "description": ""
+                "option": "설정 정보는 /etc/printcap 파일에 저장된다.",
+                "description": "이는 BSD LPD 방식의 특징이며, CUPS는 /etc/cups/ 디렉터리에 설정을 저장합니다."
             },
             {
-                "option": "BSD계열 유닉스에서 사용하기 위해 개발되었다.",
-                "description": ""
+                "option": "BSD 계열 유닉스에서 사용하기 위해 개발되었다.",
+                "description": "애플이 개발하였으며 현재 많은 리눅스 배포판의 표준입니다."
             },
             {
                 "option": "로컬에 직접 연결한 프린터를 네트워크 프린터처럼 설정이 가능하다.",
-                "description": ""
+                "description": "정답. IPP(Internet Printing Protocol)를 기반으로 하여 강력한 네트워크 공유 기능을 제공합니다."
             },
             {
                 "option": "초기에는 printconf, printtool과 같은 도구를 사용하여 설정을 하였다.",
-                "description": ""
+                "description": "이는 레드햇 리눅스의 구형 설정 도구들에 대한 설명입니다."
             }
         ]
     },
@@ -3732,19 +3731,19 @@
         "options": [
             {
                 "option": "-o",
-                "description": ""
+                "description": "운영체제 이름을 출력합니다."
             },
             {
                 "option": "-n",
-                "description": ""
+                "description": "네트워크 호스트명을 출력합니다."
             },
             {
                 "option": "-r",
-                "description": ""
+                "description": "정답. 커널의 릴리즈(release) 번호, 즉 버전을 출력합니다."
             },
             {
                 "option": "-s",
-                "description": ""
+                "description": "커널의 이름(예: Linux)을 출력합니다."
             }
         ]
     },
@@ -3757,19 +3756,19 @@
         "options": [
             {
                 "option": "-b : 증분 백업으로 백업할 때 사용한다. (--incremental)",
-                "description": ""
+                "description": "정답. 설명된 도구는 cpio이며, -b 옵션은 32비트 데이터의 바이트 순서를 바꾸는(swap) 용도이지 증분 백업용이 아닙니다."
             },
             {
                 "option": "-t : 내용만 확인할 때 사용한다.(--list)",
-                "description": ""
+                "description": "아카이브된 파일의 목록(table of contents)을 확인하는 옵션입니다."
             },
             {
                 "option": "-d : 필요한 경우 디렉터리를 생성한다. (--make-directories)",
-                "description": ""
+                "description": "복구 시 해당 경로에 디렉터리가 없으면 자동으로 생성해주는 옵션입니다."
             },
             {
                 "option": "-i : 표준입력으로 백업한 자료를 불러올 때 사용한다.(--extract)",
-                "description": ""
+                "description": "copy-in 모드로, 생성된 아카이브 파일로부터 데이터를 추출(복구)합니다."
             }
         ]
     },
@@ -3782,19 +3781,19 @@
         "options": [
             {
                 "option": "파일이나 디렉터리에 접근 권한을 제어할 수 있도록 만든 시스템이다.",
-                "description": ""
+                "description": "정답. ACL(Access Control List)은 표준 권한 체계보다 더 세밀하게 사용자나 그룹별 권한을 설정할 수 있게 합니다."
             },
             {
                 "option": "ext2부터 지원하는 시스템으로 파일권한 외 13가지 속성을 제어한다.",
-                "description": ""
+                "description": "이는 chattr 명령어로 제어하는 파일 속성(Attribute)에 대한 설명입니다."
             },
             {
                 "option": "설명은 docker 디렉터리에 대한 접근 권한 리스트를 확인하는 명령이다.",
-                "description": ""
+                "description": "확인 명령은 getfacl이며, setfacl은 권한을 설정하는 명령입니다."
             },
             {
                 "option": "사용자를 인증하고 그 사용자의 서비스에 대한 접근을 제어하는 모듈화된 방법이다.",
-                "description": ""
+                "description": "이는 PAM(Pluggable Authentication Modules)에 대한 설명입니다."
             }
         ]
     },
@@ -3806,19 +3805,19 @@
         "options": [
             {
                 "option": "nessus : 운영 중인 서버에 불필요하게 작동하고 있는 서비스 포트를 확인할 수 있다.",
-                "description": ""
+                "description": "포트 스캔은 주로 nmap의 역할이며, nessus는 종합적인 취약점 진단 도구입니다."
             },
             {
                 "option": "nmap : 모든 파일들에 대한 데이터베이스를 만들어 파일의 변조 여부를 검사한다.",
-                "description": ""
+                "description": "파일 변조 검사는 tripwire의 기능입니다."
             },
             {
                 "option": "tripwire : 서버의 보안 취약점을 검사해주는 도구로 문제가 되는 서비스에 대한 정보를 알려준다.",
-                "description": ""
+                "description": "취약점 검사는 nessus의 기능입니다."
             },
             {
-                "option": "tcpdump : 조건식을설정하여네트워크인터페이스를 거치는 패킷 헤더 정보를 출력할 수 있다.",
-                "description": ""
+                "option": "tcpdump : 조건식을 설정하여 네트워크 인터페이스를 거치는 패킷 헤더 정보를 출력할 수 있다.",
+                "description": "정답. 명령행 기반의 가장 대표적인 네트워크 패킷 분석(스니핑) 도구입니다."
             }
         ]
     },
@@ -3830,19 +3829,19 @@
         "options": [
             {
                 "option": "ssh2는 ssh1을 개선한 것으로 하위호환성을 완벽하게 지원한다.",
-                "description": ""
+                "description": "정답. SSH v2는 보안성이 강화되었으나 설계 방식의 차이로 인해 v1과의 직접적인 하위 호환성은 지원하지 않습니다."
             },
             {
                 "option": "패킷을 암호화하여 telnet이나 rlogin에 비해 안전하다.",
-                "description": ""
+                "description": "전송되는 모든 데이터가 암호화되어 스니핑으로부터 안전합니다."
             },
             {
                 "option": "ssh-keygen을 이용하면 인증키를 이용한 접속이 가능하다.",
-                "description": ""
+                "description": "공개키/개인키 쌍을 생성하여 암호 없는 자동 로그인을 구현할 수 있습니다."
             },
             {
-                "option": "기본 설정 포트는 22번이며 원격 셸, scp, sftp기능을 지원한다.",
-                "description": ""
+                "option": "기본 설정 포트는 22번이며 원격 셸, scp, sftp 기능을 지원한다.",
+                "description": "SSH 프로토콜 하나로 쉘 접속과 파일 전송을 모두 수행할 수 있습니다."
             }
         ]
     },
@@ -3850,24 +3849,24 @@
         "examKey": "lm11-20201010",
         "localId": 55,
         "subjectKey": 2,
-        "body": "다음은 /var/log/xferlog 파일의 구성에 관한 설명이다.빈 칸에 들어갈 내용으로 알맞은 것은?",
-        "code": "전송된 지시를 나타내는 영역은 (괄호)이다. 사용자가 어떤 형태로 login 했는지를 나타내는 영역은 (괄호)이다. special-action-flag 영역에서 _은 어떠한 action도 발생하지 않은 경우를 뜻한다.",
+        "body": "다음은 /var/log/xferlog 파일의 구성에 관한 설명이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
+        "code": "전송된 지시를 나타내는 영역은 (㉠)이다. 사용자가 어떤 형태로 login 했는지를 나타내는 영역은 (㉡)이다. special-action-flag 영역에서 (㉢)은 어떠한 action도 발생하지 않은 경우를 뜻한다.",
         "options": [
             {
                 "option": "㉠ direction, ㉡ access-mode, ㉢ _",
-                "description": ""
+                "description": "정답. xferlog 필드 중 direction은 업/다운로드 방향, access-mode는 사용자 유형(a:익명, r:로컬), _는 플래그 없음을 뜻합니다."
             },
             {
                 "option": "㉠ direction, ㉡ completion-status, ㉢ !",
-                "description": ""
+                "description": "completion-status는 전송 완료 여부(c:완료, i:미완료)를 뜻합니다."
             },
             {
                 "option": "㉠ transfer-type, ㉡ access-mode, ㉢ !",
-                "description": ""
+                "description": "transfer-type은 전송 모드(a:아스키, b:바이너리)를 뜻합니다."
             },
             {
                 "option": "㉠ transfer-type, ㉡ completion-status, ㉢ _",
-                "description": ""
+                "description": "항목 조합이 요구사항과 맞지 않습니다."
             }
         ]
     },
@@ -3880,19 +3879,19 @@
         "options": [
             {
                 "option": "/var/log/wtmp",
-                "description": ""
+                "description": "정답. 성공한 모든 로그인/로그아웃 정보와 재부팅 기록을 담고 있는 바이너리 로그 파일입니다."
             },
             {
                 "option": "/var/log/btmp",
-                "description": ""
+                "description": "실패한 로그인 시도 기록을 담고 있으며 lastb 명령으로 확인합니다."
             },
             {
                 "option": "/var/log/lastlog",
-                "description": ""
+                "description": "각 사용자별 마지막 로그인 시간을 기록하며 lastlog 명령으로 확인합니다."
             },
             {
                 "option": "/var/log/messages",
-                "description": ""
+                "description": "시스템의 전반적인 메시지가 기록되는 텍스트 로그 파일입니다."
             }
         ]
     },
@@ -3904,19 +3903,19 @@
         "options": [
             {
                 "option": "환경설정파일은 /etc/sudo 이다.",
-                "description": ""
+                "description": "정답. sudo의 기본 환경 설정 파일 경로는 /etc/sudoers 입니다."
             },
             {
                 "option": "특정 사용자 또는 특정 그룹에 root 사용자 권한을 가질 수 있게 하는 도구이다.",
-                "description": ""
+                "description": "보안을 유지하며 특정 명령만 root 권한으로 실행할 수 있게 합니다."
             },
             {
                 "option": "visudo는 환경설정파일을 편집할 때 사용하는 명령이다.",
-                "description": ""
+                "description": "/etc/sudoers 파일을 문법 체크와 함께 안전하게 편집하는 전용 도구입니다."
             },
             {
                 "option": "적용된 사용자는 'sudo 명령어' 형태로 실행하며 root 권한을 대행한다.",
-                "description": ""
+                "description": "사용자 자신의 암호를 입력하여 root 권한의 명령을 수행합니다."
             }
         ]
     },
@@ -3928,19 +3927,19 @@
         "options": [
             {
                 "option": "커널링버퍼(kernel ring buffer)의 내용을 출력하고 제어하는 명령이다.",
-                "description": ""
+                "description": "정답. 커널이 부팅 시점부터 현재까지 출력한 메시지(로그)가 담긴 링 버퍼를 확인하는 명령입니다."
             },
             {
                 "option": "커널 변수의 값을 제어하여 시스템을 최적화 할 수 있는 명령이다.",
-                "description": ""
+                "description": "이는 sysctl 명령어에 대한 설명입니다."
             },
             {
                 "option": "/var/log/dmesg 파일에 기록된 환경 변수 설정 값을 출력하는 명령이다.",
-                "description": ""
+                "description": "dmesg는 파일이 아닌 메모리 상의 버퍼를 조회합니다."
             },
             {
                 "option": "커널 부트 메시지 로그를 보여주는 명령으로 실행 시 /var/log/dmesg 에 기록된다.",
-                "description": ""
+                "description": "/var/log/dmesg 파일은 부팅 과정 중의 메시지를 기록해둔 별도의 텍스트 파일입니다."
             }
         ]
     },
@@ -3953,19 +3952,19 @@
         "options": [
             {
                 "option": "rsync",
-                "description": ""
+                "description": "네트워크를 통한 파일/디렉터리 동기화 도구입니다."
             },
             {
                 "option": "dd",
-                "description": ""
+                "description": "블록 단위의 장치 복사/덤프 도구입니다."
             },
             {
                 "option": "cpio",
-                "description": ""
+                "description": "표준 입출력을 이용한 파일 단위 아카이브 도구입니다."
             },
             {
                 "option": "dump",
-                "description": ""
+                "description": "정답. 0(전체)~9(증분) 레벨을 사용하여 파티션 단위 백업을 수행하는 전통적인 도구입니다."
             }
         ]
     },
@@ -3977,19 +3976,19 @@
         "options": [
             {
                 "option": "ssh을 이용하여 전송 가능하나 root 권한이 필요하다.",
-                "description": ""
+                "description": "정답. ssh를 통한 전송은 가능하지만, 반드시 root 권한이 필요한 것은 아니며 일반 사용자 권한으로도 가능합니다."
             },
             {
                 "option": "rcp(remote copy)에 비해 처리속도가 빠르다.",
-                "description": ""
+                "description": "변경된 부분만 전송하는 알고리즘을 사용하여 매우 효율적입니다."
             },
             {
                 "option": "내부 파이프라인을 통하여 전송기간을 줄인다.",
-                "description": ""
+                "description": "전송 효율을 높이기 위한 내부 메커니즘을 사용합니다."
             },
             {
                 "option": "링크된 파일도 복사 가능하고 소유권도 유지하여 복사할 수 있다.",
-                "description": ""
+                "description": "-a(archive) 옵션 등을 통해 링크, 권한, 소유권 등을 유지하며 복제할 수 있습니다."
             }
         ]
     },
@@ -4002,19 +4001,19 @@
         "options": [
             {
                 "option": "./mysqld",
-                "description": ""
+                "description": "정답. MySQL 5.7 버전부터는 mysql_install_db 대신 mysqld 데몬 실행 파일에 --initialize 옵션을 주어 초기화를 진행합니다."
             },
             {
                 "option": "./mysql",
-                "description": ""
+                "description": "MySQL 서버에 접속하는 클라이언트 도구입니다."
             },
             {
                 "option": "./mysqld_safe",
-                "description": ""
+                "description": "MySQL 서버를 안전하게 실행하고 모니터링하는 스크립트입니다."
             },
             {
                 "option": "./safe_mysqld",
-                "description": ""
+                "description": "구버전에서 사용하던 서버 실행 스크립트 명칭입니다."
             }
         ]
     },
@@ -4027,19 +4026,19 @@
         "options": [
             {
                 "option": "SVM",
-                "description": ""
+                "description": "정답. AMD-V 기술을 BIOS에서 지칭하는 용어(Secure Virtual Machine)입니다."
             },
             {
                 "option": "VT-x",
-                "description": ""
+                "description": "인텔(Intel) CPU에서 사용하는 하드웨어 가속 가상화 기술 명칭입니다."
             },
             {
                 "option": "VDI",
-                "description": ""
+                "description": "데스크톱 가상화 인프라(Virtual Desktop Infrastructure)를 뜻하는 용어입니다."
             },
             {
                 "option": "VMX",
-                "description": ""
+                "description": "인텔의 가상화 확장 명령어 세트를 의미합니다."
             }
         ]
     },
@@ -4052,19 +4051,19 @@
         "options": [
             {
                 "option": "*.ihd.or.kr",
-                "description": ""
+                "description": "와일드카드를 이용해 특정 도메인 내의 모든 호스트를 허용하는 올바른 설정입니다."
             },
             {
                 "option": "192.168.12.",
-                "description": ""
+                "description": "정답. NFS 설정에서 네트워크 대역 지정 시 마침표(.)로 끝내는 방식은 지원하지 않습니다. (CIDR이나 넷마스크를 써야 함)"
             },
             {
                 "option": "192.168.12.0/255.255.255.0",
-                "description": ""
+                "description": "넷마스크 형식을 이용한 올바른 네트워크 대역 지정 방법입니다."
             },
             {
                 "option": "192.168.5.0/24",
-                "description": ""
+                "description": "CIDR 표기법을 이용한 올바른 네트워크 대역 지정 방법입니다."
             }
         ]
     },
@@ -4073,23 +4072,23 @@
         "localId": 64,
         "subjectKey": 3,
         "body": "다음은 /etc/named.conf 파일 설정의 일부이다. 빈 칸에 들어갈 내용으로 알맞은 것은?",
-        "code": "(괄호) only;\n(괄호) { 168.126.63.1; };",
+        "code": "(㉠) only;\n(㉡) { 168.126.63.1; };",
         "options": [
             {
                 "option": "㉠ forward, ㉡ forwarders",
-                "description": ""
+                "description": "정답. forward only는 자신에게 온 질의를 무조건 전달자에게만 보낸다는 의미이며, forwarders는 전달할 대상 서버를 지정합니다."
             },
             {
                 "option": "㉠ forwarders, ㉡ allow-query",
-                "description": ""
+                "description": "항목 매칭이 올바르지 않습니다."
             },
             {
                 "option": "㉠ forwarders, ㉡ forward",
-                "description": ""
+                "description": "지시어의 위치가 바뀌었습니다."
             },
             {
                 "option": "㉠ allow-query, ㉡ forward",
-                "description": ""
+                "description": "전혀 다른 기능을 가진 지시어 조합입니다."
             }
         ]
     },
@@ -4098,23 +4097,23 @@
         "localId": 65,
         "subjectKey": 3,
         "body": "다음 설명에 웹 서버 프로그램으로 알맞은 것은?",
-        "code": "2004년에 등장한 웹 서버 프로그램으로 가벼움과 높은 성능을 목표로 한다. 제공되는 기능으로는 리버스프록시, 로드 밸런서, HTTP cache 기능 등이 있다.",
+        "code": "2004년에 등장한 웹 서버 프로그램으로 가벼움과 높은 성능을 목표로 한다. 제공되는 기능으로는 리버스 프록시, 로드 밸런서, HTTP cache 기능 등이 있다.",
         "options": [
             {
                 "option": "Apache HTTP Server",
-                "description": ""
+                "description": "가장 오래되고 범용적이지만 프로세스/스레드 기반으로 동작합니다."
             },
             {
                 "option": "Nginx",
-                "description": ""
+                "description": "정답. 비동기 이벤트 기반 구조로 리버스 프록시와 로드 밸런싱에 탁월한 웹 서버입니다."
             },
             {
                 "option": "GWS(Google Web Server)",
-                "description": ""
+                "description": "구글 내부용으로 개발된 웹 서버입니다."
             },
             {
                 "option": "IIS(Internet Information Server)",
-                "description": ""
+                "description": "마이크로소프트 윈도우 전용 웹 서버입니다."
             }
         ]
     },
@@ -4127,19 +4126,19 @@
         "options": [
             {
                 "option": "-t",
-                "description": ""
+                "description": "정답. 'test'의 약자로 아파치 설정 파일의 문법적 오류 유무를 체크합니다."
             },
             {
                 "option": "-f",
-                "description": ""
+                "description": "기본 경로가 아닌 특정 설정 파일을 지정하여 서버를 실행할 때 사용합니다."
             },
             {
                 "option": "-S",
-                "description": ""
+                "description": "가상 호스트(VirtualHost) 설정의 세부 내역을 확인합니다."
             },
             {
                 "option": "-l",
-                "description": ""
+                "description": "커널에 컴파일되어 내장된 모듈 리스트를 출력합니다."
             }
         ]
     },
@@ -4151,19 +4150,19 @@
         "options": [
             {
                 "option": "자주 변경되는 정보인 경우에 RDBMS보다 더욱 뛰어난 성능을 발휘한다.",
-                "description": ""
+                "description": "정답. LDAP은 '읽기/검색' 위주의 작업에 최적화되어 있어, 갱신(쓰기)이 잦은 경우에는 RDBMS가 더 유리합니다."
             },
             {
                 "option": "X.500 Directory Access Protocol 기반으로 만들어진 통신 규약이다.",
-                "description": ""
+                "description": "X.500의 복잡성을 줄인 경량화된 버전(Lightweight)입니다."
             },
             {
                 "option": "RDBMS에 비교해서 검색 속도가 빠르다.",
-                "description": ""
+                "description": "트리 구조의 계층적 데이터를 검색하는 속도가 매우 빠릅니다."
             },
             {
                 "option": "읽기 위주의 검색 서비스에서 상당히 좋은 성능을 발휘한다.",
-                "description": ""
+                "description": "주소록, 사용자 인증 정보 관리에 주로 쓰이는 이유입니다."
             }
         ]
     },
@@ -4172,22 +4171,23 @@
         "localId": 68,
         "subjectKey": 3,
         "body": "다음 설명과 같은 경우에 구성해야할 서버로 가장 알맞은 것은?",
+        "code": "수십 대의 리눅스 서버를 운영하고 있다. 서버마다 존재하는 사용자 계정 정보를 통합하여 관리하려고 한다.",
         "options": [
             {
                 "option": "II",
-                "description": ""
+                "description": "존재하지 않는 서비스명입니다."
             },
             {
                 "option": "SSH",
-                "description": ""
+                "description": "원격 터미널 접속 보안 서비스입니다."
             },
             {
                 "option": "NFS",
-                "description": ""
+                "description": "파일 시스템 공유 서비스입니다."
             },
             {
                 "option": "NIS",
-                "description": ""
+                "description": "정답. 네트워크 정보 서비스로, 중앙에서 여러 호스트의 사용자 계정(passwd, group 등) 정보를 통합 관리합니다."
             }
         ]
     },
@@ -4199,19 +4199,19 @@
         "options": [
             {
                 "option": "hosts.byname",
-                "description": ""
+                "description": "IP 주소와 호스트명 정보를 담은 맵 파일입니다."
             },
             {
                 "option": "uid.byname",
-                "description": ""
+                "description": "UID 번호와 이름을 매핑한 맵 파일입니다."
             },
             {
                 "option": "user.byname",
-                "description": ""
+                "description": "NIS에서 사용하지 않는 명칭입니다."
             },
             {
                 "option": "passwd.byname",
-                "description": ""
+                "description": "정답. NIS 데이터베이스(Map)에서 사용자 계정(password) 정보를 담고 있는 기본 파일명입니다."
             }
         ]
     },
@@ -4224,19 +4224,19 @@
         "options": [
             {
                 "option": "/192.168.5.13/data",
-                "description": ""
+                "description": "올바른 마운트 형식이 아닙니다."
             },
             {
                 "option": "//192.168.5.13/data",
-                "description": ""
+                "description": "삼바(Samba) 공유 자원 접근 시 주로 사용하는 형식입니다."
             },
             {
                 "option": "192.168.5.13:/data",
-                "description": ""
+                "description": "정답. NFS 마운트 시에는 [서버IP]:[공유디렉토리경로] 형식을 사용합니다."
             },
             {
                 "option": "\\\\192.168.5.13:/data",
-                "description": ""
+                "description": "잘못된 특수문자 조합입니다."
             }
         ]
     },
@@ -4248,19 +4248,19 @@
         "options": [
             {
                 "option": "dovecot",
-                "description": ""
+                "description": "정답. Dovecot은 수신된 메일을 사용자에게 전달하는 MDA(Mail Delivery Agent)이자 POP3/IMAP 서버입니다. 나머지는 메일을 전송하는 MTA입니다."
             },
             {
                 "option": "qmail",
-                "description": ""
+                "description": "보안과 성능을 강조하여 개발된 유닉스 계열의 메일 전송 에이전트(MTA)입니다."
             },
             {
                 "option": "postfix",
-                "description": ""
+                "description": "Sendmail의 대안으로 개발된 빠르고 관리가 쉬운 메일 전송 에이전트(MTA)입니다."
             },
             {
                 "option": "sendmail",
-                "description": ""
+                "description": "가장 오래되고 널리 사용되는 전통적인 메일 전송 에이전트(MTA)입니다."
             }
         ]
     },
@@ -4273,19 +4273,19 @@
         "options": [
             {
                 "option": "/etc/mail/local-host-names",
-                "description": ""
+                "description": "메일 서버가 수신할 도메인을 나열하는 파일입니다."
             },
             {
                 "option": "/etc/aliases",
-                "description": ""
+                "description": "시스템 전체 계정의 별칭을 설정하는 파일입니다."
             },
             {
                 "option": "/etc/mail/virtusertable",
-                "description": ""
+                "description": "정답. 가상 사용자 테이블로, 동일한 계정명(ceo)을 서로 다른 도메인별로 각각 다른 실제 계정에 매핑할 때 사용합니다."
             },
             {
                 "option": "/etc/mail/sendmail.cf",
-                "description": ""
+                "description": "Sendmail의 메인 실행 설정 파일입니다."
             }
         ]
     },
@@ -4298,19 +4298,19 @@
         "options": [
             {
                 "option": "/etc/aliases",
-                "description": ""
+                "description": "정답. 특정 계정(webmaster)으로 수신된 메일을 다수의 수신자나 그룹에게 전달(포워딩)하는 메일링 리스트 기능을 설정합니다."
             },
             {
                 "option": "/etc/mail/local-host-names",
-                "description": ""
+                "description": "메일 서버가 자신의 메일로 인식할 호스트명을 등록합니다."
             },
             {
                 "option": "/etc/mail/virtusertable",
-                "description": ""
+                "description": "가상 도메인을 실제 사용자 계정으로 연결할 때 사용합니다."
             },
             {
                 "option": "/etc/mail/sendmail.cf",
-                "description": ""
+                "description": "전체적인 메일 서버 동작 규칙을 정의합니다."
             }
         ]
     },
@@ -4323,19 +4323,19 @@
         "options": [
             {
                 "option": "kaituser.ihd.or.kr.",
-                "description": ""
+                "description": "정답. SOA 레코드에서 관리자의 이메일 주소(kaituser@ihd.or.kr)를 표기할 때는 '@' 대신 '.'을 사용하며 마지막에 루트 도메인을 뜻하는 '.'을 찍습니다."
             },
             {
                 "option": "kaituser@ihd.or.kr",
-                "description": ""
+                "description": "Zone 파일 내부에서 '@'는 현재 도메인 자체를 의미하므로 이메일 주소 표기에는 사용하지 않습니다."
             },
             {
                 "option": "kaituser@ihd.or.kr.",
-                "description": ""
+                "description": "'@' 기호는 사용하지 않습니다."
             },
             {
                 "option": "kaituser.ihd.or.kr",
-                "description": ""
+                "description": "마지막에 루트 도메인을 의미하는 점(.)이 누락되었습니다."
             }
         ]
     },
@@ -4348,19 +4348,19 @@
         "options": [
             {
                 "option": "에뮬레이션(Emulation)",
-                "description": ""
+                "description": "정답. 물리적으로 존재하지 않는 하드웨어(테이프 장치, SCSI 등)를 소프트웨어적으로 흉내 내어 동작하게 하는 가상화 방식입니다."
             },
             {
                 "option": "단일화(Aggregation)",
-                "description": ""
+                "description": "여러 개의 물리적 자원을 묶어 하나의 논리적 자원 풀로 만드는 기능입니다."
             },
             {
                 "option": "절연(Insulation)",
-                "description": ""
+                "description": "가상 머신 간의 간섭을 차단하여 보안과 가용성을 높이는 기능입니다."
             },
             {
                 "option": "프로비저닝(Provisioning)",
-                "description": ""
+                "description": "필요한 자원을 신속하게 할당하고 배치하는 자동화 기능입니다."
             }
         ]
     },
@@ -4373,19 +4373,19 @@
         "options": [
             {
                 "option": "XenServer",
-                "description": ""
+                "description": "하드웨어 위에 직접 올라가는 하이퍼바이저 방식(Bare-metal)입니다."
             },
             {
                 "option": "VMware ESXi Server",
-                "description": ""
+                "description": "전용 운영체제 형태의 하이퍼바이저 방식입니다."
             },
             {
                 "option": "Docker",
-                "description": ""
+                "description": "호스트 OS 커널을 공유하는 컨테이너 기반 가상화입니다."
             },
             {
                 "option": "VirtualBox",
-                "description": ""
+                "description": "정답. 일반 운영체제(호스트 OS) 위에 설치되어 실행되는 전형적인 호스트형 가상화 솔루션입니다."
             }
         ]
     },
@@ -4398,19 +4398,19 @@
         "options": [
             {
                 "option": "VirtualBox",
-                "description": ""
+                "description": "단일 호스트 가상화 도구입니다."
             },
             {
                 "option": "RHEV",
-                "description": ""
+                "description": "레드햇 기반의 엔터프라이즈 가상화 솔루션입니다."
             },
             {
                 "option": "Docker",
-                "description": ""
+                "description": "컨테이너 관리 도구입니다."
             },
             {
                 "option": "Openstack",
-                "description": ""
+                "description": "정답. 다양한 하이퍼바이저(KVM, Xen, VMware 등)를 통합 제어하여 클라우드 환경을 구축하는 플랫폼입니다."
             }
         ]
     },
@@ -4422,19 +4422,19 @@
         "options": [
             {
                 "option": "enable = yes",
-                "description": ""
+                "description": "xinetd에서는 enable 지시어 대신 disable 지시어를 주로 사용합니다."
             },
             {
                 "option": "disable = no",
-                "description": ""
+                "description": "정답. 서비스를 중단(disable)하지 않겠다(no)는 의미로, 결과적으로 서비스를 활성화하는 설정입니다."
             },
             {
                 "option": "disable = yes",
-                "description": ""
+                "description": "서비스를 비활성화(중단)하는 설정입니다."
             },
             {
                 "option": "enable = no",
-                "description": ""
+                "description": "xinetd 설정에서 사용하지 않는 형식입니다."
             }
         ]
     },
@@ -4446,19 +4446,19 @@
         "options": [
             {
                 "option": "sshd",
-                "description": ""
+                "description": "libwrap 라이브러리와 링크되어 있어 TCP Wrapper 제어가 가능합니다."
             },
             {
                 "option": "vsftpd",
-                "description": ""
+                "description": "설정 파일에서 tcp_wrappers=YES를 통해 제어가 가능합니다."
             },
             {
                 "option": "in.telnetd",
-                "description": ""
+                "description": "xinetd와 연동되어 실행되는 서비스로 대표적인 제어 대상입니다."
             },
             {
                 "option": "squid",
-                "description": ""
+                "description": "정답. 프록시 서버인 squid는 자체적인 ACL(Access Control List)을 사용하여 접근을 제어하며 TCP Wrapper는 사용하지 않습니다."
             }
         ]
     },
@@ -4466,24 +4466,24 @@
         "examKey": "lm11-20201010",
         "localId": 80,
         "subjectKey": 3,
-        "body": "다음설명과같은경우에구성해야할서버로알맞은것은?",
+        "body": "다음 설명과 같은 경우에 구성해야 할 서버로 알맞은 것은?",
         "code": "회사 내부에서 100여 대의 서버들을 운영 중이다. 이 서버들의 시간이 일정하지 않아서 동기화시켜주는 서버를 구축하려고 한다.",
         "options": [
             {
                 "option": "NTP 서버",
-                "description": ""
+                "description": "정답. Network Time Protocol의 약자로 네트워크상의 호스트 간 시간을 동기화하는 서버입니다."
             },
             {
                 "option": "VNC 서버",
-                "description": ""
+                "description": "원격 데스크톱 화면을 공유하고 제어하는 서버입니다."
             },
             {
                 "option": "Proxy 서버",
-                "description": ""
+                "description": "클라이언트 요청을 대행하고 캐싱하여 성능을 높이거나 보안을 강화하는 서버입니다."
             },
             {
                 "option": "DHCP 서버",
-                "description": ""
+                "description": "IP 주소를 동적으로 할당해주는 서버입니다."
             }
         ]
     },
@@ -4495,19 +4495,19 @@
         "options": [
             {
                 "option": "Stratum",
-                "description": ""
+                "description": "정답. NTP 서버의 시간 정확도 계층을 의미하며, 0(최상위)부터 15까지의 숫자로 표시됩니다."
             },
             {
                 "option": "Layer",
-                "description": ""
+                "description": "일반적인 네트워크 계층을 의미할 때 사용합니다."
             },
             {
                 "option": "Frame",
-                "description": ""
+                "description": "데이터 링크 계층의 데이터 전송 단위를 의미합니다."
             },
             {
                 "option": "Class",
-                "description": ""
+                "description": "IP 주소 체계나 객체 지향의 분류 단위를 의미합니다."
             }
         ]
     },
@@ -4519,19 +4519,19 @@
         "options": [
             {
                 "option": "Listen 8080",
-                "description": ""
+                "description": "정답. 아파치 2.x 버전에서는 Listen 지시어를 사용하여 서비스 포트를 지정합니다."
             },
             {
                 "option": "Port 8080",
-                "description": ""
+                "description": "아파치 1.3 버전 이전에서 사용하던 지시어입니다."
             },
             {
                 "option": "http_port 8080",
-                "description": ""
+                "description": "Squid 프록시 서버에서 사용하는 포트 설정 지시어입니다."
             },
             {
                 "option": "http_listen 8080",
-                "description": ""
+                "description": "존재하지 않는 지시어입니다."
             }
         ]
     },
@@ -4543,19 +4543,19 @@
         "options": [
             {
                 "option": "cn",
-                "description": ""
+                "description": "정답. Common Name의 약자로, 성과 이름을 포함한 전체 이름을 나타냅니다."
             },
             {
                 "option": "ou",
-                "description": ""
+                "description": "Organizational Unit의 약자로 조직 내의 부서 단위를 의미합니다."
             },
             {
                 "option": "sn",
-                "description": ""
+                "description": "Surname의 약자로 사용자의 '성'만을 의미합니다."
             },
             {
                 "option": "dc",
-                "description": ""
+                "description": "Domain Component의 약자로 도메인 구성 요소를 의미합니다."
             }
         ]
     },
@@ -4568,19 +4568,19 @@
         "options": [
             {
                 "option": "/etc/sysconfig/network",
-                "description": ""
+                "description": "시스템 전체의 네트워크 설정과 NIS 도메인명을 정의하는 파일입니다."
             },
             {
                 "option": "/etc/hosts",
-                "description": ""
+                "description": "IP 주소와 호스트명을 매핑하는 로컬 파일입니다."
             },
             {
                 "option": "/etc/yp.conf",
-                "description": ""
+                "description": "정답. NIS 클라이언트 데몬(ypbind)이 참조하는 설정 파일로, NIS 서버의 주소와 도메인을 지정합니다."
             },
             {
                 "option": "/etc/ypbind.conf",
-                "description": ""
+                "description": "일반적으로 사용되지 않는 파일명이며, ypbind 관련 설정은 보통 /etc/yp.conf에서 수행합니다."
             }
         ]
     },
@@ -4592,19 +4592,19 @@
         "options": [
             {
                 "option": "SMB, CIFS",
-                "description": ""
+                "description": "정답. 삼바는 SMB(Server Message Block)를 기반으로 하며, 이를 확장한 CIFS(Common Internet File System) 프로토콜을 사용합니다."
             },
             {
                 "option": "RPC, SMB",
-                "description": ""
+                "description": "RPC는 NFS 등에서 사용되는 원격 프로시저 호출 프로토콜입니다."
             },
             {
                 "option": "RPC, CIFS",
-                "description": ""
+                "description": "삼바의 핵심 프로토콜 조합이 아닙니다."
             },
             {
                 "option": "SMB, IPC",
-                "description": ""
+                "description": "IPC는 프로세스 간 통신을 의미하는 일반적인 용어입니다."
             }
         ]
     },
@@ -4617,19 +4617,19 @@
         "options": [
             {
                 "option": "public",
-                "description": ""
+                "description": "게스트 접속 허용 여부(yes/no)를 결정하는 지시어입니다."
             },
             {
                 "option": "directory",
-                "description": ""
+                "description": "삼바 설정 파일(smb.conf)에서 경로를 지정하는 표준 키워드가 아닙니다."
             },
             {
                 "option": "path",
-                "description": ""
+                "description": "정답. smb.conf에서 공유할 실제 디렉터리의 절대 경로를 지정하는 지시어입니다."
             },
             {
                 "option": "root",
-                "description": ""
+                "description": "특정 환경에서 쓰일 수 있으나 공유 경로 지정용 표준 키워드는 아닙니다."
             }
         ]
     },
@@ -4641,19 +4641,19 @@
         "options": [
             {
                 "option": "vsftpd 서버에 접근이 불가능한 사용자 목록 파일이다.",
-                "description": ""
+                "description": "정답. 보안을 위해 FTP 접속을 금지할 사용자(root 등)를 등록하는 블랙리스트 파일입니다."
             },
             {
                 "option": "vsftpd 서버에 접근이 가능한 사용자 목록 파일이다.",
-                "description": ""
+                "description": "접근 가능 목록은 보통 user_list 파일에서 설정(userlist_deny=NO 일 때)합니다."
             },
             {
                 "option": "vsftpd 서버에 접근이 가능한 호스트의 IP 주소 목록 파일이다.",
-                "description": ""
+                "description": "IP 기반 제어는 TCP Wrapper나 방화벽의 역할입니다."
             },
             {
                 "option": "vsftpd 서버에 접근이 불가능한 호스트의 IP 주소 목록 파일이다.",
-                "description": ""
+                "description": "IP 차단은 주로 /etc/hosts.deny 등에서 수행합니다."
             }
         ]
     },
@@ -4665,19 +4665,19 @@
         "options": [
             {
                 "option": "IMAP, POP3",
-                "description": ""
+                "description": "정답. 서버에 저장된 메일을 클라이언트(MUA)로 내려받거나 읽어오기 위한 수신용 프로토콜들입니다."
             },
             {
                 "option": "SNMP, SMTP",
-                "description": ""
+                "description": "SNMP는 네트워크 관리용, SMTP는 발신용 프로토콜입니다."
             },
             {
                 "option": "IMAP, SMTP",
-                "description": ""
+                "description": "IMAP은 수신용, SMTP는 발신용입니다."
             },
             {
                 "option": "SMTP, POP3",
-                "description": ""
+                "description": "SMTP는 발신용, POP3는 수신용입니다."
             }
         ]
     },
@@ -4689,19 +4689,19 @@
         "options": [
             {
                 "option": "mail -v",
-                "description": ""
+                "description": "메일을 보낼 때 과정을 상세히(verbose) 보여주는 옵션입니다."
             },
             {
                 "option": "m4",
-                "description": ""
+                "description": "Sendmail 설정 파일(.mc)을 .cf로 변환할 때 사용하는 매크로 프로세서입니다."
             },
             {
                 "option": "mailq",
-                "description": ""
+                "description": "정답. 메일 큐(Mail Queue)를 확인하여 전송되지 않고 대기 중인 메일 목록을 보여줍니다."
             },
             {
                 "option": "sendmail -bi",
-                "description": ""
+                "description": "별칭(aliases) 데이터베이스를 초기화/생성하는 명령입니다."
             }
         ]
     },
@@ -4713,19 +4713,19 @@
         "options": [
             {
                 "option": "/etc/networks",
-                "description": ""
+                "description": "네트워크 이름과 주소를 매핑하는 파일입니다."
             },
             {
                 "option": "/etc/hosts",
-                "description": ""
+                "description": "정답. 초기 인터넷에서 이름 해석을 위해 사용했으나, 호스트 수가 급증하면서 관리의 한계로 인해 DNS가 등장했습니다."
             },
             {
                 "option": "/etc/host.conf",
-                "description": ""
+                "description": "이름 해석 순서(예: hosts, bind)를 지정하는 파일입니다."
             },
             {
                 "option": "/etc/sysconfig/network",
-                "description": ""
+                "description": "리눅스 시스템의 전반적인 네트워크 정보를 설정하는 파일입니다."
             }
         ]
     },
@@ -4738,19 +4738,19 @@
         "options": [
             {
                 "option": "directory",
-                "description": ""
+                "description": "정답. BIND 설정 파일의 options 블록 내에서 작업 디렉터리를 지정하는 지시어입니다."
             },
             {
                 "option": "zone",
-                "description": ""
+                "description": "특정 도메인의 설정을 시작할 때 사용하는 지시어입니다."
             },
             {
                 "option": "path",
-                "description": ""
+                "description": "삼바(Samba) 등에서 경로를 지정할 때 주로 쓰이며 BIND 지시어는 아닙니다."
             },
             {
                 "option": "include",
-                "description": ""
+                "description": "외부 설정 파일을 불러올 때 사용하는 지시어입니다."
             }
         ]
     },
@@ -4762,19 +4762,19 @@
         "options": [
             {
                 "option": "PTR",
-                "description": ""
+                "description": "정답. Pointer 레코드의 약자로, IP 주소를 호스트명으로 변환하는 역방향 조회에 사용됩니다."
             },
             {
                 "option": "RX",
-                "description": ""
+                "description": "존재하지 않는 레코드 타입입니다."
             },
             {
                 "option": "MX",
-                "description": ""
+                "description": "메일 서버 정보를 지정하는 레코드입니다."
             },
             {
                 "option": "CNAME",
-                "description": ""
+                "description": "별칭(Alias)을 지정할 때 사용합니다."
             }
         ]
     },
@@ -4787,19 +4787,19 @@
         "options": [
             {
                 "option": "virt-manager",
-                "description": ""
+                "description": "정답. KVM/QEMU 등을 GUI 환경에서 통합 관리할 수 있게 해주는 도구입니다."
             },
             {
                 "option": "virsh",
-                "description": ""
+                "description": "가상 머신 관리를 위한 명령행(CLI) 쉘 도구입니다."
             },
             {
                 "option": "libvirtd",
-                "description": ""
+                "description": "가상화 관리를 위한 백그라운드 데몬 서비스입니다."
             },
             {
                 "option": "virt-top",
-                "description": ""
+                "description": "가상 머신들의 자원 사용량을 실시간 모니터링하는 텍스트 도구입니다."
             }
         ]
     },
@@ -4807,24 +4807,24 @@
         "examKey": "lm11-20201010",
         "localId": 94,
         "subjectKey": 3,
-        "body": "다음설명과같은경우에구성해야할서버로알맞은것은?",
+        "body": "다음 설명과 같은 경우에 구성해야 할 서버로 알맞은 것은?",
         "code": "리눅스 서버와 윈도우 클라이언트 간의 데스크톱 공유를 하려고 한다.",
         "options": [
             {
                 "option": "VNC 서버",
-                "description": ""
+                "description": "정답. RFB 프로토콜을 이용해 이기종 간 원격 데스크톱 화면 공유를 지원합니다."
             },
             {
                 "option": "NTP 서버",
-                "description": ""
+                "description": "시간 동기화를 위한 서버입니다."
             },
             {
                 "option": "Proxy 서버",
-                "description": ""
+                "description": "인터넷 접속 중계 및 캐싱을 위한 서버입니다."
             },
             {
                 "option": "DHCP 서버",
-                "description": ""
+                "description": "자동 IP 할당을 위한 서버입니다."
             }
         ]
     },
@@ -4837,19 +4837,19 @@
         "options": [
             {
                 "option": "DocumentRoot",
-                "description": ""
+                "description": "정답. 아파치 웹 서버가 홈페이지 파일들을 찾는 최상위 물리 디렉터리를 지정합니다."
             },
             {
                 "option": "ServerRoot",
-                "description": ""
+                "description": "웹 서버의 설정 및 실행 파일이 위치한 설치 기본 경로입니다."
             },
             {
                 "option": "ServerAdmin",
-                "description": ""
+                "description": "서버 관리자의 이메일 주소를 설정합니다."
             },
             {
                 "option": "ServerName",
-                "description": ""
+                "description": "서버의 도메인 이름이나 IP를 설정합니다."
             }
         ]
     },
@@ -4862,19 +4862,19 @@
         "options": [
             {
                 "option": "/etc/hosts.deny",
-                "description": ""
+                "description": "정답. TCP Wrapper 서비스에서 접근을 금지할 서비스와 호스트 정보를 설정하는 파일입니다."
             },
             {
                 "option": "/etc/ssh/sshd_config",
-                "description": ""
+                "description": "SSH 서버 자체의 세부 설정 파일입니다."
             },
             {
-                "option": "/etc/syscofing/iptlables",
-                "description": ""
+                "option": "/etc/sysconfig/iptables",
+                "description": "방화벽(iptables) 규칙이 저장되는 파일입니다."
             },
             {
-                "option": "/etc/syscofing/selinux",
-                "description": ""
+                "option": "/etc/sysconfig/selinux",
+                "description": "SELinux 커널 보안 모듈 설정 파일입니다."
             }
         ]
     },
@@ -4886,19 +4886,19 @@
         "options": [
             {
                 "option": "raw : 넷필터의 연결추적 하위 시스템과 독립적으로 동작해야 하는 규칙을 설정하는 테이블",
-                "description": ""
+                "description": "정답. NOTRACK 타겟 등을 사용하여 패킷 추적 제외 대상을 설정합니다."
             },
             {
                 "option": "filter : IP의 주소를 변환시키는 역할을 수행하는 테이블",
-                "description": ""
+                "description": "IP 주소 변환은 nat 테이블의 역할입니다."
             },
             {
                 "option": "mangle : 패킷 필터링을 담당하는 iptables의 기본 테이블",
-                "description": ""
+                "description": "패킷 필터링은 filter 테이블의 역할입니다."
             },
             {
                 "option": "nat : 패킷 데이터를 변경하는 특수 규칙을 적용하는 테이블",
-                "description": ""
+                "description": "패킷 데이터(TOS 등) 변경은 mangle 테이블의 역할입니다."
             }
         ]
     },
@@ -4906,24 +4906,24 @@
         "examKey": "lm11-20201010",
         "localId": 98,
         "subjectKey": 3,
-        "body": "다음에서설명하는네트워크침해유형으로알맞은것은?",
+        "body": "다음에서 설명하는 네트워크 침해 유형으로 알맞은 것은?",
         "code": "데이터를 전송하기 위해서는 패킷을 분할하고 시퀀스 넘버를 생성하는데, 이러한 시퀀스 넘버를 조작하거나 중첩시켜 내부에 과부하를 발생시키는 공격 방법",
         "options": [
             {
                 "option": "Smurf Attack",
-                "description": ""
+                "description": "ICMP 응답 패킷의 증폭을 이용한 공격입니다."
             },
             {
                 "option": "Land Attack",
-                "description": ""
+                "description": "송수신 IP를 동일하게 조작하는 공격입니다."
             },
             {
                 "option": "Teardrop Attack",
-                "description": ""
+                "description": "정답. IP 단편화(Fragmentation) 재조합 시 오프셋 값을 조작하여 시스템을 정지시키는 공격입니다."
             },
             {
                 "option": "TCP SYN Flooding",
-                "description": ""
+                "description": "연결 요청(SYN)만 보내고 응답하지 않아 연결 자원을 고갈시키는 공격입니다."
             }
         ]
     },
@@ -4935,19 +4935,19 @@
         "options": [
             {
                 "option": "Stacheldraht",
-                "description": ""
+                "description": "대표적인 DDoS 에이전트 기반 공격 도구입니다."
             },
             {
                 "option": "Boink",
-                "description": ""
+                "description": "정답. Bonk의 변종으로, 단일 시스템에 대한 서비스 거부(DoS) 공격 도구입니다."
             },
             {
                 "option": "Trinoo",
-                "description": ""
+                "description": "초창기 마스터-에이전트 구조의 DDoS 공격 도구입니다."
             },
             {
                 "option": "TFN 2K",
-                "description": ""
+                "description": "TFN의 확장판으로 다양한 DoS 기법을 지원하는 DDoS 도구입니다."
             }
         ]
     },
@@ -4959,19 +4959,19 @@
         "options": [
             {
                 "option": "/var/log/messages",
-                "description": ""
+                "description": "정답. iptables의 LOG 타겟 사용 시 기본적으로 시스템 일반 메시지 로그 파일에 기록됩니다."
             },
             {
                 "option": "/var/dmesg",
-                "description": ""
+                "description": "부팅 시 메시지를 담는 커널 버퍼/파일입니다."
             },
             {
                 "option": "/var/log/secure",
-                "description": ""
+                "description": "사용자 인증 및 보안(ssh, sudo 등) 관련 로그 파일입니다."
             },
             {
-                "option": "/cat/log/xferlog",
-                "description": ""
+                "option": "/var/log/xferlog",
+                "description": "FTP 파일 전송 관련 로그 파일입니다."
             }
         ]
     },
