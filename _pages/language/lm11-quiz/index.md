@@ -62,11 +62,23 @@ title: Linux Master 1급 1차 (퀴즈)
 }
 
 .quiz-pager {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+
   display: flex;
   gap: var(--space-3);
   align-items: center;
   justify-content: space-between;
-  margin: 0 0 var(--space-6);
+
+  margin: 0;
+  padding: 0.75rem 0;
+
+  background: color-mix(in srgb, var(--app-bg, #111) 82%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-top: 1px solid var(--app-border);
 }
 .quiz-pager__left, .quiz-pager__right { display: inline-flex; gap: var(--space-2); align-items: center; }
 .quiz-pager__btn {
@@ -85,6 +97,7 @@ title: Linux Master 1급 1차 (퀴즈)
   -webkit-user-select: none;
   user-select: none;
   overscroll-behavior-x: contain;
+  padding-bottom: 5rem;
 }
 
 .quiz-cards-set {
@@ -119,16 +132,6 @@ title: Linux Master 1급 1차 (퀴즈)
   <button type="button" id="quiz-filter-apply" class="quiz-apply-btn">Apply</button>
 </header>
 
-<div class="quiz-pager" role="region" aria-label="문제 이동">
-  <div class="quiz-pager__left">
-    <button type="button" class="quiz-pager__btn" id="quiz-prev">Prev</button>
-    <button type="button" class="quiz-pager__btn" id="quiz-next">Next</button>
-  </div>
-  <div class="quiz-pager__right">
-    <span class="quiz-pager__status" id="quiz-status">0 / 0</span>
-  </div>
-</div>
-
 <div id="quiz-section" aria-label="퀴즈">
   {% include quiz_cards_bank_style.html %}
 
@@ -145,10 +148,22 @@ title: Linux Master 1급 1차 (퀴즈)
 
       {% include quiz_cards_bank_item.html q=q exam=exam subject=subject correct_answer_num=correct_answer_num %}
     {% endfor %}
+    
   </div>
 
   {% include quiz_cards_bank_script.html %}
 </div>
+
+<div class="quiz-pager" role="region" aria-label="문제 이동">
+  <div class="quiz-pager__left">
+    <button type="button" class="quiz-pager__btn" id="quiz-prev">Prev</button>
+  </div>
+    <span class="quiz-pager__status" id="quiz-status">0 / 0</span>
+  <div class="quiz-pager__right">
+    <button type="button" class="quiz-pager__btn" id="quiz-next">Next</button>
+  </div>
+</div>
+
 
 <script>
 try { 
