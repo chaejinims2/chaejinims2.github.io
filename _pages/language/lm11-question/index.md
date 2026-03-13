@@ -119,8 +119,7 @@ title: Linux Master 1급 1차
   var subjectSelect = document.getElementById('bank-subject-select');
   var bankSection = document.getElementById('bank-section');
   var applyBtn = document.getElementById('bank-filter-apply');
-  var cards = document.querySelectorAll('.quiz-card');
-
+  var cards = document.querySelectorAll('.quiz-card-block');
   // ---- 필터 (매칭되는 문제 모두 표시) ----
   function getMatchedCards() {
     var examKey = (examSelect && examSelect.value) || '';
@@ -147,7 +146,7 @@ title: Linux Master 1급 1차
   function shuffleOrder() {
     var container = bankSection && bankSection.querySelector('.quiz-grid--bank');
     if (!container) return;
-    var cardArr = [].slice.call(container.querySelectorAll('.quiz-card'));
+    var cardArr = [].slice.call(container.querySelectorAll('.quiz-card-block'));
     for (var i = cardArr.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var t = cardArr[i];
@@ -155,7 +154,7 @@ title: Linux Master 1급 1차
       cardArr[j] = t;
     }
     cardArr.forEach(function (c) { container.appendChild(c); });
-    cards = document.querySelectorAll('.quiz-card');
+    cards = document.querySelectorAll('.quiz-card-block');
     applyFilter();
   }
 

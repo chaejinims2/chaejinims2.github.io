@@ -31,7 +31,7 @@ title: Linux Master 1급 1차 (퀴즈)
 }
 .quiz-select {
   padding: var(--space-2) var(--space-4);
-  font-size: var(--);
+  font-size: var(--quiz-card-fs-default);
   border: 1px solid var(--app-border);
   border-radius: var(--radius-2);
   background: var(--app-panel);
@@ -129,7 +129,7 @@ title: Linux Master 1급 1차 (퀴즈)
       {% endfor %}
     </select>
   </div>
-  <button type="button" id="quiz-filter-apply" class="quiz-apply-btn">Apply</button>
+  <button type="button" id="quiz-filter-apply" class="quiz-apply-btn" hidden>Apply</button>
 </header>
 
 <div id="quiz-section" aria-label="퀴즈">
@@ -164,16 +164,18 @@ title: Linux Master 1급 1차 (퀴즈)
   </div>
 </div>
 
-
 <script>
-try { 
-  if (window.initLm11QuizPage) window.initLm11QuizPage(); 
+try {
+  if (window.initLm11QuizPage) window.initLm11QuizPage();
 } catch (e) {}
 
 (function () {
   const quizSection = document.getElementById('quiz-section');
   const prevBtn = document.getElementById('quiz-prev');
   const nextBtn = document.getElementById('quiz-next');
+  const examSelect = document.getElementById('quiz-exam-select');
+  const subjectSelect = document.getElementById('quiz-subject-select');
+  const applyBtn = document.getElementById('quiz-filter-apply');
 
   if (!quizSection || !prevBtn || !nextBtn) return;
 
@@ -183,8 +185,8 @@ try {
   let currentY = 0;
   let isTracking = false;
 
-  const SWIPE_THRESHOLD = 60;   // 최소 가로 이동 거리
-  const VERTICAL_LIMIT = 40;    // 세로 흔들림 허용치
+  const SWIPE_THRESHOLD = 60;
+  const VERTICAL_LIMIT = 40;
 
   function onTouchStart(e) {
     if (!e.touches || e.touches.length !== 1) return;
@@ -212,22 +214,30 @@ try {
     const deltaX = currentX - startX;
     const deltaY = currentY - startY;
 
-    // 세로 스크롤이 더 큰 동작이면 무시
     if (Math.abs(deltaY) > Math.abs(deltaX)) return;
-
-    // 세로 흔들림이 크면 무시
     if (Math.abs(deltaY) > VERTICAL_LIMIT) return;
 
-    // 우로 스와이프 → 이전 카드
     if (deltaX > SWIPE_THRESHOLD) {
       if (!prevBtn.disabled) prevBtn.click();
       return;
     }
 
-    // 좌로 스와이프 → 다음 카드
     if (deltaX < -SWIPE_THRESHOLD) {
       if (!nextBtn.disabled) nextBtn.click();
       return;
+    }
+  }
+
+  function triggerFilter() {
+    if (applyBtn) {
+      applyBtn.click();
+      return;
+    }
+
+    if (window.initLm11QuizPage) {
+      try {
+        window.initLm11QuizPage();
+      } catch (e) {}
     }
   }
 
@@ -235,5 +245,13 @@ try {
   quizSection.addEventListener('touchmove', onTouchMove, { passive: true });
   quizSection.addEventListener('touchend', onTouchEnd, { passive: true });
   quizSection.addEventListener('touchcancel', onTouchEnd, { passive: true });
+
+  if (examSelect) {
+    examSelect.addEventListener('change', triggerFilter);
+  }
+
+  if (subjectSelect) {
+    subjectSelect.addEventListener('change', triggerFilter);
+  }
 })();
 </script>

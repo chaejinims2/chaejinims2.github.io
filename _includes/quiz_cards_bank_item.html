@@ -1,58 +1,51 @@
 <div
-  class="quiz-card"
+  class="quiz-card-block"
   data-exam-key="{{ include.q.examKey }}"
   data-subject-key="{{ include.q.subjectKey }}"
   data-local-id="{{ include.q.localId }}"
   role="listitem">
 
-  <div class="quiz-card__scroll">
-    <div class="quiz-card__body">{{ include.q.localId }}. {{ include.q.body }}</div>
+  <div class="quiz-card">
+    <div class="quiz-card__body">
+      {{ include.q.localId }}. {{ include.q.body }}
+    </div>
 
     {% if include.q.code and include.q.code != '' %}
-      <div class="terminal-box" aria-label="설명/코드">
-        <div class="terminal-pre-wrap">
-          {% assign prompt = site.data.lm11.config.prompts[0] | default: 'cherry@rhombus:~$' %}
-          {% assign prompt_esc = prompt | escape %}
-          {% assign code_esc = include.q.code | escape %}
-          {% capture prompt_span %}<span class="term-prompt">{{ prompt_esc }}</span>{% endcapture %}
-          <pre class="terminal-content">{{ code_esc | replace: prompt_esc, prompt_span }}</pre>
-        </div>
+    <div class="terminal-box">
+      <div class="terminal-pre-wrap">
+        <pre class="terminal-content">{{ include.q.code }}</pre>
       </div>
+    </div>
     {% endif %}
 
-    <ol class="quiz-card__options quiz-card__options--selectable" start="1" role="list">
+    <ol class="quiz-card__options quiz-card__options--selectable">
       {% for opt in include.q.options %}
-        <li
-          class="quiz-card__option"
-          role="button"
-          tabindex="0"
-          aria-pressed="false"
+      <li class="quiz-card__option"
           {% if forloop.index == include.correct_answer_num %}data-correct="true"{% endif %}>
-          {% if opt.option %}{{ opt.option }}{% else %}{{ opt }}{% endif %}
-        </li>
+        {{ opt.option }}
+      </li>
       {% endfor %}
     </ol>
   </div>
+<div class="quiz-answer-panel">
+  <button type="button" class="quiz-answer-toggle"></button>
 
-  <div class="quiz-card__answer-wrap">
-    {% assign opt_index = include.correct_answer_num | minus: 1 %}
-    {% assign correct_opt = include.q.options[opt_index] | default: include.q.options[0] %}
-  
-    {% if include.q.options and include.q.options.size > 0 %}
-      <p class="quiz-card__description">
-        {% assign circled_nums = "①,②,③,④" | split: "," %}
-        {% for opt in include.q.options %}
-          {% assign opt_num = circled_nums[forloop.index0] %}
+  <div class="quiz-answer-content is-hidden">
+    {% assign circled_nums = "①,②,③,④" | split: "," %}
+    {% for opt in include.q.options %}
+      {% assign num = circled_nums[forloop.index0] %}
+
+      {% if opt.description and opt.description != '' %}
+        <div class="quiz-answer-line
           {% if include.correct_answer_num == forloop.index %}
-            <span class="quiz-card__num--range{{ include.q.subjectKey }}">{{ opt_num }} {{ opt.description }}</span>
-          {% else %}
-            <span>{{ opt_num }} {{ opt.description }}</span>
+            quiz-answer-line--correct quiz-card__num--range{{ include.q.subjectKey }}
           {% endif %}
-          {% unless forloop.last %}<br>{% endunless %}
-        {% endfor %}
-      </p>
-    {% endif %}
-  
-    <button type="button" class="quiz-card__answer-toggle"></button>
+        ">
+          {{ num }} {{ opt.description }} 
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
+</div>
+
 </div>
