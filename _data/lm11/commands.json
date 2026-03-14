@@ -1,0 +1,240 @@
+[
+    {
+        "cmd": "passwd",
+        "title": "사용자 비밀번호 관리",
+        "usage": "passwd [옵션] 사용자명",
+        "options": [
+            {"opt": "-l", "desc": "사용자 계정 잠금(Lock)"},
+            {"opt": "-u", "desc": "잠금 해제(Unlock)"},
+            {"opt": "-d", "desc": "비밀번호 삭제(암호 없이 로그인 가능)"},
+            {"opt": "-S", "desc": "계정의 상태 출력(Status)"}
+        ],
+        "relatedFiles": ["/etc/passwd", "/etc/shadow"]
+    },
+    {
+        "cmd": "usermod",
+        "title": "사용자 계정 정보 수정",
+        "usage": "usermod [옵션] 사용자명",
+        "options": [
+            {"opt": "-c", "desc": "사용자 설명(Comment/GECOS) 변경"},
+            {"opt": "-s", "desc": "기본 로그인 셸 변경"},
+            {"opt": "-d", "desc": "홈 디렉터리 경로 변경 (-m과 함께 사용 시 파일 이동)"},
+            {"opt": "-G", "desc": "추가(보조) 그룹 지정 (-a와 함께 사용 시 추가)"},
+            {"opt": "-L", "desc": "계정 잠금(Lock)"},
+            {"opt": "-U", "desc": "계정 잠금 해제(Unlock)"}
+        ],
+        "relatedFiles": ["/etc/passwd", "/etc/group", "/etc/shadow"]
+    },
+    {
+        "cmd": "chage",
+        "title": "비밀번호 만료 정책 설정",
+        "usage": "chage [옵션] 사용자명",
+        "options": [
+            {"opt": "-l", "desc": "계정의 상세 만료 정보 확인(List)"},
+            {"opt": "-m", "desc": "비밀번호 변경 후 다시 변경해야 하는 최소 일수"},
+            {"opt": "-M", "desc": "비밀번호가 유효한 최대 일수"},
+            {"opt": "-W", "desc": "만료 전 경고를 보내는 일수"},
+            {"opt": "-E", "desc": "계정이 만료되는 날짜 설정(YYYY-MM-DD)"}
+        ],
+        "relatedFiles": ["/etc/shadow", "/etc/login.defs"]
+    },
+    {
+        "cmd": "stat",
+        "title": "파일/디렉터리 상세 상태 정보 확인",
+        "usage": "stat [옵션] 파일명",
+        "options": [
+            {"opt": "-f", "desc": "파일 시스템의 상태 확인"},
+            {"opt": "-t", "desc": "간결한 형식(Terse)으로 출력"}
+        ],
+        "relatedFiles": ["i-node 정보 직접 확인"]
+    },
+    {
+        "cmd": "iptables",
+        "title": "방화벽(IPv4) 관리 및 패킷 필터링",
+        "usage": "iptables [-t 테이블] [동작] [사슬] [규칙]",
+        "options": [
+            {"opt": "-A", "desc": "새로운 규칙 추가(Append)"},
+            {"opt": "-D", "desc": "규칙 삭제(Delete)"},
+            {"opt": "-L", "desc": "설정된 규칙 목록 확인(List)"},
+            {"opt": "-F", "desc": "모든 규칙 삭제(Flush)"},
+            {"opt": "-t", "desc": "테이블 지정 (filter, nat, mangle 등)"},
+            {"opt": "-n", "desc": "호스트 정보 등을 숫자로 표시(Numeric)"}
+        ],
+        "relatedFiles": ["/etc/sysconfig/iptables"]
+    },
+    {
+        "cmd": "lsblk",
+        "title": "블록 장치 목록 및 정보 확인",
+        "usage": "lsblk [옵션] [장치]",
+        "options": [
+            {"opt": "-f", "desc": "파일 시스템 타입, UUID, 마운트 포인트 등 상세 정보 확인"},
+            {"opt": "기본", "desc": "블록 장치 및 파티션을 트리 형태로 출력"}
+        ],
+        "relatedFiles": ["/dev", "/sys/block"]
+    },
+    {
+        "cmd": "fstab",
+        "title": "파일 시스템 정적 정보 설정",
+        "usage": "cat /etc/fstab",
+        "options": [],
+        "relatedFiles": ["/etc/fstab", "/etc/mtab"]
+    },
+    {
+        "cmd": "ls",
+        "title": "디렉터리 내용 목록 출력",
+        "usage": "ls [옵션] [파일/디렉터리]",
+        "options": [
+            {"opt": "-i", "desc": "파일의 i-node 번호 출력"},
+            {"opt": "-l", "desc": "상세 정보(권한, 소유자, 크기 등) 출력"}
+        ],
+        "relatedFiles": ["i-node"]
+    },
+    {
+        "cmd": "mdstat",
+        "title": "소프트웨어 RAID 상태 확인",
+        "usage": "cat /proc/mdstat",
+        "options": [],
+        "relatedFiles": ["/proc/mdstat", "mdadm"]
+    },
+    {
+        "cmd": "fdisk",
+        "title": "디스크 파티션 관리 및 정보 확인",
+        "usage": "fdisk [옵션] [장치]",
+        "options": [
+            {"opt": "-l", "desc": "모든 디스크 또는 지정한 장치의 파티션 테이블 목록 출력"}
+        ],
+        "relatedFiles": ["/dev/sd*", "/dev/nvme*"]
+    },
+    {
+        "cmd": "df",
+        "title": "파일 시스템 디스크 공간 확인",
+        "usage": "df [옵션] [파일]",
+        "options": [
+            {"opt": "-h", "desc": "읽기 쉬운 단위(GB, MB 등)로 출력 (Human-readable)"},
+            {"opt": "-T", "desc": "파일 시스템 종류(Type)를 함께 출력"}
+        ],
+        "relatedFiles": ["/etc/mtab", "/proc/self/mounts"]
+    },
+    {
+        "cmd": "du",
+        "title": "파일 및 디렉터리 용량 확인",
+        "usage": "du [옵션] [파일/디렉터리]",
+        "options": [
+            {"opt": "-s", "desc": "하위 항목 제외 총합(Summary)만 출력"},
+            {"opt": "-h", "desc": "읽기 쉬운 단위로 출력"}
+        ],
+        "relatedFiles": []
+    },
+    {
+        "cmd": "whereis",
+        "title": "명령어의 바이너리, 소스, 매뉴얼 위치 검색",
+        "usage": "whereis 명령어",
+        "options": [],
+        "relatedFiles": ["$PATH", "/usr/share/man"]
+    },
+    {
+        "cmd": "which",
+        "title": "명령어 실행 파일 경로 확인",
+        "usage": "which 명령어",
+        "options": [],
+        "relatedFiles": ["$PATH"]
+    },
+    {
+        "cmd": "tar",
+        "title": "테이프 아카이브(파일 묶기 및 압축)",
+        "usage": "tar [옵션] 파일명 대상",
+        "options": [
+            {"opt": "-c", "desc": "새로운 아카이브 생성 (Create)"},
+            {"opt": "-v", "desc": "처리 과정 상세 출력 (Verbose)"},
+            {"opt": "-f", "desc": "아카이브 파일명 지정 (File)"},
+            {"opt": "-x", "desc": "아카이브 해제 (Extract)"}
+        ],
+        "relatedFiles": []
+    },
+    {
+        "cmd": "chmod",
+        "title": "파일/디렉터리 권한 모드 변경",
+        "usage": "chmod [옵션] 모드 파일",
+        "options": [
+            {"opt": "g+s", "desc": "SetGID 설정 (하위 파일이 디렉터리 그룹 상속)"},
+            {"opt": "u+s", "desc": "SetUID 설정"},
+            {"opt": "o+t", "desc": "Sticky Bit 설정"}
+        ],
+        "relatedFiles": []
+    },
+    {
+        "cmd": "ps",
+        "title": "현재 프로세스 상태 확인",
+        "usage": "ps [옵션]",
+        "options": [
+            {"opt": "-e", "desc": "모든 프로세스 출력"},
+            {"opt": "-f", "desc": "풀 포맷(UID, PID, PPID 등)으로 출력"}
+        ],
+        "relatedFiles": ["/proc"]
+    },
+    {
+        "cmd": "kill",
+        "title": "프로세스 종료 및 시그널 전송",
+        "usage": "kill [옵션] PID",
+        "options": [
+            {"opt": "-l", "desc": "사용 가능한 시그널 목록 출력"},
+            {"opt": "-9", "desc": "강제 종료 (SIGKILL)"},
+            {"opt": "-15", "desc": "정상 종료 (SIGTERM)"}
+        ],
+        "relatedFiles": []
+    },
+    {
+        "cmd": "ss",
+        "title": "소켓 통신 상태 확인 (netstat 대체)",
+        "usage": "ss [옵션]",
+        "options": [
+            {"opt": "-t", "desc": "TCP 소켓 확인"},
+            {"opt": "-u", "desc": "UDP 소켓 확인"},
+            {"opt": "-n", "desc": "숫자 형식으로 포트 표시"},
+            {"opt": "-l", "desc": "리스닝 상태인 소켓만 표시"}
+        ],
+        "relatedFiles": ["/proc/net"]
+    },
+    {
+        "cmd": "systemctl",
+        "title": "systemd 유닛 및 서비스 관리",
+        "usage": "systemctl [동작] [유닛]",
+        "options": [
+            {"opt": "status", "desc": "유닛의 현재 실행 상태 및 로그 출력"},
+            {"opt": "start/stop", "desc": "서비스 시작/중지"},
+            {"opt": "enable/disable", "desc": "부팅 시 자동 실행 설정/해제"}
+        ],
+        "relatedFiles": ["/etc/systemd/system", "/lib/systemd/system"]
+    },
+    {
+        "cmd": "env",
+        "title": "환경 변수 확인 및 설정된 환경에서 실행",
+        "usage": "env [옵션]",
+        "options": [],
+        "relatedFiles": ["~/.bash_profile", "~/.bashrc"]
+    },
+    {
+        "cmd": "export",
+        "title": "환경 변수 설정 및 전역 변수화",
+        "usage": "export 변수명=값",
+        "options": [],
+        "relatedFiles": ["~/.bashrc"]
+    },
+    {
+        "cmd": "history",
+        "title": "명령어 입력 이력 확인",
+        "usage": "history [숫자]",
+        "options": [
+            {"opt": "-c", "desc": "히스토리 전체 삭제"},
+            {"opt": "-w", "desc": "현재 히스토리를 파일에 기록"}
+        ],
+        "relatedFiles": ["~/.bash_history"]
+    },
+    {
+        "cmd": "ifconfig",
+        "title": "네트워크 인터페이스 설정 및 확인",
+        "usage": "ifconfig [인터페이스] [옵션]",
+        "options": [],
+        "relatedFiles": ["/etc/sysconfig/network-scripts/ifcfg-*"]
+    }
+]
