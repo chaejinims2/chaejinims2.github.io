@@ -236,5 +236,192 @@
         "usage": "ifconfig [인터페이스] [옵션]",
         "options": [],
         "relatedFiles": ["/etc/sysconfig/network-scripts/ifcfg-*"]
+    },
+    {
+        "cmd": "firewall-cmd",
+        "title": "firewalld 방화벽 규칙 관리",
+        "usage": "firewall-cmd [옵션] [동작]",
+        "options": [
+            {"opt": "--permanent", "desc": "설정을 파일에 기록하여 재부팅 후에도 영구 적용"},
+            {"opt": "--reload", "desc": "영구 설정을 현재 구동 중인 방화벽에 즉시 반영"},
+            {"opt": "--add-service=서비스명", "desc": "특정 서비스(http, ssh 등) 허용 추가"},
+            {"opt": "--add-port=포트/프로토콜", "desc": "특정 포트(예: 80/tcp) 허용 추가"},
+            {"opt": "--list-all", "desc": "현재 적용된 모든 방화벽 규칙 확인"}
+        ],
+        "relatedFiles": ["/etc/firewalld/zones/public.xml", "/usr/lib/firewalld/services/"]
+    },
+    {
+        "cmd": "nfsstat",
+        "title": "NFS 서버 및 클라이언트 통계 정보 확인",
+        "usage": "nfsstat [옵션]",
+        "options": [
+            {"opt": "-s", "desc": "NFS 서버 측의 통계 정보만 출력 (Server)"},
+            {"opt": "-c", "desc": "NFS 클라이언트 측의 통계 정보만 출력 (Client)"},
+            {"opt": "-n", "desc": "NFS 관련 통계만 출력 (RPC 정보 제외)"},
+            {"opt": "-r", "desc": "RPC 관련 통계만 출력"},
+            {"opt": "-m", "desc": "마운트된 NFS 파일 시스템의 설정 정보(타임아웃 등) 확인"}
+        ],
+        "relatedFiles": ["/proc/net/rpc/nfsd", "/proc/net/rpc/nfs", "/etc/exports"]
+    },
+    
+    {
+        "cmd": "smbpasswd",
+        "title": "삼바 사용자 계정 및 비밀번호 관리",
+        "usage": "smbpasswd [옵션] [사용자명]",
+        "options": [
+            {"opt": "-a", "desc": "삼바 사용자 추가 (Add)"},
+            {"opt": "-x", "desc": "삼바 사용자 삭제 (Delete)"},
+            {"opt": "-d", "desc": "삼바 사용자 일시 정지 (Disable)"},
+            {"opt": "-e", "desc": "정지된 삼바 사용자 활성화 (Enable)"},
+            {"opt": "-n", "desc": "비밀번호 없는 사용자 설정"}
+        ],
+        "relatedFiles": ["/etc/samba/smbpasswd", "/etc/samba/smb.conf"]
+    },
+    {
+        "cmd": "testparm",
+        "title": "삼바 설정 파일(smb.conf) 문법 검사",
+        "usage": "testparm [파일명]",
+        "options": [
+            {"opt": "-v", "desc": "기본값(Default)을 포함한 모든 설정값 출력"},
+            {"opt": "-s", "desc": "엔터 키 입력 대기 없이 결과 바로 출력"}
+        ],
+        "relatedFiles": ["/etc/samba/smb.conf"]
+    },
+    {
+        "cmd": "smbstatus",
+        "title": "삼바 서버 연결 상태 확인",
+        "usage": "smbstatus [옵션]",
+        "options": [
+            {"opt": "-S", "desc": "공유 중인 디렉터리 상태만 출력 (Shares)"},
+            {"opt": "-u", "desc": "특정 사용자의 접속 현황 확인 (User)"},
+            {"opt": "-L", "desc": "현재 걸려 있는 파일 락(Lock) 정보 출력"}
+        ],
+        "relatedFiles": ["/var/lib/samba/locking.tdb"]
+    },
+    {
+        "cmd": "smbclient",
+        "title": "삼바/윈도우 공유 자원 클라이언트 접속",
+        "usage": "smbclient [공유경로] [옵션]",
+        "options": [
+            {"opt": "-L", "desc": "지정한 호스트의 공유 목록 확인 (List)"},
+            {"opt": "-U", "desc": "접속 시 사용할 사용자명 지정 (User)"},
+            {"opt": "-M", "desc": "WinPopup 메시지 전송 (Message)"},
+            {"opt": "-N", "desc": "비밀번호 없이 접속 시도 (No Password)"}
+        ],
+        "relatedFiles": []
+    },
+    {
+        "cmd": "mount.cifs",
+        "title": "삼바 공유 디렉터리 네트워크 마운트",
+        "usage": "mount -t cifs [공유경로] [마운트포인트] -o [옵션]",
+        "options": [
+            {"opt": "username", "desc": "접속 계정 지정 (예: -o username=kait)"},
+            {"opt": "password", "desc": "접속 비밀번호 지정"},
+            {"opt": "guest", "desc": "암호 없이 게스트 권한으로 마운트"}
+        ],
+        "relatedFiles": ["/etc/fstab", "/sbin/mount.cifs"]
+    },
+    {
+        "cmd": "nmblookup",
+        "title": "NetBIOS 이름의 IP 주소 조회",
+        "usage": "nmblookup [옵션] [이름]",
+        "options": [
+            {"opt": "-A", "desc": "지정한 IP 주소의 NetBIOS 이름 목록 확인"},
+            {"opt": "-S", "desc": "노드 상태(Status) 쿼리 수행"}
+        ],
+        "relatedFiles": ["/etc/samba/lmhosts"]
+    },
+    {
+        "cmd": "xauth",
+        "title": "X 서버 권한 인증(매직 쿠키) 관리",
+        "usage": "xauth [옵션] [동작]",
+        "options": [
+            {"opt": "list", "desc": "현재 저장된 매직 쿠키 인증 정보(MIT-MAGIC-COOKIE-1) 출력"},
+            {"opt": "add", "desc": "새로운 인증 쿠키 정보를 추가"},
+            {"opt": "extract", "desc": "특정 디스플레이의 인증 정보를 파일로 추출"},
+            {"opt": "merge", "desc": "추출된 인증 정보 파일을 현재 설정에 병합"},
+            {"opt": "nextract", "desc": "숫자 형식으로 인증 정보 추출 (네트워크 전송용)"}
+        ],
+        "relatedFiles": ["~/.Xauthority", "/usr/bin/X", "xhost"]
+    },
+    {
+        "cmd": "xhost",
+        "title": "X 서버 호스트 기반 접근 제어",
+        "usage": "xhost [+|-] [호스트명/IP]",
+        "options": [
+            {"opt": "+", "desc": "모든 호스트로부터의 X 서버 접속을 허용 (보안 취약)"},
+            {"opt": "-", "desc": "모든 외부 호스트의 접속을 차단 (로컬 호스트만 허용)"},
+            {"opt": "+ [IP/Host]", "desc": "지정한 특정 호스트의 접속만 허용"},
+            {"opt": "- [IP/Host]", "desc": "지정한 특정 호스트의 접속을 차단"},
+            {"opt": "기본", "desc": "옵션 없이 실행 시 현재 접속 허용 목록 출력"}
+        ],
+        "relatedFiles": ["$DISPLAY", "/etc/X0.hosts", "xauth"]
+    },
+    {
+        "cmd": "dovecot",
+        "title": "POP3/IMAP 오픈 소스 메일 서버",
+        "usage": "systemctl [start|stop|status] dovecot",
+        "options": [
+            {"opt": "protocols", "desc": "사용할 프로토콜(pop3, imap, lmtp) 지정"},
+            {"opt": "listen", "desc": "서비스를 대기할 IP 주소 및 인터페이스 설정"},
+            {"opt": "mail_location", "desc": "메일이 저장되는 형식(mbox, maildir)과 경로 지정"}
+        ],
+        "relatedFiles": ["/etc/dovecot/dovecot.conf", "/etc/dovecot/conf.d/", "postfix", "sendmail"]
+    },
+    {
+        "cmd": "MX Record",
+        "title": "메일 교환기 레코드 (Mail Exchanger)",
+        "usage": "도메인명  IN  MX  우선순위  메일서버호스트명",
+        "options": [
+            {"opt": "우선순위", "desc": "숫자가 낮을수록 우선순위가 높음 (예: 10이 20보다 먼저)"},
+            {"opt": "값", "desc": "반드시 해당 서버의 A 레코드(IP)가 별도로 존재해야 함"}
+        ],
+        "relatedFiles": ["/var/named/*.zone", "sendmail", "postfix"]
+    },
+    {
+        "cmd": "PTR Record",
+        "title": "포인터 레코드 (Reverse Lookup)",
+        "usage": "IP마지막자리  IN  PTR  호스트명.",
+        "options": [
+            {"opt": "in-addr.arpa", "desc": "역방향 조회를 위한 특수 도메인 체계"},
+            {"opt": ".", "desc": "호스트명 끝에 루트 도메인을 의미하는 점(.)을 반드시 찍어야 함"}
+        ],
+        "relatedFiles": ["/etc/named.conf", "Reverse Zone File"]
+    },
+    {
+        "cmd": "nslookup / dig",
+        "title": "DNS 레코드 질의 도구",
+        "usage": "dig @서버 도메인 [레코드타입]",
+        "options": [
+            {"opt": "-t mx", "desc": "특정 도메인의 MX 레코드만 조회"},
+            {"opt": "-x", "desc": "IP 주소를 이용한 역방향(PTR) 조회 (Reverse Lookup)"},
+            {"opt": "any", "desc": "해당 도메인의 모든 레코드 종류 출력"}
+        ],
+        "relatedFiles": ["/etc/resolv.conf"]
+    },
+    {
+        "cmd": "TCP Wrapper (Access Control)",
+        "title": "호스트 기반 접근 제어 설정",
+        "usage": "서비스명 : 호스트명/IP : [동작]",
+        "options": [
+            {"opt": "192.168.1.", "desc": "192.168.1 대역의 모든 호스트 허용/차단 (끝에 점 필수)"},
+            {"opt": "ALL", "desc": "모든 서비스 또는 모든 호스트에 적용"},
+            {"opt": "LOCAL", "desc": "도메인 이름에 점(.)이 없는 모든 로컬 호스트"},
+            {"opt": "@group", "desc": "NIS(Network Information Service) 넷그룹 기반 제어"},
+            {"opt": "EXCEPT", "desc": "특정 대상만 제외하고 적용 (예: ALL : ALL EXCEPT 192.)"}
+        ],
+        "relatedFiles": ["/etc/hosts.allow", "/etc/hosts.deny", "tcpd", "libwrap"]
+    },
+    {
+        "cmd": "Subnetting",
+        "title": "IP 서브넷 및 브로드캐스트 계산",
+        "usage": "IP: 192.168.100.150 / Mask: 255.255.255.128",
+        "options": [
+            {"opt": "Network ID", "desc": "192.168.100.128 (대역의 시작)"},
+            {"opt": "Broadcast", "desc": "192.168.100.255 (대역의 마지막)"},
+            {"opt": "Host Range", "desc": "192.168.100.129 ~ 192.168.100.254 (총 126개)"},
+            {"opt": "Prefix", "desc": "/25"}
+        ],
+        "relatedFiles": ["/etc/sysconfig/network-scripts/ifcfg-eth0", "ipcalc"]
     }
 ]
