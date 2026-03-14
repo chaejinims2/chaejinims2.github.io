@@ -9390,6 +9390,7 @@
         "localId": 80,
         "subjectKey": 3,
         "body": "다음 설명과 가장 관련이 있는 환경 설정 파일로 알맞은 것은?",
+        "code": "회사의 help 계정으로 들어오는 메일은 고객지원실 소속 직원에게 전부 전송되도록 설정한다.",
         "options": [
             {
                 "option": "/etc/mail/local-host-names",
@@ -9809,7 +9810,7 @@
         "localId": 97,
         "subjectKey": 3,
         "body": "다음과 같은 소스 코드가 시스템에서 발견된 경우에 발생할 수 있는 공격으로 가장 알맞은 것은?",
-        "code": "#include <stdio.h>\nmain()\n{\n    char *m;\n    while(1)\n        m=malloc(1000);\n}",
+        "code": "while(1)  m=malloc(1000);",
         "options": [
             {
                 "option": "가용 디스크 자원 고갈",
