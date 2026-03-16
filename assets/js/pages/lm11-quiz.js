@@ -23,6 +23,7 @@
     var prevBtn = document.getElementById("quiz-prev");
     var nextBtn = document.getElementById("quiz-next");
     var statusEl = document.getElementById("quiz-status");
+    var startBtn = document.getElementById("quiz-start-btn");
 
     var cards = toArray(root.querySelectorAll(".quiz-card-block"));
     var matched = [];
@@ -111,15 +112,43 @@
       if (e.key === "ArrowRight") go(1);
     });
 
-    render();
+    // Start button
+    if (startBtn) {
+      startBtn.addEventListener("click", function () {
+        var section = document.getElementById("quiz-section");
+        var pager = document.querySelector(".quiz-pager");
+        if (section) {
+          section.style.display = "block";
+          if (pager) pager.style.display = "flex";
+          applyFilter(true);
+          // Hide start button and filters after starting
+          startBtn.style.display = "none";
+          var filters = document.querySelector(".quiz-filters-wrap");
+          if (filters) filters.style.display = "none";
+          // Initialize card interactions after showing
+          if (window.initLm11QuizCardInteractions) {
+            window.initLm11QuizCardInteractions();
+          }
+        }
+      });
+    }
+
+    // Do not render initially; wait for start
   }
 
   /* LM11 Quiz: card interactions (options select + explanation toggle + highlight + swipe) */
   function initLm11QuizCardInteractions() {
     var root = document.getElementById("quiz-section");
-    if (!root) return;
-    if (root.dataset.lm11QuizCardInit === "1") return;
+    if (!root) {
+      console.log("initLm11QuizCardInteractions: quiz-section not found");
+      return;
+    }
+    if (root.dataset.lm11QuizCardInit === "1") {
+      console.log("initLm11QuizCardInteractions: already initialized");
+      return;
+    }
     root.dataset.lm11QuizCardInit = "1";
+    console.log("initLm11QuizCardInteractions: initializing");
 
     var STORAGE_KEY = "lm11-answer-sheet";
     var quizRoot = root.querySelector(".quiz-cards-set") || root;
@@ -239,6 +268,11 @@
       }
     );
 
+    // Set choice numbers for all options (even if not shuffled)
+    forEachNode(document.querySelectorAll(".quiz-card__options"), function (ol) {
+      setChoiceNumbers(ol);
+    });
+
     var answers = loadAnswers();
     forEachNode(document.querySelectorAll(".quiz-card-block"), function (card) {
       applySelectionToCard(card, answers);
@@ -253,6 +287,7 @@
     quizRoot.addEventListener("click", function (e) {
       var li = e.target.closest && e.target.closest(".quiz-card__option");
       if (li && quizRoot.contains(li)) {
+        console.log("Option clicked:", li);
         var card = li.closest(".quiz-card-block");
         if (!card) return;
         handleOptionToggle(card, li, answers);
