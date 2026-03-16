@@ -17,7 +17,7 @@ sidebar_order:
   - labs
 # 사이드바 푸터(하단) 표시 순서. URL 첫 세그먼트로 지정. 없으면 footer → topbar 순.
 sidebar_footer_order:
-  - language
+  - tests
   - sitemap
   - settings
 
@@ -58,12 +58,12 @@ defaults:
       permalink: /techs/
       title: Techs
   - scope:
-      path: "language/index.md"
+      path: "tests/index.md"
       type: "pages"
     values:
       layout: section
-      permalink: /language/
-      title: Language
+      permalink: /tests/
+      title: Tests
   - scope:
       path: "op-soures/index.md"
       type: "pages"

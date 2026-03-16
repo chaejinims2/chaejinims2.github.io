@@ -1,7 +1,7 @@
 ---
 layout: section
-permalink: /language/
-title: Language
-icon: language
+permalink: /tests/
+title: Tests
+icon: numbered-list
 type: sidebar_footer
 ---
