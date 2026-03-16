@@ -869,7 +869,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   visibility: hidden;
   pointer-events: none;
 }
-
+/* 기본 스타일 (데스크탑) */
 .app-statusbar {
   box-sizing: border-box;
   min-height: var(--app-status-h);
@@ -884,6 +884,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   font-size: var(--app-statusbar-font-size);
   flex-shrink: 0;
 }
+
 .app-statusbar .page-nav {
   margin: 0;
   padding: 0;
@@ -895,6 +896,24 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 .app-statusbar .page-nav-prev,
 .app-statusbar .page-nav-next {
   padding: 0.25rem 0;
+}
+
+/* 모바일 버전 전용 스타일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .app-statusbar {
+    /* 기존 높이보다 1.5배~2배 정도 높게 설정 */
+    min-height: calc(var(--app-status-h) + 20px); 
+    padding: 0.75rem 1rem; /* 상하 패딩을 늘려 높이감 확보 */
+    
+    /* 아이콘이나 버튼이 너무 작다면 폰트 사이즈도 키울 수 있습니다 */
+    font-size: 1rem; 
+  }
+
+  .app-statusbar .page-nav-prev,
+  .app-statusbar .page-nav-next {
+    /* 모바일 터치 영역(Hit Target) 확보를 위해 패딩 증가 */
+    padding: 0.6rem 0.8rem; 
+  }
 }
 
 .app-page-container {
