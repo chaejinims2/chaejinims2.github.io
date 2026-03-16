@@ -134,6 +134,16 @@
   -webkit-user-select: none;
   user-select: none;
 }
+
+#quiz-timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  color: var(--accent);
+  font-family: monospace; /* 숫자가 움직이지 않게 고정폭 폰트 권장 */
+}
+
 </style>
 
 {% assign questions = include.questions | default: site.data.lm11.questions %}
@@ -164,6 +174,7 @@
 </div>
 
 <div id="quiz-section" aria-label="퀴즈">
+  <div id="quiz-timer">00:00</div>
   <div class="quiz-cards-set" role="list">
     {% for q in questions %}
       {% assign exam = site.data.lm11.exams | where: "key", q.examKey | first %}
