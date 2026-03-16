@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
+    {% if page.url contains '/language/lm11' %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/quiz/lm11-quiz-card-block.css" />
+    {% endif %}
   </head>
 
   <body data-theme="dark" data-nav-group="{{ page.nav_group | default: '' }}">

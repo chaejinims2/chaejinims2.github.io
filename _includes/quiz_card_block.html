@@ -1,0 +1,55 @@
+<div
+  class="quiz-card-block"
+  data-exam-key="{{ include.q.examKey }}"
+  data-subject-key="{{ include.q.subjectKey }}"
+  data-local-id="{{ include.q.localId }}"
+  role="listitem">
+
+<div class="quiz-card">
+  <div class="quiz-card__body">
+    {{ include.q.localId }}. {{ include.q.body }}
+  </div>
+
+  {% if include.q.code and include.q.code != '' %}
+  <div class="terminal-box">
+    <div class="terminal-pre-wrap">
+      <pre class="terminal-content">{{ include.q.code }}</pre>
+    </div>
+  </div>
+  {% endif %}
+
+  <ol class="quiz-card__options quiz-card__options--selectable">
+    {% for opt in include.q.options %}
+    <li class="quiz-card__option" role="button" tabindex="0" aria-pressed="false"
+        {% if forloop.index == include.correct_answer_num %}data-correct="true"{% endif %}>
+      {{ opt.option }}
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+<div class="quiz-answer">
+  <div class="quiz-answer-toggle-wrap">
+    <button type="button" class="quiz-answer-toggle" aria-expanded="false" aria-label="해설 보기"></button>
+  </div>
+
+  <div class="quiz-answer-content is-hidden">
+    <ol class="quiz-answer-list">
+      {% for opt in include.q.options %}
+        {% if opt.description and opt.description != '' %}
+          <li class="quiz-answer-line
+            {% if include.correct_answer_num == forloop.index %}
+              quiz-answer-line--correct
+            {% else %}
+              quiz-answer-line--wrong
+            {% endif %}
+          ">
+            {{ opt.description }} 
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+
+</div>
+

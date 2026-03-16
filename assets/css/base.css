@@ -932,7 +932,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   border: none;
   border-top: 1.5px solid var(--app-border);
 }
-.app-content ul, .app-content ol { margin: 0 0 12px; padding-left: 1.5em; }
+/* .app-content ul, .app-content ol { margin: 0 0 12px; padding-left: 1.5em; } */
 .settings-block { margin-bottom: 1rem; }
 .settings-block--row {
   display: flex !important;
@@ -1025,7 +1025,11 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 }
 
 /* Terminal-like viewer (shared) */
-.terminal-box { display: block; }
+.terminal-box { 
+  display: block;
+  margin-top: var(--space-3, 0.5rem);
+  flex-shrink: 0; 
+}
 .terminal-pre-wrap {
   overflow: hidden;
   border-radius: 8px;
