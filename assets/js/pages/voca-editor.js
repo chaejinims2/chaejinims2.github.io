@@ -547,7 +547,7 @@
       .voca-editor__table thead th { position: sticky; top: 0; z-index: 2; background: #0b0d12; color: var(--ve-muted); font-weight: 600; text-align: left; font-size: 0.8rem; padding: 0.6rem 0.6rem; border-bottom: 1px solid var(--ve-border); }
       .voca-editor__table tbody td { vertical-align: top; padding: 0.5rem 0.6rem; border-bottom: 1px solid color-mix(in srgb, var(--ve-border) 60%, transparent); }
       .voca-editor__table tbody tr:hover td { background: color-mix(in srgb, var(--ve-accent) 6%, transparent); }
-      .col-id { width: 1.5rem; } .col-unit { width: 1.5rem; } .col-term { width: 5rem; } .col-pos { width: 5rem; } .col-gloss { width: 10rem; }
+      .col-id { width: 1.5rem; } .col-unit { width: 1.5rem; } .col-term { width: 1%; } .col-pos { width: 5rem; } .col-gloss { width: 10rem; }
       .col-ex-text { width: 20rem; } .col-ex-tr { width: 20rem; } .col-actions { width: 1rem; }
       .ve-input { width: 100%; box-sizing: border-box; padding: 0.45rem 0.55rem; border-radius: 10px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); }
       .ve-input--cell[type=number] { text-align: right; }
@@ -555,6 +555,8 @@
       .ve-textarea { width: 100%; box-sizing: border-box; height: 2.15rem; resize: vertical; padding: 0.45rem 0.55rem; border-radius: 10px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); line-height: 1.35; }
       .ve-cell--readonly { color: var(--ve-muted); }
       .ve-readonly { padding: 0.45rem 0.15rem; font-variant-numeric: tabular-nums; }
+      /* term 컬럼은 내용(단어) 폭에 맞춰 수축 */
+      .voca-editor__table .ve-cell--term .ve-readonly { display: inline-block; white-space: nowrap; }
       .ve-actions { display:flex; flex-wrap:wrap; gap: 0.35rem; justify-content:flex-start; }
       .ve-btn { padding: 0.55rem 0.8rem; border-radius: 12px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); cursor: pointer; }
       .ve-btn--primary { background: var(--ve-accent); border-color: color-mix(in srgb, var(--ve-accent) 70%, black); color: #0b0d12; font-weight: 700; }
