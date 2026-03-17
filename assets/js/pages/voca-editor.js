@@ -424,6 +424,8 @@
     const copyBtn = $("#ve-copy-json");
     const bookIdEl = $("#ve-book-id");
     const titleEl = $("#ve-title");
+    const colvisRadios = $$("input[name='ve-colvis']");
+    const colChecks = $$("input[name='ve-col']");
 
     if (bookIdEl) bookIdEl.addEventListener("change", () => { model.book_id = bookIdEl.value; });
     if (titleEl) titleEl.addEventListener("change", () => { model.title = titleEl.value; });
@@ -477,6 +479,46 @@
         }
       });
     }
+
+    // Column visibility (radio preset + per-column checks)
+    const ALL_COLS = ["id", "unit", "term", "pos", "gloss", "example", "translation", "actions"];
+    function applyHiddenCols(hidden) {
+      const host = document.querySelector(".voca-editor");
+      if (!host) return;
+      ALL_COLS.forEach((c) => host.classList.remove(`ve-hide-${c}`));
+      hidden.forEach((c) => host.classList.add(`ve-hide-${c}`));
+    }
+    function syncFromChecks() {
+      const hidden = colChecks.filter((c) => !c.checked).map((c) => c.value);
+      applyHiddenCols(hidden);
+    }
+    function setChecksForMode(mode) {
+      if (mode === "show-all") {
+        colChecks.forEach((c) => (c.checked = true));
+        syncFromChecks();
+        return;
+      }
+      // custom: keep current
+      syncFromChecks();
+    }
+
+    colvisRadios.forEach((r) => {
+      r.addEventListener("change", () => {
+        const checked = colvisRadios.find((x) => x.checked);
+        setChecksForMode(checked ? checked.value : "custom");
+      });
+    });
+    colChecks.forEach((c) => {
+      c.addEventListener("change", () => {
+        // 체크 변경 시 프리셋은 custom으로
+        const custom = colvisRadios.find((r) => r.value === "custom");
+        if (custom) custom.checked = true;
+        syncFromChecks();
+      });
+    });
+
+    // default: current 체크 상태 적용 (unit/translation 기본 숨김)
+    syncFromChecks();
   }
 
   function injectCss() {
@@ -519,11 +561,27 @@
       .ve-btn--ghost { background: transparent; }
       .ve-mini { padding: 0.35rem 0.5rem; border-radius: 10px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); cursor: pointer; font-size: 0.78rem; }
       .ve-mini--danger { border-color: color-mix(in srgb, #ff4d4d 55%, var(--ve-border)); color: #ffb0b0; }
-      /* 지금은 숨김: unit / translation 컬럼 */
-      .voca-editor__table .col-unit,
-      .voca-editor__table .col-ex-tr,
-      .voca-editor__table .ve-cell--unit,
-      .voca-editor__table .ve-cell--translation { display: none; }
+      /* 칼럼 숨김 토글 */
+      .voca-editor.ve-hide-id .voca-editor__table .col-id,
+      .voca-editor.ve-hide-id .voca-editor__table .ve-cell--id { display: none; }
+      .voca-editor.ve-hide-unit .voca-editor__table .col-unit,
+      .voca-editor.ve-hide-unit .voca-editor__table .ve-cell--unit { display: none; }
+      .voca-editor.ve-hide-term .voca-editor__table .col-term,
+      .voca-editor.ve-hide-term .voca-editor__table .ve-cell--term { display: none; }
+      .voca-editor.ve-hide-pos .voca-editor__table .col-pos,
+      .voca-editor.ve-hide-pos .voca-editor__table .ve-cell--pos { display: none; }
+      .voca-editor.ve-hide-gloss .voca-editor__table .col-gloss,
+      .voca-editor.ve-hide-gloss .voca-editor__table .ve-cell--gloss { display: none; }
+      .voca-editor.ve-hide-example .voca-editor__table .col-ex-text,
+      .voca-editor.ve-hide-example .voca-editor__table .ve-cell--example { display: none; }
+      .voca-editor.ve-hide-translation .voca-editor__table .col-ex-tr,
+      .voca-editor.ve-hide-translation .voca-editor__table .ve-cell--translation { display: none; }
+      .voca-editor.ve-hide-actions .voca-editor__table .col-actions,
+      .voca-editor.ve-hide-actions .voca-editor__table .ve-cell--actions { display: none; }
+
+      .ve-colvis { display:flex; flex-wrap:wrap; gap: 0.6rem; align-items:center; }
+      .ve-colchecks { display:flex; flex-wrap:wrap; gap: 0.55rem; align-items:center; }
+      .ve-radio, .ve-check { display:flex; gap: 0.35rem; align-items:center; color: var(--ve-muted); font-size: 0.85rem; }
       @media (max-width: 900px) { .voca-editor__meta-grid { grid-template-columns: 1fr; } .voca-editor__io-row { justify-content:flex-start; } }
     `;
     const style = document.createElement("style");
