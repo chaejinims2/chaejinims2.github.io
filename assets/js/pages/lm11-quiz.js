@@ -23,10 +23,103 @@
     } catch (e) {}
   };
 
+  window._vocaStartHandler = null;
+
+  document.addEventListener("click", function vocaStartDelegation(e) {
+    if (!e.target || !e.target.closest || !e.target.closest("#voca-start-btn")) return;
+    if (typeof window._vocaStartHandler === "function") window._vocaStartHandler();
+  }, true);
+
+  function initVocaPage() {
+    var root = document.getElementById("quiz-section");
+    if (!root) return;
+    var cards = Array.from(root.querySelectorAll(".voca-card-block"));
+    if (cards.length === 0) return;
+    if (root.dataset.vocaInit === "1") return;
+    root.dataset.vocaInit = "1";
+
+    var daySheet = document.getElementById("voca-day-sheet");
+    var prevBtn = document.getElementById("quiz-prev");
+    var nextBtn = document.getElementById("quiz-next");
+    var statusEl = document.getElementById("quiz-status");
+    var startBtn = document.getElementById("voca-start-btn");
+
+    var matched = [];
+    var current = 0;
+
+    function getSelectedDays() {
+      if (!daySheet) return [];
+      var dots = daySheet.querySelectorAll(".voca-day-dot[aria-pressed='true']");
+      return Array.from(dots).map(function(d) { return String(d.getAttribute("data-day") || "").trim(); }).filter(Boolean);
+    }
+
+    function getMatchedCards() {
+      var selected = getSelectedDays();
+      return cards.filter(function (card) {
+        var cardDay = String(card.getAttribute("data-day-no") || "").trim();
+        return selected.length === 0 || selected.indexOf(cardDay) !== -1;
+      });
+    }
+
+    function render() {
+      matched = getMatchedCards();
+      if (current < 0) current = 0;
+      if (matched.length > 0 && current >= matched.length) current = Math.max(0, matched.length - 1);
+
+      cards.forEach(function (c) { c.style.display = "none"; });
+      if (matched.length > 0) {
+        var currentCard = matched[current];
+        currentCard.style.display = "block";
+        var answerContent = currentCard.querySelector(".quiz-answer-content");
+        if (answerContent) answerContent.classList.add("is-hidden");
+      }
+
+      if (statusEl) statusEl.textContent = (matched.length ? current + 1 : 0) + " / " + matched.length;
+      if (prevBtn) prevBtn.disabled = (current === 0);
+      if (nextBtn) nextBtn.textContent = (matched.length > 0 && current === matched.length - 1) ? "Finish" : "Next";
+    }
+
+    function go(delta) {
+      if (delta === 1 && current === matched.length - 1) {
+        alert("오늘의 학습을 마쳤습니다!");
+        location.reload();
+        return;
+      }
+      current += delta;
+      render();
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function() { go(-1); });
+    if (nextBtn) nextBtn.addEventListener("click", function() { go(1); });
+    if (daySheet) {
+      daySheet.addEventListener("click", function(e) {
+        var dot = e.target && e.target.closest && e.target.closest(".voca-day-dot");
+        if (!dot) return;
+        var pressed = dot.getAttribute("aria-pressed") !== "true";
+        dot.setAttribute("aria-pressed", pressed ? "true" : "false");
+        dot.classList.toggle("is-selected", pressed);
+        current = 0;
+        render();
+      });
+    }
+
+    window._vocaStartHandler = function() {
+      current = 0;
+      root.style.display = "block";
+      var pager = document.querySelector(".quiz-pager");
+      if (pager) pager.style.display = "flex";
+      render();
+      if (startBtn) startBtn.style.display = "none";
+      var filtersWrap = document.querySelector(".quiz-filters-wrap");
+      if (filtersWrap) filtersWrap.style.display = "none";
+    };
+  }
+
   /* LM11 Quiz pager (메인 제어) */
   function initLm11QuizPage() {
     var root = document.getElementById("quiz-section");
     if (!root) return;
+    if (root.querySelectorAll(".quiz-card-block").length === 0) return;
     if (root.dataset.lm11QuizInit === "1") return;
     root.dataset.lm11QuizInit = "1";
 
@@ -240,5 +333,6 @@
 
   window.initLm11QuizPage = initLm11QuizPage;
   initLm11QuizPage();
+  initVocaPage();
 
 })();

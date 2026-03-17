@@ -1,0 +1,51 @@
+<div
+  class="voca-card-block"
+  data-word-id="{{ include.w.word_id }}"
+  data-day-no="{{ include.w.day_no }}"
+  role="listitem">
+
+  <div class="quiz-card">
+    <div class="quiz-card__body">
+      <strong class="voca-text">{{ include.w.word }}</strong>
+    </div>
+
+    <div class="voca-hint">
+      <small>{{ include.w.day_no }} | Click to view the meaning and example</small>
+    </div>
+  </div>
+
+  <div class="quiz-answer">
+    <!-- 기존 토글 버튼 유지 -->
+    <div class="quiz-answer-toggle-wrap">
+      <button type="button" class="quiz-answer-toggle" aria-expanded="false" aria-label="뜻 보기"></button>
+    </div>
+
+    <!-- 뒷면: 뜻과 예문 (기존 quiz-answer-content 활용) -->
+    <div class="quiz-answer-content is-hidden">
+      <div class="voca-definition-list">
+        {% for def in include.w.definitions %}
+          <div class="voca-definition-item">
+            <div class="voca-def-header">
+              <span class="voca-pos">{{ def.pos }}</span>
+              <span class="voca-def-text">{{ def.meaning }}</span>
+            </div>
+            
+            {% if def.examples.size > 0 %}
+            <ul class="voca-examples">
+              {% for ex in def.examples %}
+                <li class="voca-example-line">
+                  <span class="voca-example-text">{{ ex.example }}</span>
+                  {% if ex.meaning and ex.meaning != '' %}
+                    <span class="voca-example-meaning">— {{ ex.meaning }}</span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% unless forloop.last %}<hr class="voca-divider">{% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

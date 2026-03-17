@@ -153,6 +153,19 @@
         btn.setAttribute('aria-label', hidden ? '정답 보기' : '정답 가리기');
       });
     });
+    /* .quiz-answer / .quiz-answer-toggle (quiz_card_block, voca_card_block) */
+    forEachNode(content.querySelectorAll('.quiz-answer'), function (answerBlock) {
+      var btn = answerBlock.querySelector('.quiz-answer-toggle');
+      var answerContent = answerBlock.querySelector('.quiz-answer-content');
+      if (!btn || !answerContent || btn.dataset.quizAnswerInit === '1') return;
+      btn.dataset.quizAnswerInit = '1';
+      btn.addEventListener('click', function () {
+        answerContent.classList.toggle('is-hidden');
+        var hidden = answerContent.classList.contains('is-hidden');
+        btn.setAttribute('aria-expanded', !hidden);
+        btn.setAttribute('aria-label', hidden ? '뜻 보기' : '뜻 가리기');
+      });
+    });
   }
   window.initQuizAnswerToggles = initQuizAnswerToggles;
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initQuizAnswerToggles);
