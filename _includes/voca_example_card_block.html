@@ -1,0 +1,26 @@
+{% comment %}
+  예문 번역 카드: 영어 예문 → 한국어 번역
+  단어/뜻이 아닌 예문 번역에 초점
+{% endcomment %}
+<div
+  class="voca-example-card-block"
+  data-word-id="{{ include.w.word_id }}"
+  data-day-no="{{ include.w.day_no }}"
+  role="listitem">
+
+  <div class="quiz-card">
+    <div class="quiz-card__body">
+      <p class="voca-example-sentence" data-word="{{ include.w.word | escape }}">{{ include.ex.example }}</p>
+    </div>
+  </div>
+
+  <div class="quiz-answer">
+    <div class="quiz-answer-toggle-wrap">
+      <button type="button" class="quiz-answer-toggle" aria-expanded="false" aria-label="번역 보기"></button>
+    </div>
+
+    <div class="quiz-answer-content is-hidden">
+      <p class="voca-example-translation">{{ include.ex.meaning }}</p>
+    </div>
+  </div>
+</div>

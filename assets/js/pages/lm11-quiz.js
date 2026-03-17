@@ -33,6 +33,7 @@
   function initVocaPage() {
     var root = document.getElementById("quiz-section");
     if (!root) return;
+    if (root.classList.contains("voca-examples-mode")) return; /* 예문 모드는 initVocaExamplesPage */
     var cards = Array.from(root.querySelectorAll(".voca-card-block"));
     if (cards.length === 0) return;
     if (root.dataset.vocaInit === "1") return;
@@ -113,6 +114,111 @@
       var filtersWrap = document.querySelector(".quiz-filters-wrap");
       if (filtersWrap) filtersWrap.style.display = "none";
     };
+  }
+
+  /* 예문 번역: 한 번에 모두 표시 */
+  function initVocaExamplesPage() {
+    var root = document.getElementById("quiz-section");
+    if (!root || !root.classList.contains("voca-examples-mode")) return;
+    var cards = Array.from(root.querySelectorAll(".voca-example-card-block"));
+    if (cards.length === 0) return;
+    if (root.dataset.vocaExamplesInit === "1") return;
+    root.dataset.vocaExamplesInit = "1";
+
+    var daySheet = document.getElementById("voca-day-sheet");
+
+    function getSelectedDays() {
+      if (!daySheet) return [];
+      var dots = daySheet.querySelectorAll(".voca-day-dot[aria-pressed='true']");
+      return Array.from(dots).map(function(d) { return String(d.getAttribute("data-day") || "").trim(); }).filter(Boolean);
+    }
+
+    function render() {
+      var selected = getSelectedDays();
+      cards.forEach(function(card) {
+        var cardDay = String(card.getAttribute("data-day-no") || "").trim();
+        var show = selected.length === 0 || selected.indexOf(cardDay) !== -1;
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    if (daySheet) {
+      daySheet.addEventListener("click", function(e) {
+        var dot = e.target && e.target.closest && e.target.closest(".voca-day-dot");
+        if (!dot) return;
+        var pressed = dot.getAttribute("aria-pressed") !== "true";
+        dot.setAttribute("aria-pressed", pressed ? "true" : "false");
+        dot.classList.toggle("is-selected", pressed);
+        render();
+      });
+    }
+
+    highlightExampleWords(root);
+    render();
+  }
+
+  /* 시제 변화: 규칙 동사(word+ed/ing/s) + 불규칙 동사 매핑 */
+  var IRREGULAR_FORMS = {
+    seek: ["sought", "seeking", "seeks"],
+    think: ["thought", "thinking", "thinks"],
+    bring: ["brought", "bringing", "brings"],
+    buy: ["bought", "buying", "buys"],
+    catch: ["caught", "catching", "catches"],
+    teach: ["taught", "teaching", "teaches"],
+    find: ["found", "finding", "finds"],
+    hold: ["held", "holding", "holds"],
+    keep: ["kept", "keeping", "keeps"],
+    leave: ["left", "leaving", "leaves"],
+    lose: ["lost", "losing", "loses"],
+    mean: ["meant", "meaning", "means"],
+    make: ["made", "making", "makes"],
+    become: ["became", "becoming", "becomes"],
+    choose: ["chose", "chosen", "choosing", "chooses"],
+    deal: ["dealt", "dealing", "deals"],
+    feed: ["fed", "feeding", "feeds"],
+    feel: ["felt", "feeling", "feels"],
+    get: ["got", "gotten", "getting", "gets"],
+    give: ["gave", "given", "giving", "gives"],
+    go: ["went", "gone", "going", "goes"],
+    grow: ["grew", "grown", "growing", "grows"],
+    know: ["knew", "known", "knowing", "knows"],
+    lead: ["led", "leading", "leads"],
+    meet: ["met", "meeting", "meets"],
+    rise: ["rose", "risen", "rising", "rises"],
+    run: ["ran", "run", "running", "runs"],
+    see: ["saw", "seen", "seeing", "sees"],
+    take: ["took", "taken", "taking", "takes"],
+    write: ["wrote", "written", "writing", "writes"],
+    behave: ["behaved", "behaving", "behaves"],
+    evolve: ["evolved", "evolving", "evolves"]
+  };
+
+  function highlightExampleWords(container) {
+    if (!container) return;
+    var sentences = container.querySelectorAll(".voca-example-sentence[data-word]");
+    sentences.forEach(function(p) {
+      if (p.dataset.highlightDone === "1") return;
+      var word = String(p.getAttribute("data-word") || "").trim();
+      if (!word) return;
+      p.dataset.highlightDone = "1";
+      var text = p.textContent;
+      var escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      var pattern;
+      if (word.indexOf(" ") !== -1) {
+        pattern = new RegExp("\\b(" + escaped.replace(/\s+/g, "\\s+") + ")\\b", "gi");
+      } else {
+        var parts = [escaped + "\\w*"];
+        var irr = IRREGULAR_FORMS[word.toLowerCase()];
+        if (irr) {
+          irr.forEach(function(form) {
+            parts.push(form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+          });
+        }
+        pattern = new RegExp("\\b(" + parts.join("|") + ")\\b", "gi");
+      }
+      var html = text.replace(pattern, "<span class=\"voca-example-word\">$1</span>");
+      p.innerHTML = html;
+    });
   }
 
   /* LM11 Quiz pager (메인 제어) */
@@ -332,7 +438,11 @@
   }
 
   window.initLm11QuizPage = initLm11QuizPage;
+  window.initVocaPage = initVocaPage;
+  window.initVocaExamplesPage = initVocaExamplesPage;
+  window.highlightExampleWords = highlightExampleWords;
   initLm11QuizPage();
   initVocaPage();
+  initVocaExamplesPage();
 
 })();

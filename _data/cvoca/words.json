@@ -3688,11 +3688,11 @@
     "word": "severe",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "Due to the ongoing drought, the government imposed severe limits on water usage for lawn maintenance",
-            "meaning": ""
+            "example": "Due to the ongoing drought, the government imposed severe limits on water usage for lawn maintenance.",
+            "meaning": "지속되는 가뭄으로 인해 정부는 잔디 관리용 물 사용에 엄격한 제한을 부과했다."
           }
         ],
         "meaning": "심각한, 극심한"
@@ -3708,8 +3708,8 @@
         "pos": "n.",
         "examples": [
           {
-            "example": "With the steay growth in global population, scientists worry that we’ll soon reach the Earth’s full capacity for sustaining human life",
-            "meaning": ""
+            "example": "With the steady growth in global population, scientists worry that we’ll soon reach the Earth’s full capacity for sustaining human life.",
+            "meaning": "전 세계 인구의 꾸준한 증가로 인해 과학자들은 지구가 인간 생명을 유지할 수 있는 최대 수용량에 곧 도달할까 우려하고 있다."
           }
         ],
         "meaning": "최대 수용량"
@@ -3722,11 +3722,11 @@
     "word": "vertical",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "The team built horizontal and vertical tunnels to excavate buried pottery and weapons",
-            "meaning": ""
+            "example": "The team built horizontal and vertical tunnels to excavate buried pottery and weapons.",
+            "meaning": "팀은 매장된 도자기와 무기를 발굴하기 위해 수평 및 수직 터널을 만들었다."
           }
         ],
         "meaning": "수직의"
@@ -3742,8 +3742,8 @@
         "pos": "n.",
         "examples": [
           {
-            "example": "Erosion by wind, rain and the Colorado River shaped the Grand Canyon",
-            "meaning": ""
+            "example": "Erosion by wind, rain and the Colorado River shaped the Grand Canyon.",
+            "meaning": "바람, 비, 콜로라도 강의 침식으로 그랜드 캐니언이 형성되었다."
           }
         ],
         "meaning": "침식"
@@ -3756,11 +3756,11 @@
     "word": "deficit",
     "definitions": [
       {
-        "pos": null,
+        "pos": "n.",
         "examples": [
           {
-            "example": "The gorvenment’s serious finace deficit was a result of excessive reliance on the US dollars",
-            "meaning": ""
+            "example": "The government’s serious finance deficit was a result of excessive reliance on the US dollar.",
+            "meaning": "정부의 심각한 재정 적자는 미국 달러에 대한 과도한 의존의 결과였다."
           }
         ],
         "meaning": "부족, 결함, 적자"
@@ -3776,8 +3776,8 @@
         "pos": "n.",
         "examples": [
           {
-            "example": "The fossilised remains reveal the shape of prehistoric turtles",
-            "meaning": ""
+            "example": "The fossilized remains reveal the shape of prehistoric turtles.",
+            "meaning": "화석화된 유해는 선사시대 거북이의 형태를 보여준다."
           }
         ],
         "meaning": "남은것, 유적, 유해, 유물"
@@ -3790,11 +3790,11 @@
     "word": "eager",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "Attendees ate the tech expo were eager to try the latest video game consoles",
-            "meaning": ""
+            "example": "Attendees at the tech expo were eager to try the latest video game consoles.",
+            "meaning": "기술 엑스포 참가자들은 최신 비디오 게임 콘솔을 체험해보고 싶어 안달이었다."
           }
         ],
         "meaning": "열렬한, 열망하는"
@@ -3807,11 +3807,11 @@
     "word": "entire",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "The volcano’s eruption spread smoke and ash throughout the entire region",
-            "meaning": ""
+            "example": "The volcano’s eruption spread smoke and ash throughout the entire region.",
+            "meaning": "화산 폭발로 연기와 재가 전 지역 전체에 퍼졌다."
           }
         ],
         "meaning": "전체의"
@@ -3827,18 +3827,18 @@
         "pos": "v.",
         "examples": [
           {
-            "example": "many telecommunications companies charge their customers for hidden services\"",
-            "meaning": ""
+            "example": "Many telecommunications companies charge their customers for hidden services.",
+            "meaning": "많은 통신사들이 숨겨진 서비스에 대해 고객에게 요금을 청구한다."
           }
         ],
-        "meaning": "요금을 청구하다,To increase monthly bills"
+        "meaning": "요금을 청구하다"
       },
       {
         "pos": "n.",
         "examples": [
           {
-            "example": "The charge for a week-long tourist transit pass is $35",
-            "meaning": ""
+            "example": "The charge for a week-long tourist transit pass is $35.",
+            "meaning": "1주일 관광 교통 패스 요금은 35달러이다."
           }
         ],
         "meaning": "요금"
@@ -3854,8 +3854,8 @@
         "pos": "n.",
         "examples": [
           {
-            "example": "Even if the amount is really small, artificial ingredients in laundry detergent could cause skin irritation",
-            "meaning": ""
+            "example": "Even if the amount is really small, artificial ingredients in laundry detergent could cause skin irritation.",
+            "meaning": "양이 아주 적더라도, 세탁 세제의 인공 성분이 피부 자극을 일으킬 수 있다."
           }
         ],
         "meaning": "피부 자극, 짜증"
@@ -3868,14 +3868,14 @@
     "word": "infection",
     "definitions": [
       {
-        "pos": null,
+        "pos": "n.",
         "examples": [
           {
-            "example": "TempExample_21100",
-            "meaning": ""
+            "example": "Proper hand washing can prevent the spread of infection in hospitals.",
+            "meaning": "올바른 손 씻기는 병원에서 감염 확산을 예방할 수 있다."
           }
         ],
-        "meaning": "TempDefinition_211"
+        "meaning": "감염"
       }
     ]
   },
@@ -3885,14 +3885,14 @@
     "word": "identify",
     "definitions": [
       {
-        "pos": null,
+        "pos": "v.",
         "examples": [
           {
-            "example": "TempExample_21200",
-            "meaning": ""
+            "example": "Scientists were able to identify the species from its unique markings.",
+            "meaning": "과학자들은 독특한 무늬로 그 종을 식별할 수 있었다."
           }
         ],
-        "meaning": "TempDefinition_212"
+        "meaning": "확인하다, 식별하다"
       }
     ]
   },
@@ -3902,14 +3902,14 @@
     "word": "underlying",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "TempExample_21300",
-            "meaning": ""
+            "example": "The underlying cause of the conflict was a dispute over water rights.",
+            "meaning": "갈등의 근본 원인은 수자원 권리에 대한 분쟁이었다."
           }
         ],
-        "meaning": "TempDefinition_213"
+        "meaning": "근본적인, 기저의"
       }
     ]
   },
@@ -3919,14 +3919,14 @@
     "word": "prospective",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "TempExample_21400",
-            "meaning": ""
+            "example": "The company interviewed several prospective candidates for the position.",
+            "meaning": "회사는 그 직책에 대해 여러 예상 후보자들을 면접했다."
           }
         ],
-        "meaning": "TempDefinition_214"
+        "meaning": "예상되는, 장래의"
       }
     ]
   },
@@ -3936,14 +3936,14 @@
     "word": "inhospitable",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "TempExample_21500",
-            "meaning": ""
+            "example": "The Arctic region is inhospitable to most forms of life.",
+            "meaning": "북극 지역은 대부분의 생명체에게 살기 힘든 환경이다."
           }
         ],
-        "meaning": "TempDefinition_215"
+        "meaning": "환대하기 어려운, 살기 힘든"
       }
     ]
   },
@@ -3953,14 +3953,14 @@
     "word": "ancestor",
     "definitions": [
       {
-        "pos": null,
+        "pos": "n.",
         "examples": [
           {
-            "example": "TempExample_21600",
-            "meaning": ""
+            "example": "Our ancestors migrated to this region thousands of years ago.",
+            "meaning": "우리 조상들은 수천 년 전에 이 지역으로 이주했다."
           }
         ],
-        "meaning": "TempDefinition_216"
+        "meaning": "조상, 선조"
       }
     ]
   },
@@ -3970,14 +3970,14 @@
     "word": "variation",
     "definitions": [
       {
-        "pos": null,
+        "pos": "n.",
         "examples": [
           {
-            "example": "TempExample_21700",
-            "meaning": ""
+            "example": "Genetic variation within a species is essential for evolution.",
+            "meaning": "종 내의 유전적 변이는 진화에 필수적이다."
           }
         ],
-        "meaning": "TempDefinition_217"
+        "meaning": "변화, 변이"
       }
     ]
   },
@@ -3987,14 +3987,14 @@
     "word": "issue",
     "definitions": [
       {
-        "pos": null,
+        "pos": "n.",
         "examples": [
           {
-            "example": "TempExample_21800",
-            "meaning": ""
+            "example": "The committee will address the issue at next week's meeting.",
+            "meaning": "위원회는 다음 주 회의에서 그 문제를 다룰 예정이다."
           }
         ],
-        "meaning": "TempDefinition_218"
+        "meaning": "문제, 쟁점"
       }
     ]
   },
@@ -4004,14 +4004,14 @@
     "word": "remote",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adj.",
         "examples": [
           {
-            "example": "TempExample_21900",
-            "meaning": ""
+            "example": "They live in a remote village in the mountains.",
+            "meaning": "그들은 산속 외딴 마을에 산다."
           }
         ],
-        "meaning": "TempDefinition_219"
+        "meaning": "먼, 외딴"
       }
     ]
   },
@@ -4021,14 +4021,14 @@
     "word": "independently",
     "definitions": [
       {
-        "pos": null,
+        "pos": "adv.",
         "examples": [
           {
-            "example": "TempExample_22000",
-            "meaning": ""
+            "example": "Children should learn to think independently from an early age.",
+            "meaning": "아이들은 어릴 때부터 독립적으로 생각하는 법을 배워야 한다."
           }
         ],
-        "meaning": "TempDefinition_220"
+        "meaning": "독립적으로, 자주적으로"
       }
     ]
   },
@@ -4544,7 +4544,7 @@
         "pos": "v.",
         "examples": [
           {
-            "example": "In 1936, Francisco Franco began the civil war in an effort to seize control of the Spanish gorvenment.",
+            "example": "In 1936, Francisco Franco began the civil war in an effort to seize control of the Spanish government.",
             "meaning": ""
           }
         ],

@@ -469,3 +469,54 @@
   border-top: 1px solid var(--app-border);
   margin: var(--space-3) 0;
 }
+
+/* ===== 예문 번역 카드 (voca_examples_bank) ===== */
+.voca-example-card-block .quiz-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.voca-example-sentence {
+  font-size: var(--quiz-card-fs-default);
+  line-height: 1.6;
+  color: var(--app-text);
+  margin: 0;
+}
+.voca-example-word {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.voca-example-hint {
+  font-size: 0.8rem;
+  color: var(--app-muted);
+}
+.voca-example-translation {
+  font-size: var(--quiz-card-fs-default);
+  line-height: 1.6;
+  color: var(--app-text);
+  margin: 0;
+}
+
+/* 예문 한 번에 보기: 그리드 */
+.voca-examples-bank #quiz-section {
+  display: block;
+}
+.voca-examples-bank .quiz-cards-set.voca-examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+.voca-examples-bank .voca-example-card-block {
+  min-width: 0;
+}
+.voca-example-card-block .quiz-answer-content {
+  background: var(--app-panel-light, var(--app-panel));
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  border-radius: var(--radius-2);
+  border: 1px solid var(--app-border);
+  font-size: var(--quiz-card-fs-default);
+  color: var(--app-text);
+}
