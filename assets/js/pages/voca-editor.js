@@ -12,6 +12,8 @@
 
   /** @type {{book_id:string,title:string,words:Array<any>}} */
   let model = { book_id: "", title: "", words: [] };
+  /** unit 단위로 보기: null = 전체, number = 해당 unit만 */
+  let filterUnit = null;
 
   function deepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
@@ -99,12 +101,43 @@
     el.innerHTML = `<span><b>Words</b>: ${wordCount}</span><span><b>Entries</b>: ${entryCount}</span><span><b>Examples</b>: ${exCount}</span>`;
   }
 
+  function getUniqueUnits() {
+    const set = new Set();
+    model.words.forEach((w) => {
+      const u = Number.isFinite(+w.unit) ? +w.unit : 0;
+      if (u > 0) set.add(u);
+    });
+    return Array.from(set).sort((a, b) => a - b);
+  }
+
+  function fillUnitFilter() {
+    const sel = $("#ve-unit-filter");
+    if (!sel) return;
+    const current = filterUnit != null ? String(filterUnit) : "";
+    const units = getUniqueUnits();
+    sel.innerHTML = "<option value=\"\">전체</option>" + units.map((u) => `<option value="${u}">${u}</option>`).join("");
+    sel.value = current;
+    if (sel.value !== current && units.length) sel.value = units.includes(filterUnit) ? current : "";
+  }
+
   function renderTable() {
     const tbody = $("#ve-tbody");
     if (!tbody) return;
     tbody.innerHTML = "";
 
-    const { rows, wordSpans, entrySpans } = calcRowPlan(model.words);
+    let { rows, wordSpans, entrySpans } = calcRowPlan(model.words);
+
+    if (filterUnit != null) {
+      rows = rows.filter((r) => Number(model.words[r.wIdx].unit) === filterUnit);
+      const wordSpans2 = new Map();
+      const entrySpans2 = new Map();
+      rows.forEach(({ wIdx, eIdx }) => {
+        wordSpans2.set(String(wIdx), (wordSpans2.get(String(wIdx)) || 0) + 1);
+        entrySpans2.set(`${wIdx}|${eIdx}`, (entrySpans2.get(`${wIdx}|${eIdx}`) || 0) + 1);
+      });
+      wordSpans = wordSpans2;
+      entrySpans = entrySpans2;
+    }
 
     const renderedWord = new Set();
     const renderedEntry = new Set();
@@ -152,6 +185,7 @@
       tbody.appendChild(tr);
     });
 
+    fillUnitFilter();
     setStatsUI();
   }
 
@@ -243,6 +277,7 @@
     td.innerHTML = `
       <div class="ve-actions">
         <button type="button" class="ve-mini" data-act="add-entry" data-w="${wIdx}">+</button>
+        <button type="button" class="ve-mini ve-mini--danger" data-act="del-entry" data-w="${wIdx}" data-e="${eIdx}">-</button>
       </div>
     `;
 /**
@@ -409,6 +444,7 @@
 
   function loadModel(raw) {
     model = ensureSchema(raw);
+    filterUnit = null;
     setMetaUI();
     renderTable();
   }
@@ -477,6 +513,15 @@
         } catch (err) {
           alert("현재 voca.json 불러오기 실패: " + err);
         }
+      });
+    }
+
+    const unitFilterEl = $("#ve-unit-filter");
+    if (unitFilterEl) {
+      unitFilterEl.addEventListener("change", () => {
+        const v = unitFilterEl.value;
+        filterUnit = v === "" ? null : (Number(v) || null);
+        renderTable();
       });
     }
 
@@ -581,9 +626,12 @@
       .voca-editor.ve-hide-actions .voca-editor__table .col-actions,
       .voca-editor.ve-hide-actions .voca-editor__table .ve-cell--actions { display: none; }
 
-      .ve-colvis { display:flex; flex-wrap:wrap; gap: 0.6rem; align-items:center; }
-      .ve-colchecks { display:flex; flex-wrap:wrap; gap: 0.55rem; align-items:center; }
-      .ve-radio, .ve-check { display:flex; gap: 0.35rem; align-items:center; color: var(--ve-muted); font-size: 0.85rem; }
+      /* base.css .settings-* 와 통일; 행 레이아웃만 보정 */
+      .voca-editor__unit-row.settings-block--row { justify-content: flex-start; margin-bottom: 0; }
+      .voca-editor__unit-row .settings-select { margin-left: 0; min-width: 5rem; }
+      .voca-editor__colopts .ve-colvis,
+      .voca-editor__colopts .ve-colchecks { display:flex; flex-wrap:wrap; gap: 0.5rem; align-items:center; }
+      .voca-editor__colopts .settings-check-label { color: var(--ve-muted, var(--app-muted)); font-size: var(--fs-2, 0.85rem); }
       @media (max-width: 900px) { .voca-editor__meta-grid { grid-template-columns: 1fr; } .voca-editor__io-row { justify-content:flex-start; } }
     `;
     const style = document.createElement("style");

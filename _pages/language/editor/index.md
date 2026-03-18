@@ -12,27 +12,28 @@ title: Voca JSON Editor
     </div> -->
     <div class="voca-editor__io">
       <div class="voca-editor__io-row">
-        <!-- <label class="voca-editor__label">
-          파일 불러오기
-          <input id="ve-file" type="file" accept="application/json,.json" />
-        </label> -->
-        <!-- <button id="ve-load-default" type="button" class="ve-btn ve-btn--ghost">현재 voca.json 불러오기</button> -->
-        <button id="ve-export" type="button" class="ve-btn ve-btn--primary">export .json</button>
+        <div class="settings-block settings-block--row voca-editor__unit-row">
+          <label class="settings-label" for="ve-unit-filter">Unit</label>
+          <select id="ve-unit-filter" class="settings-select" aria-label="Unit 단위로 보기">
+            <option value="">All</option>
+          </select>
+        </div>
+        <button id="ve-export" type="button" class="ve-btn ve-btn--primary">export</button>
       </div>
-      <div class="voca-editor__io-row" style="justify-content:flex-start;">
+      <div class="voca-editor__io-row voca-editor__colopts">
         <div class="ve-colvis" role="group" aria-label="칼럼 표시 옵션">
-          <label class="ve-radio"><input type="radio" name="ve-colvis" value="show-all"> 모두 보기</label>
-          <label class="ve-radio"><input type="radio" name="ve-colvis" value="custom" checked> 선택</label>
+          <label class="settings-check-label"><input type="radio" name="ve-colvis" value="show-all"> Show all</label>
+          <label class="settings-check-label"><input type="radio" name="ve-colvis" value="custom" checked> Custom</label>
         </div>
         <div class="ve-colchecks" role="group" aria-label="표 칼럼 선택">
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="id" checked> id</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="unit" > unit</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="term" checked> term</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="pos"> pos</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="gloss"> gloss</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="example" checked> example</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="translation"> translation</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="actions" checked> actions</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="id"> id</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="unit"> unit</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="term" checked> term</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="pos" checked> pos</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="gloss" checked> gloss</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="example" > example</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="translation"> translation</label>
+          <label class="settings-check-label"><input type="checkbox" name="ve-col" value="actions" checked> actions</label>
         </div>
       </div>
       <!-- <details class="voca-editor__paste">
