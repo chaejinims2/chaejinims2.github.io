@@ -4,16 +4,29 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  function getDefaultJsonUrl() {
-    const hostEl = document.querySelector(".voca-editor[data-default-json-url]");
-    const injected = hostEl ? hostEl.getAttribute("data-default-json-url") : "";
-    return injected && injected.trim() ? injected.trim() : "/assets/data/cvoca/voca.json";
+  function getEmbeddedWordsPool() {
+    const el = document.getElementById("ve-words-data");
+    if (!el) return null;
+    try {
+      const raw = (el.textContent || "").trim();
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : null;
+    } catch {
+      return null;
+    }
   }
 
   /** @type {{book_id:string,title:string,words:Array<any>}} */
   let model = { book_id: "", title: "", words: [] };
   /** unit 단위로 보기: null = 전체, number = 해당 unit만 */
   let filterUnit = null;
+  /** Start 버튼을 눌러야 로드되는 모드 */
+  let started = false;
+  /** Start 전에도 기억하는 unit 선택값 */
+  let pendingUnit = null;
+  /** @type {any[]|null} */
+  let wordsPool = null;
 
   function deepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
@@ -449,6 +462,78 @@
     renderTable();
   }
 
+  function setUnitEnabled(on) {
+    const unitSel = $("#ve-unit-filter");
+    if (unitSel) unitSel.disabled = !on;
+  }
+
+  function setExportEnabled(on) {
+    const exportBtn = $("#ve-export");
+    if (exportBtn) exportBtn.disabled = !on;
+  }
+
+  function getSelectedSubject() {
+    const sel = $("#ve-book-filter");
+    if (!sel) return null;
+    const opt = sel.selectedOptions && sel.selectedOptions[0] ? sel.selectedOptions[0] : null;
+    if (!opt) return null;
+    const bookId = String(opt.value || "");
+    const title = String(opt.getAttribute("data-title") || opt.textContent || "");
+    const start = Number(opt.getAttribute("data-words-start"));
+    const end = Number(opt.getAttribute("data-words-end"));
+    const hasRange = Number.isFinite(start) && Number.isFinite(end);
+    return { book_id: bookId, title, words_range: hasRange ? [start, end] : null };
+  }
+
+  function fillUnitOptionsFromBook() {
+    const bookSel = $("#ve-book-filter");
+    const unitSel = $("#ve-unit-filter");
+    if (!bookSel || !unitSel) return;
+    const opt = bookSel.selectedOptions && bookSel.selectedOptions[0] ? bookSel.selectedOptions[0] : null;
+    const unitCount = opt ? Number(opt.getAttribute("data-unit-number")) : NaN;
+    const current = pendingUnit != null ? String(pendingUnit) : "";
+    if (Number.isFinite(unitCount) && unitCount > 0) {
+      const opts = [`<option value="">All</option>`];
+      for (let i = 1; i <= unitCount; i += 1) opts.push(`<option value="${i}">${i}</option>`);
+      unitSel.innerHTML = opts.join("");
+      unitSel.value = current;
+      if (unitSel.value !== current) unitSel.value = "";
+    } else {
+      unitSel.innerHTML = `<option value="">All</option>`;
+      unitSel.value = "";
+      pendingUnit = null;
+    }
+  }
+
+  function pickWordsForSubject(subj) {
+    if (!subj) return [];
+    const range = Array.isArray(subj.words_range) ? subj.words_range : null;
+    const pool = Array.isArray(wordsPool) ? wordsPool : [];
+    if (!range || range.length !== 2) return pool;
+    const [start, end] = range;
+    const a = Number(start);
+    const b = Number(end);
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return pool;
+    const lo = Math.min(a, b);
+    const hi = Math.max(a, b);
+    // words.json의 각 항목은 {id, ...} 형태이므로 id로 필터링
+    return pool.filter((w) => {
+      const id = Number(w && w.id);
+      return Number.isFinite(id) && id >= lo && id <= hi;
+    });
+  }
+
+  function applySubject(subj) {
+    if (!subj || !subj.book_id) return;
+    const words = pickWordsForSubject(subj);
+    loadModel({ book_id: subj.book_id, title: String(subj.title || ""), words });
+    // unit 필터는 subject 로드 후 적용 (loadModel이 filterUnit을 초기화함)
+    filterUnit = pendingUnit;
+    renderTable();
+    setUnitEnabled(true);
+    setExportEnabled(true);
+  }
+
   function bindUI() {
     const fileEl = $("#ve-file");
     const loadTextBtn = $("#ve-load-text");
@@ -460,11 +545,43 @@
     const copyBtn = $("#ve-copy-json");
     const bookIdEl = $("#ve-book-id");
     const titleEl = $("#ve-title");
+    const bookFilterEl = $("#ve-book-filter");
+    const startBtn = $("#ve-start-btn");
     const colvisRadios = $$("input[name='ve-colvis']");
     const colChecks = $$("input[name='ve-col']");
 
     if (bookIdEl) bookIdEl.addEventListener("change", () => { model.book_id = bookIdEl.value; });
     if (titleEl) titleEl.addEventListener("change", () => { model.title = titleEl.value; });
+
+    if (bookFilterEl) {
+      bookFilterEl.addEventListener("change", async () => {
+        // book 변경 시 unit 옵션을 즉시 갱신 (Start 전에도 가능)
+        fillUnitOptionsFromBook();
+        // Start 전에는 선택만 바꾸고 로드는 하지 않음
+        if (!started) return;
+        const subj = getSelectedSubject();
+        if (!subj || !subj.book_id) return;
+        if (!Array.isArray(wordsPool)) wordsPool = getEmbeddedWordsPool();
+        if (!Array.isArray(wordsPool)) return;
+        applySubject(subj);
+      });
+    }
+
+    if (startBtn) {
+      startBtn.addEventListener("click", async () => {
+        if (started) return;
+        started = true;
+        setExportEnabled(false);
+        try {
+          if (!Array.isArray(wordsPool)) wordsPool = getEmbeddedWordsPool();
+          if (!Array.isArray(wordsPool)) throw new Error("embedded words missing");
+          const subj = getSelectedSubject();
+          if (subj && subj.book_id) applySubject(subj);
+        } catch (err) {
+          console.warn("start-load failed:", err);
+        }
+      });
+    }
 
     if (fileEl) {
       fileEl.addEventListener("change", async () => {
@@ -505,22 +622,15 @@
     if (addWordBtn) addWordBtn.addEventListener("click", addWord);
     if (reindexBtn) reindexBtn.addEventListener("click", () => reindexIdsUnits(true));
 
-    if (loadDefaultBtn) {
-      loadDefaultBtn.addEventListener("click", async () => {
-        try {
-          const raw = await loadFromUrl(getDefaultJsonUrl());
-          loadModel(raw);
-        } catch (err) {
-          alert("현재 voca.json 불러오기 실패: " + err);
-        }
-      });
-    }
+    // load-default 버튼은 더 이상 사용하지 않음(브라우저에서 _data 접근 불가)
 
     const unitFilterEl = $("#ve-unit-filter");
     if (unitFilterEl) {
       unitFilterEl.addEventListener("change", () => {
         const v = unitFilterEl.value;
-        filterUnit = v === "" ? null : (Number(v) || null);
+        pendingUnit = v === "" ? null : (Number(v) || null);
+        if (!started) return;
+        filterUnit = pendingUnit;
         renderTable();
       });
     }
@@ -566,99 +676,25 @@
     syncFromChecks();
   }
 
-  function injectCss() {
-    // page 단독으로도 동작하도록 최소 스타일은 JS에서 주입 (quiz.css와 충돌 최소화)
-    const css = `
-      .voca-editor { --ve-bg: var(--app-bg, #0f1116); --ve-panel: var(--app-panel, #151923); --ve-border: var(--app-border, rgba(255,255,255,0.12)); --ve-text: var(--app-text, rgba(255,255,255,0.92)); --ve-muted: var(--app-muted, rgba(255,255,255,0.7)); --ve-accent: var(--accent, #7c5cff); color: var(--ve-text); }
-      .voca-editor__top { display:flex; flex-wrap:wrap; gap: 1rem; align-items:flex-start; justify-content:space-between; margin-bottom: 1rem; }
-      .voca-editor__title { min-width: 280px; flex: 1; }
-      .voca-editor__h { margin: 0 0 0.25rem; font-size: 1.2rem; letter-spacing: -0.02em; }
-      .voca-editor__sub { margin: 0; color: var(--ve-muted); font-size: 0.9rem; }
-      .voca-editor__io { min-width: 320px; flex: 1; }
-      .voca-editor__io-row { display:flex; flex-wrap:wrap; gap: 0.5rem; align-items:center; justify-content:flex-end; }
-      .voca-editor__label { display:flex; gap:0.5rem; align-items:center; padding: 0.4rem 0.6rem; border: 1px solid var(--ve-border); border-radius: 10px; background: color-mix(in srgb, var(--ve-panel) 92%, transparent); }
-      .voca-editor__label input[type=file] { max-width: 220px; }
-      .voca-editor__paste { margin-top: 0.75rem; border: 1px solid var(--ve-border); border-radius: 12px; background: color-mix(in srgb, var(--ve-panel) 92%, transparent); padding: 0.5rem 0.75rem; }
-      .voca-editor__paste summary { cursor: pointer; color: var(--ve-muted); }
-      .voca-editor__textarea { width: 100%; box-sizing: border-box; margin-top: 0.5rem; background: #0b0d12; color: var(--ve-text); border: 1px solid var(--ve-border); border-radius: 10px; padding: 0.75rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; font-size: 0.85rem; }
-      .voca-editor__paste-actions { display:flex; gap: 0.5rem; justify-content:flex-end; margin-top: 0.5rem; }
-      .voca-editor__meta { border: 1px solid var(--ve-border); border-radius: 14px; background: color-mix(in srgb, var(--ve-panel) 92%, transparent); padding: 0.75rem; margin-bottom: 1rem; }
-      .voca-editor__meta-grid { display:grid; grid-template-columns: 1fr 1fr auto; gap: 0.75rem; align-items:end; }
-      .voca-editor__field span { display:block; font-size: 0.8rem; color: var(--ve-muted); margin-bottom: 0.35rem; }
-      .voca-editor__meta-actions { display:flex; gap: 0.5rem; justify-content:flex-end; flex-wrap:wrap; }
-      .voca-editor__stats { display:flex; gap: 1rem; flex-wrap:wrap; margin-top: 0.6rem; color: var(--ve-muted); font-size: 0.9rem; }
-      .voca-editor__table-wrap { overflow:auto; border: 1px solid var(--ve-border); border-radius: 14px; background: color-mix(in srgb, var(--ve-panel) 92%, transparent); }
-      .voca-editor__table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 980px; }
-      .voca-editor__table thead th { position: sticky; top: 0; z-index: 2; background: #0b0d12; color: var(--ve-muted); font-weight: 600; text-align: left; font-size: 0.8rem; padding: 0.6rem 0.6rem; border-bottom: 1px solid var(--ve-border); }
-      .voca-editor__table tbody td { vertical-align: top; padding: 0.5rem 0.6rem; border-bottom: 1px solid color-mix(in srgb, var(--ve-border) 60%, transparent); }
-      .voca-editor__table tbody tr:hover td { background: color-mix(in srgb, var(--ve-accent) 6%, transparent); }
-      .col-id { width: 1.5rem; } .col-unit { width: 1.5rem; } .col-term { width: 1%; } .col-pos { width: 5rem; } .col-gloss { width: 10rem; }
-      .col-ex-text { width: 20rem; } .col-ex-tr { width: 20rem; } .col-actions { width: 1rem; }
-      .ve-input { width: 100%; box-sizing: border-box; padding: 0.45rem 0.55rem; border-radius: 10px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); }
-      .ve-input--cell[type=number] { text-align: right; }
-      .ve-select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--ve-muted) 50%), linear-gradient(135deg, var(--ve-muted) 50%, transparent 50%); background-position: calc(100% - 16px) calc(50% - 2px), calc(100% - 11px) calc(50% - 2px); background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 2rem; }
-      .ve-textarea { width: 100%; box-sizing: border-box; height: 2.15rem; resize: vertical; padding: 0.45rem 0.55rem; border-radius: 10px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); line-height: 1.35; }
-      .ve-cell--readonly { color: var(--ve-muted); }
-      .ve-readonly { padding: 0.45rem 0.15rem; font-variant-numeric: tabular-nums; }
-      /* term 컬럼은 내용(단어) 폭에 맞춰 수축 */
-      .voca-editor__table .ve-cell--term .ve-readonly { display: inline-block; white-space: nowrap; }
-      .ve-actions { display:flex; flex-wrap:wrap; gap: 0.35rem; justify-content:flex-start; }
-      .ve-btn { padding: 0.55rem 0.8rem; border-radius: 12px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); cursor: pointer; }
-      .ve-btn--primary { background: var(--ve-accent); border-color: color-mix(in srgb, var(--ve-accent) 70%, black); color: #0b0d12; font-weight: 700; }
-      .ve-btn--ghost { background: transparent; }
-      .ve-mini { padding: 0.35rem 0.5rem; border-radius: 10px; border: 1px solid var(--ve-border); background: #0b0d12; color: var(--ve-text); cursor: pointer; font-size: 0.78rem; }
-      .ve-mini--danger { border-color: color-mix(in srgb, #ff4d4d 55%, var(--ve-border)); color: #ffb0b0; }
-      /* 칼럼 숨김 토글 */
-      .voca-editor.ve-hide-id .voca-editor__table .col-id,
-      .voca-editor.ve-hide-id .voca-editor__table .ve-cell--id { display: none; }
-      .voca-editor.ve-hide-unit .voca-editor__table .col-unit,
-      .voca-editor.ve-hide-unit .voca-editor__table .ve-cell--unit { display: none; }
-      .voca-editor.ve-hide-term .voca-editor__table .col-term,
-      .voca-editor.ve-hide-term .voca-editor__table .ve-cell--term { display: none; }
-      .voca-editor.ve-hide-pos .voca-editor__table .col-pos,
-      .voca-editor.ve-hide-pos .voca-editor__table .ve-cell--pos { display: none; }
-      .voca-editor.ve-hide-gloss .voca-editor__table .col-gloss,
-      .voca-editor.ve-hide-gloss .voca-editor__table .ve-cell--gloss { display: none; }
-      .voca-editor.ve-hide-example .voca-editor__table .col-ex-text,
-      .voca-editor.ve-hide-example .voca-editor__table .ve-cell--example { display: none; }
-      .voca-editor.ve-hide-translation .voca-editor__table .col-ex-tr,
-      .voca-editor.ve-hide-translation .voca-editor__table .ve-cell--translation { display: none; }
-      .voca-editor.ve-hide-actions .voca-editor__table .col-actions,
-      .voca-editor.ve-hide-actions .voca-editor__table .ve-cell--actions { display: none; }
-
-      /* base.css .settings-* 와 통일; 행 레이아웃만 보정 */
-      .voca-editor__unit-row.settings-block--row { justify-content: flex-start; margin-bottom: 0; }
-      .voca-editor__unit-row .settings-select { margin-left: 0; min-width: 5rem; }
-      .voca-editor__colopts .ve-colvis,
-      .voca-editor__colopts .ve-colchecks { display:flex; flex-wrap:wrap; gap: 0.5rem; align-items:center; }
-      .voca-editor__colopts .settings-check-label { color: var(--ve-muted, var(--app-muted)); font-size: var(--fs-2, 0.85rem); }
-      @media (max-width: 900px) { .voca-editor__meta-grid { grid-template-columns: 1fr; } .voca-editor__io-row { justify-content:flex-start; } }
-    `;
-    const style = document.createElement("style");
-    style.setAttribute("data-voca-editor-style", "1");
-    style.textContent = css;
-    document.head.appendChild(style);
-  }
-
   function init() {
+    const host = document.querySelector(".voca-editor");
+    if (host && host.dataset.veInited === "1") return;
     const tbody = $("#ve-tbody");
     if (!tbody) return; // not on this page
-    injectCss();
+    if (host) host.dataset.veInited = "1";
     bindUI();
 
-    // 기본으로 voca.json 자동 로드 (실패 시 빈 스키마)
+    // Start 버튼을 누르기 전까지는 데이터 로드를 하지 않는다.
+    started = false;
+    pendingUnit = null;
+    setExportEnabled(false);
+    setUnitEnabled(true);
+    fillUnitOptionsFromBook();
     loadModel({ book_id: "", title: "", words: [] });
-    (async () => {
-      try {
-        const raw = await loadFromUrl(getDefaultJsonUrl());
-        loadModel(raw);
-      } catch (err) {
-        // 자동 로드는 실패해도 편집기는 사용 가능해야 함
-        // (예: 로컬 파일/붙여넣기 로드)
-        console.warn("default voca.json auto-load failed:", err);
-      }
-    })();
   }
+
+  // PJAX 전환 후 재초기화를 위해 노출
+  window.initVocaEditorPage = init;
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

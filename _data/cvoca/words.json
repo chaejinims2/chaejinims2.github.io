@@ -1,7 +1,4 @@
-{
-  "book_id": "IELTS_VOCA_20_30",
-  "title": "IELTS 영어 단어장",
-  "words": [
+[
     {
       "id": 1,
       "unit": 1,
@@ -25,7 +22,7 @@
       "term": "immediate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "즉각적인, 직접적인",
           "examples": [
             {
@@ -69,7 +66,7 @@
       "term": "party",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "일행, 무리, 정당",
           "examples": [
             {
@@ -86,7 +83,7 @@
       "term": "regarding",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "prep.",
           "gloss": "~에 관하여, ~관한",
           "examples": [
             {
@@ -113,7 +110,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "피해, 손해",
           "examples": [
             {
@@ -130,7 +127,7 @@
       "term": "objective",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "목적, 목표",
           "examples": [
             {
@@ -140,7 +137,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "객관적인",
           "examples": [
             {
@@ -157,7 +154,7 @@
       "term": "mammal",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "포유동물",
           "examples": [
             {
@@ -174,7 +171,7 @@
       "term": "critical",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "잠재적으로 대단히 중요한",
           "examples": [
             {
@@ -191,7 +188,7 @@
       "term": "precious",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "귀한, 값비싼",
           "examples": [
             {
@@ -208,7 +205,7 @@
       "term": "obstacle",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "장애물",
           "examples": [
             {
@@ -225,7 +222,7 @@
       "term": "commission",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "의뢰, 위탁된 일을 맡은",
           "examples": [
             {
@@ -276,7 +273,7 @@
       "term": "conflict",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "갈등, 충돌",
           "examples": [
             {
@@ -310,7 +307,7 @@
       "term": "livestock",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "가축",
           "examples": [
             {
@@ -327,7 +324,7 @@
       "term": "advanced",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "고도의, 상급의, 선진의",
           "examples": [
             {
@@ -344,7 +341,7 @@
       "term": "keen",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "열을 올리고 있는, 열정적인",
           "examples": [
             {
@@ -361,7 +358,7 @@
       "term": "derelict",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "버려진, 방치된",
           "examples": [
             {
@@ -395,7 +392,7 @@
       "term": "attention",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "주의, 주목, 관심",
           "examples": [
             {
@@ -412,7 +409,7 @@
       "term": "concession",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "양보",
           "examples": [
             {
@@ -422,7 +419,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "할인",
           "examples": [
             {
@@ -490,7 +487,7 @@
       "term": "query",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "질문, 문의",
           "examples": [
             {
@@ -507,7 +504,7 @@
       "term": "scheme",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "계획, 제도",
           "examples": [
             {
@@ -524,7 +521,7 @@
       "term": "fort",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "요새",
           "examples": [
             {
@@ -541,7 +538,7 @@
       "term": "fabulous",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "기막히게 멋진",
           "examples": [
             {
@@ -558,7 +555,7 @@
       "term": "hierarchy",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "계급, 서열",
           "examples": [
             {
@@ -585,7 +582,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "힘든 일, 다툼",
           "examples": [
             {
@@ -602,7 +599,7 @@
       "term": "vivid",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "생생한, 활발한",
           "examples": [
             {
@@ -619,7 +616,7 @@
       "term": "explosive",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "폭발적으로 증가하는, 폭발적인",
           "examples": [
             {
@@ -629,7 +626,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "폭발물, 폭발",
           "examples": [
             {
@@ -656,7 +653,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "속성, 특징",
           "examples": [
             {
@@ -673,7 +670,7 @@
       "term": "controlled",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "통제된, 조절된",
           "examples": [
             {
@@ -690,7 +687,7 @@
       "term": "costly",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "많은 비용이 드는, 비싼",
           "examples": [
             {
@@ -741,7 +738,7 @@
       "term": "restriction",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "제한, 규제",
           "examples": [
             {
@@ -775,7 +772,7 @@
       "term": "fatal",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "치명적인, 죽음을 초래하는",
           "examples": [
             {
@@ -792,7 +789,7 @@
       "term": "efficiency",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "효율성, 능률",
           "examples": [
             {
@@ -809,7 +806,7 @@
       "term": "equivalent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "상응하는 것",
           "examples": [
             {
@@ -826,7 +823,7 @@
       "term": "domestic",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "국내의, 가정용의, 집안의",
           "examples": [
             {
@@ -843,7 +840,7 @@
       "term": "intuitive",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "직관적인",
           "examples": [
             {
@@ -938,7 +935,7 @@
       "term": "abundant",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "풍부한",
           "examples": [
             {
@@ -1033,7 +1030,7 @@
       "term": "aspiration",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "열망, 포부",
           "examples": [
             {
@@ -1050,7 +1047,7 @@
       "term": "merely",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "단지, 그저",
           "examples": [
             {
@@ -1077,7 +1074,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "감소, 하락",
           "examples": [
             {
@@ -1121,7 +1118,7 @@
       "term": "regardless of",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "prep.",
           "gloss": "~에 상관없이",
           "examples": [
             {
@@ -1189,7 +1186,7 @@
       "term": "threat",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "위협",
           "examples": [
             {
@@ -1206,7 +1203,7 @@
       "term": "pupil",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "학생, 눈동자(동공)",
           "examples": [
             {
@@ -1274,7 +1271,7 @@
       "term": "continent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "대륙",
           "examples": [
             {
@@ -1325,7 +1322,7 @@
       "term": "skeptical",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "회의적인, 의심 많은",
           "examples": [
             {
@@ -1342,7 +1339,7 @@
       "term": "artificial",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "인공적인, 인조의",
           "examples": [
             {
@@ -1359,7 +1356,7 @@
       "term": "fascinate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "대단히 흥미로운",
           "examples": [
             {
@@ -1376,7 +1373,7 @@
       "term": "effect",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "영향, 효과",
           "examples": [
             {
@@ -1393,7 +1390,7 @@
       "term": "damage",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "손상, 피해",
           "examples": [
             {
@@ -1436,7 +1433,7 @@
       "term": "practice",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "실행, 관행",
           "examples": [
             {
@@ -1446,7 +1443,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "연습, 실습",
           "examples": [
             {
@@ -1463,7 +1460,7 @@
       "term": "beneficial",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "유익한",
           "examples": [
             {
@@ -1480,7 +1477,7 @@
       "term": "invariably",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "변함없이, 예외 없이",
           "examples": [
             {
@@ -1497,7 +1494,7 @@
       "term": "robust",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "튼튼한, 원기왕성한",
           "examples": [
             {
@@ -1514,7 +1511,7 @@
       "term": "due",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "~하기로 예정 되어 있는",
           "examples": [
             {
@@ -1524,7 +1521,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "지불 기일이 된",
           "examples": [
             {
@@ -1575,7 +1572,7 @@
       "term": "risk",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "위험, 위험 요인",
           "examples": [
             {
@@ -1592,7 +1589,7 @@
       "term": "permanent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "영구적인",
           "examples": [
             {
@@ -1643,7 +1640,7 @@
       "term": "subsequent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "뒤의, 그 이후의",
           "examples": [
             {
@@ -1670,7 +1667,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "지난",
           "examples": [
             {
@@ -1687,7 +1684,7 @@
       "term": "deliberate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "고의적인, 계획적인",
           "examples": [
             {
@@ -1704,7 +1701,7 @@
       "term": "odour",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "(불쾌한) 냄새",
           "examples": [
             {
@@ -1721,7 +1718,7 @@
       "term": "predator",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "포식동물, 포식자",
           "examples": [
             {
@@ -1799,7 +1796,7 @@
       "term": "crucial",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "중대한, 결정적인",
           "examples": [
             {
@@ -1816,7 +1813,7 @@
       "term": "shelter",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "피신처, 쉼터",
           "examples": [
             {
@@ -1843,7 +1840,7 @@
       "term": "archaeology",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "고고학",
           "examples": [
             {
@@ -1860,7 +1857,7 @@
       "term": "indigenous",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "토착의, 그 지역 고유의",
           "examples": [
             {
@@ -1877,7 +1874,7 @@
       "term": "voluntary",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "자발적인, 자원봉사로 하는",
           "examples": [
             {
@@ -1894,7 +1891,7 @@
       "term": "rainfall",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "강우량",
           "examples": [
             {
@@ -1911,7 +1908,7 @@
       "term": "property",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "소유물, 재산, 건물",
           "examples": [
             {
@@ -1921,7 +1918,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "속성, 특징",
           "examples": [
             {
@@ -1938,7 +1935,7 @@
       "term": "retrieval",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "회수, 인출",
           "examples": [
             {
@@ -1955,7 +1952,7 @@
       "term": "certain",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "특정한, 확신하는",
           "examples": [
             {
@@ -1989,7 +1986,7 @@
       "term": "subsidiary",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "부수적인",
           "examples": [
             {
@@ -2033,7 +2030,7 @@
       "term": "evolutionary",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "진화의, 진화적인",
           "examples": [
             {
@@ -2050,7 +2047,7 @@
       "term": "award",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "상, 공로",
           "examples": [
             {
@@ -2345,7 +2342,7 @@
       "term": "benefit",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "이익, 수당",
           "examples": [
             {
@@ -2389,7 +2386,7 @@
       "term": "herd",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "떼, 무리, 사람들",
           "examples": [
             {
@@ -2406,7 +2403,7 @@
       "term": "civil",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "시민의, 문명의",
           "examples": [
             {
@@ -2423,7 +2420,7 @@
       "term": "halt",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "중단",
           "examples": [
             {
@@ -2467,7 +2464,7 @@
       "term": "breeding",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "사육, 번식",
           "examples": [
             {
@@ -2511,7 +2508,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "안심하는",
           "examples": [
             {
@@ -2528,7 +2525,7 @@
       "term": "disabled",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "장애를 가진",
           "examples": [
             {
@@ -2643,7 +2640,7 @@
       "term": "profound",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "엄청난",
           "examples": [
             {
@@ -2660,7 +2657,7 @@
       "term": "obvious",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "분명한, 명백한",
           "examples": [
             {
@@ -2677,7 +2674,7 @@
       "term": "irrigation",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "관개",
           "examples": [
             {
@@ -2711,7 +2708,7 @@
       "term": "steadily",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "안정적으로",
           "examples": [
             {
@@ -2728,7 +2725,7 @@
       "term": "cultivation",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "경작",
           "examples": [
             {
@@ -2806,7 +2803,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "알리다, 알림",
           "examples": [
             {
@@ -2840,7 +2837,7 @@
       "term": "means",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "수단, 방법",
           "examples": [
             {
@@ -2857,7 +2854,7 @@
       "term": "intrusion",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "침입, 방해",
           "examples": [
             {
@@ -2874,7 +2871,7 @@
       "term": "hollow",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "속이 비어 있는",
           "examples": [
             {
@@ -2891,7 +2888,7 @@
       "term": "distribution",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "분배, 유통",
           "examples": [
             {
@@ -2908,7 +2905,7 @@
       "term": "rarely",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "거의 ~ 않는",
           "examples": [
             {
@@ -2969,7 +2966,7 @@
       "term": "initial",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "처음의, 최초의",
           "examples": [
             {
@@ -2986,7 +2983,7 @@
       "term": "precise",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "정확한",
           "examples": [
             {
@@ -3030,7 +3027,7 @@
       "term": "flexible",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "유연한",
           "examples": [
             {
@@ -3047,7 +3044,7 @@
       "term": "arrangement",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "준비, 주선",
           "examples": [
             {
@@ -3064,7 +3061,7 @@
       "term": "inherently",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "선천적으로, 본질적으로",
           "examples": [
             {
@@ -3081,7 +3078,7 @@
       "term": "estrangement",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "관계의 소원",
           "examples": [
             {
@@ -3098,7 +3095,7 @@
       "term": "seriously",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "심각하게, 진지하게",
           "examples": [
             {
@@ -3115,7 +3112,7 @@
       "term": "official",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "공식적인",
           "examples": [
             {
@@ -3125,7 +3122,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "공무원, 관리",
           "examples": [
             {
@@ -3142,7 +3139,7 @@
       "term": "isolated",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "고립된, 외딴",
           "examples": [
             {
@@ -3220,7 +3217,7 @@
       "term": "populated",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "거주중인, 살고 있는",
           "examples": [
             {
@@ -3237,7 +3234,7 @@
       "term": "dependent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "좌우되는, 의존적인",
           "examples": [
             {
@@ -3254,7 +3251,7 @@
       "term": "eruption",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "분출, 화산의 폭발",
           "examples": [
             {
@@ -3271,7 +3268,7 @@
       "term": "virtually",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "거의, 사실상",
           "examples": [
             {
@@ -3288,7 +3285,7 @@
       "term": "severe",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "심각한, 극심한",
           "examples": [
             {
@@ -3305,7 +3302,7 @@
       "term": "capacity",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "최대 수용량",
           "examples": [
             {
@@ -3322,7 +3319,7 @@
       "term": "vertical",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "수직의",
           "examples": [
             {
@@ -3339,7 +3336,7 @@
       "term": "erosion",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "침식",
           "examples": [
             {
@@ -3356,7 +3353,7 @@
       "term": "deficit",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "부족, 결함, 적자",
           "examples": [
             {
@@ -3373,7 +3370,7 @@
       "term": "remains",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "남은것, 유적, 유해, 유물",
           "examples": [
             {
@@ -3390,7 +3387,7 @@
       "term": "eager",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "열렬한, 열망하는",
           "examples": [
             {
@@ -3407,7 +3404,7 @@
       "term": "entire",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "전체의",
           "examples": [
             {
@@ -3434,7 +3431,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "요금",
           "examples": [
             {
@@ -3451,7 +3448,7 @@
       "term": "irritation",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "피부 자극, 짜증",
           "examples": [
             {
@@ -3648,7 +3645,7 @@
       "term": "periodical",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "정기 간행물",
           "examples": [
             {
@@ -3665,7 +3662,7 @@
       "term": "intricate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "(정교하게) 복잡한",
           "examples": [
             {
@@ -3699,7 +3696,7 @@
       "term": "altogether",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "완전히, 전부",
           "examples": [
             {
@@ -3726,7 +3723,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "덫, 함정",
           "examples": [
             {
@@ -3743,7 +3740,7 @@
       "term": "occupational",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "직업의, 직업과 관련된",
           "examples": [
             {
@@ -3777,7 +3774,7 @@
       "term": "demanding",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "요구가 많은, 힘든",
           "examples": [
             {
@@ -3794,7 +3791,7 @@
       "term": "remarkable",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "놀랄 만한, 주목할 만한",
           "examples": [
             {
@@ -3913,7 +3910,7 @@
       "term": "damp",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "축축한",
           "examples": [
             {
@@ -3930,7 +3927,7 @@
       "term": "figure",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "수치",
           "examples": [
             {
@@ -3940,7 +3937,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "~일 것이라고 생각하다",
           "examples": [
             {
@@ -3957,7 +3954,7 @@
       "term": "provision",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "제공, 공급품",
           "examples": [
             {
@@ -3991,7 +3988,7 @@
       "term": "hazard",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "위험",
           "examples": [
             {
@@ -4069,7 +4066,7 @@
       "term": "agriculture",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "농업",
           "examples": [
             {
@@ -4103,7 +4100,7 @@
       "term": "evidence",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "증거",
           "examples": [
             {
@@ -4120,7 +4117,7 @@
       "term": "appropriate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "적절한",
           "examples": [
             {
@@ -4137,7 +4134,7 @@
       "term": "confidential",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "기밀의",
           "examples": [
             {
@@ -4154,7 +4151,7 @@
       "term": "conclusively",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "결정적으로, 확실하게",
           "examples": [
             {
@@ -4171,7 +4168,7 @@
       "term": "rather",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "대신에, 오히려",
           "examples": [
             {
@@ -4181,7 +4178,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "꽤",
           "examples": [
             {
@@ -4232,7 +4229,7 @@
       "term": "parasite",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "기생물",
           "examples": [
             {
@@ -4266,7 +4263,7 @@
       "term": "migration",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "이주, 이민",
           "examples": [
             {
@@ -4317,7 +4314,7 @@
       "term": "exposure",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "노출",
           "examples": [
             {
@@ -4334,7 +4331,7 @@
       "term": "thereby",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "그렇게 함으로써, 그로인해",
           "examples": [
             {
@@ -4351,7 +4348,7 @@
       "term": "creature",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "생물",
           "examples": [
             {
@@ -4368,7 +4365,7 @@
       "term": "race",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "종, 인종, 민족",
           "examples": [
             {
@@ -4378,7 +4375,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "경주",
           "examples": [
             {
@@ -4395,7 +4392,7 @@
       "term": "inevitable",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "불가피한",
           "examples": [
             {
@@ -4412,7 +4409,7 @@
       "term": "designed",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "고안된, 설계된",
           "examples": [
             {
@@ -4429,7 +4426,7 @@
       "term": "legitimate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "합법적인, 정당한",
           "examples": [
             {
@@ -4446,7 +4443,7 @@
       "term": "reliable",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "신뢰할 수 있는, 확실한",
           "examples": [
             {
@@ -4463,7 +4460,7 @@
       "term": "conscious",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "의도적인, 자각하고 있는",
           "examples": [
             {
@@ -4517,7 +4514,7 @@
       "term": "irreversible",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "되돌릴 수 없는",
           "examples": [
             {
@@ -4534,7 +4531,7 @@
       "term": "artefact",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "유물",
           "examples": [
             {
@@ -4551,7 +4548,7 @@
       "term": "confinement",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "감금",
           "examples": [
             {
@@ -4612,7 +4609,7 @@
       "term": "cell",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "세포",
           "examples": [
             {
@@ -4639,7 +4636,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "더 낮은",
           "examples": [
             {
@@ -4656,7 +4653,7 @@
       "term": "challenging",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "도전적인, 힘든",
           "examples": [
             {
@@ -4673,7 +4670,7 @@
       "term": "conviction",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "확신, 신념",
           "examples": [
             {
@@ -4690,7 +4687,7 @@
       "term": "educated",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "교육을 받은",
           "examples": [
             {
@@ -4707,7 +4704,7 @@
       "term": "accurate",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "정확한",
           "examples": [
             {
@@ -4724,7 +4721,7 @@
       "term": "corridor",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "복도, 통로",
           "examples": [
             {
@@ -4741,7 +4738,7 @@
       "term": "mass",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "덩어리, 질량",
           "examples": [
             {
@@ -4751,7 +4748,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "대중",
           "examples": [
             {
@@ -4768,7 +4765,7 @@
       "term": "extinct",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "멸종된, 사라진",
           "examples": [
             {
@@ -4778,7 +4775,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "특정한, 특별한",
           "examples": [
             {
@@ -4805,7 +4802,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "상세, 자세한 사실",
           "examples": [
             {
@@ -4839,7 +4836,7 @@
       "term": "extent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "정도, 규모",
           "examples": [
             {
@@ -4873,7 +4870,7 @@
       "term": "reasoning",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "추론, 논리, 이유",
           "examples": [
             {
@@ -4907,7 +4904,7 @@
       "term": "recognition",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "인정",
           "examples": [
             {
@@ -4917,7 +4914,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "인식, 알아 봄",
           "examples": [
             {
@@ -4951,7 +4948,7 @@
       "term": "famine",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "기근, 굶주림",
           "examples": [
             {
@@ -4968,7 +4965,7 @@
       "term": "storey",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "(건물의) 층",
           "examples": [
             {
@@ -4985,7 +4982,7 @@
       "term": "aim",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "목표",
           "examples": [
             {
@@ -5012,7 +5009,7 @@
       "term": "venue",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "장소",
           "examples": [
             {
@@ -5063,7 +5060,7 @@
       "term": "competitive",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "경쟁을 하는",
           "examples": [
             {
@@ -5073,7 +5070,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "경쟁력 있는, (가성비에서) 뒤지지 않는",
           "examples": [
             {
@@ -5090,7 +5087,7 @@
       "term": "whilst",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "~하는 동안",
           "examples": [
             {
@@ -5161,7 +5158,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "(작은 구획의) 땅, 토지",
           "examples": [
             {
@@ -5178,7 +5175,7 @@
       "term": "core",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "핵심",
           "examples": [
             {
@@ -5195,7 +5192,7 @@
       "term": "retrenchment",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "긴축, 경비 절감",
           "examples": [
             {
@@ -5212,7 +5209,7 @@
       "term": "dominant",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "우세한, 지배적인",
           "examples": [
             {
@@ -5229,7 +5226,7 @@
       "term": "obligation",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "의무",
           "examples": [
             {
@@ -5246,7 +5243,7 @@
       "term": "ideal",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "가장 알맞은, 이상적인",
           "examples": [
             {
@@ -5263,7 +5260,7 @@
       "term": "oblivious",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "의식하지 못하는",
           "examples": [
             {
@@ -5280,7 +5277,7 @@
       "term": "context",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "맥락, 정황, 배경",
           "examples": [
             {
@@ -5314,7 +5311,7 @@
       "term": "inextricably",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "(처리해야 할)문제",
           "examples": [
             {
@@ -5324,7 +5321,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "불가분하게",
           "examples": [
             {
@@ -5341,7 +5338,7 @@
       "term": "reel",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "(필름이나 실, 전성 등을 감는 원통형의) 릴, 실패",
           "examples": [
             {
@@ -5358,7 +5355,7 @@
       "term": "envy",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "부러움",
           "examples": [
             {
@@ -5375,7 +5372,7 @@
       "term": "reptile",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "파충류",
           "examples": [
             {
@@ -5392,7 +5389,7 @@
       "term": "distorted",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "왜곡된",
           "examples": [
             {
@@ -5409,7 +5406,7 @@
       "term": "widespread",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "널리 퍼진",
           "examples": [
             {
@@ -5436,7 +5433,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "성공",
           "examples": [
             {
@@ -5470,7 +5467,7 @@
       "term": "marked",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "뚜렷한, 표시되어 있는",
           "examples": [
             {
@@ -5487,7 +5484,7 @@
       "term": "properly",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "적절하게",
           "examples": [
             {
@@ -5504,7 +5501,7 @@
       "term": "revelation",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "폭로, 드러냄",
           "examples": [
             {
@@ -5521,7 +5518,7 @@
       "term": "prevailing",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "(특정시기에) 우세한, 지배적인",
           "examples": [
             {
@@ -5538,7 +5535,7 @@
       "term": "feature",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "특징",
           "examples": [
             {
@@ -5565,7 +5562,7 @@
       "term": "loan",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "대출",
           "examples": [
             {
@@ -5633,7 +5630,7 @@
       "term": "extremely",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "대단히, 극도로",
           "examples": [
             {
@@ -5650,7 +5647,7 @@
       "term": "qualified",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "자격이 있는",
           "examples": [
             {
@@ -5667,7 +5664,7 @@
       "term": "concrete",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "구체적인",
           "examples": [
             {
@@ -5677,7 +5674,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "콘크리트",
           "examples": [
             {
@@ -5721,7 +5718,7 @@
       "term": "lack",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "부족, 결핍",
           "examples": [
             {
@@ -5748,7 +5745,7 @@
       "term": "considerable",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "상당한",
           "examples": [
             {
@@ -5816,7 +5813,7 @@
       "term": "ordinary",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "보통의, 일상적인",
           "examples": [
             {
@@ -5833,7 +5830,7 @@
       "term": "prompt",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "즉각적인",
           "examples": [
             {
@@ -5853,7 +5850,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "(대사를 일러주는 말)",
           "examples": [
             {
@@ -5887,7 +5884,7 @@
       "term": "invasion",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "침략, 쇄도",
           "examples": [
             {
@@ -5921,7 +5918,7 @@
       "term": "so that",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "~하도록",
           "examples": [
             {
@@ -5938,7 +5935,7 @@
       "term": "authentic",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "정통의, 진품인",
           "examples": [
             {
@@ -5955,7 +5952,7 @@
       "term": "carved",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "조각된, 새겨진",
           "examples": [
             {
@@ -5989,7 +5986,7 @@
       "term": "rodent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "설치류",
           "examples": [
             {
@@ -6023,7 +6020,7 @@
       "term": "individual",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "각각의",
           "examples": [
             {
@@ -6033,7 +6030,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "개인의",
           "examples": [
             {
@@ -6050,7 +6047,7 @@
       "term": "outrageous",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "너무나도 별난, 충격적인",
           "examples": [
             {
@@ -6067,7 +6064,7 @@
       "term": "intensive",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "집중적인",
           "examples": [
             {
@@ -6111,7 +6108,7 @@
       "term": "probable",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "가능한",
           "examples": [
             {
@@ -6128,7 +6125,7 @@
       "term": "fertile",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "비옥한",
           "examples": [
             {
@@ -6145,7 +6142,7 @@
       "term": "apprentice",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "수습사원",
           "examples": [
             {
@@ -6162,7 +6159,7 @@
       "term": "significant",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "중요한, 상당한",
           "examples": [
             {
@@ -6216,7 +6213,7 @@
       "term": "mundane",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "일상적인",
           "examples": [
             {
@@ -6233,7 +6230,7 @@
       "term": "appointment",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "예약, 약속",
           "examples": [
             {
@@ -6243,7 +6240,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "임명, 발령",
           "examples": [
             {
@@ -6260,7 +6257,7 @@
       "term": "largely",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adv.",
           "gloss": "주로, 크게",
           "examples": [
             {
@@ -6294,7 +6291,7 @@
       "term": "catastrophic",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "최악의, 큰 재앙의",
           "examples": [
             {
@@ -6311,7 +6308,7 @@
       "term": "afraid",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "걱정하는, 두려워하는",
           "examples": [
             {
@@ -6328,7 +6325,7 @@
       "term": "plough",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "쟁기",
           "examples": [
             {
@@ -6355,7 +6352,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "물질, 실체",
           "examples": [
             {
@@ -6372,7 +6369,7 @@
       "term": "drought",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "가뭄",
           "examples": [
             {
@@ -6389,7 +6386,7 @@
       "term": "insular",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "섬의, 섬 근처의",
           "examples": [
             {
@@ -6406,7 +6403,7 @@
       "term": "consistent",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "일관된, 일정한",
           "examples": [
             {
@@ -6416,7 +6413,7 @@
           ]
         },
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "일치하는",
           "examples": [
             {
@@ -6433,7 +6430,7 @@
       "term": "profitable",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "수익성이 좋은",
           "examples": [
             {
@@ -6450,7 +6447,7 @@
       "term": "depiction",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "묘사, 묘사법",
           "examples": [
             {
@@ -6467,7 +6464,7 @@
       "term": "incongruity",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "불일치, 불일치성",
           "examples": [
             {
@@ -6484,7 +6481,7 @@
       "term": "distressing",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "adj.",
           "gloss": "괴로움을 주는, 비참한",
           "examples": [
             {
@@ -6511,7 +6508,7 @@
       "term": "strand",
       "entries": [
         {
-          "pos": "v.",
+          "pos": "n.",
           "gloss": "가닥, 분야",
           "examples": [
             {
@@ -7783,4 +7780,3 @@
       "entries": []
     }
   ]
-}

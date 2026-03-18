@@ -1,0 +1,344 @@
+/* Voca editor UI styles (moved from voca-editor.js) */
+.voca-editor {
+  --ve-bg: var(--app-bg, #0f1116);
+  --ve-panel: var(--app-panel, #151923);
+  --ve-border: var(--app-border, rgba(255, 255, 255, 0.12));
+  --ve-text: var(--app-text, rgba(255, 255, 255, 0.92));
+  --ve-muted: var(--app-muted, rgba(255, 255, 255, 0.7));
+  --ve-accent: var(--accent, #7c5cff);
+  color: var(--ve-text);
+}
+
+.voca-editor__filters-wrap {
+  margin-bottom: 1rem;
+}
+.voca-editor__filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+.voca-editor__start-wrap {
+  margin-top: 0.5rem;
+}
+
+.voca-editor__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.voca-editor__title {
+  min-width: 280px;
+  flex: 1;
+}
+.voca-editor__h {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+.voca-editor__sub {
+  margin: 0;
+  color: var(--ve-muted);
+  font-size: 0.9rem;
+}
+.voca-editor__io {
+  min-width: 320px;
+  flex: 1;
+}
+.voca-editor__io-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+.voca-editor__label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--ve-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ve-panel) 92%, transparent);
+}
+.voca-editor__label input[type="file"] {
+  max-width: 220px;
+}
+.voca-editor__paste {
+  margin-top: 0.75rem;
+  border: 1px solid var(--ve-border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ve-panel) 92%, transparent);
+  padding: 0.5rem 0.75rem;
+}
+.voca-editor__paste summary {
+  cursor: pointer;
+  color: var(--ve-muted);
+}
+.voca-editor__textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  background: #0b0d12;
+  color: var(--ve-text);
+  border: 1px solid var(--ve-border);
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+}
+.voca-editor__paste-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.voca-editor__meta {
+  border: 1px solid var(--ve-border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ve-panel) 92%, transparent);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+.voca-editor__meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.75rem;
+  align-items: end;
+}
+.voca-editor__field span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ve-muted);
+  margin-bottom: 0.35rem;
+}
+.voca-editor__meta-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.voca-editor__stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+  color: var(--ve-muted);
+  font-size: 0.9rem;
+}
+
+.voca-editor__table-wrap {
+  overflow: auto;
+  border: 1px solid var(--ve-border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ve-panel) 92%, transparent);
+}
+.voca-editor__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 980px;
+}
+.voca-editor__table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #0b0d12;
+  color: var(--ve-muted);
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.8rem;
+  padding: 0.6rem 0.6rem;
+  border-bottom: 1px solid var(--ve-border);
+}
+.voca-editor__table tbody td {
+  vertical-align: top;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ve-border) 60%, transparent);
+}
+.voca-editor__table tbody tr:hover td {
+  background: color-mix(in srgb, var(--ve-accent) 6%, transparent);
+}
+
+.col-id {
+  width: 1.5rem;
+}
+.col-unit {
+  width: 1.5rem;
+}
+.col-term {
+  width: 1%;
+}
+.col-pos {
+  width: 5rem;
+}
+.col-gloss {
+  width: 10rem;
+}
+.col-ex-text {
+  width: 20rem;
+}
+.col-ex-tr {
+  width: 20rem;
+}
+.col-actions {
+  width: 1rem;
+}
+
+.ve-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.45rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid var(--ve-border);
+  background: #0b0d12;
+  color: var(--ve-text);
+}
+.ve-input--cell[type="number"] {
+  text-align: right;
+}
+.ve-select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ve-muted) 50%),
+    linear-gradient(135deg, var(--ve-muted) 50%, transparent 50%);
+  background-position: calc(100% - 16px) calc(50% - 2px), calc(100% - 11px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+.ve-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 2.15rem;
+  resize: vertical;
+  padding: 0.45rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid var(--ve-border);
+  background: #0b0d12;
+  color: var(--ve-text);
+  line-height: 1.35;
+}
+.ve-cell--readonly {
+  color: var(--ve-muted);
+}
+.ve-readonly {
+  padding: 0.45rem 0.15rem;
+  font-variant-numeric: tabular-nums;
+}
+/* term 컬럼은 내용(단어) 폭에 맞춰 수축 */
+.voca-editor__table .ve-cell--term .ve-readonly {
+  display: inline-block;
+  white-space: nowrap;
+}
+.ve-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-start;
+}
+.ve-btn {
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--ve-border);
+  background: #0b0d12;
+  color: var(--ve-text);
+  cursor: pointer;
+}
+.ve-btn--primary {
+  background: var(--ve-accent);
+  border-color: color-mix(in srgb, var(--ve-accent) 70%, black);
+  color: #0b0d12;
+  font-weight: 700;
+}
+.ve-btn--ghost {
+  background: transparent;
+}
+.ve-mini {
+  padding: 0.35rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--ve-border);
+  background: #0b0d12;
+  color: var(--ve-text);
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+.ve-mini--danger {
+  border-color: color-mix(in srgb, #ff4d4d 55%, var(--ve-border));
+  color: #ffb0b0;
+}
+
+/* 칼럼 숨김 토글 */
+.voca-editor.ve-hide-id .voca-editor__table .col-id,
+.voca-editor.ve-hide-id .voca-editor__table .ve-cell--id {
+  display: none;
+}
+.voca-editor.ve-hide-unit .voca-editor__table .col-unit,
+.voca-editor.ve-hide-unit .voca-editor__table .ve-cell--unit {
+  display: none;
+}
+.voca-editor.ve-hide-term .voca-editor__table .col-term,
+.voca-editor.ve-hide-term .voca-editor__table .ve-cell--term {
+  display: none;
+}
+.voca-editor.ve-hide-pos .voca-editor__table .col-pos,
+.voca-editor.ve-hide-pos .voca-editor__table .ve-cell--pos {
+  display: none;
+}
+.voca-editor.ve-hide-gloss .voca-editor__table .col-gloss,
+.voca-editor.ve-hide-gloss .voca-editor__table .ve-cell--gloss {
+  display: none;
+}
+.voca-editor.ve-hide-example .voca-editor__table .col-ex-text,
+.voca-editor.ve-hide-example .voca-editor__table .ve-cell--example {
+  display: none;
+}
+.voca-editor.ve-hide-translation .voca-editor__table .col-ex-tr,
+.voca-editor.ve-hide-translation .voca-editor__table .ve-cell--translation {
+  display: none;
+}
+.voca-editor.ve-hide-actions .voca-editor__table .col-actions,
+.voca-editor.ve-hide-actions .voca-editor__table .ve-cell--actions {
+  display: none;
+}
+
+/* base.css .settings-* 와 통일; 행 레이아웃만 보정 */
+.voca-editor__book-row.settings-block--row {
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+.voca-editor__book-row .settings-select {
+  margin-left: 0;
+  min-width: 10rem;
+}
+.voca-editor__unit-row.settings-block--row {
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+.voca-editor__unit-row .settings-select {
+  margin-left: 0;
+  min-width: 5rem;
+}
+.voca-editor__colopts .ve-colvis,
+.voca-editor__colopts .ve-colchecks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.voca-editor__colopts .settings-check-label {
+  color: var(--ve-muted, var(--app-muted));
+  font-size: var(--fs-2, 0.85rem);
+}
+
+@media (max-width: 900px) {
+  .voca-editor__meta-grid {
+    grid-template-columns: 1fr;
+  }
+  .voca-editor__io-row {
+    justify-content: flex-start;
+  }
+}
+

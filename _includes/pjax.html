@@ -86,6 +86,22 @@
         if (window.initVocaPage) window.initVocaPage();
         if (window.initVocaExamplesPage) window.initVocaExamplesPage();
         if (window.highlightExampleWords) window.highlightExampleWords(document.getElementById("quiz-section"));
+        // voca editor page (PJAX에서는 page 내부 script가 실행되지 않으므로 여기서 로드/초기화)
+        if (document.querySelector('.voca-editor')) {
+          (function() {
+            function run() { if (window.initVocaEditorPage) window.initVocaEditorPage(); }
+            if (window.initVocaEditorPage) { run(); return; }
+            // PJAX로 삽입된 content 안의 <script> 태그는 실행되지 않으므로,
+            // 태그 존재 여부로 로드를 스킵하면 안 됨.
+            if (window.__veScriptLoading) { return; }
+            window.__veScriptLoading = true;
+            var s = document.createElement('script');
+            s.src = (base || '') + '/assets/js/pages/voca-editor.js';
+            s.onload = function() { window.__veScriptLoading = false; run(); };
+            s.onerror = function() { window.__veScriptLoading = false; };
+            document.body.appendChild(s);
+          })();
+        }
 
         // initLm11QuizCardInteractions is called after Start button click
       })

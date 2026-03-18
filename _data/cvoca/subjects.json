@@ -1,6 +1,10 @@
 [
   {
-    "key": 1,
-    "name": "ielts"
+    "book_id": "IELTS_20_30",
+    "title": "IELTS 20-30",
+    "description": "IELTS 20-30",
+    "words_range": [1, 600],
+    "unit_number": 20,
+    "words_per_unit": 30
   }
 ]
