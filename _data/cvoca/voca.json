@@ -3,3604 +3,7374 @@
   "title": "IELTS 영어 단어장",
   "words": [
     {
+      "id": 1,
+      "unit": 1,
       "term": "avert",
-      "entries": [],
-      "unit": 1,
-      "id": 1
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "피하다, 막다",
+          "examples": [
+            {
+              "text": "He averted financial disaster by selling his pharmaceutical stocks before they crashed.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 2,
+      "unit": 1,
       "term": "immediate",
-      "entries": [],
-      "unit": 1,
-      "id": 2
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "즉각적인, 직접적인",
+          "examples": [
+            {
+              "text": "Providing a healthy breakfast to primary school students will have an immediate effect on their academic performance.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 3,
+      "unit": 1,
       "term": "appreciate",
-      "entries": [],
-      "unit": 1,
-      "id": 3
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "진가를 인정하다, 감사해하다",
+          "examples": [
+            {
+              "text": "Critics did not fully appreciate Van Gogh’s talent or artistic vision until long after his passing.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "상황이나 문제점을 완전히 인식하다",
+          "examples": [
+            {
+              "text": "When walking through the slums of Kolkata, you immediately appreciate the depth of poverty faced by local residents.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 4,
+      "unit": 1,
       "term": "party",
-      "entries": [],
-      "unit": 1,
-      "id": 4
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "일행, 무리, 정당",
+          "examples": [
+            {
+              "text": "We will have to divide the group into parties of eight for everyone’s convenience on the tour",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 5,
+      "unit": 1,
       "term": "regarding",
-      "entries": [],
-      "unit": 1,
-      "id": 5
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "~에 관하여, ~관한",
+          "examples": [
+            {
+              "text": "Any queries regarding room and trip reservations can be answered by the hotel’s front desk attendant.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 6,
+      "unit": 1,
       "term": "harm",
-      "entries": [],
-      "unit": 1,
-      "id": 6
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "해를 끼치다",
+          "examples": [
+            {
+              "text": "Tourist exploring the island can harm the natural environment, often without even realizing it",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "피해, 손해",
+          "examples": [
+            {
+              "text": "Lad procedures must be followed in order to prevent personal harm.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 7,
+      "unit": 1,
       "term": "objective",
-      "entries": [],
-      "unit": 1,
-      "id": 7
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "목적, 목표",
+          "examples": [
+            {
+              "text": "The study’s primary objective is to find out why the coral reefs are dying",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "객관적인",
+          "examples": [
+            {
+              "text": "Some art critics believe the value of art is determined by objective methods of evaluation rather than individuals’ reactions.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 8,
+      "unit": 1,
       "term": "mammal",
-      "entries": [],
-      "unit": 1,
-      "id": 8
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "포유동물",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 9,
+      "unit": 1,
       "term": "critical",
-      "entries": [],
-      "unit": 1,
-      "id": 9
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "잠재적으로 대단히 중요한",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 10,
+      "unit": 1,
       "term": "precious",
-      "entries": [],
-      "unit": 1,
-      "id": 10
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "귀한, 값비싼",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 11,
+      "unit": 1,
       "term": "obstacle",
-      "entries": [],
-      "unit": 1,
-      "id": 11
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "장애물",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 12,
+      "unit": 1,
       "term": "commission",
-      "entries": [],
-      "unit": 1,
-      "id": 12
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "의뢰, 위탁된 일을 맡은",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 13,
+      "unit": 1,
       "term": "tackle",
-      "entries": [],
-      "unit": 1,
-      "id": 13
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "해결하다, 다루다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 14,
+      "unit": 1,
       "term": "conceal",
-      "entries": [],
-      "unit": 1,
-      "id": 14
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "감추다, 숨기다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 15,
+      "unit": 1,
       "term": "conflict",
-      "entries": [],
-      "unit": 1,
-      "id": 15
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "갈등, 충돌",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 16,
+      "unit": 1,
       "term": "gather",
-      "entries": [],
-      "unit": 1,
-      "id": 16
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "모으다, 수집하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 17,
+      "unit": 1,
       "term": "livestock",
-      "entries": [],
-      "unit": 1,
-      "id": 17
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "가축",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 18,
+      "unit": 1,
       "term": "advanced",
-      "entries": [],
-      "unit": 1,
-      "id": 18
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "고도의, 상급의, 선진의",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 19,
+      "unit": 1,
       "term": "keen",
-      "entries": [],
-      "unit": 1,
-      "id": 19
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "열을 올리고 있는, 열정적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 20,
+      "unit": 1,
       "term": "derelict",
-      "entries": [],
-      "unit": 1,
-      "id": 20
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "버려진, 방치된",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 21,
+      "unit": 1,
       "term": "evoke",
-      "entries": [],
-      "unit": 1,
-      "id": 21
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "유발하다",
+          "examples": [
+            {
+              "text": "The films of Luca Guadino evoke the ‘Golden Age’ of classical cinema.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 22,
+      "unit": 1,
       "term": "attention",
-      "entries": [],
-      "unit": 1,
-      "id": 22
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "주의, 주목, 관심",
+          "examples": [
+            {
+              "text": "For networking purposes, it’s important to pay attention to the job titles of the people you meet at a professional conference.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 23,
+      "unit": 1,
       "term": "concession",
-      "entries": [],
-      "unit": 1,
-      "id": 23
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "양보",
+          "examples": [
+            {
+              "text": "The union launched the strike because it was not willing to make steep concessions regarding overtime pay.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "할인",
+          "examples": [
+            {
+              "text": "University students receive a concession of 50% on admission to sporting events.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 24,
+      "unit": 1,
       "term": "set aside",
-      "entries": [],
-      "unit": 1,
-      "id": 24
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "나중을 위해 치워두다, 따로 두다",
+          "examples": [
+            {
+              "text": "Parents should always try to set aside the time to read and play with their young children.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 25,
+      "unit": 1,
       "term": "replace",
-      "entries": [],
-      "unit": 1,
-      "id": 25
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "대체하다",
+          "examples": [
+            {
+              "text": "The orientation session covering employee health insurance will be replaced bt a welcome speech from the CEO.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 26,
+      "unit": 1,
       "term": "ought",
-      "entries": [],
-      "unit": 1,
-      "id": 26
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "~해야 하다, ~을 할 의무가 있다",
+          "examples": [
+            {
+              "text": "New laws ought to be made to protect residents and the environment from the dangers of natural gas extraction.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 27,
+      "unit": 1,
       "term": "query",
-      "entries": [],
-      "unit": 1,
-      "id": 27
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "질문, 문의",
+          "examples": [
+            {
+              "text": "The local wildlife authority will also answer queries about seasonal hunting and fishing limits.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 28,
+      "unit": 1,
       "term": "scheme",
-      "entries": [],
-      "unit": 1,
-      "id": 28
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "계획, 제도",
+          "examples": [
+            {
+              "text": "Many advertising experts agree that releasing several short commercials instead of a single long one is a clever marketing scheme.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 29,
+      "unit": 1,
       "term": "fort",
-      "entries": [],
-      "unit": 1,
-      "id": 29
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "요새",
+          "examples": [
+            {
+              "text": "The ruins of several Roman forts can still be seen throughout tge English countryside.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 30,
+      "unit": 1,
       "term": "fabulous",
-      "entries": [],
-      "unit": 1,
-      "id": 30
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "기막히게 멋진",
+          "examples": [
+            {
+              "text": "Nowadays, people are too obsessed with the fabulous lifestyles of, celebrities.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 31,
+      "unit": 2,
       "term": "hierarchy",
-      "entries": [],
-      "unit": 2,
-      "id": 31
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "계급, 서열",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 32,
+      "unit": 2,
       "term": "struggle",
-      "entries": [],
-      "unit": 2,
-      "id": 32
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "애쓰다, 고군분투하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "힘든 일, 다툼",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 33,
+      "unit": 2,
       "term": "vivid",
-      "entries": [],
-      "unit": 2,
-      "id": 33
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "생생한, 활발한",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 34,
+      "unit": 2,
       "term": "explosive",
-      "entries": [],
-      "unit": 2,
-      "id": 34
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "폭발적으로 증가하는, 폭발적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "폭발물, 폭발",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 35,
+      "unit": 2,
       "term": "attribute",
-      "entries": [],
-      "unit": 2,
-      "id": 35
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "~의 탓이라고 보다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "속성, 특징",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 36,
+      "unit": 2,
       "term": "controlled",
-      "entries": [],
-      "unit": 2,
-      "id": 36
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "통제된, 조절된",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 37,
+      "unit": 2,
       "term": "costly",
-      "entries": [],
-      "unit": 2,
-      "id": 37
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "많은 비용이 드는, 비싼",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 38,
+      "unit": 2,
       "term": "infest",
-      "entries": [],
-      "unit": 2,
-      "id": 38
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "(곤충이나 쥐 등이) 들끓다, 우글거리다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 39,
+      "unit": 2,
       "term": "require",
-      "entries": [],
-      "unit": 2,
-      "id": 39
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "필요로 하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 40,
+      "unit": 2,
       "term": "restriction",
-      "entries": [],
-      "unit": 2,
-      "id": 40
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "제한, 규제",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 41,
+      "unit": 2,
       "term": "distinguish",
-      "entries": [],
-      "unit": 2,
-      "id": 41
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "구별하다, 식별하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 42,
+      "unit": 2,
       "term": "fatal",
-      "entries": [],
-      "unit": 2,
-      "id": 42
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "치명적인, 죽음을 초래하는",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 43,
+      "unit": 2,
       "term": "efficiency",
-      "entries": [],
-      "unit": 2,
-      "id": 43
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "효율성, 능률",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 44,
+      "unit": 2,
       "term": "equivalent",
-      "entries": [],
-      "unit": 2,
-      "id": 44
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "상응하는 것",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 45,
+      "unit": 2,
       "term": "domestic",
-      "entries": [],
-      "unit": 2,
-      "id": 45
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "국내의, 가정용의, 집안의",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 46,
+      "unit": 2,
       "term": "intuitive",
-      "entries": [],
-      "unit": 2,
-      "id": 46
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "직관적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 47,
+      "unit": 2,
       "term": "aggravate",
-      "entries": [],
-      "unit": 2,
-      "id": 47
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "악화시키다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 48,
+      "unit": 2,
       "term": "convert",
-      "entries": [],
-      "unit": 2,
-      "id": 48
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "전환하다, 변환하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 49,
+      "unit": 2,
       "term": "suffer",
-      "entries": [],
-      "unit": 2,
-      "id": 49
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "고통받다, 나빠지다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "병에 걸리다, 앓다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 50,
+      "unit": 2,
       "term": "encounter",
-      "entries": [],
-      "unit": 2,
-      "id": 50
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "(예상치 못하게) 맞닥뜨리다, 접하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 51,
+      "unit": 2,
       "term": "abundant",
-      "entries": [],
-      "unit": 2,
-      "id": 51
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "풍부한",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 52,
+      "unit": 2,
       "term": "assess",
-      "entries": [],
-      "unit": 2,
-      "id": 52
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "평가하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 53,
+      "unit": 2,
       "term": "assemble",
-      "entries": [],
-      "unit": 2,
-      "id": 53
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "모이다, 소집하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "조립하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 54,
+      "unit": 2,
       "term": "rely",
-      "entries": [],
-      "unit": 2,
-      "id": 54
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "의존하다, 믿다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 55,
+      "unit": 2,
       "term": "classify",
-      "entries": [],
-      "unit": 2,
-      "id": 55
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "분류하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 56,
+      "unit": 2,
       "term": "aspiration",
-      "entries": [],
-      "unit": 2,
-      "id": 56
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "열망, 포부",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 57,
+      "unit": 2,
       "term": "merely",
-      "entries": [],
-      "unit": 2,
-      "id": 57
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "단지, 그저",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 58,
+      "unit": 2,
       "term": "decline",
-      "entries": [],
-      "unit": 2,
-      "id": 58
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "줄어들다, 감소되다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "감소, 하락",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 59,
+      "unit": 2,
       "term": "enable",
-      "entries": [],
-      "unit": 2,
-      "id": 59
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "할 수 있게 하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 60,
+      "unit": 2,
       "term": "regardless of",
-      "entries": [],
-      "unit": 2,
-      "id": 60
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "~에 상관없이",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 61,
+      "unit": 3,
       "term": "entice",
-      "entries": [],
-      "unit": 3,
-      "id": 61
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "끌어들이다, 유혹하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 62,
+      "unit": 3,
       "term": "establish",
-      "entries": [],
-      "unit": 3,
-      "id": 62
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "설립하다, 확립하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 63,
+      "unit": 3,
       "term": "pose",
-      "entries": [],
-      "unit": 3,
-      "id": 63
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "(문제, 위협 등을) 제기하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 64,
+      "unit": 3,
       "term": "threat",
-      "entries": [],
-      "unit": 3,
-      "id": 64
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "위협",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 65,
+      "unit": 3,
       "term": "pupil",
-      "entries": [],
-      "unit": 3,
-      "id": 65
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "학생, 눈동자(동공)",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 66,
+      "unit": 3,
       "term": "reveal",
-      "entries": [],
-      "unit": 3,
-      "id": 66
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "밝히다, 드러내다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 67,
+      "unit": 3,
       "term": "eradicate",
-      "entries": [],
-      "unit": 3,
-      "id": 67
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "근절하다, 뿌리뽑다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 68,
+      "unit": 3,
       "term": "inspire",
-      "entries": [],
-      "unit": 3,
-      "id": 68
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "영감을 주다, 고취시키다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 69,
+      "unit": 3,
       "term": "continent",
-      "entries": [],
-      "unit": 3,
-      "id": 69
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "대륙",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 70,
+      "unit": 3,
       "term": "motivate",
-      "entries": [],
-      "unit": 3,
-      "id": 70
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "동기를 부여하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 71,
+      "unit": 3,
       "term": "behave",
-      "entries": [],
-      "unit": 3,
-      "id": 71
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "행동하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
-      "term": "sceptical",
-      "entries": [],
+      "id": 72,
       "unit": 3,
-      "id": 72
+      "term": "skeptical",
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "회의적인, 의심 많은",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 73,
+      "unit": 3,
       "term": "artificial",
-      "entries": [],
-      "unit": 3,
-      "id": 73
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "인공적인, 인조의",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 74,
+      "unit": 3,
       "term": "fascinate",
-      "entries": [],
-      "unit": 3,
-      "id": 74
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "대단히 흥미로운",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 75,
+      "unit": 3,
       "term": "effect",
-      "entries": [],
-      "unit": 3,
-      "id": 75
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "영향, 효과",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 76,
+      "unit": 3,
       "term": "damage",
-      "entries": [],
-      "unit": 3,
-      "id": 76
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "손상, 피해",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "손상을 입히다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "(약을) 투여하다, 집행하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 77,
+      "unit": 3,
       "term": "administer",
-      "entries": [],
-      "unit": 3,
-      "id": 77
+      "entries": []
     },
     {
+      "id": 78,
+      "unit": 3,
       "term": "practice",
-      "entries": [],
-      "unit": 3,
-      "id": 78
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "실행, 관행",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "연습, 실습",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 79,
+      "unit": 3,
       "term": "beneficial",
-      "entries": [],
-      "unit": 3,
-      "id": 79
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "유익한",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 80,
+      "unit": 3,
       "term": "invariably",
-      "entries": [],
-      "unit": 3,
-      "id": 80
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "변함없이, 예외 없이",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 81,
+      "unit": 3,
       "term": "robust",
-      "entries": [],
-      "unit": 3,
-      "id": 81
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "튼튼한, 원기왕성한",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 82,
+      "unit": 3,
       "term": "due",
-      "entries": [],
-      "unit": 3,
-      "id": 82
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "~하기로 예정 되어 있는",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "지불 기일이 된",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 83,
+      "unit": 3,
       "term": "smuggle",
-      "entries": [],
-      "unit": 3,
-      "id": 83
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "밀수하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
-      "term": "fossilise",
-      "entries": [],
+      "id": 84,
       "unit": 3,
-      "id": 84
+      "term": "fossilize",
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "화석화하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 85,
+      "unit": 3,
       "term": "risk",
-      "entries": [],
-      "unit": 3,
-      "id": 85
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "위험, 위험 요인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 86,
+      "unit": 3,
       "term": "permanent",
-      "entries": [],
-      "unit": 3,
-      "id": 86
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "영구적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 87,
+      "unit": 3,
       "term": "cope with",
-      "entries": [],
-      "unit": 3,
-      "id": 87
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "대처하다, 처리하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 88,
+      "unit": 3,
       "term": "destroy",
-      "entries": [],
-      "unit": 3,
-      "id": 88
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "파괴하다, 훼손하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 89,
+      "unit": 3,
       "term": "subsequent",
-      "entries": [],
-      "unit": 3,
-      "id": 89
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "뒤의, 그 이후의",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 90,
+      "unit": 3,
       "term": "last",
-      "entries": [],
-      "unit": 3,
-      "id": 90
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "지속되다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "지난",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 91,
+      "unit": 4,
       "term": "deliberate",
-      "entries": [],
-      "unit": 4,
-      "id": 91
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "고의적인, 계획적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 92,
+      "unit": 4,
       "term": "odour",
-      "entries": [],
-      "unit": 4,
-      "id": 92
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "(불쾌한) 냄새",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 93,
+      "unit": 4,
       "term": "predator",
-      "entries": [],
-      "unit": 4,
-      "id": 93
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "포식동물, 포식자",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 94,
+      "unit": 4,
       "term": "intertwine",
-      "entries": [],
-      "unit": 4,
-      "id": 94
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "밀접하게 관련되다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 95,
+      "unit": 4,
       "term": "seek",
-      "entries": [],
-      "unit": 4,
-      "id": 95
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "구하다, 찾다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 96,
+      "unit": 4,
       "term": "promote",
-      "entries": [],
-      "unit": 4,
-      "id": 96
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "촉진하다, 홍보하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "승진시키다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 97,
+      "unit": 4,
       "term": "crucial",
-      "entries": [],
-      "unit": 4,
-      "id": 97
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "중대한, 결정적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 98,
+      "unit": 4,
       "term": "shelter",
-      "entries": [],
-      "unit": 4,
-      "id": 98
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "피신처, 쉼터",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "숨기다, 보호하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 99,
+      "unit": 4,
       "term": "archaeology",
-      "entries": [],
-      "unit": 4,
-      "id": 99
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "고고학",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 100,
+      "unit": 4,
       "term": "indigenous",
-      "entries": [],
-      "unit": 4,
-      "id": 100
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "토착의, 그 지역 고유의",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 101,
+      "unit": 4,
       "term": "voluntary",
-      "entries": [],
-      "unit": 4,
-      "id": 101
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "자발적인, 자원봉사로 하는",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 102,
+      "unit": 4,
       "term": "rainfall",
-      "entries": [],
-      "unit": 4,
-      "id": 102
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "강우량",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 103,
+      "unit": 4,
       "term": "property",
-      "entries": [],
-      "unit": 4,
-      "id": 103
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "소유물, 재산, 건물",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "속성, 특징",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 104,
+      "unit": 4,
       "term": "retrieval",
-      "entries": [],
-      "unit": 4,
-      "id": 104
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "회수, 인출",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 105,
+      "unit": 4,
       "term": "certain",
-      "entries": [],
-      "unit": 4,
-      "id": 105
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "특정한, 확신하는",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 106,
+      "unit": 4,
       "term": "capture",
-      "entries": [],
-      "unit": 4,
-      "id": 106
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "포착하다, 사로잡다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 107,
+      "unit": 4,
       "term": "subsidiary",
-      "entries": [],
-      "unit": 4,
-      "id": 107
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "부수적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 108,
+      "unit": 4,
       "term": "abandon",
-      "entries": [],
-      "unit": 4,
-      "id": 108
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "(완전히) 떠나다, 유기하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "(완전히) 그만두다, 포기하다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 109,
+      "unit": 4,
       "term": "evolutionary",
-      "entries": [],
-      "unit": 4,
-      "id": 109
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "진화의, 진화적인",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 110,
+      "unit": 4,
       "term": "award",
-      "entries": [],
-      "unit": 4,
-      "id": 110
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "상, 공로",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "수여하다, 상을 주다",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 111,
+      "unit": 4,
       "term": "habitat",
-      "entries": [],
-      "unit": 4,
-      "id": 111
+      "entries": [
+        {
+          "pos": "n.",
+          "gloss": "서식지",
+          "examples": [
+            {
+              "text": "",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 112,
+      "unit": 4,
       "term": "sufficient",
-      "entries": [],
-      "unit": 4,
-      "id": 112
+      "entries": []
     },
     {
+      "id": 113,
+      "unit": 4,
       "term": "escape",
-      "entries": [],
-      "unit": 4,
-      "id": 113
+      "entries": []
     },
     {
+      "id": 114,
+      "unit": 4,
       "term": "allow",
-      "entries": [],
-      "unit": 4,
-      "id": 114
+      "entries": []
     },
     {
+      "id": 115,
+      "unit": 4,
       "term": "hindsight",
-      "entries": [],
-      "unit": 4,
-      "id": 115
+      "entries": []
     },
     {
+      "id": 116,
+      "unit": 4,
       "term": "oppose",
-      "entries": [],
-      "unit": 4,
-      "id": 116
+      "entries": []
     },
     {
+      "id": 117,
+      "unit": 4,
       "term": "determined",
-      "entries": [],
-      "unit": 4,
-      "id": 117
+      "entries": []
     },
     {
+      "id": 118,
+      "unit": 4,
       "term": "vulnerable",
-      "entries": [],
-      "unit": 4,
-      "id": 118
+      "entries": []
     },
     {
+      "id": 119,
+      "unit": 4,
       "term": "presume",
-      "entries": [],
-      "unit": 4,
-      "id": 119
+      "entries": []
     },
     {
+      "id": 120,
+      "unit": 4,
       "term": "apply",
-      "entries": [],
-      "unit": 4,
-      "id": 120
+      "entries": []
     },
     {
+      "id": 121,
+      "unit": 5,
       "term": "ascent",
-      "entries": [],
-      "unit": 5,
-      "id": 121
+      "entries": []
     },
     {
+      "id": 122,
+      "unit": 5,
       "term": "extensive",
-      "entries": [],
-      "unit": 5,
-      "id": 122
+      "entries": []
     },
     {
+      "id": 123,
+      "unit": 5,
       "term": "infant",
-      "entries": [],
-      "unit": 5,
-      "id": 123
+      "entries": []
     },
     {
+      "id": 124,
+      "unit": 5,
       "term": "rewarding",
-      "entries": [],
-      "unit": 5,
-      "id": 124
+      "entries": []
     },
     {
+      "id": 125,
+      "unit": 5,
       "term": "foster",
-      "entries": [],
-      "unit": 5,
-      "id": 125
+      "entries": []
     },
     {
+      "id": 126,
+      "unit": 5,
       "term": "numerous",
-      "entries": [],
-      "unit": 5,
-      "id": 126
+      "entries": []
     },
     {
+      "id": 127,
+      "unit": 5,
       "term": "rate",
-      "entries": [],
-      "unit": 5,
-      "id": 127
+      "entries": []
     },
     {
+      "id": 128,
+      "unit": 5,
       "term": "hypothesis",
-      "entries": [],
-      "unit": 5,
-      "id": 128
+      "entries": []
     },
     {
+      "id": 129,
+      "unit": 5,
       "term": "principle",
-      "entries": [],
-      "unit": 5,
-      "id": 129
+      "entries": []
     },
     {
+      "id": 130,
+      "unit": 5,
       "term": "distinct from",
-      "entries": [],
-      "unit": 5,
-      "id": 130
+      "entries": []
     },
     {
+      "id": 131,
+      "unit": 5,
       "term": "no longer",
-      "entries": [],
-      "unit": 5,
-      "id": 131
+      "entries": []
     },
     {
+      "id": 132,
+      "unit": 5,
       "term": "maintenance",
-      "entries": [],
-      "unit": 5,
-      "id": 132
+      "entries": []
     },
     {
+      "id": 133,
+      "unit": 5,
       "term": "retain",
-      "entries": [],
-      "unit": 5,
-      "id": 133
+      "entries": []
     },
     {
+      "id": 134,
+      "unit": 5,
       "term": "judge",
-      "entries": [],
-      "unit": 5,
-      "id": 134
+      "entries": []
     },
     {
+      "id": 135,
+      "unit": 5,
       "term": "compose",
-      "entries": [],
-      "unit": 5,
-      "id": 135
+      "entries": []
     },
     {
+      "id": 136,
+      "unit": 5,
       "term": "accompany",
-      "entries": [],
-      "unit": 5,
-      "id": 136
+      "entries": []
     },
     {
+      "id": 137,
+      "unit": 5,
       "term": "propound",
-      "entries": [],
-      "unit": 5,
-      "id": 137
+      "entries": []
     },
     {
+      "id": 138,
+      "unit": 5,
       "term": "evolve",
-      "entries": [],
-      "unit": 5,
-      "id": 138
+      "entries": []
     },
     {
+      "id": 139,
+      "unit": 5,
       "term": "status",
-      "entries": [],
-      "unit": 5,
-      "id": 139
+      "entries": []
     },
     {
+      "id": 140,
+      "unit": 5,
       "term": "blast",
-      "entries": [],
-      "unit": 5,
-      "id": 140
+      "entries": []
     },
     {
+      "id": 141,
+      "unit": 5,
       "term": "commercial",
-      "entries": [],
-      "unit": 5,
-      "id": 141
+      "entries": []
     },
     {
+      "id": 142,
+      "unit": 5,
       "term": "chronological",
-      "entries": [],
-      "unit": 5,
-      "id": 142
+      "entries": []
     },
     {
+      "id": 143,
+      "unit": 5,
       "term": "merge",
-      "entries": [],
-      "unit": 5,
-      "id": 143
+      "entries": []
     },
     {
+      "id": 144,
+      "unit": 5,
       "term": "available",
-      "entries": [],
-      "unit": 5,
-      "id": 144
+      "entries": []
     },
     {
+      "id": 145,
+      "unit": 5,
       "term": "descend",
-      "entries": [],
-      "unit": 5,
-      "id": 145
+      "entries": []
     },
     {
+      "id": 146,
+      "unit": 5,
       "term": "adapt",
-      "entries": [],
-      "unit": 5,
-      "id": 146
+      "entries": []
     },
     {
+      "id": 147,
+      "unit": 5,
       "term": "immense",
-      "entries": [],
-      "unit": 5,
-      "id": 147
+      "entries": []
     },
     {
+      "id": 148,
+      "unit": 5,
       "term": "harsh",
-      "entries": [],
-      "unit": 5,
-      "id": 148
+      "entries": []
     },
     {
+      "id": 149,
+      "unit": 5,
       "term": "irresistible",
-      "entries": [],
-      "unit": 5,
-      "id": 149
+      "entries": []
     },
     {
+      "id": 150,
+      "unit": 5,
       "term": "strict",
-      "entries": [],
-      "unit": 5,
-      "id": 150
+      "entries": []
     },
     {
+      "id": 151,
+      "unit": 6,
       "term": "emerge",
-      "entries": [],
-      "unit": 6,
-      "id": 151
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "드러내다, 드러나다",
+          "examples": [
+            {
+              "text": "The tourists watched from the ship as a pod of humpback whales emerged from the ocean depths",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 152,
+      "unit": 6,
       "term": "benefit",
-      "entries": [],
-      "unit": 6,
-      "id": 152
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "이익, 수당",
+          "examples": [
+            {
+              "text": "The discovery of penicillin in 1928 brought about numerous health benefits for people suffering from bacterial diseases and infections",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "도움이 되다",
+          "examples": [
+            {
+              "text": "Experimenting with different musical genres rather than sticking to just one can benefit the creative process of aspiring musicians",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 153,
+      "unit": 6,
       "term": "perplex",
-      "entries": [],
-      "unit": 6,
-      "id": 153
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "당황하게 하다",
+          "examples": [
+            {
+              "text": "Since the themes contained in modern art can be perplexing and obscure",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 154,
+      "unit": 6,
       "term": "herd",
-      "entries": [],
-      "unit": 6,
-      "id": 154
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "떼, 무리, 사람들",
+          "examples": [
+            {
+              "text": "Using GPS and satellite imagery, scientists were able to track the herd of reindeer across northern Canada",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 155,
+      "unit": 6,
       "term": "civil",
-      "entries": [],
-      "unit": 6,
-      "id": 155
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "시민의, 문명의",
+          "examples": [
+            {
+              "text": "Political philosophers in the 17th century offered contrasting views on the conditions that led to civil society",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 156,
+      "unit": 6,
       "term": "halt",
-      "entries": [],
-      "unit": 6,
-      "id": 156
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "중단",
+          "examples": [
+            {
+              "text": "The product development team was ready to halt the project if the market survey’s result was negative about the new flavours.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "중단 시키다",
+          "examples": [
+            {
+              "text": "Hiding financial debt from a business partner can bring even the most promising relationships to a halt",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 157,
+      "unit": 6,
       "term": "obtain",
-      "entries": [],
-      "unit": 6,
-      "id": 157
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "얻다, 획득하다",
+          "examples": [
+            {
+              "text": "It was necessary to obtain more samples from the glacial ice for further study",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 158,
+      "unit": 6,
       "term": "breeding",
-      "entries": [],
-      "unit": 6,
-      "id": 158
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "사육, 번식",
+          "examples": [
+            {
+              "text": "The remaining male rhinos were put into a specialized breeding program that would, biologists hoped, save the species",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 159,
+      "unit": 6,
       "term": "apart from",
-      "entries": [],
-      "unit": 6,
-      "id": 159
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "~을 제외하고, ~뿐만 아니라",
+          "examples": [
+            {
+              "text": "The building was undamaged apart from a few shattered windows",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 160,
+      "unit": 6,
       "term": "secure",
-      "entries": [],
-      "unit": 6,
-      "id": 160
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "확보하다",
+          "examples": [
+            {
+              "text": "The director was able to secure funding to keep the homeless shelter open this winter",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "안심하는",
+          "examples": [
+            {
+              "text": "During training, flight attendants learn how to make passengers feel safe and secure on board",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 161,
+      "unit": 6,
       "term": "disabled",
-      "entries": [],
-      "unit": 6,
-      "id": 161
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "장애를 가진",
+          "examples": [
+            {
+              "text": "By laws, all cinemas, sports stadium and concert hall are required to have special seating areas for the disabled",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
-      "term": "marginalise",
-      "entries": [],
+      "id": 162,
       "unit": 6,
-      "id": 162
+      "term": "marginalize",
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "(사회에서) 소외하다",
+          "examples": [
+            {
+              "text": "A recent report claims that the social pressure to dress fashionably marginalize children from low-income families.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 163,
+      "unit": 6,
       "term": "affect",
-      "entries": [],
-      "unit": 6,
-      "id": 163
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "영향을 미치다",
+          "examples": [
+            {
+              "text": "Introducing the Asian carp to American waterways affected the ecosystems of several lakes and rivers",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 164,
+      "unit": 6,
       "term": "involve",
-      "entries": [],
-      "unit": 6,
-      "id": 164
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "포함하다",
+          "examples": [
+            {
+              "text": "International trade agreements involve compromises from all participating nations",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "참여시키다",
+          "examples": [
+            {
+              "text": "Youths who are involved with community programmes develop a sense of their strengths and weaknesses",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "열중 시키다",
+          "examples": [
+            {
+              "text": "Dog show competitors are so involved in the sport that they may even spend their total income on their dog.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 165,
+      "unit": 6,
       "term": "drain",
-      "entries": [],
-      "unit": 6,
-      "id": 165
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "액체가 빠지다",
+          "examples": [
+            {
+              "text": "Draining the lake would provide water for residents in the drought-affected region",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "소모하다",
+          "examples": [
+            {
+              "text": "Marathon runners are drained of energy during the race and should have nutritious food in orders to recover",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 166,
+      "unit": 6,
       "term": "profound",
-      "entries": [],
-      "unit": 6,
-      "id": 166
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "엄청난",
+          "examples": [
+            {
+              "text": "The civil war had a profound effect on the economies of the neighboring countries",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 167,
+      "unit": 6,
       "term": "obvious",
-      "entries": [],
-      "unit": 6,
-      "id": 167
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "분명한, 명백한",
+          "examples": [
+            {
+              "text": "One of the obvious benefits of a plant-based diet is a reduction in body fat",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 168,
+      "unit": 6,
       "term": "irrigation",
-      "entries": [],
-      "unit": 6,
-      "id": 168
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "관개",
+          "examples": [
+            {
+              "text": "Several engineers volunteered to travel to the developing country to help improve the irrigation systems of its farmlands",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 169,
+      "unit": 6,
       "term": "exaggerate",
-      "entries": [],
-      "unit": 6,
-      "id": 169
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "과장하다",
+          "examples": [
+            {
+              "text": "To this day, many people argue that concerns about climate change are exaggerated by certain media sources and political parties",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 170,
+      "unit": 6,
       "term": "steadily",
-      "entries": [],
-      "unit": 6,
-      "id": 170
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "안정적으로",
+          "examples": [
+            {
+              "text": "Interest in home gardening has been increasing steadily over the past decade",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 171,
+      "unit": 6,
       "term": "cultivation",
-      "entries": [],
-      "unit": 6,
-      "id": 171
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "경작",
+          "examples": [
+            {
+              "text": "By draining the wetland, land available for cultivation in the region increased by 25%",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 172,
+      "unit": 6,
       "term": "melt",
-      "entries": [],
-      "unit": 6,
-      "id": 172
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "During an eruption, solid rock melts into liquid magma and flows outward from the volcano",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 173,
+      "unit": 6,
       "term": "mimic",
-      "entries": [],
-      "unit": 6,
-      "id": 173
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The research team’s next goal is to create an artificial intelligence that can mimic human emotions",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 174,
+      "unit": 6,
       "term": "edible",
-      "entries": [],
-      "unit": 6,
-      "id": 174
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Take care when picking mushrooms in the forest, as only a few varieties are edible",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 175,
+      "unit": 6,
       "term": "alert",
-      "entries": [],
-      "unit": 6,
-      "id": 175
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Speakers are installed in all hotel rooms to alert guests in case of an emergency such as a fire",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Speakers are installed in all hotel rooms to alert guests in case of an emergency such as a fire",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 176,
+      "unit": 6,
       "term": "feed",
-      "entries": [],
-      "unit": 6,
-      "id": 176
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The current food production level will not be enough to feed Earth’s expected future population size",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 177,
+      "unit": 6,
       "term": "means",
-      "entries": [],
-      "unit": 6,
-      "id": 177
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "For developing countries, participating in the Olympic Games became a means of earning recognition on the international stage",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 178,
+      "unit": 6,
       "term": "intrusion",
-      "entries": [],
-      "unit": 6,
-      "id": 178
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The social media site has faced harsh criticism for intrusions into its users’ privacy",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 179,
+      "unit": 6,
       "term": "hollow",
-      "entries": [],
-      "unit": 6,
-      "id": 179
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Early civilizations used hollow coconut shells as a means of serving and storing food",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 180,
+      "unit": 6,
       "term": "distribution",
-      "entries": [],
-      "unit": 6,
-      "id": 180
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The Accounting Department manages the distribution of pay to out freelance writers",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 181,
+      "unit": 7,
       "term": "rarely",
-      "entries": [],
-      "unit": 7,
-      "id": 181
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Only rarely is an exotic pet allowed in an airplane cabin, even if it is designated as a support animal",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 182,
+      "unit": 7,
       "term": "aid",
-      "entries": [],
-      "unit": 7,
-      "id": 182
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Charts and graphs will aid audience understanding by visualizing your data",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Tablet computers have become an invaluable study aid for all ages of students",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 183,
+      "unit": 7,
       "term": "sustain",
-      "entries": [],
-      "unit": 7,
-      "id": 183
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "It's rare to sustain a friendship from primary school through to adulthood",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 184,
+      "unit": 7,
       "term": "initial",
-      "entries": [],
-      "unit": 7,
-      "id": 184
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The initial step in establishing a personal relationship is to have communication",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 185,
+      "unit": 7,
       "term": "precise",
-      "entries": [],
-      "unit": 7,
-      "id": 185
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "In order to keep tracking the location of the endangered animals, precise GPS data provided from satellites is necessary",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 186,
+      "unit": 7,
       "term": "penetrate",
-      "entries": [],
-      "unit": 7,
-      "id": 186
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A sharp spade was required to penetrate the tough topsoil",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Only advanced readers will be able to penetrate the author’s dense writing style",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 187,
+      "unit": 7,
       "term": "flexible",
-      "entries": [],
-      "unit": 7,
-      "id": 187
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Flexible working hours draw much interest from individuals seeking work-life balance",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 188,
+      "unit": 7,
       "term": "arrangement",
-      "entries": [],
-      "unit": 7,
-      "id": 188
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Entire itineraries should be reviewed before confirming travel arrangements",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 189,
+      "unit": 7,
       "term": "inherently",
-      "entries": [],
-      "unit": 7,
-      "id": 189
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The theory process that the human brain inherently has the tools for learning a language",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 190,
+      "unit": 7,
       "term": "estrangement",
-      "entries": [],
-      "unit": 7,
-      "id": 190
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The brothers’ conflict over the money caused a long period of estrangement between them",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 191,
+      "unit": 7,
       "term": "seriously",
-      "entries": [],
-      "unit": 7,
-      "id": 191
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The algae growing on the lke’s surface could seriously affect the mount of oxygen in the water",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 192,
+      "unit": 7,
       "term": "official",
-      "entries": [],
-      "unit": 7,
-      "id": 192
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "English is on of Singapore’s four official languages",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Government officials arrived at the site of the earthquake to begin assessing the damage",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 193,
+      "unit": 7,
       "term": "isolated",
-      "entries": [],
-      "unit": 7,
-      "id": 193
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "An airdrop system was designed to deliver supplies to isolated regions",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 194,
+      "unit": 7,
       "term": "accept",
-      "entries": [],
-      "unit": 7,
-      "id": 194
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Not every major government accepts that global warming is caused by human actions",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 195,
+      "unit": 7,
       "term": "acclaim",
-      "entries": [],
-      "unit": 7,
-      "id": 195
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The functional and innovative design of the building was widely acclaimed, making it the city’s most distinctive landmark",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Although the song was unpopular with critics upon its initial release, Queen’s ‘Bohemian Rhapsody’ eventually received worldwide acclaim",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 196,
+      "unit": 7,
       "term": "underestimate",
-      "entries": [],
-      "unit": 7,
-      "id": 196
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Workaholics should not underestimate the value of including leisure time in their bush schedules",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 197,
+      "unit": 7,
       "term": "populated",
-      "entries": [],
-      "unit": 7,
-      "id": 197
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Housing prices rose steeply in the heavily populated neighborhoods of London",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 198,
+      "unit": 7,
       "term": "dependent",
-      "entries": [],
-      "unit": 7,
-      "id": 198
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The success of the new mobile device is heavily dependent on how efficient its batteries are in actual use",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 199,
+      "unit": 7,
       "term": "eruption",
-      "entries": [],
-      "unit": 7,
-      "id": 199
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The ancient Roman city of Pompeii was destroyed by the violent eruption of Mt. Vesuvius in 79 A.D.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 200,
+      "unit": 7,
       "term": "virtually",
-      "entries": [],
-      "unit": 7,
-      "id": 200
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Some major telecommunications companies are hoping to make WiFi internet available virtually anywhere throughout the entire United States",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 201,
+      "unit": 7,
       "term": "severe",
-      "entries": [],
-      "unit": 7,
-      "id": 201
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Due to the ongoing drought, the government imposed severe limits on water usage for lawn maintenance",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 202,
+      "unit": 7,
       "term": "capacity",
-      "entries": [],
-      "unit": 7,
-      "id": 202
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "With the steady growth in global population, scientists worry that we’ll soon reach the Earth’s full capacity for sustaining human life",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 203,
+      "unit": 7,
       "term": "vertical",
-      "entries": [],
-      "unit": 7,
-      "id": 203
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The team built horizontal and vertical tunnels to excavate buried pottery and weapons",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 204,
+      "unit": 7,
       "term": "erosion",
-      "entries": [],
-      "unit": 7,
-      "id": 204
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Erosion by wind, rain and the Colorado River shaped the Grand Canyon",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 205,
+      "unit": 7,
       "term": "deficit",
-      "entries": [],
-      "unit": 7,
-      "id": 205
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The government’s serious finance deficit was a result of excessive reliance on the US dollars",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 206,
+      "unit": 7,
       "term": "remains",
-      "entries": [],
-      "unit": 7,
-      "id": 206
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The fossilized remains reveal the shape of prehistoric turtles",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 207,
+      "unit": 7,
       "term": "eager",
-      "entries": [],
-      "unit": 7,
-      "id": 207
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Attendees at the tech expo were eager to try the latest video game consoles",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 208,
+      "unit": 7,
       "term": "entire",
-      "entries": [],
-      "unit": 7,
-      "id": 208
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The volcano’s eruption spread smoke and ash throughout the entire region",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 209,
+      "unit": 7,
       "term": "charge",
-      "entries": [],
-      "unit": 7,
-      "id": 209
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Many telecommunications companies charge their customers for hidden services",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The charge for a week-long tourist transit pass is $35",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 210,
+      "unit": 7,
       "term": "irritation",
-      "entries": [],
-      "unit": 7,
-      "id": 210
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Even if the amount is really small, artificial ingredients in laundry detergent could cause skin irritation",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 211,
+      "unit": 8,
       "term": "infection",
-      "entries": [],
-      "unit": 8,
-      "id": 211
+      "entries": []
     },
     {
+      "id": 212,
+      "unit": 8,
       "term": "identify",
-      "entries": [],
-      "unit": 8,
-      "id": 212
+      "entries": []
     },
     {
+      "id": 213,
+      "unit": 8,
       "term": "underlying",
-      "entries": [],
-      "unit": 8,
-      "id": 213
+      "entries": []
     },
     {
+      "id": 214,
+      "unit": 8,
       "term": "prospective",
-      "entries": [],
-      "unit": 8,
-      "id": 214
+      "entries": []
     },
     {
+      "id": 215,
+      "unit": 8,
       "term": "inhospitable",
-      "entries": [],
-      "unit": 8,
-      "id": 215
+      "entries": []
     },
     {
+      "id": 216,
+      "unit": 8,
       "term": "ancestor",
-      "entries": [],
-      "unit": 8,
-      "id": 216
+      "entries": []
     },
     {
+      "id": 217,
+      "unit": 8,
       "term": "variation",
-      "entries": [],
-      "unit": 8,
-      "id": 217
+      "entries": []
     },
     {
+      "id": 218,
+      "unit": 8,
       "term": "issue",
-      "entries": [],
-      "unit": 8,
-      "id": 218
+      "entries": []
     },
     {
+      "id": 219,
+      "unit": 8,
       "term": "remote",
-      "entries": [],
-      "unit": 8,
-      "id": 219
+      "entries": []
     },
     {
+      "id": 220,
+      "unit": 8,
       "term": "independently",
-      "entries": [],
-      "unit": 8,
-      "id": 220
+      "entries": []
     },
     {
+      "id": 221,
+      "unit": 8,
       "term": "scrutiny",
-      "entries": [],
-      "unit": 8,
-      "id": 221
+      "entries": []
     },
     {
+      "id": 222,
+      "unit": 8,
       "term": "stimulate",
-      "entries": [],
-      "unit": 8,
-      "id": 222
+      "entries": []
     },
     {
+      "id": 223,
+      "unit": 8,
       "term": "implement",
-      "entries": [],
-      "unit": 8,
-      "id": 223
+      "entries": []
     },
     {
+      "id": 224,
+      "unit": 8,
       "term": "own",
-      "entries": [],
-      "unit": 8,
-      "id": 224
+      "entries": []
     },
     {
+      "id": 225,
+      "unit": 8,
       "term": "regard",
-      "entries": [],
-      "unit": 8,
-      "id": 225
+      "entries": []
     },
     {
+      "id": 226,
+      "unit": 8,
       "term": "enormous",
-      "entries": [],
-      "unit": 8,
-      "id": 226
+      "entries": []
     },
     {
+      "id": 227,
+      "unit": 8,
       "term": "manifest",
-      "entries": [],
-      "unit": 8,
-      "id": 227
+      "entries": []
     },
     {
+      "id": 228,
+      "unit": 8,
       "term": "earn",
-      "entries": [],
-      "unit": 8,
-      "id": 228
+      "entries": []
     },
     {
+      "id": 229,
+      "unit": 8,
       "term": "pioneer",
-      "entries": [],
-      "unit": 8,
-      "id": 229
+      "entries": []
     },
     {
+      "id": 230,
+      "unit": 8,
       "term": "entitle",
-      "entries": [],
-      "unit": 8,
-      "id": 230
+      "entries": []
     },
     {
+      "id": 231,
+      "unit": 8,
       "term": "arguably",
-      "entries": [],
-      "unit": 8,
-      "id": 231
+      "entries": []
     },
     {
+      "id": 232,
+      "unit": 8,
       "term": "apparently",
-      "entries": [],
-      "unit": 8,
-      "id": 232
+      "entries": []
     },
     {
+      "id": 233,
+      "unit": 8,
       "term": "adequate",
-      "entries": [],
-      "unit": 8,
-      "id": 233
+      "entries": []
     },
     {
+      "id": 234,
+      "unit": 8,
       "term": "rule",
-      "entries": [],
-      "unit": 8,
-      "id": 234
+      "entries": []
     },
     {
+      "id": 235,
+      "unit": 8,
       "term": "grant",
-      "entries": [],
-      "unit": 8,
-      "id": 235
+      "entries": []
     },
     {
+      "id": 236,
+      "unit": 8,
       "term": "gauge",
-      "entries": [],
-      "unit": 8,
-      "id": 236
+      "entries": []
     },
     {
+      "id": 237,
+      "unit": 8,
       "term": "occasional",
-      "entries": [],
-      "unit": 8,
-      "id": 237
+      "entries": []
     },
     {
+      "id": 238,
+      "unit": 8,
       "term": "interrupt",
-      "entries": [],
-      "unit": 8,
-      "id": 238
+      "entries": []
     },
     {
+      "id": 239,
+      "unit": 8,
       "term": "circuit",
-      "entries": [],
-      "unit": 8,
-      "id": 239
+      "entries": []
     },
     {
+      "id": 240,
+      "unit": 8,
       "term": "flat",
-      "entries": [],
-      "unit": 8,
-      "id": 240
+      "entries": []
     },
     {
+      "id": 241,
+      "unit": 9,
       "term": "periodical",
-      "entries": [],
-      "unit": 9,
-      "id": 241
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The periodicals in the library’s archives date back to the late 19th century.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 242,
+      "unit": 9,
       "term": "intricate",
-      "entries": [],
-      "unit": 9,
-      "id": 242
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A balanced and healthy ecosystem largely depends on the intricate relationship between plants and insects.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 243,
+      "unit": 9,
       "term": "flatten",
-      "entries": [],
-      "unit": 9,
-      "id": 243
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Hamsters can flatten their bodies ro pass through a tiny hole.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 244,
+      "unit": 9,
       "term": "altogether",
-      "entries": [],
-      "unit": 9,
-      "id": 244
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Many diet plans are dropped altogether when individuals do not see immediate results.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 245,
+      "unit": 9,
       "term": "trap",
-      "entries": [],
-      "unit": 9,
-      "id": 245
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The boys who were trapped inside the tunnel were finally freed after a 15-hour rescue operation.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Some species of spider are able to construct intricate traps in order to make their prey immobile",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 246,
+      "unit": 9,
       "term": "occupational",
-      "entries": [],
-      "unit": 9,
-      "id": 246
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Falling from great heights is an occupational hazard that many construction workers face on a daily basis.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 247,
+      "unit": 9,
       "term": "coin",
-      "entries": [],
-      "unit": 9,
-      "id": 247
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Social media users coined hundreds of new words last year.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 248,
+      "unit": 9,
       "term": "demanding",
-      "entries": [],
-      "unit": 9,
-      "id": 248
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Social work is a mentally and emotionally demanding field, but it is highly rewarding.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 249,
+      "unit": 9,
       "term": "remarkable",
-      "entries": [],
-      "unit": 9,
-      "id": 249
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The canal’s construction may have been abandoned if the engineers had not come up with the remarkable solution.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 250,
+      "unit": 9,
       "term": "seize",
-      "entries": [],
-      "unit": 9,
-      "id": 250
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "In 1936, Francisco Franco began the civil war in an effort to seize control of the Spanish government.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 251,
+      "unit": 9,
       "term": "initiative",
-      "entries": [],
-      "unit": 9,
-      "id": 251
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The new waste disposal regulations are first part of the city’s environment initiative.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 252,
+      "unit": 9,
       "term": "appraisal",
-      "entries": [],
-      "unit": 9,
-      "id": 252
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "It is beneficial to both a company and its staff that performance appraisals are routinely carried out.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 253,
+      "unit": 9,
       "term": "exploit",
-      "entries": [],
-      "unit": 9,
-      "id": 253
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Areas rich in coal and other natural resources used to be exploited by powerful corporations.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 254,
+      "unit": 9,
       "term": "extract",
-      "entries": [],
-      "unit": 9,
-      "id": 254
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "To protect the marine environment, safer methods of extracting oil from the ocean floor will need to be developed.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 255,
+      "unit": 9,
       "term": "afflict",
-      "entries": [],
-      "unit": 9,
-      "id": 255
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Migraines are a chronic illness that afflict approximately one in eight people in U.S.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 256,
+      "unit": 9,
       "term": "damp",
-      "entries": [],
-      "unit": 9,
-      "id": 256
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Wasabia japonica, or Japanese horseradish, grows best in damp soil protected by shade.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 257,
+      "unit": 9,
       "term": "figure",
-      "entries": [],
-      "unit": 9,
-      "id": 257
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "TempExample_25700",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Government officials figured that the recession would come to an end within the next six months.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 258,
+      "unit": 9,
       "term": "provision",
-      "entries": [],
-      "unit": 9,
-      "id": 258
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The level of special education provision is increasing as national initiatives have been aggressively undertaken.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 259,
+      "unit": 9,
       "term": "colonise",
-      "entries": [],
-      "unit": 9,
-      "id": 259
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The British Empire colonized approximately a quarter of the territories in the world.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 260,
+      "unit": 9,
       "term": "hazard",
-      "entries": [],
-      "unit": 9,
-      "id": 260
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Most people opt for safe, low-earning investment plans to avoid the financial hazards of more rewarding ones.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 261,
+      "unit": 9,
       "term": "transmit",
-      "entries": [],
-      "unit": 9,
-      "id": 261
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Wireless technologies allow us to transmit images and documents to each other no matter where we are.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 262,
+      "unit": 9,
       "term": "entail",
-      "entries": [],
-      "unit": 9,
-      "id": 262
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "In today’s complex and global market, consumers are generally unaware that their purchases entail ethical dilemmas such as labour exploitation.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 263,
+      "unit": 9,
       "term": "locate",
-      "entries": [],
-      "unit": 9,
-      "id": 263
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "TempExample_26300",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The divers failed to locate the crashed airplane’s data recording device.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 264,
+      "unit": 9,
       "term": "agriculture",
-      "entries": [],
-      "unit": 9,
-      "id": 264
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Agriculture in the pase was completely reliant on water.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 265,
+      "unit": 9,
       "term": "endorse",
-      "entries": [],
-      "unit": 9,
-      "id": 265
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The president’s plan to fully convert the country to clean energy was endorsed by the ten largest corporations in the nation.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 266,
+      "unit": 9,
       "term": "evidence",
-      "entries": [],
-      "unit": 9,
-      "id": 266
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The prosecutor could not provide the court with solid evidence of arson.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 267,
+      "unit": 9,
       "term": "appropriate",
-      "entries": [],
-      "unit": 9,
-      "id": 267
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The format for a CV and a cover letter should be appropriate for each job position.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 268,
+      "unit": 9,
       "term": "confidential",
-      "entries": [],
-      "unit": 9,
-      "id": 268
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "All medical records are required to be kept as confidential information.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 269,
+      "unit": 9,
       "term": "conclusively",
-      "entries": [],
-      "unit": 9,
-      "id": 269
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The specimen was sent to the National Science Centre after the local research group was unable to conclusively identify the strange fish.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 270,
+      "unit": 9,
       "term": "rather",
-      "entries": [],
-      "unit": 9,
-      "id": 270
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Travelers affected by the flight cancellation may choose to stay in a hotel near the airport rather than return.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "It is believed that meat from a stressed animal can be rather tough when cooked.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 271,
+      "unit": 10,
       "term": "reconcile",
-      "entries": [],
-      "unit": 10,
-      "id": 271
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "It has become crucial to reconcile one’s work life with one’s family life.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 272,
+      "unit": 10,
       "term": "belong",
-      "entries": [],
-      "unit": 10,
-      "id": 272
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The recreational vehicles that belong to the resort are available only to VIP guests.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 273,
+      "unit": 10,
       "term": "parasite",
-      "entries": [],
-      "unit": 10,
-      "id": 273
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "If you live in a rural, wooded area, frequently check your outdoor pets for parasites",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 274,
+      "unit": 10,
       "term": "blame",
-      "entries": [],
-      "unit": 10,
-      "id": 274
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The fungal parasite is to blame for the destruction of last season’s crops.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 275,
+      "unit": 10,
       "term": "migration",
-      "entries": [],
-      "unit": 10,
-      "id": 275
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The migration of our ancestors across the Bering Strait brought the first humans to North America over 20,000 years ago.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 276,
+      "unit": 10,
       "term": "thwart",
-      "entries": [],
-      "unit": 10,
-      "id": 276
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Anne Frank’s father’s attempts to run away from Germany were thwarted by strict US immigration polices.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 277,
+      "unit": 10,
       "term": "coincide",
-      "entries": [],
-      "unit": 10,
-      "id": 277
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The tsunami that hit the coastal region coincided with a volcanic eruption that took place 23 kilometers from shore.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 278,
+      "unit": 10,
       "term": "exposure",
-      "entries": [],
-      "unit": 10,
-      "id": 278
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The teenagers who grew up in the remote village had no exposure to pop music, social media or reality television.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 279,
+      "unit": 10,
       "term": "thereby",
-      "entries": [],
-      "unit": 10,
-      "id": 279
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The British and Prussians defeated Napoleon at Waterloo, thereby ending the Napoleonic Wars.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 280,
+      "unit": 10,
       "term": "creature",
-      "entries": [],
-      "unit": 10,
-      "id": 280
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The amount of plastics found in the stomachs of large marine creatures was shocking.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 281,
+      "unit": 10,
       "term": "race",
-      "entries": [],
-      "unit": 10,
-      "id": 281
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The human race has greatly affected the Earth’s climate and atmosphere.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The top horses arrived at the track for the international horse race.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 282,
+      "unit": 10,
       "term": "inevitable",
-      "entries": [],
-      "unit": 10,
-      "id": 282
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The company’s bankruptcy was inevitable after the huge failure of its latest product.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 283,
+      "unit": 10,
       "term": "designed",
-      "entries": [],
-      "unit": 10,
-      "id": 283
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The device is designed for individuals who only have partial use of their hands.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 284,
+      "unit": 10,
       "term": "legitimate",
-      "entries": [],
-      "unit": 10,
-      "id": 284
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Most cases of addiction to painkillers start with a legitimate prescription from a doctor.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 285,
+      "unit": 10,
       "term": "reliable",
-      "entries": [],
-      "unit": 10,
-      "id": 285
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Universal Studios, a huge amusement park, has been a reliable source of income for residents in the county.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 286,
+      "unit": 10,
       "term": "conscious",
-      "entries": [],
-      "unit": 10,
-      "id": 286
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The lawyer needed to prove that the defendant did not make a conscious decision to commit the crime.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 287,
+      "unit": 10,
       "term": "concern",
-      "entries": [],
-      "unit": 10,
-      "id": 287
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Parents were concerned about the difficult themes the children’s programme explored.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The mayor plans to hold a town forum to outline the agricultural proposal as it concerns the entire community.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "When preparing for a job interview, concern yourself with your appearance as well.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 288,
+      "unit": 10,
       "term": "irreversible",
-      "entries": [],
-      "unit": 10,
-      "id": 288
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The changes made to the dress were irreversible.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 289,
+      "unit": 10,
       "term": "artefact",
-      "entries": [],
-      "unit": 10,
-      "id": 289
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Many of the artefacts recovered from the pharaoh’s tomb were thought to be priceless.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 290,
+      "unit": 10,
       "term": "confinement",
-      "entries": [],
-      "unit": 10,
-      "id": 290
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "People in northern regions have different ways of dealing with the feeling of isolation and confinement that accompany the long winters.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 291,
+      "unit": 10,
       "term": "attempt",
-      "entries": [],
-      "unit": 10,
-      "id": 291
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Employees attend the lectures but make no attempt to apply what they’ve learnt to their daily tasks.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Some people in the Middle Ages attempted to change different materials into gold.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 292,
+      "unit": 10,
       "term": "encourage",
-      "entries": [],
-      "unit": 10,
-      "id": 292
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Reduced nus fares on the weekends should encourage more people to use public transport in the city.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 293,
+      "unit": 10,
       "term": "cell",
-      "entries": [],
-      "unit": 10,
-      "id": 293
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The human body is made up of more than 10 trillion cells.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 294,
+      "unit": 10,
       "term": "lower",
-      "entries": [],
-      "unit": 10,
-      "id": 294
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "When sleeping, blood pressure is lowered and body temperature is dropped slightly.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Every candidate running for electron pledges lower taxes.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 295,
+      "unit": 10,
       "term": "challenging",
-      "entries": [],
-      "unit": 10,
-      "id": 295
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A triathlon is one of the most challenging competitions an athlete can enter.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 296,
+      "unit": 10,
       "term": "conviction",
-      "entries": [],
-      "unit": 10,
-      "id": 296
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Martin Luther King Jr.spoke with utter conviction of the troubles facing African Americans.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 297,
+      "unit": 10,
       "term": "educated",
-      "entries": [],
-      "unit": 10,
-      "id": 297
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "He was especially successful in winning the votes of low-income, poorly educated citizens.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 298,
+      "unit": 10,
       "term": "accurate",
-      "entries": [],
-      "unit": 10,
-      "id": 298
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Eating or drinking before a medical check-up may prevent the tested from obtaining accurate results.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 299,
+      "unit": 10,
       "term": "corridor",
-      "entries": [],
-      "unit": 10,
-      "id": 299
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The best room with a stunning ocean view is the one ate the end of the corridor.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 300,
+      "unit": 10,
       "term": "mass",
-      "entries": [],
-      "unit": 10,
-      "id": 300
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The gravitational force of an object is directly related to its mass.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Some engineers imagine a future where free, clean energy is available to the masses.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 301,
+      "unit": 11,
       "term": "extinct",
-      "entries": [],
-      "unit": 11,
-      "id": 301
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The inaccurate schedule of the mass transit system is the most frequent complaint from city residents.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "With the water temperatures rising, many species of coral are going extinct at alarming rates.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 302,
+      "unit": 11,
       "term": "particular",
-      "entries": [],
-      "unit": 11,
-      "id": 302
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The swimmer followed a particular diet in order to have enough energy to train for eight hours a day.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Before out tour starts, I would like to go over some of the particulars with all of you.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 303,
+      "unit": 11,
       "term": "occur",
-      "entries": [],
-      "unit": 11,
-      "id": 303
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The flooding of the Nile occurs every year between June and September because of melting snow in the Ethiopian Highlands.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 304,
+      "unit": 11,
       "term": "extent",
-      "entries": [],
-      "unit": 11,
-      "id": 304
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The plant’s leaves, when boiled, had an effect similar to that of a painkiller, but only to a limited extent.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 305,
+      "unit": 11,
       "term": "govern",
-      "entries": [],
-      "unit": 11,
-      "id": 305
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The amount of traffic in the downtown area is governed to a large extent by whether ot not a game is being held at Oliver Stadium.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 306,
+      "unit": 11,
       "term": "reasoning",
-      "entries": [],
-      "unit": 11,
-      "id": 306
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The workforce demanded to know the CEO’s reasoning for increasing his own salary while cutting employees’.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 307,
+      "unit": 11,
       "term": "resemble",
-      "entries": [],
-      "unit": 11,
-      "id": 307
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The conditions for the experiment closely resembled those of the natural environment.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 308,
+      "unit": 11,
       "term": "recognition",
-      "entries": [],
-      "unit": 11,
-      "id": 308
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "At the awards ceremony, the director received recognition for her outstanding contributions to cinema.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "By cleaning forests, draining lakes and removing mountaintops, the mining operation had changed the landscape beyond any recognition.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 309,
+      "unit": 11,
       "term": "enhance",
-      "entries": [],
-      "unit": 11,
-      "id": 309
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Adding fresh basil will enhance the flavour of your sauce.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 310,
+      "unit": 11,
       "term": "famine",
-      "entries": [],
-      "unit": 11,
-      "id": 310
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Conditions in the bankrupt nation were worsened by the famine, which resulted from the poor crop harvest.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 311,
+      "unit": 11,
       "term": "storey",
-      "entries": [],
-      "unit": 11,
-      "id": 311
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The Burj Khalifa in Dubai has more than 160 storeys and is almost 830 metres tall.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 312,
+      "unit": 11,
       "term": "aim",
-      "entries": [],
-      "unit": 11,
-      "id": 312
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "While the original aim was to renovate the old theatre, the owners later decided to demolish it.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The majority of sportswear advertisements are aimed at men and women between the ages of 18 to 35.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 313,
+      "unit": 11,
       "term": "venue",
-      "entries": [],
-      "unit": 11,
-      "id": 313
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Tourists in New Orleans frequently visit the bar because it is one of the best venues for live jazz music in the world.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 314,
+      "unit": 11,
       "term": "exceed",
-      "entries": [],
-      "unit": 11,
-      "id": 314
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Whenever supply of oil begins to exceed global demand, oil prices tend to fluctuate widely.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
-      "term": "breakthough",
-      "entries": [],
+      "id": 315,
       "unit": 11,
-      "id": 315
+      "term": "breakthrough",
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The band was relatively unknown until they released their rock and roll breakthrough that would define their career.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 316,
+      "unit": 11,
       "term": "competitive",
-      "entries": [],
-      "unit": 11,
-      "id": 316
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The job market for recent law graduates has become increasingly competitive, and law firms are offering fewer and fewer jobs.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "To keep the new laptop’s pricing competitive, some compromises had to be made to its processing power.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 317,
+      "unit": 11,
       "term": "whilst",
-      "entries": [],
-      "unit": 11,
-      "id": 317
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "It is illegal for drivers to text of use their mobile phones whilst driving.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 318,
+      "unit": 11,
       "term": "embark",
-      "entries": [],
-      "unit": 11,
-      "id": 318
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Captain Robert Falcon Scott embarked on a dangerous expedition to the Antarctic Plateau.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 319,
+      "unit": 11,
       "term": "archive",
-      "entries": [],
-      "unit": 11,
-      "id": 319
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Due to the widespread use of social media, it is easier than ever for individuals to archieve instant fame.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 320,
+      "unit": 11,
       "term": "plot",
-      "entries": [],
-      "unit": 11,
-      "id": 320
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Geographical landmarks were used to plot the dimensions of the new road.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "It took the author more than ten years to plot and then write the final two novels in his fantasy saga.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Every summer, my grandmother would plant a plot of green beans in her backyard.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 321,
+      "unit": 11,
       "term": "core",
-      "entries": [],
-      "unit": 11,
-      "id": 321
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Within cities, traffic-related issues are the core of most complaints.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
-      "term": "retrangemnet",
-      "entries": [],
+      "id": 322,
       "unit": 11,
-      "id": 322
+      "term": "retrenchment",
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "With the cost of the construction project increasing rapidly, the project manager accepted the need for retrenchment.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
-      "term": "dominent",
-      "entries": [],
+      "id": 323,
       "unit": 11,
-      "id": 323
+      "term": "dominant",
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Our company achieved a dominant position in the market by being the first to focus on online sales.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 324,
+      "unit": 11,
       "term": "obligation",
-      "entries": [],
-      "unit": 11,
-      "id": 324
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The international community has a moral obligation to provide assistance to countries affected by natural disasters.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 325,
+      "unit": 11,
       "term": "ideal",
-      "entries": [],
-      "unit": 11,
-      "id": 325
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Travelers seeking the ideal conditions for a relaxing day at the beach should book their flights for December or January.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 326,
+      "unit": 11,
       "term": "oblivious",
-      "entries": [],
-      "unit": 11,
-      "id": 326
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Voters are largely oblivious to how their government actually works.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 327,
+      "unit": 11,
       "term": "context",
-      "entries": [],
-      "unit": 11,
-      "id": 327
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Although it is not shocking by today’s standards, the novel was extremely controversial within the cultural context of its time.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 328,
+      "unit": 11,
       "term": "matter",
-      "entries": [],
-      "unit": 11,
-      "id": 328
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "In some job fields, the academic qualifications of an employee do not matter.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 329,
+      "unit": 11,
       "term": "inextricably",
-      "entries": [],
-      "unit": 11,
-      "id": 329
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A committee was set up to deal with any financial matters related to the construction project.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The end of the First World War is inextricably linked with the start of the second.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 330,
+      "unit": 11,
       "term": "reel",
-      "entries": [],
-      "unit": 11,
-      "id": 330
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Recreational fishermen use advanced fishing reels to catch salmon, tuna and other large fish.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 331,
+      "unit": 12,
       "term": "envy",
-      "entries": [],
-      "unit": 12,
-      "id": 331
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Backpackers frequently express envy towards the apparent simplicity of the locals’ lives, but this sentiment neglects the daily difficulties these men and women face.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 332,
+      "unit": 12,
       "term": "reptile",
-      "entries": [],
-      "unit": 12,
-      "id": 332
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Since reptiles are cold-blooded, you can often find them in the wild sunning themselves on a rock.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 333,
+      "unit": 12,
       "term": "distorted",
-      "entries": [],
-      "unit": 12,
-      "id": 333
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "If you don’t use a special wide-angle lens, photographs taken underwater will appear distorted.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 334,
+      "unit": 12,
       "term": "widespread",
-      "entries": [],
-      "unit": 12,
-      "id": 334
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The unexpected change in the hurricane’s direction led to widespread panic along the coast.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 335,
+      "unit": 12,
       "term": "succeed",
-      "entries": [],
-      "unit": 12,
-      "id": 335
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The new attendance policy succeeded in reducing lateness and overuse of personal leave.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Mr Taylor succeeded his father as CEO of Eastland Industries.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 336,
+      "unit": 12,
       "term": "frighten",
-      "entries": [],
-      "unit": 12,
-      "id": 336
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The harsh and horrible sound effects in the scene seemed to frighten even adults.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 337,
+      "unit": 12,
       "term": "marked",
-      "entries": [],
-      "unit": 12,
-      "id": 337
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "There are marked differences in slope difficulties, clearly indicated by different colors and shapes at the ski resort.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 338,
+      "unit": 12,
       "term": "properly",
-      "entries": [],
-      "unit": 12,
-      "id": 338
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A professional handyman was hired to ensure that the new water purification system would be properly installed and maintained.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 339,
+      "unit": 12,
       "term": "revelation",
-      "entries": [],
-      "unit": 12,
-      "id": 339
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The revelation that the Earth orbits the sun was disputed by many scholars and religious leaders of the time.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 340,
+      "unit": 12,
       "term": "prevailing",
-      "entries": [],
-      "unit": 12,
-      "id": 340
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "After the announcement that the company would be down sizing, there was a sense of anxiety prevailing across all offices.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 341,
+      "unit": 12,
       "term": "feature",
-      "entries": [],
-      "unit": 12,
-      "id": 341
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The central feature of the architect’s most famous house was the peaceful waterfall that ran underneath it.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The film featured a wide cast of unique characters who all contributed to the exciting plot.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 342,
+      "unit": 12,
       "term": "loan",
-      "entries": [],
-      "unit": 12,
-      "id": 342
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The Stevensons took out a large loan from the bank in order to start their bakery.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 343,
+      "unit": 12,
       "term": "avoid",
-      "entries": [],
-      "unit": 12,
-      "id": 343
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Many university students take advantage of free Wi-Fi services at cafes and libraries to avoid the high monthly fees of home internet services.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 344,
+      "unit": 12,
       "term": "originate",
-      "entries": [],
-      "unit": 12,
-      "id": 344
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The idea for the poem originated from the author's experiences during World War I.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 345,
+      "unit": 12,
       "term": "command",
-      "entries": [],
-      "unit": 12,
-      "id": 345
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The team commanded a lead as it entered the final stage of the race.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 346,
+      "unit": 12,
       "term": "extremely",
-      "entries": [],
-      "unit": 12,
-      "id": 346
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The new fibre is extremely flexible and could have multiple uses in construction.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 347,
+      "unit": 12,
       "term": "qualified",
-      "entries": [],
-      "unit": 12,
-      "id": 347
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Qualified accountant will be assigned to your business to review any possible miscalculations in your taxes.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 348,
+      "unit": 12,
       "term": "concrete",
-      "entries": [],
-      "unit": 12,
-      "id": 348
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The bank statements provided concrete evidence that Mr Turner had accepted bribes while he was president of the football league.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "First massive concrete columns were built across the river to provide support for the bridge.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 349,
+      "unit": 12,
       "term": "compromise",
-      "entries": [],
-      "unit": 12,
-      "id": 349
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A key trait of a capable negotiator is his or her willingness to compromise.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The students’ poor behavior at the seminar compromised the good reputation of the university.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 350,
+      "unit": 12,
       "term": "lack",
-      "entries": [],
-      "unit": 12,
-      "id": 350
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "A lack of fiber in one’s diet can lead to serious digestive issues.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The education reform did not pass because it lacked support from conservative voters.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 351,
+      "unit": 12,
       "term": "considerable",
-      "entries": [],
-      "unit": 12,
-      "id": 351
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Astoni Guadi’s love of nature had a considerable influence on his architecture.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 352,
+      "unit": 12,
       "term": "refer",
-      "entries": [],
-      "unit": 12,
-      "id": 352
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Nuclear weapons are referred to as a threat to the entire human race.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 353,
+      "unit": 12,
       "term": "obey",
-      "entries": [],
-      "unit": 12,
-      "id": 353
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Sea captains need to obey international regulations during navigation.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 354,
+      "unit": 12,
       "term": "possess",
-      "entries": [],
-      "unit": 12,
-      "id": 354
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Within a few years, robots will possess lifelike human characteristics and be employed in several hospitality industries.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 355,
+      "unit": 12,
       "term": "ordinary",
-      "entries": [],
-      "unit": 12,
-      "id": 355
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The amazing rescue at Dunkirk was done by ordinary people acting  bravely in extraordinary times.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 356,
+      "unit": 12,
       "term": "prompt",
-      "entries": [],
-      "unit": 12,
-      "id": 356
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Customers are offered incentives to encourage prompt payment of monthly utility bills.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The rising number of road accidents prompted the government to reduce the speed limit on highways.",
+              "translation": ""
+            }
+          ]
+        },
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Some stage actors require a prompt from the director when they forget their lines.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 357,
+      "unit": 12,
       "term": "accuse",
-      "entries": [],
-      "unit": 12,
-      "id": 357
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The electronics company was accused of exploiting its factory workers.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 358,
+      "unit": 12,
       "term": "invasion",
-      "entries": [],
-      "unit": 12,
-      "id": 358
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "The economic crash resulted in an invasion of young adults into the army.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 359,
+      "unit": 12,
       "term": "refuse",
-      "entries": [],
-      "unit": 12,
-      "id": 359
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "With some exceptions, people have the right to refuse medical treatment.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 360,
+      "unit": 12,
       "term": "so that",
-      "entries": [],
-      "unit": 12,
-      "id": 360
+      "entries": [
+        {
+          "pos": "v.",
+          "gloss": "",
+          "examples": [
+            {
+              "text": "Activities will not commence until after lunch so that guests have time to get settled into their rooms.",
+              "translation": ""
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": 361,
+      "unit": 13,
       "term": "authentic",
-      "entries": [],
-      "unit": 13,
-      "id": 361
+      "entries": []
     },
     {
+      "id": 362,
+      "unit": 13,
       "term": "carved",
-      "entries": [],
-      "unit": 13,
-      "id": 362
+      "entries": []
     },
     {
+      "id": 363,
+      "unit": 13,
       "term": "relate",
-      "entries": [],
-      "unit": 13,
-      "id": 363
+      "entries": []
     },
     {
+      "id": 364,
+      "unit": 13,
       "term": "rodent",
-      "entries": [],
-      "unit": 13,
-      "id": 364
+      "entries": []
     },
     {
+      "id": 365,
+      "unit": 13,
       "term": "alter",
-      "entries": [],
-      "unit": 13,
-      "id": 365
+      "entries": []
     },
     {
+      "id": 366,
+      "unit": 13,
       "term": "individual",
-      "entries": [],
-      "unit": 13,
-      "id": 366
+      "entries": []
     },
     {
+      "id": 367,
+      "unit": 13,
       "term": "outrageous",
-      "entries": [],
-      "unit": 13,
-      "id": 367
+      "entries": []
     },
     {
+      "id": 368,
+      "unit": 13,
       "term": "intensive",
-      "entries": [],
-      "unit": 13,
-      "id": 368
+      "entries": []
     },
     {
+      "id": 369,
+      "unit": 13,
       "term": "occupy",
-      "entries": [],
-      "unit": 13,
-      "id": 369
+      "entries": []
     },
     {
+      "id": 370,
+      "unit": 13,
       "term": "probable",
-      "entries": [],
-      "unit": 13,
-      "id": 370
+      "entries": []
     },
     {
+      "id": 371,
+      "unit": 13,
       "term": "fertile",
-      "entries": [],
-      "unit": 13,
-      "id": 371
+      "entries": []
     },
     {
+      "id": 372,
+      "unit": 13,
       "term": "apprentice",
-      "entries": [],
-      "unit": 13,
-      "id": 372
+      "entries": []
     },
     {
+      "id": 373,
+      "unit": 13,
       "term": "significant",
-      "entries": [],
-      "unit": 13,
-      "id": 373
+      "entries": []
     },
     {
+      "id": 374,
+      "unit": 13,
       "term": "settle",
-      "entries": [],
-      "unit": 13,
-      "id": 374
+      "entries": []
     },
     {
+      "id": 375,
+      "unit": 13,
       "term": "mundane",
-      "entries": [],
-      "unit": 13,
-      "id": 375
+      "entries": []
     },
     {
+      "id": 376,
+      "unit": 13,
       "term": "appointment",
-      "entries": [],
-      "unit": 13,
-      "id": 376
+      "entries": []
     },
     {
+      "id": 377,
+      "unit": 13,
       "term": "largely",
-      "entries": [],
-      "unit": 13,
-      "id": 377
+      "entries": []
     },
     {
+      "id": 378,
+      "unit": 13,
       "term": "revise",
-      "entries": [],
-      "unit": 13,
-      "id": 378
+      "entries": []
     },
     {
+      "id": 379,
+      "unit": 13,
       "term": "catastrophic",
-      "entries": [],
-      "unit": 13,
-      "id": 379
+      "entries": []
     },
     {
+      "id": 380,
+      "unit": 13,
       "term": "afraid",
-      "entries": [],
-      "unit": 13,
-      "id": 380
+      "entries": []
     },
     {
+      "id": 381,
+      "unit": 13,
       "term": "plough",
-      "entries": [],
-      "unit": 13,
-      "id": 381
+      "entries": []
     },
     {
+      "id": 382,
+      "unit": 13,
       "term": "substance",
-      "entries": [],
-      "unit": 13,
-      "id": 382
+      "entries": []
     },
     {
+      "id": 383,
+      "unit": 13,
       "term": "drought",
-      "entries": [],
-      "unit": 13,
-      "id": 383
+      "entries": []
     },
     {
+      "id": 384,
+      "unit": 13,
       "term": "insular",
-      "entries": [],
-      "unit": 13,
-      "id": 384
+      "entries": []
     },
     {
+      "id": 385,
+      "unit": 13,
       "term": "consistent",
-      "entries": [],
-      "unit": 13,
-      "id": 385
+      "entries": []
     },
     {
+      "id": 386,
+      "unit": 13,
       "term": "profitable",
-      "entries": [],
-      "unit": 13,
-      "id": 386
+      "entries": []
     },
     {
+      "id": 387,
+      "unit": 13,
       "term": "depiction",
-      "entries": [],
-      "unit": 13,
-      "id": 387
+      "entries": []
     },
     {
+      "id": 388,
+      "unit": 13,
       "term": "incongruity",
-      "entries": [],
-      "unit": 13,
-      "id": 388
+      "entries": []
     },
     {
+      "id": 389,
+      "unit": 13,
       "term": "distressing",
-      "entries": [],
-      "unit": 13,
-      "id": 389
+      "entries": []
     },
     {
+      "id": 390,
+      "unit": 13,
       "term": "strand",
-      "entries": [],
-      "unit": 13,
-      "id": 390
+      "entries": []
     },
     {
+      "id": 391,
+      "unit": 14,
       "term": "attitude",
-      "entries": [],
-      "unit": 14,
-      "id": 391
+      "entries": []
     },
     {
+      "id": 392,
+      "unit": 14,
       "term": "strike",
-      "entries": [],
-      "unit": 14,
-      "id": 392
+      "entries": []
     },
     {
+      "id": 393,
+      "unit": 14,
       "term": "disturb",
-      "entries": [],
-      "unit": 14,
-      "id": 393
+      "entries": []
     },
     {
+      "id": 394,
+      "unit": 14,
       "term": "pervasive",
-      "entries": [],
-      "unit": 14,
-      "id": 394
+      "entries": []
     },
     {
+      "id": 395,
+      "unit": 14,
       "term": "insect",
-      "entries": [],
-      "unit": 14,
-      "id": 395
+      "entries": []
     },
     {
+      "id": 396,
+      "unit": 14,
       "term": "sort",
-      "entries": [],
-      "unit": 14,
-      "id": 396
+      "entries": []
     },
     {
+      "id": 397,
+      "unit": 14,
       "term": "esteem",
-      "entries": [],
-      "unit": 14,
-      "id": 397
+      "entries": []
     },
     {
+      "id": 398,
+      "unit": 14,
       "term": "opt",
-      "entries": [],
-      "unit": 14,
-      "id": 398
+      "entries": []
     },
     {
+      "id": 399,
+      "unit": 14,
       "term": "pasture",
-      "entries": [],
-      "unit": 14,
-      "id": 399
+      "entries": []
     },
     {
+      "id": 400,
+      "unit": 14,
       "term": "facility",
-      "entries": [],
-      "unit": 14,
-      "id": 400
+      "entries": []
     },
     {
+      "id": 401,
+      "unit": 14,
       "term": "undertake",
-      "entries": [],
-      "unit": 14,
-      "id": 401
+      "entries": []
     },
     {
+      "id": 402,
+      "unit": 14,
       "term": "criticise",
-      "entries": [],
-      "unit": 14,
-      "id": 402
+      "entries": []
     },
     {
+      "id": 403,
+      "unit": 14,
       "term": "criterion",
-      "entries": [],
-      "unit": 14,
-      "id": 403
+      "entries": []
     },
     {
+      "id": 404,
+      "unit": 14,
       "term": "devise",
-      "entries": [],
-      "unit": 14,
-      "id": 404
+      "entries": []
     },
     {
+      "id": 405,
+      "unit": 14,
       "term": "contain",
-      "entries": [],
-      "unit": 14,
-      "id": 405
+      "entries": []
     },
     {
+      "id": 406,
+      "unit": 14,
       "term": "superior",
-      "entries": [],
-      "unit": 14,
-      "id": 406
+      "entries": []
     },
     {
+      "id": 407,
+      "unit": 14,
       "term": "rigorous",
-      "entries": [],
-      "unit": 14,
-      "id": 407
+      "entries": []
     },
     {
+      "id": 408,
+      "unit": 14,
       "term": "inhibit",
-      "entries": [],
-      "unit": 14,
-      "id": 408
+      "entries": []
     },
     {
+      "id": 409,
+      "unit": 14,
       "term": "journey",
-      "entries": [],
-      "unit": 14,
-      "id": 409
+      "entries": []
     },
     {
+      "id": 410,
+      "unit": 14,
       "term": "appearance",
-      "entries": [],
-      "unit": 14,
-      "id": 410
+      "entries": []
     },
     {
+      "id": 411,
+      "unit": 14,
       "term": "replicate",
-      "entries": [],
-      "unit": 14,
-      "id": 411
+      "entries": []
     },
     {
+      "id": 412,
+      "unit": 14,
       "term": "including",
-      "entries": [],
-      "unit": 14,
-      "id": 412
+      "entries": []
     },
     {
+      "id": 413,
+      "unit": 14,
       "term": "detect",
-      "entries": [],
-      "unit": 14,
-      "id": 413
+      "entries": []
     },
     {
+      "id": 414,
+      "unit": 14,
       "term": "civilisation",
-      "entries": [],
-      "unit": 14,
-      "id": 414
+      "entries": []
     },
     {
+      "id": 415,
+      "unit": 14,
       "term": "demand",
-      "entries": [],
-      "unit": 14,
-      "id": 415
+      "entries": []
     },
     {
+      "id": 416,
+      "unit": 14,
       "term": "resistance",
-      "entries": [],
-      "unit": 14,
-      "id": 416
+      "entries": []
     },
     {
+      "id": 417,
+      "unit": 14,
       "term": "engage",
-      "entries": [],
-      "unit": 14,
-      "id": 417
+      "entries": []
     },
     {
+      "id": 418,
+      "unit": 14,
       "term": "indicative",
-      "entries": [],
-      "unit": 14,
-      "id": 418
+      "entries": []
     },
     {
+      "id": 419,
+      "unit": 14,
       "term": "contingent",
-      "entries": [],
-      "unit": 14,
-      "id": 419
+      "entries": []
     },
     {
+      "id": 420,
+      "unit": 14,
       "term": "either",
-      "entries": [],
-      "unit": 14,
-      "id": 420
+      "entries": []
     },
     {
+      "id": 421,
+      "unit": 15,
       "term": "distinctive",
-      "entries": [],
-      "unit": 15,
-      "id": 421
+      "entries": []
     },
     {
+      "id": 422,
+      "unit": 15,
       "term": "modify",
-      "entries": [],
-      "unit": 15,
-      "id": 422
+      "entries": []
     },
     {
+      "id": 423,
+      "unit": 15,
       "term": "notable",
-      "entries": [],
-      "unit": 15,
-      "id": 423
+      "entries": []
     },
     {
+      "id": 424,
+      "unit": 15,
       "term": "reflect",
-      "entries": [],
-      "unit": 15,
-      "id": 424
+      "entries": []
     },
     {
+      "id": 425,
+      "unit": 15,
       "term": "definite",
-      "entries": [],
-      "unit": 15,
-      "id": 425
+      "entries": []
     },
     {
+      "id": 426,
+      "unit": 15,
       "term": "optimism",
-      "entries": [],
-      "unit": 15,
-      "id": 426
+      "entries": []
     },
     {
+      "id": 427,
+      "unit": 15,
       "term": "arise",
-      "entries": [],
-      "unit": 15,
-      "id": 427
+      "entries": []
     },
     {
+      "id": 428,
+      "unit": 15,
       "term": "necessarily",
-      "entries": [],
-      "unit": 15,
-      "id": 428
+      "entries": []
     },
     {
+      "id": 429,
+      "unit": 15,
       "term": "attach",
-      "entries": [],
-      "unit": 15,
-      "id": 429
+      "entries": []
     },
     {
+      "id": 430,
+      "unit": 15,
       "term": "instance",
-      "entries": [],
-      "unit": 15,
-      "id": 430
+      "entries": []
     },
     {
+      "id": 431,
+      "unit": 15,
       "term": "constant",
-      "entries": [],
-      "unit": 15,
-      "id": 431
+      "entries": []
     },
     {
+      "id": 432,
+      "unit": 15,
       "term": "incident",
-      "entries": [],
-      "unit": 15,
-      "id": 432
+      "entries": []
     },
     {
+      "id": 433,
+      "unit": 15,
       "term": "victim",
-      "entries": [],
-      "unit": 15,
-      "id": 433
+      "entries": []
     },
     {
+      "id": 434,
+      "unit": 15,
       "term": "consist",
-      "entries": [],
-      "unit": 15,
-      "id": 434
+      "entries": []
     },
     {
+      "id": 435,
+      "unit": 15,
       "term": "scatter",
-      "entries": [],
-      "unit": 15,
-      "id": 435
+      "entries": []
     },
     {
+      "id": 436,
+      "unit": 15,
       "term": "amend",
-      "entries": [],
-      "unit": 15,
-      "id": 436
+      "entries": []
     },
     {
+      "id": 437,
+      "unit": 15,
       "term": "advantage",
-      "entries": [],
-      "unit": 15,
-      "id": 437
+      "entries": []
     },
     {
+      "id": 438,
+      "unit": 15,
       "term": "effort",
-      "entries": [],
-      "unit": 15,
-      "id": 438
+      "entries": []
     },
     {
+      "id": 439,
+      "unit": 15,
       "term": "give rise to",
-      "entries": [],
-      "unit": 15,
-      "id": 439
+      "entries": []
     },
     {
+      "id": 440,
+      "unit": 15,
       "term": "prey",
-      "entries": [],
-      "unit": 15,
-      "id": 440
+      "entries": []
     },
     {
+      "id": 441,
+      "unit": 15,
       "term": "tremendous",
-      "entries": [],
-      "unit": 15,
-      "id": 441
+      "entries": []
     },
     {
+      "id": 442,
+      "unit": 15,
       "term": "optical",
-      "entries": [],
-      "unit": 15,
-      "id": 442
+      "entries": []
     },
     {
+      "id": 443,
+      "unit": 15,
       "term": "intact",
-      "entries": [],
-      "unit": 15,
-      "id": 443
+      "entries": []
     },
     {
+      "id": 444,
+      "unit": 15,
       "term": "intake",
-      "entries": [],
-      "unit": 15,
-      "id": 444
+      "entries": []
     },
     {
+      "id": 445,
+      "unit": 15,
       "term": "lay",
-      "entries": [],
-      "unit": 15,
-      "id": 445
+      "entries": []
     },
     {
+      "id": 446,
+      "unit": 15,
       "term": "apparent",
-      "entries": [],
-      "unit": 15,
-      "id": 446
+      "entries": []
     },
     {
+      "id": 447,
+      "unit": 15,
       "term": "interfere",
-      "entries": [],
-      "unit": 15,
-      "id": 447
+      "entries": []
     },
     {
-      "term": "subsititute",
-      "entries": [],
+      "id": 448,
       "unit": 15,
-      "id": 448
+      "term": "substitute",
+      "entries": []
     },
     {
+      "id": 449,
+      "unit": 15,
       "term": "dull",
-      "entries": [],
-      "unit": 15,
-      "id": 449
+      "entries": []
     },
     {
+      "id": 450,
+      "unit": 15,
       "term": "release",
-      "entries": [],
-      "unit": 15,
-      "id": 450
+      "entries": []
     },
     {
+      "id": 451,
+      "unit": 16,
       "term": "activate",
-      "entries": [],
-      "unit": 16,
-      "id": 451
+      "entries": []
     },
     {
+      "id": 452,
+      "unit": 16,
       "term": "litter",
-      "entries": [],
-      "unit": 16,
-      "id": 452
+      "entries": []
     },
     {
+      "id": 453,
+      "unit": 16,
       "term": "forage",
-      "entries": [],
-      "unit": 16,
-      "id": 453
+      "entries": []
     },
     {
+      "id": 454,
+      "unit": 16,
       "term": "depending on",
-      "entries": [],
-      "unit": 16,
-      "id": 454
+      "entries": []
     },
     {
+      "id": 455,
+      "unit": 16,
       "term": "ecological",
-      "entries": [],
-      "unit": 16,
-      "id": 455
+      "entries": []
     },
     {
+      "id": 456,
+      "unit": 16,
       "term": "divide",
-      "entries": [],
-      "unit": 16,
-      "id": 456
+      "entries": []
     },
     {
+      "id": 457,
+      "unit": 16,
       "term": "estimate",
-      "entries": [],
-      "unit": 16,
-      "id": 457
+      "entries": []
     },
     {
+      "id": 458,
+      "unit": 16,
       "term": "thoroughly",
-      "entries": [],
-      "unit": 16,
-      "id": 458
+      "entries": []
     },
     {
+      "id": 459,
+      "unit": 16,
       "term": "magnificent",
-      "entries": [],
-      "unit": 16,
-      "id": 459
+      "entries": []
     },
     {
+      "id": 460,
+      "unit": 16,
       "term": "exceptional",
-      "entries": [],
-      "unit": 16,
-      "id": 460
+      "entries": []
     },
     {
+      "id": 461,
+      "unit": 16,
       "term": "valid",
-      "entries": [],
-      "unit": 16,
-      "id": 461
+      "entries": []
     },
     {
+      "id": 462,
+      "unit": 16,
       "term": "disastrous",
-      "entries": [],
-      "unit": 16,
-      "id": 462
+      "entries": []
     },
     {
+      "id": 463,
+      "unit": 16,
       "term": "absence",
-      "entries": [],
-      "unit": 16,
-      "id": 463
+      "entries": []
     },
     {
+      "id": 464,
+      "unit": 16,
       "term": "pollution",
-      "entries": [],
-      "unit": 16,
-      "id": 464
+      "entries": []
     },
     {
+      "id": 465,
+      "unit": 16,
       "term": "reproduce",
-      "entries": [],
-      "unit": 16,
-      "id": 465
+      "entries": []
     },
     {
+      "id": 466,
+      "unit": 16,
       "term": "nearly",
-      "entries": [],
-      "unit": 16,
-      "id": 466
+      "entries": []
     },
     {
+      "id": 467,
+      "unit": 16,
       "term": "discard",
-      "entries": [],
-      "unit": 16,
-      "id": 467
+      "entries": []
     },
     {
+      "id": 468,
+      "unit": 16,
       "term": "verification",
-      "entries": [],
-      "unit": 16,
-      "id": 468
+      "entries": []
     },
     {
+      "id": 469,
+      "unit": 16,
       "term": "aware",
-      "entries": [],
-      "unit": 16,
-      "id": 469
+      "entries": []
     },
     {
+      "id": 470,
+      "unit": 16,
       "term": "measure",
-      "entries": [],
-      "unit": 16,
-      "id": 470
+      "entries": []
     },
     {
+      "id": 471,
+      "unit": 16,
       "term": "component",
-      "entries": [],
-      "unit": 16,
-      "id": 471
+      "entries": []
     },
     {
+      "id": 472,
+      "unit": 16,
       "term": "sediment",
-      "entries": [],
-      "unit": 16,
-      "id": 472
+      "entries": []
     },
     {
+      "id": 473,
+      "unit": 16,
       "term": "acoustic",
-      "entries": [],
-      "unit": 16,
-      "id": 473
+      "entries": []
     },
     {
+      "id": 474,
+      "unit": 16,
       "term": "beyond",
-      "entries": [],
-      "unit": 16,
-      "id": 474
+      "entries": []
     },
     {
+      "id": 475,
+      "unit": 16,
       "term": "emit",
-      "entries": [],
-      "unit": 16,
-      "id": 475
+      "entries": []
     },
     {
+      "id": 476,
+      "unit": 16,
       "term": "afford",
-      "entries": [],
-      "unit": 16,
-      "id": 476
+      "entries": []
     },
     {
+      "id": 477,
+      "unit": 16,
       "term": "eligible",
-      "entries": [],
-      "unit": 16,
-      "id": 477
+      "entries": []
     },
     {
+      "id": 478,
+      "unit": 16,
       "term": "terrestrial",
-      "entries": [],
-      "unit": 16,
-      "id": 478
+      "entries": []
     },
     {
+      "id": 479,
+      "unit": 16,
       "term": "degraded",
-      "entries": [],
-      "unit": 16,
-      "id": 479
+      "entries": []
     },
     {
+      "id": 480,
+      "unit": 16,
       "term": "carry",
-      "entries": [],
-      "unit": 16,
-      "id": 480
+      "entries": []
     },
     {
+      "id": 481,
+      "unit": 17,
       "term": "cure",
-      "entries": [],
-      "unit": 17,
-      "id": 481
+      "entries": []
     },
     {
+      "id": 482,
+      "unit": 17,
       "term": "transform",
-      "entries": [],
-      "unit": 17,
-      "id": 482
+      "entries": []
     },
     {
+      "id": 483,
+      "unit": 17,
       "term": "devastate",
-      "entries": [],
-      "unit": 17,
-      "id": 483
+      "entries": []
     },
     {
+      "id": 484,
+      "unit": 17,
       "term": "conservative",
-      "entries": [],
-      "unit": 17,
-      "id": 484
+      "entries": []
     },
     {
+      "id": 485,
+      "unit": 17,
       "term": "devoted",
-      "entries": [],
-      "unit": 17,
-      "id": 485
+      "entries": []
     },
     {
+      "id": 486,
+      "unit": 17,
       "term": "alternative",
-      "entries": [],
-      "unit": 17,
-      "id": 486
+      "entries": []
     },
     {
+      "id": 487,
+      "unit": 17,
       "term": "fragile",
-      "entries": [],
-      "unit": 17,
-      "id": 487
+      "entries": []
     },
     {
+      "id": 488,
+      "unit": 17,
       "term": "enlarge",
-      "entries": [],
-      "unit": 17,
-      "id": 488
+      "entries": []
     },
     {
+      "id": 489,
+      "unit": 17,
       "term": "premises",
-      "entries": [],
-      "unit": 17,
-      "id": 489
+      "entries": []
     },
     {
+      "id": 490,
+      "unit": 17,
       "term": "otherwise",
-      "entries": [],
-      "unit": 17,
-      "id": 490
+      "entries": []
     },
     {
+      "id": 491,
+      "unit": 17,
       "term": "insist",
-      "entries": [],
-      "unit": 17,
-      "id": 491
+      "entries": []
     },
     {
+      "id": 492,
+      "unit": 17,
       "term": "element",
-      "entries": [],
-      "unit": 17,
-      "id": 492
+      "entries": []
     },
     {
+      "id": 493,
+      "unit": 17,
       "term": "flourish",
-      "entries": [],
-      "unit": 17,
-      "id": 493
+      "entries": []
     },
     {
+      "id": 494,
+      "unit": 17,
       "term": "delicate",
-      "entries": [],
-      "unit": 17,
-      "id": 494
+      "entries": []
     },
     {
+      "id": 495,
+      "unit": 17,
       "term": "sensible",
-      "entries": [],
-      "unit": 17,
-      "id": 495
+      "entries": []
     },
     {
+      "id": 496,
+      "unit": 17,
       "term": "overcome",
-      "entries": [],
-      "unit": 17,
-      "id": 496
+      "entries": []
     },
     {
+      "id": 497,
+      "unit": 17,
       "term": "volunteer",
-      "entries": [],
-      "unit": 17,
-      "id": 497
+      "entries": []
     },
     {
+      "id": 498,
+      "unit": 17,
       "term": "readily",
-      "entries": [],
-      "unit": 17,
-      "id": 498
+      "entries": []
     },
     {
+      "id": 499,
+      "unit": 17,
       "term": "synthetic",
-      "entries": [],
-      "unit": 17,
-      "id": 499
+      "entries": []
     },
     {
+      "id": 500,
+      "unit": 17,
       "term": "essential",
-      "entries": [],
-      "unit": 17,
-      "id": 500
+      "entries": []
     },
     {
+      "id": 501,
+      "unit": 17,
       "term": "verbal",
-      "entries": [],
-      "unit": 17,
-      "id": 501
+      "entries": []
     },
     {
+      "id": 502,
+      "unit": 17,
       "term": "plausible",
-      "entries": [],
-      "unit": 17,
-      "id": 502
+      "entries": []
     },
     {
+      "id": 503,
+      "unit": 17,
       "term": "primitive",
-      "entries": [],
-      "unit": 17,
-      "id": 503
+      "entries": []
     },
     {
+      "id": 504,
+      "unit": 17,
       "term": "transit",
-      "entries": [],
-      "unit": 17,
-      "id": 504
+      "entries": []
     },
     {
+      "id": 505,
+      "unit": 17,
       "term": "situate",
-      "entries": [],
-      "unit": 17,
-      "id": 505
+      "entries": []
     },
     {
+      "id": 506,
+      "unit": 17,
       "term": "fishery",
-      "entries": [],
-      "unit": 17,
-      "id": 506
+      "entries": []
     },
     {
+      "id": 507,
+      "unit": 17,
       "term": "discharge",
-      "entries": [],
-      "unit": 17,
-      "id": 507
+      "entries": []
     },
     {
+      "id": 508,
+      "unit": 17,
       "term": "germination",
-      "entries": [],
-      "unit": 17,
-      "id": 508
+      "entries": []
     },
     {
+      "id": 509,
+      "unit": 17,
       "term": "inclination",
-      "entries": [],
-      "unit": 17,
-      "id": 509
+      "entries": []
     },
     {
+      "id": 510,
+      "unit": 17,
       "term": "ever",
-      "entries": [],
-      "unit": 17,
-      "id": 510
+      "entries": []
     },
     {
+      "id": 511,
+      "unit": 18,
       "term": "term",
-      "entries": [],
-      "unit": 18,
-      "id": 511
+      "entries": []
     },
     {
+      "id": 512,
+      "unit": 18,
       "term": "setback",
-      "entries": [],
-      "unit": 18,
-      "id": 512
+      "entries": []
     },
     {
+      "id": 513,
+      "unit": 18,
       "term": "excavation",
-      "entries": [],
-      "unit": 18,
-      "id": 513
+      "entries": []
     },
     {
+      "id": 514,
+      "unit": 18,
       "term": "current",
-      "entries": [],
-      "unit": 18,
-      "id": 514
+      "entries": []
     },
     {
+      "id": 515,
+      "unit": 18,
       "term": "perceive",
-      "entries": [],
-      "unit": 18,
-      "id": 515
+      "entries": []
     },
     {
+      "id": 516,
+      "unit": 18,
       "term": "observe",
-      "entries": [],
-      "unit": 18,
-      "id": 516
+      "entries": []
     },
     {
+      "id": 517,
+      "unit": 18,
       "term": "reasonable",
-      "entries": [],
-      "unit": 18,
-      "id": 517
+      "entries": []
     },
     {
+      "id": 518,
+      "unit": 18,
       "term": "remove",
-      "entries": [],
-      "unit": 18,
-      "id": 518
+      "entries": []
     },
     {
+      "id": 519,
+      "unit": 18,
       "term": "conventional",
-      "entries": [],
-      "unit": 18,
-      "id": 519
+      "entries": []
     },
     {
+      "id": 520,
+      "unit": 18,
       "term": "appliance",
-      "entries": [],
-      "unit": 18,
-      "id": 520
+      "entries": []
     },
     {
+      "id": 521,
+      "unit": 18,
       "term": "stress",
-      "entries": [],
-      "unit": 18,
-      "id": 521
+      "entries": []
     },
     {
+      "id": 522,
+      "unit": 18,
       "term": "frequent",
-      "entries": [],
-      "unit": 18,
-      "id": 522
+      "entries": []
     },
     {
+      "id": 523,
+      "unit": 18,
       "term": "disclose",
-      "entries": [],
-      "unit": 18,
-      "id": 523
+      "entries": []
     },
     {
+      "id": 524,
+      "unit": 18,
       "term": "dismissive",
-      "entries": [],
-      "unit": 18,
-      "id": 524
+      "entries": []
     },
     {
+      "id": 525,
+      "unit": 18,
       "term": "frustration",
-      "entries": [],
-      "unit": 18,
-      "id": 525
+      "entries": []
     },
     {
+      "id": 526,
+      "unit": 18,
       "term": "appeal",
-      "entries": [],
-      "unit": 18,
-      "id": 526
+      "entries": []
     },
     {
+      "id": 527,
+      "unit": 18,
       "term": "freight",
-      "entries": [],
-      "unit": 18,
-      "id": 527
+      "entries": []
     },
     {
+      "id": 528,
+      "unit": 18,
       "term": "adopt",
-      "entries": [],
-      "unit": 18,
-      "id": 528
+      "entries": []
     },
     {
+      "id": 529,
+      "unit": 18,
       "term": "elusive",
-      "entries": [],
-      "unit": 18,
-      "id": 529
+      "entries": []
     },
     {
+      "id": 530,
+      "unit": 18,
       "term": "induce",
-      "entries": [],
-      "unit": 18,
-      "id": 530
+      "entries": []
     },
     {
+      "id": 531,
+      "unit": 18,
       "term": "dye",
-      "entries": [],
-      "unit": 18,
-      "id": 531
+      "entries": []
     },
     {
+      "id": 532,
+      "unit": 18,
       "term": "temporary",
-      "entries": [],
-      "unit": 18,
-      "id": 532
+      "entries": []
     },
     {
+      "id": 533,
+      "unit": 18,
       "term": "income",
-      "entries": [],
-      "unit": 18,
-      "id": 533
+      "entries": []
     },
     {
+      "id": 534,
+      "unit": 18,
       "term": "prior",
-      "entries": [],
-      "unit": 18,
-      "id": 534
+      "entries": []
     },
     {
+      "id": 535,
+      "unit": 18,
       "term": "anticipate",
-      "entries": [],
-      "unit": 18,
-      "id": 535
+      "entries": []
     },
     {
+      "id": 536,
+      "unit": 18,
       "term": "shun",
-      "entries": [],
-      "unit": 18,
-      "id": 536
+      "entries": []
     },
     {
+      "id": 537,
+      "unit": 18,
       "term": "injury",
-      "entries": [],
-      "unit": 18,
-      "id": 537
+      "entries": []
     },
     {
+      "id": 538,
+      "unit": 18,
       "term": "call for",
-      "entries": [],
-      "unit": 18,
-      "id": 538
+      "entries": []
     },
     {
+      "id": 539,
+      "unit": 18,
       "term": "apparatus",
-      "entries": [],
-      "unit": 18,
-      "id": 539
+      "entries": []
     },
     {
+      "id": 540,
+      "unit": 18,
       "term": "atmosphere",
-      "entries": [],
-      "unit": 18,
-      "id": 540
+      "entries": []
     },
     {
+      "id": 541,
+      "unit": 19,
       "term": "eventually",
-      "entries": [],
-      "unit": 19,
-      "id": 541
+      "entries": []
     },
     {
+      "id": 542,
+      "unit": 19,
       "term": "deposit",
-      "entries": [],
-      "unit": 19,
-      "id": 542
+      "entries": []
     },
     {
+      "id": 543,
+      "unit": 19,
       "term": "persistent",
-      "entries": [],
-      "unit": 19,
-      "id": 543
+      "entries": []
     },
     {
+      "id": 544,
+      "unit": 19,
       "term": "astronomical",
-      "entries": [],
-      "unit": 19,
-      "id": 544
+      "entries": []
     },
     {
+      "id": 545,
+      "unit": 19,
       "term": "arousal",
-      "entries": [],
-      "unit": 19,
-      "id": 545
+      "entries": []
     },
     {
+      "id": 546,
+      "unit": 19,
       "term": "outstanding",
-      "entries": [],
-      "unit": 19,
-      "id": 546
+      "entries": []
     },
     {
+      "id": 547,
+      "unit": 19,
       "term": "appear",
-      "entries": [],
-      "unit": 19,
-      "id": 547
+      "entries": []
     },
     {
+      "id": 548,
+      "unit": 19,
       "term": "gene",
-      "entries": [],
-      "unit": 19,
-      "id": 548
+      "entries": []
     },
     {
+      "id": 549,
+      "unit": 19,
       "term": "motif",
-      "entries": [],
-      "unit": 19,
-      "id": 549
+      "entries": []
     },
     {
+      "id": 550,
+      "unit": 19,
       "term": "revert",
-      "entries": [],
-      "unit": 19,
-      "id": 550
+      "entries": []
     },
     {
+      "id": 551,
+      "unit": 19,
       "term": "associated",
-      "entries": [],
-      "unit": 19,
-      "id": 551
+      "entries": []
     },
     {
+      "id": 552,
+      "unit": 19,
       "term": "terminal",
-      "entries": [],
-      "unit": 19,
-      "id": 552
+      "entries": []
     },
     {
+      "id": 553,
+      "unit": 19,
       "term": "custom",
-      "entries": [],
-      "unit": 19,
-      "id": 553
+      "entries": []
     },
     {
-      "term": "psycological",
-      "entries": [],
+      "id": 554,
       "unit": 19,
-      "id": 554
+      "term": "psychological",
+      "entries": []
     },
     {
+      "id": 555,
+      "unit": 19,
       "term": "pigment",
-      "entries": [],
-      "unit": 19,
-      "id": 555
+      "entries": []
     },
     {
+      "id": 556,
+      "unit": 19,
       "term": "proportion",
-      "entries": [],
-      "unit": 19,
-      "id": 556
+      "entries": []
     },
     {
+      "id": 557,
+      "unit": 19,
       "term": "decent",
-      "entries": [],
-      "unit": 19,
-      "id": 557
+      "entries": []
     },
     {
+      "id": 558,
+      "unit": 19,
       "term": "conceive",
-      "entries": [],
-      "unit": 19,
-      "id": 558
+      "entries": []
     },
     {
+      "id": 559,
+      "unit": 19,
       "term": "reclaim",
-      "entries": [],
-      "unit": 19,
-      "id": 559
+      "entries": []
     },
     {
+      "id": 560,
+      "unit": 19,
       "term": "fundamental",
-      "entries": [],
-      "unit": 19,
-      "id": 560
+      "entries": []
     },
     {
+      "id": 561,
+      "unit": 19,
       "term": "publicise",
-      "entries": [],
-      "unit": 19,
-      "id": 561
+      "entries": []
     },
     {
+      "id": 562,
+      "unit": 19,
       "term": "collective",
-      "entries": [],
-      "unit": 19,
-      "id": 562
+      "entries": []
     },
     {
+      "id": 563,
+      "unit": 19,
       "term": "permit",
-      "entries": [],
-      "unit": 19,
-      "id": 563
+      "entries": []
     },
     {
+      "id": 564,
+      "unit": 19,
       "term": "particle",
-      "entries": [],
-      "unit": 19,
-      "id": 564
+      "entries": []
     },
     {
+      "id": 565,
+      "unit": 19,
       "term": "vicinity",
-      "entries": [],
-      "unit": 19,
-      "id": 565
+      "entries": []
     },
     {
+      "id": 566,
+      "unit": 19,
       "term": "tolerant",
-      "entries": [],
-      "unit": 19,
-      "id": 566
+      "entries": []
     },
     {
+      "id": 567,
+      "unit": 19,
       "term": "substantially",
-      "entries": [],
-      "unit": 19,
-      "id": 567
+      "entries": []
     },
     {
+      "id": 568,
+      "unit": 19,
       "term": "separate",
-      "entries": [],
-      "unit": 19,
-      "id": 568
+      "entries": []
     },
     {
+      "id": 569,
+      "unit": 19,
       "term": "commodity",
-      "entries": [],
-      "unit": 19,
-      "id": 569
+      "entries": []
     },
     {
+      "id": 570,
+      "unit": 19,
       "term": "diagnosis",
-      "entries": [],
-      "unit": 19,
-      "id": 570
+      "entries": []
     },
     {
+      "id": 571,
+      "unit": 20,
       "term": "diversify",
-      "entries": [],
-      "unit": 20,
-      "id": 571
+      "entries": []
     },
     {
+      "id": 572,
+      "unit": 20,
       "term": "pane",
-      "entries": [],
-      "unit": 20,
-      "id": 572
+      "entries": []
     },
     {
+      "id": 573,
+      "unit": 20,
       "term": "access",
-      "entries": [],
-      "unit": 20,
-      "id": 573
+      "entries": []
     },
     {
+      "id": 574,
+      "unit": 20,
       "term": "intend",
-      "entries": [],
-      "unit": 20,
-      "id": 574
+      "entries": []
     },
     {
+      "id": 575,
+      "unit": 20,
       "term": "via",
-      "entries": [],
-      "unit": 20,
-      "id": 575
+      "entries": []
     },
     {
+      "id": 576,
+      "unit": 20,
       "term": "specimen",
-      "entries": [],
-      "unit": 20,
-      "id": 576
+      "entries": []
     },
     {
+      "id": 577,
+      "unit": 20,
       "term": "priority",
-      "entries": [],
-      "unit": 20,
-      "id": 577
+      "entries": []
     },
     {
+      "id": 578,
+      "unit": 20,
       "term": "impact",
-      "entries": [],
-      "unit": 20,
-      "id": 578
+      "entries": []
     },
     {
+      "id": 579,
+      "unit": 20,
       "term": "expertise",
-      "entries": [],
-      "unit": 20,
-      "id": 579
+      "entries": []
     },
     {
+      "id": 580,
+      "unit": 20,
       "term": "fraud",
-      "entries": [],
-      "unit": 20,
-      "id": 580
+      "entries": []
     },
     {
+      "id": 581,
+      "unit": 20,
       "term": "integrated",
-      "entries": [],
-      "unit": 20,
-      "id": 581
+      "entries": []
     },
     {
+      "id": 582,
+      "unit": 20,
       "term": "norm",
-      "entries": [],
-      "unit": 20,
-      "id": 582
+      "entries": []
     },
     {
+      "id": 583,
+      "unit": 20,
       "term": "delegate",
-      "entries": [],
-      "unit": 20,
-      "id": 583
+      "entries": []
     },
     {
+      "id": 584,
+      "unit": 20,
       "term": "exempt",
-      "entries": [],
-      "unit": 20,
-      "id": 584
+      "entries": []
     },
     {
+      "id": 585,
+      "unit": 20,
       "term": "factor",
-      "entries": [],
-      "unit": 20,
-      "id": 585
+      "entries": []
     },
     {
-      "term": "collarborate",
-      "entries": [],
+      "id": 586,
       "unit": 20,
-      "id": 586
+      "term": "collaborate",
+      "entries": []
     },
     {
+      "id": 587,
+      "unit": 20,
       "term": "endure",
-      "entries": [],
-      "unit": 20,
-      "id": 587
+      "entries": []
     },
     {
+      "id": 588,
+      "unit": 20,
       "term": "parallel",
-      "entries": [],
-      "unit": 20,
-      "id": 588
+      "entries": []
     },
     {
+      "id": 589,
+      "unit": 20,
       "term": "solely",
-      "entries": [],
-      "unit": 20,
-      "id": 589
+      "entries": []
     },
     {
+      "id": 590,
+      "unit": 20,
       "term": "resolve",
-      "entries": [],
-      "unit": 20,
-      "id": 590
+      "entries": []
     },
     {
+      "id": 591,
+      "unit": 20,
       "term": "arrival",
-      "entries": [],
-      "unit": 20,
-      "id": 591
+      "entries": []
     },
     {
+      "id": 592,
+      "unit": 20,
       "term": "aggressive",
-      "entries": [],
-      "unit": 20,
-      "id": 592
+      "entries": []
     },
     {
+      "id": 593,
+      "unit": 20,
       "term": "vanish",
-      "entries": [],
-      "unit": 20,
-      "id": 593
+      "entries": []
     },
     {
+      "id": 594,
+      "unit": 20,
       "term": "disperse",
-      "entries": [],
-      "unit": 20,
-      "id": 594
+      "entries": []
     },
     {
+      "id": 595,
+      "unit": 20,
       "term": "overlook",
-      "entries": [],
-      "unit": 20,
-      "id": 595
+      "entries": []
     },
     {
+      "id": 596,
+      "unit": 20,
       "term": "camouflage",
-      "entries": [],
-      "unit": 20,
-      "id": 596
+      "entries": []
     },
     {
+      "id": 597,
+      "unit": 20,
       "term": "raw",
-      "entries": [],
-      "unit": 20,
-      "id": 597
+      "entries": []
     },
     {
+      "id": 598,
+      "unit": 20,
       "term": "compatible",
-      "entries": [],
-      "unit": 20,
-      "id": 598
+      "entries": []
     },
     {
+      "id": 599,
+      "unit": 20,
       "term": "outright",
-      "entries": [],
-      "unit": 20,
-      "id": 599
+      "entries": []
     },
     {
-      "term": "ailment",
-      "entries": [],
+      "id": 600,
       "unit": 20,
-      "id": 600
+      "term": "ailment",
+      "entries": []
     }
   ]
 }

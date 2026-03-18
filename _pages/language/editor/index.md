@@ -25,11 +25,11 @@ title: Voca JSON Editor
           <label class="ve-radio"><input type="radio" name="ve-colvis" value="custom" checked> 선택</label>
         </div>
         <div class="ve-colchecks" role="group" aria-label="표 칼럼 선택">
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="id"> id</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="unit" checked> unit</label>
+          <label class="ve-check"><input type="checkbox" name="ve-col" value="id" checked> id</label>
+          <label class="ve-check"><input type="checkbox" name="ve-col" value="unit" > unit</label>
           <label class="ve-check"><input type="checkbox" name="ve-col" value="term" checked> term</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="pos" checked> pos</label>
-          <label class="ve-check"><input type="checkbox" name="ve-col" value="gloss" checked> gloss</label>
+          <label class="ve-check"><input type="checkbox" name="ve-col" value="pos"> pos</label>
+          <label class="ve-check"><input type="checkbox" name="ve-col" value="gloss"> gloss</label>
           <label class="ve-check"><input type="checkbox" name="ve-col" value="example" checked> example</label>
           <label class="ve-check"><input type="checkbox" name="ve-col" value="translation"> translation</label>
           <label class="ve-check"><input type="checkbox" name="ve-col" value="actions" checked> actions</label>

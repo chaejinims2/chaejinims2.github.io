@@ -6,7 +6,7 @@ html {
   position: relative;
   min-height: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   html { font-size: var(--app-html-font-size-md); }
 }
 
@@ -529,8 +529,8 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   border-top-width: 0;
 }
 
-/* 좁은 화면: 사이드바를 상단 가로 메뉴로, 아이콘만 표시 */
-@media (max-width: 767px) {
+/* 좁은 화면(창 너비 절반 이하): 사이드바를 상단 가로 메뉴로, 아이콘만 표시 */
+@media (max-width: 959px) {
   .app-shell {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -676,7 +676,7 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
 }
 
 /* ---- Nav (app-nav 스타일). 넓은 화면에서만 세로 배치 ---- */
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .app-nav {
     display: flex;
     flex-direction: column;
@@ -898,8 +898,8 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   padding: 0.25rem 0;
 }
 
-/* 모바일 버전 전용 스타일 (768px 이하) */
-@media screen and (max-width: 768px) {
+/* 모바일 버전 전용 스타일 (960px 미만 = 창 절반 이하) */
+@media screen and (max-width: 959px) {
   .app-statusbar {
     /* 기존 높이보다 1.5배~2배 정도 높게 설정 */
     min-height: calc(var(--app-status-h) + 20px); 
