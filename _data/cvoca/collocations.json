@@ -1,0 +1,3302 @@
+[
+  {
+    "id": 1,
+    "collocation": "on a regular basis",
+    "definition": "정기적으로, 규칙적으로",
+    "examples": [
+      {
+        "text": "To maintain a healthy lifestyle, it is essential to exercise on a regular basis.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "collocation": "sleep late",
+    "definition": "늦잠을 자다",
+    "examples": [
+      {
+        "text": "During weekends, teenagers often sleep late, relishing the freedom from their studies.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "collocation": "take a shower",
+    "definition": "샤워하다",
+    "examples": [
+      {
+        "text": "After exercising, it is essential to take a shower to maintain personal hygiene.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "collocation": "make a difference",
+    "definition": "차이를 만들다, 영향을 주다",
+    "examples": [
+      {
+        "text": "Making small changes in your diet can make a big difference to your health.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "collocation": "make a purchase",
+    "definition": "구매하다",
+    "examples": [
+      {
+        "text": "Wise consumers research products thoroughly before deciding to make a purchase.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "collocation": "make an effort",
+    "definition": "노력하다, 애쓰다",
+    "examples": [
+      {
+        "text": "My brother always makes an effort to maintain a positive attitude and achive his goals.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "collocation": "make arrangements for",
+    "definition": "~을 준비하다",
+    "examples": [
+      {
+        "text": "I had to make arrangements for the conference, including sending the attendees the necessary details.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "collocation": "get dressed",
+    "definition": "옷을 입다",
+    "examples": [
+      {
+        "text": "After returning home, I get dressed in comfortable attire for a relaxing evening.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "collocation": "keep in touch",
+    "definition": "연락을 유지하다",
+    "examples": [
+      {
+        "text": "I hope we can keep in touch to discuss potential collaborations in the future.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "collocation": "make a change",
+    "definition": "변화를 주다, 변경하다",
+    "examples": [
+      {
+        "text": "After many years working at the same job, he decided to make a change in his life and pursue a new career path.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "collocation": "make a choice",
+    "definition": "선택하다",
+    "examples": [
+      {
+        "text": "With various options available, I took my time to make a thoughful choice about the job offer.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "collocation": "catch up",
+    "definition": "밀린 이야기를 하다",
+    "examples": [
+      {
+        "text": "Sometimes, we catch up over lunch to exchange the latest news.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "collocation": "do one’s hair",
+    "definition": "머리를 손질하다",
+    "examples": [
+      {
+        "text": "I have to spend most of my time in the morning doing my hair, which can be quite time-consuming.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "collocation": "do one’s grocery shopping",
+    "definition": "장을 보다",
+    "examples": [
+      {
+        "text": "My family tends to do our grocery shopping at the local supermarket due to its easy accessibility.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "collocation": "do the washing",
+    "definition": "빨래하다, 세탁하다",
+    "examples": [
+      {
+        "text": "I usually spend my Saturday afternoons doing the washing to ensure that I have fresh and clean clothes to wear for the upcoming week.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "collocation": "a sense of <emotion>",
+    "definition": "~한 감정",
+    "examples": [
+      {
+        "text": "Parents can feel a sense of pride when their children achieve something signigicant",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "collocation": "be asking for trouble",
+    "definition": "화를 자초하다",
+    "examples": [
+      {
+        "text": "Wearing sandals while hiking is asking for trouble",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "collocation": "be fed up with",
+    "definition": "~에 진저리가 나다, 지겹다",
+    "examples": [
+      {
+        "text": "I’m fed up with living in a small village in the countryside.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "collocation": "get on one’s nerves",
+    "definition": "신경을 건드리다, 짜증나게 하다",
+    "examples": [
+      {
+        "text": "My roommate’s complaints and negative attitude rally get on my nerves, making it challenging to enjoy out time together.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "collocation": "haven’s for a clue",
+    "definition": "전혀 모르다",
+    "examples": [
+      {
+        "text": "I haven’t got a clue how to find accomodation in Australia.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "collocation": "jump for joy",
+    "definition": "기뻐서 펄쩍펄쩍 뛰다, 매우 기쁘다.",
+    "examples": [
+      {
+        "text": "I jumped for joy when I heard that I won first prize.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "collocation": "in the blink of an eye",
+    "definition": "눈 깜짝할 사이에",
+    "examples": [
+      {
+        "text": "Our mony, fame and even health can be gone in the blink of an eye.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "collocation": "know A inside out",
+    "definition": "A를 훤하게 알다",
+    "examples": [
+      {
+        "text": "My teacher is from London, and she knows the city inside out.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "collocation": "music to one’s ears",
+    "definition": "듣기 좋은 소리",
+    "examples": [
+      {
+        "text": "The sound of my car engine was music to my ears.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "collocation": "on the tip of one’s tongue",
+    "definition": "혀끝에서 맴돌며 (생각이 안나는)",
+    "examples": [
+      {
+        "text": "The name is on the tip of my tongue, but I just can’t recall it at the moment.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "collocation": "painful memory",
+    "definition": "아픈 기억",
+    "examples": [
+      {
+        "text": "Losing a loved one leaves a painful memory that lingers for years.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "collocation": "over the moon",
+    "definition": "너무나도 황홀한, 하늘을 둥둥 떠다니는 듯한",
+    "examples": [
+      {
+        "text": "I was over the moon about my test results.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "collocation": "ring a bell",
+    "definition": "들어본적이 있다, 낯이 익다",
+    "examples": [
+      {
+        "text": "I’m sorry, but that name doensn’t ring a bell",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "collocation": "taken a back",
+    "definition": "깜짝 놀란, 당황한",
+    "examples": [
+      {
+        "text": "I was taken aback by his rude answer.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "collocation": "train of thought",
+    "definition": "일련의 생각",
+    "examples": [
+      {
+        "text": "The book describe the character’s train of thought.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "collocation": "burn the candle at both ends",
+    "definition": "잠을 자지 않고(밤새)하다",
+    "examples": [
+      {
+        "text": "We had to burn the candle at both ends to meet the project deadline.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "collocation": "draw the line",
+    "definition": "선을 긋다, 거부하다",
+    "examples": [
+      {
+        "text": "In group discussions, we should embrace constructive criticism but draw the line at tolerating personal attacks.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "collocation": "feel like a number",
+    "definition": "(마치 기계의 부품처럼) 하나의 숫자처럼 느끼다.",
+    "examples": [
+      {
+        "text": "Some students in massive lecture halls may feel like a number rather than an active participant.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "collocation": "firsthand knowledge",
+    "definition": "직접 경험한 지식, 직접 경험으로 체득한 진실",
+    "examples": [
+      {
+        "text": "Actually, I don’t have any firsthand knowledge of teaching a class.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "collocation": "give someone a hard time",
+    "definition": "누군가를 힘들게 하다",
+    "examples": [
+      {
+        "text": "Ms Lee used to give us a hard time in class when we failed to answer her questions.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "collocation": "historical figure",
+    "definition": "역사적 인물",
+    "examples": [
+      {
+        "text": "Many historians consider Yi Sun-sin a heroic historical figure for his pivotal role in naval victories.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "collocation": "learn one’s lesson",
+    "definition": "(안좋은 일을 총해) 교훈을 배우다",
+    "examples": [
+      {
+        "text": "I will never procrastinate on a final essay again; I learnt my lesson from that experience.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "collocation": "like-minded",
+    "definition": "같은 생각을 가진, 생각이 비슷한",
+    "examples": [
+      {
+        "text": "Joining clubs can help you connect with like-minded individuals and from lasting friendships.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "collocation": "make the point",
+    "definition": "주장하다, ~라는 점을 강조하다",
+    "examples": [
+      {
+        "text": "In his thesis, the researcher aimed to make the point that cultural context matters.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "collocation": "mandatory curriculum",
+    "definition": "의무 교육 과정",
+    "examples": [
+      {
+        "text": "The new educational policy included a course on environmental sustainability as part of the mandatory curriculum.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "collocation": "put forward",
+    "definition": "(이론, 개념, 생각 등을) 제시하다, 제안하다.",
+    "examples": [
+      {
+        "text": "Researchers often put forward hypotheses to advance scientiffic understanding in their respective disiplines.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "collocation": "roundly criticised",
+    "definition": "대대적으로 비판을 받는",
+    "examples": [
+      {
+        "text": "The controversial study was roundly criticised by scholars for its flawed methodology.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "collocation": "skim through",
+    "definition": "대충 훑어보다.",
+    "examples": [
+      {
+        "text": "I didn’t have much time, so I had to skim through the report to get the main points.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "collocation": "study for a test",
+    "definition": "시험공부를 하다",
+    "examples": [
+      {
+        "text": "Students often stay up late to study for a test, aiming for academic success.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "collocation": "turn in",
+    "definition": "~을 제출하다",
+    "examples": [
+      {
+        "text": "Students are required to turn in their assignments by the specified deadline to receive full credit.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "collocation": "broaden one’s horizons",
+    "definition": "시야를 넓히다",
+    "examples": [
+      {
+        "text": "Studing abroad can help broaden your horizons.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "collocation": "come in handy",
+    "definition": "유용하다",
+    "examples": [
+      {
+        "text": "Knowing multiple languages can come in handy while traveling in diverse regions.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "collocation": "communication skills",
+    "definition": "의사소통 능력",
+    "examples": [
+      {
+        "text": "Effective communication skills are vital to convey ideas clearly.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "collocation": "easier said than done",
+    "definition": "말은 쉽지만 실제 행하기는 훨씬 더 어려운",
+    "examples": [
+      {
+        "text": "Mastering a second language is easier said than done.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "collocation": "hold the view",
+    "definition": "견해를 갖다",
+    "examples": [
+      {
+        "text": "Many experts hold the view that early childhood education is crucial for lifelong development.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "collocation": "international student",
+    "definition": "유학생, 국제 학생",
+    "examples": [
+      {
+        "text": "International students contribute to the diversity of university campuses, bringing varied perspectives and cultural richness.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "collocation": "language barrier",
+    "definition": "언어 장벽",
+    "examples": [
+      {
+        "text": "Language barriers are one of the biggest challenges for international students adjusting to a new academic environment.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "collocation": "mother tongue",
+    "definition": "모국어",
+    "examples": [
+      {
+        "text": "Preserving one’s mother tongue is essential for maintaining culture identity and heritage.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "collocation": "online class",
+    "definition": "온라인 수업",
+    "examples": [
+      {
+        "text": "Online classes became a necessity, providing flexibility and accessibility for diverse learners.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "collocation": "play a role in",
+    "definition": "~에서 역할을 하다",
+    "examples": [
+      {
+        "text": "Accessible education plays a crucial role in fostering economic development and reducing inequality.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "collocation": "private academy",
+    "definition": "학원",
+    "examples": [
+      {
+        "text": "The prevalence of private academies reflects the intense academic competition in Korean society.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "collocation": "secondary education",
+    "definition": "중등 교육",
+    "examples": [
+      {
+        "text": "Secondary education plays a crucial role in a student’s academic journey.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "collocation": "social interaction",
+    "definition": "사회적 상호 작용, 사회적 소통",
+    "examples": [
+      {
+        "text": "The rise of digital platforms has altered the landscape of social interactions, allowing people to connect globally.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "collocation": "specialist knowledge",
+    "definition": "전문 지식",
+    "examples": [
+      {
+        "text": "Gaining a specialist knowledge of a subject requires a certain level of focus and dedication over a long period.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "collocation": "take precedence over",
+    "definition": "우선권을 갖다, 우선하다",
+    "examples": [
+      {
+        "text": "Some people believe that fluency should take precedence over grammar when speaking.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "collocation": "be expecting a baby",
+    "definition": "임신 중이다",
+    "examples": [
+      {
+        "text": "We are expecting a baby and eagerly preparing for the upcoming addition to the family.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "collocation": "bring up",
+    "definition": "(아이나 가족을) 양육하다, 기르다",
+    "examples": [
+      {
+        "text": "I was brought up in a loving home.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "collocation": "close-knit",
+    "definition": "가깝게 지내다",
+    "examples": [
+      {
+        "text": "Despite living in different countries, they are a close-knit family.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "collocation": "dual-income household",
+    "definition": "맞벌이 가구",
+    "examples": [
+      {
+        "text": "A dual-income household can allow for financial stability and a comfortable standard of living.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "collocation": "family-run",
+    "definition": "가족이 운영하는",
+    "examples": [
+      {
+        "text": "Being family-run for gernerations, the restaurant is known for its delicious meals and warm atmosphere.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "collocation": "get along with",
+    "definition": "사이가 좋다, ~와 잘 지내다",
+    "examples": [
+      {
+        "text": "While many siblings don’t get along with each other, I think of my sister as my best friend.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "collocation": "have a good relationship",
+    "definition": "좋은 관계를 갖다",
+    "examples": [
+      {
+        "text": "They have a good relationship that is built on trust, communication and shared values.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "collocation": "have much in common",
+    "definition": "공통점이 많다",
+    "examples": [
+      {
+        "text": "My best friend and I have much in common; we both like playing video games and badminton.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "collocation": "nuclear family",
+    "definition": "핵가족",
+    "examples": [
+      {
+        "text": "A nuclear family consists of parents and their children, while and extended family includes other members like grandparents and cousins.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "collocation": "parental support",
+    "definition": "부모의 지원",
+    "examples": [
+      {
+        "text": "The academic success of students is often influenced by the level of parental support they receive at home.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "collocation": "provide for one’s family",
+    "definition": "가족을 부양하다",
+    "examples": [
+      {
+        "text": "Working tirelessly, my father has strived to provide for our family.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "collocation": "quality time",
+    "definition": "뜻깊은 시간, 소중한 시간",
+    "examples": [
+      {
+        "text": "People cherish spending quality time with family and friends during the weekends.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "collocation": "set up house",
+    "definition": "(집을 정해) 살기 시작하다",
+    "examples": [
+      {
+        "text": "After getting married, we decided to set up house in a cosy suburb with a well-connected transport system.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "collocation": "single parent/father/mother",
+    "definition": "한부모/편부/편모",
+    "examples": [
+      {
+        "text": "Many single parents face the challenge of balancing work with parenting.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "collocation": "start a family",
+    "definition": "가정을 이루다",
+    "examples": [
+      {
+        "text": "They thought it was the right time to start a family and welcome their first child.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "collocation": "compare prices",
+    "definition": "가격을 비교하다",
+    "examples": [
+      {
+        "text": "Before making a purchase, it is necessary to compare prices across different websites to get the best deals",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "collocation": "better deals",
+    "definition": "더 나은 거래 (상품)",
+    "examples": [
+      {
+        "text": "Price comparison websites help consumers discover better deals and make informed choices",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "collocation": "cost of living",
+    "definition": "생활비",
+    "examples": [
+      {
+        "text": "The cost of living in urban areas is often higher due to increased housing expenses",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "collocation": "emergency fund",
+    "definition": "비상금",
+    "examples": [
+      {
+        "text": "Building an emergency fund is crucial to maintain financial stability in case fo unexpected expenses",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "collocation": "financial assistance",
+    "definition": "재정 지원",
+    "examples": [
+      {
+        "text": "People living below the poverty line require additional financial assistance from the government",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "collocation": "good value for money",
+    "definition": "가격 대비 좋은 품질 (품질을 강조하는 것)",
+    "examples": [
+      {
+        "text": "The restaurant offers delicious dishes that are good value for money, making it a favorite among locals",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "collocation": "in stock",
+    "definition": "재고가 있는",
+    "examples": [
+      {
+        "text": "Many online stores display real-time information about products that are currently in stock",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "collocation": "large selection",
+    "definition": "다양한 상품",
+    "examples": [
+      {
+        "text": "The bookstore offers a large selection of novels, catering to carious literary tastes",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "collocation": "late fee",
+    "definition": "연체료",
+    "examples": [
+      {
+        "text": "It is essencial to be aware of the due date for payment to avoid late fees",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "collocation": "place an order",
+    "definition": "주문하다",
+    "examples": [
+      {
+        "text": "Customers can place an order for products with just a few clicks, making oneline shopping a convenient experience",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "collocation": "reasonably priced",
+    "definition": "합리적으로 가격이 책정된",
+    "examples": [
+      {
+        "text": "Many online stores have gained popularity for their wide selection of reasonably priced items and efficient delvery services",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "collocation": "stick to one’s budget",
+    "definition": "예산을 고수하다",
+    "examples": [
+      {
+        "text": "It is important to stick to your budget for regular expenses such as rent, groceries and utility bills",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "collocation": "ridiculously expensive",
+    "definition": "어이없을정도로 비싼",
+    "examples": [
+      {
+        "text": "The restaurant was ridiculously expensive in spite of its exceptional quality",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "collocation": "take out a loan",
+    "definition": "대출받다",
+    "examples": [
+      {
+        "text": "Most young adults in Korea plan to take out a loan to purchase their first home",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "collocation": "utility bills",
+    "definition": "공과금",
+    "examples": [
+      {
+        "text": "Every month, residents are responsible for paying their utility bills, which cover electricity, water and gas expenses",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "collocation": "spick and span",
+    "definition": "정돈된",
+    "examples": [
+      {
+        "text": "The local council tries hard to keep the town spick and span",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "collocation": "street market",
+    "definition": "재래시장",
+    "examples": [
+      {
+        "text": "Street markets in Korea offer a variety of local food delights, allowing voth locals and tourists to savour authentic flavours",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "collocation": "tranquil countryside",
+    "definition": "고요한 시골길",
+    "examples": [
+      {
+        "text": "I want to get away from the hustle and bustle of the city to live in the tranquil countryside",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "collocation": "adjacent to",
+    "definition": "~에 인접한",
+    "examples": [
+      {
+        "text": "My family lived in a house adjacent to the railway",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "collocation": "feel homesick",
+    "definition": "집이 그리운",
+    "examples": [
+      {
+        "text": "While studying abroad, I often feel homesick for the familiar comforts of my hometown",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "collocation": "highly recommended",
+    "definition": "극도로 추천하는",
+    "examples": [
+      {
+        "text": "The new restaurant in town is highly recommended for its delicaious cuisine and impeccable service",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "collocation": "fully furnished",
+    "definition": "모든 가구가 갖추어진",
+    "examples": [
+      {
+        "text": "I have been searching for a fully furnished flat in the city centry",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "collocation": "holiday season",
+    "definition": "연말연시",
+    "examples": [
+      {
+        "text": "Those whose live in abroad return to their hometowns during the holiday season",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "collocation": "lunar calendar",
+    "definition": "음력",
+    "examples": [
+      {
+        "text": "The biggest hiliday in Korea is Gujeong, which is the first day of the year according to the lunar calendar, typically falling in late January or early February",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "collocation": "hustle and bustle",
+    "definition": "분주한",
+    "examples": [
+      {
+        "text": "Among the hustle and bustle of the city, I found peace in a quiet bookstore away from all the noise",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "collocation": "neighboring town",
+    "definition": "옆동네",
+    "examples": [
+      {
+        "text": "Many people who work in Seoul actually live in neighbouring towns like Incheon",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "collocation": "out of sight, out of mind",
+    "definition": "눈에서 멀어지면 마음에서도 멀어지는",
+    "examples": [
+      {
+        "text": "I haven’s thought about the problems in my hometown ever since I went abroad; out of sight, out of mind",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "collocation": "open space",
+    "definition": "트인 공간",
+    "examples": [
+      {
+        "text": "Preserving open spaces in urban environments is vital for providing havens for city dwellers",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "collocation": "rich history",
+    "definition": "풍부한 역사",
+    "examples": [
+      {
+        "text": "The museum features a captivating collection of ancient artefacts on display, reflecting the rich history of the region",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "collocation": "shanty town",
+    "definition": "빈민촌",
+    "examples": [
+      {
+        "text": "The newly developed suburbs are located away from the poor shanty towns on the outskirts of the city",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "collocation": "bittery cold",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Despite the breathtaking scenery, the top of the mountain was bittery cold.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "collocation": "by boat",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Exploring remote islands by boat offers a unique and tranquil travel experience",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "collocation": "breathtaking scenery",
+    "definition": "",
+    "examples": [
+      {
+        "text": "The area is famous for its breathtaking scenery, including waterfalls, lakes and mountains.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "collocation": "by car",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Commuting by car provides the convenience of personalised travel, especially in areas with limited public transport",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "collocation": "by plane",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Many international journeys are completed by plane, allowing passengers to cover long distances in a relatively short time.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "collocation": "daily commute",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Choosing the right transport mode can save time during your daily commute.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "collocation": "have no sense of direction",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Since I have no sense of direction, I often get lost in a new city.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "collocation": "heavy traffic",
+    "definition": "",
+    "examples": [
+      {
+        "text": "The city centre experiences heavy traffic due to the high influx of tourists visiting popular attractions.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "collocation": "public transport",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Using public transport contributes to environmental sustainability by reducing individual car usage.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "collocation": "take all day",
+    "definition": "",
+    "examples": [
+      {
+        "text": "It could take all day to explore the key landmarks and attractions of the city.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "collocation": "sandy beach",
+    "definition": "",
+    "examples": [
+      {
+        "text": "The hotel I visited with my friends last year has its own sandy beach.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "collocation": "traffic jam",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Cities experience severe traffic jams during rush hour.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "collocation": "tourist attraction",
+    "definition": "",
+    "examples": [
+      {
+        "text": "Seoul is a hub for modern entertainment and shopping, making it one of the top tourist attractions in Korea",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "collocation": "travel plan",
+    "definition": "",
+    "examples": [
+      {
+        "text": "We had to make a slight alteration to our travel plans because of the weather.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "collocation": "unforgattable experience",
+    "definition": "",
+    "examples": [
+      {
+        "text": "The trip to the mountains was an unforgattable experience filled with the breathtaking scenery.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "collocation": "food additives",
+    "definition": "식품 첨가물",
+    "examples": [
+      {
+        "text": "The pakaging on all food producs should include clear labels that provide information about the presence of any food additives.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "collocation": "gain weight",
+    "definition": "살찌다",
+    "examples": [
+      {
+        "text": "Consuming fast food leads to unhealthy eating habits and causes individuals to gain weight.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "collocation": "generous portion",
+    "definition": "넉넉한 양",
+    "examples": [
+      {
+        "text": "The restaurant is famous for serving good quality food in generous portions.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "collocation": "GM foods",
+    "definition": "유전자 변형 식품",
+    "examples": [
+      {
+        "text": "There is continuous public debate regarding the safety and regulation of GM foods on the market.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "collocation": "give it a shot",
+    "definition": "한 번 해보다",
+    "examples": [
+      {
+        "text": "Although baking a wedding cake seemed intimidating, I eventually decided to give it a shot.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "collocation": "good pairing",
+    "definition": "좋은 궁합, 잘 어울리는 음식",
+    "examples": [
+      {
+        "text": "I think coffee and doughnuts make a good pairing.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "collocation": "healthy eating",
+    "definition": "건강한 식사",
+    "examples": [
+      {
+        "text": "Nowadays, many people are aware of the benefits of healthy eating, and opting for nutritious meals.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "collocation": "home-cooked meal",
+    "definition": "집에서 만든 요리, 집밥",
+    "examples": [
+      {
+        "text": "Every evening, all family members gather to share laughter an love over a home-cooked meal.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "collocation": "korean cuisine",
+    "definition": "한국 음식",
+    "examples": [
+      {
+        "text": "Kimchi, known for its bold and tangy taste, is a staple in Korean Cuisine.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "collocation": "local food",
+    "definition": "현지 음식",
+    "examples": [
+      {
+        "text": "Exploring Korean culture involves indulging in delicious local food, such as kimchi, bulgogi and bibimbap.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "collocation": "processed food",
+    "definition": "가공 식품",
+    "examples": [
+      {
+        "text": "Consumers are increasingly concerned about the potential impacts of processed foods on their health.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "collocation": "side dish",
+    "definition": "반찬, 곁들임 요리",
+    "examples": [
+      {
+        "text": "Kimch is commonly served as a side dish in Korean meals.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "collocation": "substantial meal",
+    "definition": "풍성한 식사",
+    "examples": [
+      {
+        "text": "the customers enjoyed a substantial meal along with their drinks, creating a pleasant dining experience at the pub.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "collocation": "comfort food",
+    "definition": "위안을 주는 음식, 소울푸드",
+    "examples": [
+      {
+        "text": "During stressful times, people often turn to comfort food for solace and familiarity.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "collocation": "culinary skills",
+    "definition": "요리 솜씨",
+    "examples": [
+      {
+        "text": "My mother used to domonstrate her advanced culinary skills by making a gourmet meal.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "collocation": "aesthetic taste",
+    "definition": "미적 취향",
+    "examples": [
+      {
+        "text": "The main character’s aesthetic taste in decor is modern and minimalist.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "collocation": "be fully aware of",
+    "definition": "~을 충분히 인식하다",
+    "examples": [
+      {
+        "text": "Today’s leaders should be fully aware of the diversity of cultures among countries to navigate global challenges successfully.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "collocation": "binge-watch a series",
+    "definition": "하나의 시리즈를 몰아서 보다, 정주행 하다",
+    "examples": [
+      {
+        "text": "After a hectic week, I lke to binge-watch a series on my favourite streaming service.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "collocation": "common courtesy",
+    "definition": "기본 예의",
+    "examples": [
+      {
+        "text": "Across various cultures, good manners and respectful communication are valued as fundamental aspects of common courtesy.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "collocation": "cultural differences",
+    "definition": "문화적 차이",
+    "examples": [
+      {
+        "text": "Understanding cultural differences fosters harmony in diverse communities.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "collocation": "cutural exchange",
+    "definition": "문화 교류",
+    "examples": [
+      {
+        "text": "Cultural exchange programmes provide an opportudnity for individuals to immerse themselves in a foreign culture.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "collocation": "go viral",
+    "definition": "입소문이 나다",
+    "examples": [
+      {
+        "text": "The video of the heartwarming rescue quickly went viral, capturing the attention of millions around the world.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "collocation": "K-pop sensation",
+    "definition": "케이팝 열풍",
+    "examples": [
+      {
+        "text": "The K-pop sensation BTS captivated fans worldwide with their catchy tunes and energetic performances.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "collocation": "online review",
+    "definition": "온라인 후기",
+    "examples": [
+      {
+        "text": "In today’s digital age, consumers can read online review before deciding to watch a film.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "collocation": "personal preference",
+    "definition": "개인의 취향",
+    "examples": [
+      {
+        "text": "Personal preferences heavily depend on an individual’s cultural background.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "collocation": "religious ceremony",
+    "definition": "종교 의식, 종교 축제",
+    "examples": [
+      {
+        "text": "Many people participate in religious ceremonies during the holiday season to honour and clelbrate their faith.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "collocation": "popular culture",
+    "definition": "대중문화",
+    "examples": [
+      {
+        "text": "The impact of popular culture extends beyond entertainment, shapingattitudes, language and even societal norms.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "collocation": "streaming service",
+    "definition": "스트리밍 서비스, OTT",
+    "examples": [
+      {
+        "text": "Streaming services such as Netflix, AppleTV+ and Disney+ gained popularity during the pandemic amid lockdown measures.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "collocation": "well-rounded",
+    "definition": "다재다능한, 균형 잡힌",
+    "examples": [
+      {
+        "text": "The exchange programmes aim at making students well-rounded by exposing them to different cultural practices and traditions from various countries.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "collocation": "take place",
+    "definition": "일어나다, 발생하다, 열리다",
+    "examples": [
+      {
+        "text": "The religious ceremony took place in the historic temple, attracting numerous devotees.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "collocation": "alleviate poverty",
+    "definition": "빈공을 완화(경감)시키다.",
+    "examples": [
+      {
+        "text": "It is necessary for governments to launch programmes to alleviate poverty.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "collocation": "asylum seeker",
+    "definition": "망명 신청자",
+    "examples": [
+      {
+        "text": "The asylum seeker fled persecution in his home country, seeking safety and protection in a new country.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "collocation": "charity work",
+    "definition": "자선 활동",
+    "examples": [
+      {
+        "text": "Many individuals engage in charity work to support various social and humanitarian causes.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "collocation": "first impression",
+    "definition": "첫인상",
+    "examples": [
+      {
+        "text": "You don’t get a second chance to make a first impression.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "collocation": "food shortage",
+    "definition": "식량 부족",
+    "examples": [
+      {
+        "text": "Science holds the potential to address numerous challenges, such as food shortages and climate change.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "collocation": "immigration policy",
+    "definition": "이민 정책",
+    "examples": [
+      {
+        "text": "Sound immigration pollicies can contribute to a nation’s economic growth and social diversity.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "collocation": "judge people",
+    "definition": "사람을 판단하다",
+    "examples": [
+      {
+        "text": "There is no doubt that judging people too quickly can have negative consequences.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "collocation": "migrant worker",
+    "definition": "이주 노동자",
+    "examples": [
+      {
+        "text": "Migrant workers play a crucial role in filling seasonal labour demands in the agricultural sector.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "collocation": "margins of society",
+    "definition": "사회의 변방",
+    "examples": [
+      {
+        "text": "Social policies should aim to aid individuals living on the margins of society, ensuring equal opportunities and access to resources.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "collocation": "public good",
+    "definition": "공익",
+    "examples": [
+      {
+        "text": "When allocating resources, ensuring public safety must take precedence to serve the public good.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "collocation": "public opinion",
+    "definition": "여론",
+    "examples": [
+      {
+        "text": "Social media platforms have become influential in shaping and amplifying public opinion.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "collocation": "societal norms",
+    "definition": "사회적 규범",
+    "examples": [
+      {
+        "text": "Education plays a crucial role in shaping individuals’ understanding of society norms.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "collocation": "social distancing",
+    "definition": "사회적 거리두기",
+    "examples": [
+      {
+        "text": "Adhering to social distancing measures is crucial in preventing the spread of infectious diseases.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "collocation": "top priority",
+    "definition": "최우선 순위",
+    "examples": [
+      {
+        "text": "There is a strong argument that solving climate change should be the top priority for scientists.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "collocation": "write A off",
+    "definition": "A를 배제하다, 단념하다.",
+    "examples": [
+      {
+        "text": "If we write people off too quickly, we could miss out on potential friendships, business opportunities and even romantic relationships.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "collocation": "achieve one’s goal",
+    "definition": "목표를 달성하다",
+    "examples": [
+      {
+        "text": "I desperatelu want to succeed in my career and arm willing to put in extra effort to achieve my goals.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "collocation": "business owner",
+    "definition": "기업 소유주",
+    "examples": [
+      {
+        "text": "Small business owners face challenges such as obtaining funding to grow their businesses.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "collocation": "for the best",
+    "definition": "장래에 가장 좋은 방향으로",
+    "examples": [
+      {
+        "text": "Despite many challenges, changing careers can be for the best, leading to professional fulfillment and satisfaction.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "collocation": "full time position",
+    "definition": "정규직",
+    "examples": [
+      {
+        "text": "After completing her degree, she secured a full-time position with a reputable company in her field.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "collocation": "job satisfaction",
+    "definition": "직업 만족도",
+    "examples": [
+      {
+        "text": "For many, finding a job that aligns with their passions is crucial for long-term job satisfaction.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "collocation": "job seeker",
+    "definition": "구직자",
+    "examples": [
+      {
+        "text": "Job seekers often question wheter it is better to work for a large or a small company.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 172,
+    "collocation": "labor market",
+    "definition": "노동 시장",
+    "examples": [
+      {
+        "text": "Fluctuations in the labour market can impact job availability and wage levels.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "collocation": "on a business trip",
+    "definition": "출장으로, 출장 중인",
+    "examples": [
+      {
+        "text": "Five years ago, I visited London on a business trip.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "collocation": "office worker",
+    "definition": "사무직 근로자",
+    "examples": [
+      {
+        "text": "With the increase in companies that offer remote work, some Korean office workers are experienceing shifts in traditional work practices.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "collocation": "on the side",
+    "definition": "부업으로",
+    "examples": [
+      {
+        "text": "Aside from his teaching career, my father also delivers food on the side to earn extra money for our family.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "collocation": "remote work",
+    "definition": "원격 근무",
+    "examples": [
+      {
+        "text": "Some benefits of remote work include increased productivity and improved work-life balance for employees.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "collocation": "physical work",
+    "definition": "육체 노동, 육체적인 일",
+    "examples": [
+      {
+        "text": "Some individuals prefer jobs that involve physical work, appreciating the opportunity for hands-on activities and tangible results.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "collocation": "work environment",
+    "definition": "근무 환경, 업무 환경",
+    "examples": [
+      {
+        "text": "Companies often invest in creating a healthy work environment to boost productivity and employee satisfaction.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "collocation": "wear different hat",
+    "definition": "여러 역할을 맡다",
+    "examples": [
+      {
+        "text": "In small sompanies, you need to wear different hats, which helps you develop a range of skills that might not be possible in a larger company.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "collocation": "work life balance",
+    "definition": "일과 삶의 균형",
+    "examples": [
+      {
+        "text": "Many hjob seekers prioritise factors like work-life balance and career development.",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 183,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 194,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 195,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 203,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 204,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 205,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 206,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 207,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 211,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 212,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 213,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 214,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 215,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 216,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 217,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 218,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 219,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 220,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 221,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 222,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 223,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 224,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 225,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 226,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 227,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 228,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 229,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 230,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 231,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 232,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 233,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 234,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 235,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 236,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 237,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 238,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 239,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 240,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 241,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 242,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 243,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 244,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 245,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 246,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 247,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 248,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 249,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 250,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 251,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 252,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 253,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 254,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 255,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 256,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 257,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 258,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 259,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 260,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 261,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 262,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 263,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 264,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 265,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 266,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 267,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 268,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 269,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 270,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 272,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 273,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 274,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 275,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 277,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 278,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 279,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 280,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 281,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 282,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 283,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 284,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 285,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 286,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 287,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 288,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 289,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 290,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 291,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 292,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 293,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 294,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 295,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 296,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 297,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 298,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 299,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "collocation": "",
+    "definition": "",
+    "examples": [
+      {
+        "text": "",
+        "translation": ""
+      }
+    ]
+  }
+]
