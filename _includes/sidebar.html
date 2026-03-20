@@ -31,9 +31,7 @@
             <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}"
                 title="{{ group_title }}">
                 {% assign nav_icon_name = section_page.icon | default: "book" %}
-                <span class="app-nav-ico app-nav-ico--svg"
-                    style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ nav_icon_name }}.svg');"
-                    aria-hidden="true"></span>
+                {% include parts/icon_button.html image=nav_icon_name %}
                 <span class="app-nav-label">{{ group_title }}</span>
             </a>
             <div class="app-nav-sub">
@@ -64,9 +62,7 @@
             <a class="app-nav-item {% if current == group_base %}active{% endif %}" href="{{ group_base }}"
                 title="{{ group_title }}">
                 {% assign nav_icon_name = section_page.icon | default: "book" %}
-                <span class="app-nav-ico app-nav-ico--svg"
-                    style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ nav_icon_name }}.svg');"
-                    aria-hidden="true"></span>
+                {% include parts/icon_button.html image=nav_icon_name %}
                 <span class="app-nav-label">{{ group_title }}</span>
             </a>
             <div class="app-nav-sub">
@@ -101,12 +97,10 @@
             title="{{ fp.title }}">
             {% if fp.type == 'topbar' %}
             {% assign ficon = fp.icon | default: "book" %}
-            <span class="app-nav-ico app-nav-ico--svg"
-                style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ ficon }}.svg');" aria-hidden="true"></span>
+            {% include parts/icon_button.html image=ficon %}
             {% else %}
             {% assign ficon = fp.icon | default: "wrench" %}
-            <span class="app-nav-ico app-nav-ico--svg"
-                style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ ficon }}.svg');" aria-hidden="true"></span>
+            {% include parts/icon_button.html image=ficon %}
             {% endif %}
             <span class="app-nav-label">{{ fp.title }}</span>
         </a>
@@ -119,9 +113,7 @@
         {% unless fp.hide %}
         <a class="app-nav-item {% if page.url == fp.url %}active{% endif %}" href="{{ fp.url }}" title="{{ fp.title }}">
             {% assign footer_icon = fp.icon | default: "wrench" %}
-            <span class="app-nav-ico app-nav-ico--svg"
-                style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ footer_icon }}.svg');"
-                aria-hidden="true"></span>
+            {% include parts/icon_button.html image=footer_icon %}
             <span class="app-nav-label">{{ fp.title }}</span>
         </a>
         {% endunless %}
@@ -134,9 +126,7 @@
         <a class="app-nav-item {% if page_group == group_key %}active{% endif %}" href="{{ group_base }}"
             title="{{ group_title }}">
             {% assign nav_icon_name = section_page.icon | default: "book" %}
-            <span class="app-nav-ico app-nav-ico--svg"
-                style="--ico: url('{{ site.baseurl }}/assets/svg/default/{{ nav_icon_name }}.svg');"
-                aria-hidden="true"></span>
+            {% include parts/icon_button.html image=nav_icon_name %}
             <span class="app-nav-label">{{ group_title }}</span>
         </a>
         {% endunless %}

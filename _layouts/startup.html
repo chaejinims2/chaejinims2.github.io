@@ -247,14 +247,14 @@
         <p class="startup-lead">{{ page.lead }}</p>
         {% endif %}
         {% assign startup_about_href = site.baseurl | append: "/home/about/index" %}
-        {% include parts/icon_button.html 
+        {% include parts/icon_href.html 
             href=startup_about_href 
             title="About" 
             image="home" %}
-        {% include parts/icon_button.html 
+        {% include parts/icon_href.html 
             href="https://github.com/chaejinims2?tab=repositories" 
             title="GitHub Repository" 
-            image="git-2" %}
+            image="git" %}
       </div>
     </main>
     <footer class="startup-footer">
