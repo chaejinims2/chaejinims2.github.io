@@ -1,0 +1,25 @@
+{% comment %}
+Checkbox part module.
+
+Example:
+    {% include parts/checkbox.html 
+        title="Compact sidebar" 
+        name="sidebar-compact"
+        label="Icons only" 
+    %}
+{% endcomment %}
+
+<div class="part-module part-module--row" aria-labelledby="{{ include.name }}-label">
+  <p id="{{ include.name }}-label" class="part-label">{{ include.title }}</p>
+  <label class="part-check-label">
+    <span>{{ include.label }}</span>
+    <input
+      type="checkbox"
+      id="{{ include.name }}-checkbox"
+      name="{{ include.name }}"
+      aria-label="{{ include.label }}"
+    />
+  </label>
+</div>
+
+

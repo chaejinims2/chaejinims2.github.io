@@ -1,14 +1,211 @@
-<!doctype html>
-<html lang="{{ site.locale | replace: '_', '-' | default: 'ko' }}">
+<style>
+  .body-home {
+    margin: 0;
+    background: var(--app-bg);
+    color: var(--app-text);
+  }
 
-<head>
-  {% include head.html %}
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/startup.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/cherry.css" />
-</head>
+  .body-home .app-root {
+    display: none;
+  }
+
+  .startup-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+    box-sizing: border-box;
+  }
+
+  /* ----- Hero: 정체성 한눈에 ----- */
+  .startup-hero {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 8vw, 4rem);
+    max-width: 36rem;
+  }
+
+  .startup-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.75rem;
+    color: var(--app-text);
+    line-height: 1.2;
+  }
+
+  .startup-lead {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.5;
+    color: var(--app-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .startup-enter {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--app-text);
+    background: var(--overlay-w-0a);
+    border: 1px solid var(--app-border);
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .startup-enter:hover {
+    background: var(--overlay-w-0d);
+    border-color: var(--accent);
+    color: var(--app-text);
+    text-decoration: none;
+  }
+
+  /* ----- 본문 ----- */
+  .startup-main {
+    flex: 1;
+    width: 100%;
+    max-width: 52rem;
+  }
+
+  .cherry-root .startup-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cherry-hero-actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cherry-hero-actions .startup-enter {
+    border: none;
+    background: transparent;
+  }
+
+  .cherry-hero-actions .startup-enter:hover {
+    border: none;
+    background: transparent;
+  }
+
+  .cherry-hero-actions .startup-enter-icon {
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cherry-hero-actions .startup-enter img {
+    width: 12rem;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  .cherry-hero-actions .startup-enter:hover img {
+    transform: scale(1.1);
+  }
+
+  .cherry-hero-actions .cherry-action-margin {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .startup-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .startup-content h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+    color: var(--app-text);
+  }
+
+  .startup-content h1:first-child {
+    margin-top: 0;
+  }
+
+  .startup-content h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.5rem;
+    color: var(--app-text);
+    padding-top: 1rem;
+    border-top: 1px solid var(--app-border);
+  }
+
+  .startup-content h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .startup-content p {
+    margin: 0 0 0.75rem;
+    color: var(--app-text);
+  }
+
+  .startup-content ul,
+  .startup-content ol {
+    margin: 0 0 1rem;
+    padding-left: 1.5em;
+  }
+
+  .startup-content li {
+    margin-bottom: 0.35rem;
+  }
+
+  .startup-content strong {
+    font-weight: 600;
+    color: var(--app-text);
+  }
+
+  .startup-content a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .startup-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* ----- 푸터: 미니 네비 + 저작 ----- */
+  .startup-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--app-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--app-muted);
+  }
+
+  .startup-footer a {
+    color: var(--app-muted);
+    text-decoration: none;
+  }
+
+  .startup-footer a:hover {
+    color: var(--app-text);
+    text-decoration: underline;
+  }
+
+  .startup-footer-copy {
+    margin-left: 0.25rem;
+  }
+</style>
+<!doctype html>
+<html lang="{{ site.locale | replace: " _", "-" | default: "ko" }}">
+{% include header.html %}
+
 
 <body data-theme="dark" class="body-home">
   <div class="startup-root">
@@ -22,68 +219,50 @@
         {% endunless %} -->
     </header>
     <main class="startup-main">
-      <article class="startup-content">
-        {{ content }}
-      </article>
+      {{ content }}
       <div class="cherry-hero-actions">
+        {% if page.permalink == '/cherry' %}
+        {% include parts/image_button.html
+            href="https://www.netflix.com/browse"
+            title="Netflix"
+            image="netflix-3"
+        %}
+        {% include parts/image_button.html
+            href="https://www.disneyplus.com/home"
+            title="Disney Plus"
+            image="disney--1"
+        %}
+        {% include parts/image_button.html
+            href="https://www.youtube.com"
+            title="YouTube"
+            image="youtube-6-darkmode"
+        %}
+        {% include parts/image_button.html
+            href="https://www.instagram.com"
+            title="Instagram"
+            image="instagram-2"
+        %}
+        {% endif %}
         {% if page.lead %}
         <p class="startup-lead">{{ page.lead }}</p>
         {% endif %}
-        {% unless page.hide_explore %}
-        <a href="{{ site.baseurl }}/home/about/index" class="startup-enter startup-enter-icon">
-          <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/default/home.svg');"
-            aria-hidden="true"></span>
-
-        </a>
-        {% endunless %}
-        <a href="https://github.com/chaejinims2?tab=repositories" class="startup-enter startup-enter-icon"
-          target="_blank" rel="noopener noreferrer" title="github">
-          <span class="app-nav-ico app-nav-ico--svg" style="--ico: url('{{ site.baseurl }}/assets/svg/default/git.svg');"
-            aria-hidden="true"></span>
-        </a>
+        {% assign startup_about_href = site.baseurl | append: "/home/about/index" %}
+        {% include parts/icon_button.html 
+            href=startup_about_href 
+            title="About" 
+            image="home" %}
+        {% include parts/icon_button.html 
+            href="https://github.com/chaejinims2?tab=repositories" 
+            title="GitHub Repository" 
+            image="git-2" %}
       </div>
     </main>
     <footer class="startup-footer">
-      <div class="startup-counter" aria-live="polite">
-        <span class="startup-counter-item"><span class="startup-counter-label">Today</span> <span
-            id="startup-count-today">-</span></span>
-        <span class="startup-counter-item"><span class="startup-counter-label">Total</span> <span
-            id="startup-count-total">-</span></span>
-      </div>
+      {% include utils/startup-counter.html %}
       <span class="startup-footer-copy">© {{ site.time | date: '%Y' }} {{ site.title }}</span>
     </footer>
   </div>
-  {% include scripts.html %}
-  <script>
-    (function () {
-      var apiUrl = {{ site.visitor_count_api | default: "" | jsonify
-    }};
-    var elToday = document.getElementById('startup-count-today');
-    var elTotal = document.getElementById('startup-count-total');
-    function setToday(n) { if (elToday) elToday.textContent = typeof n === 'number' ? n : '-'; }
-    function setTotal(n) { if (elTotal) elTotal.textContent = typeof n === 'number' ? n : '-'; }
-    function tryCountApi() {
-      var ns = 'chaejinims2.github.io';
-      var today = new Date();
-      var dateKey = 'daily-' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
-      Promise.all([
-        fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/' + encodeURIComponent(dateKey)).then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; }),
-        fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/total').then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; })
-      ]).then(function (r) { setToday(r[0]); setTotal(r[1]); });
-    }
-    if (apiUrl) {
-      fetch(apiUrl, { method: 'GET', credentials: 'omit' })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (d) {
-          var t = d && (d.today != null || d.total != null) ? { today: d.today, total: d.total } : null;
-          if (t) { setToday(t.today); setTotal(t.total); } else tryCountApi();
-        })
-        .catch(function () { tryCountApi(); });
-    } else {
-      tryCountApi();
-    }
-    }) ();
-  </script>
+
 </body>
 
 </html>

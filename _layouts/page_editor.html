@@ -1,4 +1,7 @@
-{% assign subjects = site.data.cvoca.subjects | default: empty %}
+---
+layout: page
+---
+{% assign subjects = site.data[page.data].subjects | default: empty %}
 
 <link rel="stylesheet" href="{{ '/assets/css/voca-editor.css' | relative_url }}" />
 
@@ -115,7 +118,7 @@
 </div>
 
 <script type="application/json" id="ve-words-data">
-{{ site.data.cvoca.words | jsonify }}
+{{ site.data[page.data].words | jsonify }}
 </script>
 
 <script src="{{ '/assets/js/pages/voca-editor.js' | relative_url }}"></script>

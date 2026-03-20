@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: page_editor
 permalink: /tests/editor/
 title: Voca JSON Editor
+data: cvoca
 ---
-
-{% include voca-editor-tool.html %}

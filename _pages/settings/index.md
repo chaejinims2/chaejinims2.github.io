@@ -1,5 +1,5 @@
 ---
-layout: section
+layout: section_settings
 permalink: /settings/
 title: Settings
 icon: wrench

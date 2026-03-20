@@ -1,0 +1,64 @@
+---
+layout: page
+---
+{% assign quiz_data = site.data[page.data] %}
+{% assign questions = quiz_data.questions %}
+{% assign exams = quiz_data.exams %}
+{% assign subjects = quiz_data.subjects %}
+
+<header class="quiz-filters-wrap" role="region" aria-label="퀴즈 필터">
+    <div class="quiz-select-wrap">
+        <span class="quiz-select-label">Date</span>
+        <select id="quiz-exam-select" class="quiz-select" aria-label="시험 선택">
+            <option value="">All</option>
+            {% for exam in exams %}
+            <option value="{{ exam.key }}">{{ exam.date }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="quiz-select-wrap">
+        <span class="quiz-select-label">Subject</span>
+        <select id="quiz-subject-select" class="quiz-select" aria-label="과목 선택">
+            <option value="">All</option>
+            {% for subj in subjects %}
+            <option value="{{ subj.key }}">{{ subj.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</header>
+<div class="quiz-start-wrap">
+    <button type="button" id="quiz-start-btn" class="quiz-start-btn">Start Quiz</button>
+</div>
+
+<div id="quiz-section" aria-label="퀴즈">
+    <div id="quiz-timer">00:00</div>
+    <div id="quiz-ans-sheet" class="quiz-ans-sheet"></div>
+    <div class="quiz-cards-set" role="list">
+        {% for q in questions %}
+        {% assign exam = exams | where: "key", q.examKey | first %}
+        {% assign subject = subjects | where: "key", q.subjectKey | first %}
+        {% if exam and exam.answers %}
+        {% assign answer_index = q.localId | minus: 1 %}
+        {% assign correct_answer_num = exam.answers[answer_index] %}
+        {% else %}
+        {% assign correct_answer_num = 1 %}
+        {% endif %}
+
+        {% include blocks/quiz_card.html q=q exam=exam subject=subject correct_answer_num=correct_answer_num %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="quiz-pager" role="region" aria-label="문제 이동">
+    <div class="quiz-pager__left">
+        <button type="button" class="quiz-pager__btn" id="quiz-prev">Prev</button>
+    </div>
+    <span class="quiz-pager__status" id="quiz-status">0 / 0</span>
+    <div class="quiz-pager__right">
+        <button type="button" class="quiz-pager__btn" id="quiz-next">Next</button>
+    </div>
+</div>
+<script>
+    try { window.initLm11QuizPage && window.initLm11QuizPage(); } catch (e) { }
+    // initLm11QuizCardInteractions is called after Start button click
+</script>

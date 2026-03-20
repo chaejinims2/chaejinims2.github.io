@@ -1,0 +1,45 @@
+<style>
+.startup-counter { display: flex; gap: 1.25rem; }
+.startup-counter-item { font-variant-numeric: tabular-nums; }
+.startup-counter-label { margin-right: 0.35rem; color: var(--app-muted); }
+.startup-counter-item span:last-child { color: var(--app-text); font-weight: 500; }
+
+</style>
+<div class="startup-counter" aria-live="polite">
+    <span class="startup-counter-item"><span class="startup-counter-label">Today</span> <span
+            id="startup-count-today">-</span></span>
+    <span class="startup-counter-item"><span class="startup-counter-label">Total</span> <span
+            id="startup-count-total">-</span></span>
+</div>
+
+
+{% include scripts.html %}
+<script>
+    (function () {
+        var apiUrl = "{{ site.visitor_count_api }}";
+        var elToday = document.getElementById('startup-count-today');
+        var elTotal = document.getElementById('startup-count-total');
+        function setToday(n) { if (elToday) elToday.textContent = typeof n === 'number' ? n : '-'; }
+        function setTotal(n) { if (elTotal) elTotal.textContent = typeof n === 'number' ? n : '-'; }
+        function tryCountApi() {
+            var ns = 'chaejinims2.github.io';
+            var today = new Date();
+            var dateKey = 'daily-' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+            Promise.all([
+                fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/' + encodeURIComponent(dateKey)).then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; }),
+                fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/total').then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; })
+            ]).then(function (r) { setToday(r[0]); setTotal(r[1]); });
+        }
+        if (apiUrl) {
+            fetch(apiUrl, { method: 'GET', credentials: 'omit' })
+                .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+                .then(function (d) {
+                    var t = d && (d.today != null || d.total != null) ? { today: d.today, total: d.total } : null;
+                    if (t) { setToday(t.today); setTotal(t.total); } else tryCountApi();
+                })
+                .catch(function () { tryCountApi(); });
+        } else {
+            tryCountApi();
+        }
+    })();
+</script>

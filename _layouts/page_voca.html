@@ -1,4 +1,7 @@
-{% assign words = include.quiz_data | default: site.data.cvoca.words %}
+---
+layout: page
+---
+{% assign words = site.data[page.data].words %}
 {% assign max_day = 0 %}
 {% for w in words %}{% if w.day_no > max_day %}{% assign max_day = w.day_no %}{% endif %}{% endfor %}
 
@@ -20,7 +23,7 @@
 <div id="quiz-section" aria-label="단어 학습">
   <div class="quiz-cards-set" role="list">
     {% for w in words %}
-      {% include voca_card_block.html w=w %}
+      {% include blocks/voca_card.html w=w %}
     {% endfor %}
   </div>
 </div>

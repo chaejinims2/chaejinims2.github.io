@@ -952,6 +952,23 @@ body.sidebar-bottom.sidebar-collapsed .app-sidebar {
   border-top: 1.5px solid var(--app-border);
 }
 /* .app-content ul, .app-content ol { margin: 0 0 12px; padding-left: 1.5em; } */
+.part-module { margin-bottom: 1rem; }
+.part-module--row {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+.part-module--row .part-label { display: inline !important; margin: 0; }
+.part-module--row .part-select,
+.part-module--row .part-check-label { margin-left: auto; flex-shrink: 0; }
+.part-label { font-weight: 600; color: var(--app-text); margin: 0 0 0.25rem; display: block; }
+.part-select { padding: 0.35em 0.6em; border-radius: var(--radius-2, 4px); border: 1px solid var(--app-border); background: var(--app-panel); color: var(--app-text); font-size: 1rem; }
+.part-check-label { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+.part-check-label input[type="checkbox"] { margin: 0; }
+
 .settings-block { margin-bottom: 1rem; }
 .settings-block--row {
   display: flex !important;

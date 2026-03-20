@@ -1,0 +1,12 @@
+{% comment %}
+{% endcomment %}
+
+<h1 class="section-index-title">{{ page.title | default: section_key | capitalize }}</h1>
+
+<ul class="section-index-list">
+  {% for p in group_pages %}
+  {% if p.hide != true and p.url != page.url %}
+  <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,27 @@
+{% comment %}
+Combobox part module.
+
+Example:
+    {% include parts/combobox.html 
+        title="Sidebar position" 
+        name="sidebar-position"
+        options="left:Left|right:Right"
+    %}
+{% endcomment %}
+<div class="part-module part-module--row" aria-labelledby="{{ include.name }}-label">
+  <p id="{{ include.name }}-label" class="part-label">{{ include.title }}</p>
+  <select
+    id="{{ include.name }}-select" 
+    name="{{ include.name }}"
+    class="part-select"
+    aria-label="{{ include.title }}"
+  >
+    {% assign opt_parts = include.options | split: "|" %}
+    {% for part in opt_parts %}
+      {% assign pair = part | strip | split: ":" %}
+      {% if pair[0] != nil and pair[1] != nil %}
+        <option value="{{ pair[0] }}">{{ pair[1] }}</option>
+      {% endif %}
+    {% endfor %}
+  </select>
+</div>

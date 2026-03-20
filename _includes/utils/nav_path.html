@@ -13,6 +13,7 @@
 {% else %}
   {% assign url_parts = page.url | split: "/" %}
   {% assign page_group = url_parts[2] | default: url_parts[1] %}
+
   {% assign section_key = page_group %}
   {% assign page_group_base = "/" | append: page_group | append: "/" %}
 {% endif %}
