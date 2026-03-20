@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rhombus Management Panel</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div>
+        <h1>Rhombus Management Panel</h1>
+        <p class="subtitle">Safe operations dashboard for rhombus</p>
+      </div>
+
+      <div class="topbar-controls">
+        <label class="control-group">
+          <span>Mode</span>
+          <select id="modeSelect">
+            <option value="mock">mock</option>
+            <option value="live">live</option>
+          </select>
+        </label>
+
+        <label class="control-group api-group">
+          <span>API Base</span>
+          <input id="apiBaseInput" type="text" placeholder="http://100.91.93.1:8080" />
+        </label>
+
+        <button id="saveConfigBtn" class="secondary-btn">Save</button>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+    </header>
+
+    <section class="status-strip">
+      <div class="status-item">
+        <span class="status-label">Connection</span>
+        <span id="connectionStatus" class="status-value status-neutral">unknown</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Last Refresh</span>
+        <span id="lastRefresh" class="status-value">-</span>
+      </div>
+      <div class="status-item wide">
+        <span class="status-label">Message</span>
+        <span id="globalMessage" class="status-value">Ready</span>
+      </div>
+    </section>
+
+    <main class="dashboard">
+      <section class="card">
+        <div class="card-header">
+          <h2>System Summary</h2>
+        </div>
+        <div id="systemSummary" class="kv-grid"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Disk Usage</h2>
+        </div>
+        <div id="diskUsage" class="table-wrap"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Inode Usage</h2>
+        </div>
+        <div id="inodeUsage" class="table-wrap"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Network</h2>
+        </div>
+        <div id="networkStatus" class="table-wrap"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Services</h2>
+        </div>
+        <div id="serviceStatus" class="table-wrap"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Actions</h2>
+        </div>
+        <div class="actions-grid">
+          <button class="action-btn" data-action="gateway-restart">Restart Gateway</button>
+          <button class="action-btn" data-action="tailscale-status">Check Tailscale</button>
+          <button class="action-btn" data-action="health-check">Run Health Check</button>
+          <button class="action-btn" data-action="git-pull">Git Pull</button>
+        </div>
+      </section>
+
+      <section class="card full-width">
+        <div class="card-header">
+          <h2>Recent Logs</h2>
+          <div class="log-controls">
+            <select id="logTypeSelect">
+              <option value="gateway">gateway</option>
+              <option value="tailscale">tailscale</option>
+              <option value="system">system</option>
+            </select>
+            <button id="loadLogsBtn" class="secondary-btn">Load Logs</button>
+          </div>
+        </div>
+        <pre id="logViewer" class="log-viewer">No logs loaded.</pre>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

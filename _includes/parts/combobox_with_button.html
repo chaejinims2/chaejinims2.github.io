@@ -1,0 +1,48 @@
+<div class="part-module part-module--row" aria-labelledby="{{ include.name }}-label">
+  <p id="{{ include.name }}-label" class="part-label">{{ include.title | default: include.name }}</p>
+
+  {%- assign select_id = include.name | append: "-select" -%}
+  {%- assign select_name = include.select_name | default: include.name -%}
+  <select
+    id="{{ select_id }}"
+    name="{{ select_name }}"
+    class="part-select"
+    aria-label="{{ include.title | default: include.name }}"
+  >
+    {%- if include.data -%}
+      {%- assign root = site.data[page.dataset][page.data] -%}
+      {%- assign items = root[include.data] | default: empty -%}
+      {%- for item in items -%}
+        <option
+          value="{{ item.book_id | default: item.id }}"
+          data-title="{{ item.title }}"
+          data-unit-number="{{ item.unit_number }}"
+          data-words-start="{{ item.ranges.words[0] }}"
+          data-words-end="{{ item.ranges.words[1] }}"
+        >
+          {{ item.title | default: item.book_id | default: item.id }}
+        </option>
+      {%- endfor -%}
+    {%- elsif include.select_start and include.select_end -%}
+      <option value="">All</option>
+      {%- assign start = include.select_start | plus: 0 -%}
+      {%- assign end = include.select_end | plus: 0 -%}
+      {%- for i in (start..end) -%}
+        <option value="{{ i }}">{{ i }}</option>
+      {%- endfor -%}
+    {%- else -%}
+      {%- assign opt_parts = include.options | default: '' | split: '|' -%}
+      {%- for part in opt_parts -%}
+        {%- assign pair = part | strip | split: ':' -%}
+        {%- if pair[0] != nil and pair[1] != nil -%}
+          <option value="{{ pair[0] }}">{{ pair[1] }}</option>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </select>
+
+  {%- assign btn_id = include.btn_name -%}
+  <button type="button" id="{{ btn_id }}" class="part-button">
+    {{ include.button_label | default: include.action | default: "Start" }}
+  </button>
+</div>

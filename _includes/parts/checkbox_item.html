@@ -1,0 +1,26 @@
+{% assign input_id = include.name | append: '--' | append: include.value | replace: ' ', '-' | replace: '/', '-' %}
+{% comment %} default: "false" 금지: 비어 있지 않은 문자열은 모두 truthy라 전부 checked됨. true / "true" / 1 / yes 만 checked. {% endcomment %}
+{% assign is_checked = false %}
+{% if include.checked == true %}
+  {% assign is_checked = true %}
+{% elsif include.checked %}
+  {% assign cn = include.checked | strip | downcase %}
+  {% if cn == 'true' or cn == '1' or cn == 'yes' %}
+    {% assign is_checked = true %}
+  {% endif %}
+{% endif %}
+<label class="part-check-label">
+  {% if include.label != nil and include.label != "" %}
+    <span>{{ include.label }}</span>
+  {% else %}
+    <span> {{ include.value }}</span>
+  {% endif %}
+  <input
+    type="checkbox"
+    id="{{ input_id }}"
+    name="{{ include.name }}"
+    value="{{ include.value }}"
+    aria-label="{{ include.aria_label | default: include.label | default: include.value }}"
+    {% if is_checked %}checked{% endif %}
+  />
+</label>

@@ -1,0 +1,2 @@
+cherry@rhombus:~$ echo $PATH
+/home/***REDACTED_USER***/.local/bin:/home/***REDACTED_USER***/bin:/home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/bin/remote-cli:/home/***REDACTED_USER***/.local/bin:/home/***REDACTED_USER***/bin:/home/***REDACTED_USER***/.nvm/versions/node/v18.20.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/***REDACTED_USER***/bin:/home/***REDACTED_USER***/bin

@@ -4,14 +4,27 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  function getEmbeddedWordsPool() {
+  async function getEmbeddedWordsPool() {
     const el = document.getElementById("ve-words-data");
     if (!el) return null;
     try {
       const raw = (el.textContent || "").trim();
-      if (!raw) return null;
-      const parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : null;
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed;
+        if (parsed && Array.isArray(parsed.words)) return parsed.words;
+        return null;
+      }
+
+      // Large JSON can be problematic to embed via Liquid; fallback to fetching a static file.
+      const src = el.getAttribute("data-words-src") || el.dataset.wordsSrc;
+      if (!src) return null;
+      const res = await fetch(src, { cache: "no-store" });
+      if (!res.ok) throw new Error(String(res.status));
+      const fetched = await res.json();
+      if (Array.isArray(fetched)) return fetched;
+      if (fetched && Array.isArray(fetched.words)) return fetched.words;
+      return null;
     } catch {
       return null;
     }
@@ -124,7 +137,7 @@
   }
 
   function fillUnitFilter() {
-    const sel = $("#ve-unit-filter");
+    const sel = $("#ve-unit-select");
     if (!sel) return;
     const current = filterUnit != null ? String(filterUnit) : "";
     const units = getUniqueUnits();
@@ -435,7 +448,10 @@
   function exportJson() {
     // 빈 entry 자동 보정 포함
     const normalized = ensureSchema(model);
-    const blob = new Blob([JSON.stringify(normalized, null, 2)], { type: "application/json;charset=utf-8" });
+    // client fetch src (assets/data/*/words.json) 포맷에 맞춰 내보낸다.
+    // 현재 words.json은 { words: [...] } 형태.
+    const payload = { words: normalized.words };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "updated_voca.json";
@@ -463,17 +479,17 @@
   }
 
   function setUnitEnabled(on) {
-    const unitSel = $("#ve-unit-filter");
+    const unitSel = $("#ve-unit-select");
     if (unitSel) unitSel.disabled = !on;
   }
 
   function setExportEnabled(on) {
-    const exportBtn = $("#ve-export");
+    const exportBtn = $("#ve-export-button, #ve-export-button-button");
     if (exportBtn) exportBtn.disabled = !on;
   }
 
   function getSelectedSubject() {
-    const sel = $("#ve-book-filter");
+    const sel = $("#ve-book-select");
     if (!sel) return null;
     const opt = sel.selectedOptions && sel.selectedOptions[0] ? sel.selectedOptions[0] : null;
     if (!opt) return null;
@@ -486,13 +502,21 @@
   }
 
   function fillUnitOptionsFromBook() {
-    const bookSel = $("#ve-book-filter");
-    const unitSel = $("#ve-unit-filter");
+    const bookSel = $("#ve-book-select");
+    const unitSel = $("#ve-unit-select");
     if (!bookSel || !unitSel) return;
     const opt = bookSel.selectedOptions && bookSel.selectedOptions[0] ? bookSel.selectedOptions[0] : null;
     const unitCount = opt ? Number(opt.getAttribute("data-unit-number")) : NaN;
+    const fixedMin = Number(unitSel.getAttribute("data-ve-unit-range-min"));
+    const fixedMax = Number(unitSel.getAttribute("data-ve-unit-range-max"));
     const current = pendingUnit != null ? String(pendingUnit) : "";
-    if (Number.isFinite(unitCount) && unitCount > 0) {
+    if (Number.isFinite(fixedMin) && Number.isFinite(fixedMax) && fixedMax >= fixedMin) {
+      const opts = [`<option value="">All</option>`];
+      for (let i = fixedMin; i <= fixedMax; i += 1) opts.push(`<option value="${i}">${i}</option>`);
+      unitSel.innerHTML = opts.join("");
+      unitSel.value = current;
+      if (unitSel.value !== current) unitSel.value = "";
+    } else if (Number.isFinite(unitCount) && unitCount > 0) {
       const opts = [`<option value="">All</option>`];
       for (let i = 1; i <= unitCount; i += 1) opts.push(`<option value="${i}">${i}</option>`);
       unitSel.innerHTML = opts.join("");
@@ -537,7 +561,7 @@
   function bindUI() {
     const fileEl = $("#ve-file");
     const loadTextBtn = $("#ve-load-text");
-    const exportBtn = $("#ve-export");
+    const exportBtn = $("#ve-export-button, #ve-export-button-button");
     const addWordBtn = $("#ve-add-word");
     const reindexBtn = $("#ve-reindex");
     const loadDefaultBtn = $("#ve-load-default");
@@ -545,8 +569,8 @@
     const copyBtn = $("#ve-copy-json");
     const bookIdEl = $("#ve-book-id");
     const titleEl = $("#ve-title");
-    const bookFilterEl = $("#ve-book-filter");
-    const startBtn = $("#ve-start-btn");
+    const bookFilterEl = $("#ve-book-select");
+    const startBtn = $("#ve-load-button, #ve-load-button-button");
     const colvisRadios = $$("input[name='ve-colvis']");
     const colChecks = $$("input[name='ve-col']");
 
@@ -561,7 +585,7 @@
         if (!started) return;
         const subj = getSelectedSubject();
         if (!subj || !subj.book_id) return;
-        if (!Array.isArray(wordsPool)) wordsPool = getEmbeddedWordsPool();
+        if (!Array.isArray(wordsPool)) wordsPool = await getEmbeddedWordsPool();
         if (!Array.isArray(wordsPool)) return;
         applySubject(subj);
       });
@@ -573,7 +597,7 @@
         started = true;
         setExportEnabled(false);
         try {
-          if (!Array.isArray(wordsPool)) wordsPool = getEmbeddedWordsPool();
+          if (!Array.isArray(wordsPool)) wordsPool = await getEmbeddedWordsPool();
           if (!Array.isArray(wordsPool)) throw new Error("embedded words missing");
           const subj = getSelectedSubject();
           if (subj && subj.book_id) applySubject(subj);
@@ -607,7 +631,7 @@
     if (copyBtn) {
       copyBtn.addEventListener("click", async () => {
         const normalized = ensureSchema(model);
-        const txt = JSON.stringify(normalized, null, 2);
+        const txt = JSON.stringify({ words: normalized.words }, null, 2);
         try {
           await navigator.clipboard.writeText(txt);
           alert("현재 JSON을 클립보드에 복사했습니다.");
@@ -624,7 +648,7 @@
 
     // load-default 버튼은 더 이상 사용하지 않음(브라우저에서 _data 접근 불가)
 
-    const unitFilterEl = $("#ve-unit-filter");
+    const unitFilterEl = $("#ve-unit-select");
     if (unitFilterEl) {
       unitFilterEl.addEventListener("change", () => {
         const v = unitFilterEl.value;

@@ -1,0 +1,28 @@
+{% assign input_id = include.input_id %}
+{% if input_id == nil or input_id == "" %}
+  {% assign input_id = include.name | append: '--' | append: include.value | replace: ' ', '-' | replace: '/', '-' %}
+{% endif %}
+{% assign is_checked = false %}
+{% if include.checked == true %}
+  {% assign is_checked = true %}
+{% elsif include.checked %}
+  {% assign cn = include.checked | strip | downcase %}
+  {% if cn == 'true' or cn == '1' or cn == 'yes' %}
+    {% assign is_checked = true %}
+  {% endif %}
+{% endif %}
+<label class="part-check-label">
+  {% if include.label != nil and include.label != "" %}
+    <span>{{ include.label }}</span>
+  {% else %}
+    <span> {{ include.value }}</span>
+  {% endif %}
+  <input
+    type="radio"
+    id="{{ input_id }}"
+    name="{{ include.name }}"
+    value="{{ include.value }}"
+    aria-label="{{ include.aria_label | default: include.label | default: include.value }}"
+    {% if is_checked %}checked{% endif %}
+  />
+</label>

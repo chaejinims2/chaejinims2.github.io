@@ -1,0 +1,55 @@
+{% comment %}
+  다중 체크박스 (동일 name, 서로 다른 value)
+
+  예:
+    {% include parts/checkbox_list.html
+      aria_label="표 칼럼 선택"
+      input_name="ve-col"
+      wrapper_class="ve-colchecks"
+      values="id|unit|term|pos|gloss|example|translation|actions"
+      checked="term|pos|gloss|actions"
+    %}
+
+  checked: 체크할 value를 | 로 구분 (부분일치 방지를 위해 구분자로 감쌈)
+
+  values 미지정 시: 단일 체크박스(part-module) — 기존 패턴
+{% endcomment %}
+{% if include.values != nil and include.values != "" %}
+  {% assign vals = include.values | split: "|" %}
+  {% assign checked_raw = include.checked | default: "" | replace: " ", "" %}
+  {% assign haystack = "|" | append: checked_raw | append: "|" %}
+  <div
+    class="{{ include.wrapper_class | default: 've-colchecks' }}"
+    role="group"
+    aria-label="{{ include.aria_label | default: include.title | default: '옵션' }}"
+  >
+    {% for raw in vals %}
+      {% assign val = raw | strip %}
+      {% if val != "" %}
+        {% assign needle = "|" | append: val | append: "|" %}
+        <label class="settings-check-label">
+          <input
+            type="checkbox"
+            name="{{ include.input_name | default: 've-col' }}"
+            value="{{ val }}"
+            {% if haystack contains needle %}checked{% endif %}
+          >
+          <span> {{ val }}</span>
+        </label>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="part-module part-module--row" aria-labelledby="{{ include.name }}-label">
+    <p id="{{ include.name }}-label" class="part-label">{{ include.title }}</p>
+    <label class="part-check-label">
+      <span>{{ include.label }}</span>
+      <input
+        type="checkbox"
+        id="{{ include.name }}-checkbox"
+        name="{{ include.name }}"
+        aria-label="{{ include.aria_label | default: include.label }}"
+      />
+    </label>
+  </div>
+{% endif %}

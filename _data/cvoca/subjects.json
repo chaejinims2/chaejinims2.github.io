@@ -1,11 +1,68 @@
-[
-  {
-    "book_id": "IELTS_20_30",
-    "title": "IELTS 20-30",
-    "description": "IELTS 20-30",
-    "words_range": [1, 600],
-    "collocations_range": [1, 300],
-    "unit_number": 20,
-    "words_per_unit": 30
-  }
-]
+{
+  "books": [
+    {
+      "book_id": "IELTS_20_30",
+      "title": "IELTS 20-30",
+      "description": "IELTS 20-30",
+      "ranges": {
+        "words": [1, 600],
+        "collocations": [1, 300]
+      },
+      "unit_number": 20,
+      "words_per_unit": 30
+    },
+    {
+      "book_id": "IELTS_40_50",
+      "title": "IELTS 40-50",
+      "description": "IELTS 40-50",
+      "ranges": {
+        "words": [601, 1200],
+        "collocations": [301, 600]
+      },
+      "unit_number": 20,
+      "words_per_unit": 30
+    }
+  ],
+  "properties": [
+    {
+      "property_id": "id",
+      "name": "id",
+      "label": "ID"
+    },
+    {
+      "property_id": "unit",
+      "name": "unit",
+      "label": "Unit"
+    },
+    {
+      "property_id": "term",
+      "name": "term",
+      "label": "Term"
+    },
+    {
+      "property_id": "pos",
+      "name": "pos",
+      "label": "POS"
+    },
+    {
+      "property_id": "gloss",
+      "name": "gloss",
+      "label": "Gloss"
+    },
+    {
+      "property_id": "ex-text",
+      "name": "example",
+      "label": "Example"
+    },
+    {
+      "property_id": "ex-tr",
+      "name": "translation",
+      "label": "Translation"
+    },
+    {
+      "property_id": "actions",
+      "name": "actions",
+      "label": "Actions"
+    }
+  ]
+}

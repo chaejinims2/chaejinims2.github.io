@@ -1,0 +1,25 @@
+body { font-family: system-ui, sans-serif; padding: 1rem; background: #1e1e1e; color: #ddd; }
+h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.meta { color: #888; font-size: 0.875rem; margin-bottom: 1rem; }
+.tree { margin: 0; padding: 0; list-style: none; }
+.tree-node { margin: 0; padding: 0; }
+.tree-node-inner { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.5rem; border-radius: 6px; cursor: pointer; }
+.tree-node-inner:hover { background: #2d2d2d; }
+.tree-node-inner.open { background: transparent; }
+.tree-toggle { width: 1rem; height: 1rem; margin-left: auto; display: inline-flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #888; transition: transform 0.15s; }
+.tree-node.open > .tree-node-inner .tree-toggle { transform: rotate(90deg); }
+.tree-node.leaf .tree-toggle { visibility: hidden; width: 1rem; }
+.tree-label { font-weight: 500; color: #bbb; font-size: 0.9rem; }
+.tree-key { color: #6a9; font-size: 0.8rem; }
+.tree-node-inner .cell { padding: 0.2rem 0.35rem; }
+.tree-node-inner .cell img { width: 20px; height: 20px; }
+.tree-children { margin-left: 1.25rem; border-left: 1px solid #333; padding-left: 0.5rem; }
+.tree-node:not(.open) > .tree-children { display: none; }
+.cell { display: flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.5rem; background: transparent; border-radius: 6px; cursor: pointer; }
+.cell:hover { background: transparent; }
+.cell.copied span { color: #6a6; }
+.cell img { display: block; width: 24px; height: 24px; flex-shrink: 0; filter: brightness(0) invert(0.87); }
+.cell .cell-feedback { font-size: 0.6rem; color: #6a6; }
+.cell.cell-using { background: transparent; }
+.cell.cell-using:hover { background: #60A5FA33; }
+.empty-hint { color: #666; font-size: 0.75rem; margin-left: 1.5rem; font-style: italic; }

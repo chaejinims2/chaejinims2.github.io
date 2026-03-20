@@ -17,6 +17,7 @@ Modes:
   3  collocations.json -> collocations.csv + collocation_examples.csv
   4  collocations.csv + collocation_examples.csv -> collocations.json
   5  subjects.json -> subjects.csv
+  6 words.json id renewal
 
 Notes:
   - All paths are relative to repo root.
@@ -66,6 +67,10 @@ main() {
         --in _data/cvoca/subjects.json \
         --out-dir _data/cvoca/output \
         --depth 2
+      ;;
+    6)
+      python3 "${TOOLS_DIR}/add_col_idx_to_json.py" \
+         _data/cvoca/words.json id
       ;;
     *)
       echo "Unknown mode: ${mode}" >&2

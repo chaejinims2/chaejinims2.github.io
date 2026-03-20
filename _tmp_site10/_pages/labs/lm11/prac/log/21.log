@@ -1,0 +1,2 @@
+cherry@rhombus:~$ systemctl status
+Failed to connect to bus: Operation not permitted (consider using --machine=<user>@.host --user to connect to bus of other user)

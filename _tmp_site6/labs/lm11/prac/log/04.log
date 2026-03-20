@@ -1,0 +1,3 @@
+cherry@rhombus:~$ cat /proc/mdstat
+Personalities : 
+unused devices: <none>

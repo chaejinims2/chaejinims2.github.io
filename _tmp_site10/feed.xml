@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://chaejinims2.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chaejinims2.github.io/" rel="alternate" type="text/html" /><updated>2026-03-20T16:56:12+09:00</updated><id>https://chaejinims2.github.io/feed.xml</id><title type="html">Chaejin Im</title><subtitle>NVMe Host Driver / Embedded Linux / Automation Tools</subtitle><entry><title type="html">IaaS, PaaS, SaaS, FaaS 정리</title><link href="https://chaejinims2.github.io/cloud/2026/03/05/iaas-paas-saas-faas/" rel="alternate" type="text/html" title="IaaS, PaaS, SaaS, FaaS 정리" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/cloud/2026/03/05/iaas-paas-saas-faas</id><content type="html" xml:base="https://chaejinims2.github.io/cloud/2026/03/05/iaas-paas-saas-faas/"><![CDATA[<h1 id="iaaspaassaasfaas">IaaS/PaaS/SaaS/FaaS</h1>
+
+<ul>
+  <li>클라우드 서비스 모델들은 <strong>‘어디까지 내가 직접 관리하고, 어디까지 업체가 다 해주는가’</strong>의 차이</li>
+  <li>‘피자 만들기(Pizza as a Service)’로 비유해보기</li>
+</ul>
+
+<h2 id="1-iaas-infrastructure-as-a-service">1. IaaS (Infrastructure as a Service)</h2>
+
+<ul>
+  <li>정의: 물리적 서버, 네트워크, 저장소(하드웨어)와 같은 인프라만 빌려주는 모델입니다.</li>
+  <li>내가 할 일: OS(Windows, Linux) 설치, 런타임 설정, 데이터 관리, 보안 설정 등 거의 전부.</li>
+  <li>비유 (냉동 피자): 주방과 오븐은 빌려줍니다. 피자 재료(OS)를 직접 사와서 구워 먹어야 합니다.</li>
+  <li>예시: AWS EC2, Google Compute Engine (GCE).</li>
+</ul>
+
+<h2 id="2-paas-platform-as-a-service">2. PaaS (Platform as a Service)</h2>
+
+<ul>
+  <li>정의: 앱 개발에 필요한 ‘판(Platform)’을 다 깔아주는 모델입니다.</li>
+  <li>내가 할 일: 코드 짜기, 데이터 관리. (OS나 네트워크 설정은 신경 안 써도 됨)</li>
+  <li>비유 (피자 배달): 피자는 완성되어 옵니다. 나는 식탁을 차리고(데이터) 맛있게 먹기만(코드 실행) 하면 됩니다.</li>
+  <li>예시: Heroku, Red Hat OpenShift.</li>
+</ul>
+
+<h2 id="3-saas-software-as-a-service">3. SaaS (Software as a Service)</h2>
+
+<ul>
+  <li>정의: 완성된 ‘소프트웨어’를 웹이나 앱으로 빌려 쓰는 모델입니다.</li>
+  <li>내가 할 일: 로그인해서 사용하기만 하면 끝. 설정할 게 거의 없습니다.</li>
+  <li>비유 (피자 외식): 피자집에 가서 완성된 요리를 먹고 돈만 내면 됩니다. 설거지도 필요 없죠.</li>
+  <li>예시: Google Drive, Slack, Dropbox, Netflix.</li>
+</ul>
+
+<h2 id="4-faas-function-as-a-service">4. FaaS (Function as a Service)</h2>
+
+<ul>
+  <li>정의: 서버 전체를 띄우지 않고, 특정 ‘함수(기능)’가 필요할 때만 잠깐 실행하는 모델입니다. (Serverless의 핵심)</li>
+  <li>특징: 코드가 실행될 때만 비용이 발생하며, 평소에는 서버 비용이 0원입니다.</li>
+  <li>비유 (피자 조각 뷔페): 한 판을 시키는 게 아니라, 딱 한 입 먹고 싶을 때 한 조각만 즉석에서 만들어 주는 방식입니다.</li>
+  <li>예시: AWS Lambda, Google Cloud Functions.</li>
+</ul>
+
+<h2 id="한눈에-요약-모델관리-주체장점">한눈에 요약: 모델·관리 주체·장점</h2>
+
+<ul>
+  <li>IaaS — <strong>나 (대부분)</strong> — 자유도가 매우 높음</li>
+  <li>PaaS — <strong>업체 (인프라)</strong> — 개발에만 집중 가능</li>
+  <li>SaaS — <strong>업체 (전부)</strong> — 설치 없이 바로 사용</li>
+  <li>FaaS — <strong>업체 (이벤트 기반)</strong> — 비용 효율성 극대화 (쓴 만큼만)</li>
+</ul>]]></content><author><name></name></author><category term="cloud" /><category term="iaas" /><category term="paas" /><category term="saas" /><category term="faas" /><category term="linux-master-1" /><summary type="html"><![CDATA[IaaS/PaaS/SaaS/FaaS]]></summary></entry><entry><title type="html">리눅스·오픈소스 라이선스 개요</title><link href="https://chaejinims2.github.io/linux/license/2026/03/05/linux-licenses-overview/" rel="alternate" type="text/html" title="리눅스·오픈소스 라이선스 개요" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/license/2026/03/05/linux-licenses-overview</id><content type="html" xml:base="https://chaejinims2.github.io/linux/license/2026/03/05/linux-licenses-overview/"><![CDATA[<h1 id="linux-license-개요">Linux License 개요</h1>
+
+<p>리눅스 생태계는 ‘자유로운 소프트웨어’를 지향하지만, 그 자유를 보장하는 방식(의무사항)에 따라 여러 라이선스로 나뉩니다. 크게 <strong>‘강한 제약’이 있는 것과 ‘느슨한 제약’이 있는 것</strong>으로 구분하면 이해하기 쉽습니다.</p>
+
+<h2 id="1-gpl-gnu-general-public-license">1. GPL (GNU General Public License)</h2>
+
+<ul>
+  <li>리눅스 커널이 채택한 가장 대표적인 라이선스입니다. ‘카피레프트(Copyleft)’의 정신을 가장 잘 보여줍니다.</li>
+  <li>핵심: GPL 코드를 사용해 새로운 프로그램을 만들거나 수정했다면, 그 결과물도 반드시 GPL 라이선스로 공개해야 합니다. (코드 공개 의무)</li>
+  <li>특징: 소프트웨어를 독점하려는 시도를 원천 차단합니다.</li>
+  <li>예시: 리눅스 커널, Git, Bash.</li>
+</ul>
+
+<h2 id="2-lgpl-lesser-gpl">2. LGPL (Lesser GPL)</h2>
+
+<ul>
+  <li>GPL의 강력한 공개 의무를 조금 완화한 버전입니다.</li>
+  <li>핵심: 단순히 라이브러리 형태로 링크해서 사용하기만 한다면, 사용자의 본래 프로그램 코드를 공개할 의무는 없습니다.<br />
+(단, LGPL 라이브러리 자체를 수정했다면 그 부분은 공개해야 함)</li>
+  <li>특징: 오픈소스 라이브러리를 상용 소프트웨어에서 더 편하게 쓰도록 유도합니다.</li>
+</ul>
+
+<h2 id="3-bsd-berkeley-software-distribution">3. BSD (Berkeley Software Distribution)</h2>
+
+<ul>
+  <li>매우 자유로운 라이선스입니다.</li>
+  <li>핵심: 저작권 표시만 잘 해주면 코드 공개 의무가 없습니다. 수정해서 유료로 팔아도 상관없습니다.</li>
+  <li>특징: “그냥 마음대로 써도 되는데, 내가 만들었다는 표시만 해줘”라는 쿨한 방식입니다.</li>
+</ul>
+
+<h2 id="4-apache-apache-license">4. Apache (Apache License)</h2>
+
+<ul>
+  <li>BSD와 비슷하게 자유롭지만, 현대적인 법적 요구사항이 추가된 라이선스입니다.</li>
+  <li>핵심: 수정 및 배포가 자유롭고 코드 공개 의무도 없지만, <strong>특허권 관련 분쟁을 방지하는 조항</strong>이 포함되어 있습니다.</li>
+  <li>특징: 기업들이 안심하고 사용할 수 있어 현재 가장 인기가 많습니다.</li>
+  <li>예시: Android, Kubernetes, TensorFlow.</li>
+</ul>
+
+<h2 id="5-mit-license">5. MIT License</h2>
+
+<ul>
+  <li>가장 간결하고 제약이 없는 라이선스 중 하나입니다.</li>
+  <li>핵심: “이 소프트웨어를 사용하여 발생하는 문제에 대해 나는 책임지지 않는다”는 문구와 저작권 공지만 포함하면 어떤 용도로든 사용 가능합니다.</li>
+</ul>
+
+<h2 id="한눈에-비교하기">한눈에 비교하기</h2>
+
+<ul>
+  <li>“내가 고친 건 무조건 다 보여줘야 해!” → <strong>GPL</strong></li>
+  <li>“남이 만든 걸 가져다 쓰기만 하면 안 보여줘도 돼” → <strong>LGPL</strong></li>
+  <li>“마음대로 쓰고 돈 벌어도 되는데 내 이름은 써놔” → <strong>Apache, MIT, BSD</strong></li>
+</ul>]]></content><author><name></name></author><category term="linux" /><category term="license" /><category term="gpl" /><category term="lgpl" /><category term="bsd" /><category term="apache" /><category term="mit" /><category term="linux-master-1" /><summary type="html"><![CDATA[Linux License 개요]]></summary></entry><entry><title type="html">메모리 할당과 스왑/가상 메모리</title><link href="https://chaejinims2.github.io/linux/2026/03/05/memory-allocation/" rel="alternate" type="text/html" title="메모리 할당과 스왑/가상 메모리" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/2026/03/05/memory-allocation</id><content type="html" xml:base="https://chaejinims2.github.io/linux/2026/03/05/memory-allocation/"><![CDATA[<h1 id="memory-allocation">Memory allocation</h1>
+
+<blockquote>
+  <p>메모리 할당이라는 제목만 정리해 두고, 스왑/가상 메모리와 연결해서 정리하는 노트.</p>
+</blockquote>
+
+<ul>
+  <li>프로세스가 실행되려면 코드, 데이터, 스택, 힙 등 여러 영역에 대해 <strong>연속된 논리 주소 공간</strong>이 필요합니다.</li>
+  <li>운영체제는 실제 물리 메모리(RAM)에 이 논리 주소를 매핑하면서, <strong>필요한 만큼만 실제 메모리를 할당</strong>합니다.</li>
+  <li>하지만 모든 프로세스가 동시에 많은 메모리를 요구하면 RAM이 부족해지고, 이때 <strong>가상 메모리 + 스왑(Memory Swap)</strong>이 등장합니다.</li>
+  <li>자주 쓰지 않는 페이지를 디스크(스왑 영역)로 내보내고, 당장 필요한 페이지를 RAM에 올려서 <strong>겉보기에는 큰 메모리를 쓰는 것처럼</strong> 보이게 합니다.</li>
+</ul>
+
+<p>이 노트에서는 이후에:</p>
+
+<ul>
+  <li><strong>스택/힙 구조</strong></li>
+  <li><strong>페이지/프레임 단위 할당</strong></li>
+  <li><strong>메모리 단편화와 해결 전략</strong></li>
+</ul>
+
+<p>같은 내용을 이어서 정리할 예정입니다.</p>]]></content><author><name></name></author><category term="linux" /><category term="memory" /><category term="allocation" /><category term="swap" /><category term="linux-master-1" /><summary type="html"><![CDATA[Memory allocation]]></summary></entry><entry><title type="html">Memory Swap</title><link href="https://chaejinims2.github.io/linux/2026/03/05/memory-swap/" rel="alternate" type="text/html" title="Memory Swap" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/2026/03/05/memory-swap</id><content type="html" xml:base="https://chaejinims2.github.io/linux/2026/03/05/memory-swap/"><![CDATA[<h1 id="memory-swap">Memory Swap</h1>
+
+<p>Memory Swap(스왑 메모리)은 물리적 메모리(RAM)가 꽉 찼을 때, 운영체제가 하드디스크나 SSD의 일부 공간을 메모리처럼 활용하는 가상 메모리(Virtual Memory) 기술입니다. RAM 부족 시 사용 빈도가 낮은 데이터를 디스크로 옮겨 시스템 멈춤을 방지하고 안정성을 높이지만, 디스크 속도가 훨씬 느려 성능 저하가 발생할 수 있습니다.</p>
+
+<ul>
+  <li>배경: 내 컴퓨터의 RAM이 8GB인데, 고사양 게임을 켜서 7.5GB를 이미 사용 중입니다.</li>
+  <li>행동: 이 상태에서 크롬 브라우저를 열어 유튜브를 보려고 합니다.</li>
+  <li>스왑 작동: 운영체제는 게임 데이터 중 지금 당장 화면에 보이지 않는 배경 데이터 등을 SSD(스왑 영역)로 잠시 옮깁니다(swap out). 그 덕분에 크롬이 켜질 공간이 생깁니다.</li>
+  <li>결과: 게임이 꺼지지 않고 유튜브도 볼 수 있지만, SSD는 RAM보다 훨씬 느리기 때문에 게임 화면을 다시 클릭했을 때(swap in) 잠시 렉(지연 현상)이 발생할 수 있습니다.</li>
+</ul>
+
+<blockquote>
+  <p>요약: <strong>“램이 부족해서 프로그램이 튕기는 걸 막아주는 임시 방편”</strong></p>
+</blockquote>]]></content><author><name></name></author><category term="linux" /><category term="memory" /><category term="swap" /><category term="linux-master-1" /><summary type="html"><![CDATA[Memory Swap]]></summary></entry><entry><title type="html">오픈소스 라이선스 리스크 관리</title><link href="https://chaejinims2.github.io/linux/license/2026/03/05/oss-license-risk-management/" rel="alternate" type="text/html" title="오픈소스 라이선스 리스크 관리" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/license/2026/03/05/oss-license-risk-management</id><content type="html" xml:base="https://chaejinims2.github.io/linux/license/2026/03/05/oss-license-risk-management/"><![CDATA[<h1 id="오픈소스-라이선스-리스크-관리">오픈소스 라이선스 리스크 관리</h1>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">_data/lm11/notes.md</code>의 라이선스 비교 내용을 바탕으로, 실무에서 어떤 리스크를 주의해야 하는지 정리한 노트입니다.</p>
+</blockquote>
+
+<h2 id="1-강한-카피레프트gpl-계열-리스크">1. 강한 카피레프트(GPL) 계열 리스크</h2>
+
+<ul>
+  <li>GPL 코드를 제품에 <strong>통합</strong>하면, 그 제품 전체에 GPL 의무(소스 공개)가 전파될 수 있습니다.</li>
+  <li>폐쇄형 상용 제품에서 무심코 GPL 라이브러리를 통합하면, 나중에 <strong>소스 공개 요구</strong>가 들어올 수 있습니다.</li>
+  <li>따라서:
+    <ul>
+      <li>GPL 코드는 <strong>툴(chain)</strong>로만 쓰는지, <strong>런타임에 링크되는지</strong>를 구분해서 검토해야 합니다.</li>
+      <li>배포 대상 바이너리에 GPL 코드가 직접 포함되는지 체크해야 합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2-lgpl-사용-시-체크포인트">2. LGPL 사용 시 체크포인트</h2>
+
+<ul>
+  <li>단순 링크는 상대적으로 안전하지만, <strong>LGPL 라이브러리 자체를 수정한 경우</strong> 수정분 공개 의무가 생깁니다.</li>
+  <li>상용 앱에서 LGPL을 쓸 때는:
+    <ul>
+      <li>“우리가 라이브러리를 수정했는가?”</li>
+      <li>“업데이트 시 교체 가능한 형태(동적 링크 등)로 배포하는가?”
+를 함께 확인해야 합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="3-bsd--mit--apache-계열">3. BSD / MIT / Apache 계열</h2>
+
+<ul>
+  <li>공통점:
+    <ul>
+      <li>코드 공개 의무가 거의 없고, <strong>저작권 표시</strong>만 잘 지키면 대부분 문제 없습니다.</li>
+    </ul>
+  </li>
+  <li>Apache 라이선스는:
+    <ul>
+      <li>특허 관련 조항이 포함되어 있어, 기업 입장에서 <strong>특허 분쟁 리스크를 줄여주는 장점</strong>이 있습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="4-실무에서의-기본-전략">4. 실무에서의 기본 전략</h2>
+
+<ul>
+  <li><strong>어떤 라이선스를 쓰고 있는지 목록화</strong> (SBOM 수준까지는 아니어도 리스트 유지)</li>
+  <li>각 라이선스별로:
+    <ul>
+      <li><strong>필수 표기(저작권/라이선스 문구)</strong>를 문서/앱 내에 포함</li>
+      <li>GPL 계열은 “배포 범위”와 “소스 공개 의무”를 명확히 이해하고 사용</li>
+    </ul>
+  </li>
+  <li>새 라이브러리를 도입할 때:
+    <ul>
+      <li>최소한 <code class="language-plaintext highlighter-rouge">GPL / LGPL / BSD / Apache / MIT</code> 중 어느 계열인지 확인</li>
+      <li>제품의 배포 방식(온프레미스/클라우드/SaaS)에 따라 <strong>영향 범위</strong>를 체크</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>요약: 기능만 보지 말고, <strong>“이 코드를 쓰면 무엇을 반드시 공개해야 하는가?”</strong>를 항상 같이 보는 습관이 필요하다.</p>
+</blockquote>]]></content><author><name></name></author><category term="linux" /><category term="license" /><category term="oss" /><category term="compliance" /><category term="linux-master-1" /><summary type="html"><![CDATA[오픈소스 라이선스 리스크 관리]]></summary></entry><entry><title type="html">Pipe와 Pipeline</title><link href="https://chaejinims2.github.io/linux/2026/03/05/pipe-and-pipeline/" rel="alternate" type="text/html" title="Pipe와 Pipeline" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/2026/03/05/pipe-and-pipeline</id><content type="html" xml:base="https://chaejinims2.github.io/linux/2026/03/05/pipe-and-pipeline/"><![CDATA[<h1 id="pipe">Pipe</h1>
+
+<p>한 프로세스의 출력(Output)이 다른 프로세스의 입력(Input)으로 바로 이어지도록 연결하는 데이터 통로를 말합니다. 데이터가 물 흐르듯 한 방향으로만 흐르기 때문에 파이프라는 이름이 붙었습니다.</p>
+
+<ul>
+  <li>파이프라인(Pipeline)은 이러한 파이프 구조를 여러 개 연결하여 복잡한 작업을 단계별로 처리하는 전체 시스템을 의미</li>
+  <li>Pipe (<code class="language-plaintext highlighter-rouge">|</code>): <strong>프로그램 → 프로그램</strong> (A의 출력을 B의 입력으로)</li>
+</ul>
+
+<p>예시:
+bash
+ps aux | grep nginx</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ps aux</code>의 출력이 파이프로 <code class="language-plaintext highlighter-rouge">grep nginx</code>의 입력으로 바로 전달된다.</li>
+</ul>]]></content><author><name></name></author><category term="linux" /><category term="pipe" /><category term="pipeline" /><category term="linux-master-1" /><summary type="html"><![CDATA[Pipe]]></summary></entry><entry><title type="html">Redirection과 입출력 흐름</title><link href="https://chaejinims2.github.io/linux/2026/03/05/redirection-io-flow/" rel="alternate" type="text/html" title="Redirection과 입출력 흐름" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/2026/03/05/redirection-io-flow</id><content type="html" xml:base="https://chaejinims2.github.io/linux/2026/03/05/redirection-io-flow/"><![CDATA[<h1 id="redirection">Redirection</h1>
+
+<p>프로그램의 입출력 방향을 바꾸는 것입니다. 보통 화면에 나올 결과물을 파일로 저장하거나, 키보드 대신 파일에서 데이터를 읽어올 때 사용합니다.</p>
+
+<ul>
+  <li>파이프가 <strong>‘프로세스와 프로세스’</strong>를 연결한다면,
+리디렉션은 <strong>‘프로세스와 파일’</strong>을 연결한다.</li>
+  <li>Redirection (<code class="language-plaintext highlighter-rouge">&gt;</code>): <strong>프로그램 → 파일</strong> (출력을 파일로 저장)</li>
+  <li>심볼릭 링크는 <strong>“A는 곧 B다”</strong>라는 관계를 정의하는 것이고,<br />
+리다이렉션은 <strong>“A로 갈 데이터를 B로 보내라”</strong>는 흐름을 제어하는 것</li>
+</ul>
+
+<p>예시:
+bash
+ls &gt; files.txt # 화면 대신 files.txt에 저장
+cat input.txt | wc # 파일 내용을 파이프로 다른 프로그램에 전달</p>]]></content><author><name></name></author><category term="linux" /><category term="redirection" /><category term="io" /><category term="linux-master-1" /><summary type="html"><![CDATA[Redirection]]></summary></entry><entry><title type="html">Serverless와 FaaS 비용 구조</title><link href="https://chaejinims2.github.io/cloud/2026/03/05/serverless-faas-cost/" rel="alternate" type="text/html" title="Serverless와 FaaS 비용 구조" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/cloud/2026/03/05/serverless-faas-cost</id><content type="html" xml:base="https://chaejinims2.github.io/cloud/2026/03/05/serverless-faas-cost/"><![CDATA[<h1 id="serverless와-faas-비용-효율성">Serverless와 FaaS 비용 효율성</h1>
+
+<h2 id="faasfunction-as-a-service-핵심-정리">FaaS(Function as a Service) 핵심 정리</h2>
+
+<ul>
+  <li>정의: 서버 전체를 띄우지 않고, 특정 ‘함수(기능)’가 필요할 때만 잠깐 실행하는 모델입니다. (Serverless의 핵심)</li>
+  <li>특징: 코드가 실행될 때만 비용이 발생하며, <strong>평소에는 서버 비용이 0원</strong>입니다.</li>
+  <li>비유 (피자 조각 뷔페): 한 판을 시키는 게 아니라, 딱 한 입 먹고 싶을 때 한 조각만 즉석에서 만들어 주는 방식입니다.</li>
+  <li>예시: AWS Lambda, Google Cloud Functions.</li>
+</ul>
+
+<h2 id="비용-관점에서의-장점">비용 관점에서의 장점</h2>
+
+<ul>
+  <li>유휴 시간(트래픽이 거의 없는 시간대)에 <strong>서버 인스턴스를 계속 켜두지 않아도 됨</strong></li>
+  <li>이벤트 기반으로 동작하므로, <strong>짧고 빈번한 작업</strong>에 특히 유리</li>
+  <li>초기 인프라 설계·용량 산정 비용을 줄이고, 실제 사용량에 따라 자연스럽게 확장/축소</li>
+</ul>
+
+<blockquote>
+  <p>요약: <strong>“서버를 24시간 켜두는 대신, 필요할 때만 한 입씩 꺼내 먹는 요금제”</strong></p>
+</blockquote>]]></content><author><name></name></author><category term="cloud" /><category term="faas" /><category term="serverless" /><category term="cost" /><category term="linux-master-1" /><summary type="html"><![CDATA[Serverless와 FaaS 비용 효율성]]></summary></entry><entry><title type="html">Virtual Console과 TTY</title><link href="https://chaejinims2.github.io/linux/2026/03/05/virtual-console-tty/" rel="alternate" type="text/html" title="Virtual Console과 TTY" /><published>2026-03-05T00:00:00+09:00</published><updated>2026-03-05T00:00:00+09:00</updated><id>https://chaejinims2.github.io/linux/2026/03/05/virtual-console-tty</id><content type="html" xml:base="https://chaejinims2.github.io/linux/2026/03/05/virtual-console-tty/"><![CDATA[<h1 id="virtual-console">Virtual Console</h1>
+
+<p>실제 물리적인 콘솔은 하나지만, 커널이 이를 가상화하여 여러 개의 세션을 제공합니다.</p>
+
+<ul>
+  <li>마치 하나의 모니터와 키보드를 마치 여러 개의 독립된 터미널인 것처럼 나누어 사용하는 기능</li>
+  <li>보통 프로그램은 결과를 화면에 출력하기 위해 하드웨어를 직접 제어하고 싶어 합니다. 하지만 커널은 이를 허용하지 않고 중간에 <strong>가상 터미널 드라이버(TTY)</strong>를 둡니다.</li>
+  <li>추상화: 하드웨어와 프로세스의 분리<br />
+물리 장치는 실제 모니터 1대 이지만<br />
+가상 장치 <code class="language-plaintext highlighter-rouge">tty1</code>, <code class="language-plaintext highlighter-rouge">tty2</code>, <code class="language-plaintext highlighter-rouge">tty3</code>… (커널 내부의 논리적 번호표)로 커널은 각 가상 콘솔마다 별도의 데이터 버퍼(메모리 공간)를 할당하여,<br />
+내가 1번 화면을 보고 있어도 2번 화면에서 돌아가는 프로그램의 출력 내용을 별도의 메모리에 차곡차곡 쌓아둡니다.</li>
+  <li>시분할 및 상태 저장: 커널은 현재 사용자가 어떤 화면을 보고 있는지(포커스)를 추적합니다.</li>
+  <li>입출력 리다이렉션 (내부적 처리): 가상화의 핵심은 입력의 행방을 결정하는 것입니다.</li>
+  <li>결론적으로, 커널은 하드웨어 자원을 아주 빠르게 스위칭(Switching)하고 데이터를 격리함으로써, 사용자에게는 여러 대의 독립적인 컴퓨터를 쓰는 듯한 경험을 제공하는 것입니다.</li>
+</ul>
+
+<h2 id="이해를-돕는-비유-콜센터-상담원">이해를 돕는 비유: 콜센터 상담원</h2>
+
+<ul>
+  <li>고객(프로그램들): 6명의 고객이 동시에 전화를 걸었습니다.</li>
+  <li>상담원(실제 모니터/키보드): 상담원은 1명뿐입니다.</li>
+  <li>커널의 가상화:
+    <ul>
+      <li>상담원은 ‘대기 모드’ 기능을 써서 5명은 대기음(버퍼)을 듣게 하고, 한 번에 한 명하고만(활성 콘솔) 통화합니다.</li>
+      <li>상담원이 버튼을 눌러 통화 대상을 바꿀 때마다, 이전 고객과의 대화 내용은 기록(저장)되고 새 고객의 정보가 모니터에 뜹니다.</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name></name></author><category term="linux" /><category term="tty" /><category term="console" /><category term="linux-master-1" /><summary type="html"><![CDATA[Virtual Console]]></summary></entry><entry><title type="html">Design Webapp</title><link href="https://chaejinims2.github.io/web/2026/03/03/design-web-app/" rel="alternate" type="text/html" title="Design Webapp" /><published>2026-03-03T11:18:00+09:00</published><updated>2026-03-03T11:18:00+09:00</updated><id>https://chaejinims2.github.io/web/2026/03/03/design-web-app</id><content type="html" xml:base="https://chaejinims2.github.io/web/2026/03/03/design-web-app/"><![CDATA[<h1 id="webapp-1-design-webapp">[WebApp] 1. Design Webapp</h1>]]></content><author><name></name></author><category term="Web" /><category term="ASP.Net Core" /><category term="Razor" /><category term="Web Socket" /><summary type="html"><![CDATA[[WebApp] 1. Design Webapp]]></summary></entry></feed>

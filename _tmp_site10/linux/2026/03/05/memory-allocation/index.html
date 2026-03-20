@@ -1,0 +1,22 @@
+<h1 id="memory-allocation">Memory allocation</h1>
+
+<blockquote>
+  <p>메모리 할당이라는 제목만 정리해 두고, 스왑/가상 메모리와 연결해서 정리하는 노트.</p>
+</blockquote>
+
+<ul>
+  <li>프로세스가 실행되려면 코드, 데이터, 스택, 힙 등 여러 영역에 대해 <strong>연속된 논리 주소 공간</strong>이 필요합니다.</li>
+  <li>운영체제는 실제 물리 메모리(RAM)에 이 논리 주소를 매핑하면서, <strong>필요한 만큼만 실제 메모리를 할당</strong>합니다.</li>
+  <li>하지만 모든 프로세스가 동시에 많은 메모리를 요구하면 RAM이 부족해지고, 이때 <strong>가상 메모리 + 스왑(Memory Swap)</strong>이 등장합니다.</li>
+  <li>자주 쓰지 않는 페이지를 디스크(스왑 영역)로 내보내고, 당장 필요한 페이지를 RAM에 올려서 <strong>겉보기에는 큰 메모리를 쓰는 것처럼</strong> 보이게 합니다.</li>
+</ul>
+
+<p>이 노트에서는 이후에:</p>
+
+<ul>
+  <li><strong>스택/힙 구조</strong></li>
+  <li><strong>페이지/프레임 단위 할당</strong></li>
+  <li><strong>메모리 단편화와 해결 전략</strong></li>
+</ul>
+
+<p>같은 내용을 이어서 정리할 예정입니다.</p>

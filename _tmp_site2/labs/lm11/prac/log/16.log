@@ -1,0 +1,269 @@
+cherry@rhombus:~$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+nobody         1       0  0 Mar02 ?        ***REDACTED_IP*** /sbin/init splash
+nobody         2       0  0 Mar02 ?        ***REDACTED_IP*** [kthreadd]
+nobody         3       2  0 Mar02 ?        ***REDACTED_IP*** [pool_workqueue_release]
+nobody         4       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-rcu_g]
+nobody         5       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-rcu_p]
+nobody         6       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-slub_]
+nobody         7       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-netns]
+nobody        12       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-mm_pe]
+nobody        13       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_tasks_kthread]
+nobody        14       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_tasks_rude_kthread]
+nobody        15       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_tasks_trace_kthread]
+nobody        16       2  0 Mar02 ?        ***REDACTED_IP*** [ksoftirqd/0]
+nobody        17       2  0 Mar02 ?        ***REDACTED_IP*** [rcu_preempt]
+nobody        18       2  0 Mar02 ?        ***REDACTED_IP*** [migration/0]
+nobody        19       2  0 Mar02 ?        ***REDACTED_IP*** [idle_inject/0]
+nobody        20       2  0 Mar02 ?        ***REDACTED_IP*** [cpuhp/0]
+nobody        21       2  0 Mar02 ?        ***REDACTED_IP*** [cpuhp/1]
+nobody        22       2  0 Mar02 ?        ***REDACTED_IP*** [idle_inject/1]
+nobody        23       2  0 Mar02 ?        ***REDACTED_IP*** [migration/1]
+nobody        24       2  0 Mar02 ?        ***REDACTED_IP*** [ksoftirqd/1]
+nobody        27       2  0 Mar02 ?        ***REDACTED_IP*** [cpuhp/2]
+nobody        28       2  0 Mar02 ?        ***REDACTED_IP*** [idle_inject/2]
+nobody        29       2  0 Mar02 ?        ***REDACTED_IP*** [migration/2]
+nobody        30       2  0 Mar02 ?        ***REDACTED_IP*** [ksoftirqd/2]
+nobody        33       2  0 Mar02 ?        ***REDACTED_IP*** [cpuhp/3]
+nobody        34       2  0 Mar02 ?        ***REDACTED_IP*** [idle_inject/3]
+nobody        35       2  0 Mar02 ?        ***REDACTED_IP*** [migration/3]
+nobody        36       2  0 Mar02 ?        ***REDACTED_IP*** [ksoftirqd/3]
+nobody        39       2  0 Mar02 ?        ***REDACTED_IP*** [kdevtmpfs]
+nobody        40       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-inet_]
+nobody        41       2  0 Mar02 ?        ***REDACTED_IP*** [kauditd]
+nobody        43       2  0 Mar02 ?        ***REDACTED_IP*** [khungtaskd]
+nobody        45       2  0 Mar02 ?        ***REDACTED_IP*** [oom_reaper]
+nobody        47       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-write]
+nobody        48       2  0 Mar02 ?        ***REDACTED_IP*** [kcompactd0]
+nobody        49       2  0 Mar02 ?        ***REDACTED_IP*** [ksmd]
+nobody        50       2  0 Mar02 ?        ***REDACTED_IP*** [khugepaged]
+nobody        51       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-kinte]
+nobody        52       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-kbloc]
+nobody        53       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-blkcg]
+nobody        54       2  0 Mar02 ?        ***REDACTED_IP*** [irq/9-acpi]
+nobody        57       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-tpm_d]
+nobody        58       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-ata_s]
+nobody        59       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-md]
+nobody        60       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-md_bi]
+nobody        61       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-edac-]
+nobody        62       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-devfr]
+nobody        63       2  0 Mar02 ?        ***REDACTED_IP*** [watchdogd]
+nobody        65       2  0 Mar02 ?        ***REDACTED_IP*** [kswapd0]
+nobody        66       2  0 Mar02 ?        ***REDACTED_IP*** [ecryptfs-kthread]
+nobody        67       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-kthro]
+nobody        68       2  0 Mar02 ?        ***REDACTED_IP*** [irq/120-aerdrv]
+nobody        69       2  0 Mar02 ?        ***REDACTED_IP*** [irq/120-pcie-dpc]
+nobody        70       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-acpi_]
+nobody        71       2  0 Mar02 ?        ***REDACTED_IP*** [hwrng]
+nobody        72       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-mld]
+nobody        73       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-ipv6_]
+nobody        80       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-kstrp]
+nobody        95       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-charg]
+nobody       118       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/0:1H-kblockd]
+nobody       144       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/1:1H-kblockd]
+nobody       148       2  0 Mar02 ?        ***REDACTED_IP*** [scsi_eh_0]
+nobody       149       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-scsi_]
+nobody       151       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-sdhci]
+nobody       152       2  0 Mar02 ?        ***REDACTED_IP*** [irq/16-mmc1]
+nobody       165       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-sdhci]
+nobody       166       2  0 Mar02 ?        ***REDACTED_IP*** [irq/19-mmc0]
+nobody       167       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-mmc_c]
+nobody       168       2  0 Mar02 ?        ***REDACTED_IP*** [spi1]
+nobody       193       2  0 Mar02 ?        ***REDACTED_IP*** [jbd2/mmcblk1p5-8]
+nobody       194       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-ext4-]
+nobody       233       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd-journald
+nobody       281       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd-udevd
+nobody       282       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-mmc_c]
+nobody       319       2  0 Mar02 ?        ***REDACTED_IP*** [irq/129-mei_me]
+nobody       331       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-cfg80]
+nobody       334       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-kmems]
+nobody       342       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-crypt]
+nobody       348       2  0 Mar02 ?        ***REDACTED_IP*** [irq/130-iwlwifi:default_queue]
+nobody       350       2  0 Mar02 ?        ***REDACTED_IP*** [irq/131-iwlwifi:queue_1]
+nobody       351       2  0 Mar02 ?        ***REDACTED_IP*** [irq/132-iwlwifi:queue_2]
+nobody       352       2  0 Mar02 ?        ***REDACTED_IP*** [irq/133-iwlwifi:queue_3]
+nobody       353       2  0 Mar02 ?        ***REDACTED_IP*** [irq/134-iwlwifi:queue_4]
+nobody       354       2  0 Mar02 ?        ***REDACTED_IP*** [irq/135-iwlwifi:exception]
+nobody       392       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/3:2H-kblockd]
+nobody       397       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-ttm]
+nobody       399       2  0 Mar02 ?        ***REDACTED_IP*** [card0-crtc0]
+nobody       400       2  0 Mar02 ?        ***REDACTED_IP*** [card0-crtc1]
+nobody       401       2  0 Mar02 ?        ***REDACTED_IP*** [card0-crtc2]
+nobody       433       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd-oomd
+nobody       434       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd-resolved
+nobody       435       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd-timesyncd
+nobody       472       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/accounts-daemon
+nobody       473       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/acpid
+nobody       476       1  0 Mar02 ?        ***REDACTED_IP*** avahi-daemon: running [rhombus.local]
+nobody       477       1  0 Mar02 ?        ***REDACTED_IP*** /usr/lib/bluetooth/bluetoothd
+nobody       479       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/cron -f -P
+nobody       480       1  0 Mar02 ?        ***REDACTED_IP*** @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+nobody       481       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/NetworkManager --no-daemon
+nobody       488       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/irqbalance --foreground
+nobody       490       1  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+nobody       494       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/polkitd --no-debug
+nobody       496       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/power-profiles-daemon
+nobody       499       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/rsyslogd -n -iNONE
+nobody       506       1  0 Mar02 ?        ***REDACTED_IP*** /usr/lib/snapd/snapd
+nobody       508       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/switcheroo-control
+nobody       509       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd-logind
+nobody       510       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/thermald --systemd --dbus-enable --adaptive
+nobody       511       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/udisks2/udisksd
+nobody       513       1  0 Mar02 ?        ***REDACTED_IP*** /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+nobody       516     476  0 Mar02 ?        ***REDACTED_IP*** avahi-daemon: chroot helper
+nobody       566       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/ModemManager
+nobody       585       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock --port=41641
+nobody       591       1  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+nobody       624       1  0 Mar02 ?        ***REDACTED_IP*** sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+nobody       642       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/gdm3
+root         741       1  0 Mar02 ?        ***REDACTED_IP*** /lib/systemd/systemd --user
+root         743     741  0 Mar02 ?        ***REDACTED_IP*** (sd-pam)
+root         790     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/pipewire
+root         791     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/pipewire-media-session
+nobody       813       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/rtkit-daemon
+nobody       959       2  0 Mar02 ?        ***REDACTED_IP*** [krfcommd]
+root         966     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/tracker-miner-fs-3
+nobody       987     642  0 Mar02 ?        ***REDACTED_IP*** gdm-session-worker [pam/gdm-autologin]
+root         989     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         996     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfsd
+root        1002     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+root        1051       1  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/gnome-keyring-daemon --daemonize --login
+root        1056     987  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+root        1058    1056  0 Mar02 ?        ***REDACTED_IP*** /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -nolisten tcp -background none -noreset -keeptty -novtswitch -verbose 3
+root        1082     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfs-udisks2-volume-monitor
+root        1092     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfs-goa-volume-monitor
+root        1096     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/goa-daemon
+root        1103     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/goa-identity-service
+root        1105     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfs-gphoto2-volume-monitor
+root        1113     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfs-afc-volume-monitor
+root        1118     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfs-mtp-volume-monitor
+nobody      1124       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/upowerd
+root        1157    1056  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gnome-session-binary --session=ubuntu
+root        1283     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/at-spi-bus-launcher
+root        1290    1283  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0
+root        1313     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gnome-remote-desktop-daemon
+root        1315     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gnome-session-ctl --monitor
+root        1331     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+root        1355     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/gnome-shell
+root        1414     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/xdg-permission-store
+root        1416     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gnome-shell-calendar-server
+root        1427     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/evolution-source-registry
+root        1432     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/pulseaudio --daemonize=no --log-target=journal
+root        1437     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/evolution-calendar-factory
+root        1438     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/dconf-service
+nobody      1448       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/packagekitd
+root        1456     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/evolution-addressbook-factory
+root        1475     996  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfsd-trash --spawner :1.2 /org/gtk/gvfs/exec_spaw/0
+root        1485     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+root        1489     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/at-spi2-registryd --use-gnome-session
+root        1505     741  0 Mar02 ?        ***REDACTED_IP*** sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+root        1509     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-a11y-settings
+root        1512    1505  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/ibus-daemon --panel disable --xim
+root        1513     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-color
+root        1516     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-datetime
+root        1522     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-housekeeping
+nobody      1523       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/2:2H-kblockd]
+root        1524     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-keyboard
+root        1525     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-media-keys
+root        1531     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-power
+root        1532     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-print-notifications
+root        1533     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-rfkill
+root        1534     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-screensaver-proxy
+root        1535     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-sharing
+root        1536     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-smartcard
+root        1537     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-sound
+root        1539     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-wacom
+root        1540     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-xsettings
+root        1563     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/xdg-desktop-portal
+root        1568    1331  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/evolution-data-server/evolution-alarm-notify
+root        1569    1331  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-disk-utility-notify
+nobody      1589       2  0 Mar02 ?        ***REDACTED_IP*** [jbd2/mmcblk2p4-8]
+nobody      1590       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-ext4-]
+root        1598     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/xdg-document-portal
+nobody      1638    1598  0 Mar02 ?        ***REDACTED_IP*** fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+nobody      1643       1  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/colord
+root        1652     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/xdg-desktop-portal-gnome
+root        1662     741  0 Mar02 ?        ***REDACTED_IP*** /snap/snapd-desktop-integration/343/usr/bin/snapd-desktop-integration
+root        1675     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gsd-printer
+root        1694    1512  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/ibus-dconf
+root        1698    1512  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/ibus-extension-gtk3
+root        1701     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/ibus-x11 --kill-daemon
+root        1707     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/ibus-portal
+root        1738     741  0 Mar02 ?        ***REDACTED_IP*** /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+root        1809    1662  0 Mar02 ?        ***REDACTED_IP*** /snap/snapd-desktop-integration/343/usr/bin/snapd-desktop-integration
+root        1820    1512  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/ibus-engine-simple
+root        1845     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/gvfsd-metadata
+root        1859     741  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/xdg-desktop-portal-gtk
+nobody      1860       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/0:2H-kblockd]
+nobody      1914       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/kerneloops --test
+nobody      1921       1  0 Mar02 ?        ***REDACTED_IP*** /usr/sbin/kerneloops
+nobody      1930       2  0 Mar02 ?        ***REDACTED_IP*** [kworker/R-wg-cr]
+nobody      1934       2  0 Mar02 ?        ***REDACTED_IP*** [napi/wg0-0]
+nobody      1935       2  0 Mar02 ?        ***REDACTED_IP*** [napi/wg0-0]
+nobody      1936       2  0 Mar02 ?        ***REDACTED_IP*** [napi/wg0-0]
+nobody      1937       2  0 Mar02 ?        ***REDACTED_IP*** [napi/wg0-0]
+root        2080    1512  0 Mar02 ?        ***REDACTED_IP*** /usr/libexec/ibus-engine-hangul --ibus
+root        2092    1331  0 Mar02 ?        ***REDACTED_IP*** update-notifier
+nobody      9743       2  0 Mar04 ?        ***REDACTED_IP*** [kworker/1:0H]
+nobody     29410       2  0 Mar09 ?        ***REDACTED_IP*** [kworker/u9:2-rb_allocator]
+root       31073     741  0 Mar09 ?        ***REDACTED_IP*** /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+nobody     31456       2  0 Mar09 ?        ***REDACTED_IP*** [kworker/R-tls-s]
+root       43721     996  0 Mar09 ?        ***REDACTED_IP*** /usr/libexec/gvfsd-http --spawner :1.2 /org/gtk/gvfs/exec_spaw/1
+root       65696       1  0 Mar09 ?        ***REDACTED_IP*** /usr/bin/node server.js
+root       65905       1  0 Mar09 ?        ***REDACTED_IP*** /usr/bin/node server.js
+nobody     74786       2  0 Mar10 ?        ***REDACTED_IP*** [kworker/u9:1-hci0]
+nobody     82743       1  0 00:00 ?        ***REDACTED_IP*** /usr/sbin/cupsd -l
+nobody     82745       1  0 00:00 ?        ***REDACTED_IP*** /usr/sbin/cups-browsed
+root       84167     585  0 10:25 ?        ***REDACTED_IP*** /usr/sbin/tailscaled be-child ssh --login-shell=/bin/bash --uid=1000 --gid=1000 --groups=1000,4,20,24,27,30,46,122,135,136 --local-user=***REDACTED_USER*** --home-dir=/home/***REDACTED_USER*** --remote-user=***REDACTED_EMAIL*** --remote-ip=***REDACTED_IP*** --has-tty=false --tty-name= --force-v1-behavior --cmd=bash
+root       84174   84167  0 10:25 ?        ***REDACTED_IP*** bash
+root       84194   84174  0 10:25 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cursor-60faf7b51077ed1df1db718157bbfed740d2e160 command-shell --cli-data-dir /home/***REDACTED_USER***/.cursor-server/cli --parent-process-id 84174 --on-port --on-host=***REDACTED_HOST***
+root       84220   84194  0 10:25 ?        ***REDACTED_IP*** sh /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/bin/cursor-server --connection-token=remotessh --accept-server-license-terms --start-server --enable-remote-auto-shutdown --socket-path=/tmp/cursor-***REDACTED***
+root       84224   84220  0 10:25 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/server-main.js --connection-token=remotessh --accept-server-license-terms --start-server --enable-remote-auto-shutdown --socket-path=/tmp/cursor-***REDACTED***
+root       84438   84224  0 10:25 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/bootstrap-fork --type=fileWatcher
+root       84455   84224  2 10:25 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node --dns-result-order=ipv4first /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+root       84468   84224  0 10:25 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/bootstrap-fork --type=ptyHost --logsPath /home/***REDACTED_USER***/.cursor-server/data/logs/20260311T102516
+root       84671   84455  0 10:25 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=84455
+root       85126   84455  0 10:26 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=84455
+nobody     93248       2  0 12:01 ?        ***REDACTED_IP*** [kworker/2:0H]
+root       95065   84468  0 12:21 ?        ***REDACTED_IP*** /bin/bash --init-file /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+root      110360   84455  0 12:38 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/extensions/css-language-features/server/dist/node/cssServerMain --node-ipc --clientProcessId=84455
+nobody    124228       2  0 14:57 ?        ***REDACTED_IP*** [kworker/u8:4-events_power_efficient]
+root      125134   84468  0 15:03 ?        ***REDACTED_IP*** /bin/bash --init-file /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+nobody    129558       2  0 15:25 ?        ***REDACTED_IP*** [kworker/2:0-events_freezable]
+root      130033   95065  0 15:29 ?        ***REDACTED_IP*** bash ./serve.sh
+root      130036  130033  6 15:29 ?        ***REDACTED_IP*** ruby3.0 /home/***REDACTED_USER***/workspace/chaejinims2.github.io/vendor/bundle/ruby/3.0.0/bin/jekyll serve --port 4001
+root      131295   84468  0 15:46 ?        ***REDACTED_IP*** /bin/bash --init-file /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+nobody    132701       2  0 15:46 ?        ***REDACTED_IP*** [kworker/R-xfsal]
+nobody    132702       2  0 15:46 ?        ***REDACTED_IP*** [kworker/R-xfs_m]
+nobody    132705       2  0 15:46 ?        ***REDACTED_IP*** [jfsIO]
+nobody    132706       2  0 15:46 ?        ***REDACTED_IP*** [jfsCommit]
+nobody    132707       2  0 15:46 ?        ***REDACTED_IP*** [jfsCommit]
+nobody    132708       2  0 15:46 ?        ***REDACTED_IP*** [jfsCommit]
+nobody    132709       2  0 15:46 ?        ***REDACTED_IP*** [jfsCommit]
+nobody    132710       2  0 15:46 ?        ***REDACTED_IP*** [jfsSync]
+nobody    136246       2  0 15:46 ?        ***REDACTED_IP*** [kworker/3:0H-kblockd]
+nobody    141109       2  0 15:56 ?        ***REDACTED_IP*** [kworker/u8:1-flush-179:0]
+nobody    141110       2  0 15:56 ?        ***REDACTED_IP*** [kworker/u8:3-ext4-rsv-conversion]
+root      141384   84455  0 15:59 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/node /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/extensions/html-language-features/server/dist/node/htmlServerMain --node-ipc --clientProcessId=84455
+nobody    141712       2  0 16:02 ?        ***REDACTED_IP*** [kworker/3:1-events]
+nobody    141768       2  0 16:03 ?        ***REDACTED_IP*** [kworker/2:3-events]
+nobody    142097       2  0 16:05 ?        ***REDACTED_IP*** [kworker/0:0-kacpi_notify]
+nobody    142395       2  0 16:09 ?        ***REDACTED_IP*** [kworker/1:0-events]
+nobody    142407       2  0 16:12 ?        ***REDACTED_IP*** [kworker/u8:0-events_power_efficient]
+nobody    142732       2  0 16:16 ?        ***REDACTED_IP*** [kworker/1:3-inet_frag_wq]
+nobody    142912       2  0 16:18 ?        ***REDACTED_IP*** [kworker/0:1-kacpi_notify]
+nobody    142938       2  0 16:20 ?        ***REDACTED_IP*** [kworker/3:2-events]
+nobody    142942       2  0 16:21 ?        ***REDACTED_IP*** [kworker/2:1-events]
+nobody    142961       2  0 16:21 ?        ***REDACTED_IP*** [kworker/1:1-events]
+nobody    143029       2  0 16:21 ?        ***REDACTED_IP*** [kworker/1:2]
+nobody    145759       2  0 16:23 ?        ***REDACTED_IP*** [kworker/0:2-events]
+root      146197   84174  0 16:25 ?        ***REDACTED_IP*** sleep 180
+nobody    146198       2  0 16:25 ?        ***REDACTED_IP*** [kworker/3:0-events]
+nobody    146202       2  0 16:26 ?        ***REDACTED_IP*** [kworker/2:2-events]
+root      146252   84455  3 16:26 ?        ***REDACTED_IP*** /bin/bash -O extglob -c snap=$(command cat <&3) && builtin shopt -s extglob && builtin eval -- "$snap" && { builtin set +u 2>/dev/null || true; builtin eval "${__CURSOR_SANDBOX_ENV_RESTORE:-}" 2>/dev/null; builtin export PWD="$(builtin pwd)"; builtin shopt -s expand_aliases 2>/dev/null; builtin eval "$1"; }; COMMAND_EXIT_CODE=$?; dump_bash_state >&4; builtin exit $COMMAND_EXIT_CODE -- cd "/home/***REDACTED_USER***/workspace/chaejinims2.github.io/_data/lm11/prac" && ./lm11-prac.sh && ./lm11-prac-result.sh
+root      146253  146252  0 16:26 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/resources/helpers/cursorsandbox --run-proxy --policy-json {"version":1,"default":"deny","allow":["public.ecr.aws","awscli.amazonaws.com","anaconda.com","azure.com","cloudflarestorage.com","*.cloudflarestorage.com","docker.com","*.docker.com","github.com","codeload.github.com","githubusercontent.com","*.githubusercontent.com","gitlab.com","google.com","dl.google.com","*.googleapis.com","*.gvt1.com","hashicorp.com","java.com","microsoft.com","dotnet.microsoft.com","mcr.microsoft.com","packages.microsoft.com","npmjs.com","oracle.com","ubuntu.com","archive.ubuntu.com","security.ubuntu.com","public.blob.vercel-storage.com","*.public.blob.vercel-storage.com","visualstudio.com","yarnpkg.com","*.yarnpkg.com","pkg.go.dev","*.anysphere.workers.dev","*.jdx.dev","pub.dev","crates.io","index.crates.io","static.crates.io","docker.io","*.docker.io","gcr.io","ghcr.io","goproxy.io","k8s.io","packagecloud.io","pypa.io","quay.io","rvm.io","spring.io","playwright.azureedge.net","dot.net","java.net","launchpad.net","ppa.launchpad.net","sourceforge.net","alpinelinux.org","apache.org","archlinux.org","bitbucket.org","centos.org","cocoapods.org","cpan.org","debian.org","npm.duckdb.org","eclipse.org","fedoraproject.org","golang.org","proxy.golang.org","sum.golang.org","gradle.org","haskell.org","json-schema.org","apt.llvm.org","maven.org","metacpan.org","nodejs.org","npmjs.org","registry.npmjs.org","nuget.org","packagist.org","pypi.org","pypi.python.org","pythonhosted.org","files.pythonhosted.org","ruby-lang.org","rubygems.org","rubyonrails.org","static.rust-lang.org","json.schemastore.org","swift.org","ziglang.org","hex.pm","rustup.rs","sh.rustup.rs","mise.run","binaries.prisma.sh","fonts.gstatic.com","repo.maven.apache.org","registry.yarnpkg.com"]}
+root      146277  146252  0 16:26 ?        ***REDACTED_IP*** /home/***REDACTED_USER***/.cursor-server/cli/servers/Stable-60faf7b51077ed1df1db718157bbfed740d2e160/server/resources/helpers/cursorsandbox --sandbox-policy-cwd /home/***REDACTED_USER***/workspace/chaejinims2.github.io --sandbox-policy {"type":"workspace_readwrite","cwd":"/home/***REDACTED_USER***/workspace/chaejinims2.github.io","additionalReadwritePaths":["/home/***REDACTED_USER***/workspace"],"additionalReadonlyPaths":["/etc/ssl/cert.pem","/private/etc/ssl/cert.pem","/etc/ssl/certs/ca-certificates.crt","/etc/ssl/ca-bundle.pem","/etc/pki/tls/certs/ca-bundle.crt","/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem","/home/***REDACTED_USER***/.ssh"],"networkAccess":true,"disableTmpWrite":false} --policy-json {"version":1,"default":"deny","allow":["public.ecr.aws","awscli.amazonaws.com","anaconda.com","azure.com","cloudflarestorage.com","*.cloudflarestorage.com","docker.com","*.docker.com","github.com","codeload.github.com","githubusercontent.com","*.githubusercontent.com","gitlab.com","google.com","dl.google.com","*.googleapis.com","*.gvt1.com","hashicorp.com","java.com","microsoft.com","dotnet.microsoft.com","mcr.microsoft.com","packages.microsoft.com","npmjs.com","oracle.com","ubuntu.com","archive.ubuntu.com","security.ubuntu.com","public.blob.vercel-storage.com","*.public.blob.vercel-storage.com","visualstudio.com","yarnpkg.com","*.yarnpkg.com","pkg.go.dev","*.anysphere.workers.dev","*.jdx.dev","pub.dev","crates.io","index.crates.io","static.crates.io","docker.io","*.docker.io","gcr.io","ghcr.io","goproxy.io","k8s.io","packagecloud.io","pypa.io","quay.io","rvm.io","spring.io","playwright.azureedge.net","dot.net","java.net","launchpad.net","ppa.launchpad.net","sourceforge.net","alpinelinux.org","apache.org","archlinux.org","bitbucket.org","centos.org","cocoapods.org","cpan.org","debian.org","npm.duckdb.org","eclipse.org","fedoraproject.org","golang.org","proxy.golang.org","sum.golang.org","gradle.org","haskell.org","json-schema.org","apt.llvm.org","maven.org","metacpan.org","nodejs.org","npmjs.org","registry.npmjs.org","nuget.org","packagist.org","pypi.org","pypi.python.org","pythonhosted.org","files.pythonhosted.org","ruby-lang.org","rubygems.org","rubyonrails.org","static.rust-lang.org","json.schemastore.org","swift.org","ziglang.org","hex.pm","rustup.rs","sh.rustup.rs","mise.run","binaries.prisma.sh","fonts.gstatic.com","repo.maven.apache.org","registry.yarnpkg.com"]} -- /bin/bash -O extglob -c snap=$(command cat <&3) && builtin shopt -s extglob && builtin eval -- "$snap" && { builtin set +u 2>/dev/null || true; builtin eval "${__CURSOR_SANDBOX_ENV_RESTORE:-}" 2>/dev/null; builtin export PWD="$(builtin pwd)"; builtin shopt -s expand_aliases 2>/dev/null; builtin eval "$1"; }; COMMAND_EXIT_CODE=$?; dump_bash_state >&4; builtin exit $COMMAND_EXIT_CODE -- cd "/home/***REDACTED_USER***/workspace/chaejinims2.github.io/_data/lm11/prac" && ./lm11-prac.sh && ./lm11-prac-result.sh
+root      146295  146252  0 16:26 ?        ***REDACTED_IP*** /bin/bash ./lm11-prac.sh
+root      146364  146295  0 16:26 ?        ***REDACTED_IP*** /bin/bash ./lm11-prac.sh
+root      146365  146295  0 16:26 ?        ***REDACTED_IP*** sed -E -e s/(VSCODE_GIT_IPC_AUTH_TOKEN=***REDACTED*** -e s/([Gg][Hh]_[Tt][Oo][Kk][Ee][Nn]=)[^[:space:]]+/\1***REDACTED***/g -e s/(GITHUB_TOKEN=***REDACTED*** -e s/(Authorization:)[[:space:]]*Bearer[[:space:]]+[^[:space:]]+/\1 Bearer ***REDACTED*** -e s/(Bearer)[[:space:]]+[^[:space:]]+/\1 ***REDACTED***/g -e s/(github_pat_)[A-Za-z0-9_]+/\1***REDACTED***/g -e s/(ghp_)[A-Za-z0-9]+/\1***REDACTED***/g -e s/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/***REDACTED_EMAIL***/g -e s#(/home/***REDACTED_USER***/[:space:]]+#\1***REDACTED_USER***#g -e s/(--remote-user=***REDACTED_EMAIL*** -e s/(--local-user=***REDACTED_USER*** -e s/(--on-host=***REDACTED_HOST*** -e s#(/tmp/cursor-)[0-9a-fA-F-]+#\1***REDACTED***#g -e s/([0-9]{1,3}\.){3}[0-9]{1,3}/***REDACTED_IP***/g -e s/([0-9A-Fa-f]{0,4}:){2,7}[0-9A-Fa-f]{0,4}/***REDACTED_IP***/g
+root      146366  146364  0 16:26 ?        ***REDACTED_IP*** ps -ef

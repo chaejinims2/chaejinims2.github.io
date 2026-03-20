@@ -1,0 +1,9 @@
+cherry@rhombus:~$ du -sh *
+12K	backup.tar
+4.0K	lm11-prac-add.sh
+8.0K	lm11-prac-result.sh
+8.0K	lm11-prac.json
+4.0K	lm11-prac.sh
+40K	log
+4.0K	result
+16K	tmp

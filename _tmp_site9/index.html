@@ -1,0 +1,531 @@
+<style>
+  .body-home {
+    margin: 0;
+    background: var(--app-bg);
+    color: var(--app-text);
+  }
+
+  .body-home .app-root {
+    display: none;
+  }
+
+  .startup-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+    box-sizing: border-box;
+  }
+
+  /* ----- Hero: 정체성 한눈에 ----- */
+  .startup-hero {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 8vw, 4rem);
+    max-width: 36rem;
+  }
+
+  .startup-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.75rem;
+    color: var(--app-text);
+    line-height: 1.2;
+  }
+
+  .startup-lead {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.5;
+    color: var(--app-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .startup-enter {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--app-text);
+    background: var(--overlay-w-0a);
+    border: 1px solid var(--app-border);
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .startup-enter:hover {
+    background: var(--overlay-w-0d);
+    border-color: var(--accent);
+    color: var(--app-text);
+    text-decoration: none;
+  }
+
+  /* ----- 본문 ----- */
+  .startup-main {
+    flex: 1;
+    width: 100%;
+    max-width: 52rem;
+  }
+
+  .cherry-root .startup-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cherry-hero-actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cherry-hero-actions .startup-enter {
+    border: none;
+    background: transparent;
+  }
+
+  .cherry-hero-actions .startup-enter:hover {
+    border: none;
+    background: transparent;
+  }
+
+  .cherry-hero-actions .startup-enter-icon {
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cherry-hero-actions .startup-enter img {
+    width: 12rem;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  .cherry-hero-actions .startup-enter:hover img {
+    transform: scale(1.1);
+  }
+
+  .cherry-hero-actions .cherry-action-margin {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .startup-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .startup-content h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+    color: var(--app-text);
+  }
+
+  .startup-content h1:first-child {
+    margin-top: 0;
+  }
+
+  .startup-content h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.5rem;
+    color: var(--app-text);
+    padding-top: 1rem;
+    border-top: 1px solid var(--app-border);
+  }
+
+  .startup-content h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .startup-content p {
+    margin: 0 0 0.75rem;
+    color: var(--app-text);
+  }
+
+  .startup-content ul,
+  .startup-content ol {
+    margin: 0 0 1rem;
+    padding-left: 1.5em;
+  }
+
+  .startup-content li {
+    margin-bottom: 0.35rem;
+  }
+
+  .startup-content strong {
+    font-weight: 600;
+    color: var(--app-text);
+  }
+
+  .startup-content a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .startup-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* ----- 푸터: 미니 네비 + 저작 ----- */
+  .startup-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--app-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--app-muted);
+  }
+
+  .startup-footer a {
+    color: var(--app-muted);
+    text-decoration: none;
+  }
+
+  .startup-footer a:hover {
+    color: var(--app-text);
+    text-decoration: underline;
+  }
+
+  .startup-footer-copy {
+    margin-left: 0.25rem;
+  }
+</style>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/svg/default/cherry.svg">
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';</script>
+
+  
+  
+  
+  <title>chaejinims2@github.io | Chaejin Im</title>
+  
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/quiz.css" />
+</head>
+
+
+<body data-theme="dark" class="body-home">
+  <div class="startup-root">
+    <header class="startup-hero">
+      <h1 class="startup-title">chaejinims2@github.io</h1>
+      <!-- 
+        <p class="startup-lead">System & Platform Engineer</p>
+        
+        
+        <a href="/home/about/index" class="startup-enter">Explore</a>
+         -->
+    </header>
+    <main class="startup-main">
+      
+
+      <div class="cherry-hero-actions">
+        
+        
+        <p class="startup-lead">System & Platform Engineer</p>
+        
+        
+        <a href="/home/about/index" class="startup-enter startup-enter-icon" target="_blank" rel="noopener noreferrer"
+    title="About">
+    <span class="app-nav-ico app-nav-ico--svg"
+  style="--ico: url('/assets/svg/default/home.svg');" aria-hidden="true">
+</span>
+</a>
+        <a href="https://github.com/chaejinims2?tab=repositories" class="startup-enter startup-enter-icon" target="_blank" rel="noopener noreferrer"
+    title="GitHub Repository">
+    <span class="app-nav-ico app-nav-ico--svg"
+  style="--ico: url('/assets/svg/default/git.svg');" aria-hidden="true">
+</span>
+</a>
+      </div>
+    </main>
+    <footer class="startup-footer">
+      <style>
+.startup-counter { display: flex; gap: 1.25rem; }
+.startup-counter-item { font-variant-numeric: tabular-nums; }
+.startup-counter-label { margin-right: 0.35rem; color: var(--app-muted); }
+.startup-counter-item span:last-child { color: var(--app-text); font-weight: 500; }
+
+</style>
+<div class="startup-counter" aria-live="polite">
+    <span class="startup-counter-item"><span class="startup-counter-label">Today</span> <span
+            id="startup-count-today">-</span></span>
+    <span class="startup-counter-item"><span class="startup-counter-label">Total</span> <span
+            id="startup-count-total">-</span></span>
+</div>
+
+
+<!-- Netlify Identity: 초대 링크(#invite_token=...) 접속 시 비밀번호 설정 화면 표시 -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script src="/assets/js/pages/lm11-quiz.js"></script>
+<script>
+(function() {
+  function forEachNode(nodeList, fn) {
+    Array.prototype.forEach.call(nodeList || [], fn);
+  }
+
+  function toArray(nodeList) {
+    return Array.prototype.slice.call(nodeList || []);
+  }
+
+  // 플러그인 미사용(예: GitHub Pages) 시 data-icon으로 아이콘 채움
+  forEachNode(document.querySelectorAll('.app-nav-ico[data-icon]'), function(span) {
+    if (span.textContent) return;
+    var hex = (span.getAttribute('data-icon') || '25B6').trim();
+    var chars = hex.split(',').map(function(h) {
+      var code = parseInt(h.trim(), 16);
+      return isNaN(code) ? '' : String.fromCodePoint(code);
+    });
+    span.textContent = chars.join('');
+  });
+
+  var body = document.body;
+  if (!body) return;
+  var posKey = 'sidebar-position';
+  var posVal = localStorage.getItem(posKey) || 'left';
+  if (posVal === 'right') body.classList.add('sidebar-right');
+  else if (posVal === 'bottom') body.classList.add('sidebar-bottom');
+  else if (posVal === 'top') body.classList.add('sidebar-top');
+  var compactKey = 'sidebar-compact';
+  if (localStorage.getItem(compactKey) === '1') body.classList.add('sidebar-compact');
+  function reorderShell(contentFirst) {
+    var shell = document.querySelector('.app-shell');
+    var content = document.querySelector('.app-content');
+    var sidebar = document.querySelector('.app-sidebar');
+    if (!shell || !content || !sidebar) return;
+    if (contentFirst) shell.insertBefore(content, sidebar);
+    else shell.insertBefore(sidebar, content);
+  }
+  function initSidebarPositionSelect() {
+    var sel = document.getElementById('sidebar-position-select');
+    if (!sel) return;
+    sel.value = posVal;
+    if (!sel.dataset.sidebarPositionInited) {
+      sel.dataset.sidebarPositionInited = '1';
+      sel.addEventListener('change', function() {
+        var v = this.value;
+        try { localStorage.setItem(posKey, v); } catch (e) {}
+        document.body.classList.toggle('sidebar-right', v === 'right');
+        document.body.classList.toggle('sidebar-top', v === 'top');
+        document.body.classList.toggle('sidebar-bottom', v === 'bottom');
+        reorderShell(v === 'right' || v === 'bottom'); /* true: 콘텐츠 먼저, false: 사이드바 먼저 */
+      });
+    }
+  }
+  initSidebarPositionSelect();
+  window.initSidebarPositionSelect = initSidebarPositionSelect;
+  function initSidebarCompactCheckbox() {
+    var cb = document.getElementById('sidebar-compact-checkbox');
+    if (!cb) return;
+    cb.checked = body.classList.contains('sidebar-compact');
+    if (!cb.dataset.sidebarCompactInited) {
+      cb.dataset.sidebarCompactInited = '1';
+      cb.addEventListener('change', function() {
+        var on = this.checked;
+        try { localStorage.setItem(compactKey, on ? '1' : '0'); } catch (e) {}
+        body.classList.toggle('sidebar-compact', on);
+      });
+    }
+  }
+  initSidebarCompactCheckbox();
+  window.initSidebarCompactCheckbox = initSidebarCompactCheckbox;
+
+  /* 코드 블록 복사 버튼 (document-duplicate 아이콘) */
+  var copyIconSvg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" /></svg>';
+  function getCodeText(block) {
+    var code = block.querySelector('code');
+    return code ? code.textContent : (block.textContent || '');
+  }
+  function initCodeCopyButtons() {
+    var content = document.querySelector('.app-content');
+    if (!content) return;
+    /* 터미널 박스에만 복사 버튼 부착 */
+    forEachNode(content.querySelectorAll('.terminal-pre-wrap'), function(wrap) {
+      if (wrap.querySelector('.code-block-copy-btn')) return;
+      addCopyButtonForTerminal(wrap);
+    });
+  }
+
+  function addCopyButtonForTerminal(wrap) {
+      var pre = wrap.querySelector('.terminal-content');
+      if (!pre) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'code-block-copy-btn';
+      btn.title = '코드 복사';
+      btn.setAttribute('aria-label', '코드 복사');
+      btn.innerHTML = copyIconSvg;
+      btn.addEventListener('click', function() {
+        var text = getCodeText(pre);
+        if (!text) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function() { showCopied(btn); }).catch(function() { fallbackCopy(text, btn); });
+        } else {
+          fallbackCopy(text, btn);
+        }
+      });
+    wrap.appendChild(btn);
+  }
+  function showCopied(btn) {
+    btn.classList.add('copied');
+    var label = btn.getAttribute('aria-label');
+    btn.setAttribute('aria-label', '복사됨');
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.setAttribute('aria-label', label || '코드 복사');
+    }, 1500);
+  }
+  function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showCopied(btn);
+    } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  window.initCodeCopyButtons = initCodeCopyButtons;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCodeCopyButtons);
+  else initCodeCopyButtons();
+
+  /* Quiz bank: answer show/hide toggles (PJAX-safe) */
+  function initQuizAnswerToggles() {
+    var content = document.querySelector('.app-content');
+    if (!content) return;
+    forEachNode(content.querySelectorAll('.quiz-card__answer-wrap'), function (wrap) {
+      var btn = wrap.querySelector('.quiz-card__answer-toggle');
+      if (!btn || btn.dataset.quizInit === '1') return;
+      btn.dataset.quizInit = '1';
+      btn.addEventListener('click', function () {
+        var hidden = wrap.classList.toggle('is-hidden');
+        btn.setAttribute('aria-label', hidden ? '정답 보기' : '정답 가리기');
+      });
+    });
+    /* .quiz-answer / .quiz-answer-toggle (quiz_card_block, voca_card_block) */
+    forEachNode(content.querySelectorAll('.quiz-answer'), function (answerBlock) {
+      var btn = answerBlock.querySelector('.quiz-answer-toggle');
+      var answerContent = answerBlock.querySelector('.quiz-answer-content');
+      if (!btn || !answerContent || btn.dataset.quizAnswerInit === '1') return;
+      btn.dataset.quizAnswerInit = '1';
+      btn.addEventListener('click', function () {
+        answerContent.classList.toggle('is-hidden');
+        var hidden = answerContent.classList.contains('is-hidden');
+        btn.setAttribute('aria-expanded', !hidden);
+        btn.setAttribute('aria-label', hidden ? '뜻 보기' : '뜻 가리기');
+      });
+    });
+  }
+  window.initQuizAnswerToggles = initQuizAnswerToggles;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initQuizAnswerToggles);
+  else initQuizAnswerToggles();
+
+  /* Labs: LM11 log viewer (PJAX-safe) */
+  function initLm11LogPage() {
+    var base = document.querySelector('base');
+    var baseUrl = base ? base.getAttribute('href') : '';
+    var fixedPre = document.querySelector('.log-content');
+    var selectEl = document.getElementById('lm11-log-select');
+    if (!fixedPre || !selectEl) return;
+
+    if (selectEl.dataset.lm11Init === '1') return;
+    selectEl.dataset.lm11Init = '1';
+
+    function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
+    function resolveUrl(url) {
+      var u = String(url || '');
+      if (baseUrl && u.indexOf('/') === 0) return baseUrl.replace(/\/$/, '') + u;
+      return u;
+    }
+    function setFixedLog(text) {
+      var t = String(text == null ? '' : text);
+      var prompt = 'cherry@rhombus:~$';
+      var promptEsc = esc(prompt);
+      var html = esc(t);
+      /* 특정 프롬프트 키워드만 강조 */
+      if (promptEsc) {
+        html = html.split(promptEsc).join('<span class="term-prompt">' + promptEsc + '</span>');
+      }
+      fixedPre.innerHTML = html;
+      fixedPre.classList.remove('log-loading', 'log-error');
+      fixedPre.dataset.loaded = '1';
+    }
+    function loadSelectedLog() {
+      var url = resolveUrl(selectEl.value || '');
+      if (!url) return;
+      fixedPre.textContent = '불러오는 중…';
+      fixedPre.classList.add('log-loading');
+      fetch(url).then(function(r) { return r.ok ? r.text() : Promise.reject(new Error(r.status)); })
+        .then(function(text) { setFixedLog(text); })
+        .catch(function() {
+          fixedPre.textContent = '로그를 불러올 수 없습니다. (파일 경로를 확인하세요)';
+          fixedPre.classList.remove('log-loading');
+          fixedPre.classList.add('log-error');
+          fixedPre.dataset.loaded = '1';
+        });
+    }
+
+    selectEl.addEventListener('change', loadSelectedLog);
+    if (!fixedPre.dataset.loaded) loadSelectedLog();
+  }
+  window.initLm11LogPage = initLm11LogPage;
+  try { initLm11LogPage(); } catch (e) {}
+})();
+</script>
+
+<script>
+    (function () {
+        var apiUrl = "https://fanciful-seahorse-b12a97.netlify.app/.netlify/functions/count";
+        var elToday = document.getElementById('startup-count-today');
+        var elTotal = document.getElementById('startup-count-total');
+        function setToday(n) { if (elToday) elToday.textContent = typeof n === 'number' ? n : '-'; }
+        function setTotal(n) { if (elTotal) elTotal.textContent = typeof n === 'number' ? n : '-'; }
+        function tryCountApi() {
+            var ns = 'chaejinims2.github.io';
+            var today = new Date();
+            var dateKey = 'daily-' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+            Promise.all([
+                fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/' + encodeURIComponent(dateKey)).then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; }),
+                fetch('https://api.countapi.xyz/hit/' + encodeURIComponent(ns) + '/total').then(function (r) { return r.json(); }).then(function (d) { return d && d.value != null ? d.value : null; }).catch(function () { return null; })
+            ]).then(function (r) { setToday(r[0]); setTotal(r[1]); });
+        }
+        if (apiUrl) {
+            fetch(apiUrl, { method: 'GET', credentials: 'omit' })
+                .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+                .then(function (d) {
+                    var t = d && (d.today != null || d.total != null) ? { today: d.today, total: d.total } : null;
+                    if (t) { setToday(t.today); setTotal(t.total); } else tryCountApi();
+                })
+                .catch(function () { tryCountApi(); });
+        } else {
+            tryCountApi();
+        }
+    })();
+</script>
+      <span class="startup-footer-copy">© 2026 Chaejin Im</span>
+    </footer>
+  </div>
+
+</body>
+
+</html>

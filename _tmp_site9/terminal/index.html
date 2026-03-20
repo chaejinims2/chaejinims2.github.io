@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Terminal MVP</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm/css/xterm.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="toolbar">
+    <input type="text" id="gatewayUrl" placeholder="wss://terminal.cherry-lab.dev" value="wss://terminal.cherry-lab.dev">
+    <button type="button" id="connectBtn">Connect</button>
+    <button type="button" id="disconnectBtn" disabled>Disconnect</button>
+  </div>
+  <div id="terminal"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

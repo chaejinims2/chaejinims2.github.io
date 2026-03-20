@@ -1,0 +1,2 @@
+cherry@rhombus:~$ ss -t
+State Recv-Q Send-Q Local Address:Port Peer Address:PortProcess

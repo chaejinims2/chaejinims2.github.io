@@ -1,0 +1,33 @@
+cherry@rhombus:~$ lsblk
+NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0          7:0    0  14.4M  1 loop /snap/arduino-cli/62
+loop1          7:1    0     4K  1 loop /snap/bare/5
+loop2          7:2    0  55.5M  1 loop /snap/core18/2979
+loop3          7:3    0    74M  1 loop /snap/core22/2292
+loop4          7:4    0    74M  1 loop /snap/core22/2339
+loop5          7:5    0 251.6M  1 loop /snap/firefox/7836
+loop6          7:6    0 254.6M  1 loop /snap/firefox/7901
+loop7          7:7    0   516M  1 loop /snap/gnome-42-2204/202
+loop8          7:8    0 531.4M  1 loop /snap/gnome-42-2204/247
+loop9          7:9    0  91.7M  1 loop /snap/gtk-common-themes/1535
+loop10         7:10   0  12.2M  1 loop /snap/snap-store/1216
+loop11         7:11   0  48.1M  1 loop /snap/snapd/25935
+loop12         7:12   0   576K  1 loop /snap/snapd-desktop-integration/343
+loop13         7:13   0  55.5M  1 loop /snap/core18/2999
+mmcblk1      179:0    0  58.2G  0 disk 
+|-mmcblk1p1  179:1    0   100M  0 part /boot/efi
+|-mmcblk1p2  179:2    0    16M  0 part 
+|-mmcblk1p3  179:3    0  17.3G  0 part 
+|-mmcblk1p4  179:4    0   800M  0 part 
+`-mmcblk1p5  179:5    0    40G  0 part /home/***REDACTED_USER***/workspace/chaejinims2.github.io/.git/hooks
+                                       /home/***REDACTED_USER***/workspace/lpd3-gateway/.git/hooks
+                                       /home/***REDACTED_USER***/workspace/chaejinims2.github.io/.git/config
+                                       /var/snap/firefox/common/host-hunspell
+                                       /
+mmcblk1boot0 179:8    0     4M  1 disk 
+mmcblk1boot1 179:16   0     4M  1 disk 
+mmcblk2      179:24   0  60.1G  0 disk 
+|-mmcblk2p1  179:25   0   4.7G  0 part /media/cherry/Ubuntu 22.04.4 LTS amd64
+|-mmcblk2p2  179:26   0   4.9M  0 part 
+|-mmcblk2p3  179:27   0   300K  0 part 
+`-mmcblk2p4  179:28   0  55.4G  0 part /media/cherry/writable

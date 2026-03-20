@@ -1,0 +1,22 @@
+<h1 id="serverless와-faas-비용-효율성">Serverless와 FaaS 비용 효율성</h1>
+
+<h2 id="faasfunction-as-a-service-핵심-정리">FaaS(Function as a Service) 핵심 정리</h2>
+
+<ul>
+  <li>정의: 서버 전체를 띄우지 않고, 특정 ‘함수(기능)’가 필요할 때만 잠깐 실행하는 모델입니다. (Serverless의 핵심)</li>
+  <li>특징: 코드가 실행될 때만 비용이 발생하며, <strong>평소에는 서버 비용이 0원</strong>입니다.</li>
+  <li>비유 (피자 조각 뷔페): 한 판을 시키는 게 아니라, 딱 한 입 먹고 싶을 때 한 조각만 즉석에서 만들어 주는 방식입니다.</li>
+  <li>예시: AWS Lambda, Google Cloud Functions.</li>
+</ul>
+
+<h2 id="비용-관점에서의-장점">비용 관점에서의 장점</h2>
+
+<ul>
+  <li>유휴 시간(트래픽이 거의 없는 시간대)에 <strong>서버 인스턴스를 계속 켜두지 않아도 됨</strong></li>
+  <li>이벤트 기반으로 동작하므로, <strong>짧고 빈번한 작업</strong>에 특히 유리</li>
+  <li>초기 인프라 설계·용량 산정 비용을 줄이고, 실제 사용량에 따라 자연스럽게 확장/축소</li>
+</ul>
+
+<blockquote>
+  <p>요약: <strong>“서버를 24시간 켜두는 대신, 필요할 때만 한 입씩 꺼내 먹는 요금제”</strong></p>
+</blockquote>

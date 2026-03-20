@@ -1,0 +1,974 @@
+<h1 id="linux">Linux</h1>
+
+<h2 id="2022년-03월-12일-필기">2022년 03월 12일 필기</h2>
+
+<ol>
+  <li>다음 설명에 해당하는 파일로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>네트워크 관리자로부터 운영 중인 DNS 서버의 IP 주소가 변경되었다는 연락을 받아서 관련 설정을 진행해야 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>/etc/hosts</li>
+      <li>/etc/sysconfig/networks</li>
+      <li>/etc/resolv.conf</li>
+      <li>/etc/named.conf</li>
+    </ul>
+  </li>
+  <li>다음 중 프로토콜 데이터 단위를 OSI 7계층 모델의 하위 계층부터 상위 계층 순으로 올바르게 나열한 것은?
+    <ul>
+      <li>bit → frame → packet → segment</li>
+      <li>bit → frame → segment → packet</li>
+      <li>bit → packet → frame → segment</li>
+      <li>bit → segment → frame → packet</li>
+    </ul>
+  </li>
+  <li>다음 중 IPv4 주소 체계에서 B클래스에 속하는 사설 IP 주소 대역으로 알맞은 것은?
+    <ul>
+      <li>171.16.0.0 ~ 171.31.0.0</li>
+      <li>171.16.0.0 ~ 172.31.0.0</li>
+      <li>172.16.0.0 ~ 172.31.0.0</li>
+      <li>173.16.0.0 ~ 173.31.0.0</li>
+    </ul>
+  </li>
+  <li>다음 그림에 해당하는 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@wwww ~]# ip addr show
+2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+ link/ether 08:00:27:a1:b0:cb brd ff:ff:ff:ff:ff:ff
+ inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
+    valid_lft 76673sec preferred_lft 76673sec
+ inet6 fe80::5138:1898:628f:e139/64 scope link noprefixroute
+    valid_lft forever preferred_lft forever
+</code></pre></div>    </div>
+    <ul>
+      <li>ip</li>
+      <li>ifconfig</li>
+      <li>route</li>
+      <li>ss</li>
+    </ul>
+  </li>
+  <li>다음과 같은 조건일 때 설정되는 게이트웨이 주소값으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IP 주소: 192.168.5.130, 서브넷마스크: 255.255.255.128
+</code></pre></div>    </div>
+    <ul>
+      <li>192.168.5.126</li>
+      <li>192.168.5.127</li>
+      <li>192.168.5.128</li>
+      <li>192.168.5.129</li>
+    </ul>
+  </li>
+  <li>다음 그림에 해당하는 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@www ~]
+access control enabled, only authorized clients can connect
+SI: localuser:root
+</code></pre></div>    </div>
+    <ul>
+      <li>xhost</li>
+      <li>xauth</li>
+      <li>xrandr</li>
+      <li>xmodmap</li>
+    </ul>
+  </li>
+  <li>최근 실행한 명령 중에서 ‘al’이라는 문자열이 들어간 명령을 찾아서 재실행하려고 할 때 가장 알맞은 것은?
+    <ul>
+      <li>!al</li>
+      <li>!?al?</li>
+      <li>!!al</li>
+      <li>history al</li>
+    </ul>
+  </li>
+  <li>다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat lin.sh
+for flower in Rose Tulip Lily
+do
+ echo $flower
+(괄호)
+</code></pre></div>    </div>
+    <ul>
+      <li>od</li>
+      <li>rof</li>
+      <li>eof</li>
+      <li>done</li>
+    </ul>
+  </li>
+  <li>다음 중 할당된 번호 값이 가장 큰 시그널로 알맞은 것은?
+    <ul>
+      <li>SIGTSTP</li>
+      <li>SIGKILL</li>
+      <li>SIGTERM</li>
+      <li>SIGQUIT</li>
+    </ul>
+  </li>
+  <li>다음 중 포어그라운드 동작 중인 프로세스를 백그라운드로 전환하는 방법으로 알맞은 것은?
+    <ul>
+      <li>[Ctrl]+[c]를 눌러 작업을 일시 정지시킨 후에 fg 명령을 실행한다.</li>
+      <li>[Ctrl]+[c]를 눌러 작업을 일시 정지시킨 후에 bg 명령을 실행한다.</li>
+      <li>[Ctrl]+[z]를 눌러 작업을 일시 정지시킨 후에 fg 명령을 실행한다.</li>
+      <li>[Ctrl]+[z]를 눌러 작업을 일시 정지시킨 후에 bg 명령을 실행한다.</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 프로세스 간 통신 방법으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>한 시스템에서 동시에 실행 중인 여러 프로세스 간의 통신이 가능하도록 지원해 주는 소프트웨어 버스이다.
+</code></pre></div>    </div>
+    <ul>
+      <li>Shared Memory</li>
+      <li>Message Queue</li>
+      <li>Desktop Bus</li>
+      <li>Semaphore</li>
+    </ul>
+  </li>
+  <li>다음 중 10GB 용량의 하드 디스크 6개를 이용해서 RAID-5를 구성했을 때 실제 사용할 수 있는 용량으로 알맞은 것은?
+    <ul>
+      <li>30GB</li>
+      <li>40GB</li>
+      <li>50GB</li>
+      <li>60GB</li>
+    </ul>
+  </li>
+  <li>다음 중 ssh 데몬을 시스템 부팅 시에 구동되도록 설정하는 명령으로 알맞은 것은?
+    <ul>
+      <li>systemctl start sshd</li>
+      <li>systemctl enable sshd</li>
+      <li>systemctl is-enabled sshd</li>
+      <li>systemctl is-active sshd</li>
+    </ul>
+  </li>
+  <li>다음 중 시스템 부팅 시에 X 윈도 모드로 부팅이 되도록 설정하는 명령으로 알맞은 것은?
+    <ul>
+      <li>systemctl get-default multi-user</li>
+      <li>systemctl set-default multi-user</li>
+      <li>systemctl get-default graphical</li>
+      <li>systemctl set-default graphical</li>
+    </ul>
+  </li>
+  <li>다음 중 CentOS 7 버전에서 GRUB 환경 설정 파일을 수정한 후에 변경된 내용을 저장하기 위해 사용하는 명령으로 알맞은 것은?
+    <ul>
+      <li>grub</li>
+      <li>grub2-mkconfig</li>
+      <li>grub2-install</li>
+      <li>grub2-probe</li>
+    </ul>
+  </li>
+  <li>다음 설명에 적합한 리눅스 배포판으로 가장 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>해킹 및 보안 관련 도구가 많이 내장되어 있어 시스템 보안 학습에 적합한 배포판
+</code></pre></div>    </div>
+    <ul>
+      <li>Kali Linux</li>
+      <li>Rocky Linux</li>
+      <li>Arch Linux</li>
+      <li>Ubuntu</li>
+    </ul>
+  </li>
+  <li>다음 중 리눅스 탄생의 모델이 된 미닉스(MINIX) 운영체제를 개발한 인물로 알맞은 것은?
+    <ul>
+      <li>빌 조이</li>
+      <li>데니스 리치</li>
+      <li>리처드 스톨먼</li>
+      <li>앤드류 스튜어트 타넨바움</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 운영체제의 기술로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>프로그램에서 특정 작업을 수행하는 루틴(함수)들을 모아 효율적인 메모리 사용 및 디스크 관리에 유용하게 사용되는 기술
+</code></pre></div>    </div>
+    <ul>
+      <li>스왑</li>
+      <li>파이프</li>
+      <li>리다이렉션</li>
+      <li>라이브러리</li>
+    </ul>
+  </li>
+  <li>다음 중 2차적 저작물 소스 코드의 비공개가 불가능한 라이선스로 알맞은 것은?
+    <ul>
+      <li>MPL</li>
+      <li>MIT</li>
+      <li>Apache</li>
+      <li>BSD</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 프로그램으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Google이 개발한, 컨테이너화된 애플리케이션의 자동 배포·확장·관리를 목표로 하는 프로그램
+</code></pre></div>    </div>
+    <ul>
+      <li>Docker</li>
+      <li>Ansible</li>
+      <li>OpenStack</li>
+      <li>Kubernetes</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 작업을 위해 관리자가 설치해야 할 프로그램으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>시스템에 생성된 파일에 대한 정보를 사전에 정해 두고, 주기적으로 침입자에 의해 파일이 변조되었는지 점검
+</code></pre></div>    </div>
+    <ul>
+      <li>PAM</li>
+      <li>GnuPG</li>
+      <li>Tripwire</li>
+      <li>Nessus</li>
+    </ul>
+  </li>
+  <li>다음 중 백업(Backup)하는 명령어와 복원하는 명령어가 다른 백업 프로그램으로 알맞은 것은?
+    <ul>
+      <li>dd</li>
+      <li>dump</li>
+      <li>cpio</li>
+      <li>rsync</li>
+    </ul>
+  </li>
+  <li>다음 중 시스템 보안 관리 강화를 위한 조치로 틀린 것은?
+    <ul>
+      <li>불필요한 서비스를 최대한 제거한다.</li>
+      <li>/etc/issue와 같은 메시지 파일을 제거한다.</li>
+      <li>Set-UID와 같은 특수 권한 사용을 권장한다.</li>
+      <li>로그인 서비스는 telnet 대신에 ssh를 사용한다.</li>
+    </ul>
+  </li>
+  <li>다음 중 일반 텍스트 형식으로 저장되어 있어서 편집기로 내용을 확인할 수 있는 로그 파일명으로 알맞은 것은?
+    <ul>
+      <li>/var/log/secure</li>
+      <li>/var/log/lastlog</li>
+      <li>/var/log/wtmp</li>
+      <li>/var/log/btmp</li>
+    </ul>
+  </li>
+  <li>다음은 tar 명령어로 사용자의 홈 디렉토리 영역인 /home 디렉토리를 증분 백업하는 과정의 일부이다. (괄호) 안에 들어갈 옵션으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tar (괄호) list -cvlp home1.tar /home
+</code></pre></div>    </div>
+    <ul>
+      <li>-n</li>
+      <li>-N</li>
+      <li>-C</li>
+      <li>-g</li>
+    </ul>
+  </li>
+  <li>다음은 cpio 명령을 이용해서 /home 영역을 백업(Backup)하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># find /home | cpio (괄호) home.cpio
+</code></pre></div>    </div>
+    <ul>
+      <li>-icv &gt;</li>
+      <li>-icv &lt;</li>
+      <li>-ocv &gt;</li>
+      <li>-ocv &lt;</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 로그 파일명으로 가장 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DNS 서버 운영을 위해 관련 설정을 진행한 후 데몬을 실행하였으나 설정 오류가 있었는지 동작하지 않았다. 관련 오류 내용을 확인하려고 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>/var/log/messages</li>
+      <li>/var/log/xferlog</li>
+      <li>/var/log/boot.log</li>
+      <li>/var/log/secure</li>
+    </ul>
+  </li>
+  <li>다음은 로그 로테이션 설정 파일의 일부이다. 관련 설명으로 틀린 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>weekly / dateext / rotate 4 / /var/log/wtmp { monthly, create 0644 root utmp, minisize 1M, rotate 1 }
+</code></pre></div>    </div>
+    <ul>
+      <li>일반적인 로그 파일들은 1주일 단위로 로테이션이 진행된다.</li>
+      <li>일반적인 로테이션 파일들은 ‘파일명.1’, ‘파일명.2’ 등의 형식으로 총 4개가 생성된다.</li>
+      <li>/var/log/wtmp 파일의 로테이션 파일은 1개만 생성된다.</li>
+      <li>/var/log/wtmp 파일 크기가 1MB가 되면 지정된 기간 이전이라도 로테이션이 진행된다.</li>
+    </ul>
+  </li>
+  <li>다음 중 로그 설정 파일에서 가장 심각한 수준에 해당하는 priority로 알맞은 것은?
+    <ul>
+      <li>error</li>
+      <li>emerg</li>
+      <li>crit</li>
+      <li>alert</li>
+    </ul>
+  </li>
+  <li>다음 중 외부에서 오는 ping에 대한 응답을 거부하도록 설정하는 명령으로 알맞은 것은?
+    <ul>
+      <li>sysctl -w net.ipv4.icmp_echo_ignore_all=0</li>
+      <li>sysctl -w net.ipv4.icmp_echo_ignore_all=1</li>
+      <li>sysctl -n net.ipv4.icmp_echo_ignore_all=0</li>
+      <li>sysctl -n net.ipv4.icmp_echo_ignore_all=1</li>
+    </ul>
+  </li>
+  <li>다음 중 System V 계열에 속하는 프린터 명령어로 틀린 것은?
+    <ul>
+      <li>lp</li>
+      <li>lpr</li>
+      <li>lpstat</li>
+      <li>cancel</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 용어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>리눅스에 사용되는 사운드 카드 드라이버를 위한 API이면서 소프트웨어 프레임워크이다.
+</code></pre></div>    </div>
+    <ul>
+      <li>IPP</li>
+      <li>ALSA</li>
+      <li>CUPS</li>
+      <li>XSANE</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>커널 모듈간의 의존성을 관리하는 명령어로 모듈 관련 파일의 정보를 갱신하거나 맵 파일들을 새롭게 생성한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>depmod</li>
+      <li>insmod</li>
+      <li>rmmod</li>
+      <li>modprobe</li>
+    </ul>
+  </li>
+  <li>다음 중 CentOS 7에서 사용되는 리눅스 커널의 모듈 파일 형식으로 알맞은 것은?
+    <ul>
+      <li>e1000e.o</li>
+      <li>e1000e.so</li>
+      <li>e1000e.ko</li>
+      <li>e1000e.mo</li>
+    </ul>
+  </li>
+  <li>다음 중 LVM을 구성하는 순서에 대한 설명으로 알맞은 것은?
+    <ul>
+      <li>볼륨 그룹을 구성한 후에 물리적 볼륨, 논리적 볼륨 순으로 구성한다.</li>
+      <li>볼륨 그룹을 구성한 후에 논리적 볼륨, 물리적 볼륨 순으로 구성한다.</li>
+      <li>물리적 볼륨, 논리적 볼륨을 생성한 후에 볼륨 그룹을 구성한다.</li>
+      <li>물리적 볼륨을 생성한 후에 볼륨 그룹을 구성하고 논리적 볼륨을 생성한다.</li>
+    </ul>
+  </li>
+  <li>다음은 RAID 장치를 테스트하기 위해 일부 장치를 강제적으로 오류를 발생시키는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># mdadm /dev/md1 (괄호) /dev/sdb1
+</code></pre></div>    </div>
+    <ul>
+      <li>-d</li>
+      <li>-D</li>
+      <li>-f</li>
+      <li>-F</li>
+    </ul>
+  </li>
+  <li>커널 컴파일 과정 중 make menuconfig 명령을 이용해서 설정을 저장하였다. 다음 중 관련 작업 후 커널 소스 디렉터리에 생성되는 파일명으로 알맞은 것은?
+    <ul>
+      <li>Makefile</li>
+      <li>.config</li>
+      <li>Kconfig</li>
+      <li>configure</li>
+    </ul>
+  </li>
+  <li>다음 중 커널 컴파일의 순서로 알맞은 것은?
+    <ul>
+      <li>make menuconfig → make mrproper → make bzImage</li>
+      <li>make menuconfig → make bzImage → make mrproper</li>
+      <li>make mrproper → make menuconfig → make bzImage</li>
+      <li>make bzImage → make menuconfig → make mrproper</li>
+    </ul>
+  </li>
+  <li>다음 중 리눅스 커널이 속해 있는 커널의 종류로 가장 알맞은 것은?
+    <ul>
+      <li>단일형 커널(monolithic kernel)</li>
+      <li>마이크로커널(microkernel)</li>
+      <li>혼합형 커널(hybrid kernel)</li>
+      <li>나노커널(nanokernel)</li>
+    </ul>
+  </li>
+  <li>다음은 약 20GB 용량의 논리적 볼륨을 생성하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># lvcreate (괄호) -n backup lvm0
+</code></pre></div>    </div>
+    <ul>
+      <li>-s 20G</li>
+      <li>-S 20G</li>
+      <li>-l 20G</li>
+      <li>-L 20G</li>
+    </ul>
+  </li>
+  <li>다음 설명에 가장 적합한 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>사용자 ihduser가 2개월 휴가를 내어 복귀할 때까지 시스템 접근을 막고자 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>passwd -r ihduser</li>
+      <li>passwd -l ihduser</li>
+      <li>passwd -d ihduser</li>
+      <li>passwd -u ihduser</li>
+    </ul>
+  </li>
+  <li>갑작스러운 시스템 점검으로 인해서 시스템에 로그인한 사용자 모두에게 긴급하게 메시지를 전달하려고 한다. 다음 (괄호) 안에 들어갈 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># (괄호) "시스템 점검으로 5분 뒤에 종료됩니다."
+</code></pre></div>    </div>
+    <ul>
+      <li>mesg</li>
+      <li>wall</li>
+      <li>write</li>
+      <li>mail</li>
+    </ul>
+  </li>
+  <li>사용자에 대한 디스크 쿼터를 설정하려고 한다. 다음 중 /etc/fstab 파일에 설정해야 할 옵션값으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(문제 오류로 가답안 발표 시 2번, 확정답안 발표 시 1, 2번 정답 처리)
+</code></pre></div>    </div>
+    <ul>
+      <li>quota</li>
+      <li>uquota</li>
+      <li>gquota</li>
+      <li>edquota</li>
+    </ul>
+  </li>
+  <li>다음 중 등록된 cron 관련 파일을 제거하는 명령으로 알맞은 것은?
+    <ul>
+      <li>crontab -e</li>
+      <li>crontab -d</li>
+      <li>crontab -l</li>
+      <li>crontab -r</li>
+    </ul>
+  </li>
+  <li>다음 중 특정 명령이나 작업을 예약된 시간에 실행할 때 사용하는 명령어로 알맞은 것은?
+    <ul>
+      <li>at</li>
+      <li>atq</li>
+      <li>atrm</li>
+      <li>atc</li>
+    </ul>
+  </li>
+  <li>다음은 httpd 프로세스를 모두 종료시키는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># (괄호) httpd
+</code></pre></div>    </div>
+    <ul>
+      <li>kill</li>
+      <li>pgrep</li>
+      <li>pkill</li>
+      <li>nohup</li>
+    </ul>
+  </li>
+  <li>다음 명령의 결과에 대한 설명으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc sum.c
+</code></pre></div>    </div>
+    <ul>
+      <li>‘a.out’이라는 실행 파일이 생성된다.</li>
+      <li>‘sum’이라는 실행 파일이 생성된다.</li>
+      <li>‘a.out’이라는 오브젝트 파일이 생성된다.</li>
+      <li>‘sum.o’이라는 오브젝트 파일이 생성된다.</li>
+    </ul>
+  </li>
+  <li>다음은 현재 디렉토리 안에 있는 backup 디렉토리를 bzip2 압축 명령을 이용해서 tar로 묶는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># tar (괄호) backup.tar.bz2 backup/
+</code></pre></div>    </div>
+    <ul>
+      <li>jxvf</li>
+      <li>Jxvf</li>
+      <li>jcvf</li>
+      <li>Jcvf</li>
+    </ul>
+  </li>
+  <li>다음 중 root 계정에 대한 보안을 강화하는 조치로 틀린 것은?
+    <ul>
+      <li>root 계정 이외에 UID가 0인 계정이 없도록 관리한다.</li>
+      <li>PAM을 이용해서 root 계정으로 접근하는 서비스를 제어한다.</li>
+      <li>일반 사용자들에게 sudo보다는 su 명령을 이용하도록 한다.</li>
+      <li>환경변수인 TMOUT를 이용해서 무의미하게 장시간 로그인되어 있는 것을 막는다.</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 파일명으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>일반 사용자들이 설정하는 패스워드의 최소 길이를 변경하려고 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>/etc/skel</li>
+      <li>/etc/passwd</li>
+      <li>/etc/login.defs</li>
+      <li>/etc/default/useradd</li>
+    </ul>
+  </li>
+  <li>명령의 결과가 다음과 같은 경우 관련 설명으로 틀린 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[kait@www ~]$ ls -ld /tmp
+drwxrwxrwx 24 root root 4096 Jan 12 20:59 /tmp
+[kait@www ~]$ ls -l /tmp
+-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 lin.txt
+-rw-r--r-- 1 kait kait 513 Jan 11 21:05 joon.txt
+</code></pre></div>    </div>
+    <ul>
+      <li>kait 사용자는 /tmp 디렉토리 안으로 들어갈 수 있다.</li>
+      <li>kait 사용자는 /tmp 디렉토리 안에 파일을 생성할 수 있다.</li>
+      <li>kait 사용자는 lin.txt 파일을 삭제할 수 있다.</li>
+      <li>kait 사용자는 joon.txt 파일을 수정할 수 없다.</li>
+    </ul>
+  </li>
+  <li>명령의 결과가 다음과 같은 경우에 실행되지 않는 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ihd@wwww]$ ls -l
+total 4
+-rw-rw-r-- 1 ihd ihd 1222 Jan 11 09:15 joon.txt
+drwxrwxr-x 1 ihd ihd 6 Jan 11 21:05 lin
+</code></pre></div>    </div>
+    <ul>
+      <li>ln joon.txt j</li>
+      <li>ln -s joon.txt j.txt</li>
+      <li>ln lin 11</li>
+      <li>ln -s lin 1</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 명령어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>특정 파일에 설정된 i-node 번호를 비롯하여
+Access Time, Modify Time, Change Time과 같은
+타임스탬프를 확인하려고 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>ls</li>
+      <li>touch</li>
+      <li>stat</li>
+      <li>file</li>
+    </ul>
+  </li>
+  <li>다음 중 프로세스 우선순위와 관련된 설명으로 틀린 것은?
+    <ul>
+      <li>프로세스 우선순위와 관련된 항목에는 PRI와 NI가 있다.</li>
+      <li>명령어를 이용해서 우선순위를 조정할 때 사용하는 항목이 NI이다.</li>
+      <li>NI에 설정하는 값의 범위는 -19~20이다.</li>
+      <li>프로세스 우선순위를 변경하는 명령어에는 nice, renice, top이 있다.</li>
+    </ul>
+  </li>
+  <li>월, 수, 금요일 오후 4시 30분에 백업 스크립트가 동작하도록 cron을 설정하는 과정이다. 다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vi /etc/crontab
+(괄호) /etc/backup.sh
+</code></pre></div>    </div>
+    <ul>
+      <li>4 30 * * 1,3,5</li>
+      <li>30 4 * * 1,3,5</li>
+      <li>16 30 * * 1,3,5</li>
+      <li>30 16 * * 1,3,5</li>
+    </ul>
+  </li>
+  <li>다음 중 레드햇 리눅스의 패키지 관리 기법으로 가장 거리가 먼 것은?
+    <ul>
+      <li>rpm</li>
+      <li>yum</li>
+      <li>dnf</li>
+      <li>pacman</li>
+    </ul>
+  </li>
+  <li>다음 중 yum 명령에서 bind라는 문자열이 들어 있는 패키지들을 찾는 명령으로 알맞은 것은?
+    <ul>
+      <li>yum search bind</li>
+      <li>yum info bind</li>
+      <li>yum list bind</li>
+      <li>yum seek bind</li>
+    </ul>
+  </li>
+  <li>다음은 ls 명령어가 의존하고 있는 공유 라이브러리 정보를 확인하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># (괄호) /usr/bin/ls
+</code></pre></div>    </div>
+    <ul>
+      <li>rpm</li>
+      <li>ldd</li>
+      <li>ldconfig</li>
+      <li>yum</li>
+    </ul>
+  </li>
+  <li>다음은 /etc/passwd 파일 내용에서 필드 구분을 ‘:’으로 지정하고, 첫 번째 필드값과 세 번째 필드값을 추출해서 출력하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># (괄호) -f 1,3 -d: /etc/passwd
+</code></pre></div>    </div>
+    <ul>
+      <li>tr</li>
+      <li>cut</li>
+      <li>awk</li>
+      <li>sed</li>
+    </ul>
+  </li>
+  <li>다음 중 CentOS 7 버전 리눅스에서 그룹 패스워드에 적용되는 해시 알고리즘으로 알맞은 것은?
+    <ul>
+      <li>DES</li>
+      <li>MD5</li>
+      <li>SHA-256</li>
+      <li>SHA-512</li>
+    </ul>
+  </li>
+  <li>iptables 명령을 이용해서 직접 방화벽 규칙(rule)을 설정하려고 한다. 다음 중 동적 방화벽인 firewalld의 동작을 중지시키는 명령으로 알맞은 것은?
+    <ul>
+      <li>systemctl firewall-cmd stop</li>
+      <li>systemctl stop firewall-cmd</li>
+      <li>systemctl firewalld stop</li>
+      <li>systemctl stop firewalld</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 DoS 공격으로 가장 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>웹 서버 프로세스가 중단되어서 서버를 점검하던 중 /tmp 디렉토리에 파일의 크기가 0인 빈 파일들이 매우 많이 생성된 것을 발견하였다. 추가호 해커가 만든 것으로 보이는 스크립트 안에는 touch 명령어를 이용해서 무수히 많은 빈 파일을 생성하도록 소스코드가 작성되어 있었다.
+</code></pre></div>    </div>
+    <ul>
+      <li>Teardrop Attack</li>
+      <li>Land Attack</li>
+      <li>Smurf Attack</li>
+      <li>Death Attack</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 iptables 관련 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>기본 테이블인 filter 테이블의 INPUT 사슬에서 2번째 규칙을 삭제하려고 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>iptables -F INPUT 2</li>
+      <li>iptables -F INPUT –line-number 2</li>
+      <li>iptables -D INPUT 2</li>
+      <li>iptables -D INPUT –line-number 2</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 DoS(Denial of Service) 공격으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>데이터를 전송하기 위해서는 패킷을 분할하고 시퀀스 넘버를 생성하는데, 이러한 시퀀스 넘버를 조작하거나 중첩시켜서 패킷화된 데이터를 재조합할 때 혼란을 일으켜 내부에 과부하를 발생시키는 공격 방법이다.
+</code></pre></div>    </div>
+    <ul>
+      <li>Teardrop Attack</li>
+      <li>Land Attack</li>
+      <li>Smurf Attack</li>
+      <li>Death Attack</li>
+    </ul>
+  </li>
+  <li>다음 중 iptables의 nat 테이블에 존재하는 사슬명으로 틀린 것은?
+    <ul>
+      <li>INPUT</li>
+      <li>OUTPUT</li>
+      <li>FORWARD</li>
+      <li>PREROUTING</li>
+    </ul>
+  </li>
+  <li>다음 중 웹 클라이언트가 접근이 금지된 페이지를 요청했을 때 웹 서버에 기록되는 상태 코드 번호로 알맞은 것은?
+    <ul>
+      <li>200</li>
+      <li>400</li>
+      <li>403</li>
+      <li>404</li>
+    </ul>
+  </li>
+  <li>다음 중 아파치 웹 서버 주 환경 설정 파일에서 웹 서버의 도메인명이나 IP 주소를 기입하는 항목으로 알맞은 것은?
+    <ul>
+      <li>ServerAdmin</li>
+      <li>ServerName</li>
+      <li>DirectoryIndex</li>
+      <li>ServerRoot</li>
+    </ul>
+  </li>
+  <li>다음 (괄호) 안에 들어갈 명령어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># (괄호) hosts.byname
+</code></pre></div>    </div>
+    <ul>
+      <li>ypbind</li>
+      <li>ypwhich</li>
+      <li>ypcat</li>
+      <li>nisdomainname</li>
+    </ul>
+  </li>
+  <li>CentOS 7에서 NIS 서버를 사용하기 위해서는 systemctl 명령을 이용해서 RPC 관련 데몬을 먼저 실행해야 한다. 다음 중 관련 데몬을 실행하는 명령으로 알맞은 것은?
+    <ul>
+      <li>rpcbind</li>
+      <li>ypserv</li>
+      <li>ypbind</li>
+      <li>portmap</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 프로그램으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RFB(Remote Frame Buffer) 프로토콜을 이용하여 원격의 다른 컴퓨터에서 그래픽 환경 기반으로 데스크톱을 공유할 수 있는 시스템이다.
+</code></pre></div>    </div>
+    <ul>
+      <li>가용 디스크 고갈</li>
+      <li>가용 I-node 고갈</li>
+      <li>가용 메모리 자원 고갈</li>
+      <li>가용 프로세스 자원 고갈</li>
+    </ul>
+  </li>
+  <li>다음 중 DHCP 서버 환경 설정 파일에서 클라이언트에게 할당할 IP 주소 대역을 기입하는 항목으로 알맞은 것은?
+    <ul>
+      <li>range</li>
+      <li>fixed-address</li>
+      <li>option routers</li>
+      <li>option broadcast-address</li>
+    </ul>
+  </li>
+  <li>다음 중 가상 머신을 사용하기 위해서 실행시켜야 하는 데몬명으로 알맞은 것은?
+    <ul>
+      <li>libvirt</li>
+      <li>libvirtd</li>
+      <li>virt-manager</li>
+      <li>virt-top</li>
+    </ul>
+  </li>
+  <li>다음 중 가상화 방식이 나머지 셋과 다른 것은?
+    <ul>
+      <li>Docker</li>
+      <li>VMware Workstation</li>
+      <li>VirtualBox</li>
+      <li>Hyper-V</li>
+    </ul>
+  </li>
+  <li>다음 중 IPv6 기반 주소를 기입할 때 사용하는 Zone 파일의 레코드 타입으로 알맞은 것은?
+    <ul>
+      <li>A</li>
+      <li>AA</li>
+      <li>AAAA</li>
+      <li>NS</li>
+    </ul>
+  </li>
+  <li>다음 중 DNS 서버 프로그램인 bind를 배포하고 관리하는 기관명으로 알맞은 것은?
+    <ul>
+      <li>ISO</li>
+      <li>ISC</li>
+      <li>W3C</li>
+      <li>IEEE</li>
+    </ul>
+  </li>
+  <li>다음 중 /etc/aliases 파일 설정 후에 변경된 내용을 적용시킬 때 사용하는 명령어로 알맞은 것은?
+    <ul>
+      <li>makemap</li>
+      <li>mailq</li>
+      <li>newaliases</li>
+      <li>m4</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 메일 관련 프로그램으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>일종의 대리인 역할을 수행하는 프로그램으로 메일 박스에 도착한 메일을 대행해서 가져오거나 전달한다. 특히 스팸 메일을 필터링하거나 메일 정렬 등의 역할을 수행한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>postfix</li>
+      <li>qmail</li>
+      <li>procmail</li>
+      <li>evolution</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 설정값으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vsftpd 서버에 접속하는 익명 계정의 사용을 허가하려고 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>local_enable=NO</li>
+      <li>local_enable=YES</li>
+      <li>anonymous_enable=NO</li>
+      <li>anonymous_enable=YES</li>
+    </ul>
+  </li>
+  <li>다음 그림에 해당하는 명령어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@www ~]# rpcinfo -p
+   program     vers proto   port  service
+ 100000    4   tcp    111  portmapper
+ 100000    3   tcp    111  portmapper
+ 100000    2   tcp    111  portmapper
+ 100000    4   udp    111  portmapper
+ 100000    3   udp    111  portmapper
+ 100000    2   udp    111  portmapper
+ 100024    1   udp  44921  status
+ 100024    1   tcp  36930  status
+ 100005    1   udp  20048  mountd
+ 100005    1   tcp  20048  mountd
+ 100005    2   udp  20048  mountd
+ 100005    2   tcp  20048  mountd
+ 100005    3   udp  20048  mountd
+ 100005    3   tcp  20048  mountd
+ 100003    3   tcp   2049  nfs
+</code></pre></div>    </div>
+    <ul>
+      <li>rpcbind</li>
+      <li>rpcinfo</li>
+      <li>portmap</li>
+      <li>exportfs</li>
+    </ul>
+  </li>
+  <li>다음은 NTP 서버의 환경 설정 파일에서 기준이 되는 NTP 서버를 지정하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vi /etc/ntp.conf
+(괄호) 0.asia.pool.ntp.org
+</code></pre></div>    </div>
+    <ul>
+      <li>date</li>
+      <li>rdate</li>
+      <li>server</li>
+      <li>ntpdate</li>
+    </ul>
+  </li>
+  <li>다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>네트워크 속도가 느린 환경에서 좀 더 빠른 인터넷 사용이나 접근 제어가 필요한 경우에 (괄호1)서버를 구축하면 된다. 리눅스에서는 보통 (괄호2) 프로그램을 설치해서 구성한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>SQUID, PROXY</li>
+      <li>PROXY, SQUID</li>
+      <li>DHCP, SQUID</li>
+      <li>DHCP, PROXY</li>
+    </ul>
+  </li>
+  <li>다음 중 CentOS 7에서 TCP Wrapper를 이용해서 접근 제어가 가능한 서비스로 알맞은 것은?
+    <ul>
+      <li>ssh</li>
+      <li>samba</li>
+      <li>telnet</li>
+      <li>gdm</li>
+    </ul>
+  </li>
+  <li>다음 설명의 경우에 선택해야 하는 가상화 기술로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> CPU 반가상화 기술을 통해 가상 머신의 성능을 기존의 물리적 시스템에 회대한 가까운 성능을 발휘하게 구축하려고 한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>KVM</li>
+      <li>Xen</li>
+      <li>Ansible</li>
+      <li>Docker</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 용어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>사용자의 요구사항에 맞게 할당, 배치, 배포할 수 있도록 만들어 높은 것을 의미한다. 가상화 기반의 자원 할당을 개별 물리적 단위보다도 더 세밀한 조각 단위로 가능하게 해둔다.
+</code></pre></div>    </div>
+    <ul>
+      <li>Insulation</li>
+      <li>Provisioning</li>
+      <li>Emulation</li>
+      <li>Aggregation</li>
+    </ul>
+  </li>
+  <li>다음은 Zone 파일의 설정 내용 중 일부이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www A 10.0.2.15
+www1 (괄호) www
+www2 (괄호) www
+</code></pre></div>    </div>
+    <ul>
+      <li>MX</li>
+      <li>NS</li>
+      <li>CNAME</li>
+      <li>PTR</li>
+    </ul>
+  </li>
+  <li>다음은 DNS 서버의 환경 설정 파일 중에 일부로, IP 주소가 10.0.2.15이고 도메인이 ihd.or.kr인 시스템에 역(Reverse) 존 파일을 설정하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "(괄호)" IN {
+  type master;
+  file "ihd.or.kr";
+};
+</code></pre></div>    </div>
+    <ul>
+      <li>10.0.2.15</li>
+      <li>15.2.0.10</li>
+      <li>10.0.2.in-addr.arpa</li>
+      <li>2.0.10.in-addr.arpa</li>
+    </ul>
+  </li>
+  <li>다음 (괄호) 안에 들어갈 메일 관련 파일로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vi (괄호)
+ceo@linux.com lhd
+ceo@www.linux.com kait
+</code></pre></div>    </div>
+    <ul>
+      <li>/etc/mail/access</li>
+      <li>/etc/mail/local-host-names</li>
+      <li>/etc/aliases</li>
+      <li>/etc/mail/virtusertable</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 메일 관련 파일로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>메일 서버에 사용하는 도메인을 설정하는 파일로 한 줄에 도메인 하나씩 기입한다.
+</code></pre></div>    </div>
+    <ul>
+      <li>/etc/mail/access</li>
+      <li>/etc/mail/local-host-names</li>
+      <li>/etc/aliases</li>
+      <li>/etc/mail/virtusertable</li>
+    </ul>
+  </li>
+  <li>다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>서버에 도착한 메일을 클라이언트에서 확인할 때 사용하는 (괄호1) 프로토콜의 포트 번호는 (괄호2)이다.
+</code></pre></div>    </div>
+    <ul>
+      <li>(괄호1) SMTP, (괄호2) 25</li>
+      <li>(괄호1) POP3, (괄호2) 110</li>
+      <li>(괄호1) IMAP, (괄호2) 143</li>
+      <li>(괄호1) SMTP, (괄호2) 587</li>
+    </ul>
+  </li>
+  <li>다음은 삼바 서버에 접근할 수 있는 특정 호스트를 지정하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+```
+(괄호) = 127.192.168.5 192.168.12
+    <ul>
+      <li>path</li>
+      <li>workgroup</li>
+      <li>security</li>
+      <li>hosts allow</li>
+    </ul>
+  </li>
+  <li>다음 설명에 해당하는 NFS 서버 설정 옵션으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root를 포함해서 모든 사용자의 권한을 nfsnobody (또는 nobody) 권한으로 매핑시킨다.
+</code></pre></div>    </div>
+    <ul>
+      <li>all_squash</li>
+      <li>no_all_squash</li>
+      <li>root_squash</li>
+      <li>no_root_squash</li>
+    </ul>
+  </li>
+  <li>다음 중 NIS 서버에서 맵 파일이 생성되는 기본 디렉토리로 알맞은 것은?
+    <ul>
+      <li>/etc/yp</li>
+      <li>/var/yp</li>
+      <li>/etc/ypserv</li>
+      <li>/var/ypserv</li>
+    </ul>
+  </li>
+  <li>다음 중 이름과 성의 조합을 나타내는 LDAP 속성 키워드로 알맞은 것은?
+    <ul>
+      <li>cn</li>
+      <li>sn</li>
+      <li>givenName</li>
+      <li>dc</li>
+    </ul>
+  </li>
+  <li>다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LDAP는 이름,주소와 같이 하나 이상의 속성을 가진 객체로 구성되고 그 객체를 (괄호1) 이라고 부른다. (괄호1)은 DIT(Directory Information Tree)라고 부르는 트리 구조에 의해 조직화 되고, 이 조직 내에서 고유한 식별자인 (괄호2)를 가진다.
+</code></pre></div>    </div>
+    <ul>
+      <li>레코드, CN</li>
+      <li>레코드, DN</li>
+      <li>엔트리, CN</li>
+      <li>엔트리, DN</li>
+    </ul>
+  </li>
+  <li>다음은 PHP 소스 설치 후에 관련 함수로 테스트하는 프로그램을 작성하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vi test.php
+&lt;?php
+(괄호)
+?&gt;
+</code></pre></div>    </div>
+    <ul>
+      <li>test();</li>
+      <li>testinfo();</li>
+      <li>testphp();</li>
+      <li>phpinfo();</li>
+    </ul>
+  </li>
+  <li>다음은 아파치 웹 서버를 소스 설치하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ./configure (괄호)=/usr/local/apache --enable-so --enable-mods-shared=all
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<ul>
+  <li>–ServerDirectory</li>
+  <li>–prefix</li>
+  <li>–Directory</li>
+  <li>–DocumentRoot</li>
+</ul>
+
+<ol>
+  <li>다음 설명에 해당하는 용어로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>프로세스들이 CPU, 메모리, 디스크 입출력, 네트워크 등과 같은 자원을 사용할 때 제한하고 격리하는 리눅스 커널 기능이다. 2006년 구글의 엔지니어들이 관련 연구를 시장했고, 2008년 1월에 출시된 커널 버전 2.6.24의 메인 라인에 병합되었다.
+</code></pre></div>    </div>
+    <ul>
+      <li>IPC</li>
+      <li>D-bus</li>
+      <li>cgroups</li>
+      <li>LXC</li>
+    </ul>
+  </li>
+  <li>다음은 DNS 서버의 환경 설정 파일 중에 일부이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(괄호) "member" {210.96.52.100; 192.168.5/24;};
+</code></pre></div>    </div>
+    <ul>
+      <li>acl</li>
+      <li>zone</li>
+      <li>allow-transfer</li>
+      <li>forwarders</li>
+    </ul>
+  </li>
+  <li>다음은 리눅스 시스템에서 IP 주소가 192.168.5.13인 윈도우 시스템에 공유된 디렉터리를 마운트하는 과정이다. (괄호) 안에 들어갈 삼바 관련 명령으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># (괄호) //192.168.5.13/photo /mnt
+</code></pre></div>    </div>
+    <ul>
+      <li>smbmount</li>
+      <li>mount.cifs</li>
+      <li>smbstatus</li>
+      <li>smbclient</li>
+    </ul>
+  </li>
+  <li>다음은 소스 파일을 이용해서 설치한 MySQL 5.7 버전을 설치한 이후에 기본 관리 데이터베이스인 mysql 등을 생성하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># cd /usr/local/mysql/bin
+# (괄호) --initialize --user=root
+</code></pre></div>    </div>
+    <ul>
+      <li>./mysql</li>
+      <li>./mysqld</li>
+      <li>./mysqladmin</li>
+      <li>./mysql_install_db</li>
+    </ul>
+  </li>
+</ol>
