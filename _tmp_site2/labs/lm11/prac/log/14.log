@@ -1,5 +1,0 @@
-cherry@rhombus:~$ tar -cvf backup.tar tmp
-tmp/
-tmp/file2.txt
-tmp/file.txt
-tmp/file1.txt

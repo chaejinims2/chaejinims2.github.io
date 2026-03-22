@@ -1,11 +1,7 @@
 ---
 layout: page
 ---
-{% comment %}
-  예문 번역 카드 모음: 예문 → 번역 학습에 초점
-  meaning이 있는 예문만 표시, 한 번에 모두 표시
-{% endcomment %}
-{% assign words = site.data[page.data].words %}
+{% assign words = site.data[page.dataset][page.data] %}
 {% assign max_day = 0 %}
 {% for w in words %}{% if w.day_no > max_day %}{% assign max_day = w.day_no %}{% endif %}{% endfor %}
 

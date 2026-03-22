@@ -1,6 +1,0 @@
-cherry@rhombus:~$ sudo fdisk -l
-sudo: /etc/sudo.conf is owned by uid 65534, should be 0
-sudo: /etc/sudo.conf is owned by uid 65534, should be 0
-sudo: error in /etc/sudo.conf, line 0 while loading plugin "sudoers_policy"
-sudo: /usr/libexec/sudo/sudoers.so must be owned by uid 0
-sudo: fatal error, unable to load plugins
