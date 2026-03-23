@@ -1,0 +1,2 @@
+# admin/config.yml 재생성 스크립트용 (선택)
+PyYAML>=6.0
