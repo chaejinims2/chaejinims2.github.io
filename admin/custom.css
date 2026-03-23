@@ -4,6 +4,11 @@
  *
  * 로컬: ./local_admin.sh → http://localhost:4010/admin/preview.html
  */
+html {
+  color-scheme: dark;
+  background-color: var(--bg-0) !important;
+  color: var(--text-75) !important;
+}
 
 /* 뼈대 배경·글자색 */
 body,
