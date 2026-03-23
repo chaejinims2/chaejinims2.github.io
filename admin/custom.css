@@ -76,7 +76,7 @@ select,
 [contenteditable="true"],
 [class*="input"],
 [class*="Input"] {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
   border-color: var(--app-border) !important;
   color: var(--text-75) !important;
 }
@@ -90,7 +90,7 @@ select:focus,
 }
 
 select option {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
   color: var(--text-75) !important;
 }
 
@@ -103,7 +103,7 @@ textarea::placeholder {
 input[type="datetime-local"],
 input[type="date"],
 input[type="time"] {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
   border-color: var(--app-border) !important;
   color: var(--text-75) !important;
 }
@@ -114,16 +114,61 @@ input[type="time"] {
  */
 html body [class*="DateTimeControl"],
 html body [class*="ControlContainer"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/*
+ * react-select (Section 등 select 위젯)
+ * 부모에 aria-label="select field" — 해시만 다른 클래스는 *Control*, *singleValue* 등으로 매칭
+ */
+html body [aria-label="select field"] [class*="ControlContainer"],
+html body [aria-label="select field"] [class*="control"],
+html body [aria-label="select field"] [class*="ValueContainer"],
+html body [aria-label="select field"] [class*="singleValue"] {
   background-color: var(--bg-2) !important;
   border-color: var(--app-border) !important;
   color: var(--text-75) !important;
+}
+
+html body [aria-label="select field"] [class*="indicatorContainer"],
+html body [aria-label="select field"] [class*="IndicatorsContainer"],
+html body [aria-label="select field"] [class*="indicatorSeparator"] {
+  background-color: transparent !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+html body [aria-label="select field"] [class*="indicatorContainer"] svg {
+  background: transparent !important;
+}
+
+/* 드롭다운이 포털로 body에 붙는 경우 (열었을 때) */
+[class*="MenuList"],
+[class*="menuList"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+[class*="MenuList"] [class*="option"],
+[class*="menuList"] [class*="option"] {
+  background-color: var(--bg-1) !important;
+  color: var(--text-75) !important;
+}
+
+[class*="MenuList"] [class*="option"]:hover,
+[class*="MenuList"] [class*="option"][class*="focused"],
+[class*="menuList"] [class*="option"]:hover {
+  background-color: var(--bg-2) !important;
 }
 
 /* 버튼 */
 button,
 [class*="Button"],
 [role="button"] {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
   border-color: var(--app-border) !important;
   color: var(--text-75) !important;
 }
@@ -167,14 +212,14 @@ tr {
 
 [class*="List"] [class*="item"]:hover,
 tr:hover {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
 }
 
 /* CodeMirror */
 .CodeMirror,
 [class*="CodeMirror"],
 [class*="markdown"] {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
   color: var(--text-75) !important;
 }
 
@@ -194,7 +239,7 @@ tr:hover {
 [class*="Toolbar"] button,
 [class*="toolbar"] button,
 [class*="EditorToolbar"] button {
-  background-color: var(--bg-2) !important;
+  background-color: var(--bg-1) !important;
   border-color: var(--app-border) !important;
   color: var(--text-75) !important;
 }
