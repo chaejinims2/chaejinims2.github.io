@@ -3,11 +3,13 @@
  * 레이아웃·폰트·둥근 모서리·여백 등은 Decap 기본에 맡김.
  *
  * 로컬: ./local_admin.sh → http://localhost:4010/admin/preview.html
+ *
+ * Emotion(CSS-in-JS)이 클래스당 스타일을 나중에 주입해, 단순 input 한 줄보다
+ * 위젯 래퍼([class*="…Control"])를 따로 잡아야 할 때가 있음. 컴포넌트 이름은
+ * 클래스에 남고(예: DateTimeControl), 해시만 바뀜 → [class*="DateTimeControl"]
  */
 html {
   color-scheme: dark;
-  background-color: var(--bg-0) !important;
-  color: var(--text-75) !important;
 }
 
 /* 뼈대 배경·글자색 */
@@ -95,6 +97,26 @@ select option {
 input::placeholder,
 textarea::placeholder {
   color: var(--muted) !important;
+}
+
+/* datetime-local 등 — 위젯 안 input */
+input[type="datetime-local"],
+input[type="date"],
+input[type="time"] {
+  background-color: var(--bg-2) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/*
+ * decap-ui 위젯 루트 — 클래스에 컴포넌트명이 붙음(css-xxxxx-DateTimeControl)
+ * html body 로 특이도↑ (Emotion 단일 클래스보다 우선)
+ */
+html body [class*="DateTimeControl"],
+html body [class*="ControlContainer"] {
+  background-color: var(--bg-2) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
 }
 
 /* 버튼 */
@@ -211,4 +233,10 @@ a:hover {
 [class*="Resizer"],
 [class*="resizer"] {
   background-color: var(--app-border) !important;
+}
+
+/* SVG 아이콘 — 요소 배경 투명 (부모/래퍼 배경이 보이도록) */
+svg {
+  background-color: transparent !important;
+  background: transparent !important;
 }
