@@ -25,5 +25,10 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      /* 미리보기(#preview-pane iframe)는 별도 문서라 custom.css 가 들어가지 않음 */
+      CMS.registerPreviewStyle("/assets/css/tokens.css");
+      CMS.registerPreviewStyle("/assets/css/cms-preview.css");
+    </script>
   </body>
 </html>
