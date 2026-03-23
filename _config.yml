@@ -54,7 +54,7 @@ defaults:
       path: "techs/index.md"
       type: "pages"
     values:
-      layout: section_techs
+      layout: sections/techs
       permalink: /techs/
       title: Techs
   - scope:
@@ -89,7 +89,7 @@ defaults:
       path: "settings/index.md"
       type: "pages"
     values:
-      layout: section_settings
+      layout: sections/settings
       permalink: /settings/
       title: Settings
   - scope:

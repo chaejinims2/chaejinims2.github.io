@@ -16,4 +16,7 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/quiz.css" />
+  {% if page.layout == 'startup' %}
+  <link rel="stylesheet" href="{{ '/assets/css/startup.css' | relative_url }}" />
+  {% endif %}
 </head>

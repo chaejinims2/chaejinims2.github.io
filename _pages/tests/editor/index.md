@@ -1,5 +1,5 @@
 ---
-layout: page_editor
+layout: pages/editor
 permalink: /tests/editor/
 title: Voca JSON Editor
 dataset: cvoca

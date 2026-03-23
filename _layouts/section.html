@@ -3,24 +3,7 @@
   {% include header.html %}
 
 <body data-theme="dark" data-nav-group="{{ page.nav_group | default: '' }}">
-  <script>
-    (function () {
-      var pos = localStorage.getItem('sidebar-position');
-      if (localStorage.getItem('sidebar-compact') === '1') document.body.classList.add('sidebar-compact');
-      if (pos === 'top') document.body.classList.add('sidebar-top');
-      else if (pos === 'right' || pos === 'bottom') {
-        document.body.classList.add(pos === 'right' ? 'sidebar-right' : 'sidebar-bottom');
-        function reorderShell() {
-          var shell = document.querySelector('.app-shell');
-          var main = document.querySelector('.app-main');
-          var sidebar = document.querySelector('.app-sidebar');
-          if (shell && main && sidebar) { shell.insertBefore(main, sidebar); }
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reorderShell);
-        else reorderShell();
-      }
-    })();
-  </script>
+  <script src="{{ '/assets/js/core/section-early.js' | relative_url }}"></script>
   <div class="app-root">
     <div class="app-shell">
       {% include sidebar.html %}
@@ -30,19 +13,20 @@
             <div class="app-page-container">
               {% include utils/nav_path.html %}
               {% assign section_base_alt = "/" | append: section_key | append: "/" %}
-              {% assign group_pages_a = site.pages | where_exp: "item", "item.url contains page_group_base" | sort:
-              "url" %}
-              {% assign group_pages_b = site.pages | where_exp: "item", "item.url contains section_base_alt" | sort:
-              "url" %}
+              {% assign group_pages_a = site.pages
+                | where_exp: "item", "item.url contains page_group_base"
+                | sort: "url" %}
+              {% assign group_pages_b = site.pages
+                | where_exp: "item", "item.url contains section_base_alt"
+                | sort: "url" %}
               {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
 
-              {% if page.layout == 'section'%}
-              {% include utils/section_header.html %}
+              {% if page.layout == 'section' %}
+                {% include utils/section_header.html %}
               {% endif %}
               <div class="section-index-lead content-prose">
                 {{ content }}
               </div>
-
             </div>
           </div>
         </main>
