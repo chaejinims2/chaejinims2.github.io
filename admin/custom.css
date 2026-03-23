@@ -116,7 +116,7 @@ html body [class*="DateTimeControl"],
 html body [class*="ControlContainer"] {
   background-color: var(--bg-1) !important;
   border-color: var(--app-border) !important;
-  border: 1px solid var(--app-border) !important;
+  border: 0px !important;
   color: var(--text-75) !important;
 }
 
@@ -131,6 +131,26 @@ html body [aria-label="select field"] [class*="singleValue"] {
   background-color: var(--bg-1) !important;
   border-color: var(--app-border) !important;
   color: var(--text-75) !important;
+}
+
+/* react-select: wrapper 테두리 제거 + 실제 control만 1px */
+html body [aria-label="select field"] [class*="ControlContainer"] {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body [aria-label="select field"] [class*="control"] {
+  border: 1px solid var(--app-border) !important;
+  box-shadow: none !important;
+}
+
+html body [aria-label="select field"] [class*="control"]:hover {
+  border-color: var(--app-border) !important;
+}
+
+html body [aria-label="select field"] [class*="control"][class*="focused"] {
+  border-color: var(--accent) !important;
+  box-shadow: none !important;
 }
 
 html body [aria-label="select field"] [class*="indicatorContainer"],
@@ -245,6 +265,57 @@ tr:hover {
   color: var(--text-75) !important;
 }
 
+/*
+ * Markdown 위젯 본문 — Rich Text / Markdown(Raw) 모드 Slate 영역 통일
+ * 구조: .cms-editor-visual vs .cms-editor-raw + RawEditorContainer, 실제 입력은 [data-slate-editor]
+ */
+html body .cms-editor-visual [data-slate-editor="true"],
+html body .cms-editor-raw [data-slate-editor="true"] {
+  background-color: var(--bg-2) !important;
+  color: var(--text-75) !important;
+  border: 1px solid var(--app-border) !important;
+  border-radius: var(--radius-2);
+  padding: var(--space-5) var(--space-6) !important;
+  min-height: 14rem;
+  font-size: var(--fs-5);
+  line-height: 1.6;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+}
+
+html body .cms-editor-visual [data-slate-editor="true"]:focus,
+html body .cms-editor-raw [data-slate-editor="true"]:focus {
+  border-color: var(--accent) !important;
+  outline: none !important;
+}
+
+html body .cms-editor-visual [data-slate-editor="true"] p,
+html body .cms-editor-raw [data-slate-editor="true"] p {
+  margin: 0 0 0.5em !important;
+}
+
+html body .cms-editor-visual [data-slate-editor="true"] p:last-child,
+html body .cms-editor-raw [data-slate-editor="true"] p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 툴바 아이콘 하드코딩(#7A8291) → 테마 글자색 계열로 통일 */
+html body [class*="EditorControlBar"] svg path {
+  fill: currentColor !important;
+}
+
+html body [class*="EditorControlBar"] [class*="StyledToolbarButton"] {
+  color: var(--muted) !important;
+}
+
+html body [class*="EditorControlBar"] [class*="StyledToolbarButton"]:hover:not([disabled]) {
+  color: var(--text-75) !important;
+}
+
+html body [class*="EditorControlBar"] [class*="StyledToolbarButton"][disabled] {
+  opacity: 0.45 !important;
+}
+
 /* 프리뷰 패널 */
 [class*="Preview"],
 [class*="preview"] {
@@ -278,11 +349,12 @@ a:hover {
 /* 스플릿 리사이저 — 기본 width/height ~11px + 투명 border 로 두껍게 보임 */
 [class*="Resizer"],
 [class*="resizer"] {
-  background-color: var(--app-border) !important;
+  background-color: transparent !important;
 }
 
 /* 세로: 보이는 선 2px, 좌우 투명 border 로 잡기 영역 유지 (기본 11px 띠 완화) */
 html body [class*="Resizer"][class*="vertical"] {
+  color: var(--app-border) !important;
   width: 2px !important;
   min-width: 2px !important;
   margin: 0 -5px !important;
@@ -292,6 +364,7 @@ html body [class*="Resizer"][class*="vertical"] {
 }
 
 html body [class*="Resizer"][class*="horizontal"] {
+  color: var(--app-border) !important;
   height: 2px !important;
   min-height: 2px !important;
   margin: -5px 0 !important;
