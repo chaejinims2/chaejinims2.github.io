@@ -1,0 +1,461 @@
+/**
+ * Decap CMS — 사이트 테마 색만 맞춤 (tokens.css / data-theme="dark")
+ * 레이아웃·폰트·둥근 모서리·여백 등은 Decap 기본에 맡김.
+ *
+ * 로컬: ./local_admin.sh → http://localhost:4010/admin/preview.html
+ *
+ * Emotion(CSS-in-JS)이 클래스당 스타일을 나중에 주입해, 단순 input 한 줄보다
+ * 위젯 래퍼([class*="…Control"])를 따로 잡아야 할 때가 있음. 컴포넌트 이름은
+ * 클래스에 남고(예: DateTimeControl), 해시만 바뀜 → [class*="DateTimeControl"]
+ */
+html {
+  color-scheme: dark;
+}
+
+/* 뼈대 배경·글자색 */
+body,
+[class*="App"],
+[class*="app"],
+[data-reactroot] {
+  background-color: var(--bg-0) !important;
+  color: var(--text-75) !important;
+}
+
+/* 사이드바 */
+[class*="Sidebar"],
+[class*="sidebar"],
+aside {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+[class*="Sidebar"] a,
+[class*="sidebar"] a {
+  color: var(--text-75) !important;
+}
+
+[class*="Sidebar"] a:hover,
+[class*="sidebar"] a:hover {
+  background-color: var(--accent-bg-12) !important;
+  color: var(--app-nav-item-active-text, var(--text-inverse)) !important;
+}
+
+/* 패널·에디터 */
+[class*="Pane"],
+[class*="pane"],
+[class*="Card"],
+[class*="card"],
+[class*="MainView"],
+[class*="Editor"],
+main {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/* 라벨 — 라이트 테마 잔재(흰 배경)만 투명 + 글자색 */
+body label,
+body [class*="Label"],
+body [class*="FieldLabel"],
+body [class*="label"] {
+  background-color: transparent !important;
+  color: var(--text-85, var(--text-75)) !important;
+}
+
+body label::after,
+body [class*="Label"]::after,
+body [class*="FieldLabel"]::after,
+body [class*="label"]::after {
+  width: 0 !important;
+}
+
+body label span,
+body [class*="Label"] span {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* 입력·선택 (테두리 색만; 두께·radius는 기본) */
+input,
+textarea,
+select,
+[contenteditable="true"],
+[class*="input"],
+[class*="Input"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/* 텍스트형 input — react-select 컨테이너와 동일: 테두리 제거 + 알약형 radius */
+html body input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="image"]):not([type="hidden"]) {
+  border: 0 !important;
+  border-radius: 5rem !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+[contenteditable="true"]:focus {
+  border-color: var(--accent) !important;
+  outline-color: var(--accent) !important;
+}
+
+select option {
+  background-color: var(--bg-1) !important;
+  color: var(--text-75) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted) !important;
+}
+
+/* datetime-local 등 — 위젯 안 input */
+input[type="datetime-local"],
+input[type="date"],
+input[type="time"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/*
+ * decap-ui 위젯 루트 — 클래스에 컴포넌트명이 붙음(css-xxxxx-DateTimeControl)
+ * html body 로 특이도↑ (Emotion 단일 클래스보다 우선)
+ */
+html body [class*="DateTimeControl"],
+html body [class*="ControlContainer"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  border: 0px !important;
+  color: var(--text-75) !important;
+}
+
+/*
+ * react-select (Section 등 select 위젯)
+ * 부모에 aria-label="select field" — 해시만 다른 클래스는 *Control*, *singleValue* 등으로 매칭
+ */
+html body [aria-label="select field"] [class*="ControlContainer"],
+html body [aria-label="select field"] [class*="control"],
+html body [aria-label="select field"] [class*="ValueContainer"],
+html body [aria-label="select field"] [class*="singleValue"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/* 특정 react-select container 클래스 강제 */
+html body .css-a8jran-container {
+  border: 0 !important;
+  border-radius: 5rem !important;
+}
+
+/* react-select: wrapper 테두리 제거 + 실제 control만 1px */
+html body [aria-label="select field"] [class*="ControlContainer"] {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body [aria-label="select field"] [class*="control"] {
+  border: 1px solid var(--app-border) !important;
+  box-shadow: none !important;
+}
+
+html body [aria-label="select field"] [class*="control"]:hover {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+}
+
+html body [aria-label="select field"] [class*="control"][class*="focused"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--accent) !important;
+  box-shadow: none !important;
+}
+
+/* 전역 button/role=button hover(밝아지는 규칙)에서 select 내부 트리거 보호 */
+html body [aria-label="select field"] [role="button"]:hover,
+html body [aria-label="select field"] button:hover {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: var(--text-75) !important;
+}
+
+/* react-select 내부 입력 오버레이가 singleValue를 가리지 않도록 정리 */
+html body [aria-label="select field"] [class*="singleValue"] {
+  position: relative;
+  z-index: 1;
+}
+
+html body [aria-label="select field"] input[role="combobox"] {
+  opacity: 0 !important;
+  color: transparent !important;
+  caret-color: transparent !important;
+  text-shadow: none !important;
+}
+
+html body [aria-label="select field"] [class*="indicatorContainer"],
+html body [aria-label="select field"] [class*="IndicatorsContainer"],
+html body [aria-label="select field"] [class*="indicatorSeparator"] {
+  background-color: transparent !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+html body [aria-label="select field"] [class*="indicatorContainer"] svg {
+  background: transparent !important;
+}
+
+/* 드롭다운이 포털로 body에 붙는 경우 (열었을 때) */
+[class*="MenuList"],
+[class*="menuList"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+[class*="MenuList"] [class*="option"],
+[class*="menuList"] [class*="option"] {
+  background-color: var(--bg-1) !important;
+  color: var(--text-75) !important;
+}
+
+[class*="MenuList"] [class*="option"]:hover,
+[class*="MenuList"] [class*="option"][class*="focused"],
+[class*="menuList"] [class*="option"]:hover {
+  background-color: var(--bg-1) !important;
+}
+
+/* 버튼 */
+button,
+[class*="Button"],
+[role="button"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+button:hover,
+[class*="Button"]:hover:not([class*="primary"]) {
+  background-color: var(--accent-bg-12) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+[class*="primary"],
+button[class*="primary"] {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--text-inverse) !important;
+}
+
+[class*="primary"]:hover,
+button[class*="primary"]:hover {
+  background-color: var(--accent) !important;
+  opacity: 0.92;
+}
+
+/* 헤더·탭 */
+header,
+[class*="Header"],
+[class*="Nav"],
+[class*="Tab"] {
+  background-color: var(--app-topbar-bg, var(--bg-1)) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/* 목록 */
+[class*="List"] [class*="item"],
+[class*="list"] [class*="item"],
+tr {
+  border-color: var(--app-border) !important;
+}
+
+[class*="List"] [class*="item"]:hover,
+tr:hover {
+  background-color: var(--bg-1) !important;
+}
+
+/* CodeMirror */
+.CodeMirror,
+[class*="CodeMirror"],
+[class*="markdown"] {
+  background-color: var(--bg-1) !important;
+  color: var(--text-75) !important;
+}
+
+.CodeMirror-gutters {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* 툴바 영역 */
+[class*="Toolbar"],
+[class*="toolbar"],
+[class*="EditorToolbar"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+}
+
+[class*="Toolbar"] button,
+[class*="toolbar"] button,
+[class*="EditorToolbar"] button {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+/*
+ * Markdown 위젯 본문 — Rich Text / Markdown(Raw) 모드 Slate 영역 통일
+ * 구조: .cms-editor-visual vs .cms-editor-raw + RawEditorContainer, 실제 입력은 [data-slate-editor]
+ */
+html body .cms-editor-visual [data-slate-editor="true"],
+html body .cms-editor-raw [data-slate-editor="true"] {
+  background-color: var(--bg-2) !important;
+  color: var(--text-75) !important;
+  border: 1px solid var(--app-border) !important;
+  border-radius: var(--radius-2);
+  padding: var(--space-5) var(--space-6) !important;
+  min-height: 14rem;
+  font-size: var(--fs-5);
+  line-height: 1.6;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+}
+
+html body .cms-editor-visual [data-slate-editor="true"]:focus,
+html body .cms-editor-raw [data-slate-editor="true"]:focus {
+  border-color: var(--accent) !important;
+  outline: none !important;
+}
+
+html body .cms-editor-visual [data-slate-editor="true"] p,
+html body .cms-editor-raw [data-slate-editor="true"] p {
+  margin: 0 0 0.5em !important;
+}
+
+html body .cms-editor-visual [data-slate-editor="true"] p:last-child,
+html body .cms-editor-raw [data-slate-editor="true"] p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 툴바 아이콘 하드코딩(#7A8291) → 테마 글자색 계열로 통일 */
+html body [class*="EditorControlBar"] svg path {
+  fill: currentColor !important;
+}
+
+html body [class*="EditorControlBar"] [class*="StyledToolbarButton"] {
+  color: var(--muted) !important;
+}
+
+html body [class*="EditorControlBar"] [class*="StyledToolbarButton"]:hover:not([disabled]) {
+  color: var(--text-75) !important;
+}
+
+html body [class*="EditorControlBar"] [class*="StyledToolbarButton"][disabled] {
+  opacity: 0.45 !important;
+}
+
+/* 프리뷰 패널 */
+[class*="Preview"],
+[class*="preview"] {
+  background-color: var(--bg-1) !important;
+  color: var(--text-85, var(--text-75)) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* 드롭다운·메뉴 */
+[class*="Dropdown"],
+[class*="Menu"],
+[class*="menu"] {
+  background-color: var(--bg-1) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
+}
+
+[class*="hint"],
+[class*="description"],
+small {
+  color: var(--muted) !important;
+}
+
+a {
+  color: var(--accent) !important;
+}
+a:hover {
+  color: var(--accent) !important;
+}
+
+/* 스플릿 리사이저 — 기본 width/height ~11px + 투명 border 로 두껍게 보임 */
+[class*="Resizer"],
+[class*="resizer"] {
+  background-color: transparent !important;
+}
+
+/* 세로: 보이는 선 2px, 좌우 투명 border 로 잡기 영역 유지 (기본 11px 띠 완화) */
+html body [class*="Resizer"][class*="vertical"] {
+  color: var(--app-border) !important;
+  width: 2px !important;
+  min-width: 2px !important;
+  margin: 0 -5px !important;
+  border-left: 5px solid transparent !important;
+  border-right: 5px solid transparent !important;
+  box-sizing: content-box !important;
+}
+
+html body [class*="Resizer"][class*="horizontal"] {
+  color: var(--app-border) !important;
+  height: 2px !important;
+  min-height: 2px !important;
+  margin: -5px 0 !important;
+  border-top: 5px solid transparent !important;
+  border-bottom: 5px solid transparent !important;
+  box-sizing: content-box !important;
+}
+
+/* 스크롤바 — 트랙·화살표 영역 투명 (썸만 은은하게) */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-border) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--app-border);
+  border-radius: var(--radius-2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted);
+}
+
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-button:single-button,
+::-webkit-scrollbar-button:double-button {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* 아이콘 — SVG뿐 아니라 Emotion이 배경을 주는 래퍼(span)까지 투명 */
+html body svg,
+html body [class*="IconWrapper"],
+html body [class*="SvgIcon"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
