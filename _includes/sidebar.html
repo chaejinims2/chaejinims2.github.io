@@ -11,7 +11,7 @@
         {% assign current = page.url %}
         {% include utils/nav_path.html %}
         {% assign section_pages_sidebar = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'sidebar'" %}
-        {% assign section_pages_techs = site.pages | where: "layout", "section_techs" | where_exp: "item", "item.type == 'sidebar'" %}
+        {% assign section_pages_techs = site.pages | where: "layout", "sections/techs" | where_exp: "item", "item.type == 'sidebar'" %}
         {% assign section_pages = section_pages_sidebar | concat: section_pages_techs | uniq | sort: "url" %}
         {% if site.sidebar_order and site.sidebar_order.size > 0 %}
         {% for order_key in site.sidebar_order %}
@@ -81,7 +81,7 @@
     {% assign footer_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type ==
     'sidebar_footer'" | sort: "url" %}
     {% assign topbar_section = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'topbar'" %}
-    {% assign topbar_settings = site.pages | where: "layout", "section_settings" | where_exp: "item", "item.type == 'topbar'" %}
+    {% assign topbar_settings = site.pages | where: "layout", "sections/settings" | where_exp: "item", "item.type == 'topbar'" %}
     {% assign topbar_pages = topbar_section | concat: topbar_settings | uniq | sort: "url" %}
     {% assign all_footer_pages = footer_pages | concat: topbar_pages %}
     {% if all_footer_pages.size > 0 %}
