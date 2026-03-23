@@ -235,8 +235,10 @@ a:hover {
   background-color: var(--app-border) !important;
 }
 
-/* SVG 아이콘 — 요소 배경 투명 (부모/래퍼 배경이 보이도록) */
-svg {
+/* 아이콘 — SVG뿐 아니라 Emotion이 배경을 주는 래퍼(span)까지 투명 */
+html body svg,
+html body [class*="IconWrapper"],
+html body [class*="SvgIcon"] {
   background-color: transparent !important;
   background: transparent !important;
 }
