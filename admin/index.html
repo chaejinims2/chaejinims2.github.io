@@ -2,6 +2,20 @@
 <html lang="ko" data-theme="dark">
   <head>
     <meta charset="utf-8" />
+    <!-- GitHub Pages → Netlify CMS (같은 repo를 Netlify에도 쓸 때만 안전) -->
+    <script>
+      (function () {
+        var h = location.hostname;
+        if (h === "chaejinims2.github.io" || h === "www.chaejinims2.github.io") {
+          location.replace(
+            "https://fanciful-seahorse-b12a97.netlify.app" +
+              location.pathname +
+              location.search +
+              location.hash
+          );
+        }
+      })();
+    </script>
     <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Content Manager</title>
