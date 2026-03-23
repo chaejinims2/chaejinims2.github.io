@@ -1,40 +1,20 @@
 /**
- * Decap CMS — 사이트 토큰(tokens.css, data-theme="dark")과 통일
+ * Decap CMS — 사이트 테마 색만 맞춤 (tokens.css / data-theme="dark")
+ * 레이아웃·폰트·둥근 모서리·여백 등은 Decap 기본에 맡김.
  *
- * 매핑: --bg-0 배경, --bg-1 패널, --bg-2 입력, --app-border, --text-75/--text-85,
- *       --muted, --accent
+ * 로컬: ./local_admin.sh → http://localhost:4010/admin/preview.html
  */
 
-/* -------------------------------------------------------------------------
-   CMS 전용 변수 (admin 페이지 body 한정으로 로드됨)
-   ------------------------------------------------------------------------- */
-body {
-  --cms-field-gap: var(--space-6, 1rem);
-  --cms-label-fg: var(--text-85, var(--text-75));
-  --cms-preview-fg: var(--text-85, #e5e7ebd9);
-}
-
-/* 전체 배경·글자 */
+/* 뼈대 배경·글자색 */
 body,
 [class*="App"],
 [class*="app"],
 [data-reactroot] {
   background-color: var(--bg-0) !important;
   color: var(--text-75) !important;
-  font-size: var(--app-html-font-size, 14px) !important;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
-  line-height: 1.6 !important;
 }
 
-@media (min-width: 768px) {
-  body,
-  [class*="App"],
-  [class*="app"] {
-    font-size: var(--app-html-font-size-md, 16px) !important;
-  }
-}
-
-/* 사이드바(컬렉션 목록) */
+/* 사이드바 */
 [class*="Sidebar"],
 [class*="sidebar"],
 aside {
@@ -54,7 +34,7 @@ aside {
   color: var(--app-nav-item-active-text, var(--text-inverse)) !important;
 }
 
-/* 패널·카드·에디터 영역 */
+/* 패널·에디터 */
 [class*="Pane"],
 [class*="pane"],
 [class*="Card"],
@@ -67,22 +47,13 @@ main {
   color: var(--text-75) !important;
 }
 
-/* -------------------------------------------------------------------------
-   필드 라벨 — 라이트 테마 잔재(흰 박스·검정 글자) 제거
-   ------------------------------------------------------------------------- */
+/* 라벨 — 라이트 테마 잔재(흰 배경)만 투명 + 글자색 */
 body label,
 body [class*="Label"],
 body [class*="FieldLabel"],
 body [class*="label"] {
   background-color: transparent !important;
-  background: transparent !important;
-  color: var(--cms-label-fg) !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-weight: var(--fw-600, 600) !important;
-  font-size: var(--fs-3, 0.875rem) !important;
-  letter-spacing: 0.03em !important;
-  text-transform: none !important;
+  color: var(--text-85, var(--text-75)) !important;
 }
 
 body label span,
@@ -91,21 +62,7 @@ body [class*="Label"] span {
   color: inherit !important;
 }
 
-/* 위젯 행 간격 */
-body [class*="Widget"],
-body [class*="Field"] {
-  margin-bottom: var(--cms-field-gap) !important;
-}
-
-body fieldset {
-  margin-bottom: var(--cms-field-gap) !important;
-  border: 1px solid var(--app-border) !important;
-  border-radius: var(--radius-3, 0.5rem) !important;
-  padding: var(--space-5, 0.75rem) var(--space-6, 1rem) !important;
-  background: var(--bg-0) !important;
-}
-
-/* 입력 필드 */
+/* 입력·선택 (테두리 색만; 두께·radius는 기본) */
 input,
 textarea,
 select,
@@ -113,8 +70,7 @@ select,
 [class*="input"],
 [class*="Input"] {
   background-color: var(--bg-2) !important;
-  border: 1px solid var(--app-border) !important;
-  border-radius: var(--radius-3, 0.5rem) !important;
+  border-color: var(--app-border) !important;
   color: var(--text-75) !important;
 }
 
@@ -122,9 +78,8 @@ input:focus,
 textarea:focus,
 select:focus,
 [contenteditable="true"]:focus {
-  outline: 2px solid var(--accent) !important;
-  outline-offset: 1px !important;
   border-color: var(--accent) !important;
+  outline-color: var(--accent) !important;
 }
 
 select option {
@@ -142,8 +97,7 @@ button,
 [class*="Button"],
 [role="button"] {
   background-color: var(--bg-2) !important;
-  border: 1px solid var(--app-border) !important;
-  border-radius: var(--radius-3, 0.5rem) !important;
+  border-color: var(--app-border) !important;
   color: var(--text-75) !important;
 }
 
@@ -177,7 +131,7 @@ header,
   color: var(--text-75) !important;
 }
 
-/* 목록·테이블 */
+/* 목록 */
 [class*="List"] [class*="item"],
 [class*="list"] [class*="item"],
 tr {
@@ -189,7 +143,7 @@ tr:hover {
   background-color: var(--bg-2) !important;
 }
 
-/* 마크다운 에디터 본문 + 툴바 */
+/* CodeMirror */
 .CodeMirror,
 [class*="CodeMirror"],
 [class*="markdown"] {
@@ -202,43 +156,28 @@ tr:hover {
   border-color: var(--app-border) !important;
 }
 
-/* 툴바: 아이콘 버튼을 한 덩어리로 */
+/* 툴바 영역 */
 [class*="Toolbar"],
 [class*="toolbar"],
 [class*="EditorToolbar"] {
   background-color: var(--bg-1) !important;
-  border: 1px solid var(--app-border) !important;
-  border-radius: var(--radius-3, 0.5rem) !important;
-  padding: var(--space-2, 0.375rem) var(--space-3, 0.5rem) !important;
-  gap: var(--space-2, 0.375rem) !important;
-  margin-bottom: var(--space-3, 0.5rem) !important;
+  border-color: var(--app-border) !important;
 }
 
 [class*="Toolbar"] button,
 [class*="toolbar"] button,
 [class*="EditorToolbar"] button {
-  border-radius: var(--radius-2, 0.375rem) !important;
-  min-width: 2rem !important;
-  min-height: 2rem !important;
-  padding: var(--space-2, 0.375rem) !important;
+  background-color: var(--bg-2) !important;
+  border-color: var(--app-border) !important;
+  color: var(--text-75) !important;
 }
 
-/* -------------------------------------------------------------------------
-   우측 프리뷰 — 대비·패딩
-   ------------------------------------------------------------------------- */
+/* 프리뷰 패널 */
 [class*="Preview"],
 [class*="preview"] {
   background-color: var(--bg-1) !important;
-  color: var(--cms-preview-fg) !important;
-  border: 1px solid var(--app-border) !important;
-  border-radius: var(--radius-3, 0.5rem) !important;
-  padding: var(--space-6, 1rem) !important;
-  line-height: 1.65 !important;
-}
-
-[class*="Preview"] *,
-[class*="preview"] * {
-  color: inherit !important;
+  color: var(--text-85, var(--text-75)) !important;
+  border-color: var(--app-border) !important;
 }
 
 /* 드롭다운·메뉴 */
@@ -250,7 +189,6 @@ tr:hover {
   color: var(--text-75) !important;
 }
 
-/* 보조 텍스트 */
 [class*="hint"],
 [class*="description"],
 small {
@@ -262,27 +200,10 @@ a {
 }
 a:hover {
   color: var(--accent) !important;
-  text-decoration: underline;
 }
 
-/* 스플릿 구분선 */
+/* 스플릿 구분선 색 */
 [class*="Resizer"],
 [class*="resizer"] {
-  background: var(--app-border) !important;
-}
-
-/* 스크롤바 */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-1);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--app-border);
-  border-radius: var(--radius-2, 0.375rem);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  background-color: var(--app-border) !important;
 }

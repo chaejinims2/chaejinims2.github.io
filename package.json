@@ -4,7 +4,8 @@
   "description": "Visitor count API for Netlify Function",
   "type": "module",
   "scripts": {
-    "panel": "npx serve panel -p 3000"
+    "panel": "npx serve panel -p 3000",
+    "admin:preview": "npx --yes serve . -p 4010"
   },
   "dependencies": {
     "@netlify/blobs": "^5.0.0"

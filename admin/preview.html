@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin CSS preview (no login)</title>
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <style>
+      /* 레이아웃 뼈대만 — 색/타이포는 custom.css */
+      .preview-shell {
+        display: flex;
+        min-height: 100vh;
+      }
+      .preview-main-split {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+      }
+      .preview-editor-col {
+        flex: 1;
+        padding: 1rem;
+        min-width: 0;
+      }
+      .preview-preview-col {
+        flex: 1;
+        padding: 1rem;
+        min-width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-AppRoot preview-shell">
+      <aside class="css-Sidebar-nav">
+        <a href="#">Posts</a>
+        <a href="#">Pages</a>
+      </aside>
+      <main class="MainView-root">
+        <header class="Header-appBar">Writing in Pages · CHANGES SAVED</header>
+        <div class="preview-main-split">
+          <div class="Editor-root preview-editor-col">
+            <div class="Widget-field">
+              <label class="FieldLabel-title">Layout</label>
+              <select class="Input-select">
+                <option>section</option>
+              </select>
+            </div>
+            <div class="Widget-field">
+              <label class="FieldLabel-title">Title <span>(optional)</span></label>
+              <input class="input-Input" type="text" value="Case Study" />
+            </div>
+            <div class="Toolbar-toolbar">
+              <button type="button">B</button>
+              <button type="button">I</button>
+              <button type="button">&lt;&gt;</button>
+            </div>
+            <textarea class="markdown-Editor input-Input" rows="8">
+Here is sample body text for preview.
+            </textarea>
+          </div>
+          <div class="resizer-Resizer" style="width: 4px; flex-shrink: 0"></div>
+          <div class="Preview-panel preview-preview-col">
+            <p><strong>section</strong></p>
+            <p>Title: Case Study</p>
+            <p>Preview pane text — contrast check.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <p class="hint-text" style="padding: 0.5rem 1rem; margin: 0">
+      <small>로그인 없이 CSS만 확인하는 페이지입니다. 실제 CMS는 <a href="index.html">index.html</a></small>
+    </p>
+  </body>
+</html>
