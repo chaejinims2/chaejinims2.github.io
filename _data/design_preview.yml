@@ -1,4 +1,153 @@
-# Used by preview-partials.html (icon / logo / image grids).
+# Preview page data: colors, typography, spacing, radius, icons, logos, images.
+color_groups:
+  - title: Core
+    swatches:
+      - block_style: "background: var(--bg-base);"
+        name: bg-base
+        role: App shell / outer canvas (tokens.css).
+      - block_style: "background: var(--body-bg);"
+        name: body-bg
+        role: Main reading column (preview .main).
+      - block_style: "background: var(--surface);"
+        name: surface
+        role: Sidebar, panels (--surface-1).
+      - block_style: "background: var(--surface-muted); border-bottom: 1px solid var(--border);"
+        name: surface-muted
+        role: Inset / secondary surfaces.
+      - block_style: "background: var(--border);"
+        name: border
+        role: Hairlines; matches tokens --border.
+  - title: Text & accent
+    swatches:
+      - block_style: "background: var(--text-primary);"
+        name: text-primary
+        role: Headings, body on dark.
+      - block_style: "background: var(--text-muted);"
+        name: text-muted
+        role: Secondary nav, captions, meta.
+      - block_style: "background: var(--accent);"
+        name: accent
+        role: Links, primary fills, interactive emphasis.
+      - block_style: "background: var(--brand);"
+        name: brand
+        role_html: Preview-only accent; sidebar mark uses <code>currentColor</code> (not this swatch).
+      - block_style: "background: var(--nav-active-bg);"
+        name: nav-active-bg
+        role: Current row tint (tokens --app-nav-item-active-bg).
+      - block_style: "background: var(--nav-active-fg);"
+        name: nav-active-fg
+        role: Active nav label (app uses high-contrast inverse).
+  - title: Status
+    swatches:
+      - block_style: "background: var(--success);"
+        name: success
+        role: Positive feedback.
+      - block_style: "background: var(--warning);"
+        name: warning
+        role: Caution.
+      - block_style: "background: var(--danger);"
+        name: danger
+        role: Errors, destructive actions.
+
+typography:
+  weight_spectrum:
+    weights: [400, 500, 600, 700]
+  type_samples:
+    - preview_style: "font-size: var(--fs-15); line-height: 1.1; font-weight: 700; letter-spacing: -0.03em;"
+      preview_text: Display XL
+      label_html: 'hero maximum, <code>--fs-15</code> (3.25rem) / 700 / lh 1.1 — Inter'
+    - preview_style: "font-size: var(--fs-14); line-height: 1.12; font-weight: 600; letter-spacing: -0.025em;"
+      preview_text: Display L
+      label_html: 'landing headline, <code>--fs-14</code> (3rem) / 600 / lh 1.12 — Inter'
+    - preview_style: "font-size: var(--fs-12); line-height: 1.15; font-weight: 600; letter-spacing: -0.02em;"
+      preview_text: Display M
+      label_html: 'section hero, <code>--fs-12</code> (2.5rem) / 600 — Inter'
+    - preview_style: "font-size: var(--fs-11); line-height: 1.18; font-weight: 600; letter-spacing: -0.02em;"
+      preview_text: Display S
+      label_html: 'compact hero, <code>--fs-11</code> (2.25rem) / 600 — Inter'
+    - preview_style: "font-size: 2rem; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em;"
+      preview_text: Display
+      label_html: 'portfolio hero, 2rem / 600 / lh 1.2 — Inter (DESIGN.md 650)'
+    - preview_style: "font-size: 1.75rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.02em;"
+      preview_text: H1
+      label_html: 'project page title, 1.75rem / 600 — Inter (DESIGN.md 650)'
+    - preview_style: "font-size: var(--fs-8); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em;"
+      preview_text: H2 large
+      label_html: 'major subsection, <code>--fs-8</code> (1.5rem) / 600 — Inter'
+    - preview_style: "font-size: 1.25rem; line-height: 1.35; font-weight: 600; letter-spacing: -0.01em;"
+      preview_text: H2
+      label_html: 'section heading, 1.25rem / 600 — Inter'
+    - preview_style: "font-size: 1.05rem; line-height: 1.4; font-weight: 600;"
+      preview_text: H3
+      label_html: 'subsection, 1.05rem / 600 — Inter'
+    - preview_style: "font-size: var(--fs-6); line-height: 1.55; font-weight: 400;"
+      preview_text: Body large
+      label_html: 'lead paragraph or short emphasis, <code>--fs-6</code> (1.125rem) / 400 — Inter'
+    - preview_style: "font-size: 1rem; line-height: 1.6; font-weight: 400;"
+      preview_text: Body
+      label_html: 'case study description, 1rem / 400 / lh 1.6 — Inter'
+    - preview_style: "font-size: 0.875rem; line-height: 1.5; font-weight: 400; color: var(--text-muted);"
+      preview_text: Small
+      label_html: 'secondary line and sidebar metadata, 0.875rem — Inter'
+    - preview_style: "font-size: 0.6875rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);"
+      preview_text: Label
+      label_html: 'form field / table header, 11px / 600 / uppercase / 0.08em — Inter'
+    - preview_style: "font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.01em;"
+      preview_text: CAPTION
+      label_html: 'nav group label, 0.75rem / mono — JetBrains Mono'
+    - preview_style: "font-family: var(--font-mono); font-size: var(--fs-4); line-height: 1.55; letter-spacing: -0.02em;"
+      preview_text: Code
+      label_html: '<code>--fs-4</code> (~0.95rem) / mono — code block line'
+    - preview_style: "font-family: var(--font-mono); font-size: 0.9em;"
+      preview_text: Inline
+      label_html: 'inline: <code style="border:none;padding:0;background:transparent;">kernel 5.9.16</code>'
+
+spacing:
+  items:
+    - px: 4
+      label: 4px / 1
+    - px: 8
+      label: 8px / 2
+    - px: 12
+      label: 12px / 3
+    - px: 16
+      label: 16px / 4
+    - px: 20
+      label: 20px / 5
+    - px: 24
+      label: 24px / 6
+    - px: 32
+      label: 32px / 8
+    - px: 40
+      label: 40px / 10
+
+radius:
+  items:
+    - box_style: "border-radius: 4px;"
+      label: 4px
+      context_html: '<code>--radius-1</code> · chips'
+    - box_style: "border-radius: 6px;"
+      label: 6px
+      context: Buttons, nav rows
+    - box_style: "border-radius: 8px;"
+      label: 8px
+      context_html: '<code>--radius-3</code> · cards'
+    - box_style: "border-radius: 12px;"
+      label: 12px
+      context: Panels, promos
+    - box_style: "border-radius: 16px;"
+      label: 16px
+      context: Hero cards
+    - box_style: "border-radius: 24px;"
+      label: 24px
+      context: Soft containers
+    - box_style: "border-radius: 32px;"
+      label: 32px
+      context: Max rounding
+    - box_style: "border-radius: 999px; width: 100px;"
+      label: pill
+      context: Tags
+
 icons:
   - academic-cap.svg
   - adjustments-horizontal.svg

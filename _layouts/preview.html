@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="connect">
 <head>
-{% include preview/head.html %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: "Chaejin Im — Design System Preview" }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ 'assets/css/tokens.css' | relative_url }}" />
 {% include preview/styles.html %}
 </head>
 <body>
@@ -12,18 +18,160 @@
 {% include preview/sidebar.html %}
   <main class="main">
     <div class="main-inner">
-{% include preview/chunks/intro.html %}
-{% include preview/section-colors.html %}
-{% include preview/chunks/typography.html %}
+      {% assign dp = site.data.design_preview %}
+      <header class="page-intro" id="intro">
+        <h1>{{ page.intro_title | default: "Design system preview" }}</h1>
+        {{ page.intro | markdownify }}
+        {% if page.tags %}
+        <div class="tag-row">
+          {% for tag in page.tags %}
+          <span class="tag"># {{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </header>
+      <!-- COLORS -->
+      <section class="section" id="colors">
+        <div class="section-title">01 / Color palette</div>
+        <h2 class="section-heading">Semantic colors</h2>
+        {% for group in dp.color_groups %}
+        <div class="color-group">
+          <h3 class="color-group-title">{{ group.title }}</h3>
+          <div class="color-grid">
+            {% for sw in group.swatches %}
+              {% if sw.role_html %}
+                {% include preview/cells/color-swatch.html block_style=sw.block_style name=sw.name role_html=sw.role_html %}
+              {% else %}
+                {% include preview/cells/color-swatch.html block_style=sw.block_style name=sw.name role=sw.role %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+      <hr class="section-divider">
+
+      <!-- BUTTONS -->
+      <section class="section" id="buttons">
+        <div class="section-title">02 / Buttons</div>
+        <h2 class="section-heading">Variants</h2>
 {% include preview/chunks/buttons.html %}
+      </section>
+      <hr class="section-divider">
+
+      <!-- TYPOGRAPHY -->
+      <section class="section" id="typography">
+        <div class="section-title">03 / Typography</div>
+        <h2 class="section-heading">Type Scale</h2>
+        <div class="weight-spectrum">
+          <p class="section-lead">Inter weights (sample)</p>
+          {% for w in dp.typography.weight_spectrum.weights %}
+          <div class="weight-sample">
+            <span class="weight-sample-text" style="font-weight: {{ w }};">The quick brown fox jumps over the lazy dog.</span>
+            <span class="weight-sample-label">{{ w }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {% for s in dp.typography.type_samples %}
+          <div class="type-sample">
+            <div style="{{ s.preview_style }}">{{ s.preview_text }}</div>
+            <div class="type-sample-label">{{ s.label_html }}</div>
+          </div>
+        {% endfor %}
+      </section>
+      <hr class="section-divider">
+
+      <!-- CARDS -->
+      <section class="section" id="cards">
+        <div class="section-title">04 / Cards</div>
+        <h2 class="section-heading">Cards & Containers</h2>
 {% include preview/chunks/cards.html %}
+      </section>
+      <hr class="section-divider">
+
+      <!-- TERMINAL -->
+      <section class="section" id="terminal">
+        <div class="section-title">05 / Terminal</div>
+        <h2 class="section-heading">Log &amp; CLI viewer</h2>
+        <p class="section-lead">Markup matches production: <code>.terminal-box</code> → <code>.terminal-pre-wrap</code> → <code>pre.terminal-content</code> (<code>assets/css/base.css</code>). Traffic-light bar uses theme surfaces; body uses <code>--terminal-fs</code> from <code>tokens.css</code>. Classes <code>.term-prompt</code>, <code>.log-loading</code>, <code>.log-error</code> map to syntax / status tokens.</p>
 {% include preview/chunks/terminal.html %}
-{% include preview/chunks/spacing.html %}
-{% include preview/chunks/radius.html %}
+      </section>
+      <hr class="section-divider">
+
+      <!-- SPACING -->
+      <section class="section" id="spacing">
+        <div class="section-title">04 / Spacing</div>
+        <h2 class="section-heading">Spacing System</h2>
+        <p class="section-lead">Spacing values are defined in <code>tokens.css</code> and used throughout the design system.</p>
+        <div class="spacing-row">
+          {% for item in dp.spacing.items %}
+          <div class="spacing-item"><div class="spacing-box" style="width: {{ item.px }}px; height: {{ item.px }}px;"></div><div class="spacing-label">{{ item.label }}</div></div>
+          {% endfor %}
+        </div>
+      </section>
+      <hr class="section-divider">
+
+      <!-- RADIUS -->
+      <section class="section" id="radius">
+        <div class="section-title">05 / Border radius</div>
+        <h2 class="section-heading">Radius System</h2>
+        <p class="section-lead">Radius values are defined in <code>tokens.css</code> and used throughout the design system.</p>
+        <div class="radius-row">
+          {% for item in dp.radius.items %}
+          <div class="radius-item"><div class="radius-box" style="{{ item.box_style }}"></div><div class="radius-label">{{ item.label }}</div><div class="radius-context">{% if item.context_html %}{{ item.context_html }}{% else %}{{ item.context }}{% endif %}</div></div>
+          {% endfor %}
+        </div>
+      </section>
+      <hr class="section-divider">
+
+      <!-- ELEVATION -->
+      <section class="section" id="elevation">
+        <div class="section-title">06 / Elevation</div>
+        <h2 class="section-heading">Depth</h2>
 {% include preview/chunks/elevation.html %}
-{% include preview/section-icons.html %}
-{% include preview/section-logos.html %}
-{% include preview/section-images.html %}
+      </section>
+      <hr class="section-divider">
+
+      <!-- ICONS -->
+      <hr class="section-divider">
+      <section class="section" id="icons">
+        <div class="section-title">09 / Icons</div>
+        <h2 class="section-heading">SVG library (inlined)</h2>
+        <p class="section-lead">All <code>assets/svg/default/*.svg</code> icons are embedded below as one sprite. Use <code>&lt;svg&gt;&lt;use href=&quot;#i-file-name&quot;/&gt;&lt;/svg&gt;</code> (see <code>_gen_svg_inline.py</code>). Click a tile to copy the original filename.</p>
+        <div class="icon-grid">
+        {% for icon_file in dp.icons %}
+        {% assign icon_id = icon_file | remove: '.svg' %}
+        {% include preview/cells/icon-cell.html icon_file=icon_file icon_id=icon_id %}
+        {% endfor %}
+        </div>
+      </section>
+      <hr class="section-divider">
+
+      <!-- LOGOS -->
+      <section class="section" id="logos">
+        <div class="section-title">10 / Logo library</div>
+        <h2 class="section-heading" >Marks &amp; paths</h2>
+        <p class="section-lead">Files in <code>assets/logos/</code> (marks and related bitmaps). Click a tile to copy the path for <code>src</code> or imports.</p>
+        <div class="logo-grid">
+        {% for item in dp.logos %}
+        {% include preview/cells/logo-cell.html path=item.path src=item.src label=item.label %}
+        {% endfor %}
+        </div>
+      </section>
+      <hr class="section-divider">
+
+      <!-- IMAGES -->
+      <section class="section" id="images">
+        <div class="section-title">11 / Image library</div>
+        <h2 class="section-heading image-library-heading">Figures &amp; photos</h2>
+        <p class="section-lead">Raster and non-mark art in <code>assets/images/</code> (heroes, diagrams, OG images). Click a tile to copy the relative path. Add PNG, WebP, or SVG files here as needed.</p>
+        <div class="logo-grid logo-grid--tall">
+        {% for item in images %}
+        {% include preview/cells/image-library-cell.html path=item.path src=item.src label=item.label %}
+        {% endfor %}
+        </div>
+      </section>
+
     </div>
   </main>
 </div>

@@ -6,13 +6,12 @@
   --app-sidebar-w: 13.75rem;
   --app-sidebar-w-compact: 3.5rem;
   --app-status-h: 2.125rem;
-  --app-top-h: 4rem; /*2.875rem;*/
+  --app-top-h: 4rem;
   --app-content-padding: clamp(0.75rem, 1.5vw, 1rem);
   --content-max-w: 80rem;
   --app-content-available-h: calc(100vh - var(--app-status-h) - (2 * var(--app-content-padding)));
 
-  /* ---- 1.2 Density / Spacing Scale (중복 제거의 핵심) ---- */
-  /* 4px / 6px / 8px / 10px / 12px / 16px */
+  /* ---- 1.2 Spacing scale (rem → html font-size 기준) ---- */
   --space-1: 0.25rem;
   --space-2: 0.375rem;
   --space-3: 0.5rem;
@@ -20,12 +19,12 @@
   --space-5: 0.75rem;
   --space-6: 1rem;
 
-  /* ---- 1.3 Radius Scale ---- */
+  /* ---- 1.3 Radius ---- */
   --radius-1: 0.25rem;
   --radius-2: 0.375rem;
   --radius-3: 0.5rem;
 
-  /* ---- 1.4 Font Size Scale ---- */
+  /* ---- 1.4 Font size / weight ---- */
   --fs-1: 0.8125rem;
   --fs-2: 0.85rem;
   --fs-3: 0.875rem;
@@ -47,26 +46,23 @@
   --fw-800: 800;
   --fw-900: 900;
 
-  /* transparent 래핑 (사용처별) */
+  /* ---- 1.5 Transparent borders (컴포넌트 기본값) ---- */
   --app-topmenu-item-border: transparent;
   --app-nav-item-bg: transparent;
   --app-nav-item-border: transparent;
   --app-nav-sub-item-border: transparent;
 
-  /* ---- 1.6 Site ---- */
+  /* ---- 1.6 Root font-size (breakpoint에서 전환) ---- */
   --app-html-font-size: 14px;
   --app-html-font-size-md: 16px;
 
   /* =========================================================
-   * 2) Semantic (base → 의미/역할) — 테마 무관
-   *  - base 토큰(bg/text/accent/overlay 등)은 Dark/Light에서 정의
+   * 2) Semantic — 테마의 base 토큰에 매핑 (색은 §4 테마에서 정의)
    * ========================================================= */
-  /* surfaces */
   --surface-0: var(--bg-0);
   --surface-1: var(--bg-1);
   --surface-2: var(--bg-2);
 
-  /* text */
   --tone-text: var(--text);
   --tone-text-75: var(--text-75);
   --tone-text-85: var(--text-85);
@@ -74,39 +70,34 @@
   --tone-muted: var(--muted);
   --tone-dim: var(--dim);
 
-  /* accent */
   --tone-accent: var(--accent);
   --tone-accent-bg: var(--accent-bg);
+  /* :focus-visible / focus ring — alias of accent per theme */
+  --focus-ring: var(--accent);
 
-  --shadow-subtle: var(--shadow-subtle);
-
-  /* app semantic aliases (기존 이름 호환 유지) */
+  /* 앱 래거시 alias */
   --app-bg: var(--surface-0);
   --app-panel: var(--surface-1);
   --app-panel-2: var(--surface-0);
-
   --app-text: var(--tone-text-75);
   --app-muted: var(--tone-muted);
   --app-accent: var(--tone-accent);
 
-  /* nav active */
   --app-nav-item-active-bg: var(--accent-bg-12);
   --app-nav-item-active-text: var(--tone-text-inverse);
 
   /* =========================================================
-   * 3) Components (길이 + 컴포넌트 매핑) — 테마 무관
-   *  - 길이는 Foundation 스케일을 참조
-   *  - 색은 Semantic을 참조
+   * 3) Components — 길이·타이포만 (색은 §2 → §4)
    * ========================================================= */
 
-  /* ---------- 3.1 Topbar ---------- */
+  /* --- 3.1 Topbar: 셸 --- */
   --app-topbar-padding: 0 clamp(0.5rem, 1vw, 0.75rem);
   --app-top-left-gap: 0.625rem;
 
+  /* --- 3.1 Topbar: 아이콘 버튼 / 타이틀 --- */
   --app-icon-btn-border-radius: var(--radius-3);
   --app-icon-btn-width: 2.25rem;
   --app-icon-btn-height: 2rem;
-
   --app-title-logo-height: 1.375rem;
   --app-title-logo-max-width: 3rem;
   --app-title-text-font-size: 1rem;
@@ -114,17 +105,17 @@
   --app-title-text-font-weight: var(--fw-900);
   --app-title-text-letter-spacing: 0.4px;
 
+  /* --- 3.1 Topbar: 메뉴 / 서브메뉴 --- */
   --app-topmenu-gap: 0.625rem;
   --app-topmenu-item-padding: var(--space-2) var(--space-4);
   --app-topmenu-item-border-radius: var(--radius-3);
-
   --app-topmenu-sub-gap: var(--space-1);
   --app-topmenu-sub-padding-left: var(--space-2);
   --app-topmenu-sub-item-padding: var(--space-1) var(--space-3);
   --app-topmenu-sub-item-border-radius: var(--radius-2);
   --app-topmenu-sub-item-font-size: var(--fs-1);
 
-  /* ---------- 3.3 Sidebar / Nav / Statusbar ---------- */
+  /* --- 3.2 Sidebar / Nav / Status bar --- */
   --app-sidebar-padding: clamp(0.75rem, 1vh, 0.875rem) 0 clamp(0.75rem, 1vh, 0.875rem) clamp(0.5rem, 1vw, 0.75rem);
   --app-sidebar-gap: var(--space-5);
 
@@ -134,7 +125,6 @@
   --app-nav-item-padding: 0.625rem;
   --app-nav-ico-width: 1.25rem;
   --app-sidebar-title-ico-width: 1.75rem;
-
   --app-nav-label-font-weight: var(--fw-600);
   --app-nav-item-active-font-weight: var(--fw-600);
 
@@ -143,7 +133,6 @@
   --app-nav-sub-padding-left: 10px;
   --app-nav-sub-margin-top: 2px;
   --app-nav-sub-margin-left: 8px;
-
   --app-nav-sub-item-padding: var(--space-2) var(--space-4);
   --app-nav-sub-item-font-size: var(--fs-1);
   --app-nav-sub-item-border-radius: var(--radius-2);
@@ -153,12 +142,10 @@
   --app-statusbar-padding: 0 clamp(0.5rem, 1vw, 0.875rem);
   --app-statusbar-font-size: var(--fs-1);
 
+  /* --- 3.3 콘텐츠 블록 (카드·터미널·퀴즈) --- */
   --lm11-card-fixed-height: 30rem;
-
   --terminal-fs: var(--fs-4);
-  --terminal-pre-wrap-fs: var(var(--fs-1));
-  
-  
+  --terminal-pre-wrap-fs: var(--fs-1);
   --quiz-card-fs-strong: var(--fs-6);
   --quiz-card-fs-default: var(--fs-5);
   --quiz-card-fs-weak: var(--fs-4);
@@ -217,7 +204,7 @@
   --syn-operator: #e5e7eb;
   --syn-punctuation: #9ca3af;
   --syn-builtin: #67e8f9;
-  --syn-error: #f87171;
+  --syn-error: #e5534b;
 }
 
 /* ---------- Light ---------- */
@@ -346,5 +333,95 @@
   --syn-operator: #e2e8f0;
   --syn-punctuation: #94a3b8;
   --syn-builtin: #67e8f9;
-  --syn-error: #f87171;
+  --syn-error: #e5534b;
+}
+
+/* ---------- Claude (warm dark / Anthropic-style palette) ---------- */
+[data-theme="claude"] {
+  /* Primary */
+  --color-near-black: #141413;
+  --color-terracotta: #c96442;
+  --color-coral: #d97757;
+  /* Secondary & Accent */
+  --color-error: #b53333;
+  --color-focus-blue: #3898ec;
+  /* Surface & Background */
+  --color-parchment: #f5f4ed;
+  --color-ivory: #faf9f5;
+  --color-white: #ffffff;
+  --color-warm-sand: #e8e6dc;
+  --color-dark-surface: #30302e;
+  --color-deep-dark: #141413;
+  /* Neutrals & Text */
+  --color-charcoal-warm: #4d4c48;
+  --color-olive-gray: #5e5d59;
+  --color-stone-gray: #87867f;
+  --color-dark-warm: #3d3d3a;
+  --color-warm-silver: #b0aea5;
+  /* Borders & Rings */
+  --color-border-cream: #f0eee6;
+  --color-border-warm: #e8e6dc;
+  --color-border-dark: #30302e;
+  --color-ring-warm: #d1cfc5;
+  --color-ring-deep: #c2c0b6;
+  /* Fonts */
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-sans: Arial, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  /* Page-level (preview / marketing blocks) */
+  --bg-page: #141413;
+  --bg-card: #30302e;
+  --bg-nav: rgba(20, 20, 19, 0.92);
+  --text-primary: #faf9f5;
+  --text-secondary: #87867f;
+  --text-tertiary: #b0aea5;
+  --border-color: #30302e;
+  --border-subtle: #30302e;
+  --section-label-color: #d97757;
+
+  /* Semantic bridge (base.css / app shell) */
+  --bg-0: var(--bg-page);
+  --bg-1: var(--bg-card);
+  --bg-2: var(--color-dark-warm);
+  --body-bg: var(--bg-page);
+
+  --border: #ffffff14;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+  --text: var(--text-primary);
+  --text-75: var(--color-warm-sand);
+  --text-85: var(--text-primary);
+  --text-inverse: var(--color-ivory);
+
+  --muted: var(--text-secondary);
+  --dim: var(--text-tertiary);
+
+  --accent: var(--color-coral);
+  --accent-bg: #d9775724;
+
+  --overlay-w-08: #ffffff08;
+  --overlay-w-0a: #ffffff0a;
+  --overlay-w-0d: #ffffff0d;
+  --overlay-w-0f: #ffffff0f;
+
+  --accent-bg-12: #d977571f;
+
+  --app-topbar-bg: var(--bg-nav);
+  --app-statusbar-bg: rgba(20, 20, 19, 0.8);
+
+  --app-border: var(--border-color);
+  --shadow-subtle: rgba(0, 0, 0, 0.12);
+  --app-nav-item-active-text: var(--text-primary);
+
+  --syn-comment: var(--color-stone-gray);
+  --syn-keyword: #c9a227;
+  --syn-string: #7d9f6a;
+  --syn-number: var(--color-coral);
+  --syn-function: var(--color-focus-blue);
+  --syn-class: #c96442;
+  --syn-constant: #a89b8c;
+  --syn-operator: var(--color-warm-silver);
+  --syn-punctuation: var(--color-olive-gray);
+  --syn-builtin: #5b9bd5;
+  --syn-error: var(--color-error);
 }
