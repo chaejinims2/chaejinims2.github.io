@@ -1,0 +1,21 @@
+      <hr class="section-divider">
+
+      <!-- TERMINAL -->
+      <section class="section" id="terminal">
+        <div class="section-title">05 / Terminal</div>
+        <h2 class="section-heading">Log &amp; CLI viewer</h2>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: var(--space-6); max-width: 65ch;">Markup matches production: <code>.terminal-box</code> → <code>.terminal-pre-wrap</code> → <code>pre.terminal-content</code> (<code>assets/css/base.css</code>). Traffic-light bar uses theme surfaces; body uses <code>--terminal-fs</code> from <code>tokens.css</code>. Classes <code>.term-prompt</code>, <code>.log-loading</code>, <code>.log-error</code> map to syntax / status tokens.</p>
+
+        <div class="terminal-box">
+          <div class="terminal-pre-wrap" style="--terminal-height: 220px;">
+            <pre class="terminal-content"><span class="term-prompt">$</span> ./scripts/build.sh --release
+<span class="log-loading">… Compiling nvme_core v0.2.1</span>
+    Finished `release` profile in 42.3s
+<span class="term-prompt">$</span> pytest tests/test_mi_basic.py -q
+<span class="log-error">FAILED tests/test_mi_basic.py::test_reset_timeout</span> — AssertionError: expected 0, got 5
+<span class="term-prompt">$</span> <span class="log-loading">_</span></pre>
+          </div>
+        </div>
+
+        <p class="note-box">Optional fixed height: set <code>style="--terminal-height: 220px"</code> on <code>.terminal-pre-wrap</code> so the inner <code>pre</code> scrolls (<code>flex: 1; min-height: 0</code>).</p>
+      </section>

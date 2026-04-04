@@ -1,0 +1,11 @@
+      <section class="section" id="icons">
+        <div class="section-title">09 / Icons</div>
+        <h2 class="section-heading">SVG library (inlined)</h2>
+        <p class="icons-section-note">All <code>assets/svg/default/*.svg</code> icons are embedded below as one sprite. Use <code>&lt;svg&gt;&lt;use href=&quot;#i-file-name&quot;/&gt;&lt;/svg&gt;</code> (see <code>_gen_svg_inline.py</code>). Click a tile to copy the original filename.</p>
+        <div class="icon-grid">
+        {% for icon_file in site.data.design_preview.icons %}
+        {% assign icon_id = icon_file | remove: '.svg' %}
+        {% include preview/icon-cell.html icon_file=icon_file icon_id=icon_id %}
+        {% endfor %}
+        </div>
+      </section>

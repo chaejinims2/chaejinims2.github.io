@@ -1,0 +1,12 @@
+      <hr class="section-divider">
+
+      <section class="section" id="logos">
+        <div class="section-title">10 / Logo library</div>
+        <h2 class="section-heading" >Marks &amp; paths</h2>
+        <p class="icons-section-note">Files in <code>assets/logos/</code> (marks and related bitmaps). Click a tile to copy the path for <code>src</code> or imports.</p>
+        <div class="logo-grid">
+        {% for item in site.data.design_preview.logos %}
+        {% include preview/logo-cell.html path=item.path src=item.src label=item.label %}
+        {% endfor %}
+        </div>
+      </section>

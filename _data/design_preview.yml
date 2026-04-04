@@ -1,0 +1,115 @@
+# Used by preview-partials.html (icon / logo / image grids).
+icons:
+  - academic-cap.svg
+  - adjustments-horizontal.svg
+  - adjustments-vertical.svg
+  - arrow-down-tray.svg
+  - arrow-path.svg
+  - bar3.svg
+  - bars-3.svg
+  - beaker.svg
+  - bell.svg
+  - bolt-slash.svg
+  - bolt.svg
+  - book.svg
+  - chart-bar-square.svg
+  - chart-bar.svg
+  - chat-bubble-oval-left-ellipsis.svg
+  - cherry.svg
+  - chevron-left.svg
+  - chevron-right.svg
+  - clipboard-document-list.svg
+  - cog-6-tooth.svg
+  - cog.svg
+  - command-line.svg
+  - computer-desktop.svg
+  - cpu-chip.svg
+  - credit-card.svg
+  - document-arrow-down.svg
+  - document-chart-bar.svg
+  - document-duplicate.svg
+  - document-text.svg
+  - exclamation-triangle.svg
+  - eye-slash.svg
+  - eye.svg
+  - film.svg
+  - globe-alt-slash.svg
+  - globe-alt.svg
+  - home.svg
+  - inbox.svg
+  - language.svg
+  - magnifying-glass.svg
+  - map-pin.svg
+  - map.svg
+  - moon.svg
+  - paint-brush.svg
+  - photo.svg
+  - printer.svg
+  - scale.svg
+  - server-stack.svg
+  - squares-2x2.svg
+  - squares-plus.svg
+  - sun.svg
+  - table-cells.svg
+  - trash.svg
+  - user-circle.svg
+  - wrench-screwdriver.svg
+  - wrench.svg
+
+logos:
+  - path: assets/logos/cherry-logo-gray.png
+    src: assets/logos/cherry-logo-gray.png
+    label: cherry-logo-gray.png
+  - path: assets/logos/cherry-logo-red-light.png
+    src: assets/logos/cherry-logo-red-light.png
+    label: cherry-logo-red-light.png
+  - path: assets/logos/logo.png
+    src: assets/logos/logo.png
+    label: logo.png
+  - path: assets/images/logo.svg
+    src: assets/logos/logo.svg
+    label: logo.svg
+  - path: assets/logos/disney--1.svg
+    src: assets/logos/disney--1.svg
+    label: disney--1.svg
+  - path: assets/logos/git.svg
+    src: assets/logos/git.svg
+    label: git.svg
+  - path: assets/logos/yc_logo.svg
+    src: assets/logos/yc_logo.svg
+    label: yc_logo.svg
+  - path: assets/logos/youtube-6.svg
+    src: assets/logos/youtube-6.svg
+    label: youtube-6.svg
+  - path: assets/logos/youtube-6-darkmode.svg
+    src: assets/logos/youtube-6-darkmode.svg
+    label: youtube-6-darkmode.svg
+
+images:
+  - path: assets/images/FMB01.png
+    src: assets/images/FMB01.png
+    label: FMB01.png
+  - path: assets/images/IYA01.png
+    src: assets/images/IYA01.png
+    label: IYA01.png
+  - path: assets/images/SFW01.png
+    src: assets/images/SFW01.png
+    label: SFW01.png
+  - path: assets/images/SFW02.png
+    src: assets/images/SFW02.png
+    label: SFW02.png
+  - path: assets/images/SSINK01.png
+    src: assets/images/SSINK01.png
+    label: SSINK01.png
+  - path: assets/images/logo.svg
+    src: assets/images/logo.svg
+    label: logo.svg
+  - path: assets/images/placeholder.svg
+    src: assets/images/placeholder.svg
+    label: placeholder.svg
+  - path: assets/images/sample-figure.svg
+    src: assets/images/sample-figure.svg
+    label: sample-figure.svg
+  - path: assets/images/sample-photo.png
+    src: assets/images/sample-photo.png
+    label: sample-photo.png
