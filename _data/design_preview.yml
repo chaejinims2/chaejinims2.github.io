@@ -1,264 +1,322 @@
-# Preview page data: colors, typography, spacing, radius, icons, logos, images.
-color_groups:
-  - title: Core
-    swatches:
-      - block_style: "background: var(--bg-base);"
-        name: bg-base
-        role: App shell / outer canvas (tokens.css).
-      - block_style: "background: var(--body-bg);"
-        name: body-bg
-        role: Main reading column (preview .main).
-      - block_style: "background: var(--surface);"
-        name: surface
-        role: Sidebar, panels (--surface-1).
-      - block_style: "background: var(--surface-muted); border-bottom: 1px solid var(--border);"
-        name: surface-muted
-        role: Inset / secondary surfaces.
-      - block_style: "background: var(--border);"
-        name: border
-        role: Hairlines; matches tokens --border.
-  - title: Text & accent
-    swatches:
-      - block_style: "background: var(--text-primary);"
-        name: text-primary
-        role: Headings, body on dark.
-      - block_style: "background: var(--text-muted);"
-        name: text-muted
-        role: Secondary nav, captions, meta.
-      - block_style: "background: var(--accent);"
-        name: accent
-        role: Links, primary fills, interactive emphasis.
-      - block_style: "background: var(--brand);"
-        name: brand
-        role_html: Preview-only accent; sidebar mark uses <code>currentColor</code> (not this swatch).
-      - block_style: "background: var(--nav-active-bg);"
-        name: nav-active-bg
-        role: Current row tint (tokens --app-nav-item-active-bg).
-      - block_style: "background: var(--nav-active-fg);"
-        name: nav-active-fg
-        role: Active nav label (app uses high-contrast inverse).
-  - title: Status
-    swatches:
-      - block_style: "background: var(--success);"
-        name: success
-        role: Positive feedback.
-      - block_style: "background: var(--warning);"
-        name: warning
-        role: Caution.
-      - block_style: "background: var(--danger);"
-        name: danger
-        role: Errors, destructive actions.
+# 스키마: default.groups.{typos|spacing|radius} → 각각 label + items (하위 groups 없음)
+default:
+  groups:
+    typos:
+      label: Typography Types
+      items:
+        - name: display-xl
+          label: Display XL
+          desc: hero maximum
+        - name: display-l
+          label: Display L
+          desc: landing headline
+        - name: display-m
+          label: Display M
+          desc: section hero
+        - name: display-s
+          label: Display S
+          desc: compact hero
+        - name: display
+          label: Display
+          desc: portfolio hero
+        - name: h1
+          label: H1
+          desc: project page title
+        - name: h2-large
+          label: H2 large
+          desc: major subsection
+        - name: h2
+          label: H2
+          desc: section heading
+        - name: h3
+          label: H3
+          desc: subsection
+        - name: body-large
+          label: Body large
+          desc: lead paragraph or short emphasis
+        - name: body
+          label: Body
+          desc: case study description
+        - name: small
+          label: Small
+          desc: secondary line and sidebar metadata
+        - name: label
+          label: Label
+          desc: form field / table header
+        - name: caption
+          label: CAPTION
+          desc: nav group label
+        - name: code
+          label: Code
+          desc: code block line
+        - name: inline
+          label: Inline
+          desc: inline
 
-typography:
-  weight_spectrum:
-    weights: [400, 500, 600, 700]
-  type_samples:
-    - preview_style: "font-size: var(--fs-15); line-height: 1.1; font-weight: 700; letter-spacing: -0.03em;"
-      preview_text: Display XL
-      label_html: 'hero maximum'
-    - preview_style: "font-size: var(--fs-14); line-height: 1.12; font-weight: 600; letter-spacing: -0.025em;"
-      preview_text: Display L
-      label_html: 'landing headline'
-    - preview_style: "font-size: var(--fs-12); line-height: 1.15; font-weight: 600; letter-spacing: -0.02em;"
-      preview_text: Display M
-      label_html: 'section hero'
-    - preview_style: "font-size: var(--fs-11); line-height: 1.18; font-weight: 600; letter-spacing: -0.02em;"
-      preview_text: Display S
-      label_html: 'compact hero'
-    - preview_style: "font-size: 2rem; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em;"
-      preview_text: Display
-      label_html: 'portfolio hero'
-    - preview_style: "font-size: 1.75rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.02em;"
-      preview_text: H1
-      label_html: 'project page title'
-    - preview_style: "font-size: var(--fs-8); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em;"
-      preview_text: H2 large
-      label_html: 'major subsection'
-    - preview_style: "font-size: 1.25rem; line-height: 1.35; font-weight: 600; letter-spacing: -0.01em;"
-      preview_text: H2
-      label_html: 'section heading'
-    - preview_style: "font-size: 1.05rem; line-height: 1.4; font-weight: 600;"
-      preview_text: H3
-      label_html: 'subsection'
-    - preview_style: "font-size: var(--fs-6); line-height: 1.55; font-weight: 400;"
-      preview_text: Body large
-      label_html: 'lead paragraph or short emphasis'
-    - preview_style: "font-size: 1rem; line-height: 1.6; font-weight: 400;"
-      preview_text: Body
-      label_html: 'case study description'
-    - preview_style: "font-size: 0.875rem; line-height: 1.5; font-weight: 400; color: var(--text-muted);"
-      preview_text: Small
-      label_html: 'secondary line and sidebar metadata'
-    - preview_style: "font-size: 0.6875rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);"
-      preview_text: Label
-      label_html: 'form field / table header'
-    - preview_style: "font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.01em;"
-      preview_text: CAPTION
-      label_html: 'nav group label'
-    - preview_style: "font-family: var(--font-mono); font-size: var(--fs-4); line-height: 1.55; letter-spacing: -0.02em;"
-      preview_text: Code
-      label_html: 'code block line'
-    - preview_style: "font-family: var(--font-mono); font-size: 0.9em;"
-      preview_text: Inline
-      label_html: 'inline'
+    spacing:
+      label: Spacing scale
+      items:
+        - name: space-4px
+          label: 4px / 1
+        - name: space-8px
+          label: 8px / 2
+        - name: space-12px
+          label: 12px / 3
+        - name: space-16px
+          label: 16px / 4
+        - name: space-20px
+          label: 20px / 5
+        - name: space-24px
+          label: 24px / 6
+        - name: space-32px
+          label: 32px / 8
+        - name: space-40px
+          label: 40px / 10
 
-spacing:
-  items:
-    - px: 4
-      label: 4px / 1
-    - px: 8
-      label: 8px / 2
-    - px: 12
-      label: 12px / 3
-    - px: 16
-      label: 16px / 4
-    - px: 20
-      label: 20px / 5
-    - px: 24
-      label: 24px / 6
-    - px: 32
-      label: 32px / 8
-    - px: 40
-      label: 40px / 10
+    radius:
+      label: Border radius
+      items:
+        - name: radius-box-4px
+          label: radius-4px
+          desc_html: chips
+        - name: radius-box-6px
+          label: radius-6px
+          desc_html: buttons, nav rows
+        - name: radius-box-8px
+          label: radius-8px
+          desc_html: cards
+        - name: radius-box-12px
+          label: radius-12px
+          desc: Panels, promos
+        - name: radius-box-16px
+          label: radius-16px
+          desc: Hero cards
+        - name: radius-box-24px
+          label: radius-24px
+          desc: Soft containers
+        - name: radius-box-32px
+          label: radius-32px
+          desc: Max rounding
+        - name: radius-box-999px
+          label: radius-999px
+          desc_html: tags
 
-radius:
-  items:
-    - box_style: "border-radius: 4px;"
-      label: 4px
-      context_html: '<code>--radius-1</code> · chips'
-    - box_style: "border-radius: 6px;"
-      label: 6px
-      context: Buttons, nav rows
-    - box_style: "border-radius: 8px;"
-      label: 8px
-      context_html: '<code>--radius-3</code> · cards'
-    - box_style: "border-radius: 12px;"
-      label: 12px
-      context: Panels, promos
-    - box_style: "border-radius: 16px;"
-      label: 16px
-      context: Hero cards
-    - box_style: "border-radius: 24px;"
-      label: 24px
-      context: Soft containers
-    - box_style: "border-radius: 32px;"
-      label: 32px
-      context: Max rounding
-    - box_style: "border-radius: 999px; width: 100px;"
-      label: pill
-      context: Tags
+layout:
+  groups:
+    cards:
+      label: Cards
+      items:
+        - name: card-default
+          label: Standard surface
+          desc_html: 'Bordered card on <code>--surface</code>. Use for case study summaries and notes.'
+        - name: card-ring
+          label: Ring halo
+          desc_html: '1px ring via <code>box-shadow</code> (no extra border width). Good for selectable tiles.'
+        - name: card-elevated
+          label: Elevated
+          desc_html: 'Theme <code>--shadow</code> via preview alias <code>--shadow-2</code>.'
+        - name: container-whisper
+          label: Whisper
+          desc_html: Large soft blur — featured cards, marketing tiles.
+        - name: container-inset
+          label: Inset
+          desc_html: 'Inset ring on <code>--surface-muted</code> — form groups, code wells.'
+        - name: container-muted
+          label: Muted
+          desc_html: '<ul class="highlight-list"><li>Kernel 5.9.16</li><li>Reduced module size</li><li>Higher max PF count</li></ul>'
+        - name: elevation-flat
+          label: Flat
+          desc: Canvas background. No shadow — hierarchy from borders and type.
+        - name: elevation-contained
+          label: Contained
+          desc: 1px border only — default panels and lists.
+        - name: elevation-surface
+          label: Surface highlight
+          desc_html: 'Inset top hairline (<code>--shadow-1</code>) — toolbar chips, inputs.'
+        - name: elevation-ring
+          label: Ring
+          desc: Outer 1px ring without border width — focus-adjacent surfaces.
+        - name: elevation-raised
+          label: Raised
+          desc_html: 'Theme <code>--shadow</code> — dropdowns, sticky bars.'
+        - name: elevation-whisper
+          label: Whisper
+          desc: Large soft blur — featured cards, marketing tiles.
+        - name: elevation-inset
+          label: Inset
+          desc: Inset ring on muted surface — pressed or recessed regions.
 
-icons:
-  - academic-cap.svg
-  - adjustments-horizontal.svg
-  - adjustments-vertical.svg
-  - arrow-down-tray.svg
-  - arrow-path.svg
-  - bar3.svg
-  - bars-3.svg
-  - beaker.svg
-  - bell.svg
-  - bolt-slash.svg
-  - bolt.svg
-  - book.svg
-  - chart-bar-square.svg
-  - chart-bar.svg
-  - chat-bubble-oval-left-ellipsis.svg
-  - cherry.svg
-  - chevron-left.svg
-  - chevron-right.svg
-  - clipboard-document-list.svg
-  - cog-6-tooth.svg
-  - cog.svg
-  - command-line.svg
-  - computer-desktop.svg
-  - cpu-chip.svg
-  - credit-card.svg
-  - document-arrow-down.svg
-  - document-chart-bar.svg
-  - document-duplicate.svg
-  - document-text.svg
-  - exclamation-triangle.svg
-  - eye-slash.svg
-  - eye.svg
-  - film.svg
-  - globe-alt-slash.svg
-  - globe-alt.svg
-  - home.svg
-  - inbox.svg
-  - language.svg
-  - magnifying-glass.svg
-  - map-pin.svg
-  - map.svg
-  - moon.svg
-  - paint-brush.svg
-  - photo.svg
-  - printer.svg
-  - scale.svg
-  - server-stack.svg
-  - squares-2x2.svg
-  - squares-plus.svg
-  - sun.svg
-  - table-cells.svg
-  - trash.svg
-  - user-circle.svg
-  - wrench-screwdriver.svg
-  - wrench.svg
+variants:
+  groups:
+    buttons:
+      label: Buttons
+      items:
+        - name: btn-primary
+          label: Primary
+          desc: Primary
+        - name: btn-secondary
+          label: Secondary
+          desc: Secondary
+        - name: btn-danger
+          label: Danger
+          desc: Danger / destructive
+        - name: btn-primary
+          label: Disabled
+          desc: Disabled state
+          disabled: true
+        - name: btn-ghost
+          label: Ghost / text
+          desc: Ghost
+        - name: btn-tag
+          label: '# Tag example'
+          desc: Tag
+    combobox:
+      label: Combobox
+      items:
+        - name: sort-by
+          label: Sort by
+          options:
+            - key: newest
+              value: Newest first
+            - key: oldest
+              value: Oldest first
+            - key: title
+              value: Title A–Z
+          hint: Example — filters
 
-logos:
-  - path: assets/logos/cherry-logo-gray.png
-    src: assets/logos/cherry-logo-gray.png
-    label: cherry-logo-gray.png
-  - path: assets/logos/cherry-logo-red-light.png
-    src: assets/logos/cherry-logo-red-light.png
-    label: cherry-logo-red-light.png
-  - path: assets/logos/logo.png
-    src: assets/logos/logo.png
-    label: logo.png
-  - path: assets/images/logo.svg
-    src: assets/logos/logo.svg
-    label: logo.svg
-  - path: assets/logos/disney--1.svg
-    src: assets/logos/disney--1.svg
-    label: disney--1.svg
-  - path: assets/logos/git.svg
-    src: assets/logos/git.svg
-    label: git.svg
-  - path: assets/logos/yc_logo.svg
-    src: assets/logos/yc_logo.svg
-    label: yc_logo.svg
-  - path: assets/logos/youtube-6.svg
-    src: assets/logos/youtube-6.svg
-    label: youtube-6.svg
-  - path: assets/logos/youtube-6-darkmode.svg
-    src: assets/logos/youtube-6-darkmode.svg
-    label: youtube-6-darkmode.svg
+colors:
+  groups:
+    core:
+      label: Core
+      items:
+        - name: bg-base
+          label: bg-base
+          # desc: App shell / outer canvas (tokens.css).
+        - name: body-bg
+          label: body-bg
+          # desc: Main reading column (preview .main).
+        - name: surface
+          label: surface
+          # desc: Sidebar, panels (--surface-1).
+        - name: surface-muted
+          label: surface-muted
+          # desc: Inset / secondary surfaces.
+        - name: border
+          label: border
+          # desc: Hairlines; matches tokens --border.
+    text:
+      label: Text
+      items:
+        - name: text-primary
+          label: text-primary
+          # desc: Headings, body on dark.
+        - name: text-muted
+          label: text-muted
+          # desc: Secondary nav, captions, meta.
+    accent:
+      label: Accent
+      items:
+        - name: accent
+          label: accent
+          # desc: Links, primary fills, interactive emphasis.
+        - name: brand
+          label: brand
+          # desc_html: 'Preview-only accent; sidebar mark uses <code>currentColor</code> (not this swatch).'
+        - name: nav-active-bg
+          label: nav-active-bg
+          # desc: Current row tint (tokens --app-nav-item-active-bg).
+        - name: nav-active-fg
+          label: nav-active-fg
+          # desc: Active nav label (app uses high-contrast inverse).
+    status:
+      label: Status
+      items:
+        - name: success
+          label: success
+          # desc: Positive feedback.
+        - name: warning
+          label: warning
+          # desc: Caution.
+        - name: danger
+          label: danger
+          # desc: Errors, destructive actions.
 
-images:
-  - path: assets/images/FMB01.png
-    src: assets/images/FMB01.png
-    label: FMB01.png
-  - path: assets/images/IYA01.png
-    src: assets/images/IYA01.png
-    label: IYA01.png
-  - path: assets/images/SFW01.png
-    src: assets/images/SFW01.png
-    label: SFW01.png
-  - path: assets/images/SFW02.png
-    src: assets/images/SFW02.png
-    label: SFW02.png
-  - path: assets/images/SSINK01.png
-    src: assets/images/SSINK01.png
-    label: SSINK01.png
-  - path: assets/images/logo.svg
-    src: assets/images/logo.svg
-    label: logo.svg
-  - path: assets/images/placeholder.svg
-    src: assets/images/placeholder.svg
-    label: placeholder.svg
-  - path: assets/images/sample-figure.svg
-    src: assets/images/sample-figure.svg
-    label: sample-figure.svg
-  - path: assets/images/sample-photo.png
-    src: assets/images/sample-photo.png
-    label: sample-photo.png
+assets:
+  groups:
+    icons:
+      label: Icons
+      items:
+        - name: academic-cap.svg
+        - name: adjustments-horizontal.svg
+        - name: adjustments-vertical.svg
+        - name: arrow-down-tray.svg
+        - name: arrow-path.svg
+        - name: bars-3.svg
+        - name: beaker.svg
+        - name: bell.svg
+        - name: bolt-slash.svg
+        - name: bolt.svg
+        - name: book.svg
+        - name: chart-bar-square.svg
+        - name: chart-bar.svg
+        - name: chat-bubble-oval-left-ellipsis.svg
+        - name: cherry.svg
+        - name: chevron-left.svg
+        - name: chevron-right.svg
+        - name: clipboard-document-list.svg
+        - name: cog-6-tooth.svg
+        - name: cog.svg
+        - name: command-line.svg
+        - name: computer-desktop.svg
+        - name: cpu-chip.svg
+        - name: credit-card.svg
+        - name: document-arrow-down.svg
+        - name: document-chart-bar.svg
+        - name: document-duplicate.svg
+        - name: document-text.svg
+        - name: exclamation-triangle.svg
+        - name: eye-slash.svg
+        - name: eye.svg
+        - name: film.svg
+        - name: globe-alt-slash.svg
+        - name: globe-alt.svg
+        - name: home.svg
+        - name: inbox.svg
+        - name: language.svg
+        - name: magnifying-glass.svg
+        - name: map-pin.svg
+        - name: map.svg
+        - name: moon.svg
+        - name: paint-brush.svg
+        - name: photo.svg
+        - name: printer.svg
+        - name: scale.svg
+        - name: server-stack.svg
+        - name: squares-2x2.svg
+        - name: squares-plus.svg
+        - name: sun.svg
+        - name: table-cells.svg
+        - name: trash.svg
+        - name: user-circle.svg
+        - name: wrench-screwdriver.svg
+        - name: wrench.svg
+        - name: yc-logo.svg
+        - name: git.svg
+        - name: youtube-6.svg
+    logos:
+      label: Logos
+      path: assets/logos/
+      items:
+        - name: cherry-logo-gray.png
+        - name: cherry-logo-red-light.png
+        - name: logo.png
+        - name: disney--1.svg
+    images:
+      label: Images
+      path: assets/images/
+      items:
+        - name: FMB01.png
+        - name: IYA01.png
+        - name: SFW01.png
+        - name: SFW02.png
+        - name: SSINK01.png

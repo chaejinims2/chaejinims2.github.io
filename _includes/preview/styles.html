@@ -329,7 +329,8 @@
     margin-top: var(--space-4);
   }
 
-  .tag {
+  .tag,
+  .btn-tag{
     display: inline-flex;
     align-items: center;
     padding: 2px 8px;
@@ -339,7 +340,11 @@
     background: var(--tag-bg);
     border: 1px solid var(--tag-border);
     border-radius: 999px;
+    cursor: pointer;
   }
+
+  .tag:hover,
+  .btn-tag:hover { filter: brightness(1.08); }
 
   .section {
     padding: var(--space-10) 0;
@@ -377,8 +382,8 @@
   }
 
   /* Color palette — layout matches preview-claude.html (compact tiles, no stretch-to-fill) */
-  .color-group { margin-bottom: 40px; }
-  .color-group-title {
+  .section-sub { margin-bottom: 40px; }
+  .section-sub-title {
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
@@ -453,7 +458,8 @@
     min-width: 0;
   }
   .type-sample:last-child { border-bottom: none; }
-  .type-sample-label {
+  /* 오른쪽 설명 — .type-sample-label 과 분리 (토큰 name: label 과 클래스 충돌 방지) */
+  .type-sample-meta {
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--text-muted);
@@ -461,26 +467,102 @@
     flex: 0 0 auto;
     max-width: 100%;
   }
+  
+  .type-sample-display-xl {
+    font-size: var(--fs-15);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+  .type-sample-display-l {
+    font-size: var(--fs-14);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  .type-sample-display-m {
+    font-size: var(--fs-12);
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .type-sample-display-s {
+    font-size: var(--fs-11);
+    line-height: 1.18;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .type-sample-display {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
 
-  .weight-spectrum {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    margin-bottom: var(--space-8);
-    padding: var(--space-6);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+  .type-sample-h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
-  .weight-sample { display: flex; align-items: baseline; gap: var(--space-4); flex-wrap: wrap; }
-  .weight-sample-text { font-size: 18px; flex: 1; min-width: 200px; }
-  .weight-sample-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    text-transform: uppercase;
+  .type-sample-h2-large {
+    font-size: var(--fs-8);
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .type-sample-h2 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .type-sample-h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .type-sample-body-large {
+    font-size: var(--fs-6);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+  .type-sample-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .type-sample-small {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  /* 첫 칸이 “label” 토큰일 때만 (캡션 .type-sample-meta 와 동일 클래스명 쓰지 않음) */
+  .type-sample > div:first-child.type-sample-label {
+    font-size: 11px;
+    font-weight: 600;
     letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
   }
+  .type-sample-caption {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .type-sample-code {
+    font-family: var(--font-mono);
+    font-size: var(--fs-4);
+    line-height: 1.55;
+    letter-spacing: -0.02em;
+  }
+  .type-sample-inline {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+  
   /* Combobox demos (main content) */
   .control-demo {
     min-width: min(100%, 220px);
@@ -697,8 +779,8 @@
   .radius-row { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: center; }
   .radius-item { text-align: center; }
   .radius-box {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     background: var(--surface);
     border: 1px solid var(--border);
     margin-bottom: var(--space-2);
@@ -710,6 +792,32 @@
   }
   .radius-context { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
+  .radius-box-4px {
+    border-radius: var(--radius-4px);
+  }
+  .radius-box-6px {
+    border-radius: var(--radius-6px);
+  }
+  .radius-box-8px {
+    border-radius: var(--radius-8px);
+  }
+  .radius-box-12px {
+    border-radius: var(--radius-12px);
+  }
+  .radius-box-16px {
+    border-radius: var(--radius-16px);
+  }
+  .radius-box-24px {
+    border-radius: var(--radius-24px);
+  }
+  .radius-box-32px {
+    border-radius: var(--radius-32px);
+  }
+  .radius-box-999px {
+    border-radius: var(--radius-999px);
+    width: 100px;
+    height: 32px;
+  }
   /* Elevation */
   .elevation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6); }
   .elevation-card {

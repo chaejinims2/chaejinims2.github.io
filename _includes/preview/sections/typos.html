@@ -1,0 +1,14 @@
+{% assign s = include.section %}
+<section class="section" id="{{ s.id }}">
+  <div class="section-title">{{ s.section_title }}</div>
+  <h2 class="section-heading">{{ s.heading }}</h2>
+  <div class="section-sub">
+    <h3 class="section-sub-title">{{ dp.default.groups.typos.label }}</h3>
+    {% for t in dp.default.groups.typos.items %}
+    <div class="type-sample">
+      <div class="type-sample-{{ t.name }}">{{ t.label }}</div>
+      <div class="type-sample-meta">{% if t.desc_html %}{{ t.desc_html }}{% else %}{{ t.desc }}{% endif %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

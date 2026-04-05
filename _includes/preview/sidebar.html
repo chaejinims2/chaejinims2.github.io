@@ -9,17 +9,9 @@
           <div class="nav-group-label">Preview</div>
           <ul class="nav-list">
             <li><a href="#intro"><svg class="nav-icon" aria-hidden="true"><use href="#i-home"/></svg>Home</a></li>
-            <li><a href="#colors"><svg class="nav-icon" aria-hidden="true"><use href="#i-paint-brush"/></svg>Colors</a></li>
-            <li><a href="#typography"><svg class="nav-icon" aria-hidden="true"><use href="#i-book"/></svg>Typography</a></li>
-            <li><a href="#buttons"><svg class="nav-icon" aria-hidden="true"><use href="#i-bolt"/></svg>Buttons</a></li>
-            <li><a href="#cards"><svg class="nav-icon" aria-hidden="true"><use href="#i-squares-2x2"/></svg>Cards</a></li>
-            <li><a href="#terminal"><svg class="nav-icon" aria-hidden="true"><use href="#i-command-line"/></svg>Terminal</a></li>
-            <li><a href="#spacing"><svg class="nav-icon" aria-hidden="true"><use href="#i-bars-3"/></svg>Spacing</a></li>
-            <li><a href="#radius"><svg class="nav-icon" aria-hidden="true"><use href="#i-adjustments-horizontal"/></svg>Radius</a></li>
-            <li><a href="#elevation"><svg class="nav-icon" aria-hidden="true"><use href="#i-chart-bar-square"/></svg>Elevation</a></li>
-            <li><a href="#icons"><svg class="nav-icon" aria-hidden="true"><use href="#i-squares-plus"/></svg>Icons</a></li>
-            <li><a href="#logos"><svg class="nav-icon" aria-hidden="true"><use href="#i-photo"/></svg>Logos</a></li>
-            <li><a href="#images"><svg class="nav-icon" aria-hidden="true"><use href="#i-film"/></svg>Images</a></li>
+            {% for sec in page.preview_sections %}
+            <li><a href="#{{ sec.id }}"><svg class="nav-icon" aria-hidden="true"><use href="#i-{{ sec.nav_icon }}"/></svg>{{ sec.nav_label }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>

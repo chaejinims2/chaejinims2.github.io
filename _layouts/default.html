@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="connect">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ 'assets/css/tokens.css' | relative_url }}" />
+{% include preview/styles.html %}
+</head>
+<body>
+{% include preview/sprite.html %}
+
+<div class="app">
+{% include preview/sidebar.html %}
+  <main class="main">
+    <div class="main-inner">
+      <header class="page-intro" id="intro">
+        <h1>{{ page.title | default: "Preview Page" }}</h1>
+        {{ page.intro | markdownify }}
+        {% include preview/chunks/tags.html %}
+      </header>
+      {{ content }}
+    </div>
+  </main>
+</div>
+
+{% include preview/scripts.html %}
+</body>
+</html>

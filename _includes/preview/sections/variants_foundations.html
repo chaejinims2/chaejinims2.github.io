@@ -1,0 +1,61 @@
+{% assign s = include.section %}
+<section class="section" id="{{ s.id }}">
+  <div class="section-title">{{ s.section_title }}</div>
+  <h2 class="section-heading">{{ s.heading }}</h2>
+  <div class="section-sub">
+    <h3 class="section-sub-title">Buttons &amp; select</h3>
+    <div class="button-row">
+      {% for group_pair in dp.variants.groups %}
+      {% assign g = group_pair[1] %}
+      {% for item in g.items %}
+      {% if item.options %}
+      <div class="control-demo">
+        <label class="field-label" for="{{ item.name }}">{{ item.label }}</label>
+        <div class="combo-wrap">
+          <select id="{{ item.name }}" class="combo">
+            {% for option in item.options %}
+            <option value="{{ option.key }}">{{ option.value }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="control-demo-hint">{{ item.hint }}</div>
+      </div>
+      {% else %}
+      <div class="button-demo">
+        <button type="button" class="{{ item.name }}"{% if item.disabled %} disabled{% endif %}>{{ item.label }}</button>
+        <div class="button-demo-label">{% if item.desc_html %}{{ item.desc_html }}{% else %}{{ item.desc }}{% endif %}</div>
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="section-sub">
+    {% if dp.default.groups.spacing.label %}<h3 class="section-sub-title">{{ dp.default.groups.spacing.label }}</h3>{% endif %}
+    <div class="spacing-row">
+      {% for item in dp.default.groups.spacing.items %}
+      <div class="spacing-item">
+        <div class="spacing-box" style="width: var(--{{ item.name }}); height: var(--{{ item.name }});"></div>
+        <div class="spacing-label">{{ item.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="section-sub">
+    {% if dp.default.groups.radius.label %}<h3 class="section-sub-title">{{ dp.default.groups.radius.label }}</h3>{% endif %}
+    <div class="radius-row">
+      {% for item in dp.default.groups.radius.items %}
+      <div class="radius-item">
+        <div class="radius-box {{ item.name }}"></div>
+        <div class="radius-label">{{ item.label }}</div>
+        <div class="radius-desc">
+          {% if item.desc_html %}
+            {{ item.desc_html }}
+          {% else %}
+            {{ item.desc }}
+          {% endif %}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

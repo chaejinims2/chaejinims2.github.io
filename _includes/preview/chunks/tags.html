@@ -1,0 +1,8 @@
+
+{% if page.tags %}
+<div class="tag-row">
+  {% for tag in page.tags %}
+  <span class="btn-tag"># {{ tag }}</span>
+  {% endfor %}
+</div>
+{% endif %}

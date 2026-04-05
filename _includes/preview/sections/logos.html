@@ -1,0 +1,15 @@
+{% assign s = include.section %}
+<section class="section" id="{{ s.id }}">
+  <div class="section-title">{{ s.section_title }}</div>
+  <h2 class="section-heading">{{ s.heading }}</h2>
+  <div class="logo-grid">
+    {% for logo in dp.assets.groups.logos.items %}
+    {% assign logo_path = dp.assets.groups.logos.path | append: logo.name %}
+    <div class="logo-cell" role="button" tabindex="0" title="{{ logo_path }}" data-copy="{{ logo_path }}">
+      <div class="logo-cell-preview"><img src="{{ logo_path | relative_url }}" width="120" height="56" alt="" decoding="async" loading="lazy" /></div>
+      <span class="icon-name">{% if logo.label %}{{ logo.label }}{% else %}{{ logo.name }}{% endif %}</span>
+      <span class="icon-feedback" aria-live="polite"></span>
+    </div>
+    {% endfor %}
+  </div>
+</section>

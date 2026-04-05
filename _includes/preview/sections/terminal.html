@@ -1,0 +1,15 @@
+{% assign s = include.section %}
+<section class="section" id="{{ s.id }}">
+  <div class="section-title">{{ s.section_title }}</div>
+  <h2 class="section-heading">{{ s.heading }}</h2>
+  <div class="terminal-box">
+    <div class="terminal-pre-wrap" style="--terminal-height: 220px;">
+      <pre class="terminal-content">
+{% include preview/dummy/terminal.html %}
+      </pre>
+    </div>
+  </div>
+  {% if s.note %}
+  <p class="note-box">{{ s.note | markdownify }}</p>
+  {% endif %}
+</section>

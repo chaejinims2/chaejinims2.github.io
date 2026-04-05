@@ -1,4 +1,16 @@
 
+        {% assign g = dp.surfaces.cards %}
+        <div class="card-grid">
+          {% for item in g.items %}
+          <div class="card {{ item.name }}">
+            <div class="card-label">{{ item.name }}</div>
+            <h3>{% if item.desc_html %}{{ item.desc_html }}{% else %}{{ item.desc }}{% endif %}</h3>
+            <p>{{ item.level }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+<!-- 
         <div class="card-grid">
           <div class="card">
             <div class="card-label">Standard surface</div>
@@ -34,4 +46,4 @@
               <li>Higher max PF count</li>
             </ul>
           </div>
-        </div>
+        </div> -->

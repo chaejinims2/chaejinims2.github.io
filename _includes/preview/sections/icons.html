@@ -1,0 +1,16 @@
+{% assign s = include.section %}
+<section class="section" id="{{ s.id }}">
+  <div class="section-title">{{ s.section_title }}</div>
+  <h2 class="section-heading">{{ s.heading }}</h2>
+  {% if s.section_lead %}<p class="section-lead">{{ s.section_lead | markdownify }}</p>{% endif %}
+  <div class="icon-grid">
+    {% for item in dp.assets.groups.icons.items %}
+    {% assign icon_id = item.name | replace: '.svg', '' %}
+    <div class="icon-cell" role="button" tabindex="0" title="{{ item.name }}" data-copy="{{ item.name }}">
+      <svg class="icon-sprite" width="32" height="32" aria-hidden="true"><use href="#i-{{ icon_id }}"/></svg>
+      <span class="icon-name">{% if item.label %}{{ item.label }}{% else %}{{ item.name }}{% endif %}</span>
+      <span class="icon-feedback" aria-live="polite"></span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
