@@ -1,3 +1,7 @@
+---
+title: Dinner location questionnaire
+---
+
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
