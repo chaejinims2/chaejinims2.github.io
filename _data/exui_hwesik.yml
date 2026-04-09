@@ -1,0 +1,80 @@
+# 회식 설문용 데이터 (판교)
+food_types:
+  - id: jokbal
+    label: "족발&보쌈"
+  - id: samgyeop
+    label: "삼겹살(돼지)"
+  - id: beef
+    label: "소고기"
+  - id: seafood
+    label: "회/해산물"
+  - id: chinese_lamb
+    label: "중식/양꼬치"
+
+locations:
+  - id: meokja
+    label: "판교역 1출구 건너편 먹자골목"
+  - id: lotte
+    label: "판교역 롯데마트"
+  - id: uspace
+    label: "판교 유스페이스1/2"
+  - id: alphadom
+    label: "판교역 1출구 건너편 알파돔 시티 판교"
+
+restaurants:
+  - name: "인생곱창"
+    detail: "곱창/막창"
+    location_id: meokja
+    food_ids: []
+  - name: "홀썸치킨"
+    detail: "치킨"
+    location_id: lotte
+    food_ids: []
+  - name: "해가옥"
+    detail: "족발보쌈"
+    location_id: lotte
+    food_ids: [jokbal]
+  - name: "가장맛있는족발"
+    detail: "족발보쌈"
+    location_id: uspace
+    food_ids: [jokbal]
+  - name: "동그리 솥뚜껑"
+    detail: "삼겹살"
+    location_id: uspace
+    food_ids: [samgyeop]
+  - name: "화포식당"
+    detail: "삼겹살"
+    location_id: uspace
+    food_ids: [samgyeop]
+  - name: "원조부안집"
+    detail: "삼겹살"
+    location_id: uspace
+    food_ids: [samgyeop]
+  - name: "양우 양꼬치"
+    detail: "양꼬치"
+    location_id: uspace
+    food_ids: [chinese_lamb]
+  - name: "미방"
+    detail: "양고기"
+    location_id: uspace
+    food_ids: [chinese_lamb]
+  - name: "낚시꾼김춘복의도시어부"
+    detail: "회/해산물"
+    location_id: uspace
+    food_ids: [seafood]
+  - name: "삼대곱창"
+    detail: "곱창/막창"
+    location_id: uspace
+    food_ids: []
+  - name: "고대생막창"
+    detail: "곱창/막창"
+    location_id: uspace
+    food_ids: []
+  - name: "찌마기"
+    detail: "조개찜"
+    location_id: alphadom
+    food_ids: [seafood]
+  - name: "양우정"
+    detail: "소고기"
+    location_id: alphadom
+    food_ids: [beef]

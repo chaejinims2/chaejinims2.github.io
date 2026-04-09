@@ -1,15 +1,79 @@
 ---
-layout: default
-title: Ielts test
+layout: labs-ielts
+title: IELTS Lab
+intro: |
+  책·시험을 고른 뒤 스킬을 선택하면 CBT 스타일로 **지문(좌)** 과 **답안(우)** 을 나란히 봅니다. 좁은 화면에서는 위·아래로 쌓입니다. 아래는 UI 플레이스홀더이며, 이후 `_data/ielts` 데이터와 연결할 수 있습니다.
+tags:
+  - ielts
+  - labs
+  - dark-ui
+ielts_nav:
+  - id: reading
+    label: Reading
+    icon: book
+  - id: writing
+    label: Writing
+    icon: pen
+  - id: speaking
+    label: Speaking
+    icon: microphone
 ---
+<section id="ielts-workspace" class="ielts-section" aria-labelledby="ielts-workspace-heading">
+  <div class="ielts-split" role="region" aria-label="CBT 두 패널">
+    <article class="ielts-pane card" aria-label="문제 영역">
+      <div class="ielts-pane-body ielts-pane-body--muted" id="ielts-passage-body">
+        {% capture ielts_reading_passage1 %}{% include ielts/ielts18/test1/reading/passage1.md %}{% endcapture %}
+        {{ ielts_reading_passage1 | markdownify }}
+      </div>
+    </article>
+    <article class="ielts-pane card" aria-label="답안 영역">
+      <div class="ielts-pane-body" id="ielts-questions-body">
+        {% capture ielts_reading_q0 %}{% include ielts/ielts18/test1/reading/passage1-questions.md %}{% endcapture %}
+        {{ ielts_reading_q0 | markdownify }}
+      </div>
+    </article>
+  </div>
+</section>
 
-# Ielts test
+{%- comment -%}Build-time preload: passages as HTML templates (safe mode friendly){%- endcomment -%}
+{% capture __p1 %}{% include ielts/ielts18/test1/reading/passage1.md %}{% endcapture %}
+{% capture __p2 %}{% include ielts/ielts18/test1/reading/passage2.md %}{% endcapture %}
+{% capture __p3 %}{% include ielts/ielts18/test1/reading/passage3.md %}{% endcapture %}
+<template id="tpl-ielts18-test1-reading-passage1">{{ __p1 | markdownify }}</template>
+<template id="tpl-ielts18-test1-reading-passage2">{{ __p2 | markdownify }}</template>
+<template id="tpl-ielts18-test1-reading-passage3">{{ __p3 | markdownify }}</template>
 
-- 이곳에서 Ielts 시험 문제를 풀 수 있습니다.
-- ielts 18, 19, 20 또는 다른 책들에서 만든 ielts 시험 문제를 풀 수 있습니다.
-- 먼저 책을 선택하고 시험을 선택하면 문제들이 나옵니다. 
-- Listening, Reading, Writing, Speaking을 자유롭게 선택하여 풀 수 있습니다. 
-- 일정 너비가 넘어가면 화면은 사이드바가 생기는것이 아닌 두페이지로 구성됩니다.
-- 좌측 페이지는 문제 페이지, 우측 페이지는 답안 페이지로 구성됩니다.
-- 시험 데이터는 /home/cherry/workspace/chaejinims2.github.io/_data/ielts 에 있습니다.
-- /home/cherry/workspace/chaejinims2.github.io/_data/ielts/_assets/reference/cbt-reading.png 이미지와 같이 화면이 구성됩니다.
+{% capture __p1q %}{% include ielts/ielts18/test1/reading/passage1-questions.md %}{% endcapture %}
+{% capture __p2q %}{% include ielts/ielts18/test1/reading/passage2-questions.md %}{% endcapture %}
+{% capture __p3q %}{% include ielts/ielts18/test1/reading/passage3-questions.md %}{% endcapture %}
+<template id="tpl-ielts18-test1-reading-passage1-questions">{{ __p1q | markdownify }}</template>
+<template id="tpl-ielts18-test1-reading-passage2-questions">{{ __p2q | markdownify }}</template>
+<template id="tpl-ielts18-test1-reading-passage3-questions">{{ __p3q | markdownify }}</template>
+
+{% capture __t2p1 %}{% include ielts/ielts18/test2/reading/passage1.md %}{% endcapture %}
+{% capture __t2p2 %}{% include ielts/ielts18/test2/reading/passage2.md %}{% endcapture %}
+{% capture __t2p3 %}{% include ielts/ielts18/test2/reading/passage3.md %}{% endcapture %}
+<template id="tpl-ielts18-test2-reading-passage1">{{ __t2p1 | markdownify }}</template>
+<template id="tpl-ielts18-test2-reading-passage2">{{ __t2p2 | markdownify }}</template>
+<template id="tpl-ielts18-test2-reading-passage3">{{ __t2p3 | markdownify }}</template>
+
+{% capture __t2p1q %}{% include ielts/ielts18/test2/reading/passage1-questions.md %}{% endcapture %}
+{% capture __t2p2q %}{% include ielts/ielts18/test2/reading/passage2-questions.md %}{% endcapture %}
+{% capture __t2p3q %}{% include ielts/ielts18/test2/reading/passage3-questions.md %}{% endcapture %}
+<template id="tpl-ielts18-test2-reading-passage1-questions">{{ __t2p1q | markdownify }}</template>
+<template id="tpl-ielts18-test2-reading-passage2-questions">{{ __t2p2q | markdownify }}</template>
+<template id="tpl-ielts18-test2-reading-passage3-questions">{{ __t2p3q | markdownify }}</template>
+
+{% capture __t3p1 %}{% include ielts/ielts18/test3/reading/passage1.md %}{% endcapture %}
+{% capture __t3p2 %}{% include ielts/ielts18/test3/reading/passage2.md %}{% endcapture %}
+{% capture __t3p3 %}{% include ielts/ielts18/test3/reading/passage3.md %}{% endcapture %}
+<template id="tpl-ielts18-test3-reading-passage1">{{ __t3p1 | markdownify }}</template>
+<template id="tpl-ielts18-test3-reading-passage2">{{ __t3p2 | markdownify }}</template>
+<template id="tpl-ielts18-test3-reading-passage3">{{ __t3p3 | markdownify }}</template>
+
+{% capture __t4p1 %}{% include ielts/ielts18/test4/reading/passage1.md %}{% endcapture %}
+{% capture __t4p2 %}{% include ielts/ielts18/test4/reading/passage2.md %}{% endcapture %}
+{% capture __t4p3 %}{% include ielts/ielts18/test4/reading/passage3.md %}{% endcapture %}
+<template id="tpl-ielts18-test4-reading-passage1">{{ __t4p1 | markdownify }}</template>
+<template id="tpl-ielts18-test4-reading-passage2">{{ __t4p2 | markdownify }}</template>
+<template id="tpl-ielts18-test4-reading-passage3">{{ __t4p3 | markdownify }}</template>

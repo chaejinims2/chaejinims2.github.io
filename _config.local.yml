@@ -1,0 +1,6 @@
+# Local-only overrides for faster iteration.
+# Intentionally excludes jekyll-feed to avoid slow regeneration.
+
+plugins:
+  - jekyll-seo-tag
+

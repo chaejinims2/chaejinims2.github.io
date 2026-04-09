@@ -1,9 +1,3 @@
-# Test 1. Reading
-
-## Section 3
-
-You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.
-
 ### Conquering Earth’s space junk problem
 
 *Satellites, rocket shards and collision debris are creating major traffic risks in orbit around the planet. Researchers are working to reduce these threats.*
@@ -37,59 +31,3 @@ The field is called space traffic management, because it's similar to managing t
 An additional problem is that there is no authoritative catalogue that accurately lists the orbits of all known space debris. Jah illustrates this with a web-based database that he has developed. It draws on several sources, such as catalogues maintained by the US and Russian governments, to visualise where objects are in space. When he types in an identifier for a particular space object, the database draws a purple line to designate its orbit. Only this doesn't quite work for a number of objects, such as a Russian rocket body designated in the database as object number 32280. When Jah enters that number, the database draws two purple lines: the US and Russian sources contain two completely different orbits for the same object. Jah says that it is almost impossible to tell which is correct, unless a third source of information made it possible to cross-correlate.
 
 Jah describes himself as a space environmentalist: 'I want to make space a place that is safe to operate, that is free and useful for generations to come.' Until that happens, he argues, the space community will continue devolving into a tragedy in which all spaceflight operators are polluting a common resource.
-
-### Section 3
-
-#### Q27–31
-
-Which section contains the following information?
-
-Write the correct letter, A-F, in boxes 27–31 on your answer sheet.
-
-```
-27. a reference to the coorperation that takes place to try and minimise risk
-28. an explanation of person's aims
-29. a description of major collision that occurred in space
-30. a comparison between tracking objects in space and the efficiency of a transportation system
-31. a reference to effort to classify space junk
-```
-
-#### Q32–35
-
-Complete the summary below.
-
-Choose ONE WORD ONLY from the passage for each answer.
-
-Write your answers in boxes 32–35 on your answer sheet.
-
-**The Inter-Agency Space Debris Coordination committee**
-
-```
-The committee gives advice on how the `[32] ` of space can be achieved. The committee advises that when satellites are no longer active, any unused `[33] `  or pressurised material that could cause `[34] _____` should be removed.
-
-Although operators of large satellite constellations accept that they have obligations as stewards of space, Holger Krag points out that the operators that become [35]() are unlikely to priorities removing their satellites from space.
-```
-
-#### Q36–40
-
-Look at the following statements and the list of people below.
-
-Match each statement with the correct person, A, B, C or D.
-
-Write the correct letter, A, B, C or D, in boxes 36–40 on your answer sheet.
-
-NB You may use any letter more than once.
-
-	List of People
-		(A) Carolin Frueh
-		(B) Holger Krag
-		(C) Marlon Sorge
-		(D) Moriba Jah
-
-```
-1. Knowing the exact location of space junk would help prevent any possible danger.
-2. Space should be available to every one and should be preserved for the future.
-3. A recommendation regarding satellites is widely ignored.
-4. There is conflicting information about where some satellites are in space.
-5. There is a risk we will not be able to undo the damage that occurs in space.
-```

@@ -1,9 +1,3 @@
-# Test 1. Reading
-
-## Section 1
-
-You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.
-
 ### Urban farming
 
 In Paris, urban farmers are trying a soil-free approach to agriculture that uses less space and fewer resources. Could it help cities face the threats to our food supplies?
@@ -18,55 +12,3 @@ Produce grown using this soil-free method, on the other hand – which relies so
 Urban farming is not, of course, a new phenomenon. Inner-city agriculture is booming from Shanghai to Detroit and Tokyo to Bangkok. Strawberries are being grown in disused shipping containers, mushrooms in underground carparks. Aeroponic farming, he says, is 'virtuous'. The equipment weighs little, can be installed on almost any flat surface and is cheap to buy: roughly €100 to €150 per square metre. It is cheap to run, too, consuming a tiny fraction of the electricity used by some techniques.
 
 Produce grown this way typically sells at prices that, while generally higher than those of classic intensive agriculture, are lower than soil-based organic growers. There are limits to what farmers can grow this way, of course, and much of the produce is suited to the summer months. 'Root vegetables we cannot do, at least not yet,' he says. 'Radishes are OK, but carrots, potatoes, that kind of thing – the roots are simply too long. Fruit trees are obviously not an option. And beans tend to take up a lot of space for not much return.' Nevertheless, urban farming of the kind being practised in Paris is one part of a bigger and fast-changing picture that is bringing food production closer to our lives.
-
-### Section 1
-
-#### Q1–3
-
-Complete the sentences below.
-
-Choose NO MORE THAN TWO WORDS AND|OR A NUMBER from the passage for each answer.
-
-Write your answers in boxes 1–3 on your answer sheet.
-
-```
-- Vertical tubes are used to grow strawberries, [1] and herbs.
-- There will eventually be a daily harvest of as much as [2] in weight of fruit and vegetables.
-- It may be possible that the farm's produce will account for as much as 10% of the city's [3] overall.
-
-```
-
-#### Q4–7
-
-Complete the table below. Choose ONE WORD ONLY from the passage for each answer.
-
-Write your answers in boxes 4–7 on your answer sheet.
-
-**Intensive farming versus aeroponic urban farming**
-
-Growth Selection Sale
---- --- --- ---
-Intensive farming • wide range of [4] used 
-• techniques pollute air • quality not good 
-• varieties of fruit and vegetables chosen that can survive long [5] [6] receive very little of overall income
-Aeroponic urban farming • no soil used 
-• nutrients added to water, which is recycled • produce chosen because of its [7] (producers)
-
-#### Q8–13
-
-Do the following statements agree with the information given in Reading Passage 1?
-
-In boxes 8–13 on your answer sheet, write
-
-- **TRUE** if the statement agrees with the information
-- **FALSE** if the statement contradicts the information
-- **NOT GIVEN** if there is no information on this
-
-```
-8. Urban farming can take place above or below ground.
-9. Some of the equipment used in aeroponic farming can be made by hand.
-10. Urban farming relies more on electricity than some other types of farming.
-11. Fruit and vegetables grown on an aeroponic urban farm are cheaper than traditionally grown organic produce.
-12. Most produce can be grown on an aeroponic urban farm at any time of the year.
-13. Beans take longer to grow on an urban farm than other vegetables.
-```

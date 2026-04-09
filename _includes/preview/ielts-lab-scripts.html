@@ -1,0 +1,357 @@
+<script>
+(function () {
+  var STORAGE_KEY_VIEW = "ielts-lab-view-mode";
+  var STORAGE_KEY_READER = "ielts-lab-reader";
+  var sel = document.getElementById("ielts-skill");
+  var bookSel = document.getElementById("ielts-book");
+  var testSel = document.getElementById("ielts-test");
+  var passageSel = document.getElementById("ielts-passage");
+  var labelEl = document.getElementById("ielts-active-skill-label");
+  var pathEl = document.getElementById("ielts-pane-path");
+  var passageBody = document.getElementById("ielts-passage-body");
+  var questionsBody = document.getElementById("ielts-questions-body");
+  var readerBtn = document.getElementById("ielts-reader-btn");
+  var readerPanel = document.getElementById("ielts-reader-panel");
+  var readerClose = document.getElementById("ielts-reader-close");
+  var readerReset = document.getElementById("ielts-reader-reset");
+  var viewBtns = document.querySelectorAll(".ielts-seg__btn[data-view]");
+  var fontFamilySel = document.getElementById("ielts-font-family");
+  var fontSizeRange = document.getElementById("ielts-font-size");
+  var lineHeightRange = document.getElementById("ielts-line-height");
+  var measureRange = document.getElementById("ielts-measure");
+  var clearHighlightsBtn = document.getElementById("ielts-clear-highlights");
+  var scrollbarSegBtns = document.querySelectorAll(".ielts-seg__btn[data-ielts-scrollbars]");
+  if (!sel) return;
+
+  function selectionAnchorInPassage(range) {
+    if (!passageBody || !range) return false;
+    var n = range.commonAncestorContainer;
+    if (n.nodeType === Node.TEXT_NODE) n = n.parentNode;
+    return n && passageBody.contains(n);
+  }
+
+  function applyPassageHighlight(ctrlHeld) {
+    if (!ctrlHeld) return;
+    if (!passageBody) return;
+    var winSel = window.getSelection();
+    if (!winSel || winSel.rangeCount === 0 || winSel.isCollapsed) return;
+    var range = winSel.getRangeAt(0);
+    if (!selectionAnchorInPassage(range)) return;
+    var t = (winSel.toString() || "").trim();
+    if (!t) return;
+
+    var mark = document.createElement("mark");
+    mark.className = "ielts-highlight";
+
+    try {
+      range.surroundContents(mark);
+    } catch (err) {
+      var frag = range.extractContents();
+      mark.appendChild(frag);
+      range.insertNode(mark);
+    }
+    winSel.removeAllRanges();
+  }
+
+  function unwrapHighlightMark(mark) {
+    if (!mark || !mark.classList || !mark.classList.contains("ielts-highlight")) return;
+    var parent = mark.parentNode;
+    if (!parent) return;
+    while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+    parent.removeChild(mark);
+  }
+
+  function clearPassageHighlights() {
+    if (!passageBody) return;
+    passageBody.querySelectorAll("mark.ielts-highlight").forEach(unwrapHighlightMark);
+  }
+
+  function autoSizeSelect(el) {
+    if (!el || !el.options || el.selectedIndex < 0) return;
+    var opt = el.options[el.selectedIndex];
+    var text = (opt && opt.textContent ? opt.textContent : "").trim();
+    if (!text) text = "—";
+
+    var cs = window.getComputedStyle(el);
+    var padL = parseFloat(cs.paddingLeft) || 0;
+    var padR = parseFloat(cs.paddingRight) || 0;
+    var borderL = parseFloat(cs.borderLeftWidth) || 0;
+    var borderR = parseFloat(cs.borderRightWidth) || 0;
+
+    var probe = document.createElement("span");
+    probe.style.position = "absolute";
+    probe.style.visibility = "hidden";
+    probe.style.whiteSpace = "nowrap";
+    probe.style.fontFamily = cs.fontFamily;
+    probe.style.fontSize = cs.fontSize;
+    probe.style.fontWeight = cs.fontWeight;
+    probe.style.letterSpacing = cs.letterSpacing;
+    probe.style.textTransform = cs.textTransform;
+    probe.textContent = text;
+    document.body.appendChild(probe);
+    var w = probe.getBoundingClientRect().width;
+    probe.remove();
+
+    var extra = 6;
+    el.style.width = Math.ceil(w + padL + padR + borderL + borderR + extra) + "px";
+  }
+
+  function autoSizeAllCombos() {
+    document
+      .querySelectorAll(".ielts-lab-page .sidebar select.combo")
+      .forEach(autoSizeSelect);
+  }
+
+  function syncSkillLabel() {
+    var opt = sel.options[sel.selectedIndex];
+    if (!opt) return;
+    var title = opt.getAttribute("data-skill-title") || opt.textContent.trim() || "";
+    if (labelEl) labelEl.textContent = title;
+    autoSizeAllCombos();
+  }
+
+  function selectedText(el) {
+    if (!el || !el.options || el.selectedIndex < 0) return "";
+    var o = el.options[el.selectedIndex];
+    return (o && o.textContent ? o.textContent : "").trim();
+  }
+
+  function syncPaneHeader() {
+    var bookT = selectedText(bookSel);
+    var testT = selectedText(testSel);
+    var skillT = selectedText(sel);
+    var passageT = selectedText(passageSel);
+    if (pathEl) pathEl.textContent = [bookT, testT, skillT].filter(Boolean).join(" / ");
+    if (labelEl && passageT) labelEl.textContent = passageT;
+  }
+
+  function syncPassageContent() {
+    if (!passageSel || !passageBody) return;
+    var bookKey = (bookSel && bookSel.value) || "ielts18";
+    var testKey = (testSel && testSel.value) || "test1";
+    var skillKey = (sel && sel.value) || "reading";
+    var passageKey = passageSel.value || "passage1";
+    var tplId = "tpl-" + bookKey + "-" + testKey + "-" + skillKey + "-" + passageKey;
+    var tpl = document.getElementById(tplId);
+    if (!tpl) return;
+    passageBody.innerHTML = tpl.innerHTML;
+    if (questionsBody) {
+      var qTpl = document.getElementById(tplId + "-questions");
+      questionsBody.innerHTML = qTpl ? qTpl.innerHTML : "";
+    }
+  }
+
+  function syncAll() {
+    syncPassageContent();
+    syncPaneHeader();
+    autoSizeAllCombos();
+  }
+
+  function applyViewMode(mode) {
+    var root = document.body;
+    if (!root) return;
+    if (mode !== "auto" && mode !== "single" && mode !== "split") mode = "auto";
+    if (mode === "auto") root.removeAttribute("data-view");
+    else root.setAttribute("data-view", mode);
+    viewBtns.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-view") === mode ? "true" : "false");
+    });
+    try { localStorage.setItem(STORAGE_KEY_VIEW, mode); } catch (e) {}
+  }
+
+  function getSavedViewMode() {
+    try { return localStorage.getItem(STORAGE_KEY_VIEW) || "auto"; } catch (e) { return "auto"; }
+  }
+
+  function safeParseJSON(s, fallback) {
+    try { return JSON.parse(s); } catch (e) { return fallback; }
+  }
+
+  function getReaderState() {
+    var d = { font: "sans", size: 16, line: 1.65, measure: 760, hideScrollbars: false };
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY_READER);
+      if (!raw) return d;
+      var v = safeParseJSON(raw, d) || d;
+      if (v.font) d.font = v.font;
+      if (typeof v.size === "number") d.size = v.size;
+      if (typeof v.line === "number") d.line = v.line;
+      if (typeof v.measure === "number") d.measure = v.measure;
+      if (typeof v.hideScrollbars === "boolean") d.hideScrollbars = v.hideScrollbars;
+    } catch (e) {}
+    return d;
+  }
+
+  function setReaderState(next) {
+    try { localStorage.setItem(STORAGE_KEY_READER, JSON.stringify(next)); } catch (e) {}
+  }
+
+  function applyReaderState(state) {
+    if (passageBody) {
+      var fontVar = state.font === "serif" ? "var(--font-serif, ui-serif, Georgia, serif)"
+        : state.font === "mono" ? "var(--font-mono)"
+        : "var(--font-sans)";
+      passageBody.style.setProperty("--ielts-reader-font", fontVar);
+      passageBody.style.setProperty("--ielts-reader-font-size", state.size + "px");
+      passageBody.style.setProperty("--ielts-reader-line-height", String(state.line));
+      passageBody.style.setProperty("--ielts-reader-measure", state.measure + "px");
+    }
+    var root = document.body;
+    if (root) {
+      if (state.hideScrollbars) root.classList.add("ielts-hide-pane-scrollbars");
+      else root.classList.remove("ielts-hide-pane-scrollbars");
+    }
+  }
+
+  function syncReaderUI(state) {
+    if (fontFamilySel) fontFamilySel.value = state.font;
+    if (fontSizeRange) fontSizeRange.value = String(state.size);
+    if (lineHeightRange) lineHeightRange.value = String(state.line);
+    if (measureRange) measureRange.value = String(state.measure);
+    scrollbarSegBtns.forEach(function (b) {
+      var hide = b.getAttribute("data-ielts-scrollbars") === "hide";
+      b.setAttribute("aria-pressed", hide === !!state.hideScrollbars ? "true" : "false");
+    });
+  }
+
+  function openReader() {
+    if (!readerPanel || !readerBtn) return;
+    readerPanel.hidden = false;
+    readerBtn.setAttribute("aria-expanded", "true");
+    // Position as fixed overlay under the button (avoid topbar scroll clipping)
+    try {
+      var r = readerBtn.getBoundingClientRect();
+      var gap = 8;
+      var left = Math.max(12, Math.min(window.innerWidth - 12, r.left));
+      var top = Math.max(12, r.bottom + gap);
+      // Prefer aligning the panel's right edge to button's right edge when possible
+      var panelW = readerPanel.getBoundingClientRect().width || 320;
+      var leftAligned = Math.min(left, window.innerWidth - 12 - panelW);
+      var rightAligned = Math.max(12, Math.min(window.innerWidth - 12 - panelW, r.right - panelW));
+      var finalLeft = rightAligned;
+      if (finalLeft < 12 || finalLeft + panelW > window.innerWidth - 12) finalLeft = leftAligned;
+      readerPanel.style.left = finalLeft + "px";
+      readerPanel.style.top = top + "px";
+    } catch (e) {}
+  }
+
+  function closeReader() {
+    if (!readerPanel || !readerBtn) return;
+    readerPanel.hidden = true;
+    readerBtn.setAttribute("aria-expanded", "false");
+  }
+
+  function toggleReader() {
+    if (!readerPanel || !readerBtn) return;
+    if (readerPanel.hidden) openReader(); else closeReader();
+  }
+
+  function onReaderChange() {
+    var cur = getReaderState();
+    var next = {
+      font: fontFamilySel ? fontFamilySel.value : cur.font,
+      size: fontSizeRange ? parseInt(fontSizeRange.value, 10) : cur.size,
+      line: lineHeightRange ? parseFloat(lineHeightRange.value) : cur.line,
+      measure: measureRange ? parseInt(measureRange.value, 10) : cur.measure,
+      hideScrollbars: !!cur.hideScrollbars
+    };
+    setReaderState(next);
+    applyReaderState(next);
+  }
+
+  function resetReader() {
+    var d = { font: "sans", size: 16, line: 1.65, measure: 760, hideScrollbars: false };
+    setReaderState(d);
+    syncReaderUI(d);
+    applyReaderState(d);
+  }
+
+  sel.addEventListener("change", syncSkillLabel);
+  if (bookSel) bookSel.addEventListener("change", autoSizeAllCombos);
+  if (testSel) testSel.addEventListener("change", autoSizeAllCombos);
+  if (passageSel) passageSel.addEventListener("change", autoSizeAllCombos);
+  if (bookSel) bookSel.addEventListener("change", syncAll);
+  if (testSel) testSel.addEventListener("change", syncAll);
+  if (sel) sel.addEventListener("change", syncAll);
+  if (passageSel) passageSel.addEventListener("change", syncAll);
+  syncAll();
+
+  applyViewMode(getSavedViewMode());
+  var rs = getReaderState();
+  syncReaderUI(rs);
+  applyReaderState(rs);
+
+  viewBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      applyViewMode(b.getAttribute("data-view"));
+    });
+  });
+
+  scrollbarSegBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var cur = getReaderState();
+      var next = {
+        font: cur.font,
+        size: cur.size,
+        line: cur.line,
+        measure: cur.measure,
+        hideScrollbars: b.getAttribute("data-ielts-scrollbars") === "hide"
+      };
+      setReaderState(next);
+      applyReaderState(next);
+      syncReaderUI(next);
+    });
+  });
+
+  if (readerBtn) readerBtn.addEventListener("click", toggleReader);
+  if (readerClose) readerClose.addEventListener("click", closeReader);
+  if (readerReset) readerReset.addEventListener("click", resetReader);
+  if (clearHighlightsBtn) clearHighlightsBtn.addEventListener("click", clearPassageHighlights);
+
+  if (passageBody) {
+    passageBody.addEventListener("mouseup", function (e) {
+      var ctrl = !!(e && e.ctrlKey);
+      window.setTimeout(function () {
+        applyPassageHighlight(ctrl);
+      }, 0);
+    });
+    passageBody.addEventListener("touchend", function (e) {
+      var ctrl = !!(e && e.ctrlKey);
+      window.setTimeout(function () {
+        applyPassageHighlight(ctrl);
+      }, 50);
+    }, { passive: true });
+    passageBody.addEventListener("click", function (e) {
+      var t = e.target;
+      if (!t || typeof t.closest !== "function") return;
+      var mark = t.closest("mark.ielts-highlight");
+      if (!mark || !passageBody.contains(mark)) return;
+      e.preventDefault();
+      unwrapHighlightMark(mark);
+    });
+  }
+  [fontFamilySel, fontSizeRange, lineHeightRange, measureRange].forEach(function (el) {
+    if (!el) return;
+    el.addEventListener("change", onReaderChange);
+    el.addEventListener("input", onReaderChange);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeReader();
+  });
+  document.addEventListener("click", function (e) {
+    if (!readerPanel || readerPanel.hidden) return;
+    var t = e.target;
+    if (readerPanel.contains(t) || (readerBtn && readerBtn.contains(t))) return;
+    closeReader();
+  });
+
+  window.addEventListener("resize", function () {
+    if (!readerPanel || readerPanel.hidden) return;
+    openReader();
+  });
+
+  window.setTimeout(autoSizeAllCombos, 0);
+  window.setTimeout(autoSizeAllCombos, 250);
+})();
+</script>

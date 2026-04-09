@@ -1,9 +1,3 @@
-# Test 1. Reading
-
-## Section 2
-
-You should spend about 20 minutes on Questions 14–26, which are based on Reading Passage 2 below.
-
 ### Forest management int Pennsylvania, USA
 
 *How managing low-quality wood (also know as low-use wood) for bioenergy can encourage sustainable forest management.*
@@ -28,64 +22,3 @@ A Shelterwood Cut, which only takes place in a mature forest that has already be
 
 #### G
 Thinnings and dense and dead wood removal for a fire prevention also center on the production of low-use wood. However, it is important to remember that some retention of what many would classify as low-use wood is very important. The tops of trees that have been cut down should be left on the site so that their nutrients cycle back into the soil. In addition, trees with many caities are extremely important habitats for insect predators like wood peekers, bats and small mammals. They help control problem insects and increase the health and resilience of the forest. It is also important to remember that not all small trees are low-use. For example, many species like hawthorn provide food for wildlife. Finally, rare species of trees in a forest should also sty behind as they add to its structural diversity.
-
-### Section 2
-
-#### Q14–18
-
-Reading Passage 2 has seven paragraphs, A-G.
-
-Which paragraph contains the following information?
-
-Write the correct letter, A-G, in boxes 14–18 on your answer sheet.
-
-NB You may use any letter more than once.
-
-```
-14. bad outcomes for a forest when people focus only on its financial reward
-15. reference to the aspects of any tree that contribute to its worth.
-16. mention of the potential use of wood to help run vehicles
-17. examples of insects that attack trees
-18. an alternative name for trees that produce low-use wood
-```
-
-#### Q19–21
-
-Look at the following purposes and the list of timber cuts below.
-
-Match each statement with the timber cut, A, B or C.
-
-Write the correct letter, A, B or C, in boxes 19–21 on your answer sheet.
-
-NB You may use any letter more than once.
-
-	List of People
-		A. a TSI Cut
-		B. a Salvage Cut
-		C. a Shelterwood Cut
-
-```
-19. to remove trees that are diseased
-20. to generate income across a number of years
-21. to create a forest whose trees are close in age
-```
-
-#### Q22–26
-
-Complete the sentence below.
-
-Choose **ONE WORD ONLY** from the passage for each answer.
-
-Write your answers in boxes 22–26 on your answer sheet.
-
-```
-1. Some dead wood is removed to avoid the possibility of (fire)
-2. The (nutirents) from the tops of cut trees can help improve soil quality.
-3. Some damaged trees should be left, such as (cavities), are a source of food for animals and insects.
-4. Some trees that are small, such as (hawthorn), are a source of food for animals and insects.
-5. Any trees that are (rare) should be left to grow, as they add to the variety of species in the forest.
-
-Chaejin who is mature X
-
-Mature Chaejin O
-```

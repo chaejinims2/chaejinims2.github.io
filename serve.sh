@@ -12,4 +12,6 @@ export BUNDLE_APP_CONFIG="$PWD/.bundle"
 # bundle exec jekyll serve --port 4001
 mkdir -p "_pages/labs/lm11/prac/log/"
 rsync -av --delete "_data/lm11/prac/log/" "_pages/labs/lm11/prac/log/"
-bundle exec jekyll serve --host 0.0.0.0 --port 4001
+
+# Local dev: skip jekyll-feed for faster rebuilds
+bundle exec jekyll serve --host 0.0.0.0 --port 4001 --config "_config.yml,_config.local.yml"
