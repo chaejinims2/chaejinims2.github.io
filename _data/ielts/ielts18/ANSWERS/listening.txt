@@ -1,0 +1,163 @@
+test 1
+1. DW30 7YZ
+2. 24th April
+3. dentist
+4. parking
+5. Claxby
+6. late
+7. evening
+8. supermarket
+9. pollution
+10. storage
+11. C
+12. A
+13. A
+14/15. B, E
+
+16. B
+17. G
+18. D
+19. A
+20. F
+21. A
+22. B
+23. A
+24. C
+25. B
+26. A
+27/28. B, E
+
+29/30. A, C
+
+31. fences
+32. family
+33. helicopters
+34. stress
+35. sides
+36. breathing
+37. feet
+38. employment
+39. weapons
+40. tourism
+
+test 2
+1. training
+2. discount
+3. taxi
+4. service
+5. English
+6. Wivenhoe
+7. equipment
+8. 9.75
+9. deliveries
+10. Sunday
+11/12. B, E
+
+13/14. B, C
+
+15. G
+16. C
+17. D
+18. B
+19. H
+20. A
+21. C
+22. A
+23. B
+24. B
+25/26. A, B
+
+27. D
+28. A
+29. C
+30. F
+31. convenient
+32. suits
+33. tailor
+34. profession
+35. visible
+36. string
+37. waist
+38. perfume
+39. image
+40. handbag
+
+test 3
+1. Marrowfield
+2. relative
+3. socialise
+4. full
+5. Domestic Life
+6. clouds
+7. timing
+8. Animal Magic
+9. (animal) movement
+10. dark
+11/12. B, C
+13/14. B, D
+15. C
+16. B
+17. B
+18. C
+19. A
+20. A
+21/22. A, E
+23/24. B, D
+25. G
+26. E
+27. B
+28. C
+29. F
+30. A
+31. technical
+32. cheap
+33. thousands
+34. identification
+35. tracking
+36. military
+37. location
+38. prediction
+39. database
+40. trust
+
+test 4
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
+16. 
+17. 
+18. 
+19. 
+20. 
+21. 
+22. 
+23. 
+24. 
+25. 
+26. 
+27. 
+28. 
+29. 
+30. 
+31. 
+32. 
+33. 
+34. 
+35. 
+36. 
+37. 
+38. 
+39. 
+40. 

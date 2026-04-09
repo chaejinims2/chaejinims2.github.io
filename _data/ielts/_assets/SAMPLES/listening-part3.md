@@ -1,0 +1,54 @@
+# Test X. Listening
+
+## Part 3
+
+#### Q21
+
+{Question stem}
+
+- **A** …
+- **B** …
+- **C** …
+
+#### Q22
+
+{Question stem}
+
+- **A** …
+- **B** …
+- **C** …
+
+<!-- 필요한 만큼 Q23, Q24 … 반복 -->
+
+#### Q25 - 26
+
+Choose TWO … Choose TWO letters, **A–E**.
+
+- **A** …
+- **B** …
+- **C** …
+- **D** …
+- **E** …
+
+#### Q27 - 30
+
+{Matching instruction — e.g. Choose FOUR answers from the box …}
+
+- **A** …
+- **B** …
+- **C** …
+- **D** …
+- **E** …
+- **F** …
+
+  - {Country/topic}: [Q27]
+  - {Country/topic}: [Q28]
+  - {Country/topic}: [Q29]
+  - {Country/topic}: [Q30]
+
+### Audio script
+
+```
+A: … [Q21]
+B: …
+```

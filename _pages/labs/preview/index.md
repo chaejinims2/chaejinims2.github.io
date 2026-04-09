@@ -1,6 +1,5 @@
 ---
-layout: preview
-permalink: /preview
+layout: default
 title: Design preview
 intro: |
   This is a design preview for the Chaejin Im portfolio website.
@@ -62,3 +61,27 @@ preview_sections:
   #   heading: Figures & photos
   #   heading_class: image-library-heading
 ---
+{% assign dp = site.data.design_preview %}
+{% for sec in page.preview_sections %}
+{% unless forloop.first %}
+<hr class="section-divider">
+{% endunless %}
+{% case sec.kind %}
+{% when 'colors' %}
+{% include preview/sections/colors.html section=sec %}
+{% when 'variants_foundations' %}
+{% include preview/sections/variants_foundations.html section=sec %}
+{% when 'typos' %}
+{% include preview/sections/typos.html section=sec %}
+{% when 'layout_cards' %}
+{% include preview/sections/layout_cards.html section=sec %}
+{% when 'terminal' %}
+{% include preview/sections/terminal.html section=sec %}
+{% when 'icons' %}
+{% include preview/sections/icons.html section=sec %}
+{% when 'logos' %}
+{% include preview/sections/logos.html section=sec %}
+{% when 'images' %}
+{% include preview/sections/images.html section=sec %}
+{% endcase %}
+{% endfor %}
