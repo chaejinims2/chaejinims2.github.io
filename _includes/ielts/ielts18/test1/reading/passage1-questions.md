@@ -2,7 +2,7 @@
 
 Complete the sentences below.
 
-Choose NO MORE THAN TWO WORDS AND|OR A NUMBER from the passage for each answer.
+Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.
 
 Write your answers in boxes 1–3 on your answer sheet.
 

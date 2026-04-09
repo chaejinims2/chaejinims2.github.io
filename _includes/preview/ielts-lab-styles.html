@@ -670,10 +670,16 @@
     gap: var(--space-3);
   }
 
+  /* 모바일·좁은 탑바: flex-shrink로 너비가 줄어들면 셀렉트 라벨이 잘리므로
+     최소 너비는 내용 기준으로 유지하고, 부모(.sidebar)의 가로 스크롤로 전체 탐색 */
   .ielts-lab-page .ielts-breadcrumb {
-    flex: 0 1 auto;
-    min-width: 0;
-    overflow: hidden;
+    flex: 0 0 auto;
+    min-width: min-content;
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
   }
 
   .ielts-lab-page .sidebar-footer {
@@ -706,8 +712,8 @@
 
   .ielts-lab-page .theme-switcher .combo-wrap {
     flex: 0 0 auto;
-    width: 7.25rem;
-    min-width: 6.75rem;
+    width: 6rem;
+    min-width: 6rem;
   }
 
   /* Breadcrumb-like combobox styling (IELTS topbar only)
@@ -718,8 +724,8 @@
   }
 
   .ielts-lab-page .sidebar select.combo {
-    min-height: 36px;
-    padding: 6px 10px;
+    min-height: 30px;
+    padding: 6px 0px 4px 4px;
     font-size: 13px;
     border: 0;
     background: transparent;
