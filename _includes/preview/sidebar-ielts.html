@@ -62,14 +62,18 @@
             aria-haspopup="dialog"
             aria-expanded="false"
             aria-controls="ielts-reader-panel"
-          >READER</button>
+            aria-label="Reader 설정"
+            title="Reader"
+          >
+            <svg class="ielts-reader-btn-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-book"/></svg>
+          </button>
           <div class="ielts-reader-panel card" id="ielts-reader-panel" role="dialog" aria-label="Reader 설정" hidden>
             <div class="ielts-reader-row">
               <span class="field-label">View</span>
               <div class="ielts-seg" role="group" aria-label="보기 모드">
-                <button type="button" class="ielts-seg__btn" data-view="auto">AUTO</button>
-                <button type="button" class="ielts-seg__btn" data-view="single">1PAGE</button>
-                <button type="button" class="ielts-seg__btn" data-view="split">2PAGE</button>
+                <button type="button" class="ielts-seg__btn" data-view="auto" aria-pressed="false">AUTO</button>
+                <button type="button" class="ielts-seg__btn" data-view="single" aria-pressed="true">1PAGE</button>
+                <button type="button" class="ielts-seg__btn" data-view="split" aria-pressed="false">2PAGE</button>
               </div>
             </div>
             <div class="ielts-reader-row">
@@ -97,8 +101,8 @@
             <div class="ielts-reader-row">
               <span class="field-label">Bars</span>
               <div class="ielts-seg" role="group" aria-label="패널 스크롤바 표시">
-                <button type="button" class="ielts-seg__btn" data-ielts-scrollbars="show" aria-pressed="true">ON</button>
-                <button type="button" class="ielts-seg__btn" data-ielts-scrollbars="hide" aria-pressed="false">OFF</button>
+                <button type="button" class="ielts-seg__btn" data-ielts-scrollbars="show" aria-pressed="false">ON</button>
+                <button type="button" class="ielts-seg__btn" data-ielts-scrollbars="hide" aria-pressed="true">OFF</button>
               </div>
             </div>
             <div class="ielts-reader-row">

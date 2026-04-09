@@ -150,7 +150,7 @@
   function applyViewMode(mode) {
     var root = document.body;
     if (!root) return;
-    if (mode !== "auto" && mode !== "single" && mode !== "split") mode = "auto";
+    if (mode !== "auto" && mode !== "single" && mode !== "split") mode = "single";
     if (mode === "auto") root.removeAttribute("data-view");
     else root.setAttribute("data-view", mode);
     viewBtns.forEach(function (b) {
@@ -160,7 +160,7 @@
   }
 
   function getSavedViewMode() {
-    try { return localStorage.getItem(STORAGE_KEY_VIEW) || "auto"; } catch (e) { return "auto"; }
+    try { return localStorage.getItem(STORAGE_KEY_VIEW) || "single"; } catch (e) { return "single"; }
   }
 
   function safeParseJSON(s, fallback) {
@@ -168,7 +168,7 @@
   }
 
   function getReaderState() {
-    var d = { font: "sans", size: 16, line: 1.65, measure: 760, hideScrollbars: false };
+    var d = { font: "sans", size: 16, line: 1.65, measure: 760, hideScrollbars: true };
     try {
       var raw = localStorage.getItem(STORAGE_KEY_READER);
       if (!raw) return d;
@@ -260,7 +260,7 @@
   }
 
   function resetReader() {
-    var d = { font: "sans", size: 16, line: 1.65, measure: 760, hideScrollbars: false };
+    var d = { font: "sans", size: 16, line: 1.65, measure: 760, hideScrollbars: true };
     setReaderState(d);
     syncReaderUI(d);
     applyReaderState(d);
