@@ -62,14 +62,17 @@ books:
               - key: passage1
                 label: Passage1
                 include: ielts/ielts18/test3/reading/passage1.md
+                include_questions: ielts/ielts18/test3/reading/passage1-questions.md
               - key: passage2
                 label: Passage2
                 include: ielts/ielts18/test3/reading/passage2.md
+                include_questions: ielts/ielts18/test3/reading/passage2-questions.md
               - key: passage3
                 label: Passage3
                 include: ielts/ielts18/test3/reading/passage3.md
+                include_questions: ielts/ielts18/test3/reading/passage3-questions.md
       - key: test4
-        label: Test 4
+        label: Test4
         skills:
           - key: reading
             label: Reading
@@ -77,9 +80,12 @@ books:
               - key: passage1
                 label: Passage1
                 include: ielts/ielts18/test4/reading/passage1.md
+                include_questions: ielts/ielts18/test4/reading/passage1-questions.md
               - key: passage2
                 label: Passage2
                 include: ielts/ielts18/test4/reading/passage2.md
+                include_questions: ielts/ielts18/test4/reading/passage2-questions.md
               - key: passage3
                 label: Passage3
                 include: ielts/ielts18/test4/reading/passage3.md
+                include_questions: ielts/ielts18/test4/reading/passage3-questions.md
