@@ -43,12 +43,19 @@
     <div class="sidebar-stack">
       <div class="sidebar-body">
         <div class="ielts-breadcrumb__combo">
-          <div class="combo-wrap combo-wrap--breadcrumb">
-            <select id="ielts-passage" class="combo combo--breadcrumb" aria-label="지문 선택">
-              <option value="passage1" selected>Passage1</option>
-              <option value="passage2">Passage2</option>
-              <option value="passage3">Passage3</option>
-            </select>
+          <div class="ielts-passage-picker" role="group" aria-label="지문 선택">
+            {% for p in reading0.passages %}
+            <button
+              type="button"
+              class="ielts-passage-btn"
+              data-passage="{{ p.key }}"
+              data-short-label="{{ forloop.index }}"
+              aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-label="Passage {{ forloop.index }}"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-num-{{ forloop.index }}"/></svg>
+            </button>
+            {% endfor %}
           </div>
         </div>
 

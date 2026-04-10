@@ -83,6 +83,45 @@
     opacity: 0.7;
   }
 
+  .ielts-passage-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    flex: 0 0 auto;
+  }
+
+  .ielts-passage-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 4px;
+    line-height: 0;
+  }
+
+  .ielts-passage-btn:hover {
+    color: var(--text-primary);
+  }
+
+  .ielts-passage-btn[aria-pressed="true"] {
+    color: var(--accent, #f59e0b);
+  }
+
+  .ielts-passage-btn:focus-visible {
+    outline: 2px solid var(--accent, #f59e0b);
+    outline-offset: 2px;
+  }
+
+  .ielts-passage-btn svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
   .ielts-view-toggle {
     padding: 4px 8px;
     min-height: 28px;

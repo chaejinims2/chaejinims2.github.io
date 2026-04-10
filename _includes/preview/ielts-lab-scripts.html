@@ -5,7 +5,7 @@
   var sel = document.getElementById("ielts-skill");
   var bookSel = document.getElementById("ielts-book");
   var testSel = document.getElementById("ielts-test");
-  var passageSel = document.getElementById("ielts-passage");
+  var passageBtns = document.querySelectorAll(".ielts-passage-btn[data-passage]");
   var labelEl = document.getElementById("ielts-active-skill-label");
   var pathEl = document.getElementById("ielts-pane-path");
   var passageBody = document.getElementById("ielts-passage-body");
@@ -116,21 +116,33 @@
     return (o && o.textContent ? o.textContent : "").trim();
   }
 
+  function getPassageKey() {
+    var active = document.querySelector(".ielts-passage-btn[aria-pressed='true']");
+    return (active && active.getAttribute("data-passage")) || "passage1";
+  }
+
+  function setPassageKey(key) {
+    passageBtns.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-passage") === key ? "true" : "false");
+    });
+  }
+
   function syncPaneHeader() {
     var bookT = selectedText(bookSel);
     var testT = selectedText(testSel);
     var skillT = selectedText(sel);
-    var passageT = selectedText(passageSel);
+    var activeP = document.querySelector(".ielts-passage-btn[aria-pressed='true']");
+    var passageT = activeP ? (activeP.getAttribute("data-short-label") || "").trim() : "";
     if (pathEl) pathEl.textContent = [bookT, testT, skillT].filter(Boolean).join(" / ");
     if (labelEl && passageT) labelEl.textContent = passageT;
   }
 
   function syncPassageContent() {
-    if (!passageSel || !passageBody) return;
+    if (!passageBody) return;
     var bookKey = (bookSel && bookSel.value) || "ielts18";
     var testKey = (testSel && testSel.value) || "test1";
     var skillKey = (sel && sel.value) || "reading";
-    var passageKey = passageSel.value || "passage1";
+    var passageKey = getPassageKey();
     var tplId = "tpl-" + bookKey + "-" + testKey + "-" + skillKey + "-" + passageKey;
     var tpl = document.getElementById(tplId);
     if (!tpl) return;
@@ -269,11 +281,17 @@
   sel.addEventListener("change", syncSkillLabel);
   if (bookSel) bookSel.addEventListener("change", autoSizeAllCombos);
   if (testSel) testSel.addEventListener("change", autoSizeAllCombos);
-  if (passageSel) passageSel.addEventListener("change", autoSizeAllCombos);
   if (bookSel) bookSel.addEventListener("change", syncAll);
   if (testSel) testSel.addEventListener("change", syncAll);
   if (sel) sel.addEventListener("change", syncAll);
-  if (passageSel) passageSel.addEventListener("change", syncAll);
+  passageBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var k = b.getAttribute("data-passage");
+      if (!k) return;
+      setPassageKey(k);
+      syncAll();
+    });
+  });
   syncAll();
 
   applyViewMode(getSavedViewMode());
