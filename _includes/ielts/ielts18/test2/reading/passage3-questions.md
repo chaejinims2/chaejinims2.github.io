@@ -1,7 +1,4 @@
-
-### Section 3
-
-#### Q27–33
+#### Questions 27–33
 
 Do the following statements agree with the information given in Reading Passage 3?
 
@@ -11,17 +8,22 @@ In boxes 27–33 on your answer sheet, write
 - **FALSE** if the statement contradicts the information
 - **NOT GIVEN** if there is no information on this
 
-```
-27. People first referred to Leonardo da Vinci as a genius 500 years ago.
-28. The current climate crisis is predicted to cause more deaths than the plague.
-29. Some of the challenges we face today can be compared to those of earlier times.
-30. Leonardo da Vinci’s ‘ideal city’ was constructed in the 15th century.
-31. Poor town planning is a major contributor to climate change.
-32. In Renaissance times, local people fought against the changes to Pienza and Ferrara.
-33. Leonardo da Vinci kept a neat, organised record of his designs.
-```
+**Q27** People first referred to Leonardo da Vinci as a genius 500 years ago.
 
-#### Q34–40
+**Q28** The current climate crisis is predicted to cause more deaths than the plague.
+
+**Q29** Some of the challenges we face today can be compared to those of earlier times.
+
+**Q30** Leonardo da Vinci’s ‘ideal city’ was constructed in the 15th century.
+
+**Q31** Poor town planning is a major contributor to climate change.
+
+**Q32** In Renaissance times, local people fought against the changes to Pienza and Ferrara.
+
+**Q33** Leonardo da Vinci kept a neat, organised record of his designs.
+
+
+#### Questions 34–40
 
 Complete the summary below.
 
@@ -31,10 +33,8 @@ Write your answers in boxes 34–40 on your answer sheet.
 
 **Leonardo da Vinci’s ideal city**
 
-```
-A collection of Leonardo da Vinci’s paperwork reveals his design of a new city beside the Ticino River. This was to provide better [34] for trade and a less polluted environment. Although Leonardo da Vinci’s city shared many of the ideals of his time, some of his innovations were considered unconventional in their design. They included features that can be seen in some tower blocks today, such as [35] on the exterior of a building.
+A collection of Leonardo da Vinci’s paperwork reveals his design of a new city beside the Ticino River. This was to provide better **Q34** for trade and a less polluted environment. Although Leonardo da Vinci’s city shared many of the ideals of his time, some of his innovations were considered unconventional in their design. They included features that can be seen in some tower blocks today, such as **Q35** on the exterior of a building.
 
-Leonardo da Vinci wasn’t only an architect. His expertise in [36] was evident in his plans for artificial canals within his ideal city. He also believed that the height of houses should relate to the width of streets in case earthquakes occurred. The design of many cities in Italy today follows this [37].
+Leonardo da Vinci wasn’t only an architect. His expertise in **Q36** was evident in his plans for artificial canals within his ideal city. He also believed that the height of houses should relate to the width of streets in case earthquakes occurred. The design of many cities in Italy today follows this **Q37**.
 
-While some cities from [38] times have aspects that can also be found in Leonardo’s designs, his ideas weren’t put into practice until long after his death. [39] is one example of a city that was redesigned in the 19th century in the way that Leonardo had envisaged. His ideas are also relevant to today’s world, where building [40] no longer seems to be the best approach.
-```
+While some cities from **Q38** times have aspects that can also be found in Leonardo’s designs, his ideas weren’t put into practice until long after his death. **Q39** is one example of a city that was redesigned in the 19th century in the way that Leonardo had envisaged. His ideas are also relevant to today’s world, where building **Q40** no longer seems to be the best approach.
