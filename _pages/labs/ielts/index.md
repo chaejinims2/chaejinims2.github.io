@@ -71,9 +71,23 @@ ielts_nav:
 <template id="tpl-ielts18-test3-reading-passage2">{{ __t3p2 | markdownify }}</template>
 <template id="tpl-ielts18-test3-reading-passage3">{{ __t3p3 | markdownify }}</template>
 
+{% capture __t3p1q %}{% include ielts/ielts18/test3/reading/passage1-questions.md %}{% endcapture %}
+{% capture __t3p2q %}{% include ielts/ielts18/test3/reading/passage2-questions.md %}{% endcapture %}
+{% capture __t3p3q %}{% include ielts/ielts18/test3/reading/passage3-questions.md %}{% endcapture %}
+<template id="tpl-ielts18-test3-reading-passage1-questions">{{ __t3p1q | markdownify }}</template>
+<template id="tpl-ielts18-test3-reading-passage2-questions">{{ __t3p2q | markdownify }}</template>
+<template id="tpl-ielts18-test3-reading-passage3-questions">{{ __t3p3q | markdownify }}</template>
+
 {% capture __t4p1 %}{% include ielts/ielts18/test4/reading/passage1.md %}{% endcapture %}
 {% capture __t4p2 %}{% include ielts/ielts18/test4/reading/passage2.md %}{% endcapture %}
 {% capture __t4p3 %}{% include ielts/ielts18/test4/reading/passage3.md %}{% endcapture %}
 <template id="tpl-ielts18-test4-reading-passage1">{{ __t4p1 | markdownify }}</template>
 <template id="tpl-ielts18-test4-reading-passage2">{{ __t4p2 | markdownify }}</template>
 <template id="tpl-ielts18-test4-reading-passage3">{{ __t4p3 | markdownify }}</template>
+
+{% capture __t4p1q %}{% include ielts/ielts18/test4/reading/passage1-questions.md %}{% endcapture %}
+{% capture __t4p2q %}{% include ielts/ielts18/test4/reading/passage2-questions.md %}{% endcapture %}
+{% capture __t4p3q %}{% include ielts/ielts18/test4/reading/passage3-questions.md %}{% endcapture %}
+<template id="tpl-ielts18-test4-reading-passage1-questions">{{ __t4p1q | markdownify }}</template>
+<template id="tpl-ielts18-test4-reading-passage2-questions">{{ __t4p2q | markdownify }}</template>
+<template id="tpl-ielts18-test4-reading-passage3-questions">{{ __t4p3q | markdownify }}</template>
