@@ -20,13 +20,13 @@ ielts_nav:
 ---
 <section id="ielts-workspace" class="ielts-section" aria-labelledby="ielts-workspace-heading">
   <div class="ielts-split" role="region" aria-label="CBT 두 패널">
-    <article class="ielts-pane card" aria-label="문제 영역">
+    <article class="ielts-pane card card-transparent" aria-label="문제 영역">
       <div class="ielts-pane-body ielts-pane-body--muted" id="ielts-passage-body">
         {% capture ielts_reading_passage1 %}{% include ielts/ielts18/test1/reading/passage1.md %}{% endcapture %}
         {{ ielts_reading_passage1 | markdownify }}
       </div>
     </article>
-    <article class="ielts-pane card" aria-label="답안 영역">
+    <article class="ielts-pane card card-transparent" aria-label="답안 영역">
       <div class="ielts-pane-body" id="ielts-questions-body">
         {% capture ielts_reading_q0 %}{% include ielts/ielts18/test1/reading/passage1-questions.md %}{% endcapture %}
         {{ ielts_reading_q0 | markdownify }}

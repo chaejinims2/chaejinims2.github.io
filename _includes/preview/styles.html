@@ -735,6 +735,18 @@
     color: var(--text-muted);
     margin-bottom: var(--space-3);
   }
+  /* 배경 없이 테두리·패딩만 유지 (패널·그리드 위에 얹을 때) */
+  .card-transparent {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+  .card-transparent.card-elevated,
+  .card-transparent.card-whisper {
+    box-shadow: none;
+  }
+
 
   .highlight-list {
     list-style: none;

@@ -1,72 +1,72 @@
 books:
   - key: ielts18
-    label: IELTS 18
+    label: IELTS18
     tests:
       - key: test1
-        label: Test 1
+        label: Test1
         skills:
           - key: reading
             label: Reading
             passages:
               - key: passage1
-                label: Passage 1
+                label: Passage1
                 include: ielts/ielts18/test1/reading/passage1.md
                 include_questions: ielts/ielts18/test1/reading/passage1-questions.md
               - key: passage2
-                label: Passage 2
+                label: Passage2
                 include: ielts/ielts18/test1/reading/passage2.md
                 include_questions: ielts/ielts18/test1/reading/passage2-questions.md
               - key: passage3
-                label: Passage 3
+                label: Passage3
                 include: ielts/ielts18/test1/reading/passage3.md
                 include_questions: ielts/ielts18/test1/reading/passage3-questions.md
           - key: listening
             label: Listening
             parts:
               - key: part1
-                label: Part 1
+                label: Part1
                 include: ielts/ielts18/test1/listening/part1.md
               - key: part2
-                label: Part 2
+                label: Part2
                 include: ielts/ielts18/test1/listening/part2.md
               - key: part3
-                label: Part 3
+                label: Part3
                 include: ielts/ielts18/test1/listening/part3.md
               - key: part4
-                label: Part 4
+                label: Part4
                 include: ielts/ielts18/test1/listening/part4.md
       - key: test2
-        label: Test 2
+        label: Test2
         skills:
           - key: reading
             label: Reading
             passages:
               - key: passage1
-                label: Passage 1
+                label: Passage1
                 include: ielts/ielts18/test2/reading/passage1.md
                 include_questions: ielts/ielts18/test2/reading/passage1-questions.md
               - key: passage2
-                label: Passage 2
+                label: Passage2
                 include: ielts/ielts18/test2/reading/passage2.md
                 include_questions: ielts/ielts18/test2/reading/passage2-questions.md
               - key: passage3
-                label: Passage 3
+                label: Passage3
                 include: ielts/ielts18/test2/reading/passage3.md
                 include_questions: ielts/ielts18/test2/reading/passage3-questions.md
       - key: test3
-        label: Test 3
+        label: Test3
         skills:
           - key: reading
             label: Reading
             passages:
               - key: passage1
-                label: Passage 1
+                label: Passage1
                 include: ielts/ielts18/test3/reading/passage1.md
               - key: passage2
-                label: Passage 2
+                label: Passage2
                 include: ielts/ielts18/test3/reading/passage2.md
               - key: passage3
-                label: Passage 3
+                label: Passage3
                 include: ielts/ielts18/test3/reading/passage3.md
       - key: test4
         label: Test 4
@@ -75,11 +75,11 @@ books:
             label: Reading
             passages:
               - key: passage1
-                label: Passage 1
+                label: Passage1
                 include: ielts/ielts18/test4/reading/passage1.md
               - key: passage2
-                label: Passage 2
+                label: Passage2
                 include: ielts/ielts18/test4/reading/passage2.md
               - key: passage3
-                label: Passage 3
+                label: Passage3
                 include: ielts/ielts18/test4/reading/passage3.md
