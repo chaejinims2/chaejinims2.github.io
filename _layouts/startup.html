@@ -42,28 +42,6 @@
         {{ content }}
       </div>
       <div class="cherry-hero-actions">
-        {% if page.permalink == '/cherry' %}
-          {% include parts/image_button.html
-            href="https://www.netflix.com/browse"
-            title="Netflix"
-            image="netflix-3"
-          %}
-          {% include parts/image_button.html
-            href="https://www.disneyplus.com/home"
-            title="Disney Plus"
-            image="disney--1"
-          %}
-          {% include parts/image_button.html
-            href="https://www.youtube.com"
-            title="YouTube"
-            image="youtube-6-darkmode"
-          %}
-          {% include parts/image_button.html
-            href="https://www.instagram.com"
-            title="Instagram"
-            image="instagram-2"
-          %}
-        {% endif %}
         {% if page.lead %}
           <p class="startup-lead">{{ page.lead }}</p>
         {% endif %}
