@@ -4,8 +4,8 @@
  * (section-boot.js와 클래스 규칙을 맞출 것 — FOUC 방지용 이중 적용)
  */
 (function () {
-  var pos = localStorage.getItem('sidebar-position');
-  if (localStorage.getItem('sidebar-compact') === '1') {
+  var pos = localStorage.getItem('sidebar-position') || 'left';
+  if (localStorage.getItem('sidebar-compact') === '1' && pos === 'left') {
     document.body.classList.add('sidebar-compact');
   }
   if (pos === 'top') {

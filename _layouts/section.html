@@ -5,6 +5,7 @@
 <body data-theme="dark" data-nav-group="{{ page.nav_group | default: '' }}">
   <script src="{{ '/assets/js/core/section-early.js' | relative_url }}"></script>
   <div class="app-root">
+    {% include preview/sprite.html %}
     <div class="app-shell">
       {% include sidebar.html %}
       <div class="app-main">
@@ -30,9 +31,9 @@
             </div>
           </div>
         </main>
-        {% include footer.html %}
       </div>
     </div>
+    {% include footer.html %}
   </div>
 
   {% include scripts.html %}

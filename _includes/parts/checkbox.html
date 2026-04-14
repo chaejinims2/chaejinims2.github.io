@@ -2,13 +2,41 @@
 Checkbox part module.
 
 Example:
-    {% include parts/checkbox.html 
-        title="Compact sidebar" 
+    {% include parts/checkbox.html
+        title="Compact sidebar"
         name="sidebar-compact"
-        label="Icons only" 
+        label="Icons only"
     %}
-{% endcomment %}
 
+Menu row (체크 고정폭 + 라벨, 푸터 팝업 등):
+      {% include parts/checkbox.html 
+        title="Compact sidebar"
+        name="sidebar-compact"
+        label="Icons only"
+        layout="menu"
+      %}
+  {% endcomment %}
+
+{% if include.layout == "menu" %}
+<div class="part-module part-module--menu-row">
+  <label class="part-menu-check-label" for="{{ include.name }}-checkbox">
+    <input
+      type="checkbox"
+      class="part-menu-check-input"
+      id="{{ include.name }}-checkbox"
+      name="{{ include.name }}"
+      aria-label="{{ include.label }}"
+    />
+    <span class="part-menu-check-row">
+      <span class="part-menu-check-glyph" aria-hidden="true"></span>
+      <span class="part-menu-check-text">{{ include.label }}</span>
+      {% if include.hint %}
+      <span class="part-menu-check-hint" aria-hidden="true">{{ include.hint }}</span>
+      {% endif %}
+    </span>
+  </label>
+</div>
+{% else %}
 <div class="part-module part-module--row" aria-labelledby="{{ include.name }}-label">
   <p id="{{ include.name }}-label" class="part-label">{{ include.title }}</p>
   <label class="part-check-label">
@@ -21,5 +49,4 @@ Example:
     />
   </label>
 </div>
-
-
+{% endif %}
