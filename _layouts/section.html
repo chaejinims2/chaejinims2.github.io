@@ -1,42 +1,25 @@
-<!doctype html>
-<html lang="{{ site.locale | replace: " _", "-" | default: "ko" }}">
-  {% include header.html %}
-
-<body data-theme="dark" data-nav-group="{{ page.nav_group | default: '' }}">
-  <script src="{{ '/assets/js/core/section-early.js' | relative_url }}"></script>
-  <div class="app-root">
-    {% include preview/sprite.html %}
-    <div class="app-shell">
-      {% include sidebar.html %}
-      <div class="app-main">
-        <main class="app-content">
-          <div class="app-content-inner">
-            <div class="app-page-container">
-              {% include utils/nav_path.html %}
-              {% assign section_base_alt = "/" | append: section_key | append: "/" %}
-              {% assign group_pages_a = site.pages
-                | where_exp: "item", "item.url contains page_group_base"
-                | sort: "url" %}
-              {% assign group_pages_b = site.pages
-                | where_exp: "item", "item.url contains section_base_alt"
-                | sort: "url" %}
-              {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
-
-              {% if page.layout == 'section' %}
-                {% include utils/section_header.html %}
-              {% endif %}
-              <div class="section-index-lead content-prose">
-                {{ content }}
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
+---
+layout: default
+---
+<main class="app-main">
+  <div class="app-content">
+    {% if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif %}
+    {% if page.intro %}<div class="page-intro">{{ page.intro }}</div>{% endif %}
+    {% if page.tags and page.tags.size > 0 %}
+    <div class="page-tags" aria-label="Tech tags">
+      {% for t in page.tags %}
+      <span class="page-tag"># {{ t }}</span>
+      {% endfor %}
     </div>
-    {% include footer.html %}
+    {% endif %}
+    <ul class="section-index-list">
+      {% include utils/nav_path.html %}
+      {% for p in group_pages %}
+      {% if p.hide != true and p.url != page.url %}
+      <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {{ content }}
   </div>
-
-  {% include scripts.html %}
-  {% include pjax.html %}
-</body>
-</html>
+</main>

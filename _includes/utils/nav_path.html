@@ -1,19 +1,24 @@
 {% comment %}
-  경로/섹션 키 단일 로직.
-  - 인자 없이 include: 현재 페이지 기준 url_parts, page_group, section_key, page_group_base 설정.
-  - url 인자로 include: 해당 URL 기준 segs, group_key 설정 (루프에서 section_page.url 넘길 때 사용).
-
-  규칙: URL의 "섹션 키" = 첫 번째 경로 세그먼트 (예: /cases/ → cases).
-  Liquid 배열 인덱스 0/1-based 대응: [2] | default: [1] 사용.
+  Path helpers: first URL segment is the section key (e.g. /labs/ -> labs).
+  include.url: sets group_key for section_page.url in sidebar loops.
+  no args: sets page_group, section_key, page_group_base for current page.
+  Use remove_first "/" then split so /labs/ does not yield empty group_key (segs[2] bug).
 {% endcomment %}
 
 {% if include.url %}
-  {% assign segs = include.url | split: "/" %}
-  {% assign group_key = segs[2] | default: segs[1] %}
+  {% assign segs = include.url | remove_first: "/" | split: "/" %}
+  {% assign group_key = segs[0] %}
 {% else %}
-  {% assign url_parts = page.url | split: "/" %}
-  {% assign page_group = url_parts[2] | default: url_parts[1] %}
+  {% assign url_parts = page.url | remove_first: "/" | split: "/" %}
+  {% assign page_group = url_parts[0] %}
 
   {% assign section_key = page_group %}
   {% assign page_group_base = "/" | append: page_group | append: "/" %}
+
+  {% assign section_base_alt = "/" | append: section_key | append: "/" %}
+  {% assign group_pages_a = site.pages
+    | where_exp: "item", "item.url contains page_group_base" %}
+  {% assign group_pages_b = site.pages
+    | where_exp: "item", "item.url contains section_base_alt" %}
+  {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
 {% endif %}

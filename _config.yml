@@ -15,9 +15,8 @@ sidebar_order:
   - cases
   - techs
   - labs
-# 사이드바 푸터(하단) 표시 순서. URL 첫 세그먼트로 지정. 없으면 footer → topbar 순.
+# 사이드바 푸터: 팝업만. 키는 sitemap / settings 만 인식. 비우면 Sitemap → Settings 순.
 sidebar_footer_order:
-  - tests
   - sitemap
   - settings
 
@@ -85,20 +84,6 @@ defaults:
       layout: section
       permalink: /home/
       title: Home
-  - scope:
-      path: "settings/index.md"
-      type: "pages"
-    values:
-      layout: sections/settings
-      permalink: /settings/
-      title: Settings
-  - scope:
-      path: "sitemap/index.md"
-      type: "pages"
-    values:
-      layout: section
-      permalink: /sitemap/
-      title: Sitemap
   - scope:
       path: ""
       type: "pages"

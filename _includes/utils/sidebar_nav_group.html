@@ -1,0 +1,48 @@
+{% comment %}
+  Render a single sidebar nav group.
+  Required params:
+  - section_page: the group base page (layout: section/sections/techs, type: sidebar)
+  - current: current page.url
+  - page_group: current page's first URL segment (from utils/nav_path.html no-args include)
+  - footer_pages: pages with type == sidebar_footer (for Labs -> Tests injection)
+{% endcomment %}
+
+{% assign group_base = include.section_page.url %}
+{% include utils/nav_path.html url=group_base %}
+{% assign group_base_alt = "/" | append: group_key | append: "/" %}
+{% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" %}
+{% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" %}
+{% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "date" | reverse %}
+{% assign group_title = include.section_page.title | default: group_key | capitalize %}
+
+{% unless include.section_page.hide %}
+<div class="app-nav-group {% if include.page_group == group_key or include.current == group_base %}active{% elsif group_key == 'labs' and include.page_group == 'tests' %}active{% endif %}">
+  <a class="app-nav-item {% if include.current == group_base %}active{% elsif group_key == 'labs' and include.page_group == 'tests' %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}">
+    {% assign nav_icon_name = include.section_page.icon | default: "book" %}
+    {% include parts/icon_button.html image=nav_icon_name %}
+    <span class="app-nav-label">{{ group_title }}</span>
+  </a>
+  <div class="app-nav-sub">
+    {% for p in group_pages %}
+      {% if p.hide != true and p.url != group_base %}
+    <a class="app-nav-sub-item {% if include.current == p.url %}active{% endif %}" href="{{ p.url }}" title="{{ p.title }}">
+      <span class="app-nav-sub-item-text">{{ p.title }}</span>
+    </a>
+      {% endif %}
+    {% endfor %}
+
+    {% if group_key == 'labs' %}
+      {% for fp in include.footer_pages %}
+        {% assign labs_furl = fp.url | remove_first: "/" | split: "/" %}
+        {% if labs_furl[0] == 'tests' and fp.hide != true %}
+    <a class="app-nav-sub-item {% if include.current == fp.url %}active{% endif %}" href="{{ fp.url | relative_url }}" title="{{ fp.title }}">
+      <span class="app-nav-sub-item-text">{{ fp.title }}</span>
+    </a>
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endunless %}
+

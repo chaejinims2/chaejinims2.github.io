@@ -1,6 +1,6 @@
 /**
  * section 레이아웃: 첫 페인트 전에 사이드바 위치·콤팩트 클래스를 적용하고,
- * right/bottom 일 때만 .app-main 열을 앞으로 옮긴다.
+ * right/bottom 일 때만 메인 열을 앞으로 옮긴다.
  * (section-boot.js와 클래스 규칙을 맞출 것 — FOUC 방지용 이중 적용)
  */
 (function () {

@@ -8,7 +8,7 @@
   --app-status-h: 2.125rem;
   --app-top-h: 4rem;
   --app-content-padding: clamp(0.75rem, 1.5vw, 1rem);
-  --content-max-w: 80rem;
+  --content-max-w: 920px;
   --app-content-available-h: calc(100vh - var(--app-status-h) - (2 * var(--app-content-padding)));
 
   /* ---- 1.2 Spacing scale (rem → html font-size 기준) ---- */

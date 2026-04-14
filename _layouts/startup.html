@@ -1,6 +1,33 @@
 <!doctype html>
 <html lang="{{ site.locale | replace: " _", "-" | default: "ko" }}">
-  {% include header.html %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/svg/default/cherry.svg">
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';</script>
+
+  {% assign page_title = page.title | default: "" %}
+  {% assign site_title = site.title | default: "" %}
+  {% if page_title != "" and site_title != "" %}
+  <title>{{ page_title }} | {{ site_title }}</title>
+  {% elsif page_title != "" %}
+  <title>{{ page_title }}</title>
+  {% else %}
+  <title>{{ site_title }}</title>
+  {% endif %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tokens.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/quiz.css" />
+  {% if page.layout == 'startup' %}
+  <link rel="stylesheet" href="{{ '/assets/css/startup.css' | relative_url }}" />
+  {% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ 'assets/css/tokens.css' | relative_url }}" />
+{% include preview/styles.html %}
+{% include sprite.html %}
+</head>
 
 <body
   data-theme="dark"

@@ -55,6 +55,9 @@
     if (sel) sel.value = v;
     var posFooterCb = document.getElementById('sidebar-position-checkbox');
     if (posFooterCb) posFooterCb.checked = v === 'top';
+    try {
+      window.dispatchEvent(new Event('resize'));
+    } catch (e) {}
   }
   window.applySectionSidebarPosition = applySidebarPosition;
 
@@ -116,7 +119,7 @@
     return code ? code.textContent : (block.textContent || '');
   }
   function initCodeCopyButtons() {
-    var content = document.querySelector('.app-content');
+    var content = document.querySelector('.app-main');
     if (!content) return;
     forEachNode(content.querySelectorAll('.terminal-pre-wrap'), function (wrap) {
       if (wrap.querySelector('.code-block-copy-btn')) return;
@@ -171,7 +174,7 @@
   else initCodeCopyButtons();
 
   function initQuizAnswerToggles() {
-    var content = document.querySelector('.app-content');
+    var content = document.querySelector('.app-main');
     if (!content) return;
     forEachNode(content.querySelectorAll('.quiz-card__answer-wrap'), function (wrap) {
       var btn = wrap.querySelector('.quiz-card__answer-toggle');
