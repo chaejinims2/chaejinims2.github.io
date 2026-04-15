@@ -2193,78 +2193,56 @@ button.app-nav-item {
 
 
 /* =========================================================
- * MERGED: preview-styles.css — legacy preview / aliases (trim if unused later)
+ * MERGED: preview-styles.css — labs + design preview (scoped)
  * ========================================================= */
 
+/* Preview 토큰 별칭: 전역 html/:root를 덮어쓰지 않도록 스코프 */
+:is(.design-preview, .exui-page, .ielts-lab-page) {
+  --bg-base: var(--bg-0);
+  --surface: var(--bg-1);
+  --surface-muted: var(--bg-2);
+  --text-primary: var(--text-85);
+  --text-muted: var(--muted);
+  --nav-active-bg: var(--accent-bg-12);
+  --nav-active-fg: var(--app-nav-item-active-text);
+  --success: var(--syn-string);
+  --warning: var(--syn-number);
+  --danger: var(--syn-error);
+  --info: var(--accent);
+  --tag-bg: var(--overlay-w-0f);
+  --tag-border: var(--border);
+  --shadow-1: inset 0 1px 0 var(--overlay-w-0d);
+  --shadow-2: var(--shadow);
+  --nav-hover: var(--overlay-w-0a);
+  --brand: #f87171;
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  /* Narrower than tokens default — labs / design-preview 전용 */
+  --app-sidebar-w: 12.5rem;
+  color-scheme: dark light;
+}
 
-  /* Preview-only aliases — paints follow html[data-theme] via tokens.css */
-  html {
-    --bg-base: var(--bg-0);
-    --surface: var(--bg-1);
-    --surface-muted: var(--bg-2);
-    --text-primary: var(--text-85);
-    --text-muted: var(--muted);
-    --nav-active-bg: var(--accent-bg-12);
-    --nav-active-fg: var(--app-nav-item-active-text);
-    --success: var(--syn-string);
-    --warning: var(--syn-number);
-    --danger: var(--syn-error);
-    --info: var(--accent);
-    --tag-bg: var(--overlay-w-0f);
-    --tag-border: var(--border);
-    --shadow-1: inset 0 1px 0 var(--overlay-w-0d);
-    --shadow-2: var(--shadow);
-    --nav-hover: var(--overlay-w-0a);
-    --brand: #f87171;
-    --font-sans: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 20px;
-    --space-6: 24px;
-    --space-8: 32px;
-    --space-10: 40px;
-    /* Narrower than tokens default 13.75rem — only affects this preview page */
-    --app-sidebar-w: 12.5rem;
-    color-scheme: dark light;
-  }
+html[data-theme="light"] :is(.design-preview, .exui-page, .ielts-lab-page),
+html[data-theme="modern"] :is(.design-preview, .exui-page, .ielts-lab-page) {
+  color-scheme: light;
+}
 
-  html[data-theme="light"],
-  html[data-theme="modern"] {
-    color-scheme: light;
-  }
+html[data-theme="dark"] :is(.design-preview, .exui-page, .ielts-lab-page),
+html[data-theme="connect"] :is(.design-preview, .exui-page, .ielts-lab-page),
+html[data-theme="claude"] :is(.design-preview, .exui-page, .ielts-lab-page) {
+  color-scheme: dark;
+}
 
-  html[data-theme="dark"],
-  html[data-theme="connect"],
-  html[data-theme="claude"] {
-    color-scheme: dark;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    height: 100%;
-  }
-
-  body {
-    height: 100%;
-    overflow: hidden;
-    background: var(--bg-base);
-    color: var(--text-primary);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--focus-ring);
-    outline-offset: 2px;
-  }
-
+/* 레이아웃·컴포넌트 (구 전역 preview-styles) */
+:is(.design-preview, .exui-page, .ielts-lab-page) {
   .app {
     display: flex;
     height: 100%;
@@ -2908,8 +2886,8 @@ button.app-nav-item {
     border: 1px solid var(--border);
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
   }
-  html[data-theme="light"] .card-whisper,
-  html[data-theme="modern"] .card-whisper {
+  html[data-theme="light"] & .card-whisper,
+  html[data-theme="modern"] & .card-whisper {
     box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
   }
   .card-inset {
@@ -3063,8 +3041,8 @@ button.app-nav-item {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
     background: var(--surface);
   }
-  html[data-theme="light"] .elevation-whisper,
-  html[data-theme="modern"] .elevation-whisper {
+  html[data-theme="light"] & .elevation-whisper,
+  html[data-theme="modern"] & .elevation-whisper {
     box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
   }
   .elevation-inset {
@@ -3376,6 +3354,7 @@ button.app-nav-item {
     }
   }
 
+}
 
 /* =========================================================
  * MERGED: ielts-lab-styles.css — .ielts-lab-page scope

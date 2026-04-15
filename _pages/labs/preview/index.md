@@ -61,6 +61,7 @@ preview_sections:
   #   heading: Figures & photos
   #   heading_class: image-library-heading
 ---
+<div class="design-preview">
 {% assign dp = site.data.design_preview %}
 {% for sec in page.preview_sections %}
 {% unless forloop.first %}
@@ -247,3 +248,4 @@ preview_sections:
 </section>
 {% endcase %}
 {% endfor %}
+</div>

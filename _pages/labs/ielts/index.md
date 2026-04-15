@@ -19,7 +19,7 @@ ielts_nav:
     icon: microphone
 ---
 
-<body class="ielts-lab-page ielts-hide-pane-scrollbars" data-view="single">
+<div class="ielts-lab-page ielts-hide-pane-scrollbars" data-view="single">
 
 <div class="app">
 
@@ -592,5 +592,5 @@ ielts_nav:
 })();
 </script>
 
-</body>
+</div>
 
