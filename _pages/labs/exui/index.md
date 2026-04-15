@@ -2,15 +2,9 @@
 title: Dinner location questionnaire
 ---
 
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 네이버 클라우드 플랫폼 Maps 애플리케이션의 ncpKeyId (Web 동적 지도). 비우면 지도 대신 안내만 표시 -->
-  <meta name="exui-naver-ncp-key-id" content="e30sqt28b3">
-  <title>SSD_UI 회식 설문</title>
+<div class="exui-page" data-exui-naver-ncp-key-id="e30sqt28b3">
   <style>
-    :root {
+    .exui-page {
       color-scheme: dark;
       --bg-0: #0c1426;
       --bg-1: #111d33;
@@ -66,10 +60,8 @@ title: Dinner location questionnaire
       --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
       --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    * { margin: 0; padding: 0; }
-    html { height: 100%; }
-    body {
+    .exui-page, .exui-page * { box-sizing: border-box; }
+    .exui-page { 
       min-height: 100%;
       background: var(--body-bg);
       color: var(--text-primary);
@@ -78,36 +70,33 @@ title: Dinner location questionnaire
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    :focus-visible {
+    .exui-page :focus-visible {
       outline: 2px solid var(--focus-ring);
       outline-offset: 2px;
     }
-    /* 페이지가 절대 안 움직이게: 스크롤 자체 차단 */
-    html, body { height: 100%; overflow: hidden; }
-    .app { min-height: 100%; }
-    .main {
+    .exui-page .app { min-height: 100%; }
+    .exui-page .main {
       min-height: 100%;
-      overflow: hidden;
       background: var(--body-bg);
     }
     /* 결과 보기: 스크롤 없이 한 화면에 맞추기 */
-    .exui-mode-result .main-inner {
+    .exui-page.exui-mode-result .main-inner {
       height: 100vh;
       min-height: 0;
       display: flex;
       flex-direction: column;
     }
-    .exui-mode-result .page-intro {
+    .exui-page.exui-mode-result .page-intro {
       padding-bottom: clamp(6px, 1.2vh, var(--space-12px));
       margin-bottom: clamp(6px, 1.2vh, var(--space-12px));
     }
-    .exui-mode-result .exui-root {
+    .exui-page.exui-mode-result .exui-root {
       flex: 1 1 auto;
       min-height: 0;
       display: flex;
       flex-direction: column;
     }
-    .exui-mode-result #exui-result.exui-panel {
+    .exui-page.exui-mode-result #exui-result.exui-panel {
       flex: 1 1 auto;
       min-height: 0;
       margin-bottom: 0;
@@ -116,7 +105,7 @@ title: Dinner location questionnaire
       gap: clamp(6px, 1.2vh, var(--space-12px));
       overflow: hidden;
     }
-    .exui-mode-result #exui-result .exui-map-panel {
+    .exui-page.exui-mode-result #exui-result .exui-map-panel {
       flex: 0 0 auto;
       min-height: 140px;
       height: clamp(160px, 32vh, 260px);
@@ -124,24 +113,24 @@ title: Dinner location questionnaire
       flex-direction: column;
     }
     /* 결과 화면 컨텐츠 폭을 1,2번 영역과 동일하게(추가 인셋 제거) */
-    .exui-mode-result #exui-map-panel {
+    .exui-page.exui-mode-result #exui-map-panel {
       margin: 0 0 clamp(6px, 1.2vh, var(--space-12px));
       padding: 0;
       border: 0;
       background: transparent;
     }
-    .exui-mode-result #exui-map-canvas {
+    .exui-page.exui-mode-result #exui-map-canvas {
       border-radius: var(--radius-4);
     }
-    .exui-mode-result #exui-map-canvas {
+    .exui-page.exui-mode-result #exui-map-canvas {
       flex: 1 1 auto;
       min-height: 0;
     }
-    .exui-mode-result #exui-result table {
+    .exui-page.exui-mode-result #exui-result table {
       font-size: 0.8125rem;
     }
-    .exui-mode-result .exui-result th,
-    .exui-mode-result .exui-result td {
+    .exui-page.exui-mode-result .exui-result th,
+    .exui-page.exui-mode-result .exui-result td {
       padding: 6px 8px;
     }
     .main-inner {
@@ -204,7 +193,6 @@ title: Dinner location questionnaire
       border: 1px solid var(--tag-border);
       border-radius: 999px;
     }
-
     .exui-root {
       --exui-gap: var(--space-16px);
       --exui-r: var(--radius-4);
@@ -661,16 +649,6 @@ title: Dinner location questionnaire
       background: var(--overlay-w-0a);
     }
   </style>
-</head>
-<body>
-<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
-  <symbol id="i-yc-logo" viewBox="0 0 24 24" fill="currentColor"><g transform="translate(12,12) scale(0.1748) translate(-681.27,-263.65)"><path fill-rule="nonzero" d="m 0,0 c -1.558,0.797 -3.178,1.696 -4.941,2.748 -20.018,-0.629 -39.17,4.798 -53.953,15.277 -1.225,0.844 -2.51,1.79 -3.915,2.888 C -70.301,12.234 -79.256,5.199 -89.432,0 c -1.635,-0.835 -2.847,-2.21 -3.451,-3.9 H 3.452 C 2.848,-2.21 1.637,-0.835 0,0" transform="matrix(1.3333333,0,0,-1.3333333,740.89587,255.21493)"/><path fill-rule="nonzero" d="m 0,0 c 1.559,-0.797 3.177,-1.696 4.942,-2.748 1.037,0.034 2.077,0.049 3.111,0.049 18.881,0 36.825,-5.39 50.841,-15.326 1.226,-0.843 2.509,-1.79 3.916,-2.887 C 70.3,-12.235 79.254,-5.2 89.432,0 c 1.634,0.835 2.847,2.209 3.451,3.899 H -3.45 C -2.848,2.209 -1.636,0.835 0,0" transform="matrix(1.3333333,0,0,-1.3333333,621.6536,272.08467)"/><path fill-rule="nonzero" d="m 0,0 c -1.241,2.429 -3.605,3.879 -6.325,3.879 -2.722,0 -5.086,-1.45 -6.326,-3.879 -2.092,-4.093 -4.544,-8.074 -7.293,-11.838 C -6.576,-24.196 10.099,-31.394 29.642,-33.242 17.077,-24.868 6.847,-13.398 0,0" transform="matrix(1.3333333,0,0,-1.3333333,689.7096,204.02747)"/><path fill-rule="nonzero" d="m 0,0 c 1.241,-2.428 3.605,-3.879 6.326,-3.879 2.721,0 5.085,1.451 6.326,3.879 2.091,4.093 4.543,8.075 7.292,11.839 C 6.576,24.197 -10.098,31.395 -29.641,33.243 -17.077,24.868 -6.847,13.399 0,0" transform="matrix(1.3333333,0,0,-1.3333333,672.83987,323.27227)"/></g></symbol>
-
-  <symbol id="i-hand-thumb" viewBox="0 0 24 24">
-    <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
-  </symbol>
-
-</defs></svg>
 
 <div class="app">
   <main class="main">
@@ -687,7 +665,6 @@ title: Dinner location questionnaire
           </div>
         </div>
       </header>
-
       <div class="exui-root" id="exui-root">
         <form class="exui-panel" id="exui-form" autocomplete="on">
           <fieldset class="exui-fieldset">
@@ -705,7 +682,6 @@ title: Dinner location questionnaire
               </div>
             </div>
           </fieldset>
-
           <fieldset class="exui-fieldset">
             <legend><h3>2. 위치</h3></legend>
             <div class="exui-cars">
@@ -726,19 +702,16 @@ title: Dinner location questionnaire
               </div>
             </div>
           </fieldset>
-
           <div class="exui-actions">
             <button type="button" class="exui-btn exui-btn-secondary" id="exui-reset">설문 초기화</button>
             <button type="submit" class="exui-btn" id="exui-submit">제출 · 결과 보기</button>
           </div>
           <div class="exui-error" id="exui-error" hidden></div>
         </form>
-
         <div class="exui-panel exui-result" id="exui-result" hidden>
           <div class="exui-map-panel" id="exui-map-panel">
-
             <div class="exui-map-fallback" id="exui-map-key-missing" hidden>
-              이 영역에 네이버 지도를 띄우려면 <code>&lt;head&gt;</code>의 <code>meta name="exui-naver-ncp-key-id"</code>에
+              이 영역에 네이버 지도를 띄우려면 페이지 최상단의 <code>data-exui-naver-ncp-key-id</code>에
               <a href="https://www.ncloud.com/product/applicationService/maps" target="_blank" rel="noopener noreferrer">네이버 클라우드 Maps</a>에서 발급한 Web 동적 지도용 <strong>ncpKeyId</strong>를 넣어 주세요.
             </div>
             <div class="exui-map-canvas" id="exui-map-canvas" hidden aria-label="선호 식당 위치 지도"></div>
@@ -1281,13 +1254,17 @@ title: Dinner location questionnaire
   }
 
   function getNaverNcpKeyId() {
-    var m = document.querySelector('meta[name="exui-naver-ncp-key-id"]');
-    if (!m) return '';
-    var v = m.getAttribute('content');
-    return v != null ? String(v).trim() : '';
+    if (root && root.closest) {
+      var pageEl = root.closest('.exui-page');
+      if (pageEl) {
+        var v = pageEl.getAttribute('data-exui-naver-ncp-key-id');
+        return v != null ? String(v).trim() : '';
+      }
+    }
+    return '';
   }
 
-  var EXUI_MAP_KEY_MISSING_HTML = '이 영역에 네이버 지도를 띄우려면 <code>&lt;head&gt;</code>의 <code>meta name="exui-naver-ncp-key-id"</code>에 ' +
+  var EXUI_MAP_KEY_MISSING_HTML = '이 영역에 네이버 지도를 띄우려면 페이지 최상단의 <code>data-exui-naver-ncp-key-id</code>에 ' +
     '<a href="https://www.ncloud.com/product/applicationService/maps" target="_blank" rel="noopener noreferrer">네이버 클라우드 Maps</a>에서 발급한 Web 동적 지도용 <strong>ncpKeyId</strong>를 넣어 주세요.';
 
   function destroyExuiMap() {
@@ -1573,7 +1550,10 @@ title: Dinner location questionnaire
     });
     renderExuiMap(rows);
     resultPanel.hidden = false;
-    document.body.classList.add('exui-mode-result');
+    if (root && root.closest) {
+      var pageEl = root.closest('.exui-page');
+      if (pageEl) pageEl.classList.add('exui-mode-result');
+    }
   }
 
   document.getElementById('exui-form').addEventListener('submit', function (e) {
@@ -1617,12 +1597,14 @@ title: Dinner location questionnaire
     updateCarHints();
     resultPanel.hidden = true;
     if (formPanel) formPanel.hidden = false;
-    document.body.classList.remove('exui-mode-result');
+    if (root && root.closest) {
+      var pageEl = root.closest('.exui-page');
+      if (pageEl) pageEl.classList.remove('exui-mode-result');
+    }
     lastSummary = '';
     if (copyStatus) copyStatus.textContent = '';
     errEl.hidden = true;
   });
 })();
 </script>
-</body>
-</html>
+</div>
