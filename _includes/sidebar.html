@@ -1,11 +1,18 @@
 <script>
     (function () {
       var pos = localStorage.getItem('sidebar-position') || 'left';
+      if (pos !== 'left' && pos !== 'top') {
+        pos = 'left';
+        try { localStorage.setItem('sidebar-position', 'left'); } catch (e) {}
+      }
       if (localStorage.getItem('sidebar-compact') === '1' && pos === 'left') {
         document.body.classList.add('sidebar-compact');
       }
+      document.body.classList.remove('sidebar-right', 'sidebar-bottom');
       if (pos === 'top') {
         document.body.classList.add('sidebar-top');
+      } else {
+        document.body.classList.remove('sidebar-top');
       }
     })();
 </script>

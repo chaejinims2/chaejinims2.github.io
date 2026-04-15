@@ -117,7 +117,6 @@
       activeAnchor.classList.add("app-settings-popup-anchor--dock-side");
       var sidebar = document.querySelector(".app-sidebar");
       var sb = sidebar ? sidebar.getBoundingClientRect() : null;
-      var body = document.body;
       var topPad = 8;
       var maxHCap = Math.min(384, Math.round(vh * 0.7));
 
@@ -132,10 +131,7 @@
 
       var w = activeAnchor.offsetWidth || 288;
       var left;
-      if (sb && body && body.classList.contains("sidebar-right")) {
-        left = Math.round(sb.left - GAP - w);
-        if (left < 8) left = 8;
-      } else if (sb) {
+      if (sb) {
         left = Math.round(sb.right + GAP);
         var maxL = vw - w - 8;
         if (left > maxL) left = maxL;

@@ -23,37 +23,30 @@
   if (!body) return;
   var posKey = 'sidebar-position';
   var posVal = localStorage.getItem(posKey) || 'left';
-  if (posVal === 'right') body.classList.add('sidebar-right');
-  else if (posVal === 'bottom') body.classList.add('sidebar-bottom');
-  else if (posVal === 'top') body.classList.add('sidebar-top');
+  if (posVal !== 'left' && posVal !== 'top') {
+    posVal = 'left';
+    try { localStorage.setItem(posKey, 'left'); } catch (e) {}
+  }
+  body.classList.remove('sidebar-right', 'sidebar-bottom');
+  if (posVal === 'top') body.classList.add('sidebar-top');
+  else body.classList.remove('sidebar-top');
   var compactKey = 'sidebar-compact';
   function syncSidebarCompactClass() {
     var p = localStorage.getItem(posKey) || 'left';
+    if (p !== 'left' && p !== 'top') p = 'left';
     var want = localStorage.getItem(compactKey) === '1' && p === 'left';
     body.classList.toggle('sidebar-compact', want);
   }
   syncSidebarCompactClass();
-  function reorderShell(contentFirst) {
-    var shell = document.querySelector('.app-shell');
-    var mainCol = document.querySelector('.app-main');
-    var sidebar = document.querySelector('.app-sidebar');
-    if (!shell || !mainCol || !sidebar) return;
-    if (contentFirst) shell.insertBefore(mainCol, sidebar);
-    else shell.insertBefore(sidebar, mainCol);
-  }
-  reorderShell(posVal === 'right' || posVal === 'bottom');
 
   function applySidebarPosition(v) {
+    if (v !== 'left' && v !== 'top') v = 'left';
     try { localStorage.setItem(posKey, v); } catch (e) {}
-    document.body.classList.toggle('sidebar-right', v === 'right');
-    document.body.classList.toggle('sidebar-top', v === 'top');
-    document.body.classList.toggle('sidebar-bottom', v === 'bottom');
-    reorderShell(v === 'right' || v === 'bottom');
+    body.classList.remove('sidebar-right', 'sidebar-bottom');
+    body.classList.toggle('sidebar-top', v === 'top');
     syncSidebarCompactClass();
     var compactCb = document.getElementById('sidebar-compact-checkbox');
     if (compactCb) compactCb.checked = localStorage.getItem(compactKey) === '1';
-    var sel = document.getElementById('sidebar-position-select');
-    if (sel) sel.value = v;
     var posFooterCb = document.getElementById('sidebar-position-checkbox');
     if (posFooterCb) posFooterCb.checked = v === 'top';
     try {
@@ -62,25 +55,13 @@
   }
   window.applySectionSidebarPosition = applySidebarPosition;
 
-  function initSidebarPositionSelect() {
-    var sel = document.getElementById('sidebar-position-select');
-    if (!sel) return;
-    sel.value = posVal;
-    if (!sel.dataset.sidebarPositionInited) {
-      sel.dataset.sidebarPositionInited = '1';
-      sel.addEventListener('change', function () {
-        applySidebarPosition(this.value);
-      });
-    }
-  }
-  initSidebarPositionSelect();
-  window.initSidebarPositionSelect = initSidebarPositionSelect;
-
   function initFooterSidebarPositionCheckbox() {
     var cb = document.getElementById('sidebar-position-checkbox');
     if (!cb || cb.dataset.footerSidebarPositionInited) return;
     cb.dataset.footerSidebarPositionInited = '1';
-    cb.checked = (localStorage.getItem(posKey) || 'left') === 'top';
+    var stored = localStorage.getItem(posKey) || 'left';
+    if (stored !== 'left' && stored !== 'top') stored = 'left';
+    cb.checked = stored === 'top';
     cb.addEventListener('change', function () {
       applySidebarPosition(this.checked ? 'top' : 'left');
     });
@@ -95,6 +76,7 @@
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
     e.preventDefault();
     var cur = localStorage.getItem(posKey) || 'left';
+    if (cur !== 'left' && cur !== 'top') cur = 'left';
     applySidebarPosition(cur === 'top' ? 'left' : 'top');
   }, true);
 

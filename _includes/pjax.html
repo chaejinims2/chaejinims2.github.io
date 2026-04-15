@@ -80,7 +80,6 @@
                     if (title && title.textContent) document.title = title.textContent;
                     if (push !== false) history.pushState({ path: path }, '', url);
                     setActive(path);
-                    if (window.initSidebarPositionSelect) window.initSidebarPositionSelect();
                     if (window.initFooterSidebarPositionCheckbox) window.initFooterSidebarPositionCheckbox();
                     if (window.initSidebarCompactCheckbox) window.initSidebarCompactCheckbox();
                     if (window.initCodeCopyButtons) window.initCodeCopyButtons();
