@@ -1,0 +1,14 @@
+{% comment %}
+  문서 <title>: 레이아웃의 `page`·`site` 사용.
+  둘 다 있으면 "페이지 | 사이트", 페이지 제목만 있으면 페이지명, 아니면 사이트명.
+{% endcomment %}
+{% assign page_title = page.title | default: "" %}
+{% assign site_title = site.title | default: "" %}
+{% if page_title != "" and site_title != "" %}
+{% assign doc_title = page_title | append: " | " | append: site_title %}
+{% elsif page_title != "" %}
+{% assign doc_title = page_title %}
+{% else %}
+{% assign doc_title = site_title %}
+{% endif %}
+<title>{{ doc_title }}</title>

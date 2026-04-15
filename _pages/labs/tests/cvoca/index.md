@@ -27,7 +27,7 @@ data: cvoca
 <div id="quiz-section" aria-label="단어 학습">
   <div class="quiz-cards-set" role="list">
     {% for w in words %}
-      {% include blocks/voca_card.html w=w %}
+      {% include parts/voca_card.html w=w %}
     {% endfor %}
   </div>
 </div>

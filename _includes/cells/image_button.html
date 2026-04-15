@@ -1,0 +1,6 @@
+{% assign _raw = include.sprite_id | default: include.image %}
+{% assign _slug = _raw | replace: '--', '-' | replace: '_', '-' %}
+<a href="{{ include.href }}" class="startup-enter startup-enter-icon" title="{{ include.title }}" target="_blank"
+  rel="noopener noreferrer">
+  <svg class="startup-enter-sprite" aria-hidden="true" focusable="false"><use href="#i-{{ _slug }}"/></svg>
+</a>

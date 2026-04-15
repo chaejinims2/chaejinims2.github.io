@@ -28,7 +28,7 @@ data: words
         {% for def in w.definitions %}
           {% for ex in def.examples %}
             {% if ex.meaning and ex.meaning != '' %}
-              {% include blocks/voca_example.html w=w def=def ex=ex %}
+              {% include parts/voca_example.html w=w def=def ex=ex %}
             {% endif %}
           {% endfor %}
         {% endfor %}

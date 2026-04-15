@@ -15,7 +15,7 @@
 <div class="app-nav-group {% if include.page_group == group_key or include.current == group_base %}active{% elsif group_key == 'labs' and include.page_group == 'tests' %}active{% endif %}">
   <a class="app-nav-item {% if include.current == group_base %}active{% elsif group_key == 'labs' and include.page_group == 'tests' %}active{% endif %}" href="{{ group_base }}" title="{{ group_title }}">
     {% assign nav_icon_name = include.section_page.icon | default: "book" %}
-    {% include parts/icon_button.html image=nav_icon_name %}
+    {% include cells/icon_button.html image=nav_icon_name %}
     <span class="app-nav-label">{{ group_title }}</span>
   </a>
   <div class="app-nav-sub">

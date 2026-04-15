@@ -9,8 +9,8 @@ data: subjects
 <div class="voca-editor">
   <header class="voca-editor__filters-wrap" role="region" aria-label="단어장 필터">
     <div class="voca-editor__filters-row">
-      {% include parts/combobox_with_button.html title="Book" name="ve-book" btn_name="ve-load-button" action="load" data="books" %}
-      {% include parts/combobox_with_button.html title="Unit" name="ve-unit" btn_name="ve-export-button" action="export" select_start="1" select_end="20" %}
+      {% include cells/combobox_with_button.html title="Book" name="ve-book" btn_name="ve-load-button" action="load" data="books" %}
+      {% include cells/combobox_with_button.html title="Unit" name="ve-unit" btn_name="ve-export-button" action="export" select_start="1" select_end="20" %}
     </div>
   </header>
 
@@ -20,18 +20,18 @@ data: subjects
     <div class="voca-editor__io">
       <div class="voca-editor__io-row ">
         <div class="ve-colvis" role="group" aria-label="칼럼 표시 옵션">
-          {% include parts/radio_item.html checked="0" name="ve-colvis" value="show-all" %}
-          {% include parts/radio_item.html checked="1" name="ve-colvis" value="custom" %}
+          {% include cells/radio_item.html checked="0" name="ve-colvis" value="show-all" %}
+          {% include cells/radio_item.html checked="1" name="ve-colvis" value="custom" %}
         </div>
         <div class="ve-colchecks" role="group" aria-label="표 칼럼 선택">
-          {% include parts/checkbox_item.html checked="0" name="ve-col" value="id" %}
-          {% include parts/checkbox_item.html checked="0" name="ve-col" value="unit" %}
-          {% include parts/checkbox_item.html checked="1" name="ve-col" value="term" %}
-          {% include parts/checkbox_item.html checked="0" name="ve-col" value="pos" %}
-          {% include parts/checkbox_item.html checked="1" name="ve-col" value="gloss" %}
-          {% include parts/checkbox_item.html checked="1" name="ve-col" value="example" %}
-          {% include parts/checkbox_item.html checked="0" name="ve-col" value="translation" %}
-          {% include parts/checkbox_item.html checked="1" name="ve-col" value="actions" %}
+          {% include cells/checkbox_item.html checked="0" name="ve-col" value="id" %}
+          {% include cells/checkbox_item.html checked="0" name="ve-col" value="unit" %}
+          {% include cells/checkbox_item.html checked="1" name="ve-col" value="term" %}
+          {% include cells/checkbox_item.html checked="0" name="ve-col" value="pos" %}
+          {% include cells/checkbox_item.html checked="1" name="ve-col" value="gloss" %}
+          {% include cells/checkbox_item.html checked="1" name="ve-col" value="example" %}
+          {% include cells/checkbox_item.html checked="0" name="ve-col" value="translation" %}
+          {% include cells/checkbox_item.html checked="1" name="ve-col" value="actions" %}
         </div>
 
       </div>

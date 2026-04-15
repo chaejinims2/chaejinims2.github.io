@@ -100,13 +100,17 @@ layout: app
   justify-content: center;
 }
 
-.startup-hero-actions .startup-enter img {
+.startup-hero-actions .startup-enter img,
+.startup-hero-actions .startup-enter-icon > svg.startup-enter-sprite {
   width: 12rem;
+  max-width: min(12rem, 90vw);
+  height: auto;
   display: block;
   transition: transform 0.2s ease;
 }
 
-.startup-hero-actions .startup-enter:hover img {
+.startup-hero-actions .startup-enter:hover img,
+.startup-hero-actions .startup-enter-icon:hover > svg.startup-enter-sprite {
   transform: scale(1.1);
 }
 

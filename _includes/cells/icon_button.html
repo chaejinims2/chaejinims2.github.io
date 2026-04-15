@@ -1,0 +1,5 @@
+{% assign _raw = include.sprite_id | default: include.image %}
+{% assign _slug = _raw | replace: '--', '-' | replace: '_', '-' %}
+<span class="app-nav-ico" aria-hidden="true">
+  <svg class="app-nav-ico-svg" aria-hidden="true" focusable="false"><use href="#i-{{ _slug }}"/></svg>
+</span>

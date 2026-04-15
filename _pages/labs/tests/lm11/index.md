@@ -48,7 +48,7 @@ data: lm11
         {% assign correct_answer_num = 1 %}
         {% endif %}
 
-        {% include blocks/quiz_card.html q=q exam=exam subject=subject correct_answer_num=correct_answer_num %}
+        {% include parts/quiz_card.html q=q exam=exam subject=subject correct_answer_num=correct_answer_num %}
         {% endfor %}
     </div>
 </div>

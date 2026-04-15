@@ -1,0 +1,13 @@
+        <div class="terminal-box">
+          <div class="terminal-pre-wrap" style="--terminal-height: 220px;">
+            <pre class="terminal-content">
+<span class="log-loading">… Compiling nvme_core v0.2.1</span>
+    Finished `release` profile in 42.3s
+<span class="term-prompt">$</span> pytest tests/test_mi_basic.py -q
+<span class="log-error">FAILED tests/test_mi_basic.py::test_reset_timeout</span> — AssertionError: expected 0, got 5
+<span class="term-prompt">$</span> <span class="log-loading">_</span>
+            </pre>
+          </div>
+        </div>
+
+        <p class="note-box">Optional fixed height: set <code>style="--terminal-height: 220px"</code> on <code>.terminal-pre-wrap</code> so the inner <code>pre</code> scrolls (<code>flex: 1; min-height: 0</code>).</p>
