@@ -1,0 +1,11 @@
+        <!-- 만약 href_path가 있으면 사이트 baseurl을 추가하여 href 생성-->
+        {% if include.href_path %}
+        {% assign href = site.baseurl | append: include.href_path %}
+        {% else %}
+        {% assign href = include.href_url %}
+        {% endif %}
+        <div class="icon-cell" role="button" tabindex="0" title="{{ include.icon_file }}" data-copy="{{ include.icon_file }}">
+          <a href="{{ href }}" class="startup-enter startup-enter-icon" target="_blank" rel="noopener noreferrer" title="{{ include.icon_file }}">
+            <svg class="icon-sprite" width="32" height="32" aria-hidden="true"><use href="#i-{{ include.icon_id }}"/></svg>
+          </a>
+        </div>

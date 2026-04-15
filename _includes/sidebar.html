@@ -10,13 +10,9 @@
     })();
 </script>
 <aside class="app-sidebar sidebar" aria-label="Site navigation">
-  <a class="app-title app-sidebar-title" href="{{ site.baseurl }}/" title="{{ site.title }}">
-      {% if site.logo %}
-      <span class="app-sidebar-title-logo-wrap">
-          <img class="app-sidebar-title-logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.title }}" />
-      </span>
-      {% endif %}
-      <span class="app-title-text">{{ site.title }}</span>
+  <a class="brand app-title app-sidebar-title" href="{{ site.baseurl }}/">
+    <img class="brand-logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="" decoding="async" />
+    <span class="app-title-text">{{ site.title }}</span>
   </a>
 
   <div class="app-sidebar-body sidebar-body">
@@ -45,32 +41,16 @@
       {% endif %}
     </nav>
   </div>
-
+  
   <footer class="app-sidebar-footer sidebar-footer">
-        {% if site.sidebar_footer_order and site.sidebar_footer_order.size > 0 %}
-        {% for order_key in site.sidebar_footer_order %}
-        {% if order_key == 'settings' %}
-        <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="설정" aria-expanded="false" aria-controls="app-popup-settings">
-            {% include parts/icon_button.html image="cog-6-tooth" %}
-            <span class="app-nav-label">Settings</span>
-        </button>
-        {% elsif order_key == 'sitemap' %}
-        <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="사이트맵" aria-expanded="false" aria-controls="app-popup-sitemap">
-            {% include parts/icon_button.html image="map" %}
-            <span class="app-nav-label">Sitemap</span>
-        </button>
-        {% endif %}
-        {% endfor %}
-        {% else %}
-        <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="사이트맵" aria-expanded="false" aria-controls="app-popup-sitemap">
-            {% include parts/icon_button.html image="map" %}
-            <span class="app-nav-label">Sitemap</span>
-        </button>
-        <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="설정" aria-expanded="false" aria-controls="app-popup-settings">
-            {% include parts/icon_button.html image="cog-6-tooth" %}
-            <span class="app-nav-label">Settings</span>
-        </button>
-        {% endif %}
-        <div class="app-statusbar-spacer" aria-hidden="true"></div>
+    <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="사이트맵" aria-expanded="false" aria-controls="app-popup-sitemap">
+        {% include parts/icon_button.html image="map" %}
+        <span class="app-nav-label">Sitemap</span>
+    </button>
+    <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="설정" aria-expanded="false" aria-controls="app-popup-settings">
+        {% include parts/icon_button.html image="cog-6-tooth" %}
+        <span class="app-nav-label">Settings</span>
+    </button>
+    <div class="app-statusbar-spacer" aria-hidden="true"></div>
   </footer>
 </aside>

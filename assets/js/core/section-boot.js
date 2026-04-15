@@ -41,6 +41,7 @@
     if (contentFirst) shell.insertBefore(mainCol, sidebar);
     else shell.insertBefore(sidebar, mainCol);
   }
+  reorderShell(posVal === 'right' || posVal === 'bottom');
 
   function applySidebarPosition(v) {
     try { localStorage.setItem(posKey, v); } catch (e) {}

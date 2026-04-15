@@ -4,6 +4,7 @@ permalink: /techs/
 title: Tech notes
 icon: academic-cap
 type: sidebar
+type_order: 3
 ---
 
 {% assign url_segs = page.url | split: "/" %}

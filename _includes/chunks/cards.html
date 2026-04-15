@@ -1,0 +1,49 @@
+
+        {% assign g = dp.surfaces.cards %}
+        <div class="card-grid">
+          {% for item in g.items %}
+          <div class="card {{ item.name }}">
+            <div class="card-label">{{ item.name }}</div>
+            <h3>{% if item.desc_html %}{{ item.desc_html }}{% else %}{{ item.desc }}{% endif %}</h3>
+            <p>{{ item.level }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+<!-- 
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-label">Standard surface</div>
+            <h3>Inkjet quality prediction</h3>
+            <p>Bordered card on <code>--surface</code>. Use for case study summaries and notes.</p>
+          </div>
+          <div class="card card-ring">
+            <div class="card-label">Ring halo</div>
+            <h3>Interactive outline</h3>
+            <p>1px ring via <code>box-shadow</code> (no extra border width). Good for selectable tiles.</p>
+          </div>
+          <div class="card card-elevated">
+            <div class="card-label">Elevated</div>
+            <h3>Modal / overlay tier</h3>
+            <p>Theme <code>--shadow</code> via preview alias <code>--shadow-2</code>.</p>
+          </div>
+          <div class="card card-whisper">
+            <div class="card-label">Whisper shadow</div>
+            <h3>Soft depth</h3>
+            <p>Larger blur for featured content; strength eases on light themes.</p>
+          </div>
+          <div class="card card-inset">
+            <div class="card-label">Inset well</div>
+            <h3>Recessed panel</h3>
+            <p>Inset 1px ring on <code>--surface-muted</code> — form groups, code wells.</p>
+          </div>
+          <div class="card card-muted">
+            <div class="card-label">Muted fill</div>
+            <h3>Highlights</h3>
+            <ul class="highlight-list">
+              <li>Kernel 5.9.16</li>
+              <li>Reduced module size</li>
+              <li>Higher max PF count</li>
+            </ul>
+          </div>
+        </div> -->

@@ -1,4 +1,4 @@
-<style>
+
   /* Preview-only aliases — paints follow html[data-theme] via tokens.css */
   html {
     --bg-base: var(--bg-0);
@@ -1177,5 +1177,3 @@
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
   }
-
-</style>

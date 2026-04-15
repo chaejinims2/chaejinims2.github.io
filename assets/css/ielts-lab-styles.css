@@ -1,4 +1,4 @@
-<style>
+
   /* IELTS lab — preview 토큰/컴포넌트와 동일한 변수 사용 */
   /* 탑바 아래 .main 안에서 세로로 꽉 채우고, 스크롤은 패널 내부(.ielts-pane-body)에만 */
   .main-inner--ielts {
@@ -847,4 +847,3 @@
     flex-direction: column;
     overflow: hidden;
   }
-</style>

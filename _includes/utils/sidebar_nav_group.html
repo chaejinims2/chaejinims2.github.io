@@ -24,24 +24,12 @@
   </a>
   <div class="app-nav-sub">
     {% for p in group_pages %}
-      {% if p.hide != true and p.url != group_base %}
+    {% if p.hide != true and p.url != group_base %}
     <a class="app-nav-sub-item {% if include.current == p.url %}active{% endif %}" href="{{ p.url }}" title="{{ p.title }}">
       <span class="app-nav-sub-item-text">{{ p.title }}</span>
     </a>
-      {% endif %}
-    {% endfor %}
-
-    {% if group_key == 'labs' %}
-      {% for fp in include.footer_pages %}
-        {% assign labs_furl = fp.url | remove_first: "/" | split: "/" %}
-        {% if labs_furl[0] == 'tests' and fp.hide != true %}
-    <a class="app-nav-sub-item {% if include.current == fp.url %}active{% endif %}" href="{{ fp.url | relative_url }}" title="{{ fp.title }}">
-      <span class="app-nav-sub-item-text">{{ fp.title }}</span>
-    </a>
-          {% break %}
-        {% endif %}
-      {% endfor %}
     {% endif %}
+    {% endfor %}
   </div>
 </div>
 {% endunless %}
