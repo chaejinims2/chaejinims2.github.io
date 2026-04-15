@@ -1,18 +1,14 @@
 {% comment %}
-  Render a single sidebar nav group.
-  Required params:
-  - section_page: the group base page (layout: section/sections/techs, type: sidebar)
-  - current: current page.url
-  - page_group: current page's first URL segment (from utils/nav_path.html no-args include)
-  - footer_pages: pages with type == sidebar_footer (for Labs -> Tests injection)
+  Params: section_page, current (page.url), page_group (first segment; from nav_path in sidebar).
 {% endcomment %}
 
 {% assign group_base = include.section_page.url %}
-{% include utils/nav_path.html url=group_base %}
-{% assign group_base_alt = "/" | append: group_key | append: "/" %}
-{% assign group_pages_a = site.pages | where_exp: "item", "item.url contains group_base" %}
-{% assign group_pages_b = site.pages | where_exp: "item", "item.url contains group_base_alt" %}
-{% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "date" | reverse %}
+{% assign sp_segs = group_base | remove_first: "/" | split: "/" %}
+{% assign group_key = sp_segs[0] %}
+{% assign sp_base_alt = "/" | append: group_key | append: "/" %}
+{% assign sp_a = site.pages | where_exp: "item", "item.url contains group_base" %}
+{% assign sp_b = site.pages | where_exp: "item", "item.url contains sp_base_alt" %}
+{% assign group_pages = sp_a | concat: sp_b | uniq | sort: "date" | reverse %}
 {% assign group_title = include.section_page.title | default: group_key | capitalize %}
 
 {% unless include.section_page.hide %}
@@ -33,4 +29,3 @@
   </div>
 </div>
 {% endunless %}
-

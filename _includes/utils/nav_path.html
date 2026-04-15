@@ -1,24 +1,11 @@
 {% comment %}
-  Path helpers: first URL segment is the section key (e.g. /labs/ -> labs).
-  include.url: sets group_key for section_page.url in sidebar loops.
-  no args: sets page_group, section_key, page_group_base for current page.
-  Use remove_first "/" then split so /labs/ does not yield empty group_key (segs[2] bug).
+  Current page: page_group, section_key, page_group_base, group_pages (dual-prefix match, sort by url).
 {% endcomment %}
-
-{% if include.url %}
-  {% assign segs = include.url | remove_first: "/" | split: "/" %}
-  {% assign group_key = segs[0] %}
-{% else %}
-  {% assign url_parts = page.url | remove_first: "/" | split: "/" %}
-  {% assign page_group = url_parts[0] %}
-
-  {% assign section_key = page_group %}
-  {% assign page_group_base = "/" | append: page_group | append: "/" %}
-
-  {% assign section_base_alt = "/" | append: section_key | append: "/" %}
-  {% assign group_pages_a = site.pages
-    | where_exp: "item", "item.url contains page_group_base" %}
-  {% assign group_pages_b = site.pages
-    | where_exp: "item", "item.url contains section_base_alt" %}
-  {% assign group_pages = group_pages_a | concat: group_pages_b | uniq | sort: "url" %}
-{% endif %}
+{% assign url_parts = page.url | remove_first: "/" | split: "/" %}
+{% assign page_group = url_parts[0] %}
+{% assign section_key = page_group %}
+{% assign page_group_base = "/" | append: page_group | append: "/" %}
+{% assign sp_base_alt = "/" | append: page_group | append: "/" %}
+{% assign sp_a = site.pages | where_exp: "item", "item.url contains page_group_base" %}
+{% assign sp_b = site.pages | where_exp: "item", "item.url contains sp_base_alt" %}
+{% assign group_pages = sp_a | concat: sp_b | uniq | sort: "url" %}

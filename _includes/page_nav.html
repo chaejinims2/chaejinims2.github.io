@@ -5,8 +5,6 @@
 
 {% if page.layout != 'section' %}
   {% include utils/nav_path.html %}
-
-  {% assign group_pages = site.pages | where_exp: "item", "item.url contains page_group_base" | sort: "url" %}
   {% assign group_pages_visible = group_pages | where_exp: "item", "item.hide != true" %}
   {% assign group_pages_sub = group_pages_visible | where_exp: "item", "item.url != page_group_base" %}
 

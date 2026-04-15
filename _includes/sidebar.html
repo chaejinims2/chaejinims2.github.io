@@ -31,26 +31,11 @@
     <nav class="app-nav">
       {% assign current = page.url %}
       {% include utils/nav_path.html %}
-      {% assign footer_pages = site.pages | where: "layout", "section" | where_exp: "item", "item.type ==
-      'sidebar_footer'" | sort: "url" %}
       {% assign section_pages_sidebar = site.pages | where: "layout", "section" | where_exp: "item", "item.type == 'sidebar'" %}
-      {% assign section_pages = section_pages_sidebar | uniq | sort: "url" %}
-      {% if site.sidebar_order and site.sidebar_order.size > 0 %}
-        {% for order_key in site.sidebar_order %}
-        {% for section_page in section_pages %}
-        {% assign segs = section_page.url | remove_first: "/" | split: "/" %}
-        {% assign section_key = segs[0] %}
-        {% if section_key == order_key %}
-        {% include utils/sidebar_nav_group.html section_page=section_page current=current page_group=page_group footer_pages=footer_pages %}
-        {% break %}
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-      {% else %}
-        {% for section_page in section_pages %}
-        {% include utils/sidebar_nav_group.html section_page=section_page current=current page_group=page_group footer_pages=footer_pages %}
-        {% endfor %}
-      {% endif %}
+      {% assign section_pages = section_pages_sidebar | uniq | sort: "type_order" %}
+      {% for section_page in section_pages %}
+      {% include utils/sidebar_nav_group.html section_page=section_page current=current page_group=page_group %}
+      {% endfor %}
     </nav>
   </div>
   
