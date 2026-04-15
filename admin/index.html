@@ -21,6 +21,7 @@
     <title>Content Manager</title>
     <!-- 사이트 디자인 토큰과 동일하게 적용 -->
     <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/theme.css" />
     <link rel="stylesheet" href="custom.css" />
   </head>
   <body>
@@ -28,6 +29,7 @@
     <script>
       /* 미리보기(#preview-pane iframe)는 별도 문서라 custom.css 가 들어가지 않음 */
       CMS.registerPreviewStyle("/assets/style.css");
+      CMS.registerPreviewStyle("/assets/theme.css");
       CMS.registerPreviewStyle("/admin/cms-preview.css");
     </script>
   </body>

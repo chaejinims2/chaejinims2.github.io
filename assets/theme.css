@@ -1,0 +1,214 @@
+/* =========================================================
+ * Alternate themes only (default Dark is in assets/style.css)
+ * 새 비기본 테마·팔레트는 이 파일 + style.css 기본 블록을 맞춰 편집
+ * ========================================================= */
+
+/* ---------- Light ---------- */
+[data-theme="light"] {
+  --bg-0: #D7D7D7;
+  --bg-1: #BEBEBE;
+  --bg-2: #A6A6A6;
+  --body-bg: #CFCFCF;
+
+  --border: #6F6F6F;
+  --shadow: 0 2px 6px rgba(0,0,0,0.10);
+
+  --text: #1F2937;
+  --text-75: #374151;
+  --text-85: #1F2937;
+  --text-inverse: #FFFFFF;
+
+  --muted: #4B5563;
+  --dim: #6B7280;
+
+  --accent: #2563EB;
+  --accent-bg: #2563EB1A;
+
+  --overlay-w-08: #00000008;
+  --overlay-w-0a: #0000000A;
+  --overlay-w-0d: #00000012;
+  --overlay-w-0f: #00000018;
+
+  --accent-bg-12: #2563EB1F;
+
+  --app-topbar-bg: #C9C9C9;
+  --app-statusbar-bg: #C0C0C0;
+
+  --app-border: #7A7A7A;
+  --shadow-subtle: rgba(0,0,0,0.08);
+  --app-nav-item-active-text: #000000;
+
+  --syn-comment: #6b7280;
+  --syn-keyword: #7c3aed;
+  --syn-string: #059669;
+  --syn-number: #b45309;
+  --syn-function: #0284c7;
+  --syn-class: #a16207;
+  --syn-constant: #4f46e5;
+  --syn-operator: #374151;
+  --syn-punctuation: #4b5563;
+  --syn-builtin: #0e7490;
+  --syn-error: #dc2626;
+}
+
+/* ---------- Modern ---------- */
+[data-theme="modern"] {
+  --bg-0: #f8fafc;
+  --bg-1: #f1f5f9;
+  --bg-2: #e2e8f0;
+  --body-bg: #e2e8f0;
+  --border: #cbd5e1;
+  --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --text: #0f172a;
+  --text-75: #334155;
+  --text-85: #1e293b;
+  --text-inverse: #ffffff;
+  --muted: #64748b;
+  --dim: #94a3b8;
+  --accent: #6366f1;
+  --accent-bg: #6366f118;
+  --overlay-w-08: #00000008;
+  --overlay-w-0a: #0000000a;
+  --overlay-w-0d: #00000012;
+  --overlay-w-0f: #00000018;
+  --accent-bg-12: #6366f11f;
+  --app-topbar-bg: #f1f5f9;
+  --app-statusbar-bg: #e2e8f0;
+  --app-border: #cbd5e1;
+  --shadow-subtle: rgba(15, 23, 42, 0.06);
+  --app-nav-item-active-text: #0f172a;
+
+  --syn-comment: #64748b;
+  --syn-keyword: #7c3aed;
+  --syn-string: #059669;
+  --syn-number: #b45309;
+  --syn-function: #0284c7;
+  --syn-class: #a16207;
+  --syn-constant: #4f46e5;
+  --syn-operator: #334155;
+  --syn-punctuation: #475569;
+  --syn-builtin: #0e7490;
+  --syn-error: #dc2626;
+}
+
+/* ---------- Connect (KLM Connect 스타일) ---------- */
+[data-theme="connect"] {
+  --bg-0: #0c1426;
+  --bg-1: #111d33;
+  --bg-2: #162540;
+  --body-bg: #0c1426;
+  --border: #ffffff18;
+  --shadow: 0 6px 18px #00000050;
+  --text: #f0f4f8;
+  --text-75: #e2e8f0;
+  --text-85: #e2e8f0;
+  --text-inverse: #ffffff;
+  --muted: #94a3b8;
+  --dim: #64748b;
+  --accent: #00a1e4;
+  --accent-bg: #00a1e428;
+  --overlay-w-08: #ffffff08;
+  --overlay-w-0a: #ffffff0a;
+  --overlay-w-0d: #ffffff0d;
+  --overlay-w-0f: #ffffff12;
+  --accent-bg-12: #00a1e41f;
+  --app-topbar-bg: #0c1426e6;
+  --app-statusbar-bg: #0c1426cc;
+  --app-border: #ffffff18;
+  --shadow-subtle: #00000014;
+  --app-nav-item-active-text: #ffffff;
+
+  --syn-comment: #94a3b8;
+  --syn-keyword: #c084fc;
+  --syn-string: #86efac;
+  --syn-number: #fbbf24;
+  --syn-function: #7dd3fc;
+  --syn-class: #fcd34d;
+  --syn-constant: #a5b4fc;
+  --syn-operator: #e2e8f0;
+  --syn-punctuation: #94a3b8;
+  --syn-builtin: #67e8f9;
+  --syn-error: #e5534b;
+}
+
+/* ---------- Claude (warm dark / Anthropic-style palette) ---------- */
+[data-theme="claude"] {
+  --color-near-black: #141413;
+  --color-terracotta: #c96442;
+  --color-coral: #d97757;
+  --color-error: #b53333;
+  --color-focus-blue: #3898ec;
+  --color-parchment: #f5f4ed;
+  --color-ivory: #faf9f5;
+  --color-white: #ffffff;
+  --color-warm-sand: #e8e6dc;
+  --color-dark-surface: #30302e;
+  --color-deep-dark: #141413;
+  --color-charcoal-warm: #4d4c48;
+  --color-olive-gray: #5e5d59;
+  --color-stone-gray: #87867f;
+  --color-dark-warm: #3d3d3a;
+  --color-warm-silver: #b0aea5;
+  --color-border-cream: #f0eee6;
+  --color-border-warm: #e8e6dc;
+  --color-border-dark: #30302e;
+  --color-ring-warm: #d1cfc5;
+  --color-ring-deep: #c2c0b6;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-sans: Arial, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --bg-page: #141413;
+  --bg-card: #30302e;
+  --bg-nav: rgba(20, 20, 19, 0.92);
+  --text-primary: #faf9f5;
+  --text-secondary: #87867f;
+  --text-tertiary: #b0aea5;
+  --border-color: #30302e;
+  --border-subtle: #30302e;
+  --section-label-color: #d97757;
+
+  --bg-0: var(--bg-page);
+  --bg-1: var(--bg-card);
+  --bg-2: var(--color-dark-warm);
+  --body-bg: var(--bg-page);
+
+  --border: #ffffff14;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+  --text: var(--text-primary);
+  --text-75: var(--color-warm-sand);
+  --text-85: var(--text-primary);
+  --text-inverse: var(--color-ivory);
+
+  --muted: var(--text-secondary);
+  --dim: var(--text-tertiary);
+
+  --accent: var(--color-coral);
+  --accent-bg: #d9775724;
+
+  --overlay-w-08: #ffffff08;
+  --overlay-w-0a: #ffffff0a;
+  --overlay-w-0d: #ffffff0d;
+  --overlay-w-0f: #ffffff0f;
+
+  --accent-bg-12: #d977571f;
+
+  --app-topbar-bg: var(--bg-nav);
+  --app-statusbar-bg: rgba(20, 20, 19, 0.8);
+
+  --app-border: var(--border-color);
+  --shadow-subtle: rgba(0, 0, 0, 0.12);
+  --app-nav-item-active-text: var(--text-primary);
+
+  --syn-comment: var(--color-stone-gray);
+  --syn-keyword: #c9a227;
+  --syn-string: #7d9f6a;
+  --syn-number: var(--color-coral);
+  --syn-function: var(--color-focus-blue);
+  --syn-class: #c96442;
+  --syn-constant: #a89b8c;
+  --syn-operator: var(--color-warm-silver);
+  --syn-punctuation: var(--color-olive-gray);
+  --syn-builtin: #5b9bd5;
+  --syn-error: var(--color-error);
+}
