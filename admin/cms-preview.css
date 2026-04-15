@@ -1,0 +1,71 @@
+/**
+ * Decap CMS 미리보기 iframe 전용
+ * 부모 /admin 의 custom.css 는 적용되지 않음 → registerPreviewStyle 로만 로드
+ */
+html {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--bg-1);
+  color: var(--text-75);
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  font-size: var(--app-html-font-size, 14px);
+  line-height: 1.6;
+}
+
+/* DevTools 에서 보이는 래퍼 */
+.frame-content {
+  padding: 1rem 1.25rem;
+  max-width: var(--content-max-w, 80rem);
+  box-sizing: border-box;
+}
+
+.frame-content a {
+  color: var(--accent);
+}
+
+.frame-content a:hover {
+  color: var(--text-85);
+}
+
+.frame-content h1,
+.frame-content h2,
+.frame-content h3,
+.frame-content h4 {
+  color: var(--text-85);
+  font-weight: var(--fw-700);
+  line-height: 1.25;
+}
+
+.frame-content pre,
+.frame-content code {
+  background: var(--bg-2);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-2);
+}
+
+.frame-content pre {
+  padding: 0.75rem 1rem;
+  overflow: auto;
+}
+
+.frame-content code {
+  padding: 0.15em 0.35em;
+  font-size: 0.92em;
+}
+
+.frame-content pre code {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.frame-content blockquote {
+  margin: 0.75rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--app-border);
+  color: var(--muted);
+}

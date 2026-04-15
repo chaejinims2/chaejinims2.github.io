@@ -6,8 +6,6 @@ dataset: cvoca
 data: subjects
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/voca-editor.css' | relative_url }}" />
-
 <div class="voca-editor">
   <header class="voca-editor__filters-wrap" role="region" aria-label="단어장 필터">
     <div class="voca-editor__filters-row">
