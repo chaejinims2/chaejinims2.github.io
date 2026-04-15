@@ -8,7 +8,7 @@ layout: default
     {% if page.tags and page.tags.size > 0 %}
     <div class="page-tags" aria-label="Tech tags">
       {% for t in page.tags %}
-      <span class="page-tag"># {{ t }}</span>
+      <button type="button" class="btn-tag"># {{ t }}</button>
       {% endfor %}
     </div>
     {% endif %}

@@ -103,7 +103,7 @@ a:hover { color: var(--app-accent); text-decoration: underline; }
   color: var(--text-85);
   padding: var(--app-topmenu-item-padding);
   border-radius: var(--app-topmenu-item-border-radius);
-  border: 1px solid var(--app-topmenu-item-border);
+  border: 1px solid transparent;
   /* text-decoration: none; */
 }
 .app-topmenu-item:hover {

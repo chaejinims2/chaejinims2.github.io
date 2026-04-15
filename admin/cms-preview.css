@@ -12,7 +12,7 @@ body {
   background-color: var(--bg-1);
   color: var(--text-75);
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-  font-size: var(--app-html-font-size, 14px);
+  font-size: var(--font-size-14);
   line-height: 1.6;
 }
 

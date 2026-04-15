@@ -37,18 +37,6 @@
   --app-border: #7A7A7A;
   --shadow-subtle: rgba(0,0,0,0.08);
   --app-nav-item-active-text: #000000;
-
-  --syn-comment: #6b7280;
-  --syn-keyword: #7c3aed;
-  --syn-string: #059669;
-  --syn-number: #b45309;
-  --syn-function: #0284c7;
-  --syn-class: #a16207;
-  --syn-constant: #4f46e5;
-  --syn-operator: #374151;
-  --syn-punctuation: #4b5563;
-  --syn-builtin: #0e7490;
-  --syn-error: #dc2626;
 }
 
 /* ---------- Modern ---------- */
@@ -77,18 +65,29 @@
   --app-border: #cbd5e1;
   --shadow-subtle: rgba(15, 23, 42, 0.06);
   --app-nav-item-active-text: #0f172a;
+}
 
-  --syn-comment: #64748b;
+/* ---------- Syntax (Light + Modern shared) ---------- */
+[data-theme="light"],
+[data-theme="modern"] {
   --syn-keyword: #7c3aed;
   --syn-string: #059669;
   --syn-number: #b45309;
   --syn-function: #0284c7;
   --syn-class: #a16207;
   --syn-constant: #4f46e5;
-  --syn-operator: #334155;
-  --syn-punctuation: #475569;
   --syn-builtin: #0e7490;
   --syn-error: #dc2626;
+}
+[data-theme="light"] {
+  --syn-comment: #6b7280;
+  --syn-operator: #374151;
+  --syn-punctuation: #4b5563;
+}
+[data-theme="modern"] {
+  --syn-comment: #64748b;
+  --syn-operator: #334155;
+  --syn-punctuation: #475569;
 }
 
 /* ---------- Connect (KLM Connect 스타일) ---------- */
@@ -118,17 +117,10 @@
   --shadow-subtle: #00000014;
   --app-nav-item-active-text: #ffffff;
 
+  /* Syntax: 대부분 dark 기본값(style.css) 재사용, 다른 것만 override */
   --syn-comment: #94a3b8;
-  --syn-keyword: #c084fc;
-  --syn-string: #86efac;
-  --syn-number: #fbbf24;
-  --syn-function: #7dd3fc;
-  --syn-class: #fcd34d;
-  --syn-constant: #a5b4fc;
   --syn-operator: #e2e8f0;
   --syn-punctuation: #94a3b8;
-  --syn-builtin: #67e8f9;
-  --syn-error: #e5534b;
 }
 
 /* ---------- Claude (warm dark / Anthropic-style palette) ---------- */

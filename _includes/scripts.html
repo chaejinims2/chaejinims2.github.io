@@ -47,6 +47,19 @@
       });
     }
   
+    // Theme can be changed by multiple UIs (preview select, app toggle, etc).
+    // Swatch tiles repaint automatically (CSS vars), but hex labels need a JS refresh.
+    if (window.MutationObserver) {
+      new MutationObserver(function (muts) {
+        for (var i = 0; i < muts.length; i++) {
+          if (muts[i] && muts[i].type === "attributes" && muts[i].attributeName === "data-theme") {
+            updateColorSwatchHexes();
+            return;
+          }
+        }
+      }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    }
+
     function setTheme(name) {
       if (themes.indexOf(name) < 0) name = "connect";
       root.setAttribute("data-theme", name);

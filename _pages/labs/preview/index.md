@@ -4,8 +4,8 @@ title: Design preview
 intro: |
   This is a design preview for the Chaejin Im portfolio website.
 tags:
-  - design-md
   - dark-ui
+  - design-md
   - portfolio
 # 섹션 순서는 이 배열만 바꾸면 됩니다. kind는 아래 {% case %}와 매칭.
 preview_sections:

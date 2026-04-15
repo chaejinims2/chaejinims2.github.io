@@ -21,13 +21,13 @@
 })();
 
 </script>
-<aside class="app-sidebar sidebar" aria-label="Site navigation">
+<aside class="app-sidebar" aria-label="Site navigation">
   <a class="brand app-title app-sidebar-title" href="{{ site.baseurl }}/">
     <img class="brand-logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="" decoding="async" />
     <span class="app-title-text">{{ site.title }}</span>
   </a>
 
-  <div class="app-sidebar-body sidebar-body">
+  <div class="app-sidebar-body">
     <nav class="app-nav">
       {% assign current = page.url %}
       {% include utils/nav_path.html %}
@@ -39,7 +39,7 @@
     </nav>
   </div>
   
-  <footer class="app-sidebar-footer sidebar-footer">
+  <footer class="app-sidebar-footer">
     <button type="button" class="app-nav-item app-popup-toggle" data-popup-toggle aria-label="사이트맵" aria-expanded="false" aria-controls="app-popup-sitemap">
         {% include cells/icon_button.html image="map" %}
         <span class="app-nav-label">Sitemap</span>
