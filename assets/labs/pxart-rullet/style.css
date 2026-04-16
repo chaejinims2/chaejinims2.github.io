@@ -1,0 +1,57 @@
+/* Standalone page styles (no site CSS dependency) */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: #0b1220;
+  color: rgba(229, 231, 235, 0.92);
+  font: 14px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.pxrullet-page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 14px 48px;
+  box-sizing: border-box;
+}
+
+.pxrullet-head {
+  width: min(820px, 100%);
+  margin-bottom: 16px;
+}
+.pxrullet-title {
+  font-size: 18px;
+  margin: 0 0 6px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.pxrullet-sub {
+  margin: 0;
+  color: rgba(229, 231, 235, 0.70);
+  font-size: 13px;
+}
+
+.pxrullet-root {
+  --pxrullet-scale: 3;
+  width: calc(256px * var(--pxrullet-scale));
+  height: calc(256px * var(--pxrullet-scale));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pxrullet-canvas {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  background: transparent;
+}
+
+@media (max-width: 420px) {
+  .pxrullet-root { --pxrullet-scale: 2; }
+}

@@ -106,6 +106,21 @@
                         })();
                     }
 
+                    // pxrullet page (PJAX에서는 page 내부 script가 실행되지 않으므로 여기서 로드/초기화)
+                    if (document.querySelector('[data-pxrullet-root]')) {
+                        (function () {
+                            function run() { if (window.initPxRulletPage) window.initPxRulletPage(); }
+                            if (window.initPxRulletPage) { run(); return; }
+                            if (window.__pxrulletScriptLoading) { return; }
+                            window.__pxrulletScriptLoading = true;
+                            var s = document.createElement('script');
+                            s.src = (base || '') + '/assets/labs/pxart-rullet/script.js';
+                            s.onload = function () { window.__pxrulletScriptLoading = false; run(); };
+                            s.onerror = function () { window.__pxrulletScriptLoading = false; };
+                            document.body.appendChild(s);
+                        })();
+                    }
+
                     // initLm11QuizCardInteractions is called after Start button click
                 })
                 .catch(function () { window.location.href = url; });

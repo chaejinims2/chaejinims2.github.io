@@ -24,7 +24,7 @@ DEFAULT_INPUT = (
     / "assets"
     / "stardew"
     / "farmer"
-    / "accs__8x8.png"
+    / "hairs_r0c0.png"
 )
 
 DEFAULT_OUT_BASE = Path(__file__).resolve().parent / "out"

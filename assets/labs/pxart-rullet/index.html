@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pxart-rullet</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="pxrullet-page">
+      <header class="pxrullet-head">
+        <h1 class="pxrullet-title">pxart-rullet</h1>
+        <p class="pxrullet-sub">Canvas 기반 픽셀 룰렛 (list_bg 타일링 + 버튼 상태 전환)</p>
+      </header>
+
+      <div
+        class="pxrullet-root"
+        data-pxrullet-root
+        data-sprite-src="../pxart-creator/assets/stardew/bg/Prize-Ticket-Menu_256x128.png"
+      >
+        <canvas class="pxrullet-canvas" width="256" height="256" aria-label="Pixel rullet"></canvas>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
