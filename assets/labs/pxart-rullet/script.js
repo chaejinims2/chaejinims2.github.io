@@ -21,6 +21,10 @@
 
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
   function mod(n, m) { return ((n % m) + m) % m; }
+  function resolveUrl(relativeOrAbsolute, base) {
+    try { return new URL(relativeOrAbsolute, base || window.location.href).toString(); }
+    catch (e) { return relativeOrAbsolute; }
+  }
 
   function getCanvasPoint(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
@@ -56,6 +60,39 @@
     ctx.restore();
   }
 
+  function drawEmojiStrip(ctx, emojisImg, dstRect, offset, scrollPx) {
+    // dstRect: clip area in canvas/sprite coords
+    var TILE = 9;
+    var GRID = 14; // 126/9
+    var COUNT = GRID * GRID; // 196
+    var PITCH = 22; // center-to-center
+    var centerY = dstRect.y + dstRect.h / 2;
+    var shiftX = typeof scrollPx === 'number' ? scrollPx : 0;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(dstRect.x, dstRect.y, dstRect.w, dstRect.h);
+    ctx.clip();
+
+    // Center one emoji in the window, then place neighbors at ±22px, etc.
+    // 66px width fits exactly 3 pitches (22*3); we draw a few extra for clipping.
+    var slotsEachSide = 3;
+    // When the background shuttles by +scrollX, move emojis by the same amount (stepwise).
+    var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
+    for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
+      var idx = mod((offset + i), COUNT);
+      var sx = (idx % GRID) * TILE;
+      var sy = Math.floor(idx / GRID) * TILE;
+
+      var cx = baseCenterX + i * PITCH;
+      var dx = Math.round(cx - TILE / 2);
+      var dy = Math.round(centerY - TILE / 2);
+      ctx.drawImage(emojisImg, sx, sy, TILE, TILE, dx, dy, TILE, TILE);
+    }
+
+    ctx.restore();
+  }
+
   function createRenderer(root) {
     var canvas = root.querySelector('canvas');
     if (!canvas) return null;
@@ -70,9 +107,22 @@
     var img = new Image();
     img.decoding = 'async';
 
+    var emojis = new Image();
+    emojis.decoding = 'async';
+    var emojisLoaded = false;
+    // emojis.png sits next to Prize-Ticket-Menu_256x128.png inside the same bg/ folder.
+    // Resolve from the spriteSrc URL to avoid page-path relative URL bugs.
+    var spriteAbs = resolveUrl(spriteSrc, window.location.href);
+    var emojisAbs = resolveUrl('emojis.png', spriteAbs);
+    emojis.onload = function () { emojisLoaded = true; render(); };
+    emojis.onerror = function () { emojisLoaded = false; render(); };
+    emojis.src = emojisAbs;
+
     var state = {
       scrollX: 0,
       btnIndex: 0,
+      emojiIndexOffset: 0,
+      emojiScrollX: 0,
       loaded: false,
       animating: false,
       animTimer: 0
@@ -101,8 +151,11 @@
       ctx.rect(RECTS.rullet.x, RECTS.rullet.y, RECTS.rullet.w, RECTS.rullet.h);
       ctx.clip();
 
-      // list_bg (behind the frame) — tiling in rullet_list window
+      // list_bg (behind the frame)
       drawTiled(ctx, img, RECTS.list_bg, RECTS.rullet_list, state.scrollX);
+
+      // emojis overlay (inside rullet_list clip)
+      if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
 
       // rullet frame/base (on top)
       ctx.drawImage(
@@ -132,25 +185,28 @@
 
       var steps = [0, 1, 2, 3, 4];
       var i = 0;
+      var scrollSteps = [0, 6, 11, 17, 22];
 
       function tick() {
-        // i: 0..4 (총 5스텝). 삼각파 형태로 0→22→0
-        var t = steps.length <= 1 ? 0 : (i / (steps.length - 1));
-        var tri = 1 - Math.abs(2 * t - 1); // 0..1..0
-        state.scrollX = 22 * tri;
+        // i: 0..4 (총 5스텝). 요청 스텝: 0→6→11→17→22
+        state.scrollX = scrollSteps[clamp(i, 0, scrollSteps.length - 1)];
+        state.emojiScrollX = state.scrollX;
         state.btnIndex = steps[i];
+        // Button click steps emoji list by 1 per click (not per animation frame)
         render();
         i++;
         if (i >= steps.length) {
           state.animating = false;
           state.btnIndex = 0;
           state.scrollX = 0;
+          state.emojiScrollX = 0;
           return;
         }
         state.animTimer = window.setTimeout(tick, 70);
       }
 
       // start immediately
+      state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
       tick();
     }
 
