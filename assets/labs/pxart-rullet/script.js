@@ -107,6 +107,14 @@
     ctx.clip();
 
     var slotsEachSide = 3;
+    // Reserved area for fixed character preview (20×20) in the left slot.
+    var reservedCx = dstRect.x + dstRect.w / 2 - PITCH;
+    var reservedRect = {
+      x: reservedCx - 10,
+      y: centerY - 10,
+      w: 20,
+      h: 20
+    };
     var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
     for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
       var idx = mod((offset + i), entries.length);
@@ -114,6 +122,13 @@
       var cx = baseCenterX + i * PITCH;
       var dx = Math.round(cx - TILE / 2);
       var dy = Math.round(centerY - TILE / 2);
+      // Skip any item that would overlap the fixed character area.
+      if (
+        dx < reservedRect.x + reservedRect.w &&
+        dx + TILE > reservedRect.x &&
+        dy < reservedRect.y + reservedRect.h &&
+        dy + TILE > reservedRect.y
+      ) continue;
       ctx.drawImage(shirtsImg, entry.sx, entry.sy, TILE, TILE, dx, dy, TILE, TILE);
     }
 
@@ -134,6 +149,14 @@
     ctx.clip();
 
     var slotsEachSide = 3;
+    // Reserved area for fixed character preview (20×20) in the left slot.
+    var reservedCx = dstRect.x + dstRect.w / 2 - PITCH;
+    var reservedRect = {
+      x: reservedCx - 10,
+      y: centerY - 10,
+      w: 20,
+      h: 20
+    };
     var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
     for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
       var idx = mod((offset + i), entries.length);
@@ -141,6 +164,13 @@
       var cx = baseCenterX + i * PITCH;
       var dx = Math.round(cx - TILE / 2);
       var dy = Math.round(centerY - TILE / 2);
+      // Skip any item that would overlap the fixed character area.
+      if (
+        dx < reservedRect.x + reservedRect.w &&
+        dx + TILE > reservedRect.x &&
+        dy < reservedRect.y + reservedRect.h &&
+        dy + TILE > reservedRect.y
+      ) continue;
       ctx.drawImage(accsImg, entry.sx, entry.sy, TILE, TILE, dx, dy, TILE, TILE);
     }
 
@@ -162,6 +192,14 @@
     ctx.clip();
 
     var slotsEachSide = 3;
+    // Reserved area for fixed character preview (20×20) in the left slot.
+    var reservedCx = dstRect.x + dstRect.w / 2 - PITCH;
+    var reservedRect = {
+      x: reservedCx - 10,
+      y: centerY - 10,
+      w: 20,
+      h: 20
+    };
     var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
     for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
       var idx = mod((offset + i), entries.length);
@@ -169,6 +207,13 @@
       var cx = baseCenterX + i * PITCH;
       var dx = Math.round(cx - DST / 2);
       var dy = Math.round(centerY - DST / 2);
+      // Skip any item that would overlap the fixed character area.
+      if (
+        dx < reservedRect.x + reservedRect.w &&
+        dx + DST > reservedRect.x &&
+        dy < reservedRect.y + reservedRect.h &&
+        dy + DST > reservedRect.y
+      ) continue;
       ctx.drawImage(hatsImg, entry.sx, entry.sy, SRC, SRC, dx, dy, DST, DST);
     }
 
@@ -180,18 +225,20 @@
     var btnH = 16;
     var gap = 8;
     var y = 10;
-    var totalW = btnW * 4 + gap * 3;
+    var totalW = btnW * 5 + gap * 4;
     var x0 = Math.round((SPRITE_W - totalW) / 2);
     var rEmoji = { x: x0, y: y, w: btnW, h: btnH };
     var rShirt = { x: x0 + btnW + gap, y: y, w: btnW, h: btnH };
-    var rAccs = { x: x0 + (btnW + gap) * 2, y: y, w: btnW, h: btnH };
-    var rHat = { x: x0 + (btnW + gap) * 3, y: y, w: btnW, h: btnH };
-    return { emoji: rEmoji, shirt: rShirt, accs: rAccs, hat: rHat };
+    var rShirt2 = { x: x0 + (btnW + gap) * 2, y: y, w: btnW, h: btnH };
+    var rAccs = { x: x0 + (btnW + gap) * 3, y: y, w: btnW, h: btnH };
+    var rHat = { x: x0 + (btnW + gap) * 4, y: y, w: btnW, h: btnH };
+    return { emoji: rEmoji, shirt: rShirt, shirt2: rShirt2, accs: rAccs, hat: rHat };
   }
 
   function drawPixelText(ctx, text, x, y, color) {
     // 3x5 bitmap font, drawn in 1px blocks (crisp when canvas is scaled).
     var glyphs = {
+      2: ['111', '001', '111', '100', '111'],
       A: ['010', '101', '111', '101', '101'],
       C: ['111', '100', '100', '100', '111'],
       E: ['111', '100', '111', '100', '111'],
@@ -250,6 +297,7 @@
 
     drawOne(rects.emoji, 'EMOJI', activeTheme === 'emoji');
     drawOne(rects.shirt, 'SHIRT', activeTheme === 'shirt');
+    drawOne(rects.shirt2, 'SH2', activeTheme === 'shirt2');
     drawOne(rects.accs, 'ACCS', activeTheme === 'accs');
     drawOne(rects.hat, 'HAT', activeTheme === 'hat');
     return rects;
@@ -326,6 +374,48 @@
     shirts.onerror = function () { shirtsLoaded = false; validShirtEntries = []; render(); };
     shirts.src = shirtsAbs;
 
+    // Fixed character preview for non-emoji themes (20×20).
+    // Source: farmers_r1c0_r0c0.png, first frame (16×32) with +2px left/right padding => 20×32,
+    // then crop bottom 12px => 20×20.
+    var farmerLoaded = false;
+    var farmerSprite = null; // 20×20 offscreen canvas
+    var farmer = new Image();
+    farmer.decoding = 'async';
+    var farmerAbs = resolveUrl('../farmer/farmers_r1c0_r0c0.png', spriteAbs);
+    farmer.onload = function () {
+      try {
+        var SRC_W = 16, SRC_H = 32;
+        var PAD_X = 2;
+        var OUT_W = 20, OUT_H = 20;
+
+        var tmp = document.createElement('canvas');
+        tmp.width = OUT_W;
+        tmp.height = SRC_H;
+        var tctx = tmp.getContext('2d');
+        if (!tctx) return;
+        tctx.imageSmoothingEnabled = false;
+        tctx.clearRect(0, 0, tmp.width, tmp.height);
+        // first frame at (0,0)
+        tctx.drawImage(farmer, 0, 0, SRC_W, SRC_H, PAD_X, 0, SRC_W, SRC_H);
+
+        var out = document.createElement('canvas');
+        out.width = OUT_W;
+        out.height = OUT_H;
+        var octx = out.getContext('2d');
+        if (!octx) return;
+        octx.imageSmoothingEnabled = false;
+        octx.clearRect(0, 0, out.width, out.height);
+        // crop bottom 12px => keep 20px, and also trim 1px from the top
+        octx.drawImage(tmp, 0, 1, OUT_W, OUT_H, 0, 0, OUT_W, OUT_H);
+
+        farmerSprite = out;
+        farmerLoaded = true;
+        render();
+      } catch (e) {}
+    };
+    farmer.onerror = function () { farmerLoaded = false; farmerSprite = null; render(); };
+    farmer.src = farmerAbs;
+
     var accs = new Image();
     accs.decoding = 'async';
     var accsLoaded = false;
@@ -401,13 +491,52 @@
           octx.clearRect(0, 0, off.width, off.height);
           octx.drawImage(hats, 0, 0);
 
-          // Key out pure black background -> transparent (only for hats theme rendering).
-          // This keeps the rullet_list background visible instead of black blocks.
+          // Key out black background -> transparent, but preserve internal black outlines.
+          // Strategy: flood-fill from image borders through pure-black pixels, and only
+          // clear alpha for those border-connected pixels.
           try {
             var imgd = octx.getImageData(0, 0, off.width, off.height);
             var d = imgd.data;
-            for (var i = 0; i < d.length; i += 4) {
-              if (d[i] === 0 && d[i + 1] === 0 && d[i + 2] === 0) d[i + 3] = 0;
+            var w = off.width | 0;
+            var h = off.height | 0;
+            var seen = new Uint8Array(w * h);
+            var qx = new Int32Array(w * h);
+            var qy = new Int32Array(w * h);
+            var qh = 0, qt = 0;
+
+            function isBlackAt(x, y) {
+              var idx = (y * w + x) * 4;
+              return d[idx] === 0 && d[idx + 1] === 0 && d[idx + 2] === 0;
+            }
+
+            function push(x, y) {
+              var p = y * w + x;
+              if (seen[p]) return;
+              if (!isBlackAt(x, y)) return;
+              seen[p] = 1;
+              qx[qt] = x;
+              qy[qt] = y;
+              qt++;
+            }
+
+            // seed from borders
+            for (var x = 0; x < w; x++) { push(x, 0); push(x, h - 1); }
+            for (var y = 0; y < h; y++) { push(0, y); push(w - 1, y); }
+
+            while (qh < qt) {
+              var x0 = qx[qh];
+              var y0 = qy[qh];
+              qh++;
+              if (x0 > 0) push(x0 - 1, y0);
+              if (x0 + 1 < w) push(x0 + 1, y0);
+              if (y0 > 0) push(x0, y0 - 1);
+              if (y0 + 1 < h) push(x0, y0 + 1);
+            }
+
+            // clear alpha for border-connected black pixels only
+            for (var p = 0; p < seen.length; p++) {
+              if (!seen[p]) continue;
+              d[p * 4 + 3] = 0;
             }
             octx.putImageData(imgd, 0, 0);
           } catch (e2) {}
@@ -483,8 +612,45 @@
       // list_bg (behind the frame)
       drawTiled(ctx, img, RECTS.list_bg, RECTS.rullet_list, state.scrollX);
 
+      // Fixed character preview in the left slot for non-emoji themes.
+      if (farmerLoaded && farmerSprite && state.theme !== 'emoji') {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(RECTS.rullet_list.x, RECTS.rullet_list.y, RECTS.rullet_list.w, RECTS.rullet_list.h);
+        ctx.clip();
+        var PITCH = 22;
+        var cx0 = RECTS.rullet_list.x + RECTS.rullet_list.w / 2 - PITCH;
+        var cy0 = RECTS.rullet_list.y + RECTS.rullet_list.h / 2;
+        var fx = Math.round(cx0 - 10);
+        var fy = Math.round(cy0 - 10);
+        ctx.drawImage(farmerSprite, fx, fy);
+
+        // SHIRT2: overlay the selected shirt on the fixed character (looks like wearing).
+        // Shirt start pos is relative to 20×20 character: (6,15).
+        if (state.theme === 'shirt2' && shirtsLoaded && validShirtEntries && validShirtEntries.length) {
+          var shirtEntry = validShirtEntries[mod(state.shirtIndexOffset, validShirtEntries.length)];
+          ctx.drawImage(shirts, shirtEntry.sx, shirtEntry.sy, 8, 8, fx + 6, fy + 15, 8, 8);
+        }
+
+        // ACCS: overlay the selected accessory on the fixed character (keeps it visible).
+        // 16×16 centered inside 20×20 => (2,2)
+        if (state.theme === 'accs' && accsLoaded && validAccEntries && validAccEntries.length) {
+          var accEntry = validAccEntries[mod(state.accIndexOffset, validAccEntries.length)];
+          ctx.drawImage(accs, accEntry.sx, accEntry.sy, 16, 16, fx + 2, fy + 2, 16, 16);
+        }
+
+        // HAT: overlay the selected hat on the fixed character (keeps it visible).
+        // 20×20 aligned to character top-left by default (0,0).
+        if (state.theme === 'hat' && hatsLoaded && validHatEntries && validHatEntries.length) {
+          var hatEntry = validHatEntries[mod(state.hatIndexOffset, validHatEntries.length)];
+          var hatsSrc = hatsKeyed || hats;
+          ctx.drawImage(hatsSrc, hatEntry.sx, hatEntry.sy, 20, 20, fx + 0, fy + 0, 20, 20);
+        }
+        ctx.restore();
+      }
+
       // theme overlay (inside rullet_list clip)
-      if (state.theme === 'shirt') {
+      if (state.theme === 'shirt' || state.theme === 'shirt2') {
         if (shirtsLoaded) drawShirtStrip(ctx, shirts, RECTS.rullet_list, validShirtEntries, state.shirtIndexOffset, state.emojiScrollX);
       } else if (state.theme === 'accs') {
         if (accsLoaded) drawAccStrip(ctx, accs, RECTS.rullet_list, validAccEntries, state.accIndexOffset, state.emojiScrollX);
@@ -543,7 +709,7 @@
       }
 
       // start immediately
-      if (state.theme === 'shirt') {
+      if (state.theme === 'shirt' || state.theme === 'shirt2') {
         var len = validShirtEntries && validShirtEntries.length ? validShirtEntries.length : 0;
         if (len) state.shirtIndexOffset = (state.shirtIndexOffset + 1) % len;
       } else if (state.theme === 'accs') {
@@ -572,6 +738,11 @@
         render();
         return;
       }
+      if (inRect(p, themeRects.shirt2)) {
+        state.theme = 'shirt2';
+        render();
+        return;
+      }
       if (inRect(p, themeRects.accs)) {
         state.theme = 'accs';
         render();
@@ -594,7 +765,7 @@
       var p = getCanvasPoint(canvas, e);
       // Pointer cursor on theme buttons or rullet button hitbox.
       var themeRects = getThemeButtonRects();
-      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat)) {
+      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.shirt2) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat)) {
         canvas.style.cursor = 'pointer';
         return;
       }
