@@ -120,21 +120,51 @@
     ctx.restore();
   }
 
+  function drawAccStrip(ctx, accsImg, dstRect, entries, offset, scrollPx) {
+    if (!entries || !entries.length) return;
+
+    var TILE = 16;
+    var PITCH = 22; // center-to-center
+    var centerY = dstRect.y + dstRect.h / 2;
+    var shiftX = typeof scrollPx === 'number' ? scrollPx : 0;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(dstRect.x, dstRect.y, dstRect.w, dstRect.h);
+    ctx.clip();
+
+    var slotsEachSide = 3;
+    var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
+    for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
+      var idx = mod((offset + i), entries.length);
+      var entry = entries[idx];
+      var cx = baseCenterX + i * PITCH;
+      var dx = Math.round(cx - TILE / 2);
+      var dy = Math.round(centerY - TILE / 2);
+      ctx.drawImage(accsImg, entry.sx, entry.sy, TILE, TILE, dx, dy, TILE, TILE);
+    }
+
+    ctx.restore();
+  }
+
   function getThemeButtonRects() {
     var btnW = 56;
     var btnH = 16;
     var gap = 8;
     var y = 10;
-    var totalW = btnW * 2 + gap;
+    var totalW = btnW * 3 + gap * 2;
     var x0 = Math.round((SPRITE_W - totalW) / 2);
     var rEmoji = { x: x0, y: y, w: btnW, h: btnH };
     var rShirt = { x: x0 + btnW + gap, y: y, w: btnW, h: btnH };
-    return { emoji: rEmoji, shirt: rShirt };
+    var rAccs = { x: x0 + (btnW + gap) * 2, y: y, w: btnW, h: btnH };
+    return { emoji: rEmoji, shirt: rShirt, accs: rAccs };
   }
 
   function drawPixelText(ctx, text, x, y, color) {
     // 3x5 bitmap font, drawn in 1px blocks (crisp when canvas is scaled).
     var glyphs = {
+      A: ['010', '101', '111', '101', '101'],
+      C: ['111', '100', '100', '100', '111'],
       E: ['111', '100', '111', '100', '111'],
       M: ['101', '111', '111', '101', '101'],
       O: ['111', '101', '101', '101', '111'],
@@ -189,8 +219,9 @@
       ctx.restore();
     }
 
-    drawOne(rects.emoji, 'EMOJI', activeTheme !== 'shirt');
+    drawOne(rects.emoji, 'EMOJI', activeTheme === 'emoji');
     drawOne(rects.shirt, 'SHIRT', activeTheme === 'shirt');
+    drawOne(rects.accs, 'ACCS', activeTheme === 'accs');
     return rects;
   }
 
@@ -265,12 +296,63 @@
     shirts.onerror = function () { shirtsLoaded = false; validShirtEntries = []; render(); };
     shirts.src = shirtsAbs;
 
+    var accs = new Image();
+    accs.decoding = 'async';
+    var accsLoaded = false;
+    var validAccEntries = [];
+    var accsAbs = resolveUrl('../farmer/accs_128x128.png', spriteAbs);
+    accs.onload = function () {
+      accsLoaded = true;
+      // accs: 1 column × 2 rows (16×32), use only top 16×16 as representative.
+      try {
+        var TILE = 16;
+        var COLS = Math.floor(accs.naturalWidth / TILE); // 128/16 = 8
+        var GROUP_H = 2 * TILE; // 32px
+        var GROUPS = Math.floor(accs.naturalHeight / GROUP_H); // 128/32 = 4
+
+        var off = document.createElement('canvas');
+        off.width = accs.naturalWidth;
+        off.height = accs.naturalHeight;
+        var octx = off.getContext('2d');
+        if (octx) {
+          octx.imageSmoothingEnabled = false;
+          octx.clearRect(0, 0, off.width, off.height);
+          octx.drawImage(accs, 0, 0);
+          validAccEntries = [];
+
+          for (var gr = 0; gr < GROUPS; gr++) {
+            for (var tx = 0; tx < COLS; tx++) {
+              var sx = tx * TILE;
+              var sy = gr * GROUP_H; // representative tile at top row
+              var data = octx.getImageData(sx, sy, TILE, TILE).data;
+              var allBlack = true;
+              var allTransparent = true;
+              for (var p = 0; p < data.length; p += 4) {
+                var r = data[p];
+                var g = data[p + 1];
+                var b = data[p + 2];
+                var a = data[p + 3];
+                if (r !== 0 || g !== 0 || b !== 0) allBlack = false;
+                if (a !== 0) allTransparent = false;
+                if (!allBlack && !allTransparent) break;
+              }
+              if (!(allBlack || allTransparent)) validAccEntries.push({ sx: sx, sy: sy });
+            }
+          }
+        }
+      } catch (e) {}
+      render();
+    };
+    accs.onerror = function () { accsLoaded = false; validAccEntries = []; render(); };
+    accs.src = accsAbs;
+
     var state = {
       scrollX: 0,
       btnIndex: 0,
       emojiIndexOffset: 0,
       emojiScrollX: 0,
       shirtIndexOffset: 0,
+      accIndexOffset: 0,
       theme: 'emoji',
       loaded: false,
       animating: false,
@@ -309,6 +391,8 @@
       // theme overlay (inside rullet_list clip)
       if (state.theme === 'shirt') {
         if (shirtsLoaded) drawShirtStrip(ctx, shirts, RECTS.rullet_list, validShirtEntries, state.shirtIndexOffset, state.emojiScrollX);
+      } else if (state.theme === 'accs') {
+        if (accsLoaded) drawAccStrip(ctx, accs, RECTS.rullet_list, validAccEntries, state.accIndexOffset, state.emojiScrollX);
       } else {
         if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
       }
@@ -365,6 +449,9 @@
       if (state.theme === 'shirt') {
         var len = validShirtEntries && validShirtEntries.length ? validShirtEntries.length : 0;
         if (len) state.shirtIndexOffset = (state.shirtIndexOffset + 1) % len;
+      } else if (state.theme === 'accs') {
+        var lenA = validAccEntries && validAccEntries.length ? validAccEntries.length : 0;
+        if (lenA) state.accIndexOffset = (state.accIndexOffset + 1) % lenA;
       } else {
         state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
       }
@@ -385,6 +472,11 @@
         render();
         return;
       }
+      if (inRect(p, themeRects.accs)) {
+        state.theme = 'accs';
+        render();
+        return;
+      }
       var btnRect = toViewRect(RECTS.rullet_btn);
       if (inRect(p, btnRect)) {
         runBtnAnimation();
@@ -397,7 +489,7 @@
       var p = getCanvasPoint(canvas, e);
       // Pointer cursor on theme buttons or rullet button hitbox.
       var themeRects = getThemeButtonRects();
-      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt)) {
+      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs)) {
         canvas.style.cursor = 'pointer';
         return;
       }
