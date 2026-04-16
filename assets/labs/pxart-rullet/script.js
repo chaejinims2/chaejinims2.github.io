@@ -147,17 +147,46 @@
     ctx.restore();
   }
 
+  function drawHatStrip(ctx, hatsImg, dstRect, entries, offset, scrollPx) {
+    if (!entries || !entries.length) return;
+
+    var SRC = 20;
+    var DST = 20;
+    var PITCH = 22; // center-to-center
+    var centerY = dstRect.y + dstRect.h / 2;
+    var shiftX = typeof scrollPx === 'number' ? scrollPx : 0;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(dstRect.x, dstRect.y, dstRect.w, dstRect.h);
+    ctx.clip();
+
+    var slotsEachSide = 3;
+    var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
+    for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
+      var idx = mod((offset + i), entries.length);
+      var entry = entries[idx];
+      var cx = baseCenterX + i * PITCH;
+      var dx = Math.round(cx - DST / 2);
+      var dy = Math.round(centerY - DST / 2);
+      ctx.drawImage(hatsImg, entry.sx, entry.sy, SRC, SRC, dx, dy, DST, DST);
+    }
+
+    ctx.restore();
+  }
+
   function getThemeButtonRects() {
     var btnW = 56;
     var btnH = 16;
     var gap = 8;
     var y = 10;
-    var totalW = btnW * 3 + gap * 2;
+    var totalW = btnW * 4 + gap * 3;
     var x0 = Math.round((SPRITE_W - totalW) / 2);
     var rEmoji = { x: x0, y: y, w: btnW, h: btnH };
     var rShirt = { x: x0 + btnW + gap, y: y, w: btnW, h: btnH };
     var rAccs = { x: x0 + (btnW + gap) * 2, y: y, w: btnW, h: btnH };
-    return { emoji: rEmoji, shirt: rShirt, accs: rAccs };
+    var rHat = { x: x0 + (btnW + gap) * 3, y: y, w: btnW, h: btnH };
+    return { emoji: rEmoji, shirt: rShirt, accs: rAccs, hat: rHat };
   }
 
   function drawPixelText(ctx, text, x, y, color) {
@@ -222,6 +251,7 @@
     drawOne(rects.emoji, 'EMOJI', activeTheme === 'emoji');
     drawOne(rects.shirt, 'SHIRT', activeTheme === 'shirt');
     drawOne(rects.accs, 'ACCS', activeTheme === 'accs');
+    drawOne(rects.hat, 'HAT', activeTheme === 'hat');
     return rects;
   }
 
@@ -346,6 +376,70 @@
     accs.onerror = function () { accsLoaded = false; validAccEntries = []; render(); };
     accs.src = accsAbs;
 
+    var hats = new Image();
+    hats.decoding = 'async';
+    var hatsLoaded = false;
+    var validHatEntries = [];
+    var hatsKeyed = null; // offscreen canvas with black treated as transparent
+    var hatsAbs = resolveUrl('../farmer/hats_323x480_r4c24.png', spriteAbs);
+    hats.onload = function () {
+      hatsLoaded = true;
+      // hats: 1 column × 4 rows (20×80), use only top 20×20 as representative.
+      // Grid area: 320×480 from (0,0) => COLS=16, GROUPS=6
+      try {
+        var TILE = 20;
+        var COLS = 16; // 320/20
+        var GROUP_H = 4 * TILE; // 80px
+        var GROUPS = 6; // 480/80
+
+        var off = document.createElement('canvas');
+        off.width = hats.naturalWidth;
+        off.height = hats.naturalHeight;
+        var octx = off.getContext('2d');
+        if (octx) {
+          octx.imageSmoothingEnabled = false;
+          octx.clearRect(0, 0, off.width, off.height);
+          octx.drawImage(hats, 0, 0);
+
+          // Key out pure black background -> transparent (only for hats theme rendering).
+          // This keeps the rullet_list background visible instead of black blocks.
+          try {
+            var imgd = octx.getImageData(0, 0, off.width, off.height);
+            var d = imgd.data;
+            for (var i = 0; i < d.length; i += 4) {
+              if (d[i] === 0 && d[i + 1] === 0 && d[i + 2] === 0) d[i + 3] = 0;
+            }
+            octx.putImageData(imgd, 0, 0);
+          } catch (e2) {}
+          hatsKeyed = off;
+          validHatEntries = [];
+
+          for (var gr = 0; gr < GROUPS; gr++) {
+            for (var tx = 0; tx < COLS; tx++) {
+              var sx = tx * TILE;
+              var sy = gr * GROUP_H; // representative tile at top row
+              var data = octx.getImageData(sx, sy, TILE, TILE).data;
+              var allBlack = true;
+              var allTransparent = true;
+              for (var p = 0; p < data.length; p += 4) {
+                var r = data[p];
+                var g = data[p + 1];
+                var b = data[p + 2];
+                var a = data[p + 3];
+                if (r !== 0 || g !== 0 || b !== 0) allBlack = false;
+                if (a !== 0) allTransparent = false;
+                if (!allBlack && !allTransparent) break;
+              }
+              if (!(allBlack || allTransparent)) validHatEntries.push({ sx: sx, sy: sy });
+            }
+          }
+        }
+      } catch (e) {}
+      render();
+    };
+    hats.onerror = function () { hatsLoaded = false; validHatEntries = []; render(); };
+    hats.src = hatsAbs;
+
     var state = {
       scrollX: 0,
       btnIndex: 0,
@@ -353,6 +447,7 @@
       emojiScrollX: 0,
       shirtIndexOffset: 0,
       accIndexOffset: 0,
+      hatIndexOffset: 0,
       theme: 'emoji',
       loaded: false,
       animating: false,
@@ -393,6 +488,8 @@
         if (shirtsLoaded) drawShirtStrip(ctx, shirts, RECTS.rullet_list, validShirtEntries, state.shirtIndexOffset, state.emojiScrollX);
       } else if (state.theme === 'accs') {
         if (accsLoaded) drawAccStrip(ctx, accs, RECTS.rullet_list, validAccEntries, state.accIndexOffset, state.emojiScrollX);
+      } else if (state.theme === 'hat') {
+        if (hatsLoaded) drawHatStrip(ctx, hatsKeyed || hats, RECTS.rullet_list, validHatEntries, state.hatIndexOffset, state.emojiScrollX);
       } else {
         if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
       }
@@ -452,6 +549,9 @@
       } else if (state.theme === 'accs') {
         var lenA = validAccEntries && validAccEntries.length ? validAccEntries.length : 0;
         if (lenA) state.accIndexOffset = (state.accIndexOffset + 1) % lenA;
+      } else if (state.theme === 'hat') {
+        var lenH = validHatEntries && validHatEntries.length ? validHatEntries.length : 0;
+        if (lenH) state.hatIndexOffset = (state.hatIndexOffset + 1) % lenH;
       } else {
         state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
       }
@@ -477,6 +577,11 @@
         render();
         return;
       }
+      if (inRect(p, themeRects.hat)) {
+        state.theme = 'hat';
+        render();
+        return;
+      }
       var btnRect = toViewRect(RECTS.rullet_btn);
       if (inRect(p, btnRect)) {
         runBtnAnimation();
@@ -489,7 +594,7 @@
       var p = getCanvasPoint(canvas, e);
       // Pointer cursor on theme buttons or rullet button hitbox.
       var themeRects = getThemeButtonRects();
-      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs)) {
+      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat)) {
         canvas.style.cursor = 'pointer';
         return;
       }
