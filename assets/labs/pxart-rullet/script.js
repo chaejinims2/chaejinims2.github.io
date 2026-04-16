@@ -223,15 +223,14 @@
   function getThemeButtonRects() {
     var btnW = 56;
     var btnH = 16;
-    var gap = 8;
-    var y = 10;
-    var totalW = btnW * 5 + gap * 4;
-    var x0 = Math.round((SPRITE_W - totalW) / 2);
-    var rEmoji = { x: x0, y: y, w: btnW, h: btnH };
-    var rShirt = { x: x0 + btnW + gap, y: y, w: btnW, h: btnH };
-    var rShirt2 = { x: x0 + (btnW + gap) * 2, y: y, w: btnW, h: btnH };
-    var rAccs = { x: x0 + (btnW + gap) * 3, y: y, w: btnW, h: btnH };
-    var rHat = { x: x0 + (btnW + gap) * 4, y: y, w: btnW, h: btnH };
+    var gapY = 6;
+    var x = 10;
+    var y0 = 10;
+    var rEmoji = { x: x, y: y0 + (btnH + gapY) * 0, w: btnW, h: btnH };
+    var rShirt = { x: x, y: y0 + (btnH + gapY) * 1, w: btnW, h: btnH };
+    var rShirt2 = { x: x, y: y0 + (btnH + gapY) * 2, w: btnW, h: btnH };
+    var rAccs = { x: x, y: y0 + (btnH + gapY) * 3, w: btnW, h: btnH };
+    var rHat = { x: x, y: y0 + (btnH + gapY) * 4, w: btnW, h: btnH };
     return { emoji: rEmoji, shirt: rShirt, shirt2: rShirt2, accs: rAccs, hat: rHat };
   }
 
