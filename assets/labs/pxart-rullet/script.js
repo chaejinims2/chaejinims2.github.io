@@ -375,38 +375,22 @@
     shirts.src = shirtsAbs;
 
     // Fixed character preview for non-emoji themes (20×20).
-    // Source: farmers_r1c0_r0c0.png, first frame (16×32) with +2px left/right padding => 20×32,
-    // then crop bottom 12px => 20×20.
+    // Source: farmers base + arms (precomposited) preview asset.
     var farmerLoaded = false;
     var farmerSprite = null; // 20×20 offscreen canvas
     var farmer = new Image();
     farmer.decoding = 'async';
-    var farmerAbs = resolveUrl('../farmer/farmers_r1c0_r0c0.png', spriteAbs);
+    var farmerAbs = resolveUrl('../farmer/farmers_r1c0_base_arms_preview_20x20.png', spriteAbs);
     farmer.onload = function () {
       try {
-        var SRC_W = 16, SRC_H = 32;
-        var PAD_X = 2;
-        var OUT_W = 20, OUT_H = 20;
-
-        var tmp = document.createElement('canvas');
-        tmp.width = OUT_W;
-        tmp.height = SRC_H;
-        var tctx = tmp.getContext('2d');
-        if (!tctx) return;
-        tctx.imageSmoothingEnabled = false;
-        tctx.clearRect(0, 0, tmp.width, tmp.height);
-        // first frame at (0,0)
-        tctx.drawImage(farmer, 0, 0, SRC_W, SRC_H, PAD_X, 0, SRC_W, SRC_H);
-
         var out = document.createElement('canvas');
-        out.width = OUT_W;
-        out.height = OUT_H;
+        out.width = 20;
+        out.height = 20;
         var octx = out.getContext('2d');
         if (!octx) return;
         octx.imageSmoothingEnabled = false;
-        octx.clearRect(0, 0, out.width, out.height);
-        // crop bottom 12px => keep 20px, and also trim 1px from the top
-        octx.drawImage(tmp, 0, 1, OUT_W, OUT_H, 0, 0, OUT_W, OUT_H);
+        octx.clearRect(0, 0, 20, 20);
+        octx.drawImage(farmer, 0, 0, 20, 20, 0, 0, 20, 20);
 
         farmerSprite = out;
         farmerLoaded = true;
