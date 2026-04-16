@@ -228,10 +228,9 @@
     var y0 = 10;
     var rEmoji = { x: x, y: y0 + (btnH + gapY) * 0, w: btnW, h: btnH };
     var rShirt = { x: x, y: y0 + (btnH + gapY) * 1, w: btnW, h: btnH };
-    var rShirt2 = { x: x, y: y0 + (btnH + gapY) * 2, w: btnW, h: btnH };
-    var rAccs = { x: x, y: y0 + (btnH + gapY) * 3, w: btnW, h: btnH };
-    var rHat = { x: x, y: y0 + (btnH + gapY) * 4, w: btnW, h: btnH };
-    return { emoji: rEmoji, shirt: rShirt, shirt2: rShirt2, accs: rAccs, hat: rHat };
+    var rAccs = { x: x, y: y0 + (btnH + gapY) * 2, w: btnW, h: btnH };
+    var rHat = { x: x, y: y0 + (btnH + gapY) * 3, w: btnW, h: btnH };
+    return { emoji: rEmoji, shirt: rShirt, accs: rAccs, hat: rHat };
   }
 
   function drawPixelText(ctx, text, x, y, color) {
@@ -296,7 +295,6 @@
 
     drawOne(rects.emoji, 'EMOJI', activeTheme === 'emoji');
     drawOne(rects.shirt, 'SHIRT', activeTheme === 'shirt');
-    drawOne(rects.shirt2, 'SH2', activeTheme === 'shirt2');
     drawOne(rects.accs, 'ACCS', activeTheme === 'accs');
     drawOne(rects.hat, 'HAT', activeTheme === 'hat');
     return rects;
@@ -560,6 +558,9 @@
       shirtIndexOffset: 0,
       accIndexOffset: 0,
       hatIndexOffset: 0,
+      equippedShirtIndex: -1,
+      equippedAccIndex: -1,
+      equippedHatIndex: -1,
       theme: 'emoji',
       loaded: false,
       animating: false,
@@ -608,32 +609,29 @@
         var fy = Math.round(cy0 - 10);
         ctx.drawImage(farmerSprite, fx, fy);
 
-        // SHIRT2: overlay the selected shirt on the fixed character (looks like wearing).
-        // Shirt start pos is relative to 20×20 character: (6,15).
-        if (state.theme === 'shirt2' && shirtsLoaded && validShirtEntries && validShirtEntries.length) {
-          var shirtEntry = validShirtEntries[mod(state.shirtIndexOffset, validShirtEntries.length)];
-          ctx.drawImage(shirts, shirtEntry.sx, shirtEntry.sy, 8, 8, fx + 6, fy + 15, 8, 8);
+        // Equipped overlays persist across theme toggles (except emoji).
+        // Draw order: shirt -> accs -> hat (hat on top).
+        if (shirtsLoaded && validShirtEntries && validShirtEntries.length && state.equippedShirtIndex >= 0) {
+          var eShirt = validShirtEntries[mod(state.equippedShirtIndex, validShirtEntries.length)];
+          // Shirt start pos is relative to 20×20 character: (6,15).
+          ctx.drawImage(shirts, eShirt.sx, eShirt.sy, 8, 8, fx + 6, fy + 15, 8, 8);
         }
-
-        // ACCS: overlay the selected accessory on the fixed character (keeps it visible).
-        // 16×16 centered inside 20×20 => (2,2)
-        if (state.theme === 'accs' && accsLoaded && validAccEntries && validAccEntries.length) {
-          var accEntry = validAccEntries[mod(state.accIndexOffset, validAccEntries.length)];
-          ctx.drawImage(accs, accEntry.sx, accEntry.sy, 16, 16, fx + 2, fy + 2, 16, 16);
+        if (accsLoaded && validAccEntries && validAccEntries.length && state.equippedAccIndex >= 0) {
+          var eAcc = validAccEntries[mod(state.equippedAccIndex, validAccEntries.length)];
+          // 16×16 centered inside 20×20 => (2,2)
+          ctx.drawImage(accs, eAcc.sx, eAcc.sy, 16, 16, fx + 2, fy + 2, 16, 16);
         }
-
-        // HAT: overlay the selected hat on the fixed character (keeps it visible).
-        // 20×20 aligned to character top-left by default (0,0).
-        if (state.theme === 'hat' && hatsLoaded && validHatEntries && validHatEntries.length) {
-          var hatEntry = validHatEntries[mod(state.hatIndexOffset, validHatEntries.length)];
+        if (hatsLoaded && validHatEntries && validHatEntries.length && state.equippedHatIndex >= 0) {
+          var eHat = validHatEntries[mod(state.equippedHatIndex, validHatEntries.length)];
           var hatsSrc = hatsKeyed || hats;
-          ctx.drawImage(hatsSrc, hatEntry.sx, hatEntry.sy, 20, 20, fx + 0, fy + 0, 20, 20);
+          // 20×20 aligned to character top-left by default (0,0).
+          ctx.drawImage(hatsSrc, eHat.sx, eHat.sy, 20, 20, fx + 0, fy + 0, 20, 20);
         }
         ctx.restore();
       }
 
       // theme overlay (inside rullet_list clip)
-      if (state.theme === 'shirt' || state.theme === 'shirt2') {
+      if (state.theme === 'shirt') {
         if (shirtsLoaded) drawShirtStrip(ctx, shirts, RECTS.rullet_list, validShirtEntries, state.shirtIndexOffset, state.emojiScrollX);
       } else if (state.theme === 'accs') {
         if (accsLoaded) drawAccStrip(ctx, accs, RECTS.rullet_list, validAccEntries, state.accIndexOffset, state.emojiScrollX);
@@ -692,15 +690,24 @@
       }
 
       // start immediately
-      if (state.theme === 'shirt' || state.theme === 'shirt2') {
+      if (state.theme === 'shirt') {
         var len = validShirtEntries && validShirtEntries.length ? validShirtEntries.length : 0;
-        if (len) state.shirtIndexOffset = (state.shirtIndexOffset + 1) % len;
+        if (len) {
+          state.shirtIndexOffset = (state.shirtIndexOffset + 1) % len;
+          state.equippedShirtIndex = state.shirtIndexOffset;
+        }
       } else if (state.theme === 'accs') {
         var lenA = validAccEntries && validAccEntries.length ? validAccEntries.length : 0;
-        if (lenA) state.accIndexOffset = (state.accIndexOffset + 1) % lenA;
+        if (lenA) {
+          state.accIndexOffset = (state.accIndexOffset + 1) % lenA;
+          state.equippedAccIndex = state.accIndexOffset;
+        }
       } else if (state.theme === 'hat') {
         var lenH = validHatEntries && validHatEntries.length ? validHatEntries.length : 0;
-        if (lenH) state.hatIndexOffset = (state.hatIndexOffset + 1) % lenH;
+        if (lenH) {
+          state.hatIndexOffset = (state.hatIndexOffset + 1) % lenH;
+          state.equippedHatIndex = state.hatIndexOffset;
+        }
       } else {
         state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
       }
@@ -718,11 +725,6 @@
       }
       if (inRect(p, themeRects.shirt)) {
         state.theme = 'shirt';
-        render();
-        return;
-      }
-      if (inRect(p, themeRects.shirt2)) {
-        state.theme = 'shirt2';
         render();
         return;
       }
@@ -748,7 +750,7 @@
       var p = getCanvasPoint(canvas, e);
       // Pointer cursor on theme buttons or rullet button hitbox.
       var themeRects = getThemeButtonRects();
-      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.shirt2) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat)) {
+      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat)) {
         canvas.style.cursor = 'pointer';
         return;
       }
