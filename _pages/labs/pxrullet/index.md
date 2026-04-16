@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Pixer Rullet
+title: Pixel Rullet
 intro: |
-  This is a Pixer Rullet.
+  This is a Pixel Rullet.
 tags:
   - pxrullet
   - labs

@@ -93,6 +93,107 @@
     ctx.restore();
   }
 
+  function drawShirtStrip(ctx, shirtsImg, dstRect, entries, offset, scrollPx) {
+    if (!entries || !entries.length) return;
+
+    var TILE = 8;
+    var PITCH = 22; // center-to-center
+    var centerY = dstRect.y + dstRect.h / 2;
+    var shiftX = typeof scrollPx === 'number' ? scrollPx : 0;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(dstRect.x, dstRect.y, dstRect.w, dstRect.h);
+    ctx.clip();
+
+    var slotsEachSide = 3;
+    var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
+    for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
+      var idx = mod((offset + i), entries.length);
+      var entry = entries[idx];
+      var cx = baseCenterX + i * PITCH;
+      var dx = Math.round(cx - TILE / 2);
+      var dy = Math.round(centerY - TILE / 2);
+      ctx.drawImage(shirtsImg, entry.sx, entry.sy, TILE, TILE, dx, dy, TILE, TILE);
+    }
+
+    ctx.restore();
+  }
+
+  function getThemeButtonRects() {
+    var btnW = 56;
+    var btnH = 16;
+    var gap = 8;
+    var y = 10;
+    var totalW = btnW * 2 + gap;
+    var x0 = Math.round((SPRITE_W - totalW) / 2);
+    var rEmoji = { x: x0, y: y, w: btnW, h: btnH };
+    var rShirt = { x: x0 + btnW + gap, y: y, w: btnW, h: btnH };
+    return { emoji: rEmoji, shirt: rShirt };
+  }
+
+  function drawPixelText(ctx, text, x, y, color) {
+    // 3x5 bitmap font, drawn in 1px blocks (crisp when canvas is scaled).
+    var glyphs = {
+      E: ['111', '100', '111', '100', '111'],
+      M: ['101', '111', '111', '101', '101'],
+      O: ['111', '101', '101', '101', '111'],
+      J: ['111', '001', '001', '101', '111'],
+      I: ['111', '010', '010', '010', '111'],
+      S: ['111', '100', '111', '001', '111'],
+      H: ['101', '101', '111', '101', '101'],
+      R: ['110', '101', '110', '101', '101'],
+      T: ['111', '010', '010', '010', '010']
+    };
+
+    var gap = 1;
+    var w = 3;
+    var h = 5;
+    ctx.save();
+    ctx.fillStyle = color || 'rgba(255,255,255,0.9)';
+    var ox = x;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      var g = glyphs[ch];
+      if (!g) { ox += w + gap; continue; }
+      for (var yy = 0; yy < h; yy++) {
+        var row = g[yy];
+        for (var xx = 0; xx < w; xx++) {
+          if (row.charAt(xx) === '1') ctx.fillRect(ox + xx, y + yy, 1, 1);
+        }
+      }
+      ox += w + gap;
+    }
+    ctx.restore();
+  }
+
+  function drawThemeButtons(ctx, activeTheme) {
+    var rects = getThemeButtonRects();
+
+    function drawOne(r, label, isActive) {
+      ctx.save();
+      ctx.fillStyle = isActive ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.06)';
+      ctx.strokeStyle = isActive ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.28)';
+      ctx.lineWidth = 1;
+      ctx.fillRect(r.x, r.y, r.w, r.h);
+      ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
+
+      // Pixel label (avoid blurry/aliased canvas text when scaled)
+      var color = isActive ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.8)';
+      var gap = 1;
+      var labelW = label.length * 3 + (label.length - 1) * gap;
+      var labelH = 5;
+      var tx = Math.round(r.x + (r.w - labelW) / 2);
+      var ty = Math.round(r.y + (r.h - labelH) / 2);
+      drawPixelText(ctx, label, tx, ty, color);
+      ctx.restore();
+    }
+
+    drawOne(rects.emoji, 'EMOJI', activeTheme !== 'shirt');
+    drawOne(rects.shirt, 'SHIRT', activeTheme === 'shirt');
+    return rects;
+  }
+
   function createRenderer(root) {
     var canvas = root.querySelector('canvas');
     if (!canvas) return null;
@@ -118,11 +219,59 @@
     emojis.onerror = function () { emojisLoaded = false; render(); };
     emojis.src = emojisAbs;
 
+    var shirts = new Image();
+    shirts.decoding = 'async';
+    var shirtsLoaded = false;
+    var validShirtEntries = [];
+    var shirtsAbs = resolveUrl('../farmer/shirts_256x608.png', spriteAbs);
+    shirts.onload = function () {
+      shirtsLoaded = true;
+      // Build valid shirt entries once: shirt = 1 column × 4 rows (8×32), use only top 8×8 as representative.
+      try {
+        var TILE = 8;
+        var COLS = Math.floor(shirts.naturalWidth / TILE); // 256/8 = 32
+        var GROUP_H = 4 * TILE; // 32px
+        var GROUPS = Math.floor(shirts.naturalHeight / GROUP_H); // 608/32 = 19
+
+        var off = document.createElement('canvas');
+        off.width = shirts.naturalWidth;
+        off.height = shirts.naturalHeight;
+        var octx = off.getContext('2d');
+        if (octx) {
+          octx.imageSmoothingEnabled = false;
+          octx.clearRect(0, 0, off.width, off.height);
+          octx.drawImage(shirts, 0, 0);
+          validShirtEntries = [];
+
+          for (var gr = 0; gr < GROUPS; gr++) {
+            for (var tx = 0; tx < COLS; tx++) {
+              var sx = tx * TILE;
+              var sy = gr * GROUP_H; // representative tile at top row
+              var data = octx.getImageData(sx, sy, TILE, TILE).data;
+              var allBlack = true;
+              for (var p = 0; p < data.length; p += 4) {
+                if (data[p] !== 0 || data[p + 1] !== 0 || data[p + 2] !== 0) {
+                  allBlack = false;
+                  break;
+                }
+              }
+              if (!allBlack) validShirtEntries.push({ sx: sx, sy: sy });
+            }
+          }
+        }
+      } catch (e) {}
+      render();
+    };
+    shirts.onerror = function () { shirtsLoaded = false; validShirtEntries = []; render(); };
+    shirts.src = shirtsAbs;
+
     var state = {
       scrollX: 0,
       btnIndex: 0,
       emojiIndexOffset: 0,
       emojiScrollX: 0,
+      shirtIndexOffset: 0,
+      theme: 'emoji',
       loaded: false,
       animating: false,
       animTimer: 0
@@ -143,6 +292,9 @@
       ctx.clearRect(0, 0, SPRITE_W, SPRITE_H);
       if (!state.loaded) return;
 
+      // Theme buttons live on the canvas top (outside the rullet clip).
+      var themeRects = drawThemeButtons(ctx, state.theme);
+
       // 3) rullet 영역 밖은 보이면 안 됨 → rullet 영역만 렌더
       // (리스트/버튼은 rullet 안에 있고, 소스는 스프라이트 어디든 가능)
       ctx.save();
@@ -154,8 +306,12 @@
       // list_bg (behind the frame)
       drawTiled(ctx, img, RECTS.list_bg, RECTS.rullet_list, state.scrollX);
 
-      // emojis overlay (inside rullet_list clip)
-      if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
+      // theme overlay (inside rullet_list clip)
+      if (state.theme === 'shirt') {
+        if (shirtsLoaded) drawShirtStrip(ctx, shirts, RECTS.rullet_list, validShirtEntries, state.shirtIndexOffset, state.emojiScrollX);
+      } else {
+        if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
+      }
 
       // rullet frame/base (on top)
       ctx.drawImage(
@@ -206,12 +362,29 @@
       }
 
       // start immediately
-      state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
+      if (state.theme === 'shirt') {
+        var len = validShirtEntries && validShirtEntries.length ? validShirtEntries.length : 0;
+        if (len) state.shirtIndexOffset = (state.shirtIndexOffset + 1) % len;
+      } else {
+        state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
+      }
       tick();
     }
 
     function onPointerDown(e) {
       var p = getCanvasPoint(canvas, e);
+      // Theme switch buttons (canvas coords)
+      var themeRects = getThemeButtonRects();
+      if (inRect(p, themeRects.emoji)) {
+        state.theme = 'emoji';
+        render();
+        return;
+      }
+      if (inRect(p, themeRects.shirt)) {
+        state.theme = 'shirt';
+        render();
+        return;
+      }
       var btnRect = toViewRect(RECTS.rullet_btn);
       if (inRect(p, btnRect)) {
         runBtnAnimation();
@@ -222,7 +395,12 @@
 
     function onPointerMove(e) {
       var p = getCanvasPoint(canvas, e);
-      // Pointer cursor only on the button hitbox.
+      // Pointer cursor on theme buttons or rullet button hitbox.
+      var themeRects = getThemeButtonRects();
+      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt)) {
+        canvas.style.cursor = 'pointer';
+        return;
+      }
       var btnRect = toViewRect(RECTS.rullet_btn);
       canvas.style.cursor = inRect(p, btnRect) ? 'pointer' : '';
     }

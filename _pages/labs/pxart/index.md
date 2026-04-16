@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Pixer Art Character Generator
+title: Pixel Art Character Generator
 intro: |
-  This is a Pixer Art Character Generator.
+  This is a Pixel Art Character Generator.
 tags:
   - pxart
   - labs
