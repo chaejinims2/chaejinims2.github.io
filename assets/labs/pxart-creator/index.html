@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pixel character preview (MVP)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Pixel character preview</h1>
+        <p class="muted">Layered 16×32 sprites · 4 directions × 4 frames</p>
+      </header>
+
+      <main class="app-main">
+        <section class="preview-wrap" aria-label="Character preview">
+          <div id="missing-banner" class="missing-banner" hidden>missing asset</div>
+          <div class="canvas-shell">
+            <canvas id="view" width="64" height="128" aria-label="Character canvas"></canvas>
+          </div>
+        </section>
+
+        <aside class="panel" aria-label="Controls">
+          <fieldset>
+            <legend>Direction</legend>
+            <div class="btn-row" id="dir-buttons">
+              <button type="button" data-dir="0">down</button>
+              <button type="button" data-dir="1">left</button>
+              <button type="button" data-dir="2">right</button>
+              <button type="button" data-dir="3">up</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Frame</legend>
+            <div class="btn-row" id="frame-buttons">
+              <button type="button" data-frame="0">0</button>
+              <button type="button" data-frame="1">1</button>
+              <button type="button" data-frame="2">2</button>
+              <button type="button" data-frame="3">3</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Background</legend>
+            <label class="row">
+              <span>Character backdrop</span>
+              <select id="sel-background">
+                <option value="none">None (checkerboard only)</option>
+                <option value="0">A — left half</option>
+                <option value="1">B — right half</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Layers</legend>
+            <label class="row">
+              <span>Body</span>
+              <select id="sel-body"></select>
+            </label>
+            <label class="row">
+              <span>Hair</span>
+              <select id="sel-hair"></select>
+            </label>
+            <label class="row">
+              <span>Shirt</span>
+              <select id="sel-shirt"></select>
+            </label>
+            <label class="row">
+              <span>Hat</span>
+              <select id="sel-hat"></select>
+            </label>
+            <label class="row inline">
+              <input type="checkbox" id="toggle-hide-character" />
+              <span>Hide character (backdrop only)</span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Animation</legend>
+            <label class="row inline">
+              <input type="checkbox" id="toggle-anim" />
+              <span>Play (200ms / frame)</span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Scale</legend>
+            <label class="row inline">
+              <input type="radio" name="scale" value="4" id="scale-4" />
+              <span>4×</span>
+            </label>
+            <label class="row inline">
+              <input type="radio" name="scale" value="6" id="scale-6" checked />
+              <span>6×</span>
+            </label>
+          </fieldset>
+
+          <div class="btn-row extras">
+            <button type="button" id="btn-export">Export PNG</button>
+            <button type="button" id="btn-random">Randomize</button>
+          </div>
+          <p class="hint muted">Arrow keys: change direction</p>
+        </aside>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
