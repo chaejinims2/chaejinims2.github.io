@@ -16,6 +16,9 @@
     list_bg: { x: 0, y: 170, w: 88, h: 21 }
   };
 
+  // Theme column + gap to rullet (used for centered group layout; keep in sync with getThemeButtonRects).
+  var THEME_BTN = { w: 32, h: 16, gapY: 6, gapXR: 6, count: 5 };
+
   // btn1 → btn2 → btn3 → btn2 → btn1
   var BTN_CYCLE = [RECTS.btn1, RECTS.btn2, RECTS.btn3, RECTS.btn2, RECTS.btn1];
 
@@ -220,17 +223,58 @@
     ctx.restore();
   }
 
-  function getThemeButtonRects() {
-    var btnW = 56;
-    var btnH = 16;
-    var gapY = 6;
-    var x = 10;
-    var y0 = 10;
+  function drawHairStrip(ctx, hairTiles, dstRect, offset, scrollPx) {
+    if (!hairTiles || !hairTiles.length) return;
+
+    var DST = 20;
+    var PITCH = 22;
+    var centerY = dstRect.y + dstRect.h / 2;
+    var shiftX = typeof scrollPx === 'number' ? scrollPx : 0;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(dstRect.x, dstRect.y, dstRect.w, dstRect.h);
+    ctx.clip();
+
+    var slotsEachSide = 3;
+    var reservedCx = dstRect.x + dstRect.w / 2 - PITCH;
+    var reservedRect = {
+      x: reservedCx - 10,
+      y: centerY - 10,
+      w: 20,
+      h: 20
+    };
+    var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
+    for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
+      var idx = mod((offset + i), hairTiles.length);
+      var tile = hairTiles[idx];
+      var cx = baseCenterX + i * PITCH;
+      var dx = Math.round(cx - DST / 2);
+      var dy = Math.round(centerY - DST / 2);
+      if (
+        dx < reservedRect.x + reservedRect.w &&
+        dx + DST > reservedRect.x &&
+        dy < reservedRect.y + reservedRect.h &&
+        dy + DST > reservedRect.y
+      ) continue;
+      ctx.drawImage(tile, dx, dy);
+    }
+
+    ctx.restore();
+  }
+
+  function getThemeButtonRects(originX, themeFirstY) {
+    var btnW = THEME_BTN.w;
+    var btnH = THEME_BTN.h;
+    var gapY = THEME_BTN.gapY;
+    var x = originX;
+    var y0 = themeFirstY;
     var rEmoji = { x: x, y: y0 + (btnH + gapY) * 0, w: btnW, h: btnH };
     var rShirt = { x: x, y: y0 + (btnH + gapY) * 1, w: btnW, h: btnH };
     var rAccs = { x: x, y: y0 + (btnH + gapY) * 2, w: btnW, h: btnH };
     var rHat = { x: x, y: y0 + (btnH + gapY) * 3, w: btnW, h: btnH };
-    return { emoji: rEmoji, shirt: rShirt, accs: rAccs, hat: rHat };
+    var rHair = { x: x, y: y0 + (btnH + gapY) * 4, w: btnW, h: btnH };
+    return { emoji: rEmoji, shirt: rShirt, accs: rAccs, hat: rHat, hair: rHair };
   }
 
   function drawPixelText(ctx, text, x, y, color) {
@@ -271,8 +315,8 @@
     ctx.restore();
   }
 
-  function drawThemeButtons(ctx, activeTheme) {
-    var rects = getThemeButtonRects();
+  function drawThemeButtons(ctx, activeTheme, originX, themeFirstY) {
+    var rects = getThemeButtonRects(originX, themeFirstY);
 
     function drawOne(r, label, isActive) {
       ctx.save();
@@ -297,6 +341,7 @@
     drawOne(rects.shirt, 'SHIRT', activeTheme === 'shirt');
     drawOne(rects.accs, 'ACCS', activeTheme === 'accs');
     drawOne(rects.hat, 'HAT', activeTheme === 'hat');
+    drawOne(rects.hair, 'HAIR', activeTheme === 'hair');
     return rects;
   }
 
@@ -452,16 +497,16 @@
     var hatsLoaded = false;
     var validHatEntries = [];
     var hatsKeyed = null; // offscreen canvas with black treated as transparent
-    var hatsAbs = resolveUrl('../farmer/hats_323x480_r4c24.png', spriteAbs);
+    var hatsAbs = resolveUrl('../farmer/hats_480×320_r4c24.png', spriteAbs);
     hats.onload = function () {
       hatsLoaded = true;
       // hats: 1 column × 4 rows (20×80), use only top 20×20 as representative.
       // Grid area: 320×480 from (0,0) => COLS=16, GROUPS=6
       try {
         var TILE = 20;
-        var COLS = 16; // 320/20
+        var COLS = 24; // 480/20
         var GROUP_H = 4 * TILE; // 80px
-        var GROUPS = 6; // 480/80
+        var GROUPS = 12; // 320/80
 
         var off = document.createElement('canvas');
         off.width = hats.naturalWidth;
@@ -550,6 +595,89 @@
     hats.onerror = function () { hatsLoaded = false; validHatEntries = []; render(); };
     hats.src = hatsAbs;
 
+    var hairs = new Image();
+    hairs.decoding = 'async';
+    var hairsLoaded = false;
+    /** @type {HTMLCanvasElement[]} */
+    var validHairTiles = [];
+    var hairsAbs = resolveUrl('../farmer/hairs.png', spriteAbs);
+    hairs.onload = function () {
+      hairsLoaded = true;
+      validHairTiles = [];
+      try {
+        var TILE_W = 16;
+        var TILE_H = 32;
+        var W = hairs.naturalWidth;
+        var H = hairs.naturalHeight;
+        var midX = Math.floor(W / 2);
+        var off = document.createElement('canvas');
+        off.width = W;
+        off.height = H;
+        var octx = off.getContext('2d');
+        if (!octx) return;
+        octx.imageSmoothingEnabled = false;
+        octx.clearRect(0, 0, W, H);
+        octx.drawImage(hairs, 0, 0);
+
+        function repIsEmpty(sx, sy) {
+          var data = octx.getImageData(sx, sy, TILE_W, TILE_H).data;
+          var allBlack = true;
+          var allTransparent = true;
+          for (var p = 0; p < data.length; p += 4) {
+            var r = data[p];
+            var g = data[p + 1];
+            var b = data[p + 2];
+            var a = data[p + 3];
+            if (r !== 0 || g !== 0 || b !== 0) allBlack = false;
+            if (a !== 0) allTransparent = false;
+            if (!allBlack && !allTransparent) break;
+          }
+          return allBlack || allTransparent;
+        }
+
+        function buildHairIcon20(sx, sy) {
+          var tmp = document.createElement('canvas');
+          tmp.width = 20;
+          tmp.height = 32;
+          var tctx = tmp.getContext('2d');
+          if (!tctx) return null;
+          tctx.imageSmoothingEnabled = false;
+          tctx.clearRect(0, 0, 20, 32);
+          tctx.drawImage(hairs, sx, sy, TILE_W, TILE_H, 2, 0, TILE_W, TILE_H);
+          var out = document.createElement('canvas');
+          out.width = 20;
+          out.height = 20;
+          var o2 = out.getContext('2d');
+          if (!o2) return null;
+          o2.imageSmoothingEnabled = false;
+          o2.clearRect(0, 0, 20, 20);
+          o2.drawImage(tmp, 0, 0, 20, 20, 0, 0, 20, 20);
+          return out;
+        }
+
+        // Left half: 1 col × 3 rows per hair (96px stride). Right half: 4 rows (128px).
+        for (var cx = 0; cx + TILE_W <= midX; cx += TILE_W) {
+          for (var sy = 0; sy + TILE_H <= H; sy += 3 * TILE_H) {
+            if (!repIsEmpty(cx, sy)) {
+              var cL = buildHairIcon20(cx, sy);
+              if (cL) validHairTiles.push(cL);
+            }
+          }
+        }
+        for (var cx2 = midX; cx2 + TILE_W <= W; cx2 += TILE_W) {
+          for (var sy2 = 0; sy2 + TILE_H <= H; sy2 += 4 * TILE_H) {
+            if (!repIsEmpty(cx2, sy2)) {
+              var cR = buildHairIcon20(cx2, sy2);
+              if (cR) validHairTiles.push(cR);
+            }
+          }
+        }
+      } catch (e) {}
+      render();
+    };
+    hairs.onerror = function () { hairsLoaded = false; validHairTiles = []; render(); };
+    hairs.src = hairsAbs;
+
     var state = {
       scrollX: 0,
       btnIndex: 0,
@@ -558,20 +686,31 @@
       shirtIndexOffset: 0,
       accIndexOffset: 0,
       hatIndexOffset: 0,
+      hairIndexOffset: 0,
       equippedShirtIndex: -1,
       equippedAccIndex: -1,
       equippedHatIndex: -1,
+      equippedHairIndex: -1,
       theme: 'emoji',
       loaded: false,
       animating: false,
       animTimer: 0
     };
 
-    // Center the rullet window inside the 256x256 canvas.
-    // We render everything in sprite coords but apply a single translate().
+    // Theme buttons to the left of the rullet; both centered as one group on the canvas.
+    var themeStackH = THEME_BTN.count * THEME_BTN.h + (THEME_BTN.count - 1) * THEME_BTN.gapY;
+    var groupW = THEME_BTN.w + THEME_BTN.gapXR + RECTS.rullet.w;
+    var groupH = Math.max(themeStackH, RECTS.rullet.h);
+    var groupOriginX = Math.round((SPRITE_W - groupW) / 2);
+    var groupOriginY = Math.round((SPRITE_H - groupH) / 2);
+    var themePadY = Math.floor((groupH - themeStackH) / 2);
+    var rulletPadY = Math.floor((groupH - RECTS.rullet.h) / 2);
+    var themeFirstY = groupOriginY + themePadY;
+
+    // Sprite coords + this translate = canvas; places rullet to the right of the button column.
     var viewOffset = {
-      x: Math.round((SPRITE_W - RECTS.rullet.w) / 2 - RECTS.rullet.x),
-      y: Math.round((SPRITE_H - RECTS.rullet.h) / 2 - RECTS.rullet.y)
+      x: groupOriginX + THEME_BTN.w + THEME_BTN.gapXR - RECTS.rullet.x,
+      y: groupOriginY + rulletPadY - RECTS.rullet.y
     };
 
     function toViewRect(r) {
@@ -582,8 +721,8 @@
       ctx.clearRect(0, 0, SPRITE_W, SPRITE_H);
       if (!state.loaded) return;
 
-      // Theme buttons live on the canvas top (outside the rullet clip).
-      var themeRects = drawThemeButtons(ctx, state.theme);
+      // Theme buttons to the left of the rullet (outside the rullet clip).
+      var themeRects = drawThemeButtons(ctx, state.theme, groupOriginX, themeFirstY);
 
       // 3) rullet 영역 밖은 보이면 안 됨 → rullet 영역만 렌더
       // (리스트/버튼은 rullet 안에 있고, 소스는 스프라이트 어디든 가능)
@@ -610,11 +749,15 @@
         ctx.drawImage(farmerSprite, fx, fy);
 
         // Equipped overlays persist across theme toggles (except emoji).
-        // Draw order: shirt -> accs -> hat (hat on top).
+        // Draw order: shirt -> hair -> accs -> hat (hat on top).
         if (shirtsLoaded && validShirtEntries && validShirtEntries.length && state.equippedShirtIndex >= 0) {
           var eShirt = validShirtEntries[mod(state.equippedShirtIndex, validShirtEntries.length)];
           // Shirt start pos is relative to 20×20 character: (6,15).
           ctx.drawImage(shirts, eShirt.sx, eShirt.sy, 8, 8, fx + 6, fy + 15, 8, 8);
+        }
+        if (hairsLoaded && validHairTiles && validHairTiles.length && state.equippedHairIndex >= 0) {
+          var eHair = validHairTiles[mod(state.equippedHairIndex, validHairTiles.length)];
+          ctx.drawImage(eHair, fx + 0, fy + 0);
         }
         if (accsLoaded && validAccEntries && validAccEntries.length && state.equippedAccIndex >= 0) {
           var eAcc = validAccEntries[mod(state.equippedAccIndex, validAccEntries.length)];
@@ -637,6 +780,8 @@
         if (accsLoaded) drawAccStrip(ctx, accs, RECTS.rullet_list, validAccEntries, state.accIndexOffset, state.emojiScrollX);
       } else if (state.theme === 'hat') {
         if (hatsLoaded) drawHatStrip(ctx, hatsKeyed || hats, RECTS.rullet_list, validHatEntries, state.hatIndexOffset, state.emojiScrollX);
+      } else if (state.theme === 'hair') {
+        if (hairsLoaded) drawHairStrip(ctx, validHairTiles, RECTS.rullet_list, state.hairIndexOffset, state.emojiScrollX);
       } else {
         if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
       }
@@ -708,6 +853,12 @@
           state.hatIndexOffset = (state.hatIndexOffset + 1) % lenH;
           state.equippedHatIndex = state.hatIndexOffset;
         }
+      } else if (state.theme === 'hair') {
+        var lenHr = validHairTiles && validHairTiles.length ? validHairTiles.length : 0;
+        if (lenHr) {
+          state.hairIndexOffset = (state.hairIndexOffset + 1) % lenHr;
+          state.equippedHairIndex = state.hairIndexOffset;
+        }
       } else {
         state.emojiIndexOffset = (state.emojiIndexOffset + 1) % (14 * 14);
       }
@@ -717,7 +868,7 @@
     function onPointerDown(e) {
       var p = getCanvasPoint(canvas, e);
       // Theme switch buttons (canvas coords)
-      var themeRects = getThemeButtonRects();
+      var themeRects = getThemeButtonRects(groupOriginX, themeFirstY);
       if (inRect(p, themeRects.emoji)) {
         state.theme = 'emoji';
         render();
@@ -738,6 +889,11 @@
         render();
         return;
       }
+      if (inRect(p, themeRects.hair)) {
+        state.theme = 'hair';
+        render();
+        return;
+      }
       var btnRect = toViewRect(RECTS.rullet_btn);
       if (inRect(p, btnRect)) {
         runBtnAnimation();
@@ -749,8 +905,8 @@
     function onPointerMove(e) {
       var p = getCanvasPoint(canvas, e);
       // Pointer cursor on theme buttons or rullet button hitbox.
-      var themeRects = getThemeButtonRects();
-      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat)) {
+      var themeRects = getThemeButtonRects(groupOriginX, themeFirstY);
+      if (inRect(p, themeRects.emoji) || inRect(p, themeRects.shirt) || inRect(p, themeRects.accs) || inRect(p, themeRects.hat) || inRect(p, themeRects.hair)) {
         canvas.style.cursor = 'pointer';
         return;
       }
