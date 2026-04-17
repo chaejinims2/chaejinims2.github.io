@@ -30,7 +30,7 @@ tags:
   }
 </style>
 
-<div class="pxrullet-root" data-pxrullet-root data-sprite-src="{{ '/assets/labs/pxart-creator/assets/stardew/bg/Prize-Ticket-Menu_256x128.png' | relative_url }}">
+<div class="pxrullet-root" data-pxrullet-root>
   <canvas class="pxrullet-canvas" width="256" height="256" aria-label="Pixel rullet"></canvas>
 </div>
 
@@ -40,13 +40,12 @@ tags:
     function boot() {
       var root = document.querySelector('[data-pxrullet-root]');
       if (!root) return;
-      function run() { if (window.initPxRulletPage) window.initPxRulletPage(); }
-      if (window.initPxRulletPage) { run(); return; }
       if (window.__pxrulletInlineLoading) return;
       window.__pxrulletInlineLoading = true;
       var s = document.createElement('script');
-      s.src = "{{ '/assets/labs/pxart-rullet/script.js' | relative_url }}";
-      s.onload = function () { window.__pxrulletInlineLoading = false; run(); };
+      // rullet-entry.js loads layout JSON then loads script.js (which draws the canvas).
+      s.src = "{{ '/assets/labs/pxart-rullet/rullet-entry.js' | relative_url }}";
+      s.onload = function () { window.__pxrulletInlineLoading = false; };
       s.onerror = function () { window.__pxrulletInlineLoading = false; };
       document.body.appendChild(s);
     }

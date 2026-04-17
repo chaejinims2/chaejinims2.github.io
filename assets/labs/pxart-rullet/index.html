@@ -13,15 +13,23 @@
         <p class="pxrullet-sub">Canvas 기반 픽셀 룰렛 (list_bg 타일링 + 버튼 상태 전환)</p>
       </header>
 
-      <div
-        class="pxrullet-root"
-        data-pxrullet-root
-        data-sprite-src="../pxart-creator/assets/stardew/bg/Prize-Ticket-Menu_256x128.png"
-      >
+      <!-- rullet-entry가 layout 받은 뒤 data-uploads-base·data-sprite-src 설정(API의 …/sprites/uploads). API만 켜고 python은 pxart-rullet만 띄워도 됨. -->
+      <div class="pxrullet-root" data-pxrullet-root>
         <canvas class="pxrullet-canvas" width="256" height="256" aria-label="Pixel rullet"></canvas>
       </div>
     </main>
 
-    <script src="./script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      }
+    </script>
+    <!--
+      배포/환경 전환:
+      - API base: ?api=https://your-api.example.com
+      - Layout JSON 직접 지정(정적): ?layout=./layout-v2.json
+      - 둘 다 없으면 현재 호스트의 :5090을 기본 API로 사용
+    -->
+    <script src="./rullet-entry.js"></script>
   </body>
 </html>

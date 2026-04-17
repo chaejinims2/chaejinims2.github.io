@@ -2,25 +2,47 @@
 (function () {
   'use strict';
 
-  var SPRITE_W = 256;
-  var SPRITE_H = 256;
+  var layout = window.__PXR_LAYOUT;
+  if (!layout) {
+    // In some hosts/builds `script.js` may be loaded directly (e.g. under /assets/...),
+    // bypassing `rullet-entry.js` which is responsible for fetching layout and then
+    // loading this file. Auto-bootstrap to make load order resilient.
+    if (!window.__PXR_BOOTSTRAP_REQUESTED) {
+      window.__PXR_BOOTSTRAP_REQUESTED = true;
+      try {
+        var s = document.createElement('script');
+        s.src = './rullet-entry.js';
+        s.onerror = function () {
+          console.error('pxart-rullet: failed to load rullet-entry.js for bootstrap');
+        };
+        document.body.appendChild(s);
+      } catch (e) {}
+    }
+    console.error('pxart-rullet: window.__PXR_LAYOUT missing; bootstrapping via rullet-entry.js');
+    return;
+  }
 
-  // Rects are in sprite/canvas pixel coordinates.
-  var RECTS = {
-    rullet: { x: 0, y: 64, w: 115, h: 93 },
-    rullet_list: { x: 24, y: 82, w: 66, h: 21 },
-    rullet_btn: { x: 48, y: 118, w: 22, h: 21 },
-    btn1: { x: 150, y: 93, w: 22, h: 21 },
-    btn2: { x: 150, y: 115, w: 22, h: 21 },
-    btn3: { x: 150, y: 138, w: 22, h: 21 },
-    list_bg: { x: 0, y: 170, w: 88, h: 21 }
+  if (layout.version !== 2) {
+    console.error('pxart-rullet: expected layout version 2, got', layout.version);
+    return;
+  }
+
+  var SPRITE_W = layout.canvas.w;
+  var SPRITE_H = layout.canvas.h;
+
+  // Rects from API (sprite/canvas pixel coordinates).
+  var RECTS = layout.rects;
+
+  var THEME_BTN = {
+    w: layout.themeButtons.w,
+    h: layout.themeButtons.h,
+    gapY: layout.themeButtons.gapY,
+    gapXR: layout.themeButtons.gapXR,
+    count: (layout.themeButtons.labels && layout.themeButtons.labels.length) || 0
   };
 
-  // Theme column + gap to rullet (used for centered group layout; keep in sync with getThemeButtonRects).
-  var THEME_BTN = { w: 32, h: 16, gapY: 6, gapXR: 6, count: 5 };
-
-  // btn1 → btn2 → btn3 → btn2 → btn1
-  var BTN_CYCLE = [RECTS.btn1, RECTS.btn2, RECTS.btn3, RECTS.btn2, RECTS.btn1];
+  // btn1 → btn2 → btn3 → btn2 → btn1 (keys; rects are in layout.rects)
+  var BTN_CYCLE_KEYS = layout.buttonCycle;
 
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
   function mod(n, m) { return ((n % m) + m) % m; }
@@ -63,11 +85,10 @@
     ctx.restore();
   }
 
-  function drawEmojiStrip(ctx, emojisImg, dstRect, offset, scrollPx) {
-    // dstRect: clip area in canvas/sprite coords
-    var TILE = 9;
-    var GRID = 14; // 126/9
-    var COUNT = GRID * GRID; // 196
+  function drawEmojiStrip(ctx, emojisImg, dstRect, entries, entrySize, offset, scrollPx) {
+    if (!entries || !entries.length) return;
+    var TILE = entrySize && entrySize.w ? entrySize.w : 9;
+    var COUNT = entries.length;
     var PITCH = 22; // center-to-center
     var centerY = dstRect.y + dstRect.h / 2;
     var shiftX = typeof scrollPx === 'number' ? scrollPx : 0;
@@ -84,8 +105,9 @@
     var baseCenterX = dstRect.x + dstRect.w / 2 - shiftX;
     for (var i = -slotsEachSide; i <= slotsEachSide; i++) {
       var idx = mod((offset + i), COUNT);
-      var sx = (idx % GRID) * TILE;
-      var sy = Math.floor(idx / GRID) * TILE;
+      var e = entries[idx];
+      var sx = e && typeof e.sx === 'number' ? e.sx : 0;
+      var sy = e && typeof e.sy === 'number' ? e.sy : 0;
 
       var cx = baseCenterX + i * PITCH;
       var dx = Math.round(cx - TILE / 2);
@@ -280,10 +302,22 @@
   function drawPixelText(ctx, text, x, y, color) {
     // 3x5 bitmap font, drawn in 1px blocks (crisp when canvas is scaled).
     var glyphs = {
+      0: ['111', '101', '101', '101', '111'],
+      1: ['010', '110', '010', '010', '111'],
       2: ['111', '001', '111', '100', '111'],
+      3: ['111', '001', '111', '001', '111'],
+      4: ['101', '101', '111', '001', '001'],
+      5: ['111', '100', '111', '001', '111'],
+      6: ['111', '100', '111', '101', '111'],
+      7: ['111', '001', '001', '010', '010'],
+      8: ['111', '101', '111', '101', '111'],
+      9: ['111', '101', '111', '001', '111'],
       A: ['010', '101', '111', '101', '101'],
       C: ['111', '100', '100', '100', '111'],
+      D: ['110', '101', '101', '101', '110'],
       E: ['111', '100', '111', '100', '111'],
+      F: ['111', '100', '111', '100', '100'],
+      G: ['111', '100', '101', '101', '111'],
       M: ['101', '111', '111', '101', '101'],
       O: ['111', '101', '101', '101', '111'],
       J: ['111', '001', '001', '101', '111'],
@@ -291,7 +325,20 @@
       S: ['111', '100', '111', '001', '111'],
       H: ['101', '101', '111', '101', '101'],
       R: ['110', '101', '110', '101', '101'],
-      T: ['111', '010', '010', '010', '010']
+      T: ['111', '010', '010', '010', '010'],
+      W: ['101', '101', '111', '111', '101'],
+      Y: ['101', '101', '010', '010', '010'],
+      X: ['101', '101', '010', '101', '101'],
+      // Punctuation (best-effort 3x5)
+      ':': ['000', '010', '000', '010', '000'],
+      ',': ['000', '000', '000', '010', '100'],
+      '.': ['000', '000', '000', '000', '010'],
+      '-': ['000', '000', '111', '000', '000'],
+      '=': ['000', '111', '000', '111', '000'],
+      '#': ['101', '111', '101', '111', '101'],
+      '(': ['001', '010', '010', '010', '001'],
+      ')': ['100', '010', '010', '010', '100'],
+      ' ': ['000', '000', '000', '000', '000']
     };
 
     var gap = 1;
@@ -345,6 +392,67 @@
     return rects;
   }
 
+  function drawHudText(ctx, x, y, lines, opts) {
+    if (!lines || !lines.length) return;
+    ctx.save();
+    // Match button pixel-label style (3x5 font).
+    var padX = 4;
+    var padY = 3;
+    var gap = 1;
+    var charW = 3;
+    var charH = 5;
+    var lineGap = 4;
+    var lineH = charH + lineGap;
+
+    function pixelTextWidth(s) {
+      if (!s) return 0;
+      return s.length * charW + Math.max(0, s.length - 1) * gap;
+    }
+
+    var maxW = 0;
+    for (var i = 0; i < lines.length; i++) {
+      var w = pixelTextWidth(lines[i]);
+      if (w > maxW) maxW = w;
+    }
+
+    var boxW = maxW + padX * 2;
+    var boxH = padY * 2 + lineH * lines.length;
+    var x0 = x;
+    var y0 = y;
+    if (opts && opts.anchor === 'topRight' && typeof opts.canvasW === 'number') {
+      // x = right margin when anchored
+      x0 = opts.canvasW - boxW - x;
+    }
+    // Snap to integer pixels to keep 3x5 font crisp.
+    x0 = Math.round(x0);
+    y0 = Math.round(y0);
+
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
+    ctx.fillRect(x0, y0, boxW, boxH);
+
+    var color = 'rgba(255,255,255,0.92)';
+    for (var j = 0; j < lines.length; j++) {
+      drawPixelText(
+        ctx,
+        String(lines[j]).toUpperCase(),
+        Math.round(x0 + padX),
+        Math.round(y0 + padY + j * lineH),
+        color
+      );
+    }
+    ctx.restore();
+  }
+
+  function entryToGrid(entry, tileW, groupRows) {
+    if (!entry) return null;
+    var sx = entry.sx;
+    var sy = entry.sy;
+    if (typeof sx !== 'number' || typeof sy !== 'number') return null;
+    var col = Math.floor(sx / tileW);
+    var row = groupRows ? Math.floor(sy / (tileW * groupRows)) : Math.floor(sy / tileW);
+    return { row: row, col: col, sx: sx, sy: sy };
+  }
+
   function createRenderer(root) {
     var canvas = root.querySelector('canvas');
     if (!canvas) return null;
@@ -355,62 +463,67 @@
     canvas.width = SPRITE_W;
     canvas.height = SPRITE_H;
 
-    var spriteSrc = root.getAttribute('data-sprite-src') || '';
+    var assets = layout.assets || {};
+    function assetSrc(id) {
+      return assets && assets[id] && assets[id].src ? assets[id].src : '';
+    }
+
+    var spriteSrc = root.getAttribute('data-sprite-src') || assetSrc('rulletSheet') || '';
+    if (spriteSrc === 'undefined' || spriteSrc === 'null') spriteSrc = '';
+    // v2: URLs are provided by API as absolute. data-asset-base is legacy fallback only.
+    var pageAssetBase = root.getAttribute('data-asset-base') || window.location.href;
     var img = new Image();
     img.decoding = 'async';
+
+    function setCrossOriginIfOtherHost(imageEl, absoluteUrl) {
+      try {
+        if (new URL(absoluteUrl).origin !== window.location.origin) imageEl.crossOrigin = 'anonymous';
+      } catch (e) {}
+    }
+
+    var spriteAbs = resolveUrl(spriteSrc, window.location.href);
+    setCrossOriginIfOtherHost(img, spriteAbs);
+
+    var emojisAbs = assetSrc('emojiSheet') || resolveUrl('Miscellaneous/Emojis.png', pageAssetBase);
+    var shirtsAbs = assetSrc('shirts') || resolveUrl('../Playable_Characters/Shirts.png', pageAssetBase);
+    // Use existing 20×20 preview if available; otherwise fall back to raw farmers sheet.
+    var farmerAbs =
+      assetSrc('farmerPreview') ||
+      resolveUrl('../Playable_Characters/farmers_r1c0_preview_20x20.png', pageAssetBase) ||
+      resolveUrl('../Playable_Characters/farmers_r1c0_r0c0.png', pageAssetBase);
+    var accsAbs = assetSrc('accs') || resolveUrl('../Playable_Characters/Accessories.png', pageAssetBase);
+    var hatsAbs = assetSrc('hats') || resolveUrl('../Playable_Characters/Hats.png', pageAssetBase);
+    var hairsAbs = assetSrc('hairs') || resolveUrl('../Playable_Characters/Hairstyles.png', pageAssetBase);
 
     var emojis = new Image();
     emojis.decoding = 'async';
     var emojisLoaded = false;
-    // emojis.png sits next to Prize-Ticket-Menu_256x128.png inside the same bg/ folder.
-    // Resolve from the spriteSrc URL to avoid page-path relative URL bugs.
-    var spriteAbs = resolveUrl(spriteSrc, window.location.href);
-    var emojisAbs = resolveUrl('emojis.png', spriteAbs);
+    var emojiEntrySize = (layout.themes && layout.themes.emoji && layout.themes.emoji.entrySize) || { w: 9, h: 9 };
+    var emojiEntries = (layout.themes && layout.themes.emoji && layout.themes.emoji.entries) || null;
+    function ensureEmojiEntries() {
+      if (emojiEntries && emojiEntries.length) return emojiEntries;
+      // Fallback: assume a 14×14 sheet of TILE×TILE emojis (classic Stardew emojis sheet).
+      var TILE = (emojiEntrySize && emojiEntrySize.w) ? emojiEntrySize.w : 9;
+      var GRID = 14;
+      var out = [];
+      for (var i = 0; i < GRID * GRID; i++) {
+        out.push({ sx: (i % GRID) * TILE, sy: Math.floor(i / GRID) * TILE });
+      }
+      emojiEntries = out;
+      return emojiEntries;
+    }
     emojis.onload = function () { emojisLoaded = true; render(); };
     emojis.onerror = function () { emojisLoaded = false; render(); };
+    setCrossOriginIfOtherHost(emojis, emojisAbs);
     emojis.src = emojisAbs;
 
     var shirts = new Image();
     shirts.decoding = 'async';
     var shirtsLoaded = false;
-    var validShirtEntries = [];
-    var shirtsAbs = resolveUrl('../farmer/shirts_256x608.png', spriteAbs);
+    var validShirtEntries = (layout.themes && layout.themes.shirt && layout.themes.shirt.entries) || [];
+    setCrossOriginIfOtherHost(shirts, shirtsAbs);
     shirts.onload = function () {
       shirtsLoaded = true;
-      // Build valid shirt entries once: shirt = 1 column × 4 rows (8×32), use only top 8×8 as representative.
-      try {
-        var TILE = 8;
-        var COLS = Math.floor(shirts.naturalWidth / TILE); // 256/8 = 32
-        var GROUP_H = 4 * TILE; // 32px
-        var GROUPS = Math.floor(shirts.naturalHeight / GROUP_H); // 608/32 = 19
-
-        var off = document.createElement('canvas');
-        off.width = shirts.naturalWidth;
-        off.height = shirts.naturalHeight;
-        var octx = off.getContext('2d');
-        if (octx) {
-          octx.imageSmoothingEnabled = false;
-          octx.clearRect(0, 0, off.width, off.height);
-          octx.drawImage(shirts, 0, 0);
-          validShirtEntries = [];
-
-          for (var gr = 0; gr < GROUPS; gr++) {
-            for (var tx = 0; tx < COLS; tx++) {
-              var sx = tx * TILE;
-              var sy = gr * GROUP_H; // representative tile at top row
-              var data = octx.getImageData(sx, sy, TILE, TILE).data;
-              var allBlack = true;
-              for (var p = 0; p < data.length; p += 4) {
-                if (data[p] !== 0 || data[p + 1] !== 0 || data[p + 2] !== 0) {
-                  allBlack = false;
-                  break;
-                }
-              }
-              if (!allBlack) validShirtEntries.push({ sx: sx, sy: sy });
-            }
-          }
-        }
-      } catch (e) {}
       render();
     };
     shirts.onerror = function () { shirtsLoaded = false; validShirtEntries = []; render(); };
@@ -422,7 +535,7 @@
     var farmerSprite = null; // 20×20 offscreen canvas
     var farmer = new Image();
     farmer.decoding = 'async';
-    var farmerAbs = resolveUrl('../farmer/farmers_r1c0_base_arms_preview_20x20.png', spriteAbs);
+    setCrossOriginIfOtherHost(farmer, farmerAbs);
     farmer.onload = function () {
       try {
         var out = document.createElement('canvas');
@@ -431,7 +544,7 @@
         var octx = out.getContext('2d');
         if (!octx) return;
         octx.imageSmoothingEnabled = false;
-        octx.clearRect(0, 0, 20, 20);
+        octx.clearRect(0, 0, out.width, out.height);
         octx.drawImage(farmer, 0, 0, 20, 20, 0, 0, 20, 20);
 
         farmerSprite = out;
@@ -445,48 +558,10 @@
     var accs = new Image();
     accs.decoding = 'async';
     var accsLoaded = false;
-    var validAccEntries = [];
-    var accsAbs = resolveUrl('../farmer/accs_128x128.png', spriteAbs);
+    var validAccEntries = (layout.themes && layout.themes.accs && layout.themes.accs.entries) || [];
+    setCrossOriginIfOtherHost(accs, accsAbs);
     accs.onload = function () {
       accsLoaded = true;
-      // accs: 1 column × 2 rows (16×32), use only top 16×16 as representative.
-      try {
-        var TILE = 16;
-        var COLS = Math.floor(accs.naturalWidth / TILE); // 128/16 = 8
-        var GROUP_H = 2 * TILE; // 32px
-        var GROUPS = Math.floor(accs.naturalHeight / GROUP_H); // 128/32 = 4
-
-        var off = document.createElement('canvas');
-        off.width = accs.naturalWidth;
-        off.height = accs.naturalHeight;
-        var octx = off.getContext('2d');
-        if (octx) {
-          octx.imageSmoothingEnabled = false;
-          octx.clearRect(0, 0, off.width, off.height);
-          octx.drawImage(accs, 0, 0);
-          validAccEntries = [];
-
-          for (var gr = 0; gr < GROUPS; gr++) {
-            for (var tx = 0; tx < COLS; tx++) {
-              var sx = tx * TILE;
-              var sy = gr * GROUP_H; // representative tile at top row
-              var data = octx.getImageData(sx, sy, TILE, TILE).data;
-              var allBlack = true;
-              var allTransparent = true;
-              for (var p = 0; p < data.length; p += 4) {
-                var r = data[p];
-                var g = data[p + 1];
-                var b = data[p + 2];
-                var a = data[p + 3];
-                if (r !== 0 || g !== 0 || b !== 0) allBlack = false;
-                if (a !== 0) allTransparent = false;
-                if (!allBlack && !allTransparent) break;
-              }
-              if (!(allBlack || allTransparent)) validAccEntries.push({ sx: sx, sy: sy });
-            }
-          }
-        }
-      } catch (e) {}
       render();
     };
     accs.onerror = function () { accsLoaded = false; validAccEntries = []; render(); };
@@ -495,19 +570,12 @@
     var hats = new Image();
     hats.decoding = 'async';
     var hatsLoaded = false;
-    var validHatEntries = [];
+    var validHatEntries = (layout.themes && layout.themes.hat && layout.themes.hat.entries) || [];
     var hatsKeyed = null; // offscreen canvas with black treated as transparent
-    var hatsAbs = resolveUrl('../farmer/hats_480×320_r4c24.png', spriteAbs);
+    setCrossOriginIfOtherHost(hats, hatsAbs);
     hats.onload = function () {
       hatsLoaded = true;
-      // hats: 1 column × 4 rows (20×80), use only top 20×20 as representative.
-      // Grid area: 320×480 from (0,0) => COLS=16, GROUPS=6
       try {
-        var TILE = 20;
-        var COLS = 24; // 480/20
-        var GROUP_H = 4 * TILE; // 80px
-        var GROUPS = 12; // 320/80
-
         var off = document.createElement('canvas');
         off.width = hats.naturalWidth;
         off.height = hats.naturalHeight;
@@ -567,27 +635,6 @@
             octx.putImageData(imgd, 0, 0);
           } catch (e2) {}
           hatsKeyed = off;
-          validHatEntries = [];
-
-          for (var gr = 0; gr < GROUPS; gr++) {
-            for (var tx = 0; tx < COLS; tx++) {
-              var sx = tx * TILE;
-              var sy = gr * GROUP_H; // representative tile at top row
-              var data = octx.getImageData(sx, sy, TILE, TILE).data;
-              var allBlack = true;
-              var allTransparent = true;
-              for (var p = 0; p < data.length; p += 4) {
-                var r = data[p];
-                var g = data[p + 1];
-                var b = data[p + 2];
-                var a = data[p + 3];
-                if (r !== 0 || g !== 0 || b !== 0) allBlack = false;
-                if (a !== 0) allTransparent = false;
-                if (!allBlack && !allTransparent) break;
-              }
-              if (!(allBlack || allTransparent)) validHatEntries.push({ sx: sx, sy: sy });
-            }
-          }
         }
       } catch (e) {}
       render();
@@ -600,40 +647,18 @@
     var hairsLoaded = false;
     /** @type {HTMLCanvasElement[]} */
     var validHairTiles = [];
-    var hairsAbs = resolveUrl('../farmer/hairs.png', spriteAbs);
+    /** @type {{sx:number,sy:number}[]} */
+    var hairEntries = (layout.themes && layout.themes.hair && layout.themes.hair.entries) || [];
+    setCrossOriginIfOtherHost(hairs, hairsAbs);
     hairs.onload = function () {
       hairsLoaded = true;
       validHairTiles = [];
       try {
         var TILE_W = 16;
         var TILE_H = 32;
-        var W = hairs.naturalWidth;
-        var H = hairs.naturalHeight;
-        var midX = Math.floor(W / 2);
-        var off = document.createElement('canvas');
-        off.width = W;
-        off.height = H;
-        var octx = off.getContext('2d');
-        if (!octx) return;
-        octx.imageSmoothingEnabled = false;
-        octx.clearRect(0, 0, W, H);
-        octx.drawImage(hairs, 0, 0);
-
-        function repIsEmpty(sx, sy) {
-          var data = octx.getImageData(sx, sy, TILE_W, TILE_H).data;
-          var allBlack = true;
-          var allTransparent = true;
-          for (var p = 0; p < data.length; p += 4) {
-            var r = data[p];
-            var g = data[p + 1];
-            var b = data[p + 2];
-            var a = data[p + 3];
-            if (r !== 0 || g !== 0 || b !== 0) allBlack = false;
-            if (a !== 0) allTransparent = false;
-            if (!allBlack && !allTransparent) break;
-          }
-          return allBlack || allTransparent;
-        }
+        var tHair = (layout.themes && layout.themes.hair) || null;
+        var iconify = tHair && tHair.iconify ? tHair.iconify : { padX: 2, cropBottomPx: 12 };
+        var padX = typeof iconify.padX === 'number' ? iconify.padX : 2;
 
         function buildHairIcon20(sx, sy) {
           var tmp = document.createElement('canvas');
@@ -643,7 +668,7 @@
           if (!tctx) return null;
           tctx.imageSmoothingEnabled = false;
           tctx.clearRect(0, 0, 20, 32);
-          tctx.drawImage(hairs, sx, sy, TILE_W, TILE_H, 2, 0, TILE_W, TILE_H);
+          tctx.drawImage(hairs, sx, sy, TILE_W, TILE_H, padX, 0, TILE_W, TILE_H);
           var out = document.createElement('canvas');
           out.width = 20;
           out.height = 20;
@@ -655,22 +680,13 @@
           return out;
         }
 
-        // Left half: 1 col × 3 rows per hair (96px stride). Right half: 4 rows (128px).
-        for (var cx = 0; cx + TILE_W <= midX; cx += TILE_W) {
-          for (var sy = 0; sy + TILE_H <= H; sy += 3 * TILE_H) {
-            if (!repIsEmpty(cx, sy)) {
-              var cL = buildHairIcon20(cx, sy);
-              if (cL) validHairTiles.push(cL);
-            }
-          }
-        }
-        for (var cx2 = midX; cx2 + TILE_W <= W; cx2 += TILE_W) {
-          for (var sy2 = 0; sy2 + TILE_H <= H; sy2 += 4 * TILE_H) {
-            if (!repIsEmpty(cx2, sy2)) {
-              var cR = buildHairIcon20(cx2, sy2);
-              if (cR) validHairTiles.push(cR);
-            }
-          }
+        var entries = tHair && tHair.entries ? tHair.entries : [];
+        hairEntries = entries;
+        for (var i = 0; i < entries.length; i++) {
+          var e = entries[i];
+          if (!e) continue;
+          var c = buildHairIcon20(e.sx, e.sy);
+          if (c) validHairTiles.push(c);
         }
       } catch (e) {}
       render();
@@ -746,7 +762,7 @@
         var cy0 = RECTS.rullet_list.y + RECTS.rullet_list.h / 2;
         var fx = Math.round(cx0 - 10);
         var fy = Math.round(cy0 - 10);
-        ctx.drawImage(farmerSprite, fx, fy);
+        ctx.drawImage(farmerSprite, fx + 2, fy);
 
         // Equipped overlays persist across theme toggles (except emoji).
         // Draw order: shirt -> hair -> accs -> hat (hat on top).
@@ -783,7 +799,7 @@
       } else if (state.theme === 'hair') {
         if (hairsLoaded) drawHairStrip(ctx, validHairTiles, RECTS.rullet_list, state.hairIndexOffset, state.emojiScrollX);
       } else {
-        if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, state.emojiIndexOffset, state.emojiScrollX);
+        if (emojisLoaded) drawEmojiStrip(ctx, emojis, RECTS.rullet_list, ensureEmojiEntries(), emojiEntrySize, state.emojiIndexOffset, state.emojiScrollX);
       }
 
       // rullet frame/base (on top)
@@ -794,7 +810,8 @@
       );
 
       // button overlay
-      var btnSrc = BTN_CYCLE[clamp(state.btnIndex, 0, BTN_CYCLE.length - 1)];
+      var btnKey = BTN_CYCLE_KEYS[clamp(state.btnIndex, 0, BTN_CYCLE_KEYS.length - 1)];
+      var btnSrc = RECTS[btnKey] || RECTS.btn1;
       ctx.drawImage(
         img,
         btnSrc.x, btnSrc.y, btnSrc.w, btnSrc.h,
@@ -802,6 +819,39 @@
       );
 
       ctx.restore();
+
+      // HUD: show current theme entry grid position on top of rullet.
+      try {
+        var lines = [];
+        // Show all current selections at once (independent of active theme).
+        lines.push('EMOJI:#' + mod(state.emojiIndexOffset, 196));
+
+        var eS = validShirtEntries.length ? validShirtEntries[mod(state.shirtIndexOffset, validShirtEntries.length)] : null;
+        var gS = entryToGrid(eS, 8, 4);
+        if (gS) lines.push('SHIRT:(' + gS.row + ',' + gS.col + ')');
+
+        var eA = validAccEntries.length ? validAccEntries[mod(state.accIndexOffset, validAccEntries.length)] : null;
+        var gA = entryToGrid(eA, 16, 2);
+        if (gA) lines.push('ACCS:(' + gA.row + ',' + gA.col + ')');
+
+        var eH = validHatEntries.length ? validHatEntries[mod(state.hatIndexOffset, validHatEntries.length)] : null;
+        var gH = entryToGrid(eH, 20, 4);
+        if (gH) lines.push('HAT:(' + gH.row + ',' + gH.col + ')');
+
+        var eHr = hairEntries.length ? hairEntries[mod(state.hairIndexOffset, hairEntries.length)] : null;
+        if (eHr) lines.push('HAIR:(' + eHr.sx + ',' + eHr.sy + ')');
+
+        if (lines.length) {
+          // Fixed to *visible* top-right (viewport), not full canvas width.
+          var bounds = canvas.getBoundingClientRect();
+          var visibleRight = Math.min(bounds.right, window.innerWidth || bounds.right);
+          var visibleW = bounds.width || 1;
+          var maxCanvasX = (visibleRight - bounds.left) * (canvas.width / visibleW);
+          if (maxCanvasX < 0) maxCanvasX = 0;
+          if (maxCanvasX > canvas.width) maxCanvasX = canvas.width;
+          drawHudText(ctx, 4, 4, lines, { anchor: 'topRight', canvasW: Math.floor(maxCanvasX) });
+        }
+      } catch (eHud) {}
     }
 
     function runBtnAnimation() {
@@ -814,7 +864,9 @@
 
       var steps = [0, 1, 2, 3, 4];
       var i = 0;
-      var scrollSteps = [0, 6, 11, 17, 22];
+      var scrollSteps = (layout.animation && layout.animation.steps)
+        ? layout.animation.steps.map(function (s) { return s.scrollX; })
+        : [0, 6, 11, 17, 22];
 
       function tick() {
         // i: 0..4 (총 5스텝). 요청 스텝: 0→6→11→17→22
@@ -831,7 +883,8 @@
           state.emojiScrollX = 0;
           return;
         }
-        state.animTimer = window.setTimeout(tick, 70);
+        var ms = (layout.animation && layout.animation.tickMs) ? layout.animation.tickMs : 70;
+        state.animTimer = window.setTimeout(tick, ms);
       }
 
       // start immediately
