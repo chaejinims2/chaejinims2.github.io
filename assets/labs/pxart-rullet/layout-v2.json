@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "layoutId": "stardew_rullet_v1",
+  "layoutId": "stardew_rullet_v1_static",
   "layoutRevision": 1,
   "canvas": {
     "w": 256,
@@ -99,7 +99,7 @@
   "assets": {
     "rulletSheet": {
       "id": "rulletSheet",
-      "src": "assets/data/sprites/uploads/Miscellaneous/Prize-Ticket-Menu_256x128.png",
+      "src": "/assets/data/sprites/uploads/Miscellaneous/Prize-Ticket-Menu_256x128.png",
       "baseSize": {
         "w": 256,
         "h": 128
@@ -107,7 +107,7 @@
     },
     "emojiSheet": {
       "id": "emojiSheet",
-      "src": "assets/data/sprites/uploads/Miscellaneous/Emojis.png",
+      "src": "/assets/data/sprites/uploads/Miscellaneous/Emojis.png",
       "baseSize": {
         "w": 126,
         "h": 126
@@ -115,7 +115,7 @@
     },
     "shirts": {
       "id": "shirts",
-      "src": "assets/data/sprites/uploads/Playable_Characters/Shirts.png",
+      "src": "/assets/data/sprites/uploads/Playable_Characters/Shirts.png",
       "baseSize": {
         "w": 256,
         "h": 608
@@ -123,7 +123,7 @@
     },
     "accs": {
       "id": "accs",
-      "src": "assets/data/sprites/uploads/Playable_Characters/Accessories.png",
+      "src": "/assets/data/sprites/uploads/Playable_Characters/Accessories.png",
       "baseSize": {
         "w": 128,
         "h": 128
@@ -131,17 +131,17 @@
     },
     "hats": {
       "id": "hats",
-      "src": "assets/data/sprites/uploads/Playable_Characters/Hats.png",
+      "src": "/assets/data/sprites/uploads/Playable_Characters/Hats.png",
       "baseSize": null
     },
     "hairs": {
       "id": "hairs",
-      "src": "assets/data/sprites/uploads/Playable_Characters/Hairstyles.png",
+      "src": "/assets/data/sprites/uploads/Playable_Characters/Hairstyles.png",
       "baseSize": null
     },
     "farmerPreview": {
       "id": "farmerPreview",
-      "src": "assets/data/sprites/exports/body/farmers_r1c0_base_arms_16x32.png",
+      "src": "/assets/data/sprites/exports/body/farmers_r1c0_base_arms_16x32.png",
       "baseSize": null
     }
   },
