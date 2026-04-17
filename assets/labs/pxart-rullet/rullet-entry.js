@@ -93,9 +93,12 @@
       var base = apiBase().replace(/\/$/, '');
       var root = document.querySelector('[data-pxrullet-root]');
       var explicitLayout = queryParam('layout');
+      var preferStatic = queryParam('static') === '1';
       // If layout=... is provided, use it as-is (can be a static JSON on GitHub Pages).
       // Otherwise, fetch from API base.
-      var layoutUrl = explicitLayout ? explicitLayout : (base + '/api/pxart-rullet/layout');
+      var layoutUrl = explicitLayout
+        ? explicitLayout
+        : (preferStatic ? resolveLocalAsset('./layout-v2.json') : (base + '/api/pxart-rullet/layout'));
       fetch(layoutUrl)
         .then(function (r) {
           if (!r.ok) throw new Error('layout HTTP ' + r.status);

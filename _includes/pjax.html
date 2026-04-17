@@ -112,8 +112,8 @@
                             if (window.__pxrulletScriptLoading) { return; }
                             window.__pxrulletScriptLoading = true;
                             var s = document.createElement('script');
-                            // rullet-entry.js loads layout JSON then loads script.js (canvas renderer).
-                            s.src = (base || '') + '/assets/labs/pxart-rullet/rullet-entry.js';
+                            // Use static layout on GitHub Pages by default (no external API dependency).
+                            s.src = (base || '') + '/assets/labs/pxart-rullet/rullet-entry.js?static=1';
                             s.onload = function () { window.__pxrulletScriptLoading = false; };
                             s.onerror = function () { window.__pxrulletScriptLoading = false; };
                             document.body.appendChild(s);
