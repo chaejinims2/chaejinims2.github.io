@@ -93,7 +93,16 @@
       var base = apiBase().replace(/\/$/, '');
       var root = document.querySelector('[data-pxrullet-root]');
       var explicitLayout = queryParam('layout');
-      var preferStatic = queryParam('static') === '1';
+      var preferStatic = false;
+      try {
+        // 1) Allow page URL to force static mode: ?static=1
+        if (queryParam('static') === '1') preferStatic = true;
+        // 2) Allow loader script URL to force static mode: rullet-entry.js?static=1
+        if (!preferStatic && __LOADER_SRC__) {
+          var u = new URL(__LOADER_SRC__, window.location.href);
+          if (u.searchParams.get('static') === '1') preferStatic = true;
+        }
+      } catch (e) {}
       // If layout=... is provided, use it as-is (can be a static JSON on GitHub Pages).
       // Otherwise, fetch from API base.
       var layoutUrl = explicitLayout
