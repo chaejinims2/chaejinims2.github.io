@@ -7,20 +7,8 @@
 
     <div class="sdvBody">
       <section class="sdvPreview">
-        <div class="previewTop">
-          <div class="previewFrame">
-            <canvas data-canvas width="256" height="256" aria-label="preview"></canvas>
-          </div>
-          <div class="scaleBar" aria-label="scale">
-            <div class="scaleLabel">Scale</div>
-            <div class="scaleBtns">
-              <label class="scaleBtn"><input type="radio" name="scale" value="1" /><span>1x</span></label>
-              <label class="scaleBtn"><input type="radio" name="scale" value="2" /><span>2x</span></label>
-              <label class="scaleBtn"><input type="radio" name="scale" value="4" checked /><span>4x</span></label>
-              <label class="scaleBtn"><input type="radio" name="scale" value="6" /><span>6x</span></label>
-              <button type="button" class="arrSm" data-export>PNG</button>
-            </div>
-          </div>
+        <div class="previewFrame">
+          <canvas data-canvas width="256" height="256" aria-label="preview"></canvas>
         </div>
         <div class="previewArrows">
           <button type="button" class="arr" data-dir-delta="-1" aria-label="Previous direction">&#9664;</button>
@@ -142,6 +130,16 @@
           <input data-dst-x type="number" value="0" step="1" />
           <input data-dst-y type="number" value="0" step="1" />
           <button type="button" data-dst-apply>Apply</button>
+        </div>
+        <div class="scaleBar" aria-label="scale">
+          <div class="scaleLabel">Scale</div>
+          <div class="scaleBtns">
+            <label class="scaleBtn"><input type="radio" name="scale" value="1" /><span>1x</span></label>
+            <label class="scaleBtn"><input type="radio" name="scale" value="2" /><span>2x</span></label>
+            <label class="scaleBtn"><input type="radio" name="scale" value="4" checked /><span>4x</span></label>
+            <label class="scaleBtn"><input type="radio" name="scale" value="6" /><span>6x</span></label>
+          </div>
+          <button type="button" class="arrSm" data-export>PNG</button>
         </div>
         <div class="meta" data-meta></div>
         <div class="log" data-log></div>

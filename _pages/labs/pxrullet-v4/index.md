@@ -12,7 +12,7 @@ tags:
   .pxr-v4-host {
     display: flex;
     justify-content: center;
-    padding: 16px 0 32px;
+    padding: 0px;
   }
 </style>
 

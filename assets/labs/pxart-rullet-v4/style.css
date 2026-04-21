@@ -50,7 +50,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .sdvBody{display:grid;grid-template-columns:240px 1fr;gap:14px;padding:14px}
 @media (max-width:820px){.sdvBody{grid-template-columns:1fr}}
 
-.sdvPreview{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.sdvPreview{display:flex;flex-direction:column;gap:10px;align-items:center}
 .previewTop{display:flex;gap:10px;align-items:flex-start}
 @media (max-width:820px){.previewTop{flex-direction:column}}
 .previewFrame{
