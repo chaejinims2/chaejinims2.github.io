@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Pixel Rullet
+title: Pixel Rullet v4
 intro: |
-  This is a Pixel Rullet.
+  This is a Pixel Rullet v4.
 tags:
   - pxrullet
   - labs
-  - dark-ui
+  - stardew valley
 ---
 <style>
   .pxr-v4-host {
