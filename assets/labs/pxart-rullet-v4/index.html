@@ -15,30 +15,32 @@
       <section class="sdvWindow">
         <header class="sdvHead">
           <div class="sdvTitle">Customize Character:</div>
-          <button type="button" class="sdvClose" aria-label="close" title="close">×</button>
+          <button type="button" class="sdvClose" aria-label="close" title="close">x</button>
         </header>
-
+    
         <div class="sdvBody">
           <section class="sdvPreview">
-            <div class="previewFrame">
-              <canvas data-canvas width="256" height="256" aria-label="preview"></canvas>
+            <div class="previewTop">
+              <div class="previewFrame">
+                <canvas data-canvas width="256" height="256" aria-label="preview"></canvas>
+              </div>
+              <div class="scaleBar" aria-label="scale">
+                <div class="scaleLabel">Scale</div>
+                <div class="scaleBtns">
+                  <label class="scaleBtn"><input type="radio" name="scale" value="1" /><span>1x</span></label>
+                  <label class="scaleBtn"><input type="radio" name="scale" value="2" /><span>2x</span></label>
+                  <label class="scaleBtn"><input type="radio" name="scale" value="4" checked /><span>4x</span></label>
+                  <label class="scaleBtn"><input type="radio" name="scale" value="6" /><span>6x</span></label>
+                </div>
+                <button type="button" class="arrSm" data-export>PNG</button>
+              </div>
             </div>
             <div class="previewArrows">
               <button type="button" class="arr" data-dir-delta="-1" aria-label="이전 방향">◀</button>
               <button type="button" class="arr" data-dir-delta="1" aria-label="다음 방향">▶</button>
             </div>
-<!-- 
-            <div class="favBlock">
-              <div class="favTitle">Load<br/>Favorite</div>
-              <div class="stars">
-                <button type="button" class="star">★</button>
-                <button type="button" class="star">★</button>
-                <button type="button" class="star">★</button>
-                <button type="button" class="star">★</button>
-              </div>
-            </div> -->
-            
-            <div class="meta" data-meta></div>
+    
+            <!-- <div class="meta" data-meta></div> -->
           </section>
 
           <section class="sdvControls">
@@ -59,17 +61,6 @@
                   <input type="range" data-pants-hue min="0" max="360" step="1" value="210" />
                 </label>
               </div>
-            </div>
-
-            <div class="scaleBar" aria-label="scale">
-              <div class="scaleLabel">Scale</div>
-              <div class="scaleBtns">
-                <label class="scaleBtn"><input type="radio" name="scale" value="1" id="scale-1" /><span>1×</span></label>
-                <label class="scaleBtn"><input type="radio" name="scale" value="2" id="scale-2" /><span>2×</span></label>
-                <label class="scaleBtn"><input type="radio" name="scale" value="4" id="scale-4" checked/><span>4×</span></label>
-                <label class="scaleBtn"><input type="radio" name="scale" value="6" id="scale-6" /><span>6×</span></label>
-              </div>
-              <button type="button" class="arrSm" data-export>PNG</button>
             </div>
 
             <div class="sdvPickers">
@@ -165,8 +156,6 @@
               <input data-dst-x type="number" value="0" step="1" />
               <input data-dst-y type="number" value="0" step="1" />
               <button type="button" data-dst-apply>적용</button>
-
-              <!-- scale + export moved to visible UI -->
             </div>
             <div class="log" data-log></div>
           </section>
