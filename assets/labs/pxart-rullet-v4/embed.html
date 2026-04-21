@@ -18,13 +18,13 @@
               <label class="scaleBtn"><input type="radio" name="scale" value="2" /><span>2x</span></label>
               <label class="scaleBtn"><input type="radio" name="scale" value="4" checked /><span>4x</span></label>
               <label class="scaleBtn"><input type="radio" name="scale" value="6" /><span>6x</span></label>
+              <button type="button" class="arrSm" data-export>PNG</button>
             </div>
-            <button type="button" class="arrSm" data-export>PNG</button>
           </div>
         </div>
         <div class="previewArrows">
-          <button type="button" class="arr" data-dir-delta="-1" aria-label="?? ??">?</button>
-          <button type="button" class="arr" data-dir-delta="1" aria-label="?? ??">?</button>
+          <button type="button" class="arr" data-dir-delta="-1" aria-label="Previous direction">&#9664;</button>
+          <button type="button" class="arr" data-dir-delta="1" aria-label="Next direction">&#9654;</button>
         </div>
 
         <div class="meta" data-meta></div>
@@ -55,8 +55,8 @@
             <div class="pickRow">
               <span class="pickLabel">Pants</span>
               <div class="pickArrows">
-                <button type="button" class="arrSm" data-step="pants-type" data-delta="-1">?</button>
-                <button type="button" class="arrSm" data-step="pants-type" data-delta="1">?</button>
+                <button type="button" class="arrSm" data-step="pants-type" data-delta="-1" aria-label="Previous pants type">&#9664;</button>
+                <button type="button" class="arrSm" data-step="pants-type" data-delta="1" aria-label="Next pants type">&#9654;</button>
               </div>
               <div class="pickVal">
                 <b data-pants-type-out>0</b>
@@ -69,8 +69,8 @@
             <div class="pickRow">
               <span class="pickLabel">Shirt</span>
               <div class="pickArrows">
-                <button type="button" class="arrSm" data-step="layer" data-layer="shirt" data-delta="-1">?</button>
-                <button type="button" class="arrSm" data-step="layer" data-layer="shirt" data-delta="1">?</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="shirt" data-delta="-1" aria-label="Previous shirt">&#9664;</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="shirt" data-delta="1" aria-label="Next shirt">&#9654;</button>
               </div>
               <div class="pickVal">
                 <b data-picker-out="shirt">0</b>
@@ -80,8 +80,8 @@
             <div class="pickRow">
               <span class="pickLabel">Acc</span>
               <div class="pickArrows">
-                <button type="button" class="arrSm" data-step="layer" data-layer="acc" data-delta="-1">?</button>
-                <button type="button" class="arrSm" data-step="layer" data-layer="acc" data-delta="1">?</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="acc" data-delta="-1" aria-label="Previous accessory">&#9664;</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="acc" data-delta="1" aria-label="Next accessory">&#9654;</button>
               </div>
               <div class="pickVal">
                 <b data-picker-out="acc">0</b>
@@ -91,8 +91,8 @@
             <div class="pickRow">
               <span class="pickLabel">Hair</span>
               <div class="pickArrows">
-                <button type="button" class="arrSm" data-step="layer" data-layer="hair" data-delta="-1">?</button>
-                <button type="button" class="arrSm" data-step="layer" data-layer="hair" data-delta="1">?</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="hair" data-delta="-1" aria-label="Previous hair">&#9664;</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="hair" data-delta="1" aria-label="Next hair">&#9654;</button>
               </div>
               <div class="pickVal">
                 <b data-picker-out="hair">0</b>
@@ -102,8 +102,8 @@
             <div class="pickRow">
               <span class="pickLabel">Hat</span>
               <div class="pickArrows">
-                <button type="button" class="arrSm" data-step="layer" data-layer="hat" data-delta="-1">?</button>
-                <button type="button" class="arrSm" data-step="layer" data-layer="hat" data-delta="1">?</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="hat" data-delta="-1" aria-label="Previous hat">&#9664;</button>
+                <button type="button" class="arrSm" data-step="layer" data-layer="hat" data-delta="1" aria-label="Next hat">&#9654;</button>
               </div>
               <div class="pickVal">
                 <b data-picker-out="hat">0</b>
@@ -116,18 +116,18 @@
         <div class="hiddenInputs" style="display:none">
           <div class="row" data-body-panel style="display:none">
             <label class="field">
-              <span class="label">?? ??</span>
+              <span class="label">Body gender</span>
               <select data-body-gender>
-                <option value="female" selected>?</option>
-                <option value="male">?</option>
+                <option value="female" selected>Female</option>
+                <option value="male">Male</option>
               </select>
             </label>
             <label class="field narrow">
-              <span class="label">?? off X</span>
+              <span class="label">Body offset X</span>
               <input data-body-dx type="number" value="0" step="1" />
             </label>
             <label class="field narrow">
-              <span class="label">?? off Y</span>
+              <span class="label">Body offset Y</span>
               <input data-body-dy type="number" value="0" step="1" />
             </label>
           </div>
@@ -142,7 +142,7 @@
 
           <input data-dst-x type="number" value="0" step="1" />
           <input data-dst-y type="number" value="0" step="1" />
-          <button type="button" data-dst-apply>??</button>
+          <button type="button" data-dst-apply>Apply</button>
         </div>
         <div class="log" data-log></div>
       </section>
