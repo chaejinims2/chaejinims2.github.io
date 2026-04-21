@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pxart-rullet v4 (layout.json)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="sdvWindow">
+        <header class="sdvHead">
+          <div class="sdvTitle">Customize Character:</div>
+          <button type="button" class="sdvClose" aria-label="close" title="close">×</button>
+        </header>
+
+        <div class="sdvBody">
+          <section class="sdvPreview">
+            <div class="previewFrame">
+              <canvas data-canvas width="256" height="256" aria-label="preview"></canvas>
+            </div>
+            <div class="previewArrows">
+              <button type="button" class="arr" data-dir-delta="-1" aria-label="이전 방향">◀</button>
+              <button type="button" class="arr" data-dir-delta="1" aria-label="다음 방향">▶</button>
+            </div>
+
+            <div class="favBlock">
+              <div class="favTitle">Load<br/>Favorite</div>
+              <div class="stars">
+                <button type="button" class="star">★</button>
+                <button type="button" class="star">★</button>
+                <button type="button" class="star">★</button>
+                <button type="button" class="star">★</button>
+              </div>
+            </div>
+            
+            <div class="meta" data-meta></div>
+          </section>
+
+          <section class="sdvControls">
+            <div class="sliderStack">
+              <label class="sdvSlider" style="display:none">
+                <span class="cap">Direction <b data-dir-label>Front</b></span>
+                <input type="range" data-dir min="0" max="3" step="1" value="0" />
+              </label>
+
+              <label class="sdvSlider">
+                <span class="cap">Hair Color <b data-hair-hue-out>30</b></span>
+                <input type="range" data-hair-hue min="0" max="360" step="1" value="30" />
+              </label>
+
+              <div class="sdvRow" data-pants-panel style="display:none">
+                <label class="sdvSlider">
+                  <span class="cap">Pants Color <b data-pants-hue-out>210</b></span>
+                  <input type="range" data-pants-hue min="0" max="360" step="1" value="210" />
+                </label>
+              </div>
+            </div>
+
+            <div class="scaleBar" aria-label="scale">
+              <div class="scaleLabel">Scale</div>
+              <div class="scaleBtns">
+                <label class="scaleBtn"><input type="radio" name="scale" value="1" id="scale-1" checked /><span>1×</span></label>
+                <label class="scaleBtn"><input type="radio" name="scale" value="2" id="scale-2" /><span>2×</span></label>
+                <label class="scaleBtn"><input type="radio" name="scale" value="4" id="scale-4" /><span>4×</span></label>
+                <label class="scaleBtn"><input type="radio" name="scale" value="6" id="scale-6" /><span>6×</span></label>
+              </div>
+              <button type="button" class="arrSm" data-export>PNG</button>
+            </div>
+
+            <div class="sdvPickers">
+              <div class="pickCol">
+                <div class="pickRow">
+                  <span class="pickLabel">Pants</span>
+                  <div class="pickArrows">
+                    <button type="button" class="arrSm" data-step="pants-type" data-delta="-1">◀</button>
+                    <button type="button" class="arrSm" data-step="pants-type" data-delta="1">▶</button>
+                  </div>
+                  <div class="pickVal">
+                    <b data-pants-type-out>0</b>
+                    <span class="small">type</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pickCol">
+                <div class="pickRow">
+                  <span class="pickLabel">Shirt</span>
+                  <div class="pickArrows">
+                    <button type="button" class="arrSm" data-step="layer" data-layer="shirt" data-delta="-1">◀</button>
+                    <button type="button" class="arrSm" data-step="layer" data-layer="shirt" data-delta="1">▶</button>
+                  </div>
+                  <div class="pickVal">
+                    <b data-picker-out="shirt">0</b>
+                    <span class="small">idx</span>
+                  </div>
+                </div>
+                <div class="pickRow">
+                  <span class="pickLabel">Acc</span>
+                  <div class="pickArrows">
+                    <button type="button" class="arrSm" data-step="layer" data-layer="acc" data-delta="-1">◀</button>
+                    <button type="button" class="arrSm" data-step="layer" data-layer="acc" data-delta="1">▶</button>
+                  </div>
+                  <div class="pickVal">
+                    <b data-picker-out="acc">0</b>
+                    <span class="small">idx</span>
+                  </div>
+                </div>
+                <div class="pickRow">
+                  <span class="pickLabel">Hair</span>
+                  <div class="pickArrows">
+                    <button type="button" class="arrSm" data-step="layer" data-layer="hair" data-delta="-1">◀</button>
+                    <button type="button" class="arrSm" data-step="layer" data-layer="hair" data-delta="1">▶</button>
+                  </div>
+                  <div class="pickVal">
+                    <b data-picker-out="hair">0</b>
+                    <span class="small">idx</span>
+                  </div>
+                </div>
+                <div class="pickRow">
+                  <span class="pickLabel">Hat</span>
+                  <div class="pickArrows">
+                    <button type="button" class="arrSm" data-step="layer" data-layer="hat" data-delta="-1">◀</button>
+                    <button type="button" class="arrSm" data-step="layer" data-layer="hat" data-delta="1">▶</button>
+                  </div>
+                  <div class="pickVal">
+                    <b data-picker-out="hat">0</b>
+                    <span class="small">idx</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hiddenInputs" style="display:none">
+              <div class="row" data-body-panel style="display:none">
+                <label class="field">
+                  <span class="label">몸통 성별</span>
+                  <select data-body-gender>
+                    <option value="female" selected>여</option>
+                    <option value="male">남</option>
+                  </select>
+                </label>
+                <label class="field narrow">
+                  <span class="label">몸통 off X</span>
+                  <input data-body-dx type="number" value="0" step="1" />
+                </label>
+                <label class="field narrow">
+                  <span class="label">몸통 off Y</span>
+                  <input data-body-dy type="number" value="0" step="1" />
+                </label>
+              </div>
+
+              <input type="range" data-pants-type min="0" max="15" step="1" value="0" />
+              <input data-layer-dx="pants" type="number" value="0" step="1" />
+              <input data-layer-dy="pants" type="number" value="0" step="1" />
+
+              <div class="layerPanel">
+                <div class="layerRows" data-layer-indices></div>
+              </div>
+
+              <input data-dst-x type="number" value="0" step="1" />
+              <input data-dst-y type="number" value="0" step="1" />
+              <button type="button" data-dst-apply>적용</button>
+
+              <!-- scale + export moved to visible UI -->
+            </div>
+            <div class="log" data-log></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./viewer.js"></script>
+  </body>
+</html>

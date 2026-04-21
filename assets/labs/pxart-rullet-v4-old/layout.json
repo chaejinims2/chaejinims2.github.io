@@ -1,0 +1,167 @@
+{
+    "version": 3,
+    "layoutId": "stardew_rullet_v3_static",
+    "layoutRevision": 1,
+    "assets": {
+        "shirt": {
+            "id": "shirt",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Shirts_336.png",
+            "baseSize": null
+        },
+        "hair": {
+            "id": "hair",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Hairs_79.png",
+            "baseSize": null
+        },
+        "hat": {
+            "id": "hat",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Hats_122.png",
+            "baseSize": null
+        },
+        "acc": {
+            "id": "acc",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Accessories_29.png",
+            "baseSize": null
+        },
+        "bodyMale": {
+            "id": "bodyMale",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Body_00.png",
+            "baseSize": null
+        },
+        "bodyFemale": {
+            "id": "bodyFemale",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Body_10.png",
+            "baseSize": null
+        },
+        "pantsMale": {
+            "id": "pantsMale",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Pants_00.png",
+            "baseSize": null
+        },
+        "pantsFemale": {
+            "id": "pantsFemale",
+            "src": "http://127.0.0.1:5090/sprites/exports/Playable_Characters/Pants_10.png",
+            "baseSize": null
+        }
+    },
+    "sheets": {
+        "shirt": {
+            "id": "shirt",
+            "tileSize": {
+                "w": 8,
+                "h": 8
+            },
+            "maxIndex": 335,
+            "rows": 4,
+            "dstX": 6,
+            "dstY": 20,
+            "columns": 336,
+            "directions": { "front": [0,0], "right": [1,0], "back": [3,0], "left": [2,0] }
+        },
+        "hair": {
+            "id": "hair",
+            "tileSize": {
+                "w": 16,
+                "h": 32
+            },
+            "maxIndex": 78,
+            "rows": 4,
+            "dstX": 2,
+            "dstY": 5,
+            "columns": 79,
+            "directions": { "front": [0,0], "right": [1,0], "back": [2,0], "left": [3,0] }
+        },
+        "hat": {
+            "id": "hat",
+            "tileSize": {
+                "w": 20,
+                "h": 20
+            },
+            "maxIndex": 121,
+            "rows": 4,
+            "dstX": 0,
+            "dstY": 0,
+            "columns": 122,
+            "directions": { "front": [0,0], "right": [1,0], "back": [3,0], "left": [2,0] }
+        },
+        "acc": {
+            "id": "acc",
+            "tileSize": {
+                "w": 16,
+                "h": 16
+            },
+            "maxIndex": 28,
+            "rows": 4,
+            "dstX": 2,
+            "dstY": 7,
+            "columns": 29,
+            "directions": { "front": [0,0], "right": [1,0], "back": [2,0], "left": [3,0] }
+        },
+        "body": {
+            "id": "body",
+            "tileSize": {
+                "w": 16,
+                "h": 32
+            },
+            "maxCol": 5,
+            "maxRow": 20,
+            "dstX": 2,
+            "dstY": 5,
+            "partCount": 3,
+            "colsPerPartBlock": 6,
+            "rowsPerGender": 21,
+            "directions": { "front": [0,0], "right": [1,0], "back": [2,0], "left": [3,0] }
+        },
+        "pants": {
+            "id": "body",
+            "tileSize": {
+                "w": 16,
+                "h": 16
+            },
+            "maxCol": 5,
+            "maxRow": 24,
+            "dstX": 2,
+            "dstY": 20,
+            "colsPerType": 6,
+            "rowsPerType": 25,
+            "maxIndex": 15,
+            "columns": 16,
+            "directions": { "front": [0,0], "right": [0,2], "back": [0,3], "left": [0,1] }
+        }
+    },
+    "drawOrder": {
+        "default": ["body", "pants", "shirt", "acc", "hair", "hat"],
+        "back": ["acc", "body", "pants", "shirt", "hair", "hat"],
+        "front": ["body", "shirt", "acc", "hair", "pants", "hat"],
+        "right": ["body", "pants", "shirt", "acc", "hair", "hat"],
+        "left": ["body", "pants", "shirt", "acc", "hair", "hat"]
+    },
+    "viewer": {
+        "directionSlider": {
+            "order": ["front", "right", "back", "left"],
+            "labels": { "front": "Front", "right": "Right", "back": "Back", "left": "Left" }
+        },
+        "drawOrderFallbackPreferred": ["shirt", "acc", "hair", "hat"],
+        "bodyLayersByDirection": {
+            "front": [{ "part": 0, "row": 0, "col": 0, "flipX": false }, { "part": 1, "row": 0, "col": 0, "flipX": false }],
+            "right": [{ "part": 0, "row": 1, "col": 0, "flipX": false }, { "part": 1, "row": 1, "col": 0, "flipX": false }],
+            "back": [{ "part": 0, "row": 2, "col": 0, "flipX": false }, { "part": 1, "row": 2, "col": 0, "flipX": false }],
+            "left": [{ "part": 0, "row": 1, "col": 0, "flipX": true }, { "part": 1, "row": 1, "col": 0, "flipX": true }]
+        },
+        "accHairHueIndices": [0, 1, 2, 3, 4, 5, 11, 17, 19, 20, 21, 22],
+        "tint": { "hairHueDefault": 30, "pantsHueDefault": 210, "saturation": 0.85, "lightness": 0.55 },
+        "femaleClothingDstYNudge": 1,
+        "canvas": {
+            "width": 20,
+            "height": 40,
+            "checkerCell": 4,
+            "checkerColors": ["rgba(255,255,255,0.06)", "rgba(0,0,0,0.18)"]
+        },
+        "dirCellFallbackRows": { "front": 0, "right": 1, "back": 2, "left": 3 },
+        "assetSrcRewrite": {
+            "pathnameSpritesMarker": "/sprites/",
+            "outputSpritesBase": "/assets/data/sprites/",
+            "dataSpritesMarker": "/data/sprites/"
+        }
+    }
+}
