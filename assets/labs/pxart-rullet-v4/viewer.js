@@ -653,7 +653,7 @@
             var syP = rowIdx * th;
             var pd = getLayerDst('pants');
             var px = gx + pd.ox;
-            var py = gy + pd.oy + clothYNudge;
+            var py = gy + pd.oy;// + clothYNudge;
             var thP = viewerOpts.tint || DEFAULT_VIEWER.tint;
             var ph = getHue(pantsHueEl, thP.pantsHueDefault);
             drawTintedTile(pimg, sxP, syP, tw, th, px, py, ph);
@@ -758,6 +758,29 @@
         hairHueEl.addEventListener('change', onHairHue);
         onHairHue();
       }
+      function wireGenderButtons() {
+        if (!genderSel) return;
+        var btnF = scope.querySelector('[data-gender-btn="female"]');
+        var btnM = scope.querySelector('[data-gender-btn="male"]');
+        if (!btnF || !btnM) return;
+
+        function syncGenderBtns() {
+          var v = genderSel.value === 'male' ? 'male' : 'female';
+          btnF.setAttribute('aria-pressed', v === 'female' ? 'true' : 'false');
+          btnM.setAttribute('aria-pressed', v === 'male' ? 'true' : 'false');
+        }
+        function setGender(v) {
+          genderSel.value = v;
+          syncGenderBtns();
+          try { genderSel.dispatchEvent(new Event('change', { bubbles: true })); } catch (e0) { /* ignore */ }
+        }
+        btnF.addEventListener('click', function () { setGender('female'); });
+        btnM.addEventListener('click', function () { setGender('male'); });
+        genderSel.addEventListener('change', syncGenderBtns);
+        syncGenderBtns();
+      }
+
+      wireGenderButtons();
       if (genderSel) genderSel.addEventListener('change', function () { render(); });
       if (bodyDxInput) { bodyDxInput.addEventListener('input', function () { render(); }); bodyDxInput.addEventListener('change', function () { render(); }); }
       if (bodyDyInput) { bodyDyInput.addEventListener('input', function () { render(); }); bodyDyInput.addEventListener('change', function () { render(); }); }

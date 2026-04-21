@@ -1,7 +1,7 @@
 <main class="app">
   <section class="sdvWindow">
     <header class="sdvHead">
-      <div class="sdvTitle">Customize Character:</div>
+      <div class="sdvTitle">Customize Character</div>
       <button type="button" class="arrSm" data-export>V</button>
     </header>
 
@@ -12,6 +12,15 @@
         </div>
         <div class="previewArrows">
           <button type="button" class="arr" data-dir-delta="-1" aria-label="Previous direction">&#9664;</button>
+          <div class="genderToggle" role="group" aria-label="Body gender">
+            <button type="button" class="arr genderBtn" data-gender-btn="female" aria-pressed="true" title="Female">F</button>
+            <button type="button" class="arr genderBtn" data-gender-btn="male" aria-pressed="false" title="Male">M</button>
+            <!-- viewer.js 호환용(값/이벤트 소스) -->
+            <select data-body-gender style="display:none" aria-hidden="true" tabindex="-1">
+              <option value="female" selected>Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
           <button type="button" class="arr" data-dir-delta="1" aria-label="Next direction">&#9654;</button>
         </div>
         <div class="sdvPickers">
@@ -101,7 +110,7 @@
           <div class="row" data-body-panel style="display:none">
             <label class="field">
               <span class="label">Body gender</span>
-              <select data-body-gender>
+              <select data-body-gender-legacy>
                 <option value="female" selected>Female</option>
                 <option value="male">Male</option>
               </select>
