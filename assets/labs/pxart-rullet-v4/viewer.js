@@ -198,14 +198,9 @@
       label.textContent = labels[key] != null ? String(labels[key]) : String(key || '');
     }
 
-    function applyScale() {
-      var sel = scope.querySelector('input[name="scale"]:checked');
-      var v = sel ? String(sel.value || '') : '';
-      canvas.classList.remove('scale-1', 'scale-2', 'scale-4', 'scale-6');
-      if (v === '1' || v === '2' || v === '4' || v === '6') canvas.classList.add('scale-' + v);
-    }
-    scope.querySelectorAll('input[name="scale"]').forEach(function (r) { r.addEventListener('change', applyScale); });
-    applyScale();
+    // scale is fixed to 4x (no UI)
+    canvas.classList.remove('scale-1', 'scale-2', 'scale-6');
+    canvas.classList.add('scale-4');
 
     function downloadPng(filename) {
       var name = filename || 'pxart-rullet-v4.png';
@@ -592,12 +587,20 @@
         ctx.clearRect(0, 0, outW, outH);
 
         // checker
-        var cell = (cv.checkerCell | 0) || 4;
-        var chk = (cv.checkerColors && cv.checkerColors.length >= 2) ? cv.checkerColors : DEFAULT_VIEWER.canvas.checkerColors;
-        for (var yy = 0; yy < outH; yy += cell) {
-          for (var xx = 0; xx < outW; xx += cell) {
-            ctx.fillStyle = ((xx / cell + yy / cell) % 2 === 0) ? chk[0] : chk[1];
-            ctx.fillRect(xx, yy, cell, cell);
+        var hideChecker = false;
+        try {
+          hideChecker =
+            (canvas && canvas.getAttribute && canvas.getAttribute('data-hide-checkerboard') === '1') ||
+            (canvas && canvas.closest && canvas.closest('[data-hide-checkerboard="1"]'));
+        } catch (e0) { /* ignore */ }
+        if (!hideChecker) {
+          var cell = (cv.checkerCell | 0) || 4;
+          var chk = (cv.checkerColors && cv.checkerColors.length >= 2) ? cv.checkerColors : DEFAULT_VIEWER.canvas.checkerColors;
+          for (var yy = 0; yy < outH; yy += cell) {
+            for (var xx = 0; xx < outW; xx += cell) {
+              ctx.fillStyle = ((xx / cell + yy / cell) % 2 === 0) ? chk[0] : chk[1];
+              ctx.fillRect(xx, yy, cell, cell);
+            }
           }
         }
 

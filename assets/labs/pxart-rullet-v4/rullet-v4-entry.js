@@ -78,6 +78,13 @@
     loadViewer();
   }
 
+  function hideCheckerboard(root) {
+    try {
+      var cv = root && root.querySelector ? root.querySelector('[data-canvas]') : null;
+      if (cv) cv.setAttribute('data-hide-checkerboard', '1');
+    } catch (e) { /* ignore */ }
+  }
+
   function boot() {
     var root = document.querySelector('[data-pxrullet-v4-root]');
     if (!root) return;
@@ -85,6 +92,7 @@
 
     if (root.querySelector('[data-canvas]')) {
       root.setAttribute('data-pxr-v4-entry-booted', '1');
+      hideCheckerboard(root);
       mountFromShell(root);
       return;
     }
@@ -98,6 +106,7 @@
       .then(function (html) {
         root.innerHTML = html;
         root.setAttribute('data-pxr-v4-entry-booted', '1');
+        hideCheckerboard(root);
         mountFromShell(root);
       })
       .catch(function (e) {

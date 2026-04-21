@@ -80,7 +80,7 @@
             "maxIndex": 121,
             "rows": 4,
             "dstX": 0,
-            "dstY": 1,
+            "dstY": 2,
             "columns": 122,
             "directions": { "front": [0,0], "right": [1,0], "back": [3,0], "left": [2,0] }
         },

@@ -2,7 +2,7 @@
   <section class="sdvWindow">
     <header class="sdvHead">
       <div class="sdvTitle">Customize Character:</div>
-      <button type="button" class="sdvClose" aria-label="close" title="close">x</button>
+      <button type="button" class="arrSm" data-export>V</button>
     </header>
 
     <div class="sdvBody">
@@ -14,29 +14,6 @@
           <button type="button" class="arr" data-dir-delta="-1" aria-label="Previous direction">&#9664;</button>
           <button type="button" class="arr" data-dir-delta="1" aria-label="Next direction">&#9654;</button>
         </div>
-
-      </section>
-
-      <section class="sdvControls">
-        <div class="sliderStack">
-          <label class="sdvSlider" style="display:none">
-            <span class="cap">Direction <b data-dir-label>Front</b></span>
-            <input type="range" data-dir min="0" max="3" step="1" value="0" />
-          </label>
-
-          <label class="sdvSlider">
-            <span class="cap">Hair Color <b data-hair-hue-out>30</b></span>
-            <input type="range" data-hair-hue min="0" max="360" step="1" value="30" />
-          </label>
-
-          <div class="sdvRow" data-pants-panel style="display:none">
-            <label class="sdvSlider">
-              <span class="cap">Pants Color <b data-pants-hue-out>210</b></span>
-              <input type="range" data-pants-hue min="0" max="360" step="1" value="210" />
-            </label>
-          </div>
-        </div>
-
         <div class="sdvPickers">
           <div class="pickCol">
             <div class="pickRow">
@@ -50,9 +27,6 @@
                 <span class="small">type</span>
               </div>
             </div>
-          </div>
-
-          <div class="pickCol">
             <div class="pickRow">
               <span class="pickLabel">Shirt</span>
               <div class="pickArrows">
@@ -99,6 +73,29 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="sdvControls">
+        <div class="sliderStack">
+          <label class="sdvSlider" style="display:none">
+            <span class="cap">Direction <b data-dir-label>Front</b></span>
+            <input type="range" data-dir min="0" max="3" step="1" value="0" />
+          </label>
+
+          <label class="sdvSlider">
+            <span class="cap">Hair Color <b data-hair-hue-out>30</b></span>
+            <input type="range" data-hair-hue min="0" max="360" step="1" value="30" />
+          </label>
+
+          <div class="sdvRow" data-pants-panel style="display:none">
+            <label class="sdvSlider">
+              <span class="cap">Pants Color <b data-pants-hue-out>210</b></span>
+              <input type="range" data-pants-hue min="0" max="360" step="1" value="210" />
+            </label>
+          </div>
+        </div>
+
+
 
         <div class="hiddenInputs" style="display:none">
           <div class="row" data-body-panel style="display:none">
@@ -131,18 +128,8 @@
           <input data-dst-y type="number" value="0" step="1" />
           <button type="button" data-dst-apply>Apply</button>
         </div>
-        <div class="scaleBar" aria-label="scale">
-          <div class="scaleLabel">Scale</div>
-          <div class="scaleBtns">
-            <label class="scaleBtn"><input type="radio" name="scale" value="1" /><span>1x</span></label>
-            <label class="scaleBtn"><input type="radio" name="scale" value="2" /><span>2x</span></label>
-            <label class="scaleBtn"><input type="radio" name="scale" value="4" checked /><span>4x</span></label>
-            <label class="scaleBtn"><input type="radio" name="scale" value="6" /><span>6x</span></label>
-          </div>
-          <button type="button" class="arrSm" data-export>PNG</button>
-        </div>
-        <div class="meta" data-meta></div>
-        <div class="log" data-log></div>
+        <div class="meta" data-meta style="display:none"></div>
+        <div class="log" data-log style="display:none"></div>
       </section>
     </div>
   </section>
