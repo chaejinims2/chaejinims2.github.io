@@ -732,10 +732,11 @@
           var delta = parseInt(btn.getAttribute('data-dir-delta'), 10);
           if (isNaN(delta) || delta === 0) return;
           var order = (viewerOpts.directionSlider && viewerOpts.directionSlider.order) || DEFAULT_VIEWER.directionSlider.order;
-          var maxI = Math.max(0, order.length - 1);
+          var len = Math.max(0, order.length | 0);
+          if (!len) return;
           var i = parseInt(dirSel.value, 10) || 0;
-          i = Math.max(0, Math.min(maxI, i + delta));
-          dirSel.value = String(i);
+          i = ((i + delta) % len + len) % len; // wrap-around (supports negative delta)
+          dirSel.value = String(i | 0);
           onDirSlider();
         });
       });
