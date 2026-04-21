@@ -103,7 +103,8 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   background:rgba(255,255,255,.22);
 }
 .scaleLabel{font-weight:900;color:var(--text-custom)}
-.scaleBtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start}
+.scaleBtns{display:flex;gap:8px;flex-wrap:nowrap;align-items:center;justify-content:flex-start}
+.scaleBtns [data-export]{margin-left:auto}
 .scaleBtn{
   display:inline-flex;
   align-items:center;
