@@ -32,6 +32,11 @@
     accHairHueIndices: [0, 1, 2, 3, 4, 5, 11, 17, 19, 20, 21, 22],
     tint: { hairHueDefault: 30, pantsHueDefault: 210, saturation: 0.85, lightness: 0.55 },
     femaleClothingDstYNudge: 1,
+    background: {
+      assetKey: 'bg',
+      cols: 2,
+      defaultIndex: -1
+    },
     canvas: {
       width: 20,
       height: 40,
@@ -71,6 +76,74 @@
       });
     }
     return keys;
+  }
+
+  /** 시트 타일 크기: 최상위 `srcW`/`srcH`, 예전 `sw`/`sh`, `tileSize.{…}` */
+  function sheetTileWH(spec) {
+    if (!spec || typeof spec !== 'object') return [0, 0];
+    if (spec.srcW != null || spec.srcH != null) {
+      return [(spec.srcW | 0), (spec.srcH | 0)];
+    }
+    if (spec.sw != null || spec.sh != null) {
+      return [(spec.sw | 0), (spec.sh | 0)];
+    }
+    var ts = spec.tileSize;
+    if (ts && typeof ts === 'object') {
+      var ww = ts.srcW != null ? ts.srcW : (ts.sw != null ? ts.sw : ts.w);
+      var hh = ts.srcH != null ? ts.srcH : (ts.sh != null ? ts.sh : ts.h);
+      return [(ww | 0), (hh | 0)];
+    }
+    return [0, 0];
+  }
+
+  function hasSheetTile(spec) {
+    if (!spec || typeof spec !== 'object') return false;
+    if (spec.srcW != null || spec.srcH != null) return true;
+    if (spec.sw != null || spec.sh != null) return true;
+    var ts = spec.tileSize;
+    return !!(ts && typeof ts === 'object');
+  }
+
+  /** 슬라이더/클램프용 최대 인덱스: `cols`면 `cols-1`, 레거시 `columns` 폴백, 없으면 `maxIndex` */
+  function layerMaxIndexFromSpec(spec) {
+    if (!spec || typeof spec !== 'object') return 0;
+    var n = typeof spec.cols === 'number' ? spec.cols : spec.columns;
+    if (typeof n === 'number' && n > 0) {
+      return (n - 1) | 0;
+    }
+    if (typeof spec.maxIndex === 'number') return spec.maxIndex | 0;
+    return 0;
+  }
+
+  /**
+   * layout.offsets["WxH"] = [addDx, addDy, w?, h?] — dst가 16×32 기준일 때 목표 캔버스에서 (addDx, addDy)를 더함.
+   * @returns {{ refDx: number, refDy: number, key: string, matched: boolean }}
+   */
+  function refCanvasDstDelta(layout, canvasW, canvasH) {
+    var key = String(canvasW | 0) + '_' + String(canvasH | 0);
+    var out = { refDx: 0, refDy: 0, key: key, matched: false };
+    if (!layout || typeof layout !== 'object') return out;
+    var offs = layout.offsets;
+    if (!offs || typeof offs !== 'object') return out;
+    var arr = offs[key];
+    if (!arr || typeof arr.length !== 'number' || arr.length < 2) return out;
+    var dx = +arr[0];
+    var dy = +arr[1];
+    if (isNaN(dx)) dx = 0;
+    if (isNaN(dy)) dy = 0;
+    out.refDx = dx | 0;
+    out.refDy = dy | 0;
+    out.matched = true;
+    if (arr.length >= 4) {
+      var ew = +arr[2];
+      var eh = +arr[3];
+      if (!isNaN(ew) && !isNaN(eh) && (ew !== (canvasW | 0) || eh !== (canvasH | 0))) {
+        try {
+          console.warn('[pxart-rullet] offsets[' + key + '] size tuple ' + ew + 'x' + eh + ' ≠ canvas ' + (canvasW | 0) + 'x' + (canvasH | 0));
+        } catch (e) { /* ignore */ }
+      }
+    }
+    return out;
   }
 
   function normalizeAssetSrc(src, rewrite) {
@@ -151,6 +224,7 @@
 
     var dirSel = $('[data-dir]');
     var genderSel = $('[data-body-gender]');
+    var bgSel = $('[data-bg]');
     var bodyDxInput = $('[data-body-dx]');
     var bodyDyInput = $('[data-body-dy]');
     var bodyPanel = $('[data-body-panel]');
@@ -198,13 +272,64 @@
       label.textContent = labels[key] != null ? String(labels[key]) : String(key || '');
     }
 
+    /** layout `viewer.canvas` 픽셀 × 배율 = 화면에 보이는 CSS 크기 (버퍼는 render에서 동일 스펙) */
+    var CANVAS_DISPLAY_SCALE = 4;
+    function syncCanvasDisplaySize() {
+      if (!canvas) return;
+      var cv = viewerOpts.canvas || DEFAULT_VIEWER.canvas;
+      var bw = cv.width | 0;
+      var bh = cv.height | 0;
+      if (bw <= 0) bw = DEFAULT_VIEWER.canvas.width | 0;
+      if (bh <= 0) bh = DEFAULT_VIEWER.canvas.height | 0;
+      canvas.style.width = (bw * CANVAS_DISPLAY_SCALE) + 'px';
+      canvas.style.height = (bh * CANVAS_DISPLAY_SCALE) + 'px';
+
+      // preview frame also needs to follow canvas spec (it used to be fixed 190×190 in CSS)
+      var frame = scope.querySelector('.previewFrame');
+      if (frame) {
+        var fw = bw * CANVAS_DISPLAY_SCALE;
+        var fh = bh * CANVAS_DISPLAY_SCALE;
+        frame.style.width = fw + 'px';
+        frame.style.height = fh + 'px';
+      }
+      var arrows = scope.querySelector('.previewArrows');
+      if (arrows && frame && frame.style && frame.style.width) {
+        arrows.style.width = frame.style.width;
+      }
+    }
+
     // scale is fixed to 4x (no UI)
     canvas.classList.remove('scale-1', 'scale-2', 'scale-6');
     canvas.classList.add('scale-4');
+    syncCanvasDisplaySize();
 
     function downloadPng(filename) {
       var name = filename || 'pxart-rullet-v4.png';
-      canvas.toBlob(function (blob) {
+      var s = CANVAS_DISPLAY_SCALE | 0;
+      if (s <= 0) s = 1;
+      var srcW = canvas.width | 0;
+      var srcH = canvas.height | 0;
+      if (srcW <= 0 || srcH <= 0) return;
+      if (s === 1) {
+        canvas.toBlob(function (blob) {
+          if (!blob) return;
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = name;
+          a.click();
+          URL.revokeObjectURL(a.href);
+        });
+        return;
+      }
+      var out = document.createElement('canvas');
+      out.width = srcW * s;
+      out.height = srcH * s;
+      var octx = out.getContext('2d');
+      if (!octx) return;
+      octx.imageSmoothingEnabled = false;
+      octx.clearRect(0, 0, out.width, out.height);
+      octx.drawImage(canvas, 0, 0, srcW, srcH, 0, 0, out.width, out.height);
+      out.toBlob(function (blob) {
         if (!blob) return;
         var a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -343,7 +468,7 @@
       var v = parseInt(inp.value, 10);
       if (isNaN(v)) v = 0;
       var spec = layout && layout.sheets && layout.sheets[key];
-      var maxI = spec && typeof spec.maxIndex === 'number' ? spec.maxIndex : 0;
+      var maxI = spec ? layerMaxIndexFromSpec(spec) : 0;
       if (v < 0) v = 0;
       if (v > maxI) v = maxI;
       return v;
@@ -386,8 +511,8 @@
       drawOrder = buildDrawOrder(layout.sheets, layout.assets, viewerOpts.drawOrderFallbackPreferred);
       drawOrder.forEach(function (key) {
         var spec = layout.sheets[key];
-        if (!spec || !spec.tileSize) return;
-        var maxI = typeof spec.maxIndex === 'number' ? spec.maxIndex : 0;
+        if (!spec || !hasSheetTile(spec)) return;
+        var maxI = layerMaxIndexFromSpec(spec);
         var lx0 = typeof spec.dstX === 'number' ? spec.dstX : 0;
         var ly0 = typeof spec.dstY === 'number' ? spec.dstY : 0;
 
@@ -503,6 +628,7 @@
 
     function render() {
       if (!layout || !layout.sheets || !layout.assets) return;
+      syncCanvasDisplaySize();
       var myToken = ++paintToken;
       clearLog();
 
@@ -512,6 +638,19 @@
       var pantsAssetKey = (genderSel && genderSel.value === 'male') ? 'pantsMale' : 'pantsFemale';
       var paintOrder = getPaintOrder(dir);
       var keys = collectAssetKeysForPaint(paintOrder, bodyAssetKey, pantsAssetKey);
+      // background asset (optional)
+      var bgCfg = viewerOpts.background || DEFAULT_VIEWER.background;
+      var bgKey = bgCfg && bgCfg.assetKey ? String(bgCfg.assetKey) : 'bg';
+      var bgCols = bgCfg && typeof bgCfg.cols === 'number' ? (bgCfg.cols | 0) : 2;
+      if (bgCols <= 0) bgCols = 2;
+      var bgIdx = -1;
+      if (bgSel) {
+        bgIdx = parseInt(bgSel.value, 10);
+        if (isNaN(bgIdx)) bgIdx = -1;
+      } else if (bgCfg && typeof bgCfg.defaultIndex === 'number') {
+        bgIdx = bgCfg.defaultIndex | 0;
+      }
+      if (bgIdx >= 0 && layout.assets && layout.assets[bgKey] && keys.indexOf(bgKey) === -1) keys.push(bgKey);
 
       var bspec = layout.sheets.body;
       var pspec = layout.sheets.pants;
@@ -519,10 +658,11 @@
       var lines = [];
       paintOrder.forEach(function (key) {
         if (key === 'body') {
-          if (!bspec || !bspec.tileSize) return;
-          var swB = bspec.tileSize.w | 0;
-          var shB = bspec.tileSize.h | 0;
-          var cpbB = bspec.colsPerPartBlock | 0;
+          if (!bspec || !hasSheetTile(bspec)) return;
+          var _bSz = sheetTileWH(bspec);
+          var swB = _bSz[0];
+          var shB = _bSz[1];
+          var cpbB = bspec.colsPerPart | 0;
           var layers0 = bodyLayersFromDirection(dir);
           var bits = [];
           for (var li = 0; li < layers0.length; li++) {
@@ -538,9 +678,10 @@
           return;
         }
         if (key === 'pants') {
-          if (!pspec || !pspec.tileSize) return;
-          var twP = pspec.tileSize.w | 0;
-          var thP = pspec.tileSize.h | 0;
+          if (!pspec || !hasSheetTile(pspec)) return;
+          var _pSz = sheetTileWH(pspec);
+          var twP = _pSz[0];
+          var thP = _pSz[1];
           var cptP = (pspec.colsPerType | 0) || 6;
           var typeIdx = pantsTypeEl ? (parseInt(pantsTypeEl.value, 10) || 0) : 0;
           var rowIdx = 0;
@@ -552,10 +693,11 @@
           return;
         }
         var spec = layout.sheets[key];
-        if (!spec || !spec.tileSize) return;
+        if (!spec || !hasSheetTile(spec)) return;
         var idx = getLayerIndex(key);
-        var tileW = spec.tileSize.w | 0;
-        var tileH = spec.tileSize.h | 0;
+        var _tSz = sheetTileWH(spec);
+        var tileW = _tSz[0];
+        var tileH = _tSz[1];
         var dcell = getDirCell(spec, dir, viewerOpts.dirCellFallbackRows);
         var sx = idx * tileW;
         var sy = (dcell.row | 0) * tileH;
@@ -564,12 +706,20 @@
         lines.push(key + ': #' + idx + ' src(' + sx + ',' + sy + ',' + tileW + ',' + tileH + ') off(' + ld.ox + ',' + ld.oy + ')' + accTint);
       });
 
+      var cvMeta = viewerOpts.canvas || DEFAULT_VIEWER.canvas;
+      var refMeta = refCanvasDstDelta(layout, cvMeta.width | 0, cvMeta.height | 0);
+      var refMetaLine =
+        '<div><b>캔버스 보정(ref)</b>: (' + refMeta.refDx + ', ' + refMeta.refDy + ') · ' +
+        (refMeta.matched ? 'offsets[' + refMeta.key + ']' : 'offsets[' + refMeta.key + '] 없음 → 0') +
+        '</div>';
+
       meta.innerHTML =
         '<div><b>direction</b>: ' + dir +
         ' <span style="opacity:.6">·</span> <b>draw</b>: ' + paintOrder.join(' → ') +
         (clothYNudge ? ' · <span style="opacity:.85">여성: 바지·의상 DstY +1</span>' : '') +
         '</div>' +
         '<div><b>전체(공통) 오프셋 적용됨</b>: (' + lastAppliedDx + ', ' + lastAppliedDy + ')</div>' +
+        refMetaLine +
         '<div>' + lines.join('<br/>') + '</div>';
 
       syncPickerOutLabels();
@@ -581,10 +731,28 @@
         var cv = viewerOpts.canvas || DEFAULT_VIEWER.canvas;
         var outW = cv.width | 0;
         var outH = cv.height | 0;
+        var ref = refCanvasDstDelta(layout, outW, outH);
+        var gx = lastAppliedDx + ref.refDx;
+        var gy = lastAppliedDy + ref.refDy;
         canvas.width = outW;
         canvas.height = outH;
         ctx.imageSmoothingEnabled = false;
         ctx.clearRect(0, 0, outW, outH);
+
+        // background (optional) or checker
+        var bgDrawn = false;
+        if (bgIdx >= 0 && layout.assets && layout.assets[bgKey]) {
+          var bgImg = images[bgKey];
+          if (bgImg && bgImg.naturalWidth) {
+            var srcTileW = (bgCols > 0) ? Math.floor(bgImg.naturalWidth / bgCols) : bgImg.naturalWidth;
+            if (srcTileW <= 0) srcTileW = bgImg.naturalWidth;
+            var srcTileH = bgImg.naturalHeight | 0;
+            var clamped = Math.max(0, Math.min(bgCols - 1, bgIdx | 0));
+            var sxBg = clamped * srcTileW;
+            ctx.drawImage(bgImg, sxBg, 0, srcTileW, srcTileH, 0, 0, outW, outH);
+            bgDrawn = true;
+          }
+        }
 
         // checker
         var hideChecker = false;
@@ -593,7 +761,7 @@
             (canvas && canvas.getAttribute && canvas.getAttribute('data-hide-checkerboard') === '1') ||
             (canvas && canvas.closest && canvas.closest('[data-hide-checkerboard="1"]'));
         } catch (e0) { /* ignore */ }
-        if (!hideChecker) {
+        if (!bgDrawn && !hideChecker) {
           var cell = (cv.checkerCell | 0) || 4;
           var chk = (cv.checkerColors && cv.checkerColors.length >= 2) ? cv.checkerColors : DEFAULT_VIEWER.canvas.checkerColors;
           for (var yy = 0; yy < outH; yy += cell) {
@@ -604,17 +772,16 @@
           }
         }
 
-        var gx = lastAppliedDx, gy = lastAppliedDy;
-
         paintOrder.forEach(function (part) {
           if (myToken !== paintToken) return;
           if (part === 'body') {
-            if (!bspec || !bspec.tileSize) return;
+            if (!bspec || !hasSheetTile(bspec)) return;
             var bimg = images[bodyAssetKey];
             if (!bimg || !bimg.naturalWidth) return;
-            var sw = bspec.tileSize.w | 0;
-            var sh = bspec.tileSize.h | 0;
-            var cpb = bspec.colsPerPartBlock | 0;
+            var _bSz2 = sheetTileWH(bspec);
+            var sw = _bSz2[0];
+            var sh = _bSz2[1];
+            var cpb = bspec.colsPerPart | 0;
             var baseBX = typeof bspec.dstX === 'number' ? bspec.dstX : 0;
             var baseBY = typeof bspec.dstY === 'number' ? bspec.dstY : 0;
             var bodOffX = bodyDxInput ? parseInt(bodyDxInput.value, 10) : baseBX;
@@ -640,11 +807,12 @@
             return;
           }
           if (part === 'pants') {
-            if (!pspec || !pspec.tileSize) return;
+            if (!pspec || !hasSheetTile(pspec)) return;
             var pimg = images[pantsAssetKey];
             if (!pimg || !pimg.naturalWidth) return;
-            var tw = pspec.tileSize.w | 0;
-            var th = pspec.tileSize.h | 0;
+            var _pSz2 = sheetTileWH(pspec);
+            var tw = _pSz2[0];
+            var th = _pSz2[1];
             var colsPerType = (pspec.colsPerType | 0) || 6;
             var typeIdx = pantsTypeEl ? (parseInt(pantsTypeEl.value, 10) || 0) : 0;
             var rowIdx = 0;
@@ -661,9 +829,10 @@
           }
           var spec = layout.sheets[part];
           var img = images[part];
-          if (!spec || !spec.tileSize || !img || !img.naturalWidth) return;
-          var tileW = spec.tileSize.w | 0;
-          var tileH = spec.tileSize.h | 0;
+          if (!spec || !hasSheetTile(spec) || !img || !img.naturalWidth) return;
+          var _tSz2 = sheetTileWH(spec);
+          var tileW = _tSz2[0];
+          var tileH = _tSz2[1];
           var idx = getLayerIndex(part);
           var dcell2 = getDirCell(spec, dir, viewerOpts.dirCellFallbackRows);
           var sx = idx * tileW;
@@ -749,6 +918,11 @@
 
       wireIndexStepButtons();
 
+      if (bgSel) {
+        bgSel.addEventListener('input', function () { render(); });
+        bgSel.addEventListener('change', function () { render(); });
+      }
+
       function onPantsAny() { syncPantsIdxLabels(); syncHueStyles(); render(); }
       if (pantsTypeEl) { pantsTypeEl.addEventListener('input', onPantsAny); pantsTypeEl.addEventListener('change', onPantsAny); }
       if (pantsHueEl) { pantsHueEl.addEventListener('input', onPantsAny); pantsHueEl.addEventListener('change', onPantsAny); }
@@ -795,6 +969,11 @@
         if (!data || !data.sheets || !data.assets) throw new Error('invalid layout.json');
         layout = data;
         viewerOpts = mergeViewerDefaults(DEFAULT_VIEWER, data.viewer || {});
+        if (bgSel) {
+          var bg0 = viewerOpts.background || DEFAULT_VIEWER.background;
+          var di = bg0 && typeof bg0.defaultIndex === 'number' ? (bg0.defaultIndex | 0) : -1;
+          bgSel.value = String(di);
+        }
         var rw = viewerOpts.assetSrcRewrite || DEFAULT_VIEWER.assetSrcRewrite;
         Object.keys(data.assets).forEach(function (k) {
           if (data.assets[k] && data.assets[k].src) data.assets[k].src = normalizeAssetSrc(data.assets[k].src, rw);

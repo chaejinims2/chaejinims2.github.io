@@ -1,0 +1,77 @@
+<main class="app">
+  <section class="sdvWindow">
+    <header class="sdvHead">
+      <div class="sdvTitle">Pixel Typography</div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <a class="btn" href="./mapper.html" target="_blank" rel="noopener">Mapper</a>
+        <button type="button" class="btn" data-export aria-label="Export PNG (x4)">Export</button>
+      </div>
+    </header>
+
+    <div class="sdvBody">
+      <section class="sdvPreview">
+        <div class="previewFrame">
+          <canvas data-canvas width="256" height="256" aria-label="preview"></canvas>
+        </div>
+        <div class="hint" data-hint>fontmap.json을 채우면 렌더됩니다.</div>
+      </section>
+
+      <section class="sdvControls">
+        <label class="field">
+          <span class="label">Text</span>
+          <textarea data-text rows="6" spellcheck="false" placeholder="(){[]W%MG?NE4OQBCDJYXPRSTUVjb\ZFKLd/A}21#&Hsaq0!lt5769ghPyfm\☆;io♡▷◁k:rsno'wauce*-.”_vxz+^’~’텍스트를 입력하세요 (줄바꿈 지원)"></textarea>
+        </label>
+
+        <div class="row2">
+          <label class="field">
+            <span class="label">Font</span>
+            <select data-font></select>
+          </label>
+          <label class="field">
+            <span class="label">Scale (preview)</span>
+            <select data-scale>
+              <option value="1" selected>x1</option>
+              <option value="2">x2</option>
+              <option value="4">x4</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row2">
+          <label class="field">
+            <span class="label">Color</span>
+            <input data-fg type="color" value="#ffffff" />
+          </label>
+          <label class="field">
+            <span class="label">Tint</span>
+            <select data-tint>
+              <option value="on" selected>On</option>
+              <option value="off">Off</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row2">
+          <label class="field">
+            <span class="label">Background</span>
+            <select data-bgmode>
+              <option value="transparent" selected>Transparent</option>
+              <option value="solid">Solid</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="label">BG Color</span>
+            <input data-bgcolor type="color" value="#000000" />
+          </label>
+        </div>
+
+        <details class="details">
+          <summary>Debug</summary>
+          <div class="meta" data-meta></div>
+          <div class="log" data-log></div>
+        </details>
+      </section>
+    </div>
+  </section>
+</main>
+

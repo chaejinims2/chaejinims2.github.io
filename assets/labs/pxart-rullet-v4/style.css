@@ -54,11 +54,9 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .previewTop{display:flex;gap:10px;align-items:flex-start}
 @media (max-width:820px){.previewTop{flex-direction:column}}
 .previewFrame{
-  width:190px;height:190px;border-radius:12px;
-  background:linear-gradient(180deg,#ffffff,#cfe7ff);
-  border:4px solid var(--edge2);
-  box-shadow:inset 0 2px 0 rgba(255,255,255,.55);
-  padding:10px;display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .previewArrows{
   width:190px;
@@ -128,6 +126,15 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .pickArrows{display:flex;gap:8px}
 .pickVal{display:flex;align-items:baseline;gap:8px}
 .pickVal b{color:var(--accent);font-weight:900}
+.pickVal select{
+  height:30px;
+  border-radius:10px;
+  border:3px solid rgba(139,74,31,.55);
+  background:linear-gradient(180deg,#fffdf6,#f6e2c8);
+  color:var(--text-custom);
+  font-weight:800;
+  padding:0 8px;
+}
 .small{font-size:11px;color:var(--muted);font-weight:700}
 
 /* 레이어·성별·바지 인덱스 — 뷰어가 여기 입력을 읽음 (숨기면 조작 불가) */
@@ -216,15 +223,9 @@ input[type="range"][data-pants-hue]::-moz-range-thumb{
 
 canvas{
   display:block;
-  width:calc(20px * 6);
-  height:calc(40px * 6);
   image-rendering:pixelated;
   background:transparent;
 }
-canvas.scale-1{ width:calc(20px * 1); height:calc(40px * 1); }
-canvas.scale-2{ width:calc(20px * 2); height:calc(40px * 2); }
-canvas.scale-4{ width:calc(20px * 4); height:calc(40px * 4); }
-canvas.scale-6{ width:calc(20px * 6); height:calc(40px * 6); }
 
 .log{
   margin-top:8px;

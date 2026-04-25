@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pxart-typo mapper</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .mapBody{display:grid;grid-template-columns:1fr 360px;gap:14px;padding:14px}
+      @media (max-width:920px){.mapBody{grid-template-columns:1fr}}
+      .stage{border-radius:12px;border:3px dashed rgba(139,74,31,.45);background:rgba(255,255,255,.18);padding:10px}
+      .stage canvas{max-width:100%;height:auto}
+      .kRow{display:flex;gap:8px;flex-wrap:wrap}
+      .mini{font-size:12px;color:var(--muted);font-weight:800;line-height:1.3}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+      .stat{font-size:12px;white-space:pre-wrap}
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <section class="sdvWindow">
+        <header class="sdvHead">
+          <div class="sdvTitle">Font Mapper</div>
+          <div class="kRow">
+            <a class="btn" href="./index.html" target="_blank" rel="noopener">Typo</a>
+            <button class="btn" type="button" data-load>Load</button>
+            <button class="btn" type="button" data-autosort>Auto-sort</button>
+            <button class="btn" type="button" data-export>Export fontmap.json</button>
+          </div>
+        </header>
+
+        <div class="mapBody">
+          <section class="stage">
+            <canvas data-cv width="809" height="428" aria-label="Fonts.png mapper"></canvas>
+            <div class="mini" data-status>Load를 눌러 시작하세요.</div>
+          </section>
+
+          <section class="sdvControls">
+            <label class="field">
+              <span class="label">Fontmap URL</span>
+              <input class="mono" data-fontmap value="./fontmap.json" />
+            </label>
+
+            <label class="field">
+              <span class="label">Font index</span>
+              <select data-font-idx>
+                <option value="0" selected>font0</option>
+                <option value="1">font1</option>
+                <option value="2">font2</option>
+                <option value="3">font3</option>
+                <option value="4">font4</option>
+                <option value="5">font5</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Glyph order (multiline)</span>
+              <textarea class="mono" data-order rows="7" spellcheck="false" placeholder="예:\n(){[]W%MG?\nNE4OQBCDJ\n..."></textarea>
+              <div class="mini">줄바꿈 포함 순서를 붙여넣고 Auto-sort 후, 박스를 클릭하면 현재 문자에 할당됩니다.</div>
+            </label>
+
+            <div class="row2">
+              <label class="field">
+                <span class="label">Row tolerance(px)</span>
+                <input data-rowtol type="number" value="10" min="0" step="1" />
+              </label>
+              <label class="field">
+                <span class="label">Merge gap(px)</span>
+                <input data-mergegap type="number" value="2" min="0" step="1" />
+              </label>
+            </div>
+
+            <div class="row2">
+              <button class="btn" type="button" data-prev>Prev</button>
+              <button class="btn" type="button" data-next>Next</button>
+            </div>
+
+            <div class="stat mono" data-stat></div>
+            <details class="details">
+              <summary>Debug log</summary>
+              <div class="log mono" data-log></div>
+            </details>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./mapper.js"></script>
+  </body>
+ </html>
+
