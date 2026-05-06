@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "2.0.1",
+  "conventions": {
+    "minuteOrigin": "minutesFromLocalMidnight",
+    "extendedEndMinute": "endMinuteMayExceed1440MeaningNextCalendarDayExclusive",
+    "dayOfWeekMapping": "IsoWeekdayStringsMonThroughSun",
+    "ruleOverlapResolution": "HigherPriorityWinsWhenDaysOverlapSameKindIdNamespace",
+    "ruleIdScope": "Rule id must be unique within each user's rules array, not globally unique across all users"
+  }
+}

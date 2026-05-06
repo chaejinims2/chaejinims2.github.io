@@ -1,0 +1,97 @@
+{
+  "schemas": {
+    "ruleKinds": {
+      "window": ["id", "kind", "label?", "category?", "startMinute", "endMinute", "daysOfWeek", "priority?"],
+      "duration": ["id", "kind", "label?", "category?", "durationMinute", "priority?"],
+      "anchorDuration": [
+        "id",
+        "kind",
+        "label?",
+        "category?",
+        "startMinute",
+        "durationMinute",
+        "daysOfWeek?",
+        "priority?"
+      ],
+      "commute": [
+        "id",
+        "kind",
+        "label?",
+        "category?",
+        "direction",
+        "targetRuleId",
+        "durationMinute",
+        "daysOfWeek?",
+        "priority?"
+      ],
+      "transition": [
+        "id",
+        "kind",
+        "label?",
+        "category?",
+        "fromRuleId",
+        "toRuleId",
+        "durationMinute",
+        "daysOfWeek?",
+        "priority?"
+      ],
+      "ref": ["id", "kind", "startRef", "endRef", "fallback"],
+      "resolver": ["id", "kind", "resolver"],
+      "boundary": ["id", "kind", "startMinute", "endMinute"]
+    },
+    "location": ["name", "latitude", "longitude"],
+    "user": [
+      "id",
+      "displayName",
+      "countryCode",
+      "timezone",
+      "location",
+      "subjectType",
+      "species?",
+      "relationType",
+      "rules"
+    ]
+  },
+  "enums": {
+    "subjectType": ["Human", "Animal"],
+    "relationType": ["Me", "Partner", "Acquaintance", "Friend"],
+    "dayOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "dayType": ["Workday", "Offday", "Halfday"]
+  },
+  "layers": {
+    "derivedPatches": [
+      {
+        "name": "Holiday",
+        "appliesTo": ["day"],
+        "mergeStrategy": "annotate"
+      }
+    ]
+  },
+  "ruleDefinitions": [
+    {
+      "id": "time.day.n",
+      "kind": "ref",
+      "startRef": "ruleByCategory:awake:{n}.startMinute",
+      "endRef": "ruleByCategory:awake:{n}.endMinute",
+      "fallback": "rule:rule-awake-default"
+    },
+    {
+      "id": "time.night.n",
+      "kind": "ref",
+      "startRef": "ruleByCategory:awake:{n}.endMinute",
+      "endRef": "ruleByCategory:awake:{n+1}.startMinute",
+      "fallback": "rule:rule-awake-default"
+    },
+    {
+      "id": "local.time",
+      "kind": "resolver",
+      "resolver": "UTC + Timezone"
+    },
+    {
+      "id": "local.day",
+      "kind": "boundary",
+      "startMinute": 0,
+      "endMinute": 1440
+    }
+  ]
+}

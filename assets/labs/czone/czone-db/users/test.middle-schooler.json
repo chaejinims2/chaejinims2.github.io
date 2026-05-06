@@ -1,0 +1,211 @@
+{
+  "id": "9b1f0c24-7a8e-4db2-8f55-2df5c6f9a101",
+  "displayName": "TestMiddleSchooler",
+  "countryCode": "KR",
+  "timezone": "Asia/Seoul",
+  "location": {
+    "name": "Suwon",
+    "latitude": 37.2636,
+    "longitude": 127.0286
+  },
+  "subjectType": "Human",
+  "relationType": "Acquaintance",
+  "holidayDayBehavior": {
+    "holidayAwakeStartMinute": 600,
+    "suppressedWindowCategories": ["school"]
+  },
+  "rules": [
+    {
+      "id": "rule-awake-default",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 420,
+      "endMinute": 1380,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "priority": 0
+    },
+    {
+      "id": "rule-awake-fri",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 420,
+      "endMinute": 1440,
+      "daysOfWeek": ["Fri"],
+      "priority": 10
+    },
+    {
+      "id": "rule-awake-sat",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 600,
+      "endMinute": 1440,
+      "daysOfWeek": ["Sat"],
+      "priority": 10
+    },
+    {
+      "id": "rule-awake-sun",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 600,
+      "endMinute": 1380,
+      "daysOfWeek": ["Sun"],
+      "priority": 10
+    },
+    {
+      "id": "rule-school-default",
+      "kind": "window",
+      "label": "School",
+      "category": "school",
+      "startMinute": 540,
+      "endMinute": 835,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "priority": 0
+    },
+    {
+      "id": "rule-school-lunch",
+      "kind": "anchorDuration",
+      "label": "School Lunch",
+      "category": "school",
+      "startMinute": 750,
+      "durationMinute": 45
+    },
+    {
+      "id": "rule-school-class",
+      "kind": "duration",
+      "label": "Class Duration",
+      "category": "school",
+      "durationMinute": 45
+    },
+    {
+      "id": "rule-school-break",
+      "kind": "duration",
+      "label": "Break Duration",
+      "category": "school",
+      "durationMinute": 10
+    },
+    {
+      "id": "rule-school-commute-going",
+      "kind": "commute",
+      "label": "Commute to School",
+      "category": "commute",
+      "direction": "going",
+      "targetRuleId": "rule-school-default",
+      "durationMinute": 20
+    },
+    {
+      "id": "rule-school-commute-coming",
+      "kind": "commute",
+      "label": "Commute from School",
+      "category": "commute",
+      "direction": "coming",
+      "targetRuleId": "rule-school-default",
+      "durationMinute": 30
+    },
+    {
+      "id": "rule-academy-math-default",
+      "kind": "window",
+      "label": "Math Academy",
+      "category": "academy",
+      "startMinute": 1020,
+      "endMinute": 1080,
+      "daysOfWeek": ["Mon", "Wed"],
+      "priority": 0
+    },
+    {
+      "id": "rule-academy-math-commute-going",
+      "kind": "commute",
+      "label": "Commute to Math Academy",
+      "category": "commute",
+      "direction": "going",
+      "targetRuleId": "rule-academy-math-default",
+      "durationMinute": 20
+    },
+    {
+      "id": "rule-academy-math-commute-coming",
+      "kind": "commute",
+      "label": "Commute from Math Academy",
+      "category": "commute",
+      "direction": "coming",
+      "targetRuleId": "rule-academy-math-default",
+      "durationMinute": 20
+    },
+    {
+      "id": "rule-academy-english-default",
+      "kind": "window",
+      "label": "English Academy",
+      "category": "academy",
+      "startMinute": 1080,
+      "endMinute": 1140,
+      "daysOfWeek": ["Wed"],
+      "priority": 0
+    },
+    {
+      "id": "rule-academy-english-commute-going",
+      "kind": "commute",
+      "label": "Commute to English Academy",
+      "category": "commute",
+      "direction": "going",
+      "targetRuleId": "rule-academy-english-default",
+      "durationMinute": 0
+    },
+    {
+      "id": "rule-academy-english-commute-coming",
+      "kind": "commute",
+      "label": "Commute from English Academy",
+      "category": "commute",
+      "direction": "coming",
+      "targetRuleId": "rule-academy-english-default",
+      "durationMinute": 20
+    },
+    {
+      "id": "rule-academy-science-default",
+      "kind": "window",
+      "label": "Science Academy",
+      "category": "academy",
+      "startMinute": 1200,
+      "endMinute": 1260,
+      "daysOfWeek": ["Wed", "Fri"],
+      "priority": 0
+    },
+    {
+      "id": "rule-academy-science-commute-going",
+      "kind": "commute",
+      "label": "Commute to Science Academy",
+      "category": "commute",
+      "direction": "going",
+      "targetRuleId": "rule-academy-science-default",
+      "durationMinute": 30
+    },
+    {
+      "id": "rule-academy-science-commute-coming",
+      "kind": "commute",
+      "label": "Commute from Science Academy",
+      "category": "commute",
+      "direction": "coming",
+      "targetRuleId": "rule-academy-science-default",
+      "durationMinute": 10
+    },
+    {
+      "id": "transition-math-to-english",
+      "kind": "transition",
+      "label": "Math Academy → English Academy",
+      "category": "transition",
+      "fromRuleId": "rule-academy-math-default",
+      "toRuleId": "rule-academy-english-default",
+      "durationMinute": 5
+    },
+    {
+      "id": "transition-english-to-science",
+      "kind": "transition",
+      "label": "English Academy → Science Academy",
+      "category": "transition",
+      "fromRuleId": "rule-academy-english-default",
+      "toRuleId": "rule-academy-science-default",
+      "durationMinute": 7
+    }
+  ]
+}

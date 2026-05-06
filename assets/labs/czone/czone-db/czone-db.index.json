@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "2.0.1",
+  "meta": "./schema/meta.json",
+  "global": "./schema/global.json",
+  "users": [
+    "./users/jinjin.json",
+    "./users/hyunjin.json",
+    "./users/vovo.json",
+    "./users/test.middle-schooler.json",
+    "./users/selma.json",
+    "./users/sally.json"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "c0fa41c7-bca8-4a87-9906-c0f256e3b338",
+  "displayName": "Vovo",
+  "countryCode": "SE",
+  "timezone": "Europe/Stockholm",
+  "location": {
+    "name": "Stockholm",
+    "latitude": 59.3293,
+    "longitude": 18.0686
+  },
+  "subjectType": "Human",
+  "relationType": "Partner",
+  "rules": [
+    {
+      "id": "rule-awake-default",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 690,
+      "endMinute": 1560,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "priority": 0
+    },
+    {
+      "id": "rule-awake-fri",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 690,
+      "endMinute": 1620,
+      "daysOfWeek": ["Fri"],
+      "priority": 10
+    },
+    {
+      "id": "rule-awake-sat",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 780,
+      "endMinute": 1620,
+      "daysOfWeek": ["Sat"],
+      "priority": 10
+    },
+    {
+      "id": "rule-awake-sun",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 780,
+      "endMinute": 1440,
+      "daysOfWeek": ["Sun"],
+      "priority": 10
+    },
+    {
+      "id": "rule-work-default",
+      "kind": "window",
+      "label": "Work",
+      "category": "work",
+      "startMinute": 780,
+      "endMinute": 1140,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "priority": 0
+    },
+    {
+      "id": "rule-work-break",
+      "kind": "anchorDuration",
+      "label": "Work Break",
+      "category": "work",
+      "startMinute": 840,
+      "durationMinute": 90
+    },
+    {
+      "id": "rule-work-commute-going",
+      "kind": "commute",
+      "label": "Commute to Work",
+      "category": "commute",
+      "direction": "going",
+      "targetRuleId": "rule-work-default",
+      "durationMinute": 0
+    },
+    {
+      "id": "rule-work-commute-coming",
+      "kind": "commute",
+      "label": "Commute from Work",
+      "category": "commute",
+      "direction": "coming",
+      "targetRuleId": "rule-work-default",
+      "durationMinute": 0
+    }
+  ]
+}

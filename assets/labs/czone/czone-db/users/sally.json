@@ -1,0 +1,46 @@
+{
+  "id": "be87d58a-ac3c-4b77-a5d1-8e568af3bcca",
+  "displayName": "Sally",
+  "countryCode": "SE",
+  "timezone": "Europe/Stockholm",
+  "location": {
+    "name": "Svärtinge",
+    "latitude": 58.65507,
+    "longitude": 16.02823
+  },
+  "subjectType": "Animal",
+  "species": "Dog",
+  "relationType": "Friend",
+  "rules": [
+    {
+      "id": "rule-awake-default",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 420,
+      "endMinute": 1380,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "priority": 0
+    },
+    {
+      "id": "rule-eat-default",
+      "kind": "window",
+      "label": "Main Schedule",
+      "category": "eat",
+      "startMinute": 540,
+      "endMinute": 1020,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "priority": 0
+    },
+    {
+      "id": "rule-walk-default",
+      "kind": "window",
+      "label": "Walk",
+      "category": "walk",
+      "startMinute": 1020,
+      "endMinute": 1140,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "priority": 0
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "2e6d3b51-9d8c-4f3a-a1c9-6b0b3f4f6f1e",
+  "displayName": "Selma (Mifflan)",
+  "countryCode": "SE",
+  "timezone": "Europe/Stockholm",
+  "location": {
+    "name": "Svärtinge",
+    "latitude": 58.65507,
+    "longitude": 16.02823
+  },
+  "subjectType": "Animal",
+  "species": "Cat",
+  "relationType": "Friend",
+  "rules": [
+    {
+      "id": "rule-awake-default",
+      "kind": "window",
+      "label": "Awake",
+      "category": "awake",
+      "startMinute": 420,
+      "endMinute": 1380,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "priority": 0
+    },
+    {
+      "id": "rule-main-default",
+      "kind": "window",
+      "label": "Main Schedule",
+      "category": "eat",
+      "startMinute": 540,
+      "endMinute": 1020,
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "priority": 0
+    }
+  ]
+}
