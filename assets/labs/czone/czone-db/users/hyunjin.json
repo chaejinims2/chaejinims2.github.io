@@ -9,7 +9,7 @@
     "longitude": 126.978
   },
   "subjectType": "Human",
-  "relationType": "Partner",
+  "relationType": "Friend",
   "holidayDayBehavior": {
     "holidayAwakeStartMinute": 600,
     "suppressedWindowCategories": ["work"]
@@ -20,28 +20,18 @@
       "kind": "window",
       "label": "Awake",
       "category": "awake",
-      "startMinute": 480,
-      "endMinute": 1380,
-      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-      "priority": 0
-    },
-    {
-      "id": "rule-awake-fri",
-      "kind": "window",
-      "label": "Awake",
-      "category": "awake",
-      "startMinute": 480,
+      "startMinute": 500,
       "endMinute": 1440,
-      "daysOfWeek": ["Fri"],
-      "priority": 10
+      "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      "priority": 0
     },
     {
       "id": "rule-awake-sat",
       "kind": "window",
       "label": "Awake",
       "category": "awake",
-      "startMinute": 660,
-      "endMinute": 1440,
+      "startMinute": 720,
+      "endMinute": 1500,
       "daysOfWeek": ["Sat"],
       "priority": 10
     },
@@ -50,8 +40,8 @@
       "kind": "window",
       "label": "Awake",
       "category": "awake",
-      "startMinute": 660,
-      "endMinute": 1380,
+      "startMinute": 720,
+      "endMinute": 1500,
       "daysOfWeek": ["Sun"],
       "priority": 10
     },
@@ -60,8 +50,8 @@
       "kind": "window",
       "label": "Work",
       "category": "work",
-      "startMinute": 540,
-      "endMinute": 960,
+      "startMinute": 600,
+      "endMinute": 1110,
       "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri"],
       "priority": 0
     },
@@ -71,7 +61,7 @@
       "label": "Work Break",
       "category": "work",
       "startMinute": 690,
-      "durationMinute": 90
+      "durationMinute": 120
     },
     {
       "id": "rule-work-parttime",
@@ -94,7 +84,7 @@
       "category": "commute",
       "direction": "going",
       "targetRuleId": "rule-work-default",
-      "durationMinute": 30
+      "durationMinute": 60
     },
     {
       "id": "rule-work-commute-coming",
