@@ -3,48 +3,136 @@
     <header class="app-bar">
       <h1 class="site-title">Color Lab</h1>
       <div class="hex-controls">
-        <label class="visually-hidden" for="hex-input">HEX color</label>
+        <label class="visually-hidden" for="color-value-input">Color value</label>
         <input
           type="text"
-          id="hex-input"
-          class="hex-input"
-          placeholder="#RRGGBB"
+          id="color-value-input"
+          class="color-input"
+          placeholder="3B5BDB"
           spellcheck="false"
           autocomplete="off"
-          maxlength="7"
-        />
-        <input
-          type="color"
-          id="color-picker"
-          class="color-picker"
-          aria-label="Pick color"
         />
       </div>
-      <div class="recent-wrap">
-        <span class="micro-label">Recent</span>
-        <ul class="recent-list" id="recent-list"></ul>
+      <div class="color-type-segment" role="radiogroup" aria-label="Color value type">
+        <button
+          type="button"
+          class="segment-option is-selected"
+          data-color-type="hex"
+          role="radio"
+          aria-checked="true"
+        >
+          HEX
+        </button>
+        <button
+          type="button"
+          class="segment-option"
+          data-color-type="rgb"
+          role="radio"
+          aria-checked="false"
+        >
+          RGB
+        </button>
+        <button
+          type="button"
+          class="segment-option"
+          data-color-type="hsl"
+          role="radio"
+          aria-checked="false"
+        >
+          HSL
+        </button>
+        <button
+          type="button"
+          class="segment-option"
+          data-color-type="hsv"
+          role="radio"
+          aria-checked="false"
+        >
+          HSV
+        </button>
       </div>
-      <a class="app-link" href="https://chaejinims2.github.io/">chaejinims2.github.io</a>
     </header>
 
     <p id="hex-error" class="error-message" role="alert" hidden></p>
 
     <main class="dashboard">
-      <div class="preview-panel" aria-label="Color preview">
-        <div id="preview-card" class="preview-card">
-          <span id="preview-label" class="preview-label">#000000</span>
+      <section class="picker-panel" aria-label="Color picker">
+        <div class="picker-stack">
+          <div class="sv-picker-row">
+            <div class="sv-wrap">
+              <canvas
+                id="color-sv"
+                class="color-sv"
+                width="200"
+                height="200"
+                aria-label="Saturation and brightness"
+                role="img"
+              ></canvas>
+              <div id="sv-cursor" class="picker-cursor" hidden aria-hidden="true"></div>
+            </div>
+            <div class="hue-wrap">
+              <canvas
+                id="color-hue"
+                class="color-hue"
+                width="22"
+                height="200"
+                aria-label="Hue"
+                role="img"
+              ></canvas>
+              <div id="hue-cursor" class="hue-cursor" hidden aria-hidden="true"></div>
+            </div>
+          </div>
+          <button
+            type="button"
+            id="eyedropper-btn"
+            class="eyedropper-btn"
+            hidden
+            aria-label="스포이드"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="eyedropper-icon"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m15 11.25 1.5 1.5.75-.75V8.758l2.276-.61a3 3 0 1 0-3.675-3.675l-.61 2.277H12l-.75.75 1.5 1.5M15 11.25l-8.47 8.47c-.34.34-.8.53-1.28.53s-.94.19-1.28.53l-.97.97-.75-.75.97-.97c.34-.34.53-.8.53-1.28s.19-.94.53-1.28L12.75 9M15 11.25 12.75 9"
+              />
+            </svg>
+          </button>
         </div>
-      </div>
+      </section>
 
       <div class="side-panel">
-        <section class="values-section" aria-labelledby="values-heading">
-          <h2 id="values-heading" class="micro-label">Values</h2>
-          <ul class="value-list" id="value-list"></ul>
-        </section>
+        
+        <h2 id="values-heading" class="micro-label">Values</h2>
+        <div class="preview-values-row">
+          <div id="preview-card" class="preview-card" aria-label="Current color">
+            <span id="preview-label" class="preview-label">#3B5BDB</span>
+          </div>
 
-        <section class="palettes-section" aria-labelledby="palettes-heading">
-          <h2 id="palettes-heading" class="micro-label">Palettes</h2>
-          <div id="palettes-root" class="palettes"></div>
+          <section class="values-section" aria-labelledby="values-heading">
+            <ul class="value-list" id="value-list"></ul>
+          </section>
+        </div>
+
+        <section class="palette-section" aria-labelledby="palette-heading">
+          <h2 id="palette-heading" class="micro-label">
+            Palette
+          </h2>
+          <div id="palette-grid" class="palette-grid"></div>
+
+          <div
+            id="palette-set-picker"
+            class="palette-set-segment"
+            role="tablist"
+            aria-labelledby="palette-sets-heading"
+          ></div>
         </section>
       </div>
     </main>
