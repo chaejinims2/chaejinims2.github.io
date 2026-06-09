@@ -2,8 +2,10 @@
 
 const STORAGE_KEY = "colorLabPaletteSets";
 const LEGACY_STORAGE_KEY = "colorLabPalette";
-const PALETTE_SLOTS = 10;
+const PALETTE_SLOTS = 20;
 const MAX_PALETTE_SETS = 8;
+const MAX_COLOR_NAME_LEN = 48;
+const MAX_COLOR_MEMO_LEN = 200;
 const PICKER_MIN = 88;
 const PICKER_MAX = 300;
 const HUE_STRIP_WIDTH = 22;
@@ -320,24 +322,85 @@ function emptyPaletteSlots() {
   return Array(PALETTE_SLOTS).fill(null);
 }
 
+function normalizeColorName(name) {
+  if (name == null || typeof name !== "string") return "";
+  return name.trim().slice(0, MAX_COLOR_NAME_LEN);
+}
+
+function normalizeColorMemo(memo) {
+  if (memo == null || typeof memo !== "string") return "";
+  return memo.trim().slice(0, MAX_COLOR_MEMO_LEN);
+}
+
+function normalizePaletteSlot(entry) {
+  if (entry == null || entry === "") return null;
+  if (typeof entry === "string") {
+    return isValidHex(entry)
+      ? { hex: normalizeHex(entry), name: "", memo: "" }
+      : null;
+  }
+  if (typeof entry === "object" && entry.hex) {
+    const hex = isValidHex(entry.hex) ? normalizeHex(entry.hex) : null;
+    if (!hex) return null;
+    return {
+      hex,
+      name: normalizeColorName(entry.name),
+      memo: normalizeColorMemo(entry.memo),
+    };
+  }
+  return null;
+}
+
+function paletteSlotToStoredJson(slot) {
+  const item = { hex: slot.hex };
+  if (slot.name) item.name = slot.name;
+  if (slot.memo) item.memo = slot.memo;
+  return item;
+}
+
+function slotHex(entry) {
+  const slot = normalizePaletteSlot(entry);
+  return slot ? slot.hex : null;
+}
+
+function slotName(entry) {
+  const slot = normalizePaletteSlot(entry);
+  return slot ? slot.name : "";
+}
+
+function slotMemo(entry) {
+  const slot = normalizePaletteSlot(entry);
+  return slot ? slot.memo : "";
+}
+
 function normalizeSlotArray(parsed) {
   if (!Array.isArray(parsed)) return emptyPaletteSlots();
 
   if (parsed.length === PALETTE_SLOTS) {
-    return parsed.map((c) => {
-      if (c == null || c === "") return null;
-      return isValidHex(c) ? normalizeHex(c) : null;
-    });
+    return parsed.map((entry) => normalizePaletteSlot(entry));
   }
 
   const slots = emptyPaletteSlots();
-  parsed
-    .filter((c) => typeof c === "string" && isValidHex(c))
-    .slice(0, PALETTE_SLOTS)
-    .forEach((c, i) => {
-      slots[i] = normalizeHex(c);
-    });
+  parsed.slice(0, PALETTE_SLOTS).forEach((entry, i) => {
+    slots[i] = normalizePaletteSlot(entry);
+  });
   return slots;
+}
+
+/** Preserves open order (first opened below active, last opened at bottom). */
+function normalizePinnedArray(pinned, setCount, active) {
+  if (!Array.isArray(pinned)) return [];
+  const out = [];
+  const seen = new Set();
+  for (const raw of pinned) {
+    const i = Number(raw);
+    if (!Number.isInteger(i) || i < 0 || i >= setCount || i === active || seen.has(i)) {
+      continue;
+    }
+    seen.add(i);
+    out.push(i);
+  }
+  return out;
 }
 
 function normalizeSwatchArray(swatches, setCount) {
@@ -351,22 +414,28 @@ function normalizeSwatchArray(swatches, setCount) {
   return out.slice(0, setCount);
 }
 
+function paletteStoreFromParsed(parsed) {
+  if (!parsed || !Array.isArray(parsed.sets) || parsed.sets.length === 0) {
+    return null;
+  }
+  const sets = parsed.sets
+    .slice(0, MAX_PALETTE_SETS)
+    .map((set) => normalizeSlotArray(set));
+  const active = Math.min(
+    Math.max(0, Number(parsed.active) || 0),
+    sets.length - 1
+  );
+  const swatches = normalizeSwatchArray(parsed.swatches, sets.length);
+  const pinned = normalizePinnedArray(parsed.pinned, sets.length, active);
+  return { active, sets, swatches, pinned };
+}
+
 function loadPaletteStore() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
-      const parsed = JSON.parse(raw);
-      if (parsed && Array.isArray(parsed.sets) && parsed.sets.length > 0) {
-        const sets = parsed.sets
-          .slice(0, MAX_PALETTE_SETS)
-          .map((set) => normalizeSlotArray(set));
-        const active = Math.min(
-          Math.max(0, Number(parsed.active) || 0),
-          sets.length - 1
-        );
-        const swatches = normalizeSwatchArray(parsed.swatches, sets.length);
-        return { active, sets, swatches };
-      }
+      const store = paletteStoreFromParsed(JSON.parse(raw));
+      if (store) return store;
     }
 
     const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY);
@@ -376,39 +445,86 @@ function loadPaletteStore() {
         active: 0,
         sets: [normalizeSlotArray(legacy)],
         swatches: [null],
+        pinned: [],
       };
     }
   } catch {
     /* fall through */
   }
-  return { active: 0, sets: [emptyPaletteSlots()], swatches: [null] };
+  return { active: 0, sets: [emptyPaletteSlots()], swatches: [null], pinned: [] };
+}
+
+function resolveColorLabAsset(rel) {
+  const el = document.querySelector("script[data-color-lab-bundle]");
+  try {
+    const base = el?.src
+      ? new URL(".", el.src).href
+      : window.location.href;
+    return new URL(rel, base).href;
+  } catch {
+    return rel;
+  }
+}
+
+async function ensureDefaultPaletteOnFirstVisit() {
+  if (localStorage.getItem(STORAGE_KEY)) return;
+  if (localStorage.getItem(LEGACY_STORAGE_KEY)) return;
+
+  let store = null;
+  try {
+    const res = await fetch(resolveColorLabAsset("default-palette.json"), {
+      cache: "no-cache",
+    });
+    if (res.ok) {
+      store = paletteStoreFromParsed(await res.json());
+    }
+  } catch {
+    /* use inline fallback */
+  }
+
+  if (!store) {
+    try {
+      store = paletteStoreFromParsed(
+        JSON.parse(
+          '{"active":0,"swatches":["#3B5BDB"],"sets":[[{"hex":"#3B5BDB","name":"Indigo"},{"hex":"#E03131","name":"Red"},{"hex":"#2F9E44","name":"Green"}]]}'
+        )
+      );
+    } catch {
+      return;
+    }
+  }
+
+  if (store) savePaletteStore(store);
 }
 
 function savePaletteStore(store) {
   const sets = store.sets.map((slots) =>
-    slots.map((c) => (c && isValidHex(c) ? normalizeHex(c) : null))
+    slots.map((entry) => {
+      const slot = normalizePaletteSlot(entry);
+      if (!slot) return null;
+      return paletteSlotToStoredJson(slot);
+    })
   );
   const active = Math.min(
     Math.max(0, store.active),
     Math.max(0, sets.length - 1)
   );
   const swatches = normalizeSwatchArray(store.swatches, sets.length);
+  const pinned = normalizePinnedArray(store.pinned, sets.length, active);
   localStorage.setItem(
     STORAGE_KEY,
-    JSON.stringify({ active, sets, swatches })
+    JSON.stringify({ active, sets, swatches, pinned })
   );
 }
 
 function loadPalette() {
   const store = loadPaletteStore();
-  return store.sets[store.active].map((c) => c);
+  return store.sets[store.active].map((entry) => normalizePaletteSlot(entry));
 }
 
 function savePalette(slots) {
   const store = loadPaletteStore();
-  store.sets[store.active] = slots.map((c) =>
-    c && isValidHex(c) ? normalizeHex(c) : null
-  );
+  store.sets[store.active] = slots.map((entry) => normalizePaletteSlot(entry));
   savePaletteStore(store);
 }
 
@@ -416,9 +532,25 @@ function switchPaletteSet(index) {
   const store = loadPaletteStore();
   if (index < 0 || index >= store.sets.length) return;
   store.active = index;
+  store.pinned = normalizePinnedArray(store.pinned, store.sets.length, index);
   savePaletteStore(store);
   renderPaletteSetPicker();
-  renderPaletteGrid();
+  renderPaletteGrids();
+}
+
+function togglePinnedPaletteSet(index) {
+  const store = loadPaletteStore();
+  if (index < 0 || index >= store.sets.length || index === store.active) return;
+  let pinned = normalizePinnedArray(store.pinned, store.sets.length, store.active);
+  if (pinned.includes(index)) {
+    pinned = pinned.filter((i) => i !== index);
+  } else {
+    pinned = [...pinned, index];
+  }
+  store.pinned = pinned;
+  savePaletteStore(store);
+  renderPaletteSetPicker();
+  renderPaletteGrids();
 }
 
 function addPaletteSet() {
@@ -429,54 +561,202 @@ function addPaletteSet() {
   store.active = store.sets.length - 1;
   savePaletteStore(store);
   renderPaletteSetPicker();
-  renderPaletteGrid();
+  renderPaletteGrids();
 }
 
-/** Right-click on palette slot: set list swatch for the active palette set. */
-function setActivePaletteSetSwatch(hex) {
+/** Right-click on palette slot: set tab swatch for that palette set. */
+function setPaletteSetSwatch(setIndex, hex) {
   const normalized = normalizeHex(hex);
   if (!normalized) return;
   const store = loadPaletteStore();
+  if (setIndex < 0 || setIndex >= store.sets.length) return;
   store.swatches = normalizeSwatchArray(store.swatches, store.sets.length);
-  store.swatches[store.active] = normalized;
+  store.swatches[setIndex] = normalized;
   savePaletteStore(store);
   renderPaletteSetPicker();
 }
 
-function onPaletteSlotContextMenu(e, hex) {
+function onPaletteSlotContextMenu(e, hex, setIndex) {
   e.preventDefault();
-  setActivePaletteSetSwatch(hex);
+  setPaletteSetSwatch(setIndex, hex);
 }
 
-function setPaletteSlot(index, hex) {
+function formatPaletteSetExportLine(set, isLastSet) {
+  const suffix = isLastSet ? "" : ",";
+  const slotJson = (entry) =>
+    entry === null ? "null" : JSON.stringify(entry);
+
+  if (set.every((s) => s === null)) {
+    return `    [ ${set.map(() => "null").join(", ")} ]${suffix}`;
+  }
+
+  let lastNonNull = -1;
+  for (let j = set.length - 1; j >= 0; j--) {
+    if (set[j] !== null) {
+      lastNonNull = j;
+      break;
+    }
+  }
+
+  const head = set.slice(0, lastNonNull + 1).map(slotJson);
+  const tailNulls = set.slice(lastNonNull + 1);
+
+  if (head.length === 1 && tailNulls.length === 0) {
+    return `    [ ${head[0]} ]${suffix}`;
+  }
+
+  const out = [`    [ ${head[0]},`];
+  for (let j = 1; j < head.length; j++) {
+    const needsComma = j < head.length - 1 || tailNulls.length > 0;
+    out.push(`      ${head[j]}${needsComma ? "," : ""}`);
+  }
+  if (tailNulls.length > 0) {
+    out.push(`      ${tailNulls.map(() => "null").join(", ")} `);
+  }
+  out.push(`    ]${suffix}`);
+  return out.join("\n");
+}
+
+function formatPaletteExportJson(payload) {
+  const lines = [
+    "{",
+    `  "active": ${payload.active},`,
+    `  "pinned": ${JSON.stringify(payload.pinned)},`,
+    `  "swatches": ${JSON.stringify(payload.swatches)},`,
+    '  "sets": [',
+  ];
+  payload.sets.forEach((set, idx) => {
+    lines.push(
+      formatPaletteSetExportLine(set, idx === payload.sets.length - 1)
+    );
+  });
+  lines.push("  ]");
+  lines.push("}");
+  return lines.join("\n");
+}
+
+function paletteStoreToExportJson() {
+  const store = loadPaletteStore();
+  const payload = {
+    active: store.active,
+    pinned: store.pinned,
+    swatches: store.swatches,
+    sets: store.sets.map((slots) =>
+      slots.map((entry) => {
+        const slot = normalizePaletteSlot(entry);
+        if (!slot) return null;
+        return paletteSlotToStoredJson(slot);
+      })
+    ),
+  };
+  return formatPaletteExportJson(payload);
+}
+
+function exportPaletteJsonToClipboard() {
+  copyText(paletteStoreToExportJson(), exportPaletteJsonBtn);
+}
+
+function loadSlotsForSet(setIndex) {
+  const store = loadPaletteStore();
+  if (setIndex < 0 || setIndex >= store.sets.length) return emptyPaletteSlots();
+  return store.sets[setIndex].map((entry) => normalizePaletteSlot(entry));
+}
+
+function saveSlotsForSet(setIndex, slots) {
+  const store = loadPaletteStore();
+  if (setIndex < 0 || setIndex >= store.sets.length) return;
+  store.sets[setIndex] = slots.map((entry) => normalizePaletteSlot(entry));
+  savePaletteStore(store);
+}
+
+function setPaletteSlot(index, hex, name, setIndex) {
   const normalized = normalizeHex(hex);
   if (!normalized || index < 0 || index >= PALETTE_SLOTS) return;
-  const slots = loadPalette();
-  slots[index] = normalized;
-  savePalette(slots);
-  renderPaletteGrid();
+  const si =
+    setIndex !== undefined ? setIndex : loadPaletteStore().active;
+  const slots = loadSlotsForSet(si);
+  const nextName =
+    name !== undefined
+      ? normalizeColorName(name)
+      : normalizeColorName(colorNameInput?.value ?? "");
+  const nextMemo = normalizeColorMemo(colorMemoInput?.value ?? "");
+  slots[index] = { hex: normalized, name: nextName, memo: nextMemo };
+  saveSlotsForSet(si, slots);
+  if (si === loadPaletteStore().active) {
+    lastEditedPaletteSlotIndex = index;
+  }
+  renderPaletteGrids();
 }
 
-function clearPaletteSlot(index) {
+function updatePaletteSlotName(index, name, setIndex) {
   if (index < 0 || index >= PALETTE_SLOTS) return;
-  const slots = loadPalette();
+  const si =
+    setIndex !== undefined ? setIndex : loadPaletteStore().active;
+  const slots = loadSlotsForSet(si);
+  const hex = slotHex(slots[index]);
+  if (!hex) return;
+  slots[index] = {
+    hex,
+    name: normalizeColorName(name),
+    memo: slotMemo(slots[index]),
+  };
+  saveSlotsForSet(si, slots);
+  renderPaletteGrids();
+}
+
+function clearPaletteSlot(index, setIndex) {
+  if (index < 0 || index >= PALETTE_SLOTS) return;
+  const si =
+    setIndex !== undefined ? setIndex : loadPaletteStore().active;
+  const slots = loadSlotsForSet(si);
   slots[index] = null;
-  savePalette(slots);
-  renderPaletteGrid();
+  saveSlotsForSet(si, slots);
+  if (
+    si === loadPaletteStore().active &&
+    lastEditedPaletteSlotIndex === index
+  ) {
+    lastEditedPaletteSlotIndex = -1;
+  }
+  renderPaletteGrids();
+}
+
+function fillColorMetaInputs(name, memo) {
+  if (colorNameInput) colorNameInput.value = name;
+  if (colorMemoInput) colorMemoInput.value = memo;
+}
+
+function selectPaletteSlot(index, hex, name, memo, setIndex) {
+  const store = loadPaletteStore();
+  const si = setIndex !== undefined ? setIndex : store.active;
+  if (si === store.active) {
+    lastEditedPaletteSlotIndex = index;
+    applyColorFromHex(hex, { syncPicker: true, preserveColorMeta: true });
+    fillColorMetaInputs(name, memo);
+    return;
+  }
+  applyColorFromHex(hex, { syncPicker: true, preserveColorMeta: true });
+  fillColorMetaInputs(name, memo);
 }
 
 // --- DOM ---
 
 const colorValueInput = document.getElementById("color-value-input");
+const colorNameInput = document.getElementById("color-name-input");
+const colorMemoInput = document.getElementById("color-memo-input");
+let lastEditedPaletteSlotIndex = -1;
 const hexError = document.getElementById("hex-error");
 const colorTypeSegment = document.querySelector(".color-type-segment");
 const previewCard = document.getElementById("preview-card");
 const previewLabel = document.getElementById("preview-label");
 const valueList = document.getElementById("value-list");
-const paletteGrid = document.getElementById("palette-grid");
+const valueHexSummary = document.getElementById("value-hex-summary");
+const valueHexSummaryText = document.getElementById("value-hex-summary-text");
+const valuesListToggle = document.getElementById("values-list-toggle");
+const paletteGrids = document.getElementById("palette-grids");
 const paletteSetPicker = document.getElementById("palette-set-picker");
+const dashboard = document.querySelector(".dashboard");
+const pickerColumn = document.querySelector(".picker-column");
 const pickerPanel = document.querySelector(".picker-panel");
-const pickerStack = document.querySelector(".picker-stack");
 const svPickerRow = document.querySelector(".sv-picker-row");
 const svWrap = document.querySelector(".sv-wrap");
 const hueWrap = document.querySelector(".hue-wrap");
@@ -485,6 +765,8 @@ const hueCanvas = document.getElementById("color-hue");
 const svCursor = document.getElementById("sv-cursor");
 const hueCursor = document.getElementById("hue-cursor");
 const eyedropperBtn = document.getElementById("eyedropper-btn");
+const exportPaletteJsonBtn = document.getElementById("export-palette-json-btn");
+const othersSection = document.getElementById("others-section");
 
 const pickerState = { h: 225, s: 72, v: 86 };
 let syncingPicker = false;
@@ -529,6 +811,20 @@ async function copyText(text, button) {
 
 // --- SV + Hue picker (Office-style) ---
 
+function pickerColumnWidthPx() {
+  if (!dashboard) return 0;
+  const rect = dashboard.getBoundingClientRect();
+  const style = getComputedStyle(dashboard);
+  const gap = parseFloat(style.columnGap) || 0;
+  if (window.matchMedia("(max-width: 640px)").matches) {
+    return rect.width;
+  }
+  if (pickerColumn && pickerColumn.clientWidth > 0) {
+    return pickerColumn.clientWidth;
+  }
+  return (rect.width - gap) * 0.5;
+}
+
 function layoutPicker() {
   if (!pickerPanel || !svWrap || !svCanvas || !hueCanvas) return;
 
@@ -537,41 +833,46 @@ function layoutPicker() {
     parseFloat(panelStyle.paddingLeft) + parseFloat(panelStyle.paddingRight);
   const padY =
     parseFloat(panelStyle.paddingTop) + parseFloat(panelStyle.paddingBottom);
-  const stackGap = pickerStack
-    ? parseFloat(getComputedStyle(pickerStack).gap) || 0
-    : 0;
   const rowGap = svPickerRow
     ? parseFloat(getComputedStyle(svPickerRow).gap) || 0
     : 0;
-  const extraH =
-    (eyedropperBtn && !eyedropperBtn.hidden ? eyedropperBtn.offsetHeight : 0) +
-    (eyedropperBtn && !eyedropperBtn.hidden ? stackGap : 0);
 
-  const availW = Math.max(0, pickerPanel.clientWidth - padX);
-  const availH = Math.max(0, pickerPanel.clientHeight - padY - extraH);
+  const colW = pickerColumnWidthPx() || pickerPanel.clientWidth;
+  const colH = dashboard ? dashboard.clientHeight : pickerPanel.clientHeight;
+  const availW = Math.max(0, colW - padX);
+  const availH = Math.max(0, colH - padY);
 
   const rowMaxW = availW - HUE_STRIP_WIDTH - rowGap;
   let next = Math.floor(Math.min(rowMaxW, availH, PICKER_MAX));
-  next = Math.max(PICKER_MIN, next);
+  if (rowMaxW >= PICKER_MIN && availH >= PICKER_MIN) {
+    next = Math.max(PICKER_MIN, next);
+  } else {
+    next = Math.max(1, Math.min(next, rowMaxW, availH));
+  }
 
   if (next !== pickerSize) {
     pickerSize = next;
     svCanvas.width = pickerSize;
     svCanvas.height = pickerSize;
-    svCanvas.style.width = `${pickerSize}px`;
-    svCanvas.style.height = `${pickerSize}px`;
     hueCanvas.width = HUE_STRIP_WIDTH;
     hueCanvas.height = pickerSize;
-    hueCanvas.style.width = `${HUE_STRIP_WIDTH}px`;
-    hueCanvas.style.height = `${pickerSize}px`;
-    svWrap.style.width = `${pickerSize}px`;
-    svWrap.style.height = `${pickerSize}px`;
-    if (hueWrap) {
-      hueWrap.style.height = `${pickerSize}px`;
-    }
-    if (svPickerRow) {
-      svPickerRow.style.width = `${pickerSize + HUE_STRIP_WIDTH + rowGap}px`;
-    }
+  }
+
+  svCanvas.style.width = `${pickerSize}px`;
+  svCanvas.style.height = `${pickerSize}px`;
+  hueCanvas.style.width = `${HUE_STRIP_WIDTH}px`;
+  hueCanvas.style.height = `${pickerSize}px`;
+  svWrap.style.width = `${pickerSize}px`;
+  svWrap.style.height = `${pickerSize}px`;
+  if (hueWrap) {
+    hueWrap.style.width = `${HUE_STRIP_WIDTH}px`;
+    hueWrap.style.height = `${pickerSize}px`;
+  }
+  const labRoot = document.querySelector(".color-lab-root");
+  if (labRoot) {
+    labRoot.style.setProperty("--picker-sv-size", `${pickerSize}px`);
+    labRoot.style.setProperty("--picker-row-gap", `${rowGap}px`);
+    labRoot.style.setProperty("--picker-hue-width", `${HUE_STRIP_WIDTH}px`);
   }
 }
 
@@ -755,17 +1056,30 @@ function hexFromPicker() {
 
 // --- UI render ---
 
+function setValuesListExpanded(expanded) {
+  if (valueList) valueList.hidden = !expanded;
+  if (valuesListToggle) {
+    valuesListToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    valuesListToggle.classList.toggle("is-expanded", expanded);
+    valuesListToggle.setAttribute(
+      "aria-label",
+      expanded ? "RGB, HSL, HSV 목록 숨기기" : "RGB, HSL, HSV 목록 보기"
+    );
+  }
+}
+
 function renderValueRows(hex) {
   const rgb = hexToRgb(hex);
   if (!rgb) {
     valueList.innerHTML = "";
+    if (valueHexSummaryText) valueHexSummaryText.textContent = "";
     return;
   }
+  if (valueHexSummaryText) valueHexSummaryText.textContent = hex;
   const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
   const hsv = rgbToHsv(rgb.r, rgb.g, rgb.b);
 
   const rows = [
-    { label: "HEX", value: hex },
     { label: "RGB", value: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` },
     {
       label: "HSL",
@@ -832,12 +1146,21 @@ function renderPaletteSetPicker() {
   const store = loadPaletteStore();
   paletteSetPicker.innerHTML = "";
 
+  const pinned = normalizePinnedArray(
+    store.pinned,
+    store.sets.length,
+    store.active
+  );
+
   store.sets.forEach((_, index) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "segment-option";
     if (index === store.active) {
       btn.classList.add("is-selected");
+    }
+    if (pinned.includes(index)) {
+      btn.classList.add("is-pinned");
     }
     btn.textContent = String(index + 1);
     btn.setAttribute("role", "tab");
@@ -850,14 +1173,42 @@ function renderPaletteSetPicker() {
       if (rgb) {
         btn.style.color = getReadableTextColor(rgb.r, rgb.g, rgb.b);
       }
+    }
+    if (index === store.active) {
       btn.setAttribute(
         "aria-label",
-        `Palette set ${index + 1}, swatch ${swatch}`
+        `Palette set ${index + 1}, editing${
+          swatch ? `, swatch ${swatch}` : ""
+        }`
+      );
+    } else if (pinned.includes(index)) {
+      btn.setAttribute(
+        "aria-label",
+        `Palette set ${index + 1}, shown below. Click to hide${
+          swatch ? `, swatch ${swatch}` : ""
+        }. Double-click to edit this set.`
       );
     } else {
-      btn.setAttribute("aria-label", `Palette set ${index + 1}`);
+      btn.setAttribute(
+        "aria-label",
+        `Palette set ${index + 1}. Click to show below${
+          swatch ? `, swatch ${swatch}` : ""
+        }. Double-click to edit this set.`
+      );
     }
-    btn.addEventListener("click", () => switchPaletteSet(index));
+    let tabClickTimer = 0;
+    btn.addEventListener("click", () => {
+      if (index === store.active) return;
+      clearTimeout(tabClickTimer);
+      tabClickTimer = window.setTimeout(() => {
+        togglePinnedPaletteSet(index);
+      }, 260);
+    });
+    btn.addEventListener("dblclick", (e) => {
+      e.preventDefault();
+      clearTimeout(tabClickTimer);
+      switchPaletteSet(index);
+    });
     paletteSetPicker.appendChild(btn);
   });
 
@@ -872,11 +1223,13 @@ function renderPaletteSetPicker() {
   }
 }
 
-function renderPaletteGrid() {
-  const slots = loadPalette();
-  paletteGrid.innerHTML = "";
+function renderPaletteGridInto(gridEl, setIndex) {
+  const slots = loadSlotsForSet(setIndex);
+  gridEl.innerHTML = "";
   for (let i = 0; i < PALETTE_SLOTS; i++) {
-    const hex = slots[i] || null;
+    const hex = slotHex(slots[i]);
+    const name = slotName(slots[i]);
+    const memo = slotMemo(slots[i]);
     if (hex) {
       const cell = document.createElement("div");
       cell.className = "palette-slot palette-slot--filled";
@@ -884,21 +1237,39 @@ function renderPaletteGrid() {
       cell.style.backgroundColor = hex;
       cell.setAttribute("role", "button");
       cell.tabIndex = 0;
-      cell.setAttribute("aria-label", `Use ${hex} in slot ${i + 1}`);
-      cell.appendChild(createColorCopyOverlay(hex));
+      const label = name
+        ? `${name}, ${hex}, set ${setIndex + 1} slot ${i + 1}`
+        : `Use ${hex}, set ${setIndex + 1} slot ${i + 1}`;
+      cell.setAttribute("aria-label", label);
+      const titleParts = [name, memo].filter(Boolean);
+      if (titleParts.length) {
+        cell.title = titleParts.join(" — ");
+      }
+      if (name) {
+        const caption = document.createElement("span");
+        caption.className = "palette-slot-name";
+        caption.textContent = name;
+        cell.appendChild(caption);
+      }
+      if (memo) {
+        const memoMark = document.createElement("span");
+        memoMark.className = "palette-slot-memo-mark";
+        memoMark.setAttribute("aria-hidden", "true");
+        memoMark.textContent = "✎";
+        cell.appendChild(memoMark);
+      }
       cell.addEventListener("click", (e) => {
-        if (e.target.closest(".color-copy-chip")) return;
         const idx = Number(cell.dataset.slotIndex);
         if (e.altKey) {
-          clearPaletteSlot(idx);
+          clearPaletteSlot(idx, setIndex);
           return;
         }
-        applyColorFromHex(hex, { syncPicker: true });
+        selectPaletteSlot(idx, hex, name, memo, setIndex);
       });
       cell.addEventListener("contextmenu", (e) => {
-        onPaletteSlotContextMenu(e, hex);
+        onPaletteSlotContextMenu(e, hex, setIndex);
       });
-      paletteGrid.appendChild(cell);
+      gridEl.appendChild(cell);
       continue;
     }
 
@@ -908,16 +1279,47 @@ function renderPaletteGrid() {
     btn.dataset.slotIndex = String(i);
     btn.setAttribute(
       "aria-label",
-      `Save current color to slot ${i + 1}`
+      `Save current color to set ${setIndex + 1} slot ${i + 1}`
     );
     btn.addEventListener("click", () => {
-      setPaletteSlot(Number(btn.dataset.slotIndex), lastValidHex);
+      setPaletteSlot(Number(btn.dataset.slotIndex), lastValidHex, undefined, setIndex);
     });
     btn.addEventListener("contextmenu", (e) => {
-      onPaletteSlotContextMenu(e, lastValidHex);
+      onPaletteSlotContextMenu(e, lastValidHex, setIndex);
     });
-    paletteGrid.appendChild(btn);
+    gridEl.appendChild(btn);
   }
+}
+
+function renderPaletteGrids() {
+  if (!paletteGrids) return;
+  const store = loadPaletteStore();
+  const pinned = normalizePinnedArray(
+    store.pinned,
+    store.sets.length,
+    store.active
+  );
+  const order = [store.active, ...pinned];
+  paletteGrids.innerHTML = "";
+
+  order.forEach((setIndex) => {
+    const block = document.createElement("div");
+    block.className = "palette-set-block";
+    if (setIndex === store.active) {
+      block.classList.add("palette-set-block--active");
+    } else {
+      block.classList.add("palette-set-block--pinned");
+      const label = document.createElement("p");
+      label.className = "palette-set-block-label micro-label";
+      label.textContent = `Set ${setIndex + 1}`;
+      block.appendChild(label);
+    }
+    const grid = document.createElement("div");
+    grid.className = "palette-grid";
+    renderPaletteGridInto(grid, setIndex);
+    block.appendChild(grid);
+    paletteGrids.appendChild(block);
+  });
 }
 
 function setError(message) {
@@ -956,6 +1358,12 @@ function applyColorFromHex(hex, options = {}) {
   if (updateInput) {
     syncColorInputFromHex(normalized);
   }
+  const preserveMeta =
+    options.preserveColorMeta === true || options.preserveColorName === true;
+  if (!preserveMeta) {
+    fillColorMetaInputs("", "");
+    lastEditedPaletteSlotIndex = -1;
+  }
   renderPreview(normalized);
   renderValueRows(normalized);
   if (syncPicker && !syncingPicker) {
@@ -985,6 +1393,41 @@ function onColorValueInput() {
 colorValueInput.addEventListener("input", onColorValueInput);
 colorValueInput.addEventListener("blur", onColorValueInput);
 
+if (valuesListToggle && valueList) {
+  setValuesListExpanded(false);
+  valuesListToggle.addEventListener("click", () => {
+    setValuesListExpanded(valueList.hidden);
+  });
+}
+
+if (colorNameInput || colorMemoInput) {
+  const syncMetaToLinkedSlot = () => {
+    if (lastEditedPaletteSlotIndex < 0) return;
+    const store = loadPaletteStore();
+    const slots = loadSlotsForSet(store.active);
+    if (slotHex(slots[lastEditedPaletteSlotIndex]) !== lastValidHex) {
+      lastEditedPaletteSlotIndex = -1;
+      return;
+    }
+    const hex = slotHex(slots[lastEditedPaletteSlotIndex]);
+    slots[lastEditedPaletteSlotIndex] = {
+      hex,
+      name: normalizeColorName(colorNameInput?.value ?? ""),
+      memo: normalizeColorMemo(colorMemoInput?.value ?? ""),
+    };
+    saveSlotsForSet(store.active, slots);
+    renderPaletteGrids();
+  };
+  if (colorNameInput) {
+    colorNameInput.addEventListener("change", syncMetaToLinkedSlot);
+    colorNameInput.addEventListener("blur", syncMetaToLinkedSlot);
+  }
+  if (colorMemoInput) {
+    colorMemoInput.addEventListener("change", syncMetaToLinkedSlot);
+    colorMemoInput.addEventListener("blur", syncMetaToLinkedSlot);
+  }
+}
+
 if (colorTypeSegment) {
   colorTypeSegment.querySelectorAll(".segment-option").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -1007,23 +1450,32 @@ hueCanvas.addEventListener("pointermove", onHuePointerMove);
 hueCanvas.addEventListener("pointerup", onHuePointerUp);
 hueCanvas.addEventListener("pointercancel", onHuePointerUp);
 
+if (exportPaletteJsonBtn) {
+  exportPaletteJsonBtn.addEventListener("click", exportPaletteJsonToClipboard);
+}
+
 if (eyedropperBtn && window.EyeDropper) {
   eyedropperBtn.hidden = false;
   eyedropperBtn.addEventListener("click", () => pickColorFromScreen());
 }
 
-schedulePickerLayout();
+(async function bootColorLab() {
+  await ensureDefaultPaletteOnFirstVisit();
 
-if (pickerPanel && typeof ResizeObserver !== "undefined") {
-  const pickerObserver = new ResizeObserver(() => schedulePickerLayout());
-  pickerObserver.observe(pickerPanel);
-}
+  schedulePickerLayout();
 
-updateInputPlaceholder();
-const initial =
-  parseColorInput(colorValueInput.value, getColorValueType()) || "#3B5BDB";
-applyColorFromHex(initial, { syncPicker: true });
-renderPaletteSetPicker();
-renderPaletteGrid();
+  if (typeof ResizeObserver !== "undefined") {
+    const pickerObserver = new ResizeObserver(() => schedulePickerLayout());
+    if (dashboard) pickerObserver.observe(dashboard);
+    else if (pickerPanel) pickerObserver.observe(pickerPanel);
+  }
 
-window.addEventListener("resize", schedulePickerLayout);
+  updateInputPlaceholder();
+  const initial =
+    parseColorInput(colorValueInput.value, getColorValueType()) || "#3B5BDB";
+  applyColorFromHex(initial, { syncPicker: true });
+  renderPaletteSetPicker();
+  renderPaletteGrids();
+
+  window.addEventListener("resize", schedulePickerLayout);
+})();
