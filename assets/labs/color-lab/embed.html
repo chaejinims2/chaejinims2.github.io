@@ -1,0 +1,52 @@
+<div class="color-lab-root">
+  <div class="app">
+    <header class="app-bar">
+      <h1 class="site-title">Color Lab</h1>
+      <div class="hex-controls">
+        <label class="visually-hidden" for="hex-input">HEX color</label>
+        <input
+          type="text"
+          id="hex-input"
+          class="hex-input"
+          placeholder="#RRGGBB"
+          spellcheck="false"
+          autocomplete="off"
+          maxlength="7"
+        />
+        <input
+          type="color"
+          id="color-picker"
+          class="color-picker"
+          aria-label="Pick color"
+        />
+      </div>
+      <div class="recent-wrap">
+        <span class="micro-label">Recent</span>
+        <ul class="recent-list" id="recent-list"></ul>
+      </div>
+      <a class="app-link" href="https://chaejinims2.github.io/">chaejinims2.github.io</a>
+    </header>
+
+    <p id="hex-error" class="error-message" role="alert" hidden></p>
+
+    <main class="dashboard">
+      <div class="preview-panel" aria-label="Color preview">
+        <div id="preview-card" class="preview-card">
+          <span id="preview-label" class="preview-label">#000000</span>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <section class="values-section" aria-labelledby="values-heading">
+          <h2 id="values-heading" class="micro-label">Values</h2>
+          <ul class="value-list" id="value-list"></ul>
+        </section>
+
+        <section class="palettes-section" aria-labelledby="palettes-heading">
+          <h2 id="palettes-heading" class="micro-label">Palettes</h2>
+          <div id="palettes-root" class="palettes"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
