@@ -116,20 +116,6 @@ collections:
           - { label: "Icon", name: "icon", widget: "string", required: false }
           - { label: "Type", name: "type", widget: "select", options: [{ label: "Sidebar", value: "sidebar" }, { label: "Topbar", value: "topbar" }, { label: "Sidebar (footer)", value: "sidebar_footer" }], default: "sidebar" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "_pages/labs/lm11/index.md"
-        name: "labs-lm11"
-        label: "Labs › LM11"
-        fields:
-          - { label: "Layout", name: "layout", widget: "select", options: ["page", "pages/editor", "pages/example", "pages/quiz", "pages/voca", "section", "sections/settings", "sections/techs", "startup"], default: "page" }
-          - { label: "Title", name: "title", widget: "string", required: false }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "_pages/labs/websocket/index.md"
-        name: "labs-websocket"
-        label: "Labs › Websocket"
-        fields:
-          - { label: "Layout", name: "layout", widget: "select", options: ["page", "pages/editor", "pages/example", "pages/quiz", "pages/voca", "section", "sections/settings", "sections/techs", "startup"], default: "page" }
-          - { label: "Title", name: "title", widget: "string", required: false }
-          - { label: "Body", name: "body", widget: "markdown" }
       - file: "_pages/settings/index.md"
         name: "settings"
         label: "Settings"

@@ -1,1 +1,0 @@
-https://www.ieltsessaybank.com/average-monthly-change-in-prices-of-three-metals/
