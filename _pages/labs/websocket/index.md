@@ -1,5 +1,7 @@
 ---
 layout: page
 title: Websocket Test
+hide: true
 ---
-Lab: Configure Korean VPN on Latte Panda delta 3 at home and verify connection.
+
+{% include clab_redirect.html slug="websocket" %}
