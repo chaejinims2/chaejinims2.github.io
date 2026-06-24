@@ -1,0 +1,11 @@
+{% if include.url %}
+  {% assign clab_target = include.url %}
+{% elsif include.slug %}
+  {% assign clab_target = site.clab_url | append: "/labs/" | append: include.slug | append: "/" %}
+{% else %}
+  {% assign clab_target = site.clab_url %}
+{% endif %}
+<script>window.location.replace("{{ clab_target }}");</script>
+<p style="margin-top:1rem;font-size:0.9rem">
+  이동하지 않으면 <a href="{{ clab_target }}" rel="noopener noreferrer">clab에서 열기</a>.
+</p>

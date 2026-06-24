@@ -1,26 +1,8 @@
 ---
 layout: page
 title: Pixel Rullet v4
-intro: |
-  This is a Pixel Rullet v4.
-tags:
-  - pxrullet
-  - labs
-  - stardew valley
+hide: true
+intro: clab로 이전되었습니다.
 ---
-<style>
-  .pxr-v4-host {
-    display: flex;
-    justify-content: center;
-    padding: 0px;
-  }
-</style>
 
-<div
-  class="pxr-v4-host"
-  data-pxrullet-v4-root
-  data-layout="{{ '/assets/labs/pxart-rullet-v4/layout.json' | relative_url }}"
-  aria-label="pxart-rullet v4"
-></div>
-
-<script src="{{ '/assets/labs/pxart-rullet-v4/rullet-v4-entry.js?static=1' | relative_url }}"></script>
+{% include clab_redirect.html slug="pxrullet-v4" %}

@@ -4,6 +4,8 @@ logo: "assets/images/cherry-logo-red-light.png"
 description: "NVMe Host Driver / Embedded Linux / Automation Tools"
 baseurl: ""
 url: "https://chaejinims2.github.io"
+# Vercel clab-web 배포 URL (배포 후 실제 *.vercel.app 주소로 수정)
+clab_url: "https://clab-web-gules.vercel.app"
 
 # 방문자 수 (첫 페이지 / 푸터). Netlify 배포 후 아래 주석 해제하고 YOUR_SITE를 실제 주소로 변경.
 # 비우면 CountAPI 사용(광고 차단 시 - 로 남을 수 있음).
