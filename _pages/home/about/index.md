@@ -1,39 +1,35 @@
 ---
 layout: page
 title: About
-intro: I am a Systems & Platform Engineer with expertise in Linux kernel, storage systems (NVMe), and DevOps-oriented platform design.
+intro: Linux System Software Engineer working on PCIe/NVMe platforms, kernel-level debugging, and scalable driver architecture.
 tags:
-  - NVMe
+  - C/C++
   - Linux Kernel
-  - Equipment Software
-  - Automation tools
-  - Reproducible workflows
+  - Device Drivers
+  - PCIe/NVMe
+  - Kernel Debugging
+  - Platform Software
 ---
 
-    I am interested in structuring complex systems for clarity, changeability, and scale.
+    Beyond What the System Shows.
 
-    I am designing system software that remains adaptable under constraints,
-    with explicit boundaries between interface and implementation.
+    I trace what happens underneath-across hardware, drivers, and the Linux kernel.
 
-    Highlights:
+    I am a Linux system software engineer working at the boundary between hardware, drivers, and the operating system.
 
-    - Linux Kernel & Storage: NVMe driver feature extension (SPF → MPF), kernel build & migration projects, automated validation pipelines.
-    - Cross-disciplinary Projects:
-        - Sensor data collection & synchronization
-        - Enterprise-level semiconductor equipment project
-    - Leadership & Collaboration: SSAFY (Samsung SW Academy for Youth) class leader, (Exicon) new-hire leader, technical mentor & instructor experience.
-    - Global Mindset: Exchange student in China, English multicultural collaboration and strong communication skills.
+    I develop host drivers and platform software for PCIe/NVMe validation equipment, with a focus on kernel-level debugging, device initialization, system services, and remote root-cause analysis.
 
-    I thrive in environments where system reliability, structural problem-solving, and cross-functional collaboration are essential, and I aim to grow into a Platform Architect building resilient and scalable developer ecosystems.
+    I am particularly interested in understanding how data and execution flow through a system. Rather than addressing symptoms in isolation, I use tools such as printk, ftrace, crash, and vmcore analysis to identify underlying causes and turn recurring debugging work into reproducible processes.
+
+    My recent work includes redesigning a single-PF driver architecture to support up to 64 PFs while reducing the module footprint from approximately 198 MB to 225 KB and preserving compatibility with existing access patterns.
+
+    I am growing my expertise in Linux kernel internals, PCIe, DMA, interrupts, scheduling, and performance-critical platform software.
 
     # Contact me
 
     I'm Chaejin Im, a system software engineer from South Korea.
-    Currently working at Storage Test Equipment Company, I design scalable NVMe drivers and tools for memory testers.
 
-    I'm also passionate about building personal tooling, learning systems programming, and exploring creative automation.
+    If you're interested or have any questions about my work, please feel free to contact me.
 
-    - 💻 Current Stack: C/C++, Linux Kernel, Bash, Makefile, QMake
-    - 🌐 Interests: PCIe, Storage, Debug Tooling, Embedded Systems
 
 [Send email](mailto:chaejinims2@gmail.com)
