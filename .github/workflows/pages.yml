@@ -1,0 +1,67 @@
+name: Build and deploy Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      cweb_ref:
+        description: "cweb git ref to publish"
+        required: false
+        default: "release"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout cweb
+        uses: actions/checkout@v5
+        with:
+          repository: chaejinims2/cweb
+          ref: ${{ inputs.cweb_ref || 'release' }}
+          path: cweb
+          submodules: recursive
+          token: ${{ secrets.CWEB_SUBMODULES_PAT }}
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: cweb/package-lock.json
+
+      - name: Render pages
+        working-directory: cweb
+        run: |
+          npm ci
+          npm run render-pages
+
+      - name: Mark as static site
+        run: touch cweb/public/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: cweb/public
+          include-hidden-files: true
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
