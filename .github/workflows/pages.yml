@@ -46,6 +46,28 @@ jobs:
           npm ci
           npm run render-pages
 
+      - name: Inspect public output
+        working-directory: cweb
+        run: |
+          echo "Public size summary:"
+          du -sh public
+          echo "Top large files in public:"
+          find public -type f -printf '%s %p\n' | sort -nr | head -n 20
+
+      - name: Remove dev project files from public
+        run: |
+          find cweb/public -type d \( -name '*.xcodeproj' -o -name '*.xcworkspace' \) -prune -exec rm -rf {} +
+
+      - name: Verify artifact size before upload
+        run: |
+          size=$(du -sb cweb/public | cut -f1)
+          max=$((1024 * 1024 * 1024))
+          echo "Artifact size (bytes): $size"
+          if [ "$size" -gt "$max" ]; then
+            echo "ERROR: cweb/public is larger than 1 GiB, the GitHub Pages limit."
+            exit 1
+          fi
+
       - name: Mark as static site
         run: touch cweb/public/.nojekyll
 
